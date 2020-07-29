@@ -10,11 +10,30 @@ https://github.com/MarcMilany/archmy_2020.git
 
 curl -i https://git.io -F "url=https://github.com/MarcMilany/archmy_2020.git" -F "code=archmy_2020"
 
-https://git.io/JJzrz
+Location: https://git.io/JJzrz
 
 alex @ Terminator  ~
-└─ $ ▶ 
+└─ $ ▶ curl -i https://git.io -F "url=https://github.com/MarcMilany/archmy_2020.git" -F "code=archmy_2020"
+HTTP/1.1 100 Continue
 
+HTTP/1.1 201 Created
+Server: Cowboy
+Connection: keep-alive
+Date: Wed, 29 Jul 2020 20:57:09 GMT
+Status: 201 Created
+Content-Type: text/html;charset=utf-8
+Location: https://git.io/JJzrz
+Content-Length: 45
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Runtime: 0.134063
+X-Node: 57bec954-2b97-4724-8374-747d9b8aef45
+X-Revision: 392798d237fc1aa5cd55cada10d2945773e741a8
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Via: 1.1 vegur
+
+https://github.com/MarcMilany/archmy_2020.git 
 
 https://github.com/MarcMilany/archmy_2020.git
 https://github.com/MarcMilany/archmy_2020/archive/master.zip
@@ -37,9 +56,27 @@ curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/arch
 Location: https://git.io/archmy1legacy
 
 alex @ Terminator  ~
-└─ $ ▶ 
+└─ $ ▶ curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy1legacy.sh" -F "code=archmy1legacy"
+HTTP/1.1 100 Continue
 
+HTTP/1.1 201 Created
+Server: Cowboy
+Connection: keep-alive
+Date: Wed, 29 Jul 2020 20:59:38 GMT
+Status: 201 Created
+Content-Type: text/html;charset=utf-8
+Location: https://git.io/archmy1legacy
+Content-Length: 80
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Runtime: 0.140961
+X-Node: f7024b2e-4df2-4802-ad4c-7bcebd2e9338
+X-Revision: 392798d237fc1aa5cd55cada10d2945773e741a8
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Via: 1.1 vegur
 
+https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy1legacy.sh  
 
 
 **************************************************************************
@@ -48,12 +85,33 @@ alex @ Terminator  ~
 
 2. https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2legacy.sh
 
-curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2legacy.sh" -F "code=archmy2legacy.sh"
+curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2legacy.sh" -F "code=archmy2legacy"
 
 Location: https://git.io/archmy2legacy.sh
 
+
 alex @ Terminator  ~
-└─ $ ▶ 
+└─ $ ▶ curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2legacy.sh" -F "code=archmy2legacy"
+HTTP/1.1 100 Continue
+
+HTTP/1.1 201 Created
+Server: Cowboy
+Connection: keep-alive
+Date: Wed, 29 Jul 2020 21:09:29 GMT
+Status: 201 Created
+Content-Type: text/html;charset=utf-8
+Location: https://git.io/archmy2legacy.sh
+Content-Length: 80
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Runtime: 0.137404
+X-Node: 1e9088c1-40c8-4d9b-a324-8fdfa68f4d62
+X-Revision: 392798d237fc1aa5cd55cada10d2945773e741a8
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Via: 1.1 vegur
+
+https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2legacy.sh
 
 
 **************************************************************************
