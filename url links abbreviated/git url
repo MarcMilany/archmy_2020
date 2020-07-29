@@ -1,111 +1,60 @@
-Моя ветка мастер MarcMilany/arch_2020
+Моя ветка мастер MarcMilany/archmy_2020
 
-Сокращение ссылки для arch_2020.git   - ветка мастер
+baseurl=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/url%20links%20abbreviated/git%20url
 
-github.com/MarcMilany/arch_2020.git
+Сокращение ссылки для archmy_2020.git   - ветка мастер
 
-https://github.com/MarcMilany/arch_2020.git
+github.com/MarcMilany/archmy_2020.git
 
-curl -i https://git.io -F "url=https://github.com/MarcMilany/arch_2020.git" -F "code=arch_2020"
+https://github.com/MarcMilany/archmy_2020.git
 
-Location: https://git.io/Jf4gl
+curl -i https://git.io -F "url=https://github.com/MarcMilany/archmy_2020.git" -F "code=archmy_2020"
+
+https://git.io/JJzrz
 
 alex @ Terminator  ~
-└─ $ ▶ curl -i https://git.io -F "url=https://github.com/MarcMilany/arch_2020.git" -F "code=arch_2020"
-HTTP/1.1 100 Continue
+└─ $ ▶ 
 
-HTTP/1.1 201 Created
-Server: Cowboy
-Connection: keep-alive
-Date: Thu, 14 May 2020 16:32:08 GMT
-Status: 201 Created
-Content-Type: text/html;charset=utf-8
-Location: https://git.io/Jf4gl
-Content-Length: 43
-X-Xss-Protection: 1; mode=block
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-X-Runtime: 0.141594
-X-Node: 01f66bcf-5382-4df9-b3a1-7ac5f5090300
-X-Revision: 392798d237fc1aa5cd55cada10d2945773e741a8
-Strict-Transport-Security: max-age=31536000; includeSubDomains
-Via: 1.1 vegur
 
-https://github.com/MarcMilany/arch_2020.git
-https://github.com/MarcMilany/arch_2020/archive/master.zip
+https://github.com/MarcMilany/archmy_2020.git
+https://github.com/MarcMilany/archmy_2020/archive/master.zip
 -----------------------------------------------------------------
 
 Сокращено с помощью сайта https://git.io/
 
-https://github.com/MarcMilany/arch_2020.git
+https://github.com/MarcMilany/archmy_2020.git
 
-https://git.io/Jf4gl
+https://git.io/JJzrz
 
 ******************************************************************
 
-Сокращение ссылки для archmy1.sh  
+Сокращение ссылки для archmy1legacy.sh  
 
-1. https://raw.githubusercontent.com/MarcMilany/arch_2020/master/archmy1.sh
+1. https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy1legacy.sh
 
-curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/arch_2020/master/archmy1.sh" -F "code=archmy1"
+curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy1legacy.sh" -F "code=archmy1legacy"
 
-Location: https://git.io/archmy1
+Location: https://git.io/archmy1legacy
 
 alex @ Terminator  ~
-└─ $ ▶ curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/arch_2020/master/archmy1.sh" -F "code=archmy1"
-HTTP/1.1 100 Continue
+└─ $ ▶ 
 
-HTTP/1.1 201 Created
-Server: Cowboy
-Connection: keep-alive
-Date: Sat, 09 May 2020 16:59:36 GMT
-Status: 201 Created
-Content-Type: text/html;charset=utf-8
-Location: https://git.io/archmy1
-Content-Length: 72
-X-Xss-Protection: 1; mode=block
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-X-Runtime: 0.139987
-X-Node: 55bf93f6-a0ed-40b3-a4d4-849238a92eb3
-X-Revision: 392798d237fc1aa5cd55cada10d2945773e741a8
-Strict-Transport-Security: max-age=31536000; includeSubDomains
-Via: 1.1 vegur
 
-https://raw.githubusercontent.com/MarcMilany/arch_2020/master/archmy1.sh
+
 
 **************************************************************************
 
-Сокращение ссылки для archmy2.sh  
+Сокращение ссылки для archmy2legacy.sh  
 
-2. https://raw.githubusercontent.com/MarcMilany/arch_2020/master/archmy2.sh
+2. https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2legacy.sh
 
-curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/arch_2020/master/archmy2.sh" -F "code=archmy2"
+curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2legacy.sh" -F "code=archmy2legacy.sh"
 
-Location: https://git.io/archmy2
+Location: https://git.io/archmy2legacy.sh
 
 alex @ Terminator  ~
-└─ $ ▶ curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/arch_2020/master/archmy2.sh" -F "code=archmy2"
-HTTP/1.1 100 Continue
+└─ $ ▶ 
 
-HTTP/1.1 201 Created
-Server: Cowboy
-Connection: keep-alive
-Date: Sat, 09 May 2020 17:09:23 GMT
-Status: 201 Created
-Content-Type: text/html;charset=utf-8
-Location: https://git.io/archmy2
-Content-Length: 72
-X-Xss-Protection: 1; mode=block
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-X-Runtime: 0.145816
-X-Node: aa36f6a5-1282-4ef2-9674-c3d577ab3a92
-X-Revision: 392798d237fc1aa5cd55cada10d2945773e741a8
-Strict-Transport-Security: max-age=31536000; includeSubDomains
-Via: 1.1 vegur
-
-https://raw.githubusercontent.com/MarcMilany/arch_2020/master/archmy2.sh
 
 **************************************************************************
 
@@ -207,38 +156,6 @@ Via: 1.1 vegur
 https://raw.githubusercontent.com/MarcMilany/arch_2020/master/arch2020.sh
 
 **************************************************************************
-
-Сокращение ссылки для archmy1_1.sh
-
-6. https://raw.githubusercontent.com/MarcMilany/arch_2020/master/archmy1_1.sh
-
-curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/arch_2020/master/archmy1_1.sh" -F "code=archmy1_1"
-
-Location: https://git.io/archmy1_1
-
- Привет, Alex ! Сегодня: Воскресенье 26 июля 2020г. Местное время-22:07
-alex @ Terminator  ~
-└─ $ ▶ curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/arch_2020/master/archmy1_1.sh" -F "code=archmy1_1"
-HTTP/1.1 100 Continue
-
-HTTP/1.1 201 Created
-Server: Cowboy
-Connection: keep-alive
-Date: Sun, 26 Jul 2020 19:07:24 GMT
-Status: 201 Created
-Content-Type: text/html;charset=utf-8
-Location: https://git.io/archmy1_1
-Content-Length: 74
-X-Xss-Protection: 1; mode=block
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-X-Runtime: 0.137188
-X-Node: 81dda809-e907-4015-8cae-023a20c33aa1
-X-Revision: 392798d237fc1aa5cd55cada10d2945773e741a8
-Strict-Transport-Security: max-age=31536000; includeSubDomains
-Via: 1.1 vegur
-
-https://raw.githubusercontent.com/MarcMilany/arch_2020/master/archmy1_1.sh
 
 ______________________________________________________________________________
 
