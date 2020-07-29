@@ -53,11 +53,32 @@ https://git.io/JJzrz
 
 curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy1l.sh" -F "code=archmy1l"
 
-Location: https://git.io/archmy1legacy
+Location: https://git.io/archmy1l
+
+alex @ Terminator  ~
+└─ $ ▶ curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy1l.sh" -F "code=archmy1l"
+HTTP/1.1 100 Continue
+
+HTTP/1.1 201 Created
+Server: Cowboy
+Connection: keep-alive
+Date: Wed, 29 Jul 2020 22:03:27 GMT
+Status: 201 Created
+Content-Type: text/html;charset=utf-8
+Location: https://git.io/archmy1l
+Content-Length: 75
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Runtime: 0.142849
+X-Node: 3dab3769-fc41-4e93-8d6b-3b569f746ff0
+X-Revision: 392798d237fc1aa5cd55cada10d2945773e741a8
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Via: 1.1 vegur
+
+https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy1l.sh
 
  
-
-
 **************************************************************************
 
 Сокращение ссылки для archmy2legacy.sh  
@@ -66,10 +87,30 @@ Location: https://git.io/archmy1legacy
 
 curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh" -F "code=archmy2l"
 
-Location: https://git.io/archmy2lega
+Location: https://git.io/archmy2l
 
+alex @ Terminator  ~
+└─ $ ▶ curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh" -F "code=archmy2l"
+HTTP/1.1 100 Continue
 
+HTTP/1.1 201 Created
+Server: Cowboy
+Connection: keep-alive
+Date: Wed, 29 Jul 2020 22:04:28 GMT
+Status: 201 Created
+Content-Type: text/html;charset=utf-8
+Location: https://git.io/archmy2l
+Content-Length: 75
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Runtime: 0.142393
+X-Node: 6fa5f011-0189-4bdf-b95e-65d8097cb7ff
+X-Revision: 392798d237fc1aa5cd55cada10d2945773e741a8
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Via: 1.1 vegur
 
+https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh
 
 
 **************************************************************************
