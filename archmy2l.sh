@@ -344,6 +344,7 @@ echo -e "${BLUE}:: ${NC}Посмотрим текущее состояние а�
 # Let's see the current state of the hardware and software clock
 timedatectl
 
+echo ""
 echo -e "${BLUE}:: ${NC}Настроим состояние аппаратных и программных часов"
 #echo 'Настроим состояние аппаратных и программных часов'
 # Setting up the state of the hardware and software clock    
