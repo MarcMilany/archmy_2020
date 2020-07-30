@@ -922,8 +922,8 @@ sudo pacman -Sy
 #sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys && sudo pacman -Sy
 # ============================================================================
 
-echo -e "${BLUE}:: ${NC}3.2 Установка основных пакетов (base base-devel) базовой системы"
-#echo '3.2 Установка основных пакетов (base base-devel) базовой системы'
+echo -e "${BLUE}:: ${NC}3.2 Установка основных пакетов (base base-devel) базовой (основной) системы"
+#echo '3.2 Установка основных пакетов (base base-devel) базовой (основной) системы'
 # Installing basic packages (base base-devel)
 echo 'Arch Linux, Base devel (AUR only), Kernel (optional), Firmware'
 # Arch Linux, Base devel (AUR only), Kernel (optional), Firmware
