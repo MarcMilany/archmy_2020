@@ -922,8 +922,8 @@ sudo pacman -Sy
 #sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys && sudo pacman -Sy
 # ============================================================================
 
-echo -e "${BLUE}:: ${NC}3.2 Установка основных пакетов (base base-devel)"
-#echo '3.2 Установка основных пакетов (base base-devel)'
+echo -e "${BLUE}:: ${NC}3.2 Установка основных пакетов (base base-devel) базовой системы"
+#echo '3.2 Установка основных пакетов (base base-devel) базовой системы'
 # Installing basic packages (base base-devel)
 echo 'Arch Linux, Base devel (AUR only), Kernel (optional), Firmware'
 # Arch Linux, Base devel (AUR only), Kernel (optional), Firmware
@@ -963,6 +963,7 @@ pacstrap /mnt nano vim dhcpcd netctl which inetutils #wget
 # sudo - позволяет обычным пользователем совершать действия от лица суперпользователя.
 # git - приложение для работы с репозиториями Git. Нужен для AUR и много чего ещё.
 # networkmanager - сервис для работы интернета. Вместе с собой устанавливает программы для настройки.
+# wget linux - утилита выполняет загрузку файлов даже в фоновом режиме - без участия пользователя
 #########################
 # man-db - просмотрщик man-страниц.
 # man-pages - куча man-страниц (руководств).
