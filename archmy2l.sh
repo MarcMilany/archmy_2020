@@ -338,6 +338,7 @@ echo -e "${BLUE}:: ${NC}Проверим аппаратное время"
 #hwclock
 hwclock --systohc
 #hwclock --systohc —utc
+#hwclock --systohc --local
 
 echo -e "${BLUE}:: ${NC}Посмотрим текущее состояние аппаратных и программных часов"
 #echo 'Посмотрим текущее состояние аппаратных и программных часов'
