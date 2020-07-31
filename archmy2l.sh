@@ -524,6 +524,7 @@ mkinitcpio -p linux-lts
 echo -e "${GREEN}==> ${NC}Создаём root пароль"
 #echo 'Создаём root пароль'
 # Creating a root password
+echo " passwd root "
 passwd
 # --------------------------------------------------------------------------
 # Пример вывода применённой команды >>> $ passwd После чего дважды новый пароль.
