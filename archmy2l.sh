@@ -543,10 +543,17 @@ passwd
 #grub-install /dev/sda
 # ------------------------------------------------------------------
 # pacman -S grub --noconfirm --noprogressbar --quiet 
-#grub-install --recheck /dev/sda
+# grub-install /dev/sda 
+# Если Вы получили сообщение об ошибке, то используйте команду:
+# grub-install --recheck /dev/sda
+# Также в некоторых случаях может помочь вариант:
+# grub-install --recheck --no-floppy /dev/sda
+# Записываем загрузчик в MBR (Master Boot Record) нашего внутреннего накопителя.
+#grub-install --target=i386-pc --force --recheck /dev/sda 
+#grub-install --target=i386-pc /dev/sda   #(для платформ i386-pc) 
 #grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 #read -p " => Укажите диск (sda/sdb например sda или sdb) : " cfd
-#grub-install /dev/$cfd  #sda sdb sdc sdd 
+#grub-install /dev/$cfd  #sda sdb sdc sdd
 # ============================================================================
 echo ""
 echo -e "${GREEN}==> ${NC}Установить загрузчик GRUB(legacy)?"
@@ -555,13 +562,22 @@ echo -e "${GREEN}==> ${NC}Установить загрузчик GRUB(legacy)?"
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если у вас уже имеется BOOT раздел от другой (предыдущей) системы gnu-linux, с установленным на нём GRUB."
 #echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
 # You can skip this step if you are not sure of the correct choice
-read -p " 1 - Установить загрузчик GRUB, 0 - Нет пропустить: " x_grub
+read -p " 1 - Установить GRUB, 2 - Для платформ i386-pc, 0 - Нет пропустить: " x_grub
 if [[ $x_grub == 1 ]]; then
 pacman -Syy
 pacman -S grub --noconfirm
 lsblk -f
  read -p " => Укажите диск (sda/sdb например sda или sdb) : " x_cfd
  grub-install /dev/$x_cfd
+  echo " Загрузчик GRUB установлен на выбранный вами диск (раздел). " 
+#grub-mkconfig -o /boot/grub/grub.cfg
+#  echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). "
+if [[ $x_grub == 2 ]]; then
+pacman -Syy
+pacman -S grub --noconfirm
+lsblk -f
+ read -p " => Укажите диск (sda/sdb например sda или sdb) : " x_cfd
+ grub-install --target=i386-pc /dev/$x_cfd
   echo " Загрузчик GRUB установлен на выбранный вами диск (раздел). " 
 #grub-mkconfig -o /boot/grub/grub.cfg
 #  echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). " 
