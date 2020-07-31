@@ -306,9 +306,10 @@ echo -e "${BLUE}:: ${NC}Устанавливаем ваш часовой поя�
 #ln -s /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 #ls /usr/share/zoneinfo
 #ls /usr/share/zoneinfo/Europe
+echo " ln -sf /usr/share/zoneinfo/${timezone} /etc/localtime "
+#ln -svf /usr/share/zoneinfo/$timezone /etc/localtime
 ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 #timedatectl set-ntp true
-#ln -svf /usr/share/zoneinfo/$timezone /etc/localtime
 #ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 #ln -s /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 #ln -svf /usr/share/zoneinfo/Asia/Yekaterinburg /etc/localtime
@@ -337,7 +338,9 @@ echo -e "${BLUE}:: ${NC}Проверим аппаратное время"
 # Check the hardware time
 #hwclock
 hwclock --systohc
+#echo " hwclock --systohc --utc "
 #hwclock --systohc —utc
+#echo " hwclock --systohc --localtime "
 #hwclock --systohc --local
 
 echo -e "${BLUE}:: ${NC}Посмотрим текущее состояние аппаратных и программных часов"
