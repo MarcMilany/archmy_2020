@@ -929,6 +929,8 @@ echo 'Arch Linux, Base devel (AUR only), Kernel (optional), Firmware'
 # Arch Linux, Base devel (AUR only), Kernel (optional), Firmware
 #pacstrap /mnt base base-devel linux-lts linux-firmware nano dhcpcd netctl vim which inetutils #wget parted
 pacstrap /mnt base base-devel
+#pacstrap /mnt base 
+#pacstrap /mnt --needed base-devel  #(--needed  - не переустанавливать актуальные пакеты)
 pacstrap /mnt linux-lts linux-firmware #linux-headers
 pacstrap /mnt nano vim dhcpcd netctl which inetutils #wget
 # ---------------------------------------------------------------------------
