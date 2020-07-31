@@ -950,6 +950,8 @@ pacstrap /mnt nano vim dhcpcd netctl which inetutils #wget
 #pacstrap /mnt linux base nano dhcpcd netctl sudo wget --noconfirm --noprogressbar --quiet
 #pacstrap /mnt base base-devel linux linux-headers linux-firmware lvm2 nano networkmanager bash-completion reflector htop openssh curl wget git rsync unzip unrar p7zip gnu-netcat pv
 # ----------------------------------------------------------------------------
+#####                "Справка утилит"     ######
+#
 # base - основные программы.
 # base-devel - утилиты для разработчиков. Нужны для AUR.
 # linux - ядро.
