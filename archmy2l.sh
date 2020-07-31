@@ -673,6 +673,7 @@ useradd -m -g users -G adm,audio,games,lp,network,optical,power,scanner,storage,
 echo -e "${GREEN}==> ${NC}Устанавливаем пароль пользователя"
 #echo 'Устанавливаем пароль пользователя'
 # Setting the user password
+echo " passwd username "
 passwd $username
 
 echo -e "${BLUE}:: ${NC}Устанавливаем SUDO"
