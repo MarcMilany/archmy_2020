@@ -407,12 +407,6 @@ echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
 #echo "Обновление баз данных пакетов..."
 pacman -Sy --noconfirm
 
-#****************************************************
-
-pacman -S --needed arch-install-scripts wget libnewt
-libnewt
-#****************************************************
-
 echo -e "${BLUE}:: ${NC}Dmidecode. Получаем информацию о железе"
 #echo 'Dmidecode. Получаем информацию о железе'
 # View information about the motherboard
