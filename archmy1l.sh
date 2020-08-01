@@ -406,6 +406,27 @@ echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
 #echo "Обновление баз данных пакетов..."
 pacman -Sy --noconfirm
 
+#****************************************************
+else
+	pacman -S --needed arch-install-scripts wget libnewt
+	dmesg |grep efi: > /dev/null
+	if [ "$?" == "1" ]; then
+		if [ "${eficomputer}" != "1" ]; then
+			eficomputer=0
+		fi
+	else
+		eficomputer=1
+		if [ "${efimode}" == "" ]; then
+			efimode=1
+		fi
+	fi
+	loadstrings
+	EDITOR=nano
+	mainmenu
+fi
+libnewt
+#****************************************************
+
 echo -e "${BLUE}:: ${NC}Dmidecode. Получаем информацию о железе"
 #echo 'Dmidecode. Получаем информацию о железе'
 # View information about the motherboard
@@ -662,7 +683,7 @@ lsblk -f
 #parted -l
 # parted — ещё одна утилита командной строки, которая умеет отображать список разделов, информацию о них, а так же позволяет вносить изменения в разделы при необходимости
 
-sleep 01
+sleep 02
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Форматирование разделов диска"
