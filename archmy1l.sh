@@ -5,6 +5,7 @@ baseurl=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/url%20li
 cpl=0
 skipfont="0"
 fspkgs=""
+EDITOR=nano
 #
 # ============================================================================
 # Автоматическое обнаружение ошибок
@@ -407,7 +408,7 @@ echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
 pacman -Sy --noconfirm
 
 #****************************************************
-EDITOR=nano
+
 pacman -S --needed arch-install-scripts wget libnewt
 libnewt
 #****************************************************
