@@ -409,20 +409,7 @@ pacman -Sy --noconfirm
 #****************************************************
 else
 	pacman -S --needed arch-install-scripts wget libnewt
-	dmesg |grep efi: > /dev/null
-	if [ "$?" == "1" ]; then
-		if [ "${eficomputer}" != "1" ]; then
-			eficomputer=0
-		fi
-	else
-		eficomputer=1
-		if [ "${efimode}" == "" ]; then
-			efimode=1
-		fi
-	fi
-	loadstrings
 	EDITOR=nano
-	mainmenu
 fi
 libnewt
 #****************************************************
