@@ -373,8 +373,8 @@ echo -e "${BLUE}:: ${NC}Установка и настройка начата в
 #echo "Установка и настройка начата в $(date +%T)"
 # Installation and configuration started in $(date +%T)
 #
-echo -e "${BLUE}:: ${NC}2.3 Синхронизация системных часов"  
-#echo '2.3 Синхронизация системных часов'
+echo -e "${BLUE}:: ${NC}Синхронизация системных часов"  
+#echo 'Синхронизация системных часов'
 # Syncing the system clock
 #echo 'Синхронизируем наши системные часы, включаем ntp, если надо сменим часовой пояс'
 # Sync our system clock, enable ntp, change the time zone if necessary
