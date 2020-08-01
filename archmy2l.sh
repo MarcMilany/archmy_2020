@@ -562,8 +562,8 @@ echo -e "${GREEN}==> ${NC}Установить загрузчик GRUB(legacy)?"
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если у вас уже имеется BOOT раздел от другой (предыдущей) системы gnu-linux, с установленным на нём GRUB."
 #echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
 # You can skip this step if you are not sure of the correct choice
-read -p " 1 - Установить GRUB, 2 - Для платформ i386-pc, 0 - Нет пропустить: " x_grub
-if [[ $x_grub == 1 ]]; then
+read -p " 1 - Установить GRUB, 2 - Для платформ i386-pc, 0 - Нет пропустить: " i_grub
+if [[ $i_grub == 1 ]]; then
 pacman -Syy
 pacman -S grub --noconfirm
 lsblk -f
@@ -572,7 +572,7 @@ lsblk -f
   echo " Загрузчик GRUB установлен на выбранный вами диск (раздел). " 
 #grub-mkconfig -o /boot/grub/grub.cfg
 #  echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). "
-if [[ $x_grub == 2 ]]; then
+elif [[ $i_grub == 2 ]]; then
 pacman -Syy
 pacman -S grub --noconfirm
 lsblk -f
@@ -581,7 +581,7 @@ lsblk -f
   echo " Загрузчик GRUB установлен на выбранный вами диск (раздел). " 
 #grub-mkconfig -o /boot/grub/grub.cfg
 #  echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). " 
-elif [[ $x_grub == 0 ]]; then
+elif [[ $i_grub == 0 ]]; then
   echo 'Операция пропущена.'
 fi
 
