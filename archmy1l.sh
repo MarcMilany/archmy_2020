@@ -407,10 +407,8 @@ echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
 pacman -Sy --noconfirm
 
 #****************************************************
-
-pacman -S --needed arch-install-scripts wget libnewt
 EDITOR=nano
-
+pacman -S --needed arch-install-scripts wget libnewt
 libnewt
 #****************************************************
 
