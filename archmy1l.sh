@@ -1152,8 +1152,82 @@ rm /mnt/etc/pacman.d/mirrorlist
 #rm /etc/pacman.d/mirrorlist.old
 # -------------------------------------------------------------------
 #
-
-#
+clear
+echo ""
+echo -e "${GREEN}==> ${NC}Сменить зеркала для увеличения скорости загрузки пакетов?" 
+#echo 'Сменить зеркала для увеличения скорости загрузки пакетов?'
+# Change mirrors to increase the download speed of packages?
+echo -e "${BLUE}:: ${NC}Загрузка свежего списка зеркал со страницы Mirror Status, и обновление файла mirrorlist."
+#echo 'Загрузка свежего списка зеркал со страницы Mirror Status, и обновление файла mirrorlist.'
+# Loading a fresh list of mirrors from the Mirror Status page, and updating the mirrorlist file.
+# Устанавливаем и запускаем скрипт - Reflector.
+# Install and run the reflector script.
+echo " Если Вы перед запуском скрипта просмотрели его, то может возникнуть резонный вопрос зачем вновь менять список зеркал и обновлять файл mirrorlist, ведь перед установкой основной системы (base base-devel kernel) эта операция уже была выполнена. Это связано с тем что, начиная с релиза Arch Linux 2020.07.01-x86_64.iso в установочный образ был добавлен reflector. Тем самым во время установки основной системы происходит запуск скрипта - reflector, и обновляется ранее прописанный список зеркал в mirrorlist. Вам будет представлено несколько вариантов смены зеркал для увеличения скорости загрузки пакетов. "
+# If you looked at the script before running it, you may have a reasonable question why change the list of mirrors again and update the mirrorlist file, because this operation was already performed before installing the main system (base base-devel kernel). This is because, since the release of Arch Linux 2020.07.01-x86_64.iso a reflector was added to the installation image. Thus, during the installation of the main system, the reflector script is launched, and the previously registered list of mirrors in the mirrorlist is updated. You will be presented with several options for changing mirrors to increase the speed of loading packages.
+echo " Огласите весь список, пожалуйста! "
+# Read out the entire list, please!
+echo " 1 - Команда отфильтрует зеркала для 'Russia' по протоколам (https,http), отсортирует их по скорости загрузки и обновит файл mirrorlist. "
+echo " 2 - Команда подробно выведет список 50 наиболее недавно обновленных HTTP-зеркал, отсортирует их по скорости загрузки и обновит файл mirrorlist. "
+echo " 3 - То же, что и в предыдущем примере, но будут взяты только зеркала, расположенные в Казахстане (Kazakhstan). "
+echo " 4 - Команда отфильтрует зеркала для 'Russia', 'Belarus', 'Ukraine',' и 'Poland' по протоколам (https,http), отсортирует их по скорости загрузки и обновит файл mirrorlist. "
+echo " Будьте внимательны! Не переживайте, перед обновлением зеркал будет сделана копия (backup) предыдущего файла mirrorlist, и в последствии будет сделана копия (backup) нового файла mirrorlist. Эти копии (backup) Вы сможете найти в установленной системе в /etc/pacman.d/mirrorlist - (новый список) , и в /etc/pacman.d/mirrorlist.backup (старый список). В любой ситуации выбор всегда остаётся за вами. "
+# Be careful! Don't worry, before updating mirrors, a copy (backup) of the previous mirrorlist file will be made, and later a copy (backup) of the new mirrorlist file will be made. These copies (backup) You can find it in the installed system in /etc/pacman.d/mirrorlist - (new list), and in /etc/pacman.d/mirrorlist.backup (the old list). In any situation, the choice is always yours.
+echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
+#echo 'Установка производится в порядке перечисления'
+# Installation Is performed in the order listed
+echo " Если Вы находитесь в России рекомендую выбрать вариант "1" "
+# To eliminate errors in the system, I recommend "1"
+echo ""
+while
+read -p " 1 - Russia (https,http), 2 - 50 HTTP-зеркал, 3 - Kazakhstan (http), 4 - Russia, Belarus, Ukraine, Poland (https,http), 0 - Пропустить обновление зеркал: " zerkala  # sends right after the keypress (отправляет сразу после нажатия клавиши)
+echo ''   
+    [[ "$zerkala" =~ [^15] ]]
+do
+    :
+done
+ if [[ $zerkala == 1 ]]; then
+  echo " Загрузка свежего списка зеркал со страницы Mirror Status "
+pacman -S reflector --noconfirm
+#pacman -Sy --noconfirm --noprogressbar --quiet reflector
+reflector --verbose --country 'Russia' -l 7 -p https -p http -n 7 --save /etc/pacman.d/mirrorlist --sort rate  
+#reflector --verbose --country 'Russia' -l 7 -p https -p http -n 7 --sort rate --save /etc/pacman.d/mirrorlist
+elif [[ $zerkala == 2 ]]; then
+  echo " Загрузка свежего списка зеркал со страницы Mirror Status "
+pacman -S reflector --noconfirm
+reflector --verbose -l 50 -p http --sort rate --save /etc/pacman.d/mirrorlist
+reflector --verbose -l 15 --sort rate --save /etc/pacman.d/mirrorlist
+elif [[ $zerkala == 3 ]]; then
+  echo " Загрузка свежего списка зеркал со страницы Mirror Status "
+reflector --verbose --country Kazakhstan -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist  
+# reflector --verbose --country 'United States' -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
+elif [[ $zerkala == 4 ]]; then
+  echo " Загрузка свежего списка зеркал со страницы Mirror Status "
+reflector -c "Russia" -c "Belarus" -c "Ukraine" -c "Poland" -f 20 -l 20 -p https -p http -n 20 --save /etc/pacman.d/mirrorlist --sort rate
+#reflector --verbose --country 'Russia' --country 'Belarus' --country 'Ukraine' --country 'Poland' -f 20 -l 20 -p https -p http -n 20 --save /etc/pacman.d/mirrorlist --sort rate
+  elif [[ $zerkala == 0 ]]; then
+   echo ' Смена зеркал пропущена. '   
+fi
+#pacman -Syy
+clear
+#lsblk -f
+# ------------------------------------------------------------
+# Важно:
+# Обязательно сделайте резервную копию файла /etc/pacman.d/mirrorlist:
+# cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+# Чтобы увидеть список всех доступных опций, наберите:
+#reflector --help
+# Команда отфильтрует 12 зеркал russia, отсортирует по скорости и обновит файл mirrorlist
+#sudo reflector -c "Russia" -f 12 -l 12 --verbose --save /etc/pacman.d/mirrorlist
+#------------------------------------------------------------------------
+# Reflector (Русский) Wiki:
+# https://wiki.archlinux.org/index.php/Reflector_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
+# Reflector — скрипт, который автоматизирует процесс настройки зеркал, включающий в себя загрузку свежего списка зеркал со страницы Mirror Status, фильтрацию из них наиболее обновленных, сортировку по скорости и сохранение в /etc/pacman.d/mirrorlist.
+# https://www.linuxsecrets.com/archlinux-wiki/wiki.archlinux.org/index.php/
+# Эта страница сообщает о состоянии всех известных, общедоступных и активных зеркал Arch Linux:
+# https://www.archlinux.org/mirrors/status/
+# =================================================================
+# 
+echo ""
 echo -e "${BLUE}:: ${NC}Копируем созданный список зеркал (mirrorlist) в /mnt"
 #echo 'Копируем созданный список зеркал (mirrorlist) в /mnt'
 # Copying the created list of mirrors (mirrorlist) to /mnt
