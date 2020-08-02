@@ -921,13 +921,7 @@ echo -e "${YELLOW}==> ${NC}Установка производится в пор
 echo " Чтобы исключить ошибки в работе системы рекомендую "1" "
 # To eliminate errors in the system, I recommend "1"
 echo ""
-while
 read -p " 1 - base + base-devel + packages, 2 - base + packages, 3 - base + base-devel, 4 - base: " x_pacstrap  # sends right after the keypress (отправляет сразу после нажатия клавиши)
-echo ''   
-    [[ "$x_pacstrap" =~ [^12] ]]
-do
-    :
-done
  if [[ $x_pacstrap == 1 ]]; then
   clear
   echo " Установка выбранного вами, групп "
@@ -1010,13 +1004,7 @@ echo -e "${YELLOW}==> ${NC}Установка производится в пор
 #echo 'Установка производится в порядке перечисления'
 # Installation Is performed in the order listed
 echo ""
-while
-read -p " 1 - LINUX, 2 - LINUX_HARDENED, 3 - LINUX_LTS, 4 - LINUX_ZEN: " x_kernel
-echo ''   
-    [[ "$x_kernel" =~ [^12] ]]
-do
-    :
-done  
+read -p " 1 - LINUX, 2 - LINUX_HARDENED, 3 - LINUX_LTS, 4 - LINUX_ZEN: " x_kernel 
 if [[ $x_kernel == 1 ]]; then
   clear
  echo " Установка выбранного вами ядра (Kernel linux) "
@@ -1078,13 +1066,7 @@ echo " Чтобы исключить ошибки в работе системы
 echo " Преимущество использования метода UUID состоит в том, что вероятность столкновения имен намного меньше, чем с метками. Далее он генерируется автоматически при создании файловой системы. "
 # The advantage of using the UUID method is that the probability of names colliding is much less than with placemarks. It is then generated automatically when the file system is created.
 echo ""
-while
 read -p " 1 - UUID, 2 - LABEL, 3 - PARTLABEL, 4 - PARTUUID: " x_fstab  # sends right after the keypress (отправляет сразу после нажатия клавиши)
-echo ''   
-    [[ "$x_fstab" =~ [^12] ]]
-do
-    :
-done
  if [[ $x_fstab == 1 ]]; then
   clear
   echo " Генерируем fstab выбранным вами методом "
@@ -1190,13 +1172,7 @@ echo -e "${YELLOW}==> ${NC}Установка производится в пор
 echo " Если Вы находитесь в России рекомендую выбрать вариант "1" "
 # To eliminate errors in the system, I recommend "1"
 echo ""
-while
 read -p " 1 - Russia (https,http), 2 - 50 HTTP-зеркал, 3 - Kazakhstan (http), 4 - Russia, Belarus, Ukraine, Poland (https,http), 0 - Пропустить обновление зеркал: " zerkala  # sends right after the keypress (отправляет сразу после нажатия клавиши)
-echo ''   
-    [[ "$zerkala" =~ [^15] ]]
-do
-    :
-done
  if [[ $zerkala == 1 ]]; then
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
 pacman -S reflector --noconfirm
