@@ -1003,6 +1003,7 @@ echo -e "${YELLOW}==> ${NC}Установка производится в пор
 #echo 'Установка производится в порядке перечисления'
 # Installation Is performed in the order listed
 echo ""
+while
 read -p " 1 - LINUX, 2 - LINUX_HARDENED, 3 - LINUX_LTS, 4 - LINUX_ZEN: " x_kernel  
 if [[ $x_kernel == 1 ]]; then
   clear
@@ -1040,19 +1041,76 @@ fi
 clear
 echo ""
 #
-echo -e "${BLUE}:: ${NC}Настройка системы, генерируем fstab" 
+echo -e "${GREEN}==> ${NC}Настройка системы, генерируем fstab" 
 #echo 'Настройка системы, генерируем fstab'
 # Configuring the system, generating fstab
-echo " UUID - genfstab -U -p /mnt > /mnt/etc/fstab "
-genfstab -pU /mnt >> /mnt/etc/fstab
+echo " Файл /etc/fstab используется для настройки параметров монтирования различных блочных устройств, разделов на диске и удаленных файловых систем. "
+# The /etc/fstab file is used to configure mounting parameters for various block devices, disk partitions, and remote file systems.
+echo " Таким образом, и локальные, и удаленные файловые системы, указанные в /etc/fstab, будут правильно смонтированы без дополнительной настройки. "
+# This way, both local and remote file systems specified in /etc/fstab will be correctly mounted without any additional configuration.
+echo " Существует четыре различных схемы для постоянного именования: по метке , по uuid , по id и по пути . Для тех, кто использует диски с таблицей разделов GUID (GPT) , могут использоваться две дополнительные схемы : -Partlabel и -Parduuid . Вы также можете использовать статические имена устройств с помощью Udev. "
+# There are four different schemes for permanent naming: by label , by uuid, by id, and by path . For those who use disks with a GUID partition table (GPT) , two additional schemes can be used : -part label and-Parduuid . You can also use static device names using Udev.
+echo " Огласите весь список, пожалуйста! "
+# Read out the entire list, please!
+echo " 1 - По-UUID ("UUID" "genfstab -U"). UUID - это механизм, который присваивает каждой файловой системе уникальный идентификатор. Эти идентификаторы генерируются утилитами файловой системы (например mkfs.*), когда устройство отформатировано и спроектированы таким образом, что конфликты маловероятны. Все файловые системы GNU / Linux (включая заголовки swap и LUKS необработанных зашифрованных устройств) поддерживают UUID. Файловые системы FAT, exFAT и NTFS не поддерживают UUID. "
+echo " 2 - По меткам ("LABEL" "genfstab -L"). Большинство файловых систем поддерживают установку метки при создании файловой системы, соответствующей mkfs.*утилиты. Для некоторых файловых систем также возможно изменить метки. "
+echo " 3 - По меткам GPT ("PARTLABEL" "genfstab -t PARTLABEL"). Этот метод относится только к дискам с таблицей разделов GUID (GPT). Метки разделов GPT можно определить в заголовке записи раздела на GPT-дисках. Метод очень похож на метки файловой системы (by-label), за исключением того, что метки раздела не будут затронуты, если файловая система в разделе будет изменена. "
+echo " 4 - По UUID GPT ("PARTUUID" "genfstab -t PARTUUID"). Как и метки разделов GPT , идентификаторы UUID разделов GPT определяются в записи разделов на дисках GPT. MBR не поддерживает UUID разделов, но Linux и программное обеспечение, использующее libblkid способны генерировать псевдо PARTUUID для разделов MBR. В отличие от обычного PARTUUID раздела GPT, псевдо PARTUUID MBR может меняться при изменении номера раздела. "
+echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз взгляните на разметку вашего диска. "
+# Be careful! If you doubt your actions, you can install (base + packages), group base-devel later.
+echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
+#echo 'Установка производится в порядке перечисления'
+# Installation Is performed in the order listed
+echo " Чтобы исключить ошибки в работе системы рекомендую "1" "
+# To eliminate errors in the system, I recommend "1"
+echo " Преимущество использования метода UUID состоит в том, что вероятность столкновения имен намного меньше, чем с метками. Далее он генерируется автоматически при создании файловой системы. "
+# The advantage of using the UUID method is that the probability of names colliding is much less than with placemarks. It is then generated automatically when the file system is created.
+echo ""
+while
+read -p " 1 - UUID, 2 - LABEL, 3 - PARTLABEL, 4 - PARTUUID: " x_fstab  # sends right after the keypress (отправляет сразу после нажатия клавиши)
+echo ''   
+    [[ "$x_fstab" =~ [^12] ]]
+do
+    :
+done
+ if [[ $x_fstab == 1 ]]; then
+  clear
+  echo " Генерируем fstab выбранным вами методом "
+  echo " UUID - genfstab -U -p /mnt > /mnt/etc/fstab "
+  genfstab -pU /mnt >> /mnt/etc/fstab
 #genfstab -U -p /mnt > /mnt/etc/fstab
-#echo " LABEL - genfstab -L -p /mnt > /mnt/etc/fstab "
+#genfstab -U / mnt >> / mnt / etc / fstab
+# echo " Просмотреть содержимое файла fstab "
+# cat /mnt/etc/fstab
+#echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. " 
+elif [[ $x_fstab == 2 ]]; then
+  clear
+  echo " Генерируем fstab выбранным вами методом "
+  echo " LABEL - genfstab -L -p /mnt > /mnt/etc/fstab "
 #genfstab -pL /mnt > /mnt/etc/fstab
 #genfstab -L -p /mnt > /mnt/etc/fstab
-#echo "PARTUUID - genfstab -t PARTUUID -p /mnt > /mnt/etc/fstab"     
-#genfstab -t PARTUUID -p /mnt > /mnt/etc/fstab
-#echo "PARTLABEL - genfstab -t PARTLABEL -p /mnt > /mnt/etc/fstab"
+# echo " Просмотреть содержимое файла fstab "
+# cat /mnt/etc/fstab
+#echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. "
+elif [[ $x_fstab == 3 ]]; then
+  clear
+  echo " Генерируем fstab выбранным вами методом "
+  echo " PARTLABEL - genfstab -t PARTLABEL -p /mnt > /mnt/etc/fstab "
 #genfstab -t PARTLABEL -p /mnt > /mnt/etc/fstab
+# echo " Просмотреть содержимое файла fstab "
+# cat /mnt/etc/fstab
+#echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. "   
+elif [[ $x_fstab == 4 ]]; then
+  clear
+  echo " Генерируем fstab выбранным вами методом "
+  echo " PARTUUID - genfstab -t PARTUUID -p /mnt > /mnt/etc/fstab "
+#genfstab -t PARTUUID -p /mnt > /mnt/etc/fstab
+# echo " Просмотреть содержимое файла fstab "
+# cat /mnt/etc/fstab
+#echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. "
+fi 
+# clear
+echo ""
 # ----------------------------------------------------------------
 #(или genfstab -L /mnt >> /mnt/etc/fstab)
 #genfstab -p -L /mnt > /mnt/etc/fstab
@@ -1066,9 +1124,11 @@ genfstab -pU /mnt >> /mnt/etc/fstab
 # Учтите, что когда пишется >> то Вы добавляете в файл, а не переписываешь его с нуля.
 # То есть, если Вы вбивали два раза команды что написаны выше, то у Вас может в этом файле быть прописано монтирование одного и того же раздела в двух разных вариантах что чревато.
 # Команда genfstab -h может сказать многое в том числе для чего нужно -p. Исключает монтирование псевдо файловые системы. Ключик можно не использовать, ибо используется по дефолту.
+# Просмотреть все идентификаторы наших разделов можно командой: blkid или lsblk -f
 # -------------------------------------------------------------------
 # Installation guide (Русский): fstab (Русский)
 # https://wiki.archlinux.org/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
+# https://wiki.archlinux.org/index.php/Persistent_block_device_naming#by-uuid
 # ====================================================================
 #
 echo -e "${BLUE}:: ${NC}Просмотреть содержимое файла fstab"
