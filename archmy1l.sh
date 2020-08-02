@@ -401,14 +401,21 @@ echo " Будьте внимательны! Если Вы сомневаетес
 # Be careful! If you are in doubt about your actions, you can skip running the key update.
 echo -e "${RED}==> ${BOLD}Примечание: - Иногда при запуске обновления ключей возникает ошибка, не переживайте просто перезапустите работу скрипта (sh -название скрипта-)${NC}"
 # Note: - Sometimes when you start updating keys, an error occurs, do not worry, just restart the script (sh -script name-)
-read -p " 1 - Да обновить , 0 - Нет пропустить: " x_key
-if [[ $x_key == 1 ]]; then 
- clear     
-pacman-key --refresh-keys 
-elif [[ $x_key == 0 ]]; then
-  echo 'Обновление ключей пропущено.'
+while
+read -p " 1 - Да обновить , 0 - Нет пропустить: " x_key 
+    echo ''
+    [[ "$x_key" =~ [^10] ]]
+do
+    :
+done
+ if [[ $x_key == 1 ]]; then
+  clear
+  pacman-key --refresh-keys 
+  elif [[ $x_key == 0 ]]; then
+   echo " Обновление ключей пропущено "   
 fi
 #
+echo ""
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
 #echo 'Обновим базы данных пакетов'
 # Updating the package databases
