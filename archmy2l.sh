@@ -597,6 +597,7 @@ fi
 # https://losst.ru/nastrojka-zagruzchika-grub
 # ============================================================================
 
+echo ""
 echo -e "${GREEN}==> ${NC}Установить Микрокод для процессора INTEL_CPU, AMD_CPU?"
 #echo 'Установить Микрокод для процессора INTEL_CPU, AMD_CPU?'
 # Install the Microcode for the CPU INTEL_CPU, AMD_CPU?
@@ -637,6 +638,7 @@ fi
 # https://wiki.archlinux.org/index.php/Install_Arch_Linux_on_a_removable_medium
 # ============================================================================
 
+echo ""
 echo -e "${BLUE}:: ${NC}Обновляем grub.cfg (Сгенерируем grub.cfg)"
 #echo 'Обновляем grub.cfg (Сгенерируем grub.cfg)'
 # Updating grub.cfg (Generating grub.cfg)
@@ -650,6 +652,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 #sudo cp /boot/grub/grub.cfg grub.cfg.backup
 # ============================================================================
 
+echo ""
 echo -e "${YELLOW}==> ${NC}Если в системе будут несколько ОС, то это также ставим"
 #echo 'Если в системе будут несколько ОС, то это также ставим'
 # If the system will have several operating systems, then this is also set
@@ -659,6 +662,7 @@ pacman -S os-prober mtools fuse
 # Для двойной загрузки Arch Linux с другой системой Linux, установить другой Linux без загрузчика, вам необходимо установить os-prober — утилиту, необходимую для обнаружения других операционных систем. И обновить загрузчик Arch Linux, чтобы иметь возможность загружать новую ОС.
 # ============================================================================
 
+echo ""
 echo -e "${BLUE}:: ${NC}Ставим программы для Wi-fi"
 #echo 'Ставим программу для Wi-fi'
 # Install the program for Wi-fi
@@ -678,6 +682,7 @@ pacman -S dialog wpa_supplicant iw wireless_tools net-tools --noconfirm
 #fi
 # ------------------------------------------------------------------
 
+echo ""
 echo -e "${BLUE}:: ${NC}Добавляем пользователя и прописываем права, группы"
 #echo 'Добавляем пользователя и прописываем права, группы'
 # Adding a user and prescribing rights, groups
@@ -692,6 +697,7 @@ echo -e "${GREEN}==> ${NC}Устанавливаем пароль пользов
 echo " passwd username "
 passwd $username
 
+echo ""
 echo -e "${BLUE}:: ${NC}Устанавливаем SUDO"
 #echo 'Устанавливаем SUDO'
 # Installing SUDO
@@ -734,6 +740,7 @@ sudo pacman -Sy
 #pacman -Syy --noconfirm --noprogressbar --quiet
 # Синхронизация и обновление пакетов (-yy принудительно обновить даже если обновленные)
 
+echo ""
 echo -e "${RED}==> ${NC}Куда устанавливем Arch Linux на виртуальную машину?"
 #echo "Куда устанавливем Arch Linux на виртуальную машину?"
 # Where do we install Arch Linux on the VM?
@@ -856,6 +863,7 @@ systemctl enable lightdm.service
 sleep 1 
 systemctl enable NetworkManager
 
+echo ""
 echo -e "${GREEN}==> ${NC}Добавим службу Dhcpcd в автозагрузку (для проводного интернета)?"
 #echo 'Добавим службу Dhcpcd в автозагрузку (для проводного интернета)?'
 # Adding the Dhcpcd service to auto-upload (for wired Internet)?
