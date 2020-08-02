@@ -1011,7 +1011,12 @@ echo -e "${YELLOW}==> ${NC}Установка производится в пор
 # Installation Is performed in the order listed
 echo ""
 while
-read -p " 1 - LINUX, 2 - LINUX_HARDENED, 3 - LINUX_LTS, 4 - LINUX_ZEN: " x_kernel  
+read -p " 1 - LINUX, 2 - LINUX_HARDENED, 3 - LINUX_LTS, 4 - LINUX_ZEN: " x_kernel
+echo ''   
+    [[ "$x_kernel" =~ [^12] ]]
+do
+    :
+done  
 if [[ $x_kernel == 1 ]]; then
   clear
  echo " Установка выбранного вами ядра (Kernel linux) "
