@@ -739,7 +739,7 @@ echo " Если таковой был создан при разметке в cf
 echo " Можно использовать раздел от предыдущей системы (и его не форматировать),  
 далее в процессе установки можно будет удалить все скрытые файлы и папки в каталоге 
 пользователя. "
-read -p " 1 - Да, 0 - Нет: " homes  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+read -p " 1 - Да добавить Home раздел , 0 - Нет не добавлять: " homes  # sends right after the keypress; # отправляет сразу после нажатия клавиши
 if [[ $homes == 0 ]]; then
   echo 'Добавление Home раздела пропущено.'
 elif [[ $homes == 1 ]]; then
@@ -747,7 +747,7 @@ elif [[ $homes == 1 ]]; then
 echo -e "${BLUE}:: ${NC}Форматируем Home раздел?"
 #echo 'Форматирование домашнего раздела (HOME)'
 # Formatting the home partition
-read -p " 1 - Да, 0 - Нет: " homeF  # sends right after the keypress; # отправляет сразу после
+read -p " 1 - Да форматировать, 0 - Нет не форматировать: " homeF  # sends right after the keypress; # отправляет сразу после
    if [[ $homeF == 1 ]]; then
    echo ""
    lsblk -f
