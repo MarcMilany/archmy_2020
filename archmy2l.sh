@@ -318,12 +318,13 @@ clear
 echo ""
 echo " Очистка пропущена "
 elif [[ $i_rm == 1 ]]; then
+clear    
 rm -rf /home/$username/.*
-clear
 echo ""
 echo " Очистка завершена "
 fi 
 #
+echo ""
 echo -e "${BLUE}:: ${NC}Устанавливаем ваш часовой пояс"
 #echo 'Устанавливаем ваш часовой пояс'
 # Setting your time zone
@@ -509,7 +510,7 @@ echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf
 # Если есть желание экспериментировать, консольные шрифты находятся в /usr/share/kbd/consolefonts/ смотрим с помощью ls 
 # ============================================================================
 #
-clear
+#clear
 echo ""
 echo -e "${GREEN}==> ${NC}Создадим загрузочный RAM диск (начальный RAM-диск)"
 #echo 'Создадим загрузочный RAM диск (начальный RAM-диск)'
@@ -523,15 +524,15 @@ echo " Чтобы избежать ошибки при создании RAM (mki
 # To avoid an error when creating RAM (mkinitcpio -p), we will look at options for creating a RAM disk with a particular kernel that You selected earlier.
 echo " Будьте осторожны! Если Вы сомневаетесь в своих действиях, ниже найдете информацию об установленном ядре. "
 # Be careful! If you doubt your actions, you will find information about the installed kernel below.
-echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
-#echo 'Установка производится в порядке перечисления'
-# Installation Is performed in the order listed
 echo -e "${MAGENTA}==> ${BOLD}Вы используете нестандартное ядро - давайте выясним, какое именно ${NC}"
 # You are using a non-standard core - let's find out which one
-uname -r
+  uname -r
+echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
+#echo 'Установка производится в порядке перечисления'
+# Installation Is performed in the order listed  
 #pacman -S --needed mkinitcpio 
 echo ""
-read -p " 1 - для ядра LINUX, 2 - для ядра LINUX_HARDENED, 3 - для ядра LINUX_LTS, 4 - для ядра LINUX_LTS, 0 - Пропустить создание загрузочного RAM диска: " x_ram 
+read -p " 1 - для ядра LINUX, 2 - для ядра LINUX_HARDENED, 3 - для ядра LINUX_LTS, 4 - для ядра LINUX_LTS, 0 - Пропустить создание загрузочного RAM диска: " x_ram
 if [[ $x_ram == 1 ]]; then
   clear
   echo " Создадим загрузочный RAM диск - для ядра (linux) "
