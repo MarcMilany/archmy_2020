@@ -315,7 +315,7 @@ do
 done
 if [[ $i_rm == 0 ]]; then
 clear
-echo ""
+#echo ""
 echo " Очистка пропущена "
 elif [[ $i_rm == 1 ]]; then
 clear    
@@ -661,7 +661,7 @@ fi
 # https://losst.ru/nastrojka-zagruzchika-grub
 # =====================================================================
 #
-clear
+#clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установить Микрокод для процессора INTEL_CPU, AMD_CPU?"
 #echo 'Установить Микрокод для процессора INTEL_CPU, AMD_CPU?'
