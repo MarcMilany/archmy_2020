@@ -392,6 +392,7 @@ echo -e "${BLUE}:: ${NC}Посмотрим дату и время без хар�
 # Let's look at the date and time without characteristics to check the time
 date
 #
+echo ""
 echo -e "${YELLOW}==> ${NC}Обновить и добавить новые ключи?"
 #echo 'Обновить и добавить новые ключи?'
 # Update and add new keys?
@@ -522,7 +523,8 @@ read -p " => Укажите диск (sda/sdb например sda или sdb) :
 sgdisk -p /dev/$cfd #sda sdb sdc sdd
 #sgdisk -p /dev/sda #sdb sdc sdd
 #
-echo -e "${GREEN}==> ${NC}Удалить (стереть) таблицу разделов на выбранном диске (sdX)?"
+echo ""
+echo -e "${RED}==> ${NC}Удалить (стереть) таблицу разделов на выбранном диске (sdX)?"
 #echo 'Удалить (стереть) таблицу разделов на выбранном диске (sdX)?'
 # Delete (erase) the partition table on the selected disk (sdX)?
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
@@ -620,9 +622,9 @@ fi
 # ================================================================
 #
 echo ""
-echo -e "${GREEN}==> ${NC}Создание разделов диска для ArchLinux"
-#echo 'Создание разделов диска для ArchLinux'
-# Creating disk partitions for ArchLinux
+echo -e "${GREEN}==> ${NC}Создание разделов диска для установки ArchLinux"
+#echo 'Создание разделов диска для установки ArchLinux'
+# Creating disk partitions for installing ArchLinux
 echo -e "${BLUE}:: ${NC}Вам нужна разметка диска?"
 #echo 'Вам нужна разметка диска?'
 # Do you need disk markup?
@@ -1007,6 +1009,7 @@ echo ""
 read -p " 1 - LINUX, 2 - LINUX_HARDENED, 3 - LINUX_LTS, 4 - LINUX_ZEN: " x_kernel 
 if [[ $x_kernel == 1 ]]; then
   clear
+  echo ""
  echo " Установка выбранного вами ядра (Kernel linux) "
 pacstrap /mnt linux linux-firmware # linux-headers
   echo " Ядро (Kernel) операционной системы установленно "
@@ -1014,6 +1017,7 @@ pacstrap /mnt linux linux-firmware # linux-headers
 #  genfstab -pU /mnt >> /mnt/etc/fstab  
 elif [[ $x_kernel == 2 ]]; then
   clear
+  echo ""
   echo " Установка выбранного вами ядра (Kernel linux-hardened) "
  pacstrap /mnt linux-hardened linux-firmware 
   echo " Ядро (Kernel) операционной системы установленно "
@@ -1021,6 +1025,7 @@ elif [[ $x_kernel == 2 ]]; then
 #  genfstab -pU /mnt >> /mnt/etc/fstab   
 elif [[ $x_kernel == 3 ]]; then
   clear
+  echo ""
   echo " Установка выбранного вами ядра (Kernel linux-lts) "
  pacstrap /mnt linux-lts linux-firmware 
   echo " Ядро (Kernel) операционной системы установленно "
@@ -1028,18 +1033,19 @@ elif [[ $x_kernel == 3 ]]; then
 #  genfstab -pU /mnt >> /mnt/etc/fstab  
 elif [[ $x_kernel == 4 ]]; then
   clear
+  echo ""
   echo " Установка выбранного вами ядра (Kernel linux-zen) " 
  pacstrap /mnt linux-zen linux-firmware 
   echo " Ядро (Kernel) операционной системы установленно "
 # echo " Настройка системы, генерируем fstab "
 #  genfstab -pU /mnt >> /mnt/etc/fstab  
 fi
+clear
+echo ""
 # ------------------------------------------------------------------
 # Kernel (Русский)
 # https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 # ------------------------------------------------------------------
-clear
-echo ""
 #
 echo -e "${GREEN}==> ${NC}Настройка системы, генерируем fstab" 
 #echo 'Настройка системы, генерируем fstab'
@@ -1066,7 +1072,7 @@ echo " Чтобы исключить ошибки в работе системы
 echo " Преимущество использования метода UUID состоит в том, что вероятность столкновения имен намного меньше, чем с метками. Далее он генерируется автоматически при создании файловой системы. "
 # The advantage of using the UUID method is that the probability of names colliding is much less than with placemarks. It is then generated automatically when the file system is created.
 echo ""
-read -p " 1 - UUID, 2 - LABEL, 3 - PARTLABEL, 4 - PARTUUID: " x_fstab  # sends right after the keypress (отправляет сразу после нажатия клавиши)
+read -p " 1 - UUID genfstab -U, 2 - LABEL genfstab -L, 3 - PARTLABEL genfstab -t PARTLABEL, 4 - PARTUUID genfstab -t PARTUUID: " x_fstab  # sends right after the keypress (отправляет сразу после нажатия клавиши)
  if [[ $x_fstab == 1 ]]; then
   clear
   echo " Генерируем fstab выбранным вами методом "
@@ -1231,6 +1237,7 @@ echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зе�
 # View the list of mirror servers /mnt/etc/pacman.d/mirrorlist
 cat /mnt/etc/pacman.d/mirrorlist
 #
+echo ""
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
 #echo 'Обновим базы данных пакетов'
 # Updating the package databases
