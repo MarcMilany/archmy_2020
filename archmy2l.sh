@@ -520,13 +520,13 @@ echo " Arch Linux имеет mkinitcpio - это Bash скрипт исполь�
 echo " mkinitcpio является модульным инструментом для построения initramfs CPIO образа, предлагая много преимуществ по сравнению с альтернативными методами. Предоставляет много возможностей для настройки из командной строки ядра без необходимости пересборки образа. "
 # mkinitcpio is a modular tool for building an initramfs CPIO image, offering many advantages over alternative methods.
 # Provides many options for configuring the kernel from the command line without having to rebuild the image.
-echo " Чтобы избежать ошибки при создании RAM (mkinitcpio -p), мы рассмотрим варианты создания RAM-диска, с конкретным ядром, которое Вы выбрали ранее. "
-# To avoid an error when creating RAM (mkinitcpio -p), we will look at options for creating a RAM disk with a particular kernel that You selected earlier.
-echo " Будьте осторожны! Если Вы сомневаетесь в своих действиях, ниже найдете информацию об установленном ядре. "
-# Be careful! If you doubt your actions, you will find information about the installed kernel below.
-echo -e "${MAGENTA}==> ${BOLD}Вы используете нестандартное ядро - давайте выясним, какое именно ${NC}"
-# You are using a non-standard core - let's find out which one
-  uname -r
+echo " Чтобы избежать ошибки при создании RAM (mkinitcpio -p), вспомните какое именно ядро Вы выбрали ранее.  "
+# To avoid an error when creating RAM (mkinitcpio -p), remember which core you selected earlier.
+echo " Будьте внимательными! Здесь варианты создания RAM-диска, с конкретными ядрами. "
+# Be careful! Here are options for creating a RAM disk with specific cores.
+#echo -e "${MAGENTA}==> ${BOLD}Давайте поcмотрим, какое ядро сейчас используется в установочном .iso ${NC}"
+# Let's see which kernel is currently being used in the installation .iso
+#uname -r
 echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
 #echo 'Установка производится в порядке перечисления'
 # Installation Is performed in the order listed  
@@ -554,6 +554,7 @@ elif [[ $x_ram == 0 ]]; then
   echo " Создание загрузочного RAM диска пропущено " 
 fi
 #echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf
+sleep 01
 clear
 echo ""
 # ----------------------------------------------------------
@@ -746,16 +747,18 @@ pacman -S dialog wpa_supplicant iw wireless_tools net-tools --noconfirm
 #  echo 'Установка программ пропущена.'
 #fi
 # ------------------------------------------------------------------
-
+#
 echo ""
 echo -e "${BLUE}:: ${NC}Добавляем пользователя и прописываем права, группы"
 #echo 'Добавляем пользователя и прописываем права, группы'
 # Adding a user and prescribing rights, groups
 #useradd -m -g users -G wheel -s /bin/bash $username
 useradd -m -g users -G adm,audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel -s /bin/bash $username
+echo " Пользователь успешно добавлен в группы и права пользователя. "
 # или есть команда с правами 'админа' :
 #useradd -m -g users -G adm,audio,games,lp,optical,power,scanner,storage,video,sys,rfkill,wheel -s /bin/bash $username
 #
+#echo ""
 echo -e "${GREEN}==> ${NC}Устанавливаем пароль пользователя"
 #echo 'Устанавливаем пароль пользователя'
 # Setting the user password
@@ -802,6 +805,7 @@ sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 # Любая ошибка делает sudo неработоспособным.
 # ============================================================================
 #
+echo ""
 echo -e "${BLUE}:: ${NC}Раскомментируем репозиторий multilib Для работы 32-битных приложений в 64-битной системе"
 #echo 'Раскомментируем репозиторий multilib Для работы 32-битных приложений в 64-битной системе.'
 # Uncomment the multilib repository For running 32-bit applications on a 64-bit system
@@ -813,6 +817,7 @@ sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 #pacman -Syy
 echo ' Multilib репозиторий добавлен '
 
+echo ""
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
 #echo 'Обновим базы данных пакетов'
 # Updating the package databases
@@ -903,7 +908,8 @@ pacman -S $gui_install
 #sed -i 's/#!\/bin\/sh/#!\/bin\/sh\n\/usr\/bin\/VBoxClient-all/' /home/$username/.xinitrc
 
 # ------------------------------------------------------------------------
-
+#
+echo ""
 echo -e "${BLUE}:: ${NC}Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce"
 #echo 'Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce'
 # Put DE (from the English desktop environment-desktop environment) Xfce
@@ -920,13 +926,15 @@ echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
 echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
 echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile
 echo " DE (среда рабочего стола) Xfce успешно установлено "
-
+#
+echo ""
 echo -e "${BLUE}:: ${NC}Ставим DM (Display manager) менеджера входа"
 #echo 'Ставим DM (Display manager) менеджера входа'
 # Install the DM (Display manager) of the login Manager
 pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm
 echo " Установка DM (менеджера входа) завершена "
-
+#
+echo ""
 echo -e "${BLUE}:: ${NC}Ставим сетевые утилиты Networkmanager"
 #echo 'Ставим сетевые утилиты "Networkmanager"'
 # Put the network utilities "Networkmanager"
@@ -936,13 +944,16 @@ pacman -S networkmanager networkmanager-openvpn network-manager-applet ppp --noc
 #sudo pacman -S networkmanager-openvpn
 # https://wiki.archlinux.org/index.php/Networkmanager-openvpn
 # https://www.archlinux.org/packages/extra/x86_64/networkmanager-openvpn/
-
+# ----------------------------------------------------------------
+#
+echo ""
 echo -e "${BLUE}:: ${NC}Ставим шрифты"
 #echo 'Ставим шрифты'
 # Put the fonts
 pacman -S ttf-liberation ttf-dejavu opendesktop-fonts ttf-arphic-ukai ttf-arphic-uming ttf-hanazono --noconfirm 
 pacman -S ttf-fireflysung ttf-sazanami --noconfirm  #китайские иероглифы
-
+#
+echo ""
 echo -e "${BLUE}:: ${NC}Подключаем автозагрузку менеджера входа и интернет"
 #echo 'Подключаем автозагрузку менеджера входа и интернет'
 # Enabling auto-upload of the login Manager and the Internet
@@ -966,11 +977,13 @@ elif [[ $x_dhcpcd == 0 ]]; then
   echo ' Dhcpcd не включен в автозагрузку, при необходиости это можно будет сделать уже в установленной системе '
 fi
 #
+echo ""
 echo -e "${BLUE}:: ${NC}Монтирование разделов NTFS и создание ссылок"
 #echo 'Монтирование разделов NTFS и создание ссылок'
 # NTFS support (optional)
 sudo pacman -S ntfs-3g --noconfirm
 #
+echo ""
 echo -e "${BLUE}:: ${NC}Создаём нужные директории (Downloads,Music,Pictures,Videos,Documents)"
 #echo 'Создаём нужные директории (Downloads,Music,Pictures,Videos,Documents)'
 # Creating the necessary directories (Downloads,Music,Pictures,Videos,Documents)
@@ -982,7 +995,8 @@ xdg-user-dirs-update
 # https://wiki.archlinux.org/index.php/XDG_user_directories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 # https://wiki.yola.ru/xdg/user-dirs
 # ============================================================================
-
+#
+echo ""
 echo -e "${BLUE}:: ${NC}Установка базовых программ и пакетов"
 #echo 'Установка базовых программ и пакетов'
 # Installing basic programs and packages
@@ -996,7 +1010,8 @@ sudo pacman -S wget --noconfirm
 # Команда wget linux, обычно поставляется по умолчанию в большинстве дистрибутивов, но если нет, её можно очень просто установить.
 # https://losst.ru/komanda-wget-linux
 # ============================================================================
-
+#
+echo ""
 echo -e "${GREEN}=> ${BOLD}Создадим конфигурационный файл для установки системных переменных /etc/sysctl.conf ${NC}"
 #echo 'Создадим конфигурационный файл для установки системных переменных /etc/sysctl.conf'
 # Creating a configuration file for setting system variables /etc/sysctl.conf
