@@ -873,12 +873,12 @@ echo " Dhcpcd успешно добавлен в автозагрузку "
 elif [[ $x_dhcpcd == 0 ]]; then
   echo ' Dhcpcd не включен в автозагрузку, при необходиости это можно будет сделать уже в установленной системе '
 fi
-
+#
 echo -e "${BLUE}:: ${NC}Монтирование разделов NTFS и создание ссылок"
 #echo 'Монтирование разделов NTFS и создание ссылок'
 # NTFS support (optional)
 sudo pacman -S ntfs-3g --noconfirm
-
+#
 echo -e "${BLUE}:: ${NC}Создаём нужные директории (Downloads,Music,Pictures,Videos,Documents)"
 #echo 'Создаём нужные директории (Downloads,Music,Pictures,Videos,Documents)'
 # Creating the necessary directories (Downloads,Music,Pictures,Videos,Documents)
