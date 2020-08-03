@@ -294,6 +294,33 @@ echo $hostname > /etc/hostname
 # echo имя_компьютера > /etc/hostname
 # =======================================================
 #
+echo ""
+echo -e "${GREEN}==> ${NC}Очистить папку конфигурации (настроек), кеш, и скрытые каталоги в /home/$username от старой установленной системы? "
+#echo 'Очистить папку конфигурации, кеш, и скрытые каталоги в /home/$username от старой установленной системы?' 
+# Clear the config folder, cache, and hidden directories in /home/$username from the old installed system? 
+echo -e "${CYAN}:: ${BOLD}Если таковая присутствует, и не была удалена при создании новой разметки диска. ${NC}"
+#echo 'Если таковая присутствует, и не была удалена при создании новой разметки диска.' 
+# If present, and was not deleted when creating the new disk markup.
+echo -e "${YELLOW}==> ${NC}Будьте осторожны! Если Вы сомневаетесь в своих действиях, просто пропустите этот пункт."
+#echo 'Будьте осторожны! Если Вы сомневаетесь в своих действиях, просто пропустите этот пункт.'
+# Be careful! If you are in doubt about your actions, just skip this point.
+while 
+echo ""
+  read -n1 -p  " 1 - Да очистить папки конфигов, 0 - Нет пропустить очистку: " i_rm   # sends right after the keypress 
+echo ''    
+   [[ "$i_rm" =~ [^10] ]]     
+do
+    :
+done
+if [[ $i_rm == 0 ]]; then
+clear
+echo " Очистка пропущена "
+elif [[ $i_rm == 1 ]]; then
+rm -rf /home/$username/.*
+clear
+echo " Очистка завершена "
+fi 
+#
 echo -e "${BLUE}:: ${NC}Устанавливаем ваш часовой пояс"
 #echo 'Устанавливаем ваш часовой пояс'
 # Setting your time zone
