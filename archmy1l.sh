@@ -1238,6 +1238,7 @@ echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
 #sudo pacman-key --refresh-keys
 sudo pacman -Sy 
 #
+echo ""
 echo -e "${GREEN}==> ${NC}Меняем корень и переходим в нашу недавно скачанную систему" 
 #echo 'Меняем корень и переходим в нашу недавно скачанную систему'
 # Change the root and go to our recently downloaded system
