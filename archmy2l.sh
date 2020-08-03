@@ -476,16 +476,54 @@ echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf
 # (только в консоли, я не уверен нужно ли это вообще, но помню в убунте надо было писать на русском "да/нет").
 # Если есть желание экспериментировать, консольные шрифты находятся в /usr/share/kbd/consolefonts/ смотрим с помощью ls 
 # ============================================================================
-
-echo -e "${BLUE}:: ${NC}Создадим загрузочный RAM диск (начальный RAM-диск)"
+#
+clear
+echo ""
+echo -e "${GREEN}==> ${NC}Создадим загрузочный RAM диск (начальный RAM-диск)"
 #echo 'Создадим загрузочный RAM диск (начальный RAM-диск)'
 # Creating a bootable RAM disk (initial RAM disk)
-mkinitcpio -p linux-lts
-#mkinitcpio -p linux
-#mkinitcpio -P linux
-#mkinitcpio -p linux-zen
+echo " Arch Linux имеет mkinitcpio - это Bash скрипт используемый для создания начального загрузочного диска системы. "
+# Arch Linux has mkinitcpio, a Bash script used to create the system's initial boot disk.
+echo " mkinitcpio является модульным инструментом для построения initramfs CPIO образа, предлагая много преимуществ по сравнению с альтернативными методами. Предоставляет много возможностей для настройки из командной строки ядра без необходимости пересборки образа. "
+# mkinitcpio is a modular tool for building an initramfs CPIO image, offering many advantages over alternative methods.
+# Provides many options for configuring the kernel from the command line without having to rebuild the image.
+echo " Чтобы избежать ошибки при создании RAM (mkinitcpio -p), мы рассмотрим варианты создания RAM-диска, с конкретным ядром, которое Вы выбрали ранее. "
+# To avoid an error when creating RAM (mkinitcpio -p), we will look at options for creating a RAM disk with a particular kernel that You selected earlier.
+echo " Будьте осторожны! Если Вы сомневаетесь в своих действиях, ниже найдете информацию об установленном ядре. "
+# Be careful! If you doubt your actions, you will find information about the installed kernel below.
+echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
+#echo 'Установка производится в порядке перечисления'
+# Installation Is performed in the order listed
+echo -e "${MAGENTA}==> ${BOLD}Вы используете нестандартное ядро - давайте выясним, какое именно ${NC}"
+# You are using a non-standard core - let's find out which one
+uname -r
+#pacman -S --needed mkinitcpio 
+echo ""
+read -p " 1 - для ядра LINUX, 2 - для ядра LINUX_HARDENED, 3 - для ядра LINUX_LTS, 4 - для ядра LINUX_LTS, 0 - Пропустить создание загрузочного RAM диска: " x_ram 
+if [[ $x_ram == 1 ]]; then
+  clear
+  echo " Создадим загрузочный RAM диск - для ядра (linux) "
+  mkinitcpio -p linux   # mkinitcpio -P linux
+# mkinitcpio -P   
+elif [[ $x_ram == 2 ]]; then
+  clear
+  echo " Создадим загрузочный RAM диск - для ядра (linux-hardened) "
+  mkinitcpio -p linux-hardened   
+elif [[ $x_ram == 3 ]]; then
+  clear
+  echo " Создадим загрузочный RAM диск - для ядра (linux-lts) "
+  mkinitcpio -p linux-lts  
+elif [[ $x_ram == 4 ]]; then
+  clear
+  echo " Создадим загрузочный RAM диск - для ядра (linux-zen) " 
+  mkinitcpio -p linux-zen 
+elif [[ $x_ram == 0 ]]; then
+  echo " Создание загрузочного RAM диска пропущено " 
+fi
 #echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf
-# ============================================================================
+clear
+echo ""
+# ----------------------------------------------------------
 # Команда: mkinitcpio -p linux-lts  - применяется, если Вы устанавливаете
 # стабильное ядро (linux-ltc), иначе вай..вай... может быть ошибка!
 # Команда: mkinitcpio -p linux-zen  - применяется, если Вы устанавливаете
@@ -494,29 +532,29 @@ mkinitcpio -p linux-lts
 # с устанавливаемым релизом (rolling release) применяется команда : mkinitcpio -p linux.
 # Ошибки при создании RAM mkinitcpio -p linux. Как исправить?
 # https://qna.habr.com/q/545694
-# ============================================================================
-# mkinitcpio это Bash скрипт используемый для создания начального загрузочного диска системы
+# -------------------------------------------------------------
+# Традиционно ядро отвечает за обнаружение всего оборудования и выполняет задачи на ранних этапах процесса загрузки до монтирования корневой файловой системы.
+# В настоящее время корневая файловая система может быть на широком диапазоне аппаратных средств от SCSI до SATA и USB дисков, управляемых различными контроллерами от разных производителей. Кроме того корневая файловая система может быть зашифрована или сжата, находиться в RAID массиве или группе логических томов. Простой способ справиться с этой сложностью является передача управления в пользовательском пространстве: начальный загрузочный диск.
 # Параметр -p (сокращение от preset) указывает на использование preset файла из /etc/mkinitcpio.d (т.е. /etc/mkinitcpio.d/linux.preset для linux). preset файл определяет параметры сборки initramfs образа вместо указания файла конфигурации и выходной файл каждый раз.
-
 # Warning: preset файлы используются для автоматической пересборки initramfs после обновления ядра. Будьте внимательны при их редактировании.
 # Варианты создания initcpio:
 # Пользователи могут вручную создать образ с помощью альтернативного конфигурационного файла. Например, следующее будет генерировать initramfs образ в соответствии с /etc/mkinitcpio-custom.conf и сохранит его в /boot/linux-custom.img.
 # mkinitcpio -c /etc/mkinitcpio-custom.conf -g /boot/linux-custom.img
 # Если необходимо создать образ с ядром отличным от загруженного.
 # Доступные версии ядер можно посмотреть в /usr/lib/modules.
-# ---------------------------------------------------------------------------
+# -------------------------------------------------------------
 # После этого нужно подредактировать хуки keymap.
 # Откройте файл /etc/mkinitcpio.conf:  
 #nano /etc/mkinitcpio.conf
 # Ищём строчку HOOKS и добавляем в конце 3 хука (внутри скобок):
 #HOOKS = (... consolefont keymap systemd)
-
+# ----------------------------------------------------------
 #/etc/mkinitcpio.conf - основной конфигурационный файл mkinitcpio. Кроме того, в каталоге /etc/mkinitcpio.d располагаются preset файлы (e.g. /etc/mkinitcpio.d/linux.preset).
 # Ссылка на Wiki :
 #https://wiki.archlinux.org/index.php/Mkinitcpio_%28%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9%29
 #https://ru.wikipedia.org/wiki/Initrd
-# ============================================================================
-
+# ==============================================================
+#
 echo -e "${GREEN}==> ${NC}Создаём root пароль"
 #echo 'Создаём root пароль'
 # Creating a root password
@@ -530,16 +568,48 @@ passwd
 # Как сменить пароль в Linux :
 # https://losst.ru/kak-smenit-parol-v-linux
 # ============================================================================
-
-#echo -e "${BLUE}:: ${NC}3.5 Устанавливаем загрузчик GRUB(legacy)"
-#echo '3.5 Устанавливаем загрузчик GRUB(legacy)'
+#
+echo ""
+echo -e "${GREEN}==> ${NC}Установить (bootloader) загрузчик GRUB(legacy)?"
+#echo 'Установить загрузчик GRUB(legacy)?'
 # Install the boot loader GRUB(legacy)
-#pacman -Syy
-#pacman -S grub --noconfirm 
-#grub-install /dev/sda
+echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если у вас уже имеется BOOT раздел от другой (предыдущей) системы gnu-linux, с установленным на нём GRUB."
+#echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
+# You can skip this step if you are not sure of the correct choice
+read -p " 1 - Установить GRUB(legacy), 2 - GRUB(legacy) для платформ i386-pc, 0 - Нет пропустить: " i_grub
+if [[ $i_grub == 1 ]]; then
+pacman -Syy
+pacman -S grub --noconfirm
+#pacman -S grub --noconfirm --noprogressbar --quiet 
+lsblk -f
+ read -p " => Укажите диск куда установить GRUB (sda/sdb например sda или sdb) : " x_cfd
+ grub-install /dev/$x_cfd   #sda sdb sdc sdd
+#grub-install /dev/sda  #sdb sdc ... Пример
+#grub-install --recheck /dev/$x_cfd     # Если Вы получили сообщение об ошибке
+  echo " Загрузчик GRUB установлен на выбранный вами диск (раздел). " 
+#grub-mkconfig -o /boot/grub/grub.cfg
+# echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). "
+elif [[ $i_grub == 2 ]]; then
+pacman -Syy
+pacman -S grub --noconfirm
+#pacman -S grub --noconfirm --noprogressbar --quiet
+lsblk -f
+ read -p " => Укажите диск куда установить GRUB (sda/sdb например sda или sdb) : " x_cfd
+ grub-install --target=i386-pc /dev/$x_cfd   #sda sdb sdc sdd
+#grub-install --target=i386-pc /dev/sda  #sdb sdc ... Пример
+  echo " Загрузчик GRUB установлен на выбранный вами диск (раздел). " 
+#grub-mkconfig -o /boot/grub/grub.cfg
+# echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). " 
+elif [[ $i_grub == 0 ]]; then
+  echo 'Операция пропущена.'
+fi
 # ------------------------------------------------------------------
-# pacman -S grub --noconfirm --noprogressbar --quiet 
-# grub-install /dev/sda 
+# Установка boot loader'а (загрузчика grub)
+# Их существует несколько, но grub, наверное самый популярный в Linux.
+# (или grub-install /dev/sdb , или grub-install /dev/sdс в зависимости от маркировки вашего диска, флешки куда будет установлен загрузчик grub (для BIOS))
+# Загрузчик - первая программа, которая загружается с диска при старте компьютера, и отвечает за загрузку и передачу управления ядру ОС. 
+# Ядро, в свою очередь, запускает остальную часть операционной системы.
+# -----------------------------------------------------------------
 # Если Вы получили сообщение об ошибке, то используйте команду:
 # grub-install --recheck /dev/sda
 # Также в некоторых случаях может помочь вариант:
@@ -550,49 +620,14 @@ passwd
 #grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 #read -p " => Укажите диск (sda/sdb например sda или sdb) : " cfd
 #grub-install /dev/$cfd  #sda sdb sdc sdd
-# ============================================================================
-echo ""
-echo -e "${GREEN}==> ${NC}Установить загрузчик GRUB(legacy)?"
-#echo 'Установить загрузчик GRUB(legacy)?'
-# Install the boot loader GRUB(legacy)
-echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если у вас уже имеется BOOT раздел от другой (предыдущей) системы gnu-linux, с установленным на нём GRUB."
-#echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
-# You can skip this step if you are not sure of the correct choice
-read -p " 1 - Установить GRUB, 2 - Для платформ i386-pc, 0 - Нет пропустить: " i_grub
-if [[ $i_grub == 1 ]]; then
-pacman -Syy
-pacman -S grub --noconfirm
-lsblk -f
- read -p " => Укажите диск куда установить GRUB (sda/sdb например sda или sdb) : " x_cfd
- grub-install /dev/$x_cfd
-  echo " Загрузчик GRUB установлен на выбранный вами диск (раздел). " 
-#grub-mkconfig -o /boot/grub/grub.cfg
-# echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). "
-elif [[ $i_grub == 2 ]]; then
-pacman -Syy
-pacman -S grub --noconfirm
-lsblk -f
- read -p " => Укажите диск куда установить GRUB (sda/sdb например sda или sdb) : " x_cfd
- grub-install --target=i386-pc /dev/$x_cfd
-  echo " Загрузчик GRUB установлен на выбранный вами диск (раздел). " 
-#grub-mkconfig -o /boot/grub/grub.cfg
-# echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). " 
-elif [[ $i_grub == 0 ]]; then
-  echo 'Операция пропущена.'
-fi
-
-# Установка boot loader'а (загрузчика grub)
-# Их существует несколько, но grub, наверное самый популярный в Linux.
-# (или grub-install /dev/sdb , или grub-install /dev/sdс в зависимости от маркировки вашего диска, флешки куда будет установлен загрузчик grub (для BIOS))
-# Загрузчик - первая программа, которая загружается с диска при старте компьютера, и отвечает за загрузку и передачу управления ядру ОС. 
-# Ядро, в свою очередь, запускает остальную часть операционной системы.
+# -------------------------------------------------------------------
 # Если вы хотите установить Grub на флешку в MBR, то тут тоже нет проблем просто примонтируйте флешку и выполните такую команду:
 #sudo grub-install --root-directory=/mnt/USB/ /dev/sdb
 # Здесь /mnt/USB - папка, куда была смотирована ваша флешка, а /seb/sdb - сама флешка. Только здесь есть одна проблема, конфигурационный файл придется делать вручную.
 # https://wiki.archlinux.org/index.php/GRUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 # https://losst.ru/nastrojka-zagruzchika-grub
-# ============================================================================
-
+# =====================================================================
+#
 echo ""
 echo -e "${GREEN}==> ${NC}Установить Микрокод для процессора INTEL_CPU, AMD_CPU?"
 #echo 'Установить Микрокод для процессора INTEL_CPU, AMD_CPU?'
