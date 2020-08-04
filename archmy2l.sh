@@ -222,13 +222,13 @@ ${AUTHOR} ${RED}under ${LICENSE} ${GREEN}>>>${NC}"""
 # 
 #####   Baner  #######
 #_arch_fast_install_banner
-set > old_vars.log
+#set > old_vars.log
 
-APPNAME="arch_fast_install"
-VERSION="v1.6 LegasyBIOS"
-BRANCH="master"
-AUTHOR="ordanax"
-LICENSE="GNU General Public License 3.0"
+#APPNAME="arch_fast_install"
+#VERSION="v1.6 LegasyBIOS"
+#BRANCH="master"
+#AUTHOR="ordanax"
+#LICENSE="GNU General Public License 3.0"
 
 # Information (Информация)
 _arch_fast_install_banner_2() {
@@ -848,14 +848,14 @@ echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
 #sudo pacman-key --refresh-keys
 sudo pacman -Sy  
 #pacman -Syy
-# ============================================================================
+# -------------------------------------------------------------
 # Знакомьтесь, pacman - лучший пакетный менеджер в мире линукса!
 #pacman -Syy   - обновление баз пакмэна(как apt-get update в дэбианоподбных)
 #pacman -Syyu  - обновление баз плюс обновление пакетов
-# ----------------------------------------------------------------------------
 #pacman -Syy --noconfirm --noprogressbar --quiet
 # Синхронизация и обновление пакетов (-yy принудительно обновить даже если обновленные)
-
+# =============================================================
+#
 echo ""
 echo -e "${RED}==> ${NC}Куда устанавливем Arch Linux на виртуальную машину?"
 #echo "Куда устанавливем Arch Linux на виртуальную машину?"
