@@ -907,8 +907,8 @@ echo -e "${GREEN}==> ${NC}Установка основных пакетов (ba
 # Installing basic packages (base base-devel)
 echo -e "${BLUE}:: ${NC}Arch Linux, Base devel (AUR only)"
 #echo 'Arch Linux, Base devel (AUR only)'
-echo " Сценарий pacstrap устанавливает (base) базовую систему. Для сборки пакетов из AUR с ABS также требуется группа base-devel. "
-# The pacstrap script installs the base system. To build packages from AUR with ABS, the base-devel group is also required.
+echo " Сценарий pacstrap устанавливает (base) базовую систему. Для сборки пакетов из AUR (Arch User Repository) также требуется группа base-devel. "
+# The pacstrap script installs the base system. To build packages from AUR (Arch User Repository), the base-devel group is also required.
 echo " Т.е., Если нужен AUR, ставь base и base-devel, если нет, то ставь только base. "
 # If you need AUR, put base and base-devel, if not, then put only base.
 echo " Огласите весь список, пожалуйста! "
