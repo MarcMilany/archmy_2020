@@ -1112,7 +1112,7 @@ elif [[ $x_fstab == 4 ]]; then
 #echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. "
 fi 
 # clear
-echo ""
+#echo ""
 # ----------------------------------------------------------------
 #(или genfstab -L /mnt >> /mnt/etc/fstab)
 #genfstab -p -L /mnt > /mnt/etc/fstab
@@ -1140,6 +1140,7 @@ echo ""
 # https://wiki.archlinux.org/index.php/Persistent_block_device_naming#by-uuid
 # ====================================================================
 #
+echo ""
 echo -e "${BLUE}:: ${NC}Просмотреть содержимое файла fstab"
 #echo 'Просмотреть содержимое файла fstab'
 # View the contents of the fstab file
@@ -1149,6 +1150,7 @@ cat /mnt/etc/fstab
 # Чтобы система знала какие разделы монтировать при старте.
 # ====================================================================
 #
+sleep 01
 echo -e "${BLUE}:: ${NC}Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist"
 #echo 'Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist'
 # Delete files /etc/pacman.d/mirrorlist
