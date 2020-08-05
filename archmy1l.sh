@@ -633,9 +633,10 @@ read -p " 1 - Да приступить к разметке, 0 - Нет проп
 if [[ $cfdisk == 1 ]]; then
    clear
    echo ""
+ echo -e "${BLUE}:: ${NC}Выбор диска для установки"  
  lsblk -f
   echo ""
-  read -p " Укажите диск (sda/sdb например sda или sdb) : " cfd
+  read -p " => Укажите диск (sda/sdb например sda или sdb) : " cfd
 cfdisk /dev/$cfd
 echo ""
 clear
