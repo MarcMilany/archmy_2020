@@ -860,6 +860,8 @@ EOF
 #
 #curl -s "https://www.archlinux.org/mirrorlist/?country=FR&country=GB&protocol=https&use_mirror_status=on" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 -
 #
+# Команда ниже скачивает актуальный список зеркал в России, использующих протокол https, после чего удаляет комментарии, ранжирует сервера и выводит 5 наиболее быстрых из них.
+# 
 #curl -s "https://www.archlinux.org/mirrorlist/?country=RU&country&protocol=https&use_mirror_status=on" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 -
 #
 # https://wiki.archlinux.org/index.php/Mirrors_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
