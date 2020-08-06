@@ -8,6 +8,8 @@ cpl=0
 skipfont="0"
 fspkgs=""
 EDITOR=nano
+# Выполните команду с правами суперпользователя:
+#EDITOR=nano visudo
 #
 ##################################################################
 ##### <<<Arch Linux Fast Install LegasyBIOS (arch2020)>>>    #####
