@@ -958,16 +958,35 @@ pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm
 echo " Установка DM (менеджера входа) завершена "
 #
 echo ""
-echo -e "${BLUE}:: ${NC}Ставим сетевые утилиты Networkmanager"
-#echo 'Ставим сетевые утилиты "Networkmanager"'
-# Put the network utilities "Networkmanager"
+echo -e "${BLUE}:: ${NC}Установить сетевые утилиты "Networkmanager"?"
+#echo 'Установить сетевые утилиты "Networkmanager"?'
+# Install the "Networkmanager" network utilities"
+echo " "Networkmanager" - сервис для работы интернета. Вместе с собой устанавливает программы для настройки. "
+echo " Поддержка OpenVPN в Network Manager также внесена в список устанавливаемых программ (пакетов). "
+echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
+#echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
+# You can skip this step if you are not sure of the correct choice
+echo ""
+while 
+    read -n1 -p  " 1 - Да установить, 0 - Нет пропустить: " i_network   # sends right after the keypress 
+    echo ''
+    [[ "$i_network" =~ [^10] ]]
+do
+    :
+done
+if [[ $i_network  == 1 ]]; then
+ echo " Ставим сетевые утилиты Networkmanager "		
 pacman -S networkmanager networkmanager-openvpn network-manager-applet ppp --noconfirm
-# networkmanager - сервис для работы интернета. Вместе с собой устанавливает программы для настройки.
-# Если вам нужна поддержка OpenVPN в Network Manager, то выполните команду:
-#sudo pacman -S networkmanager-openvpn
+#pacman -Sy networkmanager networkmanager-openvpn network-manager-applet ppp --noconfirm
+ echo " Подключаем Networkmanager в автозагрузку "	
+systemctl enable NetworkManager
+ elif [[ $i_network  == 0 ]]; then
+echo " Установка NetworkManager пропущена "
+ fi
+# ----------------------------------------------------------
 # https://wiki.archlinux.org/index.php/Networkmanager-openvpn
-# https://www.archlinux.org/packages/extra/x86_64/networkmanager-openvpn/
-# ----------------------------------------------------------------
+# https://www.archlinux.org/packages/extra/x86_64/networkmanager-openvpn/ 
+# =========================================================== 
 #
 echo ""
 echo -e "${BLUE}:: ${NC}Ставим шрифты"
@@ -983,7 +1002,7 @@ echo -e "${BLUE}:: ${NC}Подключаем автозагрузку менед
 systemctl enable lightdm.service
 #systemctl enable lightdm.service -f
 sleep 1 
-systemctl enable NetworkManager
+#systemctl enable NetworkManager
 #
 echo ""
 echo -e "${GREEN}==> ${NC}Добавим службу Dhcpcd в автозагрузку (для проводного интернета)?"
