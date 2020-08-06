@@ -874,12 +874,12 @@ sudo pacman -Sy
 # =============================================================
 #
 echo ""
-echo -e "${RED}==> ${NC}Куда устанавливем Arch Linux на виртуальную машину?"
-#echo "Куда устанавливем Arch Linux на виртуальную машину?"
+echo -e "${RED}==> ${NC}Куда устанавливаем Arch Linux на виртуальную машину?"
+#echo "Куда устанавливаем Arch Linux на виртуальную машину?"
 # Where do we install Arch Linux on the VM?
-read -p " 1 - Да, 0 - Нет: " vm_setting
+read -p " 1 - Да устанавливаем на VirtualBox, 0 - Нет на PC: " vm_setting
 if [[ $vm_setting == 0 ]]; then
-  gui_install="xorg-server xorg-drivers xorg-xinit"
+  gui_install="xorg-server xorg-drivers xorg-xinit"  #(или на vmware)
 elif [[ $vm_setting == 1 ]]; then
   gui_install="xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils"
 fi
