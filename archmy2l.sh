@@ -726,6 +726,31 @@ fi
 # https://wiki.archlinux.org/index.php/Install_Arch_Linux_on_a_removable_medium
 # https://linux-faq.ru/page/ustanovka-noveyshey-versii-mikrokoda-centralnogo-processora
 # ===================================================================
+#
+echo ""
+echo -e "${YELLOW}==> ${NC}Если на компьютере будут несколько ОС, то это также ставим."
+#echo -e "${BLUE}:: ${NC}Если на компьютере будут несколько OS, то это также ставим."
+#echo 'Если на компьютере будут несколько ОС, то это также ставим.'
+# # If the system will have several operating systems, then this is also set
+echo " Для двойной загрузки Arch Linux с другой системой Linux, Windows, установить другой Linux без загрузчика, вам необходимо установить утилиту os-prober, необходимую для обнаружения других операционных систем. "
+echo " И обновить загрузчик Arch Linux, чтобы иметь возможность загружать новую ОС."
+# To double boot Arch Linux with another Linux, Windows system, install another Linux without a loader, you need to install the os-prober utility needed to detect other operating systems.
+# And update the Arch Linux loader to be able to load the new OS.
+echo ""
+while 
+    read -n1 -p  " 1 - Да установить, 0 - Нет пропустить: " prog_set   # sends right after the keypress 
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done
+if [[ $prog_set  == 1 ]]; then
+ echo " Устанавливаем программы для определения другой OS "		
+pacman -S os-prober mtools fuse --noconfirm  #grub-customizer
+ echo " Программы (пакеты) установлены "  	
+ elif [[ $prog_set  == 0 ]]; then
+echo " Установка программ (пакетов) пропущена. "
+ fi
 # 
 echo ""
 echo -e "${BLUE}:: ${NC}Обновляем grub.cfg (Сгенерируем grub.cfg)"
@@ -739,16 +764,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 # Можно (нужно) создать резервную копию (дубликат) файла 'grub.cfg', и это мы сделаем уже в установленной системе.
 # Команда для backup (duplicate) of the grub.cfg file :
 #sudo cp /boot/grub/grub.cfg grub.cfg.backup
-# =====================================================================
-#
-echo ""
-echo -e "${YELLOW}==> ${NC}Если в системе будут несколько ОС, то это также ставим"
-#echo 'Если в системе будут несколько ОС, то это также ставим'
-# If the system will have several operating systems, then this is also set
-pacman -S os-prober mtools fuse
-#pacman -S os-prober mtools fuse --noconfirm
-# -------------------------------------------------------------------
-# Для двойной загрузки Arch Linux с другой системой Linux, установить другой Linux без загрузчика, вам необходимо установить os-prober — утилиту, необходимую для обнаружения других операционных систем. И обновить загрузчик Arch Linux, чтобы иметь возможность загружать новую ОС.
 # =====================================================================
 #
 echo ""
@@ -821,14 +836,14 @@ pacman -S sudo --noconfirm
 #echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 #sed -i 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
-# ============================================================================
+# ----------------------------------------------------------
 # Sudo - это альтернатива su для выполнения команд с правами суперпользователя (root). 
 # В отличие от su, который запускает оболочку с правами root и даёт всем дальнейшим командам root права, sudo предоставляет временное повышение привилегий для одной команды.
 # Чтобы начать использовать sudo как непривилегированный пользователь, его нужно настроить должным образом. Для этого прочтите раздел о настройке.
 # https://wiki.archlinux.org/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 # Крайне важно, чтобы файл sudoers был без синтаксических ошибок! 
 # Любая ошибка делает sudo неработоспособным.
-# ============================================================================
+# ===========================================================
 #
 echo ""
 echo -e "${BLUE}:: ${NC}Раскомментируем репозиторий multilib Для работы 32-битных приложений в 64-битной системе"
