@@ -835,24 +835,99 @@ echo -e "${BLUE}:: ${NC}Устанавливаем SUDO"
 #echo 'Устанавливаем SUDO'
 # Installing SUDO
 pacman -S sudo --noconfirm
+# Sudo с запросом пароля:
 #echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
-#sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
-# sed -i 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
+#cat /mnt/etc/sudoers
+# Sudo nopassword (БЕЗ запроса пароля):
+#echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+#sed -i 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+#cat /mnt/etc/sudoers
 # ----------------------------------------------------------
+# sudo (англ. substitute user do, дословно «подменить пользователя и выполнить») позволяет системному администратору делегировать полномочия, чтобы дать некоторым пользователям (или группе пользователей) возможность запускать некоторые (или все) команды c правами суперпользователя или любого другого пользователя, обеспечивая контроль над командами и их аргументами.
 # Sudo - это альтернатива su для выполнения команд с правами суперпользователя (root). 
 # В отличие от su, который запускает оболочку с правами root и даёт всем дальнейшим командам root права, sudo предоставляет временное повышение привилегий для одной команды.
-# Чтобы начать использовать sudo как непривилегированный пользователь, его нужно настроить должным образом. Для этого прочтите раздел о настройке.
+# Чтобы начать использовать sudo как непривилегированный пользователь, его нужно настроить должным образом. 
+# Для этого прочтите раздел о настройке.
+# Sudo (Русский):
 # https://wiki.archlinux.org/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 # Крайне важно, чтобы файл sudoers был без синтаксических ошибок! 
 # Любая ошибка делает sudo неработоспособным.
-# ===========================================================
+# ===============================================================
 #
-
-
-
-
-
-
+echo ""
+echo -e "${GREEN}==> ${NC}Настраиваем запрос пароля "Пользователя" при выполнении команды "sudo". "
+#echo -e "${BLUE}:: ${NC}Настраиваем запрос пароля "Пользователя" при выполнении команды "sudo"."
+#echo 'Настраиваем запрос пароля "Пользователя" при выполнении команды "sudo".'
+# Configuring the "User" password request when executing the "sudo" command"
+echo " Чтобы начать использовать sudo как непривилегированный пользователь, его нужно настроить должным образом. "
+# To start using sudo as an unprivileged user, you need to configure it properly.
+echo " Огласите весь список, пожалуйста! "
+# Read out the entire list, please!
+echo " 1 - Пользователям (членам) группы wheel доступ к sudo С запросом пароля. "
+echo " 2 - Пользователям (членам) группы wheel доступ к sudo (NOPASSWD) БЕЗ запроса пароля. "
+echo -e "${RED}==> ${BOLD}Выбрав (раскомментировав) данную опцию, особых требований к безопасности нет, но может есть какие-то очень негативные моменты в этом?... ${NC}"
+#echo 'Выбрав (раскомментировав) данную опцию, особых требований к безопасности нет, но может есть какие-то очень негативные моменты в этом?...'
+# By selecting (commenting out) this option, there are no special security requirements, but maybe there are some very negative points in this?...
+echo " 3-(0) - Добавление настроек sudo пропущено. "
+echo " Все настройки в файле /etc/sudoers пользователь произведёт сам. "
+echo " Например: под строкой root ALL=(ALL) ALL  ., пропишет 'username' ALL=(ALL) ALL. "
+echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
+#echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
+# You can skip this step if you are not sure of the correct choice
+echo " Будьте внимательны! В любой ситуации выбор всегда остаётся за вами."
+# Be careful! In any situation, the choice is always yours.
+echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
+#echo 'Установка производится в порядке перечисления'
+# Installation Is performed in the order listed
+echo ""
+read -p " 1 - С запросом пароля, 2 - БЕЗ запроса пароля, 0 - Пропустить этот шаг: " i_sudo   # sends right after the keypress
+if [[ $i_sudo  == 0 ]]; then
+clear
+echo " Добавление настройки sudo пропущено"
+elif [[ $i_sudo  == 1 ]]; then
+#echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
+sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
+#cat /mnt/etc/sudoers
+clear
+echo " Sudo с запросом пароля выполнено "
+elif [[ $i_sudo  == 2 ]]; then
+#echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+sed -i 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+#cat /mnt/etc/sudoers
+clear
+echo " Sudo nopassword (БЕЗ запроса пароля) добавлено  "
+fi
+# --------------------------------------------------------
+#Выполните sudo -ll для вывода текущей конфигурации sudo.
+#Просмотр текущих настроек:
+#nano /etc/sudoers
+#cat /mnt/etc/sudoers
+# ---------------------------------------------------------
+#
+###################################################################
+##### <<<  sudo и %wheel ALL=(ALL) NOPASSWD: ALL   >>>        #####
+#### Кстати, рекомендую добавить запрет выполнения нескольких  ####
+#### команд -                                                  ####
+####                                                              #############
+#### ##Groups of commands.  Often used to group related commands together. ####
+#### Cmnd_Alias SHELLS = /bin/sh,/bin/csh,/usr/local/bin/tcsh     #############
+#### Cmnd_Alias SSH = /usr/bin/ssh                             ####       
+#### Cmnd_Alias SU = /bin/su                                   ####
+#### dreamer ALL = (ALL) NOPASSWD: ALL,!SU,SHELLS,!SSH         ####
+####                                                           #### 
+#### чтобы не было возможности стать рутом через $sudo su      ####
+#### (многи об этой фиче забывают)!                            #### 
+#####                                                         #####
+###################################################################
+# ---------------------------------------------------------------
+# Чтобы начать использовать sudo как непривилегированный пользователь, его нужно настроить должным образом. 
+# Для этого прочтите раздел о настройке.
+# Sudo (Русский):
+# https://wiki.archlinux.org/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
+# Крайне важно, чтобы файл sudoers был без синтаксических ошибок! 
+# Любая ошибка делает sudo неработоспособным.
+# ==============================================================
 #
 echo ""
 echo -e "${BLUE}:: ${NC}Раскомментируем репозиторий multilib Для работы 32-битных приложений в 64-битной системе"
