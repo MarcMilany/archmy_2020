@@ -836,8 +836,8 @@ echo -e "${BLUE}:: ${NC}Устанавливаем SUDO"
 # Installing SUDO
 pacman -S sudo --noconfirm
 #echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
-sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
-#sed -i 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+#sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
+# sed -i 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
 # ----------------------------------------------------------
 # Sudo - это альтернатива su для выполнения команд с правами суперпользователя (root). 
 # В отличие от su, который запускает оболочку с правами root и даёт всем дальнейшим командам root права, sudo предоставляет временное повышение привилегий для одной команды.
@@ -846,6 +846,13 @@ sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 # Крайне важно, чтобы файл sudoers был без синтаксических ошибок! 
 # Любая ошибка делает sudo неработоспособным.
 # ===========================================================
+#
+
+
+
+
+
+
 #
 echo ""
 echo -e "${BLUE}:: ${NC}Раскомментируем репозиторий multilib Для работы 32-битных приложений в 64-битной системе"
