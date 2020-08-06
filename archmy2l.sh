@@ -752,24 +752,27 @@ pacman -S os-prober mtools fuse
 # =====================================================================
 #
 echo ""
-echo -e "${BLUE}:: ${NC}Ставим программы для Wi-fi"
-#echo 'Ставим программу для Wi-fi'
-# Install the program for Wi-fi
-pacman -S dialog wpa_supplicant iw wireless_tools net-tools --noconfirm 
-
-# -----------------------------------------------------------------
-#echo -e "${GREEN}==> ${NC}Установить программы (пакеты) для Wi-fi?"
+echo -e "${GREEN}==> ${NC}Установить программы (пакеты) для Wi-fi?"
+#echo -e "${BLUE}:: ${NC}Установить программы (пакеты) для Wi-fi?"
 #echo 'Установить программы (пакеты) для Wi-fi?'
-# Install programs (packages) for Wi-fi??
-#read -p " 1 - Да, 0 - Нет - пропустить этот шаг: " wifi
-#if [[ $wifi == 1 ]]; then
-#  echo " Устанавливаем программы для Wi-fi "
-# pacman -S dialog wpa_supplicant iw wireless_tools net-tools --noconfirm
-#  echo " Программы для Wi-fi установлены "             
-#elif [[ $wifi == 0 ]]; then
-#  echo 'Установка программ пропущена.'
-#fi
-# ------------------------------------------------------------------
+# Install programs (packages) for Wi-fi?
+echo " Если у вас есть Wi-fi модуль и Вы сейчас его не используете, но будете использовать в будущем. "
+# If you have a Wi-fi module and you are not using it now, but will use It in the future.
+echo ""
+while 
+    read -n1 -p  " 1 - Да установить, 0 - Нет пропустить: " i_wifi   # sends right after the keypress 
+    echo ''
+    [[ "$i_wifi" =~ [^10] ]]
+do
+    :
+done
+if [[ $i_wifi  == 1 ]]; then
+ echo " Устанавливаем программы для Wi-fi "		
+pacman -S dialog wpa_supplicant iw wireless_tools net-tools --noconfirm 
+ echo " Программы (пакеты) для Wi-fi установлены "  	
+ elif [[ $i_wifi  == 0 ]]; then
+echo " Установка программ (пакетов) пропущена. "
+ fi
 #
 echo ""
 echo -e "${BLUE}:: ${NC}Добавляем пользователя и прописываем права, группы"
@@ -957,7 +960,8 @@ pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm
 echo " Установка DM (менеджера входа) завершена "
 #
 echo ""
-echo -e "${BLUE}:: ${NC}Установить сетевые утилиты "Networkmanager"?"
+echo -e "${GREEN}==> ${NC}Установить сетевые утилиты "Networkmanager"?"
+#echo -e "${BLUE}:: ${NC}Установить сетевые утилиты "Networkmanager"?"
 #echo 'Установить сетевые утилиты "Networkmanager"?'
 # Install the "Networkmanager" network utilities"
 echo " "Networkmanager" - сервис для работы интернета. Вместе с собой устанавливает программы для настройки. "
