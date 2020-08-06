@@ -554,8 +554,8 @@ sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin pepper-flash
 echo -e "${BLUE}:: ${NC}Установка Брандмауэра UFW и Антивирусного пакета ClamAV (GUI)(GTK+)" 
 #echo 'Установка Брандмауэра UFW и Антивирусного пакета ClamAV (GUI)(GTK+)'
 # Installing the UFW Firewall and clamav Antivirus package (GUI) (GTK+)
-echo -e "${BLUE}:: ${NC}Установка Производится в порядке перечисления" 
-#echo 'Установка Производится в порядке перечисления'
+echo -e "${BLUE}:: ${NC}Установка производится в порядке перечисления" 
+#echo 'Установка производится в порядке перечисления'
 # Installation Is performed in the order listed
 echo -e "${GREEN}==> ${NC}Установить UFW (Несложный Брандмауэр) (GTK)?"
 #echo 'Установить UFW (Несложный Брандмауэр) (GTK)?'
@@ -582,8 +582,8 @@ fi
 echo -e "${BLUE}:: ${NC}Установка Torrent клиентов - Transmission, qBittorrent, Deluge (GTK)(Qt)(GTK+)" 
 #echo 'Установка Torrent клиентов - Transmission, qBittorrent, Deluge (GTK)(Qt)(GTK+)'
 # Installing Torrent clients - Transmission, qBittorrent, Deluge (GTK) (Qt) (GTK+)
-echo -e "${BLUE}:: ${NC}Установка Производится в порядке перечисления" 
-#echo 'Установка Производится в порядке перечисления'
+echo -e "${BLUE}:: ${NC}Установка производится в порядке перечисления" 
+#echo 'Установка производится в порядке перечисления'
 # Installation Is performed in the order listed
 echo -e "${GREEN}==> ${NC}Установить Transmission, qBittorrent, Deluge?"
 #echo 'Установить Transmission, qBittorrent, Deluge?'
@@ -591,7 +591,7 @@ echo -e "${GREEN}==> ${NC}Установить Transmission, qBittorrent, Deluge
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
 #echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
 # You can skip this step if you are not sure of the correct choice
-read -p " 1 - Transmission, 2 - qBittorrent, 3 - Deluge, 0 - Нет: " prog_set
+read -p " 1 - Transmission, 2 - qBittorrent, 3 - Deluge, 0 - Нет пропустить этот шаг: " prog_set
 if [[ $prog_set == 1 ]]; then
 sudo pacman -S transmission-gtk transmission-cli --noconfirm
 echo " Установка Transmission завершена "
@@ -608,8 +608,8 @@ fi
 echo -e "${BLUE}:: ${NC}Установка Офиса (LibreOffice-still, или LibreOffice-fresh)" 
 #echo 'Установка Офиса (LibreOffice-still, или LibreOffice-fresh)'
 # Office installation (LibreOffice-still, or LibreOffice-fresh)
-echo -e "${BLUE}:: ${NC}Установка Производится в порядке перечисления" 
-#echo 'Установка Производится в порядке перечисления'
+echo -e "${BLUE}:: ${NC}Установка производится в порядке перечисления" 
+#echo 'Установка производится в порядке перечисления'
 # Installation Is performed in the order listed
 echo -e "${GREEN}==> ${NC}Установить LibreOffice-still, LibreOffice-fresh?"
 #echo 'Установить LibreOffice-still, LibreOffice-fresh?'
@@ -617,7 +617,7 @@ echo -e "${GREEN}==> ${NC}Установить LibreOffice-still, LibreOffice-fr
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
 #echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
 # You can skip this step if you are not sure of the correct choice
-read -p " 1 - LibreOffice-still, 2 - LibreOffice-fresh, 0 - Нет: " prog_set
+read -p " 1 - LibreOffice-still, 2 - LibreOffice-fresh, 0 - Нет пропустить этот шаг: " prog_set
 if [[ $prog_set == 1 ]]; then
 sudo pacman -S libreoffice-still libreoffice-still-ru --noconfirm
 echo " Установка LibreOffice-still завершена "
@@ -662,8 +662,8 @@ fi
 echo -e "${BLUE}:: ${NC}Установка Pacman gui,Octopi (AUR)(GTK)(QT)" 
 #echo 'Установка "Pacman gui","Octopi" (AUR)(GTK)(QT)'
 # Installing "Pacman gui", "Octopi" (AUR)(GTK)(QT)
-echo -e "${BLUE}:: ${NC}Установка Производится в порядке перечисления" 
-#echo 'Установка Производится в порядке перечисления'
+echo -e "${BLUE}:: ${NC}Установка производится в порядке перечисления" 
+#echo 'Установка производится в порядке перечисления'
 # Installation Is performed in the order listed
 echo -e "${GREEN}==> ${NC}Установить pamac-aur, octopi?"
 #echo 'Установить "pamac-aur", "octopi"?'
@@ -671,7 +671,7 @@ echo -e "${GREEN}==> ${NC}Установить pamac-aur, octopi?"
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
 #echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
 # You can skip this step if you are not sure of the correct choice
-read -p " 1 - Pacmac-aur, 2 - Octopi, 0 - Нет: " prog_set
+read -p " 1 - Pacmac-aur, 2 - Octopi, 0 - Нет пропустить этот шаг: " prog_set
 if [[ $prog_set == 1 ]]; then
 yay -S pamac-aur --noconfirm
 echo " Установка Pacmac-aur завершена "
@@ -687,8 +687,8 @@ echo -e "${BLUE}:: ${NC}Будете ли Вы подключать Android ил
 # Will you connect your Android or Iphone to your PC via USB?
 echo ' Установка поддержки устройств на Android или Iphone к ПК через USB '
 # Installing support for Android or Iphone devices to a PC via USB
-echo -e "${BLUE}:: ${NC}Установка Производится в порядке перечисления" 
-#echo 'Установка Производится в порядке перечисления'
+echo -e "${BLUE}:: ${NC}Установка производится в порядке перечисления" 
+#echo 'Установка производится в порядке перечисления'
 # Installation Is performed in the order listed
 echo -e "${GREEN}==> ${NC}Установить утилиты (пакеты) поддержки устройств?"
 #echo 'Установить утилиты (пакеты) поддержки устройств?'
@@ -831,6 +831,24 @@ sudo cp -vf /boot/grub/grub.cfg /boot/grub/grub.cfg.backup
 # Находим строчку:
 # %wheel ALL=(ALL) ALL
 # И убираем % в начале строки. Сохраняем и выходим.
+# ---------------------------------------------------------
+#
+###################################################################
+##### <<<  sudo и %wheel ALL=(ALL) NOPASSWD: ALL   >>>        #####
+#### Кстати, рекомендую добавить запрет выполнения нескольких  ####
+#### команд -                                                  ####
+####                                                              #############
+#### ##Groups of commands.  Often used to group related commands together. ####
+#### Cmnd_Alias SHELLS = /bin/sh,/bin/csh,/usr/local/bin/tcsh     #############
+#### Cmnd_Alias SSH = /usr/bin/ssh                             ####       
+#### Cmnd_Alias SU = /bin/su                                   ####
+#### dreamer ALL = (ALL) NOPASSWD: ALL,!SU,SHELLS,!SSH         ####
+####                                                           #### 
+#### чтобы не было возможности стать рутом через $sudo su      ####
+#### (многи об этой фиче забывают)!                            #### 
+#####                                                         #####
+###################################################################
+# 
 # ============================================================================
 # Добавить (прописать) в /etc/fstab , в самый низ файла:
 # с отступом от последней записи (запись оставить закомментированной)
