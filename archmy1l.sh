@@ -1064,13 +1064,13 @@ echo -e "${YELLOW}==> ${NC}Установка производится в пор
 # Installation Is performed in the order listed
 echo ""
 while 
-read -p " 1 - LINUX, 2 - LINUX_HARDENED, 3 - LINUX_LTS, 4 - LINUX_ZEN: " x_kernel  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+read -p " 1 - LINUX, 2 - LINUX_HARDENED, 3 - LINUX_LTS, 4 - LINUX_ZEN: " x_pacstrap  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
     echo ''
-    [[ "$x_kernel" =~ [^10] ]]
+    [[ "$x_pacstrap" =~ [^15] ]]
 do
     :
-done
-if [[ $x_kernel == 1 ]]; then
+done 
+if [[ $x_pacstrap == 1 ]]; then
   clear
   echo ""
  echo " Установка выбранного вами ядра (Kernel linux) "
@@ -1078,7 +1078,7 @@ pacstrap /mnt linux linux-firmware # linux-headers
   echo " Ядро (Kernel) операционной системы установленно "
 # echo " Настройка системы, генерируем fstab "
 #  genfstab -pU /mnt >> /mnt/etc/fstab  
-elif [[ $x_kernel == 2 ]]; then
+elif [[ $x_pacstrap == 2 ]]; then
   clear
   echo ""
   echo " Установка выбранного вами ядра (Kernel linux-hardened) "
@@ -1086,7 +1086,7 @@ elif [[ $x_kernel == 2 ]]; then
   echo " Ядро (Kernel) операционной системы установленно "
 # echo " Настройка системы, генерируем fstab "
 #  genfstab -pU /mnt >> /mnt/etc/fstab   
-elif [[ $x_kernel == 3 ]]; then
+elif [[ $x_pacstrap == 3 ]]; then
   clear
   echo ""
   echo " Установка выбранного вами ядра (Kernel linux-lts) "
@@ -1094,7 +1094,7 @@ elif [[ $x_kernel == 3 ]]; then
   echo " Ядро (Kernel) операционной системы установленно "
 # echo " Настройка системы, генерируем fstab "
 #  genfstab -pU /mnt >> /mnt/etc/fstab  
-elif [[ $x_kernel == 4 ]]; then
+elif [[ $x_pacstrap== 4 ]]; then
   clear
   echo ""
   echo " Установка выбранного вами ядра (Kernel linux-zen) " 
