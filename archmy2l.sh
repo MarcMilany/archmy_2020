@@ -638,14 +638,7 @@ echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот ша�
 #echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
 # You can skip this step if you are not sure of the correct choice
 echo ""
-while
 read -p " 1 - Установить GRUB(legacy), 2 - GRUB(legacy) для платформ i386-pc, 0 - Нет пропустить: " i_grub  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
-    echo ''
-    [[ "$i_grub" =~ [^12] ]]
-do
-    :
-done
- if [
 if [[ $i_grub == 1 ]]; then
 pacman -Syy
 pacman -S grub --noconfirm
@@ -722,14 +715,8 @@ echo -e "${YELLOW}==> ${NC}Установка производится в пор
 #echo 'Установка производится в порядке перечисления'
 # Installation Is performed in the order listed
 echo ""
-while
 # Microcode (matching CPU) - У Вас amd или intel?
 read -p " 1 - AMD, 2 - INTEL, 3 - AMD и INTEL, 0 - Нет - Пропустить этот шаг: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
-    echo ''
-    [[ "$prog_set" =~ [^10] ]]
-do
-    :
-done
 if [[ $prog_set == 1 ]]; then
   echo " Устанавливаем uCode для процессоров - AMD "
  pacman -S amd-ucode --noconfirm 
@@ -948,13 +935,7 @@ echo -e "${YELLOW}==> ${NC}Действия выполняются в указа
 #echo 'Действия выполняются в указанном порядке'
 # Actions are performed in the order listed
 echo ""
-while
 read -p " 1 - С запросом пароля, 2 - БЕЗ запроса пароля, 0 - Пропустить этот шаг: " i_sudo  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
-    echo ''
-    [[ "$i_sudo" =~ [^10] ]]
-do
-    :
-done
 if [[ $i_sudo  == 0 ]]; then
 clear
 echo " Добавление настройки sudo пропущено"
@@ -1033,6 +1014,7 @@ echo ""
 echo -e "${RED}==> ${NC}Куда устанавливаем Arch Linux на виртуальную машину?"
 #echo "Куда устанавливаем Arch Linux на виртуальную машину?"
 # Where do we install Arch Linux on the VM?
+echo ""
 read -p " 1 - Да устанавливаем на VirtualBox, 0 - Нет на PC: " vm_setting
 if [[ $vm_setting == 0 ]]; then
   gui_install="xorg-server xorg-drivers xorg-xinit"  #(или на vmware)
