@@ -974,13 +974,7 @@ echo -e "${YELLOW}==> ${NC}Установка производится в пор
 echo " Чтобы исключить ошибки в работе системы рекомендую "1" "
 # To eliminate errors in the system, I recommend "1"
 echo ""
-while
-read -p " 1 - base + base-devel + packages, 2 - base + packages, 3 - base + base-devel, 4 - base: " x_pacstrap  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
-    echo ''
-    [[ "$x_pacstrap" =~ [^12] ]]
-do
-    :
-done 
+read -p " 1 - base + base-devel + packages, 2 - base + packages, 3 - base + base-devel, 4 - base: " x_pacstrap  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")  
  if [[ $x_pacstrap == 1 ]]; then
   clear
   echo " Установка выбранного вами, групп "
@@ -1063,13 +1057,7 @@ echo -e "${YELLOW}==> ${NC}Установка производится в пор
 #echo 'Установка производится в порядке перечисления'
 # Installation Is performed in the order listed
 echo ""
-while
-read -p " 1 - LINUX, 2 - LINUX_HARDENED, 3 - LINUX_LTS, 4 - LINUX_ZEN: " x_pacstrap  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
-    echo ''
-    [[ "$x_pacstrap" =~ [^15] ]]
-do
-    :
-done 
+read -p " 1 - LINUX, 2 - LINUX_HARDENED, 3 - LINUX_LTS, 4 - LINUX_ZEN: " x_pacstrap  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")  
  if [[ $x_pacstrap == 1 ]]; then
   clear
   echo ""
@@ -1135,13 +1123,7 @@ echo " Чтобы исключить ошибки в работе системы
 echo " Преимущество использования метода UUID состоит в том, что вероятность столкновения имен намного меньше, чем с метками. Далее он генерируется автоматически при создании файловой системы. "
 # The advantage of using the UUID method is that the probability of names colliding is much less than with placemarks. It is then generated automatically when the file system is created.
 echo ""
-while
-read -p " 1 - UUID genfstab -U, 2 - LABEL genfstab -L, 3 - PARTLABEL genfstab -t PARTLABEL, 4 - PARTUUID genfstab -t PARTUUID: " x_fstab  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
-    echo ' '
-    [[ "$x_fstab" =~ [^10] ]]
-do
-    :
-done 
+read -p " 1 - UUID genfstab -U, 2 - LABEL genfstab -L, 3 - PARTLABEL genfstab -t PARTLABEL, 4 - PARTUUID genfstab -t PARTUUID: " x_fstab  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")  
  if [[ $x_fstab == 1 ]]; then
   clear
   echo " Генерируем fstab выбранным вами методом "
