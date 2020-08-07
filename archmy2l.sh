@@ -734,8 +734,14 @@ echo -e "${YELLOW}==> ${NC}Установка производится в пор
 #echo 'Установка производится в порядке перечисления'
 # Installation Is performed in the order listed
 echo ""
+while
 # Microcode (matching CPU) - У Вас amd или intel?
-read -p " 1 - AMD, 2 - INTEL, 3 - AMD и INTEL, 0 - Нет - Пропустить этот шаг: " prog_set
+read -p " 1 - AMD, 2 - INTEL, 3 - AMD и INTEL, 0 - Нет - Пропустить этот шаг: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done
 if [[ $prog_set == 1 ]]; then
   echo " Устанавливаем uCode для процессоров - AMD "
  pacman -S amd-ucode --noconfirm 
