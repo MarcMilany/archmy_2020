@@ -302,7 +302,7 @@ echo " Латиница - это английские буквы. Кирилли
 read -p " => Введите имя компьютера: " hostname
 echo -e "${GREEN}==> ${NC}"
 echo " Используйте в имени только буквы латинского алфавита 	
-                        (в нижнем (маленькие) регистре (a-z)(a-z0-9_-)), и цифры "
+                                         (в нижнем (маленькие) регистре (a-z)(a-z0-9_-)), и цифры "
 read -p " => Введите имя пользователя: " username
 #
 echo -e "${BLUE}:: ${NC}Прописываем имя компьютера"
@@ -562,7 +562,13 @@ echo -e "${YELLOW}==> ${NC}Установка производится в пор
 # Installation Is performed in the order listed  
 #pacman -S --needed mkinitcpio 
 echo ""
-read -p " 1 - для ядра LINUX, 2 - для ядра LINUX_HARDENED, 3 - для ядра LINUX_LTS, 4 - для ядра LINUX_LTS, 0 - Пропустить создание загрузочного RAM диска: " x_ram
+while
+read -p " 1 - для ядра LINUX, 2 - для ядра LINUX_HARDENED, 3 - для ядра LINUX_LTS, 4 - для ядра LINUX_LTS, 0 - Пропустить создание загрузочного RAM диска: " x_ram  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+    echo ''
+    [[ "$x_ram" =~ [^10] ]]
+do
+    :
+done
 if [[ $x_ram == 1 ]]; then
   clear
   echo " Создадим загрузочный RAM диск - для ядра (linux) "
