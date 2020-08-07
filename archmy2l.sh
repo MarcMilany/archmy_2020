@@ -960,7 +960,13 @@ echo -e "${YELLOW}==> ${NC}Действия выполняются в указа
 #echo 'Действия выполняются в указанном порядке'
 # Actions are performed in the order listed
 echo ""
-read -p " 1 - С запросом пароля, 2 - БЕЗ запроса пароля, 0 - Пропустить этот шаг: " i_sudo   # sends right after the keypress
+while
+read -p " 1 - С запросом пароля, 2 - БЕЗ запроса пароля, 0 - Пропустить этот шаг: " i_sudo  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+    echo ''
+    [[ "$i_sudo" =~ [^10] ]]
+do
+    :
+done
 if [[ $i_sudo  == 0 ]]; then
 clear
 echo " Добавление настройки sudo пропущено"
