@@ -791,14 +791,15 @@ echo " И обновить загрузчик Arch Linux, чтобы иметь 
 # And update the Arch Linux loader to be able to load the new OS.
 echo ""
 while 
-    read -n1 -p  " 1 - Да установить, 0 - Нет пропустить: " prog_set   # sends right after the keypress 
+    read -n1 -p  " 1 - Да установить, 0 - Нет пропустить: " prog_set   # sends right after the keypress; # отправляет сразу после нажатия клавиши
+# #read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
     echo ''
     [[ "$prog_set" =~ [^10] ]]
 do
     :
 done
 if [[ $prog_set  == 1 ]]; then
- echo " Устанавливаем программы для определения другой OS "		
+ echo " Устанавливаем программы (пакеты) для определения другой OS "		
 pacman -S os-prober mtools fuse --noconfirm  #grub-customizer
  echo " Программы (пакеты) установлены "  	
  elif [[ $prog_set  == 0 ]]; then
