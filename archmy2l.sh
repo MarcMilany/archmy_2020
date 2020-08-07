@@ -792,7 +792,7 @@ echo " И обновить загрузчик Arch Linux, чтобы иметь 
 echo ""
 while 
     read -n1 -p  " 1 - Да установить, 0 - Нет пропустить: " prog_set   # sends right after the keypress; # отправляет сразу после нажатия клавиши
-# #read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+# read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
     echo ''
     [[ "$prog_set" =~ [^10] ]]
 do
