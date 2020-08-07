@@ -405,7 +405,7 @@ echo " Будьте внимательны! Если Вы сомневаетес
 echo -e "${RED}==> ${BOLD}Примечание: - Иногда при запуске обновления ключей возникает ошибка, не переживайте просто перезапустите работу скрипта (sh -название скрипта-)${NC}"
 # Note: - Sometimes when you start updating keys, an error occurs, do not worry, just restart the script (sh -script name-)
 while
-#read -p " 1 - Да обновить , 0 - Нет пропустить: " x_key
+# read -p " 1 - Да обновить , 0 - Нет пропустить: " x_key  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 read -n1 -p " 1 - Да обновить , 0 - Нет пропустить: " x_key  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
     [[ "$x_key" =~ [^10] ]]
@@ -536,7 +536,7 @@ echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот ша�
 # You can skip this step if you are not sure of the correct choice
 while
 #read -n1 -p " 1 - Да удалить таблицу разделов , 0 - Нет пропустить: " sgdisk  # sends right after the keypress; # отправляет сразу после нажатия клавиши
-read -p " 1 - Да удалить таблицу разделов, 0 - Нет пропустить: " sgdisk
+read -p " 1 - Да удалить таблицу разделов, 0 - Нет пропустить: " sgdisk  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
     echo ''
     [[ "$sgdisk" =~ [^10] ]]
 do
@@ -641,7 +641,7 @@ echo -e "${BLUE}:: ${NC}Вам нужна разметка диска?"
 # Do you need disk markup?
 while
 #read -n1 -p " 1 - Да приступить к разметке, 0 - Нет пропустить разметку: " cfdisk  # файл устройство дискового накопителя;  # sends right after the keypress; # отправляет сразу после нажатия клавиши
-read -p " 1 - Да приступить к разметке, 0 - Нет пропустить разметку: " cfdisk  # файл устройство дискового накопителя;
+read -p " 1 - Да приступить к разметке, 0 - Нет пропустить разметку: " cfdisk  # файл устройство дискового накопителя; # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
     echo ''
     [[ "$cfdisk" =~ [^10] ]]
 do
@@ -700,7 +700,7 @@ echo ""
 echo -e "${BLUE}:: ${NC}Форматируем и монтируем ROOT раздел?"
 #echo 'Форматирование и монтирование корневого раздела (ROOT)'
 # Formatting and mounting a partition (ROOT)
-read -p " Укажите ROOT раздел (sda/sdb 1.2.3.4 (sda5 например)): " root
+read -p " Укажите ROOT раздел (sda/sdb 1.2.3.4 (sda5 например)): " root  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo ""
 mkfs.ext4 /dev/$root -L root
 mount /dev/$root /mnt
@@ -720,14 +720,14 @@ echo " 1 - Форматировать и монтировать на отдел�
 echo " 0 - Пропустить если BOOT раздела нет на отдельном разделе, и он находится в корневом разделе ROOT "
 while
 #read -n1 -p " 1 - Да форматировать, 0 - Нет пропустить: " boots  # sends right after the keypress; # отправляет сразу после нажатия клавиши
-read -p " 1 - Да форматировать, 0 - Нет пропустить: " boots 
+read -p " 1 - Да форматировать, 0 - Нет пропустить: " boots  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
     echo ''
     [[ "$boots" =~ [^12] ]]
 do
     :
 done 
 if [[ $boots == 1 ]]; then
-  read -p " Укажите BOOT раздел (sda/sdb 1.2.3.4 (sda7 например)): " bootd
+  read -p " Укажите BOOT раздел (sda/sdb 1.2.3.4 (sda7 например)): " bootd  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
   #mkfs.fat -F32 /dev/$bootd
   #mkfs.ext2  /dev/$bootd
   mkfs.ext2  /dev/$bootd -L boot
@@ -749,14 +749,14 @@ echo " Если таковой был создан при разметке в cf
 # If one was created during markup in cfdisk
 while
 #read -n1 -p " 1 - Да, 0 - Нет: " swap  # sends right after the keypress; # отправляет сразу после нажатия клавиши
-read -p " 1 - Да, 0 - Нет: " swap  
+read -p " 1 - Да, 0 - Нет: " swap  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")  
     echo ''
     [[ "$swap" =~ [^10] ]]
 do
     :
 done
 if [[ $swap == 1 ]]; then
-  read -p " Укажите swap раздел (sda/sdb 1.2.3.4 (sda7 например)): " swaps
+  read -p " Укажите swap раздел (sda/sdb 1.2.3.4 (sda7 например)): " swaps  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
   mkswap /dev/$swaps -L swap
   swapon /dev/$swaps
 elif [[ $swap == 0 ]]; then
@@ -776,7 +776,7 @@ echo " Можно использовать раздел от предыдуще�
 пользователя. "
 while
 #read -n1 -p " 1 - Да добавить Home раздел, 0 - Нет не добавлять: " homes  # sends right after the keypress; # отправляет сразу после нажатия клавиши
-read -p " 1 - Да добавить Home раздел, 0 - Нет не добавлять: " homes 
+read -p " 1 - Да добавить Home раздел, 0 - Нет не добавлять: " homes  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
     echo ''
     [[ "$homes" =~ [^10] ]]
 do
@@ -791,7 +791,7 @@ echo -e "${BLUE}:: ${NC}Форматируем Home раздел?"
 # Formatting the home partition
 while 
 #read -n1 -p " 1 - Да форматировать, 0 - Нет не форматировать: " homeF  # sends right after the keypress; # отправляет сразу после нажатия клавиши
-read -p " 1 - Да форматировать, 0 - Нет не форматировать: " homeF 
+read -p " 1 - Да форматировать, 0 - Нет не форматировать: " homeF  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
     echo ''
     [[ "$homeF" =~ [^10] ]]
 do
@@ -800,13 +800,13 @@ done
    if [[ $homeF == 1 ]]; then
    echo ""
    lsblk -f
-   read -p " Укажите HOME раздел (sda/sdb 1.2.3.4 (sda6 например)): " home
+   read -p " Укажите HOME раздел (sda/sdb 1.2.3.4 (sda6 например)): " home  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
    mkfs.ext4 /dev/$home -L home
    mkdir /mnt/home 
    mount /dev/$home /mnt/home
    elif [[ $homeF == 0 ]]; then
  lsblk -f
- read -p " Укажите HOME раздел (sda/sdb 1.2.3.4 (sda6 например)): " homeV
+ read -p " Укажите HOME раздел (sda/sdb 1.2.3.4 (sda6 например)): " homeV  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
  mkdir /mnt/home 
  mount /dev/$homeV /mnt/home
 fi
@@ -974,7 +974,13 @@ echo -e "${YELLOW}==> ${NC}Установка производится в пор
 echo " Чтобы исключить ошибки в работе системы рекомендую "1" "
 # To eliminate errors in the system, I recommend "1"
 echo ""
-read -p " 1 - base + base-devel + packages, 2 - base + packages, 3 - base + base-devel, 4 - base: " x_pacstrap  
+while
+read -p " 1 - base + base-devel + packages, 2 - base + packages, 3 - base + base-devel, 4 - base: " x_pacstrap  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+    echo ''
+    [[ "$x_pacstrap" =~ [^12] ]]
+do
+    :
+done 
  if [[ $x_pacstrap == 1 ]]; then
   clear
   echo " Установка выбранного вами, групп "
@@ -1057,7 +1063,13 @@ echo -e "${YELLOW}==> ${NC}Установка производится в пор
 #echo 'Установка производится в порядке перечисления'
 # Installation Is performed in the order listed
 echo ""
-read -p " 1 - LINUX, 2 - LINUX_HARDENED, 3 - LINUX_LTS, 4 - LINUX_ZEN: " x_kernel 
+while 
+read -p " 1 - LINUX, 2 - LINUX_HARDENED, 3 - LINUX_LTS, 4 - LINUX_ZEN: " x_kernel  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+    echo ''
+    [[ "$x_kernel" =~ [^10] ]]
+do
+    :
+done
 if [[ $x_kernel == 1 ]]; then
   clear
   echo ""
@@ -1124,7 +1136,7 @@ echo " Преимущество использования метода UUID с�
 # The advantage of using the UUID method is that the probability of names colliding is much less than with placemarks. It is then generated automatically when the file system is created.
 echo ""
 while
-read -p " 1 - UUID genfstab -U, 2 - LABEL genfstab -L, 3 - PARTLABEL genfstab -t PARTLABEL, 4 - PARTUUID genfstab -t PARTUUID: " x_fstab 
+read -p " 1 - UUID genfstab -U, 2 - LABEL genfstab -L, 3 - PARTLABEL genfstab -t PARTLABEL, 4 - PARTUUID genfstab -t PARTUUID: " x_fstab  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
     echo ' '
     [[ "$x_fstab" =~ [^10] ]]
 do
@@ -1245,7 +1257,7 @@ echo " Если Вы находитесь в России рекомендую �
 # To eliminate errors in the system, I recommend "1"
 echo ""
 while 
-read -p " 1 - Russia (https,http), 2 - 50 HTTP-зеркал, 3 - Kazakhstan (http), 4 - Russia, Belarus, Ukraine, Poland (https,http), 0 - Пропустить обновление зеркал: " zerkala 
+read -p " 1 - Russia (https,http), 2 - 50 HTTP-зеркал, 3 - Kazakhstan (http), 4 - Russia, Belarus, Ukraine, Poland (https,http), 0 - Пропустить обновление зеркал: " zerkala  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
     echo ' '
     [[ "$zerkala" =~ [^10] ]]
 do
