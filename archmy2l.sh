@@ -823,6 +823,7 @@ echo -e "${BLUE}:: ${NC}Добавляем пользователя и проп�
 #useradd -m -g users -G wheel -s /bin/bash $username
 # или есть команда с правами 'админа' :
 useradd -m -g users -G adm,audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel -s /bin/bash $username
+#useradd -m -g users -G audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel -s /bin/bash $username
 echo " Пользователь успешно добавлен в группы и права пользователя. "
 #
 ### User Password
