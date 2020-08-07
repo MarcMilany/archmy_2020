@@ -837,7 +837,7 @@ echo -e "${BLUE}:: ${NC}Устанавливаем SUDO"
 pacman -S sudo --noconfirm
 # Sudo с запросом пароля:
 #echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
-sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
+#sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 #cat /mnt/etc/sudoers
 # Sudo nopassword (БЕЗ запроса пароля):
 #echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
@@ -939,7 +939,7 @@ sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 #echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 #pacman -Syy
 echo ' Multilib репозиторий добавлен '
-
+#
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
 #echo 'Обновим базы данных пакетов'
