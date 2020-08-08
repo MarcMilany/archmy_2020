@@ -1352,6 +1352,7 @@ mv /etc/sysctl.conf /etc/sysctl.d/99-sysctl.conf
 
 #
 ### Clean pacman cache (Очистить кэш pacman)
+echo ""
 echo -e "${BLUE}:: ${BOLD}Очистка кэша pacman ${NC}"
 #echo 'Очистка кэша pacman'
 # Clearing the pacman cache
@@ -1362,15 +1363,13 @@ pacman --noconfirm -Sc       # Очистка кэша неустановлен�
 # pacman -Qqe                # Список установленных пакетов в системе
 # ==============================================================
 #
-### Unmountdevices
-#    echo "-> ${MSG_DONE}"
-#    clear
-    echo "umount -R /mnt"
-    umount -R /mnt
-    if [ ! "${swapdev}" = "" ]; then
-        echo "swapoff ${swapdev}"
-        swapoff ${swapdev}
-    fi
+echo ""
+echo -e "${BLUE}:: ${BOLD}Очистка кэша pacman ${NC}"
+#echo 'Очистка кэша pacman'
+# Clearing the pacman cache
+#clear
+echo " umount -R /mnt "
+umount -R /mnt
 #
 echo -e "${GREEN}
   <<< Поздравляем! Установка завершена. Перезагрузите систему. >>> ${NC}"
