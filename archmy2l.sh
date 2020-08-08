@@ -1362,6 +1362,16 @@ pacman --noconfirm -Sc       # Очистка кэша неустановлен�
 # pacman -Qqe                # Список установленных пакетов в системе
 # ==============================================================
 #
+### Unmountdevices
+#    echo "-> ${MSG_DONE}"
+#    clear
+    echo "umount -R /mnt"
+    umount -R /mnt
+    if [ ! "${swapdev}" = "" ]; then
+        echo "swapoff ${swapdev}"
+        swapoff ${swapdev}
+    fi
+#
 echo -e "${GREEN}
   <<< Поздравляем! Установка завершена. Перезагрузите систему. >>> ${NC}"
 # Congratulations! Installation is complete. Reboot the system.
