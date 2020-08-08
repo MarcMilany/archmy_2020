@@ -617,7 +617,7 @@ echo ""
 echo -e "${GREEN}==> ${NC}Создаём root пароль (Root Password)"
 #echo 'Создаём root пароль'
 # Creating a root password
-echo " Пароль должен содержать от 6 до 15 символов, включающих цифры (1-0) и знаки ('':[@]),     
+echo " Пароль должен содержать от 6 до 15 символов, включающих цифры (1-0) и знаки (!'':[@]),     
         и латинские буквы разного регистра! " 		                
 echo " => Введите Root Password (Пароль суперпользователя) "
 passwd
@@ -836,7 +836,7 @@ echo ""
 echo -e "${GREEN}==> ${NC}Устанавливаем пароль пользователя (User Password)"
 #echo 'Устанавливаем пароль пользователя'
 # Setting the user password
-echo " Пароль должен содержать от 6 до 15 символов, включающих цифры (1-0) и знаки (”[@]),    
+echo " Пароль должен содержать от 6 до 15 символов, включающих цифры (1-0) и знаки (!'':[@]),    
         и латинские буквы разного регистра! "
 echo " => Введите User Password (Пароль пользователя) "
 passwd $username
@@ -994,7 +994,7 @@ sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 #echo '[multilib]' >> /etc/pacman.conf
 #echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 #pacman -Syy
-echo ' Multilib репозиторий добавлен '
+echo ' Multilib репозиторий добавлен (раскомментирован) '
 #
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
