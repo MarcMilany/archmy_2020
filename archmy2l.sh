@@ -254,6 +254,19 @@ _arch_fast_install_banner_2
 #
 sleep 01
 echo ""
+echo -e "${GREEN}=> ${NC}Для проверки интернета можно пропинговать какой-либо сервис" 
+#echo 'Для проверки интернета можно пропинговать какой-либо сервис'
+# To check the Internet, you can ping a service
+ping -c2 archlinux.org
+# Например Яндекс или Google: 
+#ping -c5 www.google.com
+#ping -c5 ya.ru
+#
+echo -e "${CYAN}==> ${NC}Если пинг идёт едем дальше ... :)"
+#echo 'Если пинг идёт едем дальше ... :)'
+# If the ping goes we go further ... :)
+# 
+echo ""
 echo -e "${BLUE}:: ${NC}Обновим вашу систему (базу данных пакетов)"
 #echo "Обновим вашу систему (базу данных пакетов)"
 # Update your system (package database)
