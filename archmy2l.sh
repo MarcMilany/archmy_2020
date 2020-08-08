@@ -1388,6 +1388,10 @@ echo -e "${RED}==> ${BOLD}Выходим из установленной сис�
 echo -e "${BLUE}:: ${BOLD}Теперь вам надо ввести reboot, чтобы перезагрузиться ${NC}"
 #echo 'Теперь вам надо ввести reboot, чтобы перезагрузиться'
 #'Now you need to enter 'reboot' to reboot"'
+### Clean pacman cache (Очистить кэш pacman)
+pacman --noconfirm -Sc
+#    echo "-> ${MSG_DONE}"
+
 exit 
 #umount -Rf /mnt
 
@@ -1402,9 +1406,7 @@ exit
 #read -p "Пауза 3 ceк." -t 3
 #reboot
 
-### Clean pacman cache
-#    _chroot "pacman --noconfirm -Sc"
-#    echo "-> ${MSG_DONE}"
+
 
 
 
