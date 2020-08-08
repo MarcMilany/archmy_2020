@@ -1244,6 +1244,8 @@ echo ""
 echo -e "${GREEN}=> ${BOLD}Создадим конфигурационный файл для установки системных переменных /etc/sysctl.conf ${NC}"
 #echo 'Создадим конфигурационный файл для установки системных переменных /etc/sysctl.conf'
 # Creating a configuration file for setting system variables /etc/sysctl.conf
+echo " Sysctl - это инструмент для проверки и изменения параметров ядра во время выполнения (пакет procps-ng в официальных репозиториях ). sysctl реализован в procfs , файловой системе виртуального процесса в /proc/. "
+# Sysctl is a tool for checking and changing kernel parameters at runtime (the procps-ng package in official repositories). sysctl is implemented in procfs, the file system of a virtual process in /proc/.
 > /etc/sysctl.conf
 cat <<EOF >>/etc/sysctl.conf
 
@@ -1315,6 +1317,17 @@ kernel.core_uses_pid=1
 vm.swappiness=10
 
 EOF
+
+#-----------------------------------------------------------------
+#
+echo -e "${BLUE}:: ${NC}Установка базовых программ и пакетов"
+#echo 'Установка базовых программ и пакетов'
+# Installing basic programs and packages
+
+
+
+
+
 
 # ============================================================================
 
