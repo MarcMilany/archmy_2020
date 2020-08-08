@@ -1291,7 +1291,16 @@ echo -e "${YELLOW}==> ${NC}Установка производится в пор
 echo " Если Вы находитесь в России рекомендую выбрать вариант "1" "
 # To eliminate errors in the system, I recommend "1"
 echo "" 
+while 
+echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 read -p " 1 - Russia (https,http), 2 - 50 HTTP-зеркал, 3 - Kazakhstan (http), 4 - Russia, Belarus, Ukraine, Poland (https,http), 0 - Пропустить обновление зеркал: " zerkala  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+#echo " Действия ввода, выполняется сразу после нажатия клавиши "
+#read -n1 -p " 1 - Russia (https,http), 2 - 50 HTTP-зеркал, 3 - Kazakhstan (http), 4 - Russia, Belarus, Ukraine, Poland (https,http), 0 - Пропустить обновление зеркал: " zerkala  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$zerkala" =~ [^123456780] ]]
+do
+    :
+done 
  if [[ $zerkala == 1 ]]; then
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
 pacman -S reflector --noconfirm
