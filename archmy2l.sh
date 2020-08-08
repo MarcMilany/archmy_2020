@@ -832,7 +832,7 @@ useradd -m -g users -G adm,audio,games,lp,network,optical,power,scanner,storage,
 echo " Пользователь успешно добавлен в группы и права пользователя. "
 #
 ### User Password
-#echo ""
+echo ""
 echo -e "${GREEN}==> ${NC}Устанавливаем пароль пользователя (User Password)"
 #echo 'Устанавливаем пароль пользователя'
 # Setting the user password
