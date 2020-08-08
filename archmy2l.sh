@@ -1240,6 +1240,7 @@ sudo pacman -S wget --noconfirm
 # https://losst.ru/komanda-wget-linux
 # ============================================================================
 #
+### Creating sysctl
 echo ""
 echo -e "${GREEN}=> ${BOLD}Создадим конфигурационный файл для установки системных переменных /etc/sysctl.conf ${NC}"
 #echo 'Создадим конфигурационный файл для установки системных переменных /etc/sysctl.conf'
@@ -1320,8 +1321,7 @@ EOF
 
 #-----------------------------------------------------------------
 #
-# куда — это название директории, в которую мы перемещаем исходные файлы или директории. Или же это новое название файла или директории, если выполняется переименование
-
+### Creating sysctl
 echo -e "${BLUE}:: ${NC}Перемещаем и переименовываем исходный файл /etc/sysctl.conf в /etc/sysctl.d/99-sysctl.conf"
 #echo 'Перемещаем и переименовываем исходный файл /etc/sysctl.conf в /etc/sysctl.d/99-sysctl.conf'
 # Move and rename the source file /etc/sysctl.conf to /etc/sysctl.d / 99-sysctl.conf
