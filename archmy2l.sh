@@ -776,8 +776,8 @@ echo " Будьте внимательны! Без этих обновлений
 echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
 #echo 'Установка производится в порядке перечисления'
 # Installation Is performed in the order listed
-echo ""
 # Microcode (matching CPU) - У Вас amd или intel?
+echo ""
 while 
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 # read -p " 1 - AMD, 2 - INTEL, 3 - AMD и INTEL, 0 - Нет Пропустить этот шаг: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
