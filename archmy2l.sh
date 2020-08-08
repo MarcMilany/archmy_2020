@@ -1204,8 +1204,10 @@ echo " Dhcpcd успешно добавлен в автозагрузку "
 elif [[ $x_dhcpcd == 0 ]]; then
   echo ' Dhcpcd не включен в автозагрузку, при необходиости это можно будет сделать уже в установленной системе '
 fi
+#systemctl disable dhcpcd
+#systemctl status dhcpcd
 #
-### Install NTFS support
+### Install NTFS support "NTFS file support (Windows Drives)"
 echo ""
 echo -e "${BLUE}:: ${NC}Монтирование разделов NTFS и создание ссылок"
 #echo 'Монтирование разделов NTFS и создание ссылок'
@@ -1390,8 +1392,16 @@ echo -e "${BLUE}:: ${BOLD}Теперь вам надо ввести reboot, чт
 #'Now you need to enter 'reboot' to reboot"'
 ### Clean pacman cache (Очистить кэш pacman)
 pacman --noconfirm -Sc
-#    echo "-> ${MSG_DONE}"
-
+### Unmountdevices
+    echo "-> ${MSG_DONE}"
+    clear
+    echo "umount -R /mnt"
+    umount -R /mnt
+    if [ ! "${swapdev}" = "" ]; then
+        echo "swapoff ${swapdev}"
+        swapoff ${swapdev}
+    fi
+#
 exit 
 #umount -Rf /mnt
 
@@ -1405,7 +1415,6 @@ exit
 #Reboot.After restarting, go under the user
 #read -p "Пауза 3 ceк." -t 3
 #reboot
-
 
 
 
