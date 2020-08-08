@@ -769,6 +769,7 @@ do
     :
 done
 if [[ $swap == 1 ]]; then
+  echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "  
   read -p " Укажите swap раздел (sda/sdb 1.2.3.4 (sda7 например)): " swaps  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
   mkswap /dev/$swaps -L swap
   swapon /dev/$swaps
