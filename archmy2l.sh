@@ -1393,7 +1393,7 @@ echo -e "${BLUE}:: ${BOLD}Теперь вам надо ввести reboot, чт
 ### Clean pacman cache (Очистить кэш pacman)
 pacman --noconfirm -Sc
 ### Unmountdevices
-    echo "-> ${MSG_DONE}"
+#    echo "-> ${MSG_DONE}"
     clear
     echo "umount -R /mnt"
     umount -R /mnt
