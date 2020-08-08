@@ -975,7 +975,7 @@ echo -e "${YELLOW}==> ${NC}Установка производится в пор
 echo " Чтобы исключить ошибки в работе системы рекомендую "1" "
 # To eliminate errors in the system, I recommend "1"
 echo ""
-read -p " 1 - base + base-devel + packages, 2 - base + packages, 3 - base + base-devel, 4 - base: " x_pacstrap  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")  
+read -p " 1 - Base + Base-Devel + packages, 2 - Base + packages, 3 - Base + Base-Devel, 4 - Base: " x_pacstrap  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")  
  if [[ $x_pacstrap == 1 ]]; then
   clear
   echo " Установка выбранного вами, групп "
