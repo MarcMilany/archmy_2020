@@ -1204,8 +1204,8 @@ echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот ша�
 # You can skip this step if you are not sure of the correct choice
 echo ""
 while 
-#   read -n1 -p  " 1 - Включить dhcpcd, 0 - Нет - пропустить этот шаг: " x_dhcpcd   # sends right after the keypress; # отправляет сразу после
-  read -p " 1 - Включить dhcpcd, 0 - Нет - пропустить этот шаг: " x_dhcpcd  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+   read -n1 -p  " 1 - Включить dhcpcd, 0 - Нет - пропустить этот шаг: " x_dhcpcd   # sends right after the keypress; # отправляет сразу после
+#  read -p " 1 - Включить dhcpcd, 0 - Нет - пропустить этот шаг: " x_dhcpcd  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
     echo ''
     [[ "$x_dhcpcd" =~ [^10] ]]
 do
