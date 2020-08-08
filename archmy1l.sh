@@ -1134,11 +1134,10 @@ read -p " 1 - UUID genfstab -U, 2 - LABEL genfstab -L, 3 - PARTLABEL genfstab -t
   genfstab -pU /mnt >> /mnt/etc/fstab
 #genfstab -U -p /mnt >> /mnt/etc/fstab
 #genfstab -U / mnt >> / mnt / etc / fstab
- echo " Просмотреть содержимое файла fstab "
+# echo " Просмотреть содержимое файла fstab "
 # cat /mnt/etc/fstab
-cat < /mnt/etc/fstab | grep -v "Static information"
-sleep 02
-#echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. " 
+#cat < /mnt/etc/fstab | grep -v "Static information"
+echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. " 
 elif [[ $x_fstab == 2 ]]; then
   clear
   echo " Генерируем fstab выбранным вами методом "
@@ -1194,11 +1193,13 @@ fi
 # https://wiki.archlinux.org/index.php/Persistent_block_device_naming#by-uuid
 # ====================================================================
 #
+### Set Fstab
 echo ""
 echo -e "${BLUE}:: ${NC}Просмотреть содержимое файла fstab"
 #echo 'Просмотреть содержимое файла fstab'
 # View the contents of the fstab file
 cat /mnt/etc/fstab
+#cat < /mnt/etc/fstab | grep -v "Static information"
 # --------------------------------------------------------------------
 # Был создан файл содержащий данные о монтируемых файловых системах.
 # Чтобы система знала какие разделы монтировать при старте.
