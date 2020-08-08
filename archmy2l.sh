@@ -305,6 +305,7 @@ echo " Используйте в имени только буквы латинс
                                          (в нижнем (маленькие) регистре (a-z)(a-z0-9_-)), и цифры "
 read -p " => Введите имя пользователя: " username
 #
+### Set Hostname
 echo -e "${BLUE}:: ${NC}Прописываем имя компьютера"
 #echo 'Прописываем имя компьютера'
 # Entering the computer name
@@ -318,6 +319,7 @@ echo $hostname > /etc/hostname
 # echo имя_компьютера > /etc/hostname
 # =======================================================
 #
+### Clear the HOME FOLDER
 echo ""
 echo -e "${RED}==> ${NC}Очистить папку конфигурации (настроек), кеш, и скрытые каталоги в /home/$username от старой установленной системы? "
 #echo 'Очистить папку конфигурации, кеш, и скрытые каталоги в /home/$username от старой установленной системы?' 
@@ -348,6 +350,7 @@ echo ""
 echo " Очистка завершена "
 fi 
 #
+### Set Timezone
 echo ""
 echo -e "${BLUE}:: ${NC}Устанавливаем ваш часовой пояс"
 #echo 'Устанавливаем ваш часовой пояс'
@@ -378,6 +381,7 @@ ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 # Эта команда создает, так называемую символическую ссылку выбранного пояса в папке /etc
 # ===============================================================
 #
+### Specified Time
 echo -e "${BLUE}:: ${NC}Синхронизация системных часов"  
 #echo '2.3 Синхронизация системных часов'
 # Syncing the system clock
@@ -385,6 +389,7 @@ echo -e "${BLUE}:: ${NC}Синхронизация системных часов
 # Sync our system clock, enable ntp, change the time zone if necessary
 timedatectl set-ntp true
 #
+### Specified Time
 echo -e "${BLUE}:: ${NC}Проверим аппаратное время"
 #echo 'Проверим аппаратное время' 
 # Check the hardware time
@@ -395,11 +400,13 @@ hwclock --systohc
 #echo " hwclock --systohc --localtime "
 #hwclock --systohc --local
 #
+### Specified Time
 echo -e "${BLUE}:: ${NC}Посмотрим текущее состояние аппаратных и программных часов"
 #echo 'Посмотрим текущее состояние аппаратных и программных часов'
 # Let's see the current state of the hardware and software clock
 timedatectl
 #
+### Specified Time
 echo ""
 echo -e "${BLUE}:: ${NC}Настроим состояние аппаратных и программных часов"
 #echo 'Настроим состояние аппаратных и программных часов'
@@ -453,13 +460,15 @@ fi
 # https://www.ekzorchik.ru/2012/04/hardware-time-settings-hwclock/
 # ============================================================================
 #
+### Specified Time
 echo ""
 echo -e "${BLUE}:: ${NC}Посмотрим обновление времени (если настройка не была пропущена)"
 #echo 'Посмотрим обновление времени (если настройка не была пропущена)'
 # See the time update (if the setting was not skipped)
 timedatectl show
 #timedatectl | grep Time
-# 
+#
+### Set Hosts 
 echo ""
 echo -e "${BLUE}:: ${NC}Изменяем имя хоста"
 #echo 'Изменяем имя хоста'
@@ -475,6 +484,7 @@ echo "ff02::2 ip6-allrouters" >> /etc/hosts
 # Это дейсвие не обязательно! Мы можем это сделаем из установленной ситемы, если данные не пропишутся автоматом.
 # ============================================================
 #
+### Set Locale
 echo -e "${BLUE}:: ${NC}Добавляем русскую локаль системы"
 #echo 'Добавляем русскую локаль системы'
 # Adding the system's Russian locale
@@ -488,12 +498,14 @@ echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen
 #sed -i 's/#ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale.gen
 # ===========================================================
 #
+### Set Locale
 echo -e "${BLUE}:: ${NC}Обновим текущую локаль системы"
 #echo 'Обновим текущую локаль системы'
 # Update the current system locale
 locale-gen
 # Мы ввели locale-gen для генерации тех самых локалей.
 #
+### Set Locale
 sleep 02
 echo -e "${BLUE}:: ${NC}Указываем язык системы"
 #echo 'Указываем язык системы'
@@ -511,6 +523,7 @@ echo 'LANG="ru_RU.UTF-8"' > /etc/locale.conf
 # As you name it, you will swim...
 # ==========================================================
 #
+### Set Vconsole
 echo -e "${BLUE}:: ${NC}Вписываем KEYMAP=ru FONT=cyr-sun16"
 #echo 'Вписываем KEYMAP=ru FONT=cyr-sun16'
 # Enter KEYMAP=ru FONT=cyr-sun16
