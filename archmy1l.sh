@@ -525,6 +525,7 @@ echo ""
 echo -e "${BLUE}:: ${NC}Посмотрим структуру диска созданного установщиком"
 #echo 'Посмотрим структуру диска созданного установщиком'
 # Let's look at the disk structure created by the installer
+echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 read -p " => Укажите диск (sda/sdb например sda или sdb) : " cfd
 sgdisk -p /dev/$cfd #sda sdb sdc sdd
 #sgdisk -p /dev/sda #sdb sdc sdd
