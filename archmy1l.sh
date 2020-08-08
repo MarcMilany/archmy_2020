@@ -1164,7 +1164,17 @@ echo " Чтобы исключить ошибки в работе системы
 echo " Преимущество использования метода UUID состоит в том, что вероятность столкновения имен намного меньше, чем с метками. Далее он генерируется автоматически при создании файловой системы. "
 # The advantage of using the UUID method is that the probability of names colliding is much less than with placemarks. It is then generated automatically when the file system is created.
 echo ""
-read -p " 1 - UUID genfstab -U, 2 - LABEL genfstab -L, 3 - PARTLABEL genfstab -t PARTLABEL, 4 - PARTUUID genfstab -t PARTUUID: " x_fstab  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")  
+while
+echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+read -p " 1 - UUID genfstab -U, 2 - LABEL genfstab -L, 3 - PARTLABEL genfstab -t PARTLABEL, 4 - PARTUUID genfstab -t PARTUUID: " x_fstab  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+
+
+    echo ''
+    [[ "$x_fstab" =~ [^123456780] ]]
+do
+    :
+done  
+ if [[ $x_pacstrap == 1 ]]; then  
  if [[ $x_fstab == 1 ]]; then
   clear
   echo " Генерируем fstab выбранным вами методом "
