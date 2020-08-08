@@ -694,7 +694,7 @@ while
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
 read -n1 -p " 1 - Установить GRUB(legacy), 2 - GRUB(legacy) для платформ i386-pc, 0 - Нет пропустить: " i_grub  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$i_grub" =~ [^140] ]]
+    [[ "$i_grub" =~ [^120] ]]
 do
     :
 done
@@ -703,6 +703,7 @@ pacman -Syy
 pacman -S grub --noconfirm
 #pacman -S grub --noconfirm --noprogressbar --quiet 
 lsblk -f
+ echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
  read -p " => Укажите диск куда установить GRUB (sda/sdb например sda или sdb) : " x_cfd  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
  grub-install /dev/$x_cfd   #sda sdb sdc sdd
 #grub-install /dev/sda  #sdb sdc ... Пример
