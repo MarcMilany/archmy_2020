@@ -1350,15 +1350,27 @@ mv /etc/sysctl.conf /etc/sysctl.d/99-sysctl.conf
 #read -p "Введите допольнительные пакеты которые вы хотите установить: " packages 
 #pacman -S $packages --noconfirm
 
+#
+### Clean pacman cache (Очистить кэш pacman)
+echo -e "${BLUE}:: ${BOLD}Очистка кэша pacman ${NC}"
+#echo 'Очистка кэша pacman'
+# Clearing the pacman cache
+pacman --noconfirm -Sc       # Очистка кэша неустановленных пакетов
+# pacman -Sc                 # --noconfirm      не спрашивать каких-либо подтверждений
+# pacman --noconfirm -Scc    # Очистка кэша пакетов
+# pacman -Scc                # --noconfirm      не спрашивать каких-либо подтверждений
+# pacman -Qqe                # Список установленных пакетов в системе
+# ==============================================================
+#
 echo -e "${GREEN}
   <<< Поздравляем! Установка завершена. Перезагрузите систему. >>> ${NC}"
 # Congratulations! Installation is complete. Reboot the system.
-
+#
 echo -e "${BLUE}:: ${BOLD}Посмотрим дату и время ... ${NC}"
 #echo 'Посмотрим дату и время'
 # Let's look at the date and time
 date
-
+#
 echo -e "${BLUE}:: ${BOLD}Отобразить время работы системы ... ${NC}"
 #echo 'Отобразить время работы системы'
 # Display the system's operating time 
@@ -1369,54 +1381,30 @@ uptime
 # load average: 0.66, 0.62, 0.35 – средние значения загрузки системы за последние 1, 5 и 15 минут.
 # Как использовать команду Uptime:
 # https://andreyex.ru/operacionnaya-sistema-linux/komanda-uptime-v-linux/
-
+#
 echo -e "${MAGENTA}==> ${BOLD}После перезагрузки и входа в систему проверьте ваши персональные настройки. ${NC}"
 #echo 'После перезагрузки и входа в систему проверьте ваши персональные настройки.'
 # After restarting and logging in, check your personal settings.
-
+#
 echo -e "${MAGENTA}==> ${BOLD}Если у Вас беспроводное соединение, запустите nmtui и подключитесь к сети. ${NC}"
 #echo 'Если у Вас беспроводное соединение, запустите nmtui и подключитесь к сети.'
 # If you have a wireless connection, launch nmtui and connect to the network.
-
+#
 echo -e "${YELLOW}==> ...${NC}"
 echo -e "${BLUE}:: ${NC}Если хотите подключить AUR, установить дополнительный софт (пакеты), установить мои конфиги XFCE, тогда после перезагрузки и входа в систему выполните команду:"
 #echo 'Если хотите подключить AUR, установить дополнительный софт (пакеты), установить мои конфиги XFCE, тогда после перезагрузки и входа в систему выполните команду:'
 # If you want to connect AUR, install additional software (packages), install my Xfce configs, then after restarting and logging in, run the command:
 echo -e "${YELLOW}==> ${CYAN}wget git.io/archmy3 && sh archmy3 ${NC}"
-
+#
 echo -e "${RED}==> ${BOLD}Выходим из установленной системы ${NC}"
 #echo 'Выходим из установленной системы'
 # Exiting the installed system
+#
 echo -e "${BLUE}:: ${BOLD}Теперь вам надо ввести reboot, чтобы перезагрузиться ${NC}"
 #echo 'Теперь вам надо ввести reboot, чтобы перезагрузиться'
 #'Now you need to enter 'reboot' to reboot"'
-### Clean pacman cache (Очистить кэш pacman)
-pacman --noconfirm -Sc
-### Unmountdevices
-#    echo "-> ${MSG_DONE}"
-    clear
-    echo "umount -R /mnt"
-    umount -R /mnt
-    if [ ! "${swapdev}" = "" ]; then
-        echo "swapoff ${swapdev}"
-        swapoff ${swapdev}
-    fi
-#
 exit 
-#umount -Rf /mnt
-
-# Разделы (отмонтировать) Partitions (umount) 
-#umount -Rfv /mnt
-#umount -R /mnt
-
-#echo -e "${BLUE}:: ${NC}Сейчас следует перезагрузить систему"
-#echo 'После перезагрузки заходим под пользователем'
-#Перезагрузка.После перезагрузки заходим под пользователем
-#Reboot.After restarting, go under the user
-#read -p "Пауза 3 ceк." -t 3
-#reboot
-
-
-
+#
+# ******************************************************
 
 
