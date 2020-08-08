@@ -289,8 +289,8 @@ pacman -Syyu  --noconfirm
 ### Hostname
 ### Username
 echo ""
-echo -e "${BLUE}:: ${NC}Вводим имя компьютера, и имя пользователя"
-#echo 'Вводим имя компьютера, и имя пользователя'
+echo -e "${BLUE}:: ${NC}Вводим имя компьютера (host name), и имя пользователя (user name)"
+#echo 'Вводим имя компьютера (hostname), и имя пользователя (username)'
 #echo 'Enter the computer name and user name'
 # Enter the computer name
 # Enter your username
@@ -330,8 +330,8 @@ echo -e "${YELLOW}==> ${NC}Будьте осторожны! Если Вы сом
 # Be careful! If you are in doubt about your actions, just skip this point.
 while 
 echo ""
-  read -n1 -p  " 1 - Да очистить папки конфигов, 0 - Нет пропустить очистку: " i_rm   # sends right after the keypress; # отправляет сразу после нажатия клавиши 
-# read -p " 1 - Да очистить папки конфигов, 0 - Нет пропустить очистку: " i_rm  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")  
+#  read -n1 -p  " 1 - Да очистить папки конфигов, 0 - Нет пропустить очистку: " i_rm   # sends right after the keypress; # отправляет сразу после нажатия клавиши 
+ read -p " 1 - Да очистить папки конфигов, 0 - Нет пропустить очистку: " i_rm  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")  
 echo ''    
    [[ "$i_rm" =~ [^10] ]]     
 do
