@@ -626,6 +626,7 @@ echo ""
 #https://ru.wikipedia.org/wiki/Initrd
 # ==============================================================
 #
+### Set Root passwd
 ### Root Password
 echo -e "${GREEN}==> ${NC}Создаём root пароль (Root Password)"
 #echo 'Создаём root пароль'
@@ -703,6 +704,7 @@ fi
 # https://losst.ru/nastrojka-zagruzchika-grub
 # =====================================================================
 #
+### Install Microcode
 #clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установить Микрокод для процессора INTEL_CPU, AMD_CPU?"
@@ -834,6 +836,7 @@ pacman -S dialog wpa_supplicant iw wireless_tools net-tools --noconfirm
 echo " Установка программ (пакетов) пропущена. "
  fi
 #
+### Set User
 echo ""
 echo -e "${BLUE}:: ${NC}Добавляем пользователя и прописываем права, группы"
 #echo 'Добавляем пользователя и прописываем права, группы'
@@ -844,6 +847,7 @@ useradd -m -g users -G adm,audio,games,lp,network,optical,power,scanner,storage,
 #useradd -m -g users -G audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel -s /bin/bash $username
 echo " Пользователь успешно добавлен в группы и права пользователя. "
 #
+### Set User passwd
 ### User Password
 echo ""
 echo -e "${GREEN}==> ${NC}Устанавливаем пароль пользователя (User Password)"
@@ -1201,6 +1205,7 @@ elif [[ $x_dhcpcd == 0 ]]; then
   echo ' Dhcpcd не включен в автозагрузку, при необходиости это можно будет сделать уже в установленной системе '
 fi
 #
+### Install NTFS support
 echo ""
 echo -e "${BLUE}:: ${NC}Монтирование разделов NTFS и создание ссылок"
 #echo 'Монтирование разделов NTFS и создание ссылок'
@@ -1370,7 +1375,9 @@ exit
 #read -p "Пауза 3 ceк." -t 3
 #reboot
 
-
+### Clean pacman cache
+#    _chroot "pacman --noconfirm -Sc"
+#    echo "-> ${MSG_DONE}"
 
 
 
