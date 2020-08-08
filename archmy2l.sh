@@ -1382,6 +1382,7 @@ echo -e "${BLUE}:: ${BOLD}Очистка кэша pacman ${NC}"
 # Clearing the pacman cache
 #clear
 echo " umount -R /mnt "
+#umount -Rfv /mnt
 umount -R /mnt
 #
 echo -e "${GREEN}
