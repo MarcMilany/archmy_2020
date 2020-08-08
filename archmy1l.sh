@@ -1100,7 +1100,7 @@ echo ""
 # https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 # ------------------------------------------------------------------
 #
- ### Set Fstab
+### Set Fstab
 echo -e "${GREEN}==> ${NC}Настройка системы, генерируем fstab" 
 #echo 'Настройка системы, генерируем fstab'
 # Configuring the system, generating fstab
