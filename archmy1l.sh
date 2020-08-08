@@ -659,6 +659,7 @@ if [[ $cfdisk == 1 ]]; then
  echo -e "${BLUE}:: ${NC}Выбор диска для установки"  
  lsblk -f
   echo ""
+  echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
   read -p " => Укажите диск (sda/sdb например sda или sdb) : " cfd
 cfdisk /dev/$cfd
 echo ""
