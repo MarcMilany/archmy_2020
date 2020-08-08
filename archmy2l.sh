@@ -897,8 +897,8 @@ echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот ша�
 # You can skip this step if you are not sure of the correct choice
 echo ""
 while
-read -p " 1 - Вводим информация о пользователе,  0 - Пропустить этот шаг: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")  
-# read -n1 -p  " 1 - Вводим информация о пользователе, 0 - Пропустить этот шаг: " prog_set   # sends right after the keypress; # отправляет сразу после нажатия клавиши
+# read -p " 1 - Вводим информация о пользователе,  0 - Пропустить этот шаг: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")  
+ read -n1 -p  " 1 - Вводим информация о пользователе, 0 - Пропустить этот шаг: " prog_set   # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
     [[ "$prog_set" =~ [^12] ]]
 do
@@ -1124,6 +1124,7 @@ echo -e "${BLUE}:: ${NC}Ставим DE (от англ. desktop environment — 
 #echo 'Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce'
 # Put DE (from the English desktop environment-desktop environment) Xfce
 pacman -S xfce4 xfce4-goodies --noconfirm
+#
 #pacman -S xorg-xinit --noconfirm
 cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
 chown $username:users /home/$username/.xinitrc
