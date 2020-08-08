@@ -758,7 +758,7 @@ fi
 # ===================================================================
 #
 echo ""
-echo -e "${YELLOW}==> ${NC}Если на компьютере будут несколько ОС, то это также ставим."
+echo -e "${GREEN}==> ${NC}Если на компьютере будут несколько ОС, то это также ставим."
 #echo -e "${BLUE}:: ${NC}Если на компьютере будут несколько OS, то это также ставим."
 #echo 'Если на компьютере будут несколько ОС, то это также ставим.'
 # # If the system will have several operating systems, then this is also set
@@ -776,7 +776,7 @@ do
     :
 done
 if [[ $prog_set  == 1 ]]; then
- echo " Устанавливаем программы (пакеты) для определения другой OS "		
+ echo " Устанавливаем программы (пакеты) для определения другой-(их) OS "		
 pacman -S os-prober mtools fuse --noconfirm  #grub-customizer
  echo " Программы (пакеты) установлены "  	
  elif [[ $prog_set  == 0 ]]; then
@@ -814,7 +814,7 @@ do
     :
 done
 if [[ $i_wifi  == 1 ]]; then
- echo " Устанавливаем программы для Wi-fi "		
+ echo " Устанавливаем программы (пакеты) для Wi-fi "		
 pacman -S dialog wpa_supplicant iw wireless_tools net-tools --noconfirm 
  echo " Программы (пакеты) для Wi-fi установлены "  	
  elif [[ $i_wifi  == 0 ]]; then
