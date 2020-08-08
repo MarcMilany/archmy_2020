@@ -1132,7 +1132,7 @@ read -p " 1 - UUID genfstab -U, 2 - LABEL genfstab -L, 3 - PARTLABEL genfstab -t
   echo " Генерируем fstab выбранным вами методом "
   echo " UUID - genfstab -U -p /mnt > /mnt/etc/fstab "
   genfstab -pU /mnt >> /mnt/etc/fstab
-#genfstab -U -p /mnt > /mnt/etc/fstab
+#genfstab -U -p /mnt >> /mnt/etc/fstab
 #genfstab -U / mnt >> / mnt / etc / fstab
  echo " Просмотреть содержимое файла fstab "
 # cat /mnt/etc/fstab
