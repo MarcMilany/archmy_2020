@@ -529,6 +529,7 @@ echo " Чтобы подтвердить действия ввода, нажми
 read -p " => Укажите диск (sda/sdb например sda или sdb) : " cfd
 sgdisk -p /dev/$cfd #sda sdb sdc sdd
 #sgdisk -p /dev/sda #sdb sdc sdd
+read -r ID 
 #
 echo ""
 echo -e "${RED}==> ${NC}Удалить (стереть) таблицу разделов на выбранном диске (sdX)?"
@@ -713,6 +714,7 @@ read -p " Укажите ROOT раздел (sda/sdb 1.2.3.4 (sda5 наприме
 echo ""
 mkfs.ext4 /dev/$root -L root
 mount /dev/$root /mnt
+#mount -v /dev/$root /mnt    # -v или --verbose Выводить сообщение о каждой создаваемой директории
 echo ""
 ########## Boot  ########
 clear
@@ -744,7 +746,9 @@ if [[ $boots == 1 ]]; then
   #mkfs.ext2  /dev/$bootd
   mkfs.ext2  /dev/$bootd -L boot
   mkdir /mnt/boot
+#  mkdir -v /mnt/boot
   mount /dev/$bootd /mnt/boot
+# mount -v /dev/$bootd /mnt/boot   # -v или --verbose Выводить сообщение о каждой создаваемой директории
 elif [[ $boots == 0 ]]; then
  echo " Форматирование и монтирование не требуется " 
 fi
@@ -774,6 +778,7 @@ if [[ $swap == 1 ]]; then
   read -p " Укажите swap раздел (sda/sdb 1.2.3.4 (sda7 например)): " swaps  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
   mkswap /dev/$swaps -L swap
   swapon /dev/$swaps
+# swapon -v /dev/$swaps 
 elif [[ $swap == 0 ]]; then
    echo ' Добавление Swap раздела пропущено. '   
 fi
@@ -822,14 +827,18 @@ done
    echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
    read -p " Укажите HOME раздел (sda/sdb 1.2.3.4 (sda6 например)): " home  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
    mkfs.ext4 /dev/$home -L home
-   mkdir /mnt/home 
+   mkdir /mnt/home
+#  mkdir -v /mnt/home
    mount /dev/$home /mnt/home
+#  mount -v /dev/$home /mnt/home # -v или --verbose Выводить сообщение о каждой создаваемой директории
    elif [[ $homeF == 0 ]]; then
  lsblk -f
  echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
  read -p " Укажите HOME раздел (sda/sdb 1.2.3.4 (sda6 например)): " homeV  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
- mkdir /mnt/home 
+ mkdir /mnt/home
+#mkdir -v /mnt/home  
  mount /dev/$homeV /mnt/home
+#mount -v /dev/$homeV /mnt/home  # -v или --verbose Выводить сообщение о каждой создаваемой директории
 fi
 fi
 # -----------------------------------------------------------------
