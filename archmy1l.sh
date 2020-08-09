@@ -529,7 +529,6 @@ echo " Чтобы подтвердить действия ввода, нажми
 read -p " => Укажите диск (sda/sdb например sda или sdb) : " cfd
 sgdisk -p /dev/$cfd #sda sdb sdc sdd
 #sgdisk -p /dev/sda #sdb sdc sdd
-read -r ID /dev/$cfd
 #
 echo ""
 echo -e "${RED}==> ${NC}Удалить (стереть) таблицу разделов на выбранном диске (sdX)?"
