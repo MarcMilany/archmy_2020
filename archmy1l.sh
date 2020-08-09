@@ -1304,7 +1304,7 @@ do
 done 
  if [[ $zerkala == 1 ]]; then
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
-pacman -S reflector --noconfirm
+#pacman -S reflector --noconfirm
 #pacman -Sy --noconfirm --noprogressbar --quiet reflector
 reflector --verbose --country 'Russia' -l 7 -p https -p http -n 7 --save /etc/pacman.d/mirrorlist --sort rate  
 #reflector --verbose --country 'Russia' -l 7 -p https -p http -n 7 --sort rate --save /etc/pacman.d/mirrorlist
@@ -1381,6 +1381,9 @@ echo " Первый этап установки Arch'a закончен "
 echo 'Установка продолжится в ARCH-LINUX chroot' 
 arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"
 #
+echo "################################################################"
+echo "###################    T H E   E N D      ######################"
+echo "################################################################"
 # Размонтирование всех смонтированных файловых систем (кроме корневой):
 # команда перемонтирует все файловые системы указанные в /etc/fstab, за исключением разделов с опцией noauto.
 umount -a   
