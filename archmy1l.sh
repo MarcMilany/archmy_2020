@@ -366,6 +366,32 @@ export LANG=ru_RU.UTF-8
 _arch_fast_install_banner
 #
 sleep 02
+### Installing ArchLinux 
+echo -e "${CYAN}==> ${NC}Вы готовы приступить к установке Arch Linux?"
+#echo 'Вы готовы приступить к установке Arch Linux'
+# Are you ready to start installing Arch Linux?
+while
+echo " Действия ввода, выполняется сразу после нажатия клавиши " 
+echo ""
+  read -n1 -p " 1 - Да приступить, 0 - Нет отменить: " hello  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#echo ""
+# read -p " 1 - Да приступить, 0 - Нет отменить: " hello  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")  
+    echo ''
+    [[ "$hello" =~ [^10] ]]
+do
+    :
+done
+ if [[ $hello == 1 ]]; then
+  clear
+  echo " Добро пожаловать в установку Arch Linux "
+  elif [[ $hello == 0 ]]; then
+  echo " Вы отказались от установки Arch Linux" 
+  read -p "Пауза 3 ceк." -t 3
+   exit   
+fi
+###
+#
 echo -e "${GREEN}
   <<< Начинается установка минимальной системы Arch Linux >>>
 ${NC}"
@@ -404,11 +430,12 @@ echo " Будьте внимательны! Если Вы сомневаетес
 # Be careful! If you are in doubt about your actions, you can skip running the key update.
 echo -e "${RED}==> ${BOLD}Примечание: - Иногда при запуске обновления ключей возникает ошибка, не переживайте просто перезапустите работу скрипта (sh -название скрипта-)${NC}"
 # Note: - Sometimes when you start updating keys, an error occurs, do not worry, just restart the script (sh -script name-)
+echo ""
 while
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-# read -p " 1 - Да обновить , 0 - Нет пропустить: " x_key  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+# read -p " 1 - Да обновить, 0 - Нет пропустить: " x_key  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
-read -n1 -p " 1 - Да обновить , 0 - Нет пропустить: " x_key  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+read -n1 -p " 1 - Да обновить, 0 - Нет пропустить: " x_key  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
     [[ "$x_key" =~ [^10] ]]
 do
@@ -421,6 +448,7 @@ done
    echo " Обновление ключей пропущено "   
 fi
 #
+clear
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
 #echo 'Обновим базы данных пакетов'
@@ -636,6 +664,12 @@ fi
 ### https://linux-faq.ru/page/komanda-fdisk
 ### https://www.altlinux.org/Fdisk
 # ================================================================
+#
+#clear
+echo -e "${BOLD}
+  <<< Вся разметка диска(ов) производится только в cfdisk! >>>
+${NC}"
+# The whole layout of the disk is made only in cfdisk!
 #
 echo ""
 echo -e "${GREEN}==> ${NC}Создание разделов диска для установки ArchLinux"
@@ -1398,8 +1432,8 @@ echo "############################################################"
 #
 # Размонтирование всех смонтированных файловых систем (кроме корневой):
 # команда перемонтирует все файловые системы указанные в /etc/fstab, за исключением разделов с опцией noauto.
-umount -a   
-reboot  
+#umount -a   
+#reboot  
 #  
 ### curl -fsSL
 #-f — не выводить сообщения об ошибках;
