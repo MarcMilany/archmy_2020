@@ -366,6 +366,7 @@ export LANG=ru_RU.UTF-8
 _arch_fast_install_banner
 #
 sleep 02
+echo ""
 ### Installing ArchLinux 
 echo -e "${CYAN}==> ${NC}Вы готовы приступить к установке Arch Linux?"
 #echo 'Вы готовы приступить к установке Arch Linux'
@@ -431,10 +432,11 @@ echo " Будьте внимательны! Если Вы сомневаетес
 echo -e "${RED}==> ${BOLD}Примечание: - Иногда при запуске обновления ключей возникает ошибка, не переживайте просто перезапустите работу скрипта (sh -название скрипта-)${NC}"
 # Note: - Sometimes when you start updating keys, an error occurs, do not worry, just restart the script (sh -script name-)
 echo ""
-while
+#while
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 # read -p " 1 - Да обновить, 0 - Нет пропустить: " x_key  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
+while
 read -n1 -p " 1 - Да обновить, 0 - Нет пропустить: " x_key  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
     [[ "$x_key" =~ [^10] ]]
