@@ -577,6 +577,7 @@ do
     :
 done
 if [[ $sgdisk == 1 ]]; then
+echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "    
 read -p " => Укажите диск (sda/sdb например sda или sdb) : " cfd
 sgdisk --zap-all /dev/$cfd  #sda sdb sdc sdd
   echo " Создание новых записей GPT в памяти. "
