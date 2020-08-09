@@ -1053,6 +1053,7 @@ do
 done
  if [[ $x_pacstrap == 1 ]]; then
   clear
+  echo ""
   echo " Установка выбранного вами, групп "
   pacstrap /mnt base base-devel nano vim dhcpcd netctl which inetutils #wget 
 #  pacstrap /mnt base            #--noconfirm --noprogressbar --quiet
@@ -1061,18 +1062,21 @@ done
 #  pacstrap /mnt nano vim dhcpcd netctl which inetutils #wget
 elif [[ $x_pacstrap == 2 ]]; then
   clear
+  echo ""
   echo " Установка выбранного вами, группы "
   pacstrap /mnt base nano vim dhcpcd netctl which inetutils #wget
 #  pacstrap /mnt base
 #  pacstrap /mnt nano vim dhcpcd netctl which inetutils #wget
 elif [[ $x_pacstrap == 3 ]]; then
   clear
+  echo ""
   echo " Установка выбранных вами групп "
   pacstrap /mnt base base base-devel
 #  pacstrap /mnt base-devel
 #  pacstrap /mnt --needed base-devel   
 elif [[ $x_pacstrap == 4 ]]; then
   clear
+  echo ""
   echo " Установка выбранной вами группы "
   pacstrap /mnt base 
 fi 
