@@ -1266,7 +1266,7 @@ rm /mnt/etc/pacman.d/mirrorlist
 #rm /etc/pacman.d/mirrorlist.old
 # -------------------------------------------------------------------
 #
-#clear
+clear
 echo ""
 echo -e "${GREEN}==> ${NC}Сменить зеркала для увеличения скорости загрузки пакетов?" 
 #echo 'Сменить зеркала для увеличения скорости загрузки пакетов?'
@@ -1304,7 +1304,7 @@ do
 done 
  if [[ $zerkala == 1 ]]; then
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
-#pacman -S reflector --noconfirm
+pacman -S reflector --noconfirm
 #pacman -Sy --noconfirm --noprogressbar --quiet reflector
 reflector --verbose --country 'Russia' -l 7 -p https -p http -n 7 --save /etc/pacman.d/mirrorlist --sort rate  
 #reflector --verbose --country 'Russia' -l 7 -p https -p http -n 7 --sort rate --save /etc/pacman.d/mirrorlist
