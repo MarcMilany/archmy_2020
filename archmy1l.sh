@@ -1393,7 +1393,7 @@ echo 'Установка продолжится в ARCH-LINUX chroot'
 arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"
 #
 echo "###################################################################"
-echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update     ${NC}"
+echo -e "${BLUE}      ARCH LINUX FAST INSTALL ${RED}1.6 Update      ${NC}"
 echo "###################################################################"
 #
 # Размонтирование всех смонтированных файловых систем (кроме корневой):
