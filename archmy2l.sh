@@ -302,21 +302,22 @@ pacman -Syyu  --noconfirm
 ### Hostname
 ### Username
 echo ""
-echo -e "${BLUE}:: ${NC}Вводим имя компьютера (host name), и имя пользователя (user name)"
+echo -e "${GREEN}==> ${NC}Вводим имя компьютера (host name), и имя пользователя (user name)"
+#echo -e "${BLUE}:: ${NC}Вводим имя компьютера (host name), и имя пользователя (user name)"
 #echo 'Вводим имя компьютера (hostname), и имя пользователя (username)'
 #echo 'Enter the computer name and user name'
 # Enter the computer name
 # Enter your username
 #read -p "Введите имя компьютера: " hostname
 #read -p "Введите имя пользователя: " username
-echo -e "${GREEN}==> ${NC}" 
+echo -e "${MAGENTA}==> ${NC}" 
 echo " Используйте в имени только буквы латинского алфавита (a-zA-Z0-9) (можно с заглавной буквы) "
 echo " Латиница - это английские буквы. Кириллица - русские. "
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 read -p " => Введите имя компьютера: " hostname
-echo -e "${GREEN}==> ${NC}"
+echo -e "${MAGENTA}==> ${NC}"
 echo " Используйте в имени только буквы латинского алфавита 	
-                                         (в нижнем (маленькие) регистре (a-z)(a-z0-9_-)), и цифры "
+                    (в нижнем (маленькие) регистре (a-z)(a-z0-9_-)), и цифры "
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "                                         
 read -p " => Введите имя пользователя: " username
 #
@@ -787,7 +788,7 @@ while
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
 read -n1 -p " 1 - AMD, 2 - INTEL, 3 - AMD и INTEL, 0 - Нет Пропустить этот шаг: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^220] ]]
+    [[ "$prog_set" =~ [^123456780] ]]
 do
     :
 done
