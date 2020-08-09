@@ -1254,6 +1254,8 @@ cat /mnt/etc/fstab
 # ====================================================================
 #
 sleep 01
+clear
+echo ""
 echo -e "${BLUE}:: ${NC}Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist"
 #echo 'Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist'
 # Delete files /etc/pacman.d/mirrorlist
@@ -1266,7 +1268,7 @@ rm /mnt/etc/pacman.d/mirrorlist
 #rm /etc/pacman.d/mirrorlist.old
 # -------------------------------------------------------------------
 #
-clear
+#clear
 echo ""
 echo -e "${GREEN}==> ${NC}Сменить зеркала для увеличения скорости загрузки пакетов?" 
 #echo 'Сменить зеркала для увеличения скорости загрузки пакетов?'
