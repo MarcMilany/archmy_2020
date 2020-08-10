@@ -1358,7 +1358,12 @@ echo " Если Вы находитесь в России рекомендую �
 echo "" 
 while 
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-read -p " 1 - Russia (https,http), 2 - 50 HTTP-зеркал, 3 - Kazakhstan (http), 4 - Russia, Belarus, Ukraine, Poland (https,http), 0 - Пропустить обновление зеркал: " zerkala  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+#read -p " 1 - Russia (https,http), 2 - 50 HTTP-зеркал, 3 - Kazakhstan (http), 4 - Russia, Belarus, Ukraine, Poland (https,http), 0 - Пропустить обновление зеркал: " zerkala  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+read -p "     1 - Russia (https,http),     2 - 50 HTTP-зеркал, 
+
+              3 - Kazakhstan (http),       4 - Russia, Belarus, Ukraine, Poland (https,http), 
+
+              0 - Пропустить обновление зеркал: " zerkala  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 #echo " Действия ввода, выполняется сразу после нажатия клавиши "
 #read -n1 -p " 1 - Russia (https,http), 2 - 50 HTTP-зеркал, 3 - Kazakhstan (http), 4 - Russia, Belarus, Ukraine, Poland (https,http), 0 - Пропустить обновление зеркал: " zerkala  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
