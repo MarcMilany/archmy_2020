@@ -704,6 +704,7 @@ passwd
 # ============================================================================
 #
 ### GRUB
+#clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установить (bootloader) загрузчик GRUB(legacy)?"
 #echo 'Установить загрузчик GRUB(legacy)?'
@@ -717,14 +718,14 @@ echo " 2 - Если нужно установить BIOS-версию загру
 echo " В этом варианте требуется принудительно задать программе установки нужную сборку GRUB: 
         Пример - grub-install --target=i386-pc /dev/sdX  #sda sdb sdc sdd. "
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если у вас уже имеется BOOT раздел от другой (предыдущей) системы gnu-linux, с установленным на нём GRUB."
-#echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
-# You can skip this step if you are not sure of the correct choice
+#echo 'Вы можете пропустить этот шаг, если у вас уже имеется BOOT раздел от другой (предыдущей) системы gnu-linux, с установленным на нём GRUB.'
+# You can skip this step if you already have a BOOT partition from another (previous) gnu-linux system with GRUB installed on it.
 echo " Будьте внимательны! "
 # Be careful!
 echo ""
 while
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-# read -p " 1 - Установить GRUB(legacy), 2 - GRUB(legacy) для платформ i386-pc, 0 - Нет пропустить: " i_grub  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+# read -p " 1 - Установить GRUB(legacy), 2 - GRUB --target=i386-pc, 0 - Нет пропустить: " i_grub  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
 read -n1 -p " 1 - Установить GRUB(legacy), 2 - GRUB --target=i386-pc, 0 - Нет пропустить: " i_grub  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
@@ -790,7 +791,7 @@ fi
 #grub-install /dev/$cfd  #sda sdb sdc sdd
 # ------------------------------------------------------------------
 # 
-
+#
 # -------------------------------------------------------------------
 # Если вы хотите установить Grub на флешку в MBR, то тут тоже нет проблем просто примонтируйте флешку и выполните такую команду:
 #sudo grub-install --root-directory=/mnt/USB/ /dev/sdb
