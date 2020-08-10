@@ -1217,7 +1217,7 @@ echo -e "${BLUE}:: ${NC}Ставим DE (от англ. desktop environment — 
 # Put DE (from the English desktop environment-desktop environment) Xfce
 #pacman -S xfce4 xfce4-goodies
 pacman -S xfce4 xfce4-goodies --noconfirm
-# pacman -S  xfce4  pavucontrol xfce4-goodies  --noconfirm
+# pacman -S  xfce4 xfce4-goodies pavucontrol --noconfirm
 echo ""
 echo " DE (среда рабочего стола) Xfce успешно установлено "
 #
