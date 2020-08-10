@@ -609,19 +609,23 @@ do
 done
 if [[ $x_ram == 1 ]]; then
   clear
+  echo ""
   echo " Создадим загрузочный RAM диск - для ядра (linux) "
   mkinitcpio -p linux   # mkinitcpio -P linux
 # mkinitcpio -P   
 elif [[ $x_ram == 2 ]]; then
   clear
+  echo ""
   echo " Создадим загрузочный RAM диск - для ядра (linux-hardened) "
   mkinitcpio -p linux-hardened   
 elif [[ $x_ram == 3 ]]; then
   clear
+  echo ""
   echo " Создадим загрузочный RAM диск - для ядра (linux-lts) "
   mkinitcpio -p linux-lts  
 elif [[ $x_ram == 4 ]]; then
   clear
+  echo ""
   echo " Создадим загрузочный RAM диск - для ядра (linux-zen) " 
   mkinitcpio -p linux-zen 
 elif [[ $x_ram == 0 ]]; then
