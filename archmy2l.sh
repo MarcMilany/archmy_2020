@@ -380,13 +380,11 @@ echo -e "${BLUE}:: ${NC}Устанавливаем ваш часовой поя�
 #rm -v /etc/localtime
 #ln -s /usr/share/zoneinfo/Europe/Moscow
 #ln -s /usr/share/zoneinfo/Europe/Moscow /etc/localtime
-ls /usr/share/zoneinfo
+#ls /usr/share/zoneinfo
 ls /usr/share/zoneinfo/Europe
 echo " Укажите вашу (timezone), как это показано в примере. "
 echo -e "${MAGENTA}=> ${BOLD}Используйте только буквы латинского алфавита (a-zA-Z) (начиная название с заглавной буквы). Латиница - это английские буквы. ${NC}"
-echo " ln -sf /usr/share/zoneinfo/${timezone} /etc/localtime "
-#echo " ln -sf /usr/share/zoneinfo/timezone /etc/localtime "
-echo " ln -sf /usr/share/zoneinfo/$timezone /etc/localtime "
+#echo " ln -sf /usr/share/zoneinfo/${timezone} /etc/localtime "
 echo " ln -sf /usr/share/zoneinfo/Частъ Света/Город /etc/localtime "
 echo " ln -sf /usr/share/zoneinfo/Зона/Субзона /etc/localtime "
 echo -e "${MAGENTA}=> ${BOLD}Мир состоит из шести частей света: Азия, Африка, Америка, Европа, Австралия и Океания, Антарктика (Антарктида с прибрежными морями и островами). Иногда Океанию и Арктику выделяют в отдельные части света. ${NC}"
