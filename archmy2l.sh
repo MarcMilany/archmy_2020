@@ -1300,9 +1300,9 @@ while
     echo " Действия ввода, выполняется сразу после нажатия клавиши " 
 #    read -n1 -p  " 1 - Да нужен автовход без DM, 0 - Нет буду использовать DM: " i_xfce   # sends right after the keypress; # отправляет сразу после нажатия клавиши
     read -n1 -p  "
-    1 - Да нужен автовход без DM, 
+    1 - Да нужен автовход без DM (Display manager), 
 
-    0 - Нет буду использовать DM: " i_xfce   # sends right after the keypress; # отправляет сразу после нажатия клавиши   
+    0 - Нет буду использовать DM (Display manager): " i_xfce   # sends right after the keypress; # отправляет сразу после нажатия клавиши   
     echo ''
     [[ "$i_xfce" =~ [^10] ]]
 do
