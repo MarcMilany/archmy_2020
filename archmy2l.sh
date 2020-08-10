@@ -1231,18 +1231,14 @@ echo ""
 echo " Если нужен автовход без DM (Display manager) тогда укажите 1   "
 echo ""
 while
+# echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "    
+# read -p  " 1 - Да нужен автовход без DM, 0 - Нет буду использовать DM: " i_xfce   # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
     echo " Действия ввода, выполняется сразу после нажатия клавиши " 
-#    read -n1 -p  " 1 - Да нужен автовход без DM, 0 - Нет буду использовать DM: " i_xfce   # sends right after the keypress; # отправляет сразу после
-    
+#    read -n1 -p  " 1 - Да нужен автовход без DM, 0 - Нет буду использовать DM: " i_xfce   # sends right after the keypress; # отправляет сразу после нажатия клавиши
     read -n1 -p  "
     1 - Да нужен автовход без DM, 
 
-    0 - Нет буду использовать DM: " i_xfce   # sends right after the keypress; # отправляет сразу после
-# echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "    
-# read -p  " 1 - Да нужен автовход без DM, 0 - Нет буду использовать DM: " i_xfce   # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
-
-    
-    
+    0 - Нет буду использовать DM: " i_xfce   # sends right after the keypress; # отправляет сразу после нажатия клавиши   
     echo ''
     [[ "$i_xfce" =~ [^10] ]]
 do
