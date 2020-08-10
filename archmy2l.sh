@@ -1275,7 +1275,8 @@ echo " DE (среда рабочего стола) Xfce успешно уста�
 ### Log in without DM (Display manager) 
 clear
 echo ""
-echo -e "${BLUE}:: ${NC}Настройка автовхода без DM (Display manager) менеджера входа в Xfce"
+echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Display manager) менеджера входа в Xfce"
+#echo -e "${BLUE}:: ${NC}Настройка автовхода без DM (Display manager) менеджера входа в Xfce"
 #echo 'Настройка автовхода без DM (Display manager) менеджера входа в Xfce'
 # Configuring AutoFill without the DM (Display manager) of the Xfce login Manager
 echo " Файл ~/.xinitrc представляет собой шелл-скрипт передаваемый xinit посредством команды startx.   "
