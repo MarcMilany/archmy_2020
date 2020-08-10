@@ -1232,11 +1232,12 @@ echo " Программа xinit запускает Xorg сервер и рабо
 # The ~/.xinitrc file is a shell script passed to xinit via the startx command. It is used to run the desktop Environment, Window Manager, and other programs that run with the X server (for example, running daemons, and setting environment variables. The xinit program starts the Xorg server and runs as the first client program on systems that do not use the Screen Manager.
 echo " Давайте проанализируем действия, которые выполняются. "
 # Let's analyze the actions that are being performed.
+echo " 1 - Если вам нужен автовход без DM (Display manager) тогда укажите "1". "
+echo " Вы хотите автологин определенного пользователя, автоматический запуск Иксов, запуск окружения (KDE, XFCE, Gnom и т.д.). "
+echo " Всё можно сделать без использования DM (например SDDM, LightDM и т.д.), поскольку реализация автозагрузки окружения реализован через startx. "
+echo " 2(0) - Если Вы в дальнейшем желаете использовать 2 окружения (Т.е. DE), тогда укажите "0" . "
 
 
-echo " Если Вы в дальнейшем желаете использовать 2 окружения (Т.е. DE) тогда укажите 0  "
-echo ""
-echo " Если нужен автовход без DM (Display manager) тогда укажите 1   "
 echo ""
 while
 # echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "    
