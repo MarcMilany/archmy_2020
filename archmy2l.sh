@@ -1246,22 +1246,37 @@ elif [[ $i_xfce  == 1 ]]; then
 pacman -S xorg-xinit --noconfirm
 # Если файл .xinitrc не существует, то копируем его из /etc/X11/xinit/xinitrc
 # в папку пользователя cp /etc/X11/xinit/xinitrc ~/.xinitrc
-cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
-
-chown $username:users /home/$username/.xinitrc
-chmod +x /home/$username/.xinitrc
-sed -i 52,55d /home/$username/.xinitrc
-echo "exec startxfce4 " >> /home/$username/.xinitrc
-mkdir /etc/systemd/system/getty@tty1.service.d/
+cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc # копируем файл .xinitrc в каталог пользователя
+chown $username:users /home/$username/.xinitrc  # даем доступ пользователю к файлу
+chmod +x /home/$username/.xinitrc   # получаем права на исполнения скрипта
+sed -i 52,55d /home/$username/.xinitrc  # редактируем файл -> и прописываем команду на запуск
+# # Данные блоки нужны для того, чтобы StartX автоматически запускал нужное окружение, соответственно в секции Window Manager of your choice раскомментируйте нужную сессию
+echo "exec startxfce4 " >> /home/$username/.xinitrc  
+mkdir /etc/systemd/system/getty@tty1.service.d/  # создаём папку
+# 
 echo " [Service] " > /etc/systemd/system/getty@tty1.service.d/override.conf
 echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
 echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
-echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile
+# Делаем автоматический запуск Иксов в нужной виртуальной консоли после залогинивания нашего пользователя
+echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile 
 fi
 clear
 echo ""
 echo " DE (среда рабочего стола) Xfce успешно установлено "
-
+# ----------------------------------------------------------------
+# Отключаем DM (в примере это lxdm, у вас может быть свой DM)
+#sudo systemctl disable lxdm
+# Перезагружаемся, если все работает, то удаляем DM
+#sudo pacman -R lxdm
+# ----------------------------------------------------------------
+# Автологин и автозагрузка любого окружения без DM:
+# https://archlinux.org.ru/forum/topic/16498/
+# https://wiki.archlinux.org/index.php/Xinit#Configuration
+# https://wiki.archlinux.org/index.php/Xinit_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.90.D0.B2.D1.82.D0.BE.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA_X_.D0.BF.D1.80.D0.B8_.D0.B2.D1.85.D0.BE.D0.B4.D0.B5_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83
+# https://wiki.archlinux.org/index.php/Xinit#Autostart_X_at_login
+# https://wiki.archlinux.org/index.php/Xinit#Autostart_X_at_login
+# https://vk.com/wall-129498031_20705
+# =================================================================
 
 #####################
 
