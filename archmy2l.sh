@@ -728,6 +728,7 @@ pacman -S grub --noconfirm
 lsblk -f
 echo ""
 echo " Примечание: /dev/sdX- диск (а не раздел ), на котором должен быть установлен GRUB "
+# Если вы используете LVM для вашего /boot, вы можете установить GRUB на нескольких физических дисках.
  echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
  read -p " => Укажите диск куда установить GRUB (sda/sdb например sda или sdb) : " x_cfd  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
  grub-install /dev/$x_cfd   #sda sdb sdc sdd
@@ -743,6 +744,7 @@ pacman -S grub --noconfirm
 lsblk -f
 echo ""
 echo " Примечание: /dev/sdX- диск (а не раздел ), на котором должен быть установлен GRUB "
+# Если вы используете LVM для вашего /boot, вы можете установить GRUB на нескольких физических дисках.
  echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
  read -p " => Укажите диск куда установить GRUB (sda/sdb например sda или sdb) : " x_cfd # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
  grub-install --target=i386-pc /dev/$x_cfd   #sda sdb sdc sdd
