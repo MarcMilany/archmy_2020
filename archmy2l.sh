@@ -385,8 +385,9 @@ echo -e "${BLUE}:: ${NC}Устанавливаем ваш часовой поя�
 #ln -s /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 #ls /usr/share/zoneinfo
 #ls /usr/share/zoneinfo/Europe
-echo " ln -sf /usr/share/zoneinfo/${timezone} /etc/localtime "
+#echo " ln -sf /usr/share/zoneinfo/${timezone} /etc/localtime "
 echo " ln -sf /usr/share/zoneinfo/Зона/Субзона /etc/localtime "
+echo " (Example) - в переводе это Пример, Наглядный, типичный образец,... "
 echo " Примеры (timezone): Europe/Moscow, Europe/Minsk, Europe/Kiev, Asia/Yekaterinburg, Asia/Almaty "
 echo ""
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
