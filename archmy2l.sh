@@ -741,6 +741,7 @@ elif [[ $i_grub == 2 ]]; then
 pacman -Syy
 pacman -S grub --noconfirm
 #pacman -S grub --noconfirm --noprogressbar --quiet
+uname -rm
 lsblk -f
 echo ""
 echo " Примечание: /dev/sdX- диск (а не раздел ), на котором должен быть установлен GRUB "
@@ -1213,10 +1214,40 @@ echo ""
 echo -e "${BLUE}:: ${NC}Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce"
 #echo 'Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce'
 # Put DE (from the English desktop environment-desktop environment) Xfce
+#pacman -S xfce4 xfce4-goodies
 pacman -S xfce4 xfce4-goodies --noconfirm
+# pacman -S  xfce4  pavucontrol xfce4-goodies  --noconfirm
+echo ""
+echo " DE (среда рабочего стола) Xfce успешно установлено "
 #
-#pacman -S xorg-xinit --noconfirm
+clear
+echo ""
+echo -e "${BLUE}:: ${NC}Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce"
+
+
+echo " Если желаете использовать 2 окружения тогда укажите 0  "
+echo ""
+echo " Нужен автовход без DM ? "
+while 
+    read -n1 -p  "
+    1 - да  
+    
+    0 - нет : " i_xfce   # sends right after the keypress
+    echo ''
+    [[ "$i_xfce" =~ [^10] ]]
+do
+    :
+done
+if [[ $i_xfce  == 0 ]]; then
+echo " Буду использовать DM (Display manager) "
+elif [[ $i_xfce  == 1 ]]; then
+# Поскольку реализация автозагрузки окружения реализована через startx, 
+# то у Вас должен быть установлен пакет: xorg-xinit    
+pacman -S xorg-xinit --noconfirm
+# Если файл .xinitrc не существует, то копируем его из /etc/X11/xinit/xinitrc
+# в папку пользователя cp /etc/X11/xinit/xinitrc ~/.xinitrc
 cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
+
 chown $username:users /home/$username/.xinitrc
 chmod +x /home/$username/.xinitrc
 sed -i 52,55d /home/$username/.xinitrc
@@ -1226,7 +1257,15 @@ echo " [Service] " > /etc/systemd/system/getty@tty1.service.d/override.conf
 echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
 echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
 echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile
+fi
+clear
+echo ""
 echo " DE (среда рабочего стола) Xfce успешно установлено "
+
+
+#####################
+
+
 #
 echo ""
 echo -e "${BLUE}:: ${NC}Ставим DM (Display manager) менеджера входа"
@@ -1276,8 +1315,9 @@ echo ""
 echo -e "${BLUE}:: ${NC}Ставим шрифты"
 #echo 'Ставим шрифты'
 # Put the fonts
-pacman -S ttf-liberation ttf-dejavu opendesktop-fonts ttf-arphic-ukai ttf-arphic-uming ttf-hanazono --noconfirm 
-pacman -S ttf-fireflysung ttf-sazanami --noconfirm  #китайские иероглифы
+pacman -S ttf-liberation ttf-dejavu --noconfirm 
+pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-hanazono --noconfirm  # opendesktop-fonts 
+pacman -S ttf-fireflysung ttf-sazanami --noconfirm  # -китайские иероглифы
 #
 echo ""
 echo -e "${BLUE}:: ${NC}Подключаем автозагрузку менеджера входа и интернет"
@@ -1292,6 +1332,7 @@ echo ""
 echo -e "${GREEN}==> ${NC}Добавим службу Dhcpcd в автозагрузку (для проводного интернета)?"
 #echo 'Добавим службу Dhcpcd в автозагрузку (для проводного интернета)?'
 # Adding the Dhcpcd service to auto-upload (for wired Internet)?
+echo " Если необходимо добавить службу Dhcpcd в автозагрузку это можно сделать уже в установленной системе Arch'a "
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
 #echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
 # You can skip this step if you are not sure of the correct choice
