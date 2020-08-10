@@ -1226,6 +1226,9 @@ echo ""
 echo -e "${BLUE}:: ${NC}Настройка автовхода без DM (Display manager) менеджера входа в Xfce"
 #echo 'Настройка автовхода без DM (Display manager) менеджера входа в Xfce'
 # Configuring AutoFill without the DM (Display manager) of the Xfce login Manager
+
+
+
 echo " Если Вы в дальнейшем желаете использовать 2 окружения (Т.е. DE) тогда укажите 0  "
 echo ""
 echo " Если нужен автовход без DM (Display manager) тогда укажите 1   "
