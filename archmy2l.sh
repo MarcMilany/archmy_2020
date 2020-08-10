@@ -385,13 +385,15 @@ echo -e "${BLUE}:: ${NC}Устанавливаем ваш часовой поя�
 #ln -s /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 #ls /usr/share/zoneinfo
 #ls /usr/share/zoneinfo/Europe
-#echo " ln -sf /usr/share/zoneinfo/${timezone} /etc/localtime "
+echo " Укажите вашу (timezone) как это показано в примере "
+echo " Используйте только буквы латинского алфавита (a-zA-Z) (начиная с заглавной буквы) "
+echo " ln -sf /usr/share/zoneinfo/${timezone} /etc/localtime "
 echo " ln -sf /usr/share/zoneinfo/Зона/Субзона /etc/localtime "
 echo " (Example) - в переводе это Пример, Наглядный, типичный образец,... "
 echo " Примеры (timezone): Europe/Moscow, Europe/Minsk, Europe/Kiev, Asia/Yekaterinburg, Asia/Almaty "
 echo ""
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-read -p "Ведите свою таймзону в формате Example/Example: " timezone    # (Example) - Пример
+read -p "Ведите свою таймзону в формате Example/Example: " timezone    
 ln -svf /usr/share/zoneinfo/$timezone /etc/localtime
 ###ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime  # -эта была
 #timedatectl set-ntp true
