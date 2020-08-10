@@ -738,7 +738,11 @@ while
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 # read -p " 1 - Установить GRUB(legacy), 2 - GRUB --target=i386-pc, 0 - Нет пропустить: " i_grub  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
-read -n1 -p " 1 - Установить GRUB(legacy), 2 - GRUB --target=i386-pc, 0 - Нет пропустить: " i_grub  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+#read -n1 -p " 1 - Установить GRUB(legacy), 2 - GRUB --target=i386-pc, 0 - Нет пропустить: " i_grub  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    read -n1 -p " 
+    1 - Установить GRUB(legacy),    2 - GRUB --target=i386-pc, 
+
+    0 - Нет пропустить: " i_grub  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
     [[ "$i_grub" =~ [^120] ]]
 do
