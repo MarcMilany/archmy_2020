@@ -707,6 +707,14 @@ echo ""
 echo -e "${GREEN}==> ${NC}Установить (bootloader) загрузчик GRUB(legacy)?"
 #echo 'Установить загрузчик GRUB(legacy)?'
 # Install the boot loader GRUB(legacy)
+echo " Установка GRUB2 в процессе установки Arch Linux "
+# Install GRUB2 during the installation process, Arch Linux
+echo " 1 - Установка полноценной BIOS-версии загрузчика тогда укажите "1". "
+echo " Вы хотите автологин определенного пользователя, автоматический запуск Иксов, запуск окружения (KDE, XFCE, Gnom и т.д.). "
+echo " Всё можно сделать без использования DM (например SDDM, LightDM и т.д.), поскольку реализация автозагрузки окружения реализован через startx. "
+echo " 2(0) - Если Вы по прежнему желаете использовать DM (например SDDM, LightDM и т.д.), или в дальнейшем захотите установить, и использовать 2(е) окружение (Т.е. DE - KDE, XFCE, Gnom и т.д.), тогда укажите "0" . " 
+
+Установка GRUB2 в процессе установки Arch Linux
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если у вас уже имеется BOOT раздел от другой (предыдущей) системы gnu-linux, с установленным на нём GRUB."
 #echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
 # You can skip this step if you are not sure of the correct choice
@@ -723,6 +731,7 @@ do
 done
 if [[ $i_grub == 1 ]]; then
 pacman -Syy
+# Файлы и утилиты для установки GRUB2 содержатся в пакете grub, и устанавливаются командой:
 pacman -S grub --noconfirm
 #pacman -S grub --noconfirm --noprogressbar --quiet 
 uname -rm
@@ -733,13 +742,14 @@ echo " Примечание: /dev/sdX- диск (а не раздел ), на к
  echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
  read -p " => Укажите диск куда установить GRUB (sda/sdb например sda или sdb) : " x_cfd  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
  grub-install /dev/$x_cfd   #sda sdb sdc sdd
-#grub-install /dev/sda  #sdb sdc ... Пример
 #grub-install --recheck /dev/$x_cfd     # Если Вы получили сообщение об ошибке
+#grub-install --boot-directory=/mnt/boot /dev/$x_cfd  # установить файлы загрузчика в другой каталог
   echo " Загрузчик GRUB установлен на выбранный вами диск (раздел). " 
 #grub-mkconfig -o /boot/grub/grub.cfg
 # echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). "
 elif [[ $i_grub == 2 ]]; then
 pacman -Syy
+# Файлы и утилиты для установки GRUB2 содержатся в пакете grub, и устанавливаются командой:
 pacman -S grub --noconfirm
 #pacman -S grub --noconfirm --noprogressbar --quiet
 uname -rm
@@ -749,8 +759,8 @@ echo " Примечание: /dev/sdX- диск (а не раздел ), на к
 # Если вы используете LVM для вашего /boot, вы можете установить GRUB на нескольких физических дисках.
  echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
  read -p " => Укажите диск куда установить GRUB (sda/sdb например sda или sdb) : " x_cfd # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+# Если нужно установить BIOS-версию загрузчика из-под системы, загруженной в режиме UEFI
  grub-install --target=i386-pc /dev/$x_cfd   #sda sdb sdc sdd
-#grub-install --target=i386-pc /dev/sda  #sdb sdc ... Пример
 #grub-install --target=i386-pc --recheck /dev/$x_cfd   # Если Вы получили сообщение об ошибке
   echo " Загрузчик GRUB установлен на выбранный вами диск (раздел). " 
 #grub-mkconfig -o /boot/grub/grub.cfg
@@ -775,10 +785,14 @@ fi
 #grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 #read -p " => Укажите диск (sda/sdb например sda или sdb) : " cfd
 #grub-install /dev/$cfd  #sda sdb sdc sdd
+# ------------------------------------------------------------------
+# 
+
 # -------------------------------------------------------------------
 # Если вы хотите установить Grub на флешку в MBR, то тут тоже нет проблем просто примонтируйте флешку и выполните такую команду:
 #sudo grub-install --root-directory=/mnt/USB/ /dev/sdb
 # Здесь /mnt/USB - папка, куда была смотирована ваша флешка, а /seb/sdb - сама флешка. Только здесь есть одна проблема, конфигурационный файл придется делать вручную.
+# GRUB (Русский)
 # https://wiki.archlinux.org/index.php/GRUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 # https://losst.ru/nastrojka-zagruzchika-grub
 # =====================================================================
