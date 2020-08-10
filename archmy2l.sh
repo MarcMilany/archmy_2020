@@ -319,7 +319,7 @@ echo ""
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 #read -p " => Введите имя компьютера: " hostname
 echo -e "${MAGENTA} => ${NC}Введите имя компьютера: " hostname 
-echo -e "${BLUE} ------------------------------------------ ${NC}"
+echo -e "${BLUE} -------------------------------------------------- ${NC}"
 echo " Используйте в имени только буквы латинского алфавита 	
         (в нижнем (маленькие) регистре (a-z)(a-z0-9_-)), и цифры "
 #echo -e "${MAGENTA}==> ${NC}"
@@ -609,7 +609,12 @@ echo -e "${YELLOW}==> ${NC}Установка производится в пор
 echo ""
 while
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")  "
-read -p " 1 - для ядра LINUX, 2 - для ядра LINUX_HARDENED, 3 - для ядра LINUX_LTS, 4 - для ядра LINUX_ZEN, 0 - Пропустить создание загрузочного RAM диска: " x_ram  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+#read -p " 1 - для ядра LINUX, 2 - для ядра LINUX_HARDENED, 3 - для ядра LINUX_LTS, 4 - для ядра LINUX_ZEN, 0 - Пропустить создание загрузочного RAM диска: " x_ram  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+read -p "     1 - для ядра LINUX,          2 - для ядра LINUX_HARDENED, 
+
+              3 - для ядра LINUX_LTS,      4 - для ядра LINUX_ZEN, 
+
+              0 - Пропустить создание загрузочного RAM диска: " x_ram  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 #echo " Действия ввода, выполняется сразу после нажатия клавиши "
 # read -n1 -p " 1 - для ядра LINUX, 2 - для ядра LINUX_HARDENED, 3 - для ядра LINUX_LTS, 4 - для ядра LINUX_ZEN, 0 - Пропустить создание загрузочного RAM диска: " x_ram  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
@@ -722,6 +727,7 @@ pacman -S grub --noconfirm
 #pacman -S grub --noconfirm --noprogressbar --quiet 
 lsblk -f
 echo ""
+echo " Примечание: /dev/sdX- диск (а не раздел ), на котором должен быть установлен GRUB "
  echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
  read -p " => Укажите диск куда установить GRUB (sda/sdb например sda или sdb) : " x_cfd  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
  grub-install /dev/$x_cfd   #sda sdb sdc sdd
@@ -736,6 +742,7 @@ pacman -S grub --noconfirm
 #pacman -S grub --noconfirm --noprogressbar --quiet
 lsblk -f
 echo ""
+echo " Примечание: /dev/sdX- диск (а не раздел ), на котором должен быть установлен GRUB "
  echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
  read -p " => Укажите диск куда установить GRUB (sda/sdb например sda или sdb) : " x_cfd # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
  grub-install --target=i386-pc /dev/$x_cfd   #sda sdb sdc sdd
