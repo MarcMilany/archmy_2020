@@ -725,6 +725,7 @@ if [[ $i_grub == 1 ]]; then
 pacman -Syy
 pacman -S grub --noconfirm
 #pacman -S grub --noconfirm --noprogressbar --quiet 
+uname -rm
 lsblk -f
 echo ""
 echo " Примечание: /dev/sdX- диск (а не раздел ), на котором должен быть установлен GRUB "
