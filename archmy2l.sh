@@ -703,6 +703,7 @@ passwd
 # https://losst.ru/kak-smenit-parol-v-linux
 # ============================================================================
 #
+### GRUB
 echo ""
 echo -e "${GREEN}==> ${NC}Установить (bootloader) загрузчик GRUB(legacy)?"
 #echo 'Установить загрузчик GRUB(legacy)?'
