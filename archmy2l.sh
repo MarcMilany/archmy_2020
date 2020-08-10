@@ -707,23 +707,25 @@ echo ""
 echo -e "${GREEN}==> ${NC}Установить (bootloader) загрузчик GRUB(legacy)?"
 #echo 'Установить загрузчик GRUB(legacy)?'
 # Install the boot loader GRUB(legacy)
-echo " Установка GRUB2 в процессе установки Arch Linux "
+echo -e "${BLUE}:: ${NC}Установка GRUB2 в процессе установки Arch Linux"
+#echo 'Установка GRUB2 в процессе установки Arch Linux'
 # Install GRUB2 during the installation process, Arch Linux
-echo " 1 - Установка полноценной BIOS-версии загрузчика "GRUB(legacy)", тогда укажите "1". "
+echo " 1 - Установка полноценной BIOS-версии загрузчика GRUB(legacy), тогда укажите "1". "
 echo " Файлы загрузчика будут установлены в каталог /boot. Код GRUB (boot.img) будет встроен в начальный сектор, а загрузочный образ core.img – в просвет перед первым разделом MBR, или BIOS boot partition для GPT. "
 echo " 2 - Если нужно установить BIOS-версию загрузчика из-под системы, загруженной в режиме UEFI, тогда укажите "2". " 
 echo " В этом варианте требуется принудительно задать программе установки нужную сборку GRUB: 
-        Пример - grub-install --target=i386-pc /dev/sda или sdb sdc sdd. "
-
+        Пример - grub-install --target=i386-pc /dev/sdX  #sda sdb sdc sdd. "
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если у вас уже имеется BOOT раздел от другой (предыдущей) системы gnu-linux, с установленным на нём GRUB."
 #echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
 # You can skip this step if you are not sure of the correct choice
+echo " Будьте внимательны! "
+# Be careful!
 echo ""
 while
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 # read -p " 1 - Установить GRUB(legacy), 2 - GRUB(legacy) для платформ i386-pc, 0 - Нет пропустить: " i_grub  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
-read -n1 -p " 1 - Установить GRUB(legacy), 2 - GRUB(legacy) для платформ i386-pc, 0 - Нет пропустить: " i_grub  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+read -n1 -p " 1 - Установить GRUB(legacy), 2 - GRUB --target=i386-pc, 0 - Нет пропустить: " i_grub  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
     [[ "$i_grub" =~ [^120] ]]
 do
