@@ -304,7 +304,7 @@ pacman -Syyu  --noconfirm
 sleep 01
 clear
 echo ""
-echo -e "${GREEN}==> ${NC}Вводим имя компьютера (host name), и имя пользователя (user name)"
+echo -e "${GREEN}==> ${NC}Вводим название компьютера (host name), и имя пользователя (user name)"
 #echo -e "${BLUE}:: ${NC}Вводим имя компьютера (host name), и имя пользователя (user name)"
 #echo 'Вводим имя компьютера (hostname), и имя пользователя (username)'
 #echo 'Enter the computer name and user name'
@@ -312,21 +312,19 @@ echo -e "${GREEN}==> ${NC}Вводим имя компьютера (host name), 
 # Enter your username
 #read -p "Введите имя компьютера: " hostname
 #read -p "Введите имя пользователя: " username
-echo " Используйте в имени только буквы латинского алфавита (a-zA-Z0-9) (можно с заглавной буквы) "
+echo " Используйте в названии (host name) только буквы латинского алфавита (a-zA-Z0-9) (можно с заглавной буквы) "
 echo " Латиница - это английские буквы. Кириллица - русские. "
 #echo -e "${MAGENTA}==> ${NC}" 
 echo ""
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 #read -p " => Введите имя компьютера: " hostname
-echo -e "${MAGENTA} => ${NC}Введите имя компьютера: " hostname 
-echo -e "${BLUE} -------------------------------------------------- ${NC}"
-echo " Используйте в имени только буквы латинского алфавита 	
-        (в нижнем (маленькие) регистре (a-z)(a-z0-9_-)), и цифры "
+read -p "${MAGENTA} => ${NC}Введите имя компьютера: " hostname 
+echo " Используйте в имени (user name) только буквы латинского алфавита (в нижнем (маленькие) регистре (a-z)(a-z0-9_-)), и цифры "	        
 #echo -e "${MAGENTA}==> ${NC}"
 echo ""                    
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "                                         
 #read -p " => Введите имя пользователя: " username
-echo -e "${MAGENTA} => ${NC}Введите имя пользователя: " username 
+read -p "${MAGENTA} => ${NC}Введите имя пользователя: " username 
 #
 ### Set Hostname
 echo -e "${BLUE}:: ${NC}Прописываем имя компьютера"
@@ -613,11 +611,12 @@ echo ""
 while
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")  "
 #read -p " 1 - для ядра LINUX, 2 - для ядра LINUX_HARDENED, 3 - для ядра LINUX_LTS, 4 - для ядра LINUX_ZEN, 0 - Пропустить создание загрузочного RAM диска: " x_ram  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
-read -p "     1 - для ядра LINUX,          2 - для ядра LINUX_HARDENED, 
+    read -p "     
+    1 - для ядра LINUX,          2 - для ядра LINUX_HARDENED, 
 
-              3 - для ядра LINUX_LTS,      4 - для ядра LINUX_ZEN, 
+    3 - для ядра LINUX_LTS,      4 - для ядра LINUX_ZEN, 
 
-              0 - Пропустить создание загрузочного RAM диска: " x_ram  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+    0 - Пропустить создание загрузочного RAM диска: " x_ram  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 #echo " Действия ввода, выполняется сразу после нажатия клавиши "
 # read -n1 -p " 1 - для ядра LINUX, 2 - для ядра LINUX_HARDENED, 3 - для ядра LINUX_LTS, 4 - для ядра LINUX_ZEN, 0 - Пропустить создание загрузочного RAM диска: " x_ram  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
