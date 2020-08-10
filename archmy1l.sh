@@ -1244,7 +1244,9 @@ echo " Чтобы подтвердить действия ввода, нажми
     read -p "    
     1 - UUID genfstab -U,                 2 - LABEL genfstab -L,
             
-    3 - PARTLABEL genfstab -t PARTLABEL,  4 - PARTUUID genfstab -t PARTUUID: " x_fstab  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")            
+    3 - PARTLABEL genfstab -t PARTLABEL,  
+
+    4 - PARTUUID genfstab -t PARTUUID: " x_fstab  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")            
 #echo " Действия ввода, выполняется сразу после нажатия клавиши "
 # read -n1 -p " 1 - UUID genfstab -U, 2 - LABEL genfstab -L, 3 - PARTLABEL genfstab -t PARTLABEL, 4 - PARTUUID genfstab -t PARTUUID: " x_fstab  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
