@@ -1329,10 +1329,10 @@ echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
 echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
 # Делаем автоматический запуск Иксов в нужной виртуальной консоли после залогинивания нашего пользователя
 echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile 
-fi
-clear
 echo ""
 echo " Действия по настройке автовхода без DM (Display manager) выполнены "
+fi
+clear
 # ----------------------------------------------------------------
 # Одной из основных функций ~/.xinitrc является указание, какой клиент X Window System будет запущен каждому пользователю при вызове startx или xinit. Существует множество дополнительных настроек и команд, которые также могут быть добавлены в ~/.xinitrc согласно вашей дальнейшей настройке системы.
 # ----------------------------------------------------------------
