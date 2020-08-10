@@ -751,6 +751,7 @@ echo " Примечание: /dev/sdX- диск (а не раздел ), на к
  read -p " => Укажите диск куда установить GRUB (sda/sdb например sda или sdb) : " x_cfd # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
  grub-install --target=i386-pc /dev/$x_cfd   #sda sdb sdc sdd
 #grub-install --target=i386-pc /dev/sda  #sdb sdc ... Пример
+#grub-install --target=i386-pc --recheck /dev/$x_cfd   # Если Вы получили сообщение об ошибке
   echo " Загрузчик GRUB установлен на выбранный вами диск (раздел). " 
 #grub-mkconfig -o /boot/grub/grub.cfg
 # echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). " 
