@@ -390,7 +390,7 @@ echo " (Example) - в переводе это Пример, Наглядный, 
 echo " Примеры (timezone): Europe/Moscow, Europe/Minsk, Europe/Kiev, Asia/Yekaterinburg, Asia/Almaty "
 echo ""
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-read -p "Ведите свою таймзону в формате Example/Example: " timezone    
+read -p " => Введите свою таймзону в формате Example/Example: " timezone    
 ln -svf /usr/share/zoneinfo/$timezone /etc/localtime
 ###ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime  # -эта была
 #timedatectl set-ntp true
