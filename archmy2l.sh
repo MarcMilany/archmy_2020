@@ -711,6 +711,7 @@ pacman -Syy
 pacman -S grub --noconfirm
 #pacman -S grub --noconfirm --noprogressbar --quiet 
 lsblk -f
+echo ""
  echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
  read -p " => Укажите диск куда установить GRUB (sda/sdb например sda или sdb) : " x_cfd  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
  grub-install /dev/$x_cfd   #sda sdb sdc sdd
@@ -724,6 +725,8 @@ pacman -Syy
 pacman -S grub --noconfirm
 #pacman -S grub --noconfirm --noprogressbar --quiet
 lsblk -f
+echo ""
+ echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
  read -p " => Укажите диск куда установить GRUB (sda/sdb например sda или sdb) : " x_cfd # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
  grub-install --target=i386-pc /dev/$x_cfd   #sda sdb sdc sdd
 #grub-install --target=i386-pc /dev/sda  #sdb sdc ... Пример
