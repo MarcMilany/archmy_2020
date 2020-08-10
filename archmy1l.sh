@@ -1143,7 +1143,10 @@ echo -e "${YELLOW}==> ${NC}Установка производится в пор
 echo ""
 while
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-read -p " 1 - LINUX, 2 - LINUX_HARDENED, 3 - LINUX_LTS, 4 - LINUX_ZEN: " x_pacstrap  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+#read -p " 1 - LINUX, 2 - LINUX_HARDENED, 3 - LINUX_LTS, 4 - LINUX_ZEN: " x_pacstrap  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+read -p "     1 - LINUX,           2 - LINUX_HARDENED, 
+          
+              3 - LINUX_LTS,       4 - LINUX_ZEN: " x_pacstrap  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")   
 #echo " Действия ввода, выполняется сразу после нажатия клавиши "
 # read -n1 -p " 1 - LINUX, 2 - LINUX_HARDENED, 3 - LINUX_LTS, 4 - LINUX_ZEN: " x_pacstrap  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
@@ -1312,7 +1315,7 @@ cat /mnt/etc/fstab
 # Чтобы система знала какие разделы монтировать при старте.
 # ====================================================================
 #
-sleep 01
+sleep 02
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist"
