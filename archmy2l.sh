@@ -911,7 +911,9 @@ echo " И обновить загрузчик Arch Linux, чтобы иметь 
 echo ""
 while
 echo " Действия ввода, выполняется сразу после нажатия клавиши " 
-    read -n1 -p  " 1 - Да установить, 0 - Нет пропустить: " prog_set   # sends right after the keypress; # отправляет сразу после нажатия клавиши
+#    read -n1 -p  " 1 - Да установить, 0 - Нет пропустить: " prog_set   # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    read -n1 -p  " 
+    1 - Да установить,    0 - Нет пропустить: " prog_set   # sends right after the keypress; # отправляет сразу после нажатия клавиши
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "    
 # read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
     echo ''
