@@ -817,7 +817,7 @@ while
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
 read -n1 -p " 1 - AMD, 2 - INTEL, 3 - AMD и INTEL, 0 - Нет Пропустить этот шаг: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^123456780] ]]
+    [[ "$prog_set" =~ [^1230] ]]
 do
     :
 done
