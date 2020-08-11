@@ -1208,15 +1208,15 @@ echo -e "${RED}==> ${NC}Куда устанавливаем Arch Linux на ви
 echo ""
 read -p " 1 - Да устанавливаем на VirtualBox, 0 - Нет на PC: " vm_setting
 if [[ $vm_setting == 0 ]]; then
-  gui_install="xorg-server xorg-drivers xorg-xinit"  #(или на vmware)
+  gui_install="xorg-server xorg-drivers xorg-xinit"  #(или на vmware) # --confirm   всегда спрашивать подтверждение
 elif [[ $vm_setting == 1 ]]; then
-  gui_install="xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils"
+  gui_install="xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils"  # --confirm   всегда спрашивать подтверждение
 fi
 
 echo -e "${BLUE}:: ${NC}Ставим иксы и драйвера"
 #echo 'Ставим иксы и драйвера'
 # Put the x's and drivers
-pacman -S $gui_install
+pacman -S $gui_install   # --confirm   всегда спрашивать подтверждение
 #pacman -Syy
 
 # --------------------------------------------------------------------------
