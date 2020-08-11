@@ -1206,6 +1206,8 @@ echo ""
 echo -e "${RED}==> ${NC}Куда устанавливаем Arch Linux на виртуальную машину?"
 #echo "Куда устанавливаем Arch Linux на виртуальную машину?"
 # Where do we install Arch Linux on the VM?
+echo " Сперва определите вашу видеокарту "
+lspci | grep -e VGA -e 3D
 echo ""
 read -p " 1 - Да устанавливаем на VirtualBox, 0 - Нет на PC: " vm_setting
 if [[ $vm_setting == 0 ]]; then
@@ -1219,6 +1221,10 @@ echo -e "${BLUE}:: ${NC}Ставим иксы и драйвера"
 # Put the x's and drivers
 pacman -S $gui_install   # --confirm   всегда спрашивать подтверждение
 #pacman -Syy
+echo ""
+echo " Выберите свой вариант (1-16~...), или по умолчанию нажмите кнопку 'Ввод' ("Enter") "
+
+
 
 # --------------------------------------------------------------------------
 #echo -e "${BLUE}:: ${NC}Ставим иксы и драйвера"
