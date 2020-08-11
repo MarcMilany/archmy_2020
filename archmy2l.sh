@@ -1642,6 +1642,19 @@ elif [[ $vm_fstab == 1 ]]; then
 nano /etc/fstab
 fi
 #
+#echo 'Просмотреть содержимое файла fstab'
+# View the contents of the fstab file
+cat /mnt/etc/fstab
+#cat < /mnt/etc/fstab | grep -v "Static information"
+# --------------------------------------------------------------------
+# Был создан файл содержащий данные о монтируемых файловых системах.
+# Чтобы система знала какие разделы монтировать при старте.
+# ====================================================================
+#
+sleep 02   # или sleep 01
+
+
+
 ### Clean pacman cache (Очистить кэш pacman)
 echo ""
 echo -e "${BLUE}:: ${BOLD}Очистка кэша pacman ${NC}"
