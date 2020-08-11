@@ -1188,7 +1188,8 @@ echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
 #sudo pacman-key --refresh-keys
 #sudo pacman -Sy  
 #pacman -Syy
-pacman -Syy --noconfirm --noprogressbar --quiet
+pacman -Sy --noconfirm --noprogressbar --quiet
+#pacman -Syy --noconfirm --noprogressbar --quiet
 # ------------------------------------------------------------
 # --noconfirm      не спрашивать каких-либо подтверждений
 # --noprogressbar  не показывать статус прогресса при загрузке 
