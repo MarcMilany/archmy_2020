@@ -401,7 +401,8 @@ read -p " => Введите свою таймзону в формате Example/
 ln -svf /usr/share/zoneinfo/$timezone /etc/localtime
 #ln -sf /usr/share/zoneinfo/$timezone /etc/localtime
 echo $timezone > /etc/timezone
-cat /etc/timezone   # просмотреть файл /etc/timezone
+ls -lh /etc/localtime  # для просмотра символической ссылки, которая указывает на текущий часовой пояс, используемый в системе 
+#cat /etc/timezone   # просмотреть файл /etc/timezone
 #timedatectl    # команда отображает обзор системы, включая часовой пояс
 timedatectl | grep “Time zone”  # отфильтровать часовой пояс
 echo ""
