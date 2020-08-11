@@ -383,6 +383,7 @@ echo -e "${BLUE}:: ${NC}Устанавливаем ваш часовой поя�
 #ln -s /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 #ls /usr/share/zoneinfo
 #ls /usr/share/zoneinfo/Europe
+# -------------------------------------------------
 echo " Укажите вашу (timezone), как это показано в примере. "
 echo -e "${MAGENTA}=> ${BOLD}Используйте только буквы латинского алфавита (a-zA-Z) (начиная название с заглавной буквы). Латиница - это английские буквы. ${NC}"
 #echo " ln -sf /usr/share/zoneinfo/${timezone} /etc/localtime "
@@ -397,8 +398,9 @@ echo ""
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 read -p " => Введите свою таймзону в формате Example/Example: " timezone    
 ln -svf /usr/share/zoneinfo/$timezone /etc/localtime
+# --------------------------------------------------
 #ln -svf /usr/share/zoneinfo/'$timezone' /etc/localtime
-###ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime  # -эта была
+ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime  # -эта команда
 #timedatectl set-ntp true
 #ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 #ln -s /usr/share/zoneinfo/Europe/Moscow /etc/localtime
@@ -1653,7 +1655,7 @@ echo -e "${BLUE}:: ${BOLD}Теперь вам надо ввести reboot, чт
 #echo 'Теперь вам надо ввести reboot, чтобы перезагрузиться'
 #'Now you need to enter 'reboot' to reboot"'
 exit
-#exit
+exit
 #
 # ========================================================
 ###########################################################
