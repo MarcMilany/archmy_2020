@@ -375,25 +375,26 @@ fi
 #
 ### Set Timezone
 echo ""
-echo -e "${BLUE}:: ${NC}Устанавливаем ваш часовой пояс"
+echo -e "${GREEN}==> ${NC}Устанавливаем ваш часовой пояс."
+#echo -e "${BLUE}:: ${NC}Устанавливаем ваш часовой пояс"
 #echo 'Устанавливаем ваш часовой пояс'
 # Setting your time zone
-#rm -v /etc/localtime
+#rm -v /etc/localtime  # rm  - Удаление файлов и директорий, -v или --verbose - Выводить информацию об удаляемых файлах
 #ln -s /usr/share/zoneinfo/Europe/Moscow
 #ln -s /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 #ls /usr/share/zoneinfo
 #ls /usr/share/zoneinfo/Europe
 # -------------------------------------------------
-echo " Укажите вашу (timezone), как это показано в примере. "
 echo -e "${MAGENTA}=> ${BOLD}Мир состоит из шести частей света: Азия, Африка, Америка, Европа, Австралия и Океания, Антарктика (Антарктида с прибрежными морями и островами). Иногда Океанию и Арктику выделяют в отдельные части света. ${NC}"
+# Континент:
+# https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%82%D0%B8%D0%BD%D0%B5%D0%BD%D1%82
 #echo " ln -sf /usr/share/zoneinfo/${timezone} /etc/localtime "
 echo " ln -sf /usr/share/zoneinfo/Частъ Света/Город /etc/localtime "
 echo " ln -sf /usr/share/zoneinfo/Зона/Субзона /etc/localtime "
-echo -e "${MAGENTA}=> ${BOLD}Используйте только буквы латинского алфавита (a-zA-Z) (начиная название с заглавной буквы). Латиница - это английские буквы. ${NC}"
-# Континент:
-# https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%82%D0%B8%D0%BD%D0%B5%D0%BD%D1%82
 echo " (Example) - в переводе это Пример, Наглядный, типичный образец,... "
 echo " Примеры (timezone): Europe/Moscow, Europe/Minsk, Europe/Kiev, Asia/Yekaterinburg, Asia/Almaty "
+echo " Укажите вашу (timezone), как это показано выше в примере. "
+echo -e "${MAGENTA}=> ${BOLD}Используйте только буквы латинского алфавита (a-zA-Z) (начиная название с заглавной буквы). ${NC}"
 echo ""
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 read -p " => Введите свою таймзону в формате Example/Example: " timezone    
