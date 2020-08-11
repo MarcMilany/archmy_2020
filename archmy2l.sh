@@ -391,7 +391,7 @@ echo -e "${MAGENTA}=> ${BOLD}Мир состоит из шести частей 
 #echo " ln -sf /usr/share/zoneinfo/${timezone} /etc/localtime "
 echo " ln -sf /usr/share/zoneinfo/Частъ Света/Город /etc/localtime "
 echo " ln -sf /usr/share/zoneinfo/Зона/Субзона /etc/localtime "
-echo " Примеры (timezone): Europe/Moscow, Europe/Minsk, Europe/Kiev, Asia/Yekaterinburg, Asia/Almaty "
+echo " Примеры (timezone): Europe/Moscow, Europe/Minsk, Europe/Kiev, Asia/Yekaterinburg, Asia/Almaty, Africa/Nairobi и т.д.... "
 echo -e "${MAGENTA}=> ${BOLD}Используйте только буквы латинского алфавита (a-zA-Z) (начиная название с заглавной буквы). ${NC}"
 echo " (Example) - в переводе это Пример, Наглядный, типичный образец,... "
 echo " Укажите вашу (timezone), как это показано выше в примере. "
@@ -401,8 +401,16 @@ read -p " => Введите свою таймзону в формате Example/
 ln -svf /usr/share/zoneinfo/$timezone /etc/localtime
 #ln -sf /usr/share/zoneinfo/$timezone /etc/localtime
 echo $timezone > /etc/timezone
+cat /etc/timezone   # просмотреть файл /etc/timezone
+#timedatectl    # команда отображает обзор системы, включая часовой пояс
+timedatectl | grep “Time zone”  # отфильтровать часовой пояс
 echo ""
 echo " Это ваш часовой пояс (timezone) - '$timezone' "
+#
+# -------------------------------------------------
+# Чтобы изменить часовой пояс, создайте символическую ссылку /etc/localtime на соответствующий часовой пояс в /usr/share/zoneinfo/:
+#ln -sf /usr/share/zoneinfo/zoneinfo /etc/localtime
+# Флаг -s позволяет создавать символическую ссылку, флаг -f удаляет существующий файл назначения, который в этом случае является старая символьная ссылка /etc/localtime.
 # --------------------------------------------------
 #ln -svf /usr/share/zoneinfo/'$timezone' /etc/localtime
 ###ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime  # -эта команда
