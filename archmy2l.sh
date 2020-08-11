@@ -1647,7 +1647,7 @@ if [[ $vm_fstab == 0 ]]; then
   echo ' Этап редактирования пропущен ' 
 elif [[ $vm_fstab == 1 ]]; then
 nano /etc/fstab
-elif [[ $vm_fstab == 1 ]]; then
+elif [[ $vm_fstab == 2 ]]; then
 echo ' Просмотреть содержимое файла fstab '
 # View the contents of the fstab file    
 cat /mnt/etc/fstab
