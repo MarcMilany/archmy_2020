@@ -398,9 +398,13 @@ echo ""
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 read -p " => Введите свою таймзону в формате Example/Example: " timezone    
 ln -svf /usr/share/zoneinfo/$timezone /etc/localtime
+#ln -sf /usr/share/zoneinfo/$timezone /etc/localtime
+echo ""
+echo " Это ваш часовой пояс '$timezone' "
 # --------------------------------------------------
 #ln -svf /usr/share/zoneinfo/'$timezone' /etc/localtime
-ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime  # -эта команда
+###ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime  # -эта команда
+##ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 #timedatectl set-ntp true
 #ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 #ln -s /usr/share/zoneinfo/Europe/Moscow /etc/localtime
@@ -1654,7 +1658,6 @@ echo -e "${RED}==> ${BOLD}Выходим из установленной сис�
 echo -e "${BLUE}:: ${BOLD}Теперь вам надо ввести reboot, чтобы перезагрузиться ${NC}"
 #echo 'Теперь вам надо ввести reboot, чтобы перезагрузиться'
 #'Now you need to enter 'reboot' to reboot"'
-exit
 exit
 #
 # ========================================================
