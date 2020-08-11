@@ -1186,8 +1186,9 @@ echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
 # Updating the package databases
 #sudo pacman-key --init
 #sudo pacman-key --refresh-keys
-sudo pacman -Sy  
+#sudo pacman -Sy  
 #pacman -Syy
+pacman -Syy --noconfirm --noprogressbar --quiet
 # -------------------------------------------------------------
 # Знакомьтесь, pacman - лучший пакетный менеджер в мире линукса!
 #pacman -Syy   - обновление баз пакмэна(как apt-get update в дэбианоподбных)
