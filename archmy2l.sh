@@ -391,10 +391,10 @@ echo -e "${MAGENTA}=> ${BOLD}Мир состоит из шести частей 
 #echo " ln -sf /usr/share/zoneinfo/${timezone} /etc/localtime "
 echo " ln -sf /usr/share/zoneinfo/Частъ Света/Город /etc/localtime "
 echo " ln -sf /usr/share/zoneinfo/Зона/Субзона /etc/localtime "
-echo " (Example) - в переводе это Пример, Наглядный, типичный образец,... "
 echo " Примеры (timezone): Europe/Moscow, Europe/Minsk, Europe/Kiev, Asia/Yekaterinburg, Asia/Almaty "
-echo " Укажите вашу (timezone), как это показано выше в примере. "
 echo -e "${MAGENTA}=> ${BOLD}Используйте только буквы латинского алфавита (a-zA-Z) (начиная название с заглавной буквы). ${NC}"
+echo " (Example) - в переводе это Пример, Наглядный, типичный образец,... "
+echo " Укажите вашу (timezone), как это показано выше в примере. "
 echo ""
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 read -p " => Введите свою таймзону в формате Example/Example: " timezone    
