@@ -397,6 +397,7 @@ echo ""
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 read -p " => Введите свою таймзону в формате Example/Example: " timezone    
 ln -svf /usr/share/zoneinfo/$timezone /etc/localtime
+#ln -svf /usr/share/zoneinfo/'$timezone' /etc/localtime
 ###ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime  # -эта была
 #timedatectl set-ntp true
 #ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
