@@ -400,7 +400,6 @@ read -p " => Введите свою таймзону в формате Example/
 ln -svf /usr/share/zoneinfo/$timezone /etc/localtime
 #ln -sf /usr/share/zoneinfo/$timezone /etc/localtime
 echo $timezone > /etc/timezone
-#
 echo ""
 echo " Это ваш часовой пояс (timezone) - '$timezone' "
 # --------------------------------------------------
