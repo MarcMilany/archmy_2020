@@ -399,8 +399,10 @@ echo " Чтобы подтвердить действия ввода, нажми
 read -p " => Введите свою таймзону в формате Example/Example: " timezone    
 ln -svf /usr/share/zoneinfo/$timezone /etc/localtime
 #ln -sf /usr/share/zoneinfo/$timezone /etc/localtime
+echo $timezone > /etc/timezone
+#
 echo ""
-echo " Это ваш часовой пояс '$timezone' "
+echo " Это ваш часовой пояс (timezone) - '$timezone' "
 # --------------------------------------------------
 #ln -svf /usr/share/zoneinfo/'$timezone' /etc/localtime
 ###ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime  # -эта команда
