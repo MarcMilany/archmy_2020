@@ -1336,7 +1336,7 @@ cat /mnt/etc/fstab
 # Чтобы система знала какие разделы монтировать при старте.
 # ====================================================================
 #
-sleep 01   # или sleep 02
+sleep 02   # или sleep 01
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist"
