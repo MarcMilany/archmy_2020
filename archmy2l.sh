@@ -401,6 +401,8 @@ read -p " => Введите свою таймзону в формате Example/
 ln -svf /usr/share/zoneinfo/$timezone /etc/localtime
 #ln -sf /usr/share/zoneinfo/$timezone /etc/localtime
 echo $timezone > /etc/timezone
+# timedatectl set-timezone Europe/Moscow     # установка часового пояса
+#timedatectl set-timezone $timezone     # установка часового пояса
 ls -lh /etc/localtime  # для просмотра символической ссылки, которая указывает на текущий часовой пояс, используемый в системе 
 #cat /etc/timezone   # просмотреть файл /etc/timezone
 #timedatectl    # команда отображает обзор системы, включая часовой пояс
@@ -441,6 +443,8 @@ echo -e "${BLUE}:: ${NC}Синхронизация системных часов
 #echo 'Синхронизируем наши системные часы, включаем ntp, если надо сменим часовой пояс'
 # Sync our system clock, enable ntp, change the time zone if necessary
 timedatectl set-ntp true
+#timedatectl set-timezone Europe/Moscow     # установка часового пояса
+#timedatectl set-timezone $timezone     # установка часового пояса
 #
 ### Specified Time
 echo -e "${BLUE}:: ${NC}Проверим аппаратное время"
