@@ -1208,8 +1208,8 @@ pacman -Sy   #--noconfirm --noprogressbar --quiet
 # =============================================================
 
 echo ""
-echo -e "${GREEN}==> ${NC}Устанавливаем Xorg (иксы) или «X.Org Foundation Open Source Public Implementation of X11» - свободная открытая реализация оконной системы X11."
-#echo "Устанавливаем Xorg (иксы) или «X.Org Foundation Open Source Public Implementation of X11» - свободная открытая реализация оконной системы X11."
+echo -e "${GREEN}==> ${NC}Устанавливаем Xorg (иксы) или "X.Org Foundation Open Source Public Implementation of X11" - это свободная открытая реализация оконной системы X11."
+#echo "Устанавливаем Xorg (иксы) или «X.Org Foundation Open Source Public Implementation of X11» - это свободная открытая реализация оконной системы X11."
 # Install Xorg or "X.Org Foundation Open Source Public Implementation of X11" - a free open implementation of the X11 window system.
 echo " Xorg очень популярен среди пользователей Linux, что привело к тому, что большинство приложений с графическим интерфейсом используют X11, из-за этого Xorg доступен в большинстве дистрибутивов. "
 echo -e "${BLUE}:: ${NC}Сперва определим вашу видеокарту!"
