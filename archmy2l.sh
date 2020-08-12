@@ -998,7 +998,7 @@ pacman -S dialog wpa_supplicant iw wireless_tools net-tools --noconfirm
  elif [[ $i_wifi  == 0 ]]; then
 echo " Установка программ (пакетов) пропущена. "
  fi
-#
+
 ### Set User
 sleep 01
 clear
@@ -1011,7 +1011,7 @@ echo -e "${BLUE}:: ${NC}Добавляем пользователя и проп�
 useradd -m -g users -G adm,audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel -s /bin/bash $username
 #useradd -m -g users -G audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel -s /bin/bash $username
 echo " Пользователь успешно добавлен в группы и права пользователя. "
-#
+
 ### Set User passwd
 ### User Password
 echo ""
@@ -1033,14 +1033,14 @@ passwd $username
 # Как сменить пароль в Linux :
 # https://losst.ru/kak-smenit-parol-v-linux
 # ============================================================================
-#
+
 echo ""
 echo -e "${BLUE}:: ${NC}Проверим статус пароля для всех учетных записей пользователей в вашей системе"
 #echo 'Проверим статус пароля для всех учетных записей пользователей в вашей системе'
 # Check the password status for all user accounts in your system
 passwd -Sa
 # sudo passwd -Sa
-#
+
 echo ""
 echo -e "${GREEN}==> ${NC}Информация о пользователе (полное имя пользователя и связанная с ним информация)"
 #echo 'Информация о пользователе (полное имя пользователя и связанная с ним информация)'
@@ -1055,7 +1055,6 @@ while
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 # read -p " 1 - Вводим информация о пользователе,  0 - Пропустить этот шаг: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
-# read -n1 -p  " 1 - Вводим информация о пользователе, 0 - Пропустить этот шаг: " prog_set   # sends right after the keypress; # отправляет сразу после нажатия клавиши
     read -n1 -p  " 
     1 - Вводим информация о пользователе,    0 - Пропустить этот шаг: " prog_set   # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
@@ -1074,7 +1073,7 @@ fi
 # Руководство по команде chfn для начинающих:
 # http://rus-linux.net/MyLDP/consol/Linux_chfn_command.html
 #========================================================== 
-# 
+
 echo ""
 echo -e "${BLUE}:: ${NC}Устанавливаем SUDO"
 #echo 'Устанавливаем SUDO'
@@ -1099,7 +1098,7 @@ pacman -S sudo --noconfirm
 # Крайне важно, чтобы файл sudoers был без синтаксических ошибок! 
 # Любая ошибка делает sudo неработоспособным.
 # ===============================================================
-#
+
 echo ""
 echo -e "${GREEN}==> ${NC}Настраиваем запрос пароля "Пользователя" при выполнении команды "sudo". "
 #echo -e "${BLUE}:: ${NC}Настраиваем запрос пароля "Пользователя" при выполнении команды "sudo"."
@@ -1185,7 +1184,7 @@ fi
 # Крайне важно, чтобы файл sudoers был без синтаксических ошибок! 
 # Любая ошибка делает sudo неработоспособным.
 # ============================================================
-#
+
 echo ""
 echo -e "${BLUE}:: ${NC}Раскомментируем репозиторий multilib Для работы 32-битных приложений в 64-битной системе"
 #echo 'Раскомментируем репозиторий multilib Для работы 32-битных приложений в 64-битной системе.'
@@ -1219,7 +1218,7 @@ pacman -Sy   #--noconfirm --noprogressbar --quiet
 #pacman -Syy --noconfirm --noprogressbar --quiet
 # Синхронизация и обновление пакетов (-yy принудительно обновить даже если обновленные)
 # =============================================================
-#
+
 echo ""
 echo -e "${GREEN}==> ${NC}Устанавливаем Xorg (иксы) или «X.Org Foundation Open Source Public Implementation of X11» - свободная открытая реализация оконной системы X11."
 #echo "Устанавливаем Xorg (иксы) или «X.Org Foundation Open Source Public Implementation of X11» - свободная открытая реализация оконной системы X11."
@@ -1256,65 +1255,6 @@ echo " Выберите свой вариант (от 1-...), или по умо
 pacman -S $gui_install   # --confirm   всегда спрашивать подтверждение
 #pacman -Syy
 
-# --------------------------------------------------------------------------
-#echo -e "${BLUE}:: ${NC}Ставим иксы и драйвера"
-#echo 'Ставим иксы и драйвера'
-# Put the x's and drivers
-#pacman -S xorg-server xorg-drivers xorg-xinit   # virtualbox-guest-utils --noconfirm
-#pacman -S xorg-server xorg-drivers xorg-apps xorg-xinit mesa xorg-twm xterm xorg-xclock xf86-input-synaptics virtualbox-guest-utils --noconfirm  #linux-headers
-#pacman -S xorg-server xorg-drivers xorg-apps xorg-xinit mesa xorg-twm xterm xorg-xclock xf86-input-synaptics virtualbox-guest-utils  #linux-headers
-# -------------------------------------------------------------------------
-#pacman -S bash-completion xorg-server xorg-apps xorg-xinit mesa xorg-twm xterm xorg-xclock xf86-input-synaptics virtualbox-guest-utils linux-headers --noconfirm
-# ============================================================================
-
-#echo -e "${RED}==> ${NC}Куда устанавливем Arch Linux на виртуальную машину?"
-#echo "Where do we install Arch Linux on a virtual machine?"
-#echo "Куда устанавливем Arch Linux на виртуальную машину?"
-#read -p "1 - Yes, 0 - No: " vm_setting
-#if [[ $vm_setting == 0 ]]; then
-# pacman -S xorg-server xorg-drivers xorg-xinit --noconfirm --noprogressbar --quiet 
-#elif [[ $vm_setting == 1 ]]; then
-#  (
-#   echo 13;
-#   echo 2;
-#  ) | pacman -S xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils --noconfirm --noprogressbar --quiet 
-#fi
-
-#echo "Какая видеокарта?"
-#read -p "1 - nvidia, 2 - Amd, 3 - intel: " videocard
-#if [[ $videocard == 1 ]]; then
-#  pacman -S nvidia lib32-nvidia-utils nvidia-settings --noconfirm
-#  nvidia-xconfig
-#elif [[ $videocard == 2 ]]; then
-#  pacman -S lib32-mesa xf86-video-amdgpu mesa-vdpau lib32-mesa-vdpau vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver --noconfirm
-#elif [[ $videocard == 3 ]]; then
-#  pacman -S lib32-mesa vulkan-intel libva-intel-driver lib32-libva-intel-driver lib32-vulkan-intel --noconfirm
-#fi
-
-#echo 'Ставим драйвера видеокарты intel'
-#sudo pacman -S xf86-video-intel vdpauinfo libva-utils libva-intel-driver libva lib32-libva-intel-driver libvdpau libvdpau-va-gl lib32-libvdpau --noconfirm
-
-#-------------------------------------------------------------------------------
-# Видео драйверы, без них тоже ничего работать не будет вот список:
-# xf86-video-vesa - как я понял, это универсальный драйвер для ксорга (xorg), должен работать при любых обстоятельствах, но вы знаете как, только для того чтобы поставить подходящий.
-# xf86-video-ati - свободный ATI
-# xf86-video-intel - свободный Intel
-# xf86-video-nouveau - свободный Nvidia
-# Существуют также проприетарные драйверы, то есть разработаны самой Nvidia или AMD, но они часто не поддерживают новое ядро, или ещё какие-нибудь траблы.
-# virtualbox-guest-utils - для виртуалбокса, активируем коммандой:
-#systemctl enable vboxservice - вводим дважды пароль
-# ============================================================================
-
-#echo -e "${BLUE}:: ${NC}Установка гостевых дополнений vbox"
-#echo 'Установка гостевых дополнений vbox'
-#Install the Guest Additions vbox
-#modprobe -a vboxguest vboxsf vboxvideo
-#cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
-#echo -e "\nvboxguest\nvboxsf\nvboxvideo" >> /home/$username/.xinitrc
-#sed -i 's/#!\/bin\/sh/#!\/bin\/sh\n\/usr\/bin\/VBoxClient-all/' /home/$username/.xinitrc
-
-# ------------------------------------------------------------------------
-#
 echo ""
 echo -e "${BLUE}:: ${NC}Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce"
 #echo 'Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce'
@@ -1324,7 +1264,7 @@ pacman -S xfce4 xfce4-goodies --noconfirm
 # pacman -S xfce4 xfce4-goodies pavucontrol --noconfirm
 echo ""
 echo " DE (среда рабочего стола) Xfce успешно установлено "
-#
+
 ### Log in without DM (Display manager) 
 clear
 echo ""
@@ -1352,7 +1292,6 @@ while
 # echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "    
 # read -p  " 1 - Да нужен автовход без DM, 0 - Нет буду использовать DM: " i_xfce   # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
     echo " Действия ввода, выполняется сразу после нажатия клавиши " 
-#    read -n1 -p  " 1 - Да нужен автовход без DM, 0 - Нет буду использовать DM: " i_xfce   # sends right after the keypress; # отправляет сразу после нажатия клавиши
     read -n1 -p  "
     1 - Да нужен автовход без DM (Display manager), 
 
@@ -1377,7 +1316,6 @@ sed -i 52,55d /home/$username/.xinitrc  # редактируем файл -> и 
 # # Данные блоки нужны для того, чтобы StartX автоматически запускал нужное окружение, соответственно в секции Window Manager of your choice раскомментируйте нужную сессию
 echo "exec startxfce4 " >> /home/$username/.xinitrc  
 mkdir /etc/systemd/system/getty@tty1.service.d/  # создаём папку
-# 
 echo " [Service] " > /etc/systemd/system/getty@tty1.service.d/override.conf
 echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
 echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
