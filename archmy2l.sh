@@ -1614,7 +1614,7 @@ sleep 2
 fi
  
 ### Clean pacman cache (Очистить кэш pacman)
-echo ""
+#echo ""
 echo -e "${BLUE}:: ${BOLD}Очистка кэша pacman ${NC}"
 #echo 'Очистка кэша pacman'
 # Clearing the pacman cache
