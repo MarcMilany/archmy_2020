@@ -1605,7 +1605,8 @@ elif [[ $vm_fstab == 1 ]]; then
 nano /etc/fstab
 elif [[ $vm_fstab == 2 ]]; then
 echo ' Просмотреть содержимое файла fstab '
-# View the contents of the fstab file    
+# View the contents of the fstab file 
+echo ""   
 cat /etc/fstab
 #cat < /mnt/etc/fstab | grep -v "Static information"
 sleep 2
@@ -1667,9 +1668,7 @@ echo -e "${RED}==> ${BOLD}Выходим из установленной сис�
 echo -e "${BLUE}:: ${BOLD}Теперь вам надо ввести reboot, чтобы перезагрузиться ${NC}"
 #echo 'Теперь вам надо ввести reboot, чтобы перезагрузиться'
 #'Now you need to enter 'reboot' to reboot"'
-sleep 2
 exit 
-exit
 
 # ========================================================
 ###########################################################
