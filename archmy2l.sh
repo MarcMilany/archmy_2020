@@ -508,13 +508,16 @@ do
 done
 if [[ $prog_set == 1 ]]; then
 hwclock --systohc --utc
-  echo " hwclock --systohc --utc "
+  echo ""
+  echo " Вы выбрали hwclock --systohc --utc "
   echo " UTC - часы дают универсальное время на нулевом часовом поясе " 
 elif [[ $prog_set == 2 ]]; then
 hwclock --systohc --local
-  echo " hwclock --systohc --localtime "
+  echo ""
+  echo " Вы выбрали hwclock --systohc --localtime "
   echo " Localtime - часы идут по времени локального часового пояса " 
 elif [[ $prog_set == 0 ]]; then
+  echo ""  
   echo ' Настройка пропущена. '
 fi
 # ---------------------------------------------------------------------------
