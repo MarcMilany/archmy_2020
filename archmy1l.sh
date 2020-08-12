@@ -52,12 +52,6 @@ set -e
 # Встроенная команда set:
 # https://www.sites.google.com/site/bashhackers/commands/set
 # ======================================================================
-
-echo -e "${RED}=> ${NC}Acceptable limit for the list of arguments..."
-#echo 'Допустимый лимит (предел) списка аргументов...'
-# Acceptable limit for the list of arguments...
-getconf ARG_MAX
-
 #####################################################
 ### Help and usage (--help or -h) (Справка)
 _help() {
@@ -294,7 +288,13 @@ ${NC}
 # *******************************************************************
 # Команды по установке :
 # archiso login: root (automatic login)
+echo ""
+echo -e "${RED}=> ${NC}Acceptable limit for the list of arguments..."
+#echo 'Допустимый лимит (предел) списка аргументов...'
+# Acceptable limit for the list of arguments...
+getconf ARG_MAX
 #
+echo ""
 echo -e "${GREEN}=> ${NC}Make sure that your network interface is specified and enabled" 
 #echo 'Make sure that your network interface is specified and enabled'
 # Убедитесь, что ваш сетевой интерфейс указан и включен
@@ -332,6 +332,7 @@ echo -e "${CYAN}==> ${NC}If the ping goes we go further ..."
 #echo 'If the ping goes we go further ...' 
 # Если пинг идёт едем дальше ...)
 #
+echo ""
 echo -e "${BLUE}:: ${NC}Setting up the Russian language, changing the console font to one that supports Cyrillic for ease of use" 
 #echo 'Setting up the Russian language, changing the console font to one that supports Cyrillic for ease of use'
 # Настроим русский язык, изменим консольный шрифт на тот, который поддерживает кириллицу для удобства работы
@@ -346,6 +347,7 @@ setfont cyr-sun16
 # Консольные шрифты находятся внутри /usr/share/kbd/consolefonts/и также могут быть установлены с помощью setfont. 
 # ===================================================================
 #
+echo ""
 echo -e "${CYAN}==> ${NC}Добавим русскую локаль в систему установки"
 #echo 'Добавим русскую локаль в систему установки'
 # Adding a Russian locale to the installation system
