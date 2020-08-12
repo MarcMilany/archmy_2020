@@ -1482,15 +1482,6 @@ echo ""
 arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"
 #arch-chroot /mnt sh -c "$(curl -fsSL https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh)"
 #
-#echo " ############################################### "
-#echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
-#echo " ############################################### "
-#
-# Размонтирование всех смонтированных файловых систем (кроме корневой):
-# команда перемонтирует все файловые системы указанные в /etc/fstab, за исключением разделов с опцией noauto.
-#umount -a   
-#reboot
-# 
 ### curl -fsSL
 #-f — не выводить сообщения об ошибках;
 #-s — максимальное количество перенаправлений с помощью Location;
