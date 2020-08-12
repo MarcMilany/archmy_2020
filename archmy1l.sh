@@ -1246,16 +1246,16 @@ echo " Преимущество использования метода UUID с�
 # The advantage of using the UUID method is that the probability of names colliding is much less than with placemarks. It is then generated automatically when the file system is created.
 echo ""
 while
-echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-#read -p " 1 - UUID genfstab -U, 2 - LABEL genfstab -L, 3 - PARTLABEL genfstab -t PARTLABEL, 4 - PARTUUID genfstab -t PARTUUID: " x_fstab  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
-    read -p "    
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+# read -p " 1 - UUID genfstab -U, 2 - LABEL genfstab -L, 3 - PARTLABEL genfstab -t PARTLABEL, 4 - PARTUUID genfstab -t PARTUUID: " x_fstab  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")            
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+# read -n1 -p " 1 - UUID genfstab -U, 2 - LABEL genfstab -L, 3 - PARTLABEL genfstab -t PARTLABEL, 4 - PARTUUID genfstab -t PARTUUID: " x_fstab  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    read -n1 -p "    
     1 - UUID genfstab -U,                 2 - LABEL genfstab -L,
             
     3 - PARTLABEL genfstab -t PARTLABEL,  
 
-    4 - PARTUUID genfstab -t PARTUUID: " x_fstab  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")            
-#echo " Действия ввода, выполняется сразу после нажатия клавиши "
-# read -n1 -p " 1 - UUID genfstab -U, 2 - LABEL genfstab -L, 3 - PARTLABEL genfstab -t PARTLABEL, 4 - PARTUUID genfstab -t PARTUUID: " x_fstab  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    4 - PARTUUID genfstab -t PARTUUID: " x_fstab  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
     echo ''
     [[ "$x_fstab" =~ [^123456780] ]]
 do
@@ -1343,7 +1343,7 @@ cat /mnt/etc/fstab
 # Чтобы система знала какие разделы монтировать при старте.
 # ====================================================================
 #
-sleep 02   # или sleep 01
+sleep 01   # или sleep 02
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist"
@@ -1481,13 +1481,12 @@ echo -e "${GREEN}==> ${NC}Меняем корень и переходим в н�
 pacman -S wget --noconfirm --noprogressbar 
   wget -P /mnt https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh
   chmod +x /mnt/archmy2l.sh 
-
+  ./archmy2l.sh
   echo " Первый этап установки Arch'a закончен " 
   echo 'Установка продолжится в ARCH-LINUX chroot'
   echo "" 
 #  echo '1. проверь  интернет для продолжения установки в черуте || 2.команда для запуска ./archmy2l.sh ' 
   arch-chroot /mnt 
-  ./archmy2l.sh
 
 echo "################################################################"
 echo "###################    T H E   E N D      ######################"
