@@ -306,12 +306,12 @@ ip a
 # Для беспроводной связи убедитесь, что беспроводная карта не заблокирована с помощью: 
 #rfkill 
 # ------------------------------------------------------------------
-#
-echo -e "${GREEN}=> ${NC}Let's look at your DNS servers in the etc/resolv.conf file" 
+######  Если нужен этот пункт - 'Раскомментируйте!' ##### 
+#echo -e "${GREEN}=> ${NC}Let's look at your DNS servers in the etc/resolv.conf file" 
 #echo 'Let's look at your DNS servers in the etc/resolv.conf file'
 # Давайте посмотрим на ваши DNS-серверы в etc / resolv.файл conf   
-cat /etc/resolv.conf
-#sleep 01
+#cat /etc/resolv.conf
+########################################################
 # 
 echo ""
 echo -e "${GREEN}=> ${NC}To check the Internet, you can ping a service" 
@@ -430,7 +430,6 @@ echo -e "${BLUE}:: ${NC}Посмотрим дату и время без хар�
 # Let's look at the date and time without characteristics to check the time
 date
 #
-######  Если нужен этот пункт - 'Раскомментируйте!' #####
 echo ""
 echo -e "${YELLOW}==> ${NC}Обновить и добавить новые ключи?"
 #echo 'Обновить и добавить новые ключи?'
