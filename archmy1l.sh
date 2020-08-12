@@ -442,8 +442,9 @@ echo " Данный этап поможет вам избежать пробле
 echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, можно пропустить запуск обновления ключей. "
 # Be careful! If you are in doubt about your actions, you can skip running the key update.
 echo -e "${RED}==> ${BOLD}Примечание: - Иногда при запуске обновления ключей возникает ошибка, не переживайте просто перезапустите работу скрипта (sh -название скрипта-)${NC}"
+echo -e "${RED}==> ${BOLD}Примечание: - Лучше ПРОПУСТИТЕ этот пункт!"
 # Note: - Sometimes when you start updating keys, an error occurs, do not worry, just restart the script (sh -script name-)
-#echo ""
+echo ""
 while
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 # read -p " 1 - Да обновить, 0 - Нет пропустить: " x_key  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
