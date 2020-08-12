@@ -1470,7 +1470,7 @@ echo -e "${GREEN}==> ${NC}Меняем корень и переходим в н�
 # Change the root and go to our recently downloaded system
 echo " Первый этап установки Arch'a закончен " 
 echo 'Установка продолжится в ARCH-LINUX chroot' 
-arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"
+ arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"
 #
 echo " ############################################### "
 echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
