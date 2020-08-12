@@ -407,8 +407,8 @@ echo $timezone > /etc/timezone
 ls -lh /etc/localtime  # для просмотра символической ссылки, которая указывает на текущий часовой пояс, используемый в системе 
 #cat /etc/timezone   # просмотреть файл /etc/timezone
 #timedatectl    # команда отображает обзор системы, включая часовой пояс
-timedatectl | grep “Time zone”  # отфильтровать часовой пояс
-#date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'    # одновременно отображает дату и часовой пояс
+# timedatectl | grep “Time zone”  # отфильтровать часовой пояс
+date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'    # одновременно отображает дату и часовой пояс
 echo ""
 echo " Это ваш часовой пояс (timezone) - '$timezone' "
 #
