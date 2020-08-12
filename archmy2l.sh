@@ -1616,7 +1616,7 @@ nano /etc/fstab
 elif [[ $vm_fstab == 2 ]]; then
 echo ' Просмотреть содержимое файла fstab '
 # View the contents of the fstab file    
-cat /mnt/etc/fstab
+cat /etc/fstab
 #cat < /mnt/etc/fstab | grep -v "Static information"
 sleep 2
 fi
