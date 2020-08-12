@@ -1244,19 +1244,14 @@ elif [[ $vm_setting == 1 ]]; then
   gui_install="xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils"  # --confirm   всегда спрашивать подтверждение
 fi
 
+echo ""
 echo -e "${BLUE}:: ${NC}Ставим иксы и драйвера"
 #echo 'Ставим иксы и драйвера'
 # Put the x's and drivers
-echo ""
 echo " Выберите свой вариант (от 1-...), или по умолчанию нажмите кнопку 'Ввод' ("Enter") "
 pacman -S $gui_install   # --confirm   всегда спрашивать подтверждение
 #pacman -Syy
 
-echo ""
-echo -e "${BLUE}:: ${NC}Информацию о видеокарте"
-lshw -c video
-# После нового входа в систему, вы можете проверить версию драйвера, на котором работает ваша видеокарта, следующей командой:
-glxinfo | grep OpenGL
 # --------------------------------------------------------------------------
 #echo -e "${BLUE}:: ${NC}Ставим иксы и драйвера"
 #echo 'Ставим иксы и драйвера'
