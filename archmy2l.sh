@@ -52,16 +52,6 @@ set -e
 # Встроенная команда set:
 # https://www.sites.google.com/site/bashhackers/commands/set
 # ======================================================================
-
-##### Важно! #####
-# Если воникает ошибка /usr/bin/arch-chroot Argument list too long - (слишком длинный список аргументов /usr/bin/arch-chroot)
-# Все это из за того что файлов больше чем допустимый лимит, проверить который можно командой:
-#echo -e "${RED}=> ${NC}Acceptable limit for the list of arguments..."
-echo -e "${RED}=> ${NC}Допустимый лимит (предел) списка аргументов..."
-#echo 'Допустимый лимит (предел) списка аргументов...'
-# Acceptable limit for the list of arguments...
-getconf ARG_MAX
-
 #####################################################
 ### Help and usage (--help or -h) (Справка)
 _help() {
@@ -258,7 +248,16 @@ ${BLUE}===> ******************************************************* ${NC}"
 
 # 
 # *******************************************************************
-#
+##### Важно! #####
+# Если воникает ошибка /usr/bin/arch-chroot Argument list too long - (слишком длинный список аргументов /usr/bin/arch-chroot)
+# Все это из за того что файлов больше чем допустимый лимит, проверить который можно командой:
+#echo -e "${RED}=> ${NC}Acceptable limit for the list of arguments..."
+echo -e "${RED}=> ${NC}Допустимый лимит (предел) списка аргументов..."
+#echo 'Допустимый лимит (предел) списка аргументов...'
+# Acceptable limit for the list of arguments...
+getconf ARG_MAX
+echo ""
+
 ### Display banner (Дисплей баннер)
 _arch_fast_install_banner_2
 #
