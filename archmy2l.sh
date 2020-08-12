@@ -1228,7 +1228,8 @@ echo -e "${RED}==> ${NC}Куда устанавливаем Arch Linux на ви
 echo -e "${BLUE}:: ${NC}Сперва определим вашу видеокарту!"
 #echo "Сперва определим вашу видеокарту"
 # First, we will determine your video card!
-echo ""
+echo " => Вот данные по вашей видеокарте: "
+#echo ""
 lspci | grep -e VGA -e 3D
 #lspci | grep -E "VGA|3D"   # узнаем производителя и название видеокарты
 lspci -nn | grep VGA
