@@ -1104,13 +1104,13 @@ elif [[ $x_pacstrap == 4 ]]; then
 fi 
  clear
 echo ""
-#
+
 # ----------------------------------------------------------------
 # В официальном wiki от arch https://wiki.archlinux.org/index.php/Installation_guide ,
 # написано pacstrap /mnt base, советую тут повторить за мной, ибо если Вам нужен доступ к AUR (Arch User Repository) Вам надо будет base-devel (есть возможность поставить когда угодно).
 # Основные элементы уже у Вас на жестком диске, теперь надо сделать чтобы оно всё запускалось и работало.
 # ==========================================================
-# 
+
 #####        "Справка утилит"   ######
 # base - основные программы.
 # base-devel - утилиты для разработчиков. Нужны для AUR.
@@ -1134,7 +1134,7 @@ echo ""
 # man-db - просмотрщик man-страниц.
 # man-pages - куча man-страниц (руководств).
 # ==========================================================
-#
+
 ### Install Kernel
 #### Kernel (optional) - (Kernel (arbitrary) #####
 #clear
@@ -1213,7 +1213,7 @@ echo ""
 # Kernel (Русский)
 # https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 # ------------------------------------------------------------------
-#
+
 ### Set Fstab
 echo -e "${GREEN}==> ${NC}Настройка системы, генерируем fstab" 
 #echo 'Настройка системы, генерируем fstab'
@@ -1244,7 +1244,6 @@ while
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 # read -p " 1 - UUID genfstab -U, 2 - LABEL genfstab -L, 3 - PARTLABEL genfstab -t PARTLABEL, 4 - PARTUUID genfstab -t PARTUUID: " x_fstab  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")            
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
-# read -n1 -p " 1 - UUID genfstab -U, 2 - LABEL genfstab -L, 3 - PARTLABEL genfstab -t PARTLABEL, 4 - PARTUUID genfstab -t PARTUUID: " x_fstab  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     read -n1 -p "    
     1 - UUID genfstab -U,                 2 - LABEL genfstab -L,
             
@@ -1325,7 +1324,7 @@ fi
 # https://wiki.archlinux.org/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 # https://wiki.archlinux.org/index.php/Persistent_block_device_naming#by-uuid
 # ====================================================================
-#
+
 ### Set Fstab
 echo ""
 echo -e "${BLUE}:: ${NC}Просмотреть содержимое файла fstab"
@@ -1337,7 +1336,7 @@ cat /mnt/etc/fstab
 # Был создан файл содержащий данные о монтируемых файловых системах.
 # Чтобы система знала какие разделы монтировать при старте.
 # ====================================================================
-#
+
 sleep 01   # или sleep 02
 clear
 echo ""
@@ -1383,7 +1382,6 @@ while
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 #read -p " 1 - Russia (https,http), 2 - 50 HTTP-зеркал, 3 - Kazakhstan (http), 4 - Russia, Belarus, Ukraine, Poland (https,http), 0 - Пропустить обновление зеркал: " zerkala  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
-#read -n1 -p " 1 - Russia (https,http), 2 - 50 HTTP-зеркал, 3 - Kazakhstan (http), 4 - Russia, Belarus, Ukraine, Poland (https,http), 0 - Пропустить обновление зеркал: " zerkala  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     read -n1 -p "      
     1 - Russia (https,http),     2 - 50 HTTP-зеркал,
 
@@ -1441,23 +1439,23 @@ clear
 # Эта страница сообщает о состоянии всех известных, общедоступных и активных зеркал Arch Linux:
 # https://www.archlinux.org/mirrors/status/
 # =================================================================
-# 
+
 echo ""
 echo -e "${BLUE}:: ${NC}Копируем созданный список зеркал (mirrorlist) в /mnt"
 #echo 'Копируем созданный список зеркал (mirrorlist) в /mnt'
 # Copying the created list of mirrors (mirrorlist) to /mnt
 cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
-# 
+
 echo -e "${BLUE}:: ${NC}Копируем резервного списка зеркал (mirrorlist.backup) в /mnt"
 #echo 'Копируем резервного списка зеркал (mirrorlist.backup) в /mnt'
 # Copying the backup list of mirrors (mirrorlist.backup) in /mnt
 cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup
-#
+
 echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал /mnt/etc/pacman.d/mirrorlist"
 #echo 'Посмотреть список серверов-зеркал /mnt/etc/pacman.d/mirrorlist'
 # View the list of mirror servers /mnt/etc/pacman.d/mirrorlist
 cat /mnt/etc/pacman.d/mirrorlist
-#
+
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
 #echo 'Обновим базы данных пакетов'
@@ -1465,7 +1463,7 @@ echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
 #sudo pacman-key --init
 #sudo pacman-key --refresh-keys
 sudo pacman -Sy  
-#
+
 echo ""
 echo -e "${GREEN}==> ${NC}Меняем корень и переходим в нашу недавно скачанную систему" 
 #echo 'Меняем корень и переходим в нашу недавно скачанную систему'
@@ -1474,7 +1472,7 @@ echo " Первый этап установки Arch'a закончен "
 echo 'Установка продолжится в ARCH-LINUX chroot' 
 echo ""
 ##### Важно! #####
-# Если воникает ошибка /usr/bin/arch-chroot Argument list too long - (слишком длинный список аргументов /usr/bin/arch-chroot)
+# Если возникает ошибка /usr/bin/arch-chroot Argument list too long - (слишком длинный список аргументов /usr/bin/arch-chroot)
 # Все это из за того что файлов больше чем допустимый лимит, проверить который можно командой:
 #echo -e "${RED}=> ${NC}Acceptable limit for the list of arguments..."
 echo -e "${RED}=> ${NC}Допустимый лимит (предел) списка аргументов..."
@@ -1489,13 +1487,12 @@ echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
 echo " ############################################### "
 umount -a
 reboot  
-#
+
 ### curl -fsSL
 #-f — не выводить сообщения об ошибках;
 #-s — максимальное количество перенаправлений с помощью Location;
 #-S — выводить сообщения об ошибках;
 #-L — принимать и обрабатывать перенаправления;
-# 
 # -----------------------------------------------------------------------------
 # Change root. Здесь мы просто переходим в нашу недавно скачанную систему, теперь можно устанавливать те утилиты (пакеты), которые Вы решили установить, этот софт останется у Вас в системе. (что угодно, кроме утилит (пакетов) из 'Arch User Repository, AUR', так как репозиторий ещё не установлен.
 # Chroot на практике - полезные статьи :
