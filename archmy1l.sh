@@ -1478,6 +1478,7 @@ echo -e "${GREEN}==> ${NC}Меняем корень и переходим в н�
 # Change the root and go to our recently downloaded system
 echo " Первый этап установки Arch'a закончен " 
 echo 'Установка продолжится в ARCH-LINUX chroot' 
+echo ""
 arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"
 #arch-chroot /mnt sh -c "$(curl -fsSL https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh)"
 #
