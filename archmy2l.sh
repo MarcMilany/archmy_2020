@@ -443,8 +443,6 @@ echo -e "${BLUE}:: ${NC}Синхронизация системных часов
 #echo 'Синхронизируем наши системные часы, включаем ntp, если надо сменим часовой пояс'
 # Sync our system clock, enable ntp, change the time zone if necessary
 timedatectl set-ntp true
-#timedatectl set-timezone Europe/Moscow     # установка часового пояса
-#timedatectl set-timezone $timezone     # установка часового пояса
 #
 ### Specified Time
 echo -e "${BLUE}:: ${NC}Проверим аппаратное время"
@@ -462,6 +460,10 @@ echo -e "${BLUE}:: ${NC}Посмотрим текущее состояние а�
 #echo 'Посмотрим текущее состояние аппаратных и программных часов'
 # Let's see the current state of the hardware and software clock
 timedatectl
+#curl https://ipapi.co/timezone  # используем геолокацию (в каком часовом поясе) 
+#curl http://ip-api.com/line?fields=timezone 
+#timedatectl set-timezone Europe/Moscow     # установка часового пояса
+#timedatectl set-timezone $timezone     # установка часового пояса
 #
 ### Specified Time
 echo ""
