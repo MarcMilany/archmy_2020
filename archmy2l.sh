@@ -1604,9 +1604,10 @@ if [[ $vm_fstab == 0 ]]; then
 elif [[ $vm_fstab == 1 ]]; then
 nano /etc/fstab
 elif [[ $vm_fstab == 2 ]]; then
+echo ""    
 echo ' Просмотреть содержимое файла fstab '
-# View the contents of the fstab file 
-echo ""   
+# View the contents of the fstab file
+echo ""    
 cat /etc/fstab
 #cat < /mnt/etc/fstab | grep -v "Static information"
 sleep 2
