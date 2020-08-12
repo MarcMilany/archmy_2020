@@ -306,13 +306,13 @@ ip a
 # Для беспроводной связи убедитесь, что беспроводная карта не заблокирована с помощью: 
 #rfkill 
 # ------------------------------------------------------------------
-###
-# Посмотрим наши DNC сервера: 
-cat /etc/resolv.conf
 #
-sleep 01
+echo -e "${GREEN}=> ${NC}Let's look at your DNS servers in the etc/resolv.conf file" 
+#echo 'Let's look at your DNS servers in the etc/resolv.conf file'
+# Давайте посмотрим на ваши DNS-серверы в etc / resolv.файл conf   
+cat /etc/resolv.conf
+#sleep 01
 # 
-### 
 echo ""
 echo -e "${GREEN}=> ${NC}To check the Internet, you can ping a service" 
 #echo 'To check the Internet, you can ping a service'
