@@ -52,6 +52,12 @@ set -e
 # Встроенная команда set:
 # https://www.sites.google.com/site/bashhackers/commands/set
 # ======================================================================
+
+echo -e "${RED}=> ${NC}Acceptable limit for the list of arguments..."
+#echo 'Допустимый лимит (предел) списка аргументов...'
+# Acceptable limit for the list of arguments...
+getconf ARG_MAX
+
 #####################################################
 ### Help and usage (--help or -h) (Справка)
 _help() {
@@ -1478,6 +1484,15 @@ echo -e "${GREEN}==> ${NC}Меняем корень и переходим в н�
 echo " Первый этап установки Arch'a закончен " 
 echo 'Установка продолжится в ARCH-LINUX chroot' 
 echo ""
+##### Важно! #####
+# Если воникает ошибка /usr/bin/arch-chroot Argument list too long - (слишком длинный список аргументов /usr/bin/arch-chroot)
+# Все это из за того что файлов больше чем допустимый лимит, проверить который можно командой:
+#echo -e "${RED}=> ${NC}Acceptable limit for the list of arguments..."
+echo -e "${RED}=> ${NC}Допустимый лимит (предел) списка аргументов..."
+#echo 'Допустимый лимит (предел) списка аргументов...'
+# Acceptable limit for the list of arguments...
+getconf ARG_MAX
+
 arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"
 #arch-chroot /mnt sh -c "$(curl -fsSL https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh)"
 #
