@@ -1208,14 +1208,15 @@ pacman -Sy   #--noconfirm --noprogressbar --quiet
 # =============================================================
 
 echo ""
-echo -e "${GREEN}==> ${NC}Устанавливаем Xorg (иксы) или "X.Org Foundation Open Source Public Implementation of X11" - это свободная открытая реализация оконной системы X11."
-#echo "Устанавливаем Xorg (иксы) или «X.Org Foundation Open Source Public Implementation of X11» - это свободная открытая реализация оконной системы X11."
-# Install Xorg or "X.Org Foundation Open Source Public Implementation of X11" - a free open implementation of the X11 window system.
+echo -e "${GREEN}==> ${NC}Устанавливаем Xorg (иксы) и драйвера."
+#echo "Устанавливаем Xorg (иксы) и драйвера.
+# Installing Xorg (XPS) and drivers
+echo " X.Org Foundation Open Source Public Implementation of X11 - это свободная открытая реализация оконной системы X11. "
 echo " Xorg очень популярен среди пользователей Linux, что привело к тому, что большинство приложений с графическим интерфейсом используют X11, из-за этого Xorg доступен в большинстве дистрибутивов. "
 echo -e "${BLUE}:: ${NC}Сперва определим вашу видеокарту!"
 #echo "Сперва определим вашу видеокарту"
 # First, we will determine your video card!
-echo " => Вот данные по вашей видеокарте (даже, если Вы работаете на VM): "
+echo -e "${MAGENTA}=> ${BOLD}Вот данные по вашей видеокарте (даже, если Вы работаете на VM): ${NC}"
 #echo ""
 lspci | grep -e VGA -e 3D
 #lspci | grep -E "VGA|3D"   # узнаем производителя и название видеокарты
