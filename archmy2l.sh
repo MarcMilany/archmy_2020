@@ -1222,13 +1222,12 @@ pacman -Sy   #--noconfirm --noprogressbar --quiet
 # =============================================================
 #
 echo ""
-echo -e "${RED}==> ${NC}Куда устанавливаем Arch Linux на виртуальную машину?"
-#echo "Куда устанавливаем Arch Linux на виртуальную машину?"
-# Where do we install Arch Linux on the VM?
+echo -e "${GREEN}==> ${NC}Устанавливаем Xorg или «X.Org Foundation Open Source Public Implementation of X11» - свободная открытая реализация оконной системы X11. "
+echo " Xorg очень популярен среди пользователей Linux, что привело к тому, что большинство приложений с графическим интерфейсом используют X11, из-за этого Xorg доступен в большинстве дистрибутивов. "
 echo -e "${BLUE}:: ${NC}Сперва определим вашу видеокарту!"
 #echo "Сперва определим вашу видеокарту"
 # First, we will determine your video card!
-echo " => Вот данные по вашей видеокарте: "
+echo " => Вот данные по вашей видеокарте (даже, если Вы работаете на VM): "
 #echo ""
 lspci | grep -e VGA -e 3D
 #lspci | grep -E "VGA|3D"   # узнаем производителя и название видеокарты
@@ -1236,8 +1235,11 @@ lspci -nn | grep VGA
 #lspci | grep VGA        # узнаем ID шины 
 # После того как вы узнаете PCI-порт видеокарты, например 1с:00.0, можно получить о ней более подробную информацию:
 # sudo lspci -v -s 1с:00.0
-
 echo ""
+echo -e "${RED}=> ${NC}Куда устанавливаем Arch Linux на виртуальную машину?"
+#echo "Куда устанавливаем Arch Linux на виртуальную машину?"
+# Where do we install Arch Linux on the VM?
+# Теперь приступим к установке Xorg.
 read -p " 1 - Да устанавливаем на VirtualBox, 0 - Нет на PC: " vm_setting
 if [[ $vm_setting == 0 ]]; then
   gui_install="xorg-server xorg-drivers xorg-xinit"  #(или на vmware) # --confirm   всегда спрашивать подтверждение
