@@ -1503,9 +1503,7 @@ if [[ $int == 1 ]]; then
 echo " ############################################### "
 echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
 echo " ############################################### "
-     for (( SECOND=10; SECOND>=1; SECOND-- ))
-        echo -ne "\r\033[K${GREEN}${MSG_REBOOT} Размонтирование всех смонтированных файловых систем (кроме корневой) ${SECOND}s...${NC}"
-echo ""
+echo " Размонтирование всех смонтированных файловых систем (кроме корневой) "
 umount -a
 reboot; exit 0 
   elif [[ $int == 2 ]]; then
