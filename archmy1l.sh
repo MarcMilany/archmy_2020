@@ -1502,9 +1502,12 @@ if [[ $int == 1 ]]; then
 #arch-chroot /mnt sh -c "$(curl -fsSL https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh)"
 echo " ############################################### "
 echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
-echo " ############################################### " 
+echo " ############################################### "
+     for (( SECOND=10; SECOND>=1; SECOND-- ))
+        echo -ne "\r\033[K${GREEN}${MSG_REBOOT} Размонтирование всех смонтированных файловых систем (кроме корневой) ${SECOND}s...${NC}"
+
 umount -a
-reboot 
+reboot; exit 0 
   elif [[ $int == 2 ]]; then
   echo ""
   pacman -S wget --noconfirm --noprogressbar 
