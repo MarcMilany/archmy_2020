@@ -477,8 +477,8 @@ do
 done
  if [[ $x_key == 1 ]]; then
   clear
-  pacman-key --init  #
-  pacman-key --populate archlinux  #
+  #pacman-key --init  #
+  #pacman-key --populate archlinux  #
   pacman-key --refresh-keys 
   elif [[ $x_key == 0 ]]; then
    echo " Обновление ключей пропущено "   
