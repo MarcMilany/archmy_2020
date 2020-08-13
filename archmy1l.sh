@@ -16,6 +16,8 @@ EDITOR=nano
 
 script_path=$(readlink -f ${0%/*})
 
+#umask 0022
+
 ##################################################################
 ##### <<<Arch Linux Fast Install LegasyBIOS (arch2020)>>>    #####
 #### Скрипты 'arch_2020' созданы на основе сценария (скрипта) ####
@@ -309,7 +311,6 @@ echo -e "${BLUE}:: ${NC}The determination of the final access rights"
 # Определение окончательных прав доступа
 # Для суперпользователя (root) umask по умолчанию равна 0022
 umask     #umask 0022      # используется для определения конечных прав доступа
-#umask 0022
 
 echo ""
 echo -e "${GREEN}=> ${NC}Make sure that your network interface is specified and enabled" 
