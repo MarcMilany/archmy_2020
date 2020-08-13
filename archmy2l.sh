@@ -385,7 +385,7 @@ echo -e "${MAGENTA}=> ${BOLD}Мир состоит из шести частей 
 # Континент:
 # https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%82%D0%B8%D0%BD%D0%B5%D0%BD%D1%82
 #echo " ln -sf /usr/share/zoneinfo/${timezone} /etc/localtime "
-echo " ln -sf /usr/share/zoneinfo/Частъ Света/Город /etc/localtime "
+echo " ln -sf /usr/share/zoneinfo/Частъ Света/Город /etc/localtime "  # где Region - ваш регион, City - ваш город
 echo " ln -sf /usr/share/zoneinfo/Зона/Субзона /etc/localtime "
 echo "ln -svf /usr/share/zoneinfo/$timezone /etc/localtime"
 echo " Примеры (timezone): Europe/Moscow, Europe/Minsk, Europe/Kiev, Asia/Yekaterinburg, Asia/Almaty, Africa/Nairobi и т.д.... "
@@ -1672,8 +1672,8 @@ echo -e "${RED}==> ${BOLD}Выходим из установленной сис�
 echo -e "${BLUE}:: ${BOLD}Теперь вам надо ввести reboot, чтобы перезагрузиться ${NC}"
 #echo 'Теперь вам надо ввести reboot, чтобы перезагрузиться'
 #'Now you need to enter 'reboot' to reboot"'
-exit 
-exit
+exit && reboot
+#exit
 # ========================================================
 ###########################################################
 # ********************************************************** 
