@@ -14,6 +14,9 @@ EDITOR=nano
 # Выполните команду с правами суперпользователя:
 #EDITOR=nano visudo
 
+### Installer default language (Язык установки по умолчанию)
+#ARCHMY1_LANG="russian"
+
 script_path=$(readlink -f ${0%/*})
 
 #umask 0022
@@ -84,9 +87,6 @@ Installation guide - Arch Wiki
 ${BOLD}For more information, see the wiki: \
 ${GREY}<https://wiki.archlinux.org/index.php/Installation_guide>${NC}"
 }
-
-### Installer default language (Язык установки по умолчанию)
-#ARCHMY1_LANG="russian"
 
 ### SHARED VARIABLES AND FUNCTIONS (ОБЩИЕ ПЕРЕМЕННЫЕ И ФУНКЦИИ)
 ### Shell color codes (Цветовые коды оболочки)
