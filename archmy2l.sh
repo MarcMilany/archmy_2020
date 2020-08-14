@@ -319,7 +319,7 @@ echo -e "${MAGENTA}=> ${BOLD}Используйте в имени (user name) т
 #echo -e "${MAGENTA}==> ${NC}"
 echo ""                    
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-read -p " => Введите имя компьютера: " username 
+read -p " => Введите имя пользователя: " username 
 
 ### Set Hostname
 echo -e "${BLUE}:: ${NC}Прописываем имя компьютера"
