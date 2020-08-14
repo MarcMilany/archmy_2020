@@ -10,6 +10,9 @@ EDITOR=nano
 # Выполните команду с правами суперпользователя:
 #EDITOR=nano visudo
 
+### Installer default language (Язык установки по умолчанию)
+#ARCHMY1_LANG="russian"
+
 ##################################################################
 ##### <<<Arch Linux Fast Install LegasyBIOS (arch2020)>>>    #####
 #### Скрипты 'arch_2020' созданы на основе сценария (скрипта) ####
@@ -75,9 +78,6 @@ Installation guide - Arch Wiki
 ${BOLD}For more information, see the wiki: \
 ${GREY}<https://wiki.archlinux.org/index.php/Installation_guide>${NC}"
 }
-
-### Installer default language (Язык установки по умолчанию)
-#ARCHMY1_LANG="russian"
 
 ### SHARED VARIABLES AND FUNCTIONS (ОБЩИЕ ПЕРЕМЕННЫЕ И ФУНКЦИИ)
 ### Shell color codes (Цветовые коды оболочки)
