@@ -1530,7 +1530,7 @@ echo " ############################################### "
         sleep 1
     done
     umount -a
-    reboot; exit 0
+    reboot
   elif [[ $int == 2 ]]; then
   echo ""
   pacman -S wget --noconfirm --noprogressbar 
