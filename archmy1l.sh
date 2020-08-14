@@ -1528,10 +1528,10 @@ echo " ############################################### "
 echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
 echo " ############################################### "
     for (( SECOND=10; SECOND>=1; SECOND-- )); do
-        echo -ne "${GREEN} Размонтирование всех смонтированных файловых систем (кроме корневой) ${SECOND}s...${NC}"
+        echo -ne "${YELLOW} Размонтирование всех смонтированных файловых систем (кроме корневой) ${BOLD}${SECOND}s...${NC}"
     done
     umount -a
-    reboot; exit 0
+    reboot; exit 0   
   elif [[ $int == 2 ]]; then
   echo ""
   pacman -S wget --noconfirm --noprogressbar 
