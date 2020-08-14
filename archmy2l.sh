@@ -13,6 +13,10 @@ EDITOR=nano
 ### Installer default language (Язык установки по умолчанию)
 #ARCHMY1_LANG="russian"
 
+script_path=$(readlink -f ${0%/*})
+
+#umask 0022
+
 ##################################################################
 ##### <<<Arch Linux Fast Install LegasyBIOS (arch2020)>>>    #####
 #### Скрипты 'arch_2020' созданы на основе сценария (скрипта) ####
