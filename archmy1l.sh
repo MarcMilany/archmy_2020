@@ -1531,7 +1531,7 @@ echo " ############################################### "
         echo -ne "${YELLOW} Размонтирование всех смонтированных файловых систем (кроме корневой) ${BOLD}${SECOND}s...${NC}"
     done
     umount -a
-    reboot; exit 0   
+    sudo reboot; exit 0   
   elif [[ $int == 2 ]]; then
   echo ""
   pacman -S wget --noconfirm --noprogressbar 
