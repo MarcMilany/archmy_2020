@@ -1187,17 +1187,39 @@ fi
 # ============================================================
 
 echo ""
-echo -e "${BLUE}:: ${NC}Раскомментируем репозиторий multilib Для работы 32-битных приложений в 64-битной системе"
+echo -e "${GREEN}==> ${NC}Добавим репозиторий Multilib Для работы 32-битных приложений в 64-битной системе?"
+echo -e "${BLUE}:: ${NC}Раскомментируем репозиторий multilib"
 #echo 'Раскомментируем репозиторий multilib Для работы 32-битных приложений в 64-битной системе.'
 # Uncomment the multilib repository For running 32-bit applications on a 64-bit system
+while
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+# read -p " 1 - Да добавить, 0 - Нет пропустить настройку: " i_multilib  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+echo " Действия ввода, выполняется сразу после нажатия клавиши " 
+    read -n1 -p  "
+    1 - Да добавить Multilib репозиторий 
+    
+    0 - Нет пропустить настройку : " i_multilib   # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_multilib" =~ [^10] ]]
+do
+    :
+done
+if [[ $i_multilib  == 0 ]]; then
+#clear
+echo ""
+echo " Добавление Multilib репозитория пропущено"
+elif [[ $i_multilib  == 1 ]]; then
 #echo 'Color = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 sed -i 's/#Color/Color/' /etc/pacman.conf
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 #echo '[multilib]' >> /etc/pacman.conf
 #echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 #pacman -Syy
-echo ' Multilib репозиторий добавлен (раскомментирован) '
-#
+#clear
+echo ""
+echo " Multilib репозиторий добавлен (раскомментирован) "
+fi
+
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
 #echo 'Обновим базы данных пакетов'
