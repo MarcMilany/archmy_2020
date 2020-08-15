@@ -1418,7 +1418,7 @@ echo -e "${BLUE}:: ${NC}Ставим шрифты"
 pacman -S ttf-liberation ttf-dejavu --noconfirm 
 pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-hanazono --noconfirm  # opendesktop-fonts 
 pacman -S ttf-fireflysung ttf-sazanami --noconfirm  # -китайские иероглифы
-#
+
 echo ""
 echo -e "${BLUE}:: ${NC}Подключаем автозагрузку менеджера входа и интернет"
 #echo 'Подключаем автозагрузку менеджера входа и интернет'
