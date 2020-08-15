@@ -868,6 +868,7 @@ if [[ $wind == 0 ]]; then
 echo ""
 echo -e "${BLUE}:: ${NC}Добавим раздел диск "C"(Local Disk) Windows?"
 #echo " Добавим раздел диск "C"(Local Disk) Windows? "
+# Adding the "C"(Local Disk) Windows partition?
 while 
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 # read -p " 1 - Да добавим раздел, , 0 - Нет пропустить: " diskC  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
@@ -895,6 +896,7 @@ if [[ $diskC == 0 ]]; then
 echo ""
 echo -e "${BLUE}:: ${NC}Добавим раздел диск "D"(Data Disk) Windows?"
 #echo " Добавим раздел диск "D"(Data Disk) Windows? "
+# Adding the "D"(Data Disk) Windows partition?
 while 
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 # read -p " 1 - Да добавим раздел, , 0 - Нет пропустить: " diskD  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
@@ -922,6 +924,7 @@ if [[ $diskD == 0 ]]; then
 echo ""
 echo -e "${BLUE}:: ${NC}Добавим раздел диск "E"(Work Disk) Windows?"
 #echo " Добавим раздел диск "E"(Work Disk) Windows? "
+# Adding the "E"(Work Disk) Windows partition?
 while
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 # read -p " 1 - Да добавим раздел, , 0 - Нет пропустить: " diskE  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
