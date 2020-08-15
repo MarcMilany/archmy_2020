@@ -830,16 +830,51 @@ done
 #mount -v /dev/$homeV /mnt/home  # -v или --verbose Выводить сообщение о каждой создаваемой директории
 fi
 fi
+sleep 02
 # -----------------------------------------------------------------
 # Посмотреть что мы намонтировали можно командой:
 #mount | grep sda    
 # - покажет куда был примонтирован sda
 # ===================================================================
 
+clear
 echo -e "${CYAN}
-  <<< Добавление (создание) разделов Windows (ntfs/fat32) >>>
+  <<< Добавление (монтирование) разделов Windows (ntfs/fat32) >>>
 ${NC}"
-# The addition (creation) of the Windows partitions (ntfs/fat32)
+# Adding (mounting) Windows partitions (ntfs/fat32)
+echo -e "${GREEN}==> ${NC}Добавим разделы для Windows (ntfs/fat32)?"
+#echo 'Добавим разделы для Windows (ntfs/fat32)?'
+# Adding partitions for Windows (ntfs/fat32)?
+echo -e "${MAGENTA}=> ${BOLD}Если таковые были созданы во время разбиении вашего диска на разделы cfdisk! ${NC}"
+# If any were created while partitioning your disk to cfdisk partitions!
+while
+echo " Действия ввода, выполняется сразу после нажатия клавиши " 
+    read -n1 -p  "
+    1 - да
+    0 - нет: " wind # sends right after the keypress
+    echo ''
+    [[ "$wind" =~ [^10] ]]
+do
+    :
+done
+if [[ $wind == 0 ]]; then
+  echo 'пропущено'
+  elif [[ $wind == 1 ]]; then
+  echo "### Приступим к добавлению разделов Windows ### "
+
+
+
+
+
+
+echo -e "${BLUE}:: ${NC}"
+#echo 'Вам нужна разметка диска?'
+# Do you need disk markup?
+
+
+
+
+
 
 echo ""
 echo -e "${BLUE}:: ${NC}Просмотреть подключённые диски с выводом информации о размере и свободном пространстве"
