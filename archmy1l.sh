@@ -1137,6 +1137,7 @@ elif [[ $x_pacstrap == 3 ]]; then
   echo ""
   echo " Установка выбранных вами групп "
   pacstrap /mnt base base base-devel
+#  pacstrap /mnt base  
 #  pacstrap /mnt base-devel
 #  pacstrap /mnt --needed base-devel   
 elif [[ $x_pacstrap == 4 ]]; then
