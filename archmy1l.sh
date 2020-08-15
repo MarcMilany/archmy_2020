@@ -848,19 +848,23 @@ echo -e "${GREEN}==> ${NC}Добавим разделы для Windows (ntfs/fat
 echo -e "${MAGENTA}=> ${BOLD}Если таковые были созданы во время разбиении вашего диска на разделы cfdisk! ${NC}"
 # If any were created while partitioning your disk to cfdisk partitions!
 while
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+# read -p " 1 - Да добавим разделы, , 0 - Нет пропустить этот шаг: " wind  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo " Действия ввода, выполняется сразу после нажатия клавиши " 
     read -n1 -p  "
-    1 - да
-    0 - нет: " wind # sends right after the keypress
+    1 - Да добавим разделы,    0 - Нет пропустить этот шаг: " wind  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
     [[ "$wind" =~ [^10] ]]
 do
     :
 done
 if [[ $wind == 0 ]]; then
-  echo 'пропущено'
+  echo ' Действие пропущено '
   elif [[ $wind == 1 ]]; then
-  echo "### Приступим к добавлению разделов Windows ### "
+echo -e "${BLUE}:: ### Приступим к добавлению разделов Windows ###${NC}"    
+#  echo "### Приступим к добавлению разделов Windows ### "
+
+
 
 
 
