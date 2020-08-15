@@ -933,11 +933,12 @@ done
    clear
  lsblk -f
   echo ""
+  echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
   read -p " Укажите диск "E" раздел(sda/sdb 1.2.3.4 (sda5 например)) : " diskDe
   mkdir /mnt/E 
   mount /dev/$diskDe /mnt/E
   elif [[ $diskE == 0 ]]; then
-  echo 'пропущено'
+  echo ' Действие пропущено '
   fi 
   fi
 
