@@ -862,8 +862,31 @@ if [[ $wind == 0 ]]; then
   echo ' Действие пропущено '
   elif [[ $wind == 1 ]]; then
 echo -e "${BLUE}:: ### Приступим к добавлению разделов Windows ###${NC}"    
-#  echo "### Приступим к добавлению разделов Windows ### "
-
+#  echo " ### Приступим к добавлению разделов Windows ### "
+############### Disk C ##############
+echo ""
+echo " Добавим раздел диск "C"(Local Disk) Windows? "
+while 
+    read -n1 -p  "
+    1 - да
+    
+    0 - нет: " diskC # sends right after the keypress
+    echo ''
+    [[ "$diskC" =~ [^10] ]]
+do
+    :
+done
+if [[ $diskC == 0 ]]; then
+  echo ' Действие пропущено '
+  elif [[ $diskC == 1 ]]; then
+   clear
+ lsblk -f
+  echo ""
+  echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+  read -p " Укажите диск "C" раздел(sda/sdb 1.2.3.4 (sda4 например) ) : " diskCc
+  mkdir /mnt/C 
+  mount /dev/$diskCc /mnt/C
+  fi
 
 
 
