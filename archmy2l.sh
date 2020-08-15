@@ -1260,9 +1260,11 @@ lspci -nn | grep VGA
 # После того как вы узнаете PCI-порт видеокарты, например 1с:00.0, можно получить о ней более подробную информацию:
 # sudo lspci -v -s 1с:00.0
 echo ""
-echo -e "${RED}=> ${NC}Куда устанавливаем Arch Linux на виртуальную машину?"
-#echo "Куда устанавливаем Arch Linux на виртуальную машину?"
-# Where do we install Arch Linux on the VM?
+echo -e "${RED}==> ${NC}Куда Вы устанавливаете Arch Linux на PC, или на Виртуальную машину (VM;VMWare)?"
+#echo "Куда Вы устанавливаете Arch Linux на PC, или на Виртуальную машину (VM;VMWare)?"
+# Where do you install Arch Linux on a PC, or on a Virtual machine (VM;VMWare)?
+
+
 # Теперь приступим к установке Xorg.
 read -p " 1 - Да устанавливаем на VirtualBox, 0 - Нет на PC: " vm_setting
 if [[ $vm_setting == 0 ]]; then
