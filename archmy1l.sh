@@ -1527,11 +1527,9 @@ if [[ $int == 1 ]]; then
 echo " ############################################### "
 echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
 echo " ############################################### "
-    for (( SECOND=10; SECOND>=1; SECOND-- )); do
-        echo -ne "\r\033[K${YELLOW} Размонтирование всех смонтированных файловых систем (кроме корневой) ${BOLD}${SECOND}s...${NC}"
-    done
-    umount -a
-    sudo reboot 
+echo " Размонтирование всех смонтированных файловых систем (кроме корневой) "
+umount -a
+reboot 
   elif [[ $int == 2 ]]; then
   echo ""
   pacman -S wget --noconfirm --noprogressbar 
