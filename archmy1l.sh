@@ -303,6 +303,9 @@ export LANG=ru_RU.UTF-8
 # As you name it, you will swim...
 # ===============================================================
 #################################################################
+echo ""
+efibootmgr
+echo ""
 
 ### Display banner (Дисплей баннер)
 _arch_fast_install_banner
