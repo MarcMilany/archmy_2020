@@ -1265,10 +1265,10 @@ echo -e "${RED}==> ${NC}Куда Вы устанавливаете Arch Linux н
 # Where do you install Arch Linux on a PC, or on a Virtual machine (VM;VMWare)?
 echo " . "
 # 
-echo " Огласите весь список, пожалуйста! "
-# Read out the entire list, please!
-echo " 1 -  "
-echo " 2 -  "
+echo " Давайте проанализируем действия, которые выполняются. "
+# Let's analyze the actions that are being performed.
+echo " 1 - Если у Вас стабильный трафик интернета (dhcpcd), то рекомендую вариант - "1" "
+echo " 2 - Если у Вас бывают проблемы трафика интернета (wifi), то выбирайте вариант - "2" "
 echo " 3 -  "
 echo " 4 - Команда отфильтрует зеркала для 'Russia', 'Belarus', 'Ukraine',' и 'Poland' по протоколам (https,http), отсортирует их по скорости загрузки и обновит файл mirrorlist. "
 echo " Будьте внимательны! В любой ситуации выбор всегда остаётся за вами. "
