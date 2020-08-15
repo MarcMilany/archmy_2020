@@ -12,6 +12,7 @@ EDITOR=nano
 
 ### Installer default language (Язык установки по умолчанию)
 #ARCHMY1_LANG="russian"
+ARCHMY2_LANG="russian"
 
 script_path=$(readlink -f ${0%/*})
 
