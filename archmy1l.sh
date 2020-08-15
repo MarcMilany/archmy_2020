@@ -69,21 +69,6 @@ set -e "\n${RED}Error: ${YELLOW}${*}${NC}"
 _help() {
     echo -e "${BLUE}
 Installation guide - Arch Wiki
-
-    ${BOLD}Options${NC}
-        -h, --help          show this help message
-        -l, --lang          set installer language
-        -k, --keyboard      set keyboard layout
-
-    ${BOLD}Language${NC}
-        -l, --lang          english
-                            russian
-
-    ${BOLD}Keyboard${NC}
-        -k, --keyboard      keyboard layout
-                            (run loadkeys on start)
-                            (e.q., --keyboard fr)
-
 ${BOLD}For more information, see the wiki: \
 ${GREY}<https://wiki.archlinux.org/index.php/Installation_guide>${NC}"
 }
@@ -92,18 +77,6 @@ ${GREY}<https://wiki.archlinux.org/index.php/Installation_guide>${NC}"
 ### Shell color codes (Цветовые коды оболочки)
 RED="\e[1;31m"; GREEN="\e[1;32m"; YELLOW="\e[1;33m"; GREY="\e[3;93m"
 BLUE="\e[1;34m"; CYAN="\e[1;36m"; BOLD="\e[1;37m"; MAGENTA="\e[1;35m"; NC="\e[0m"
-
-# Вот список цветов, которые можно применять для подсветки синтаксиса в bash:
-# BLACK='\e[0;30m' GREEN='\e[0;32m' BLUE='\e[0;34m'    CYAN='\e[0;36m'
-# RED='\e[0;31m'   BROWN='\e[0;33m' MAGENTA='\e[0;35m' GRAY='\e[0;37m'
-# DEF='\e[0;39m'   'LRED='\e[1;31m    YELLOW='\e[1;33m' LMAGENTA='\e[1;35m' WHITE='\e[1;37m'
-# DGRAY='\e[1;30m'  LGREEN='\e[1;32m' LBLUE='\e[1;34m'  LCYAN='\e[1;36m'    NC='\e[0m' # No Color
-# Индивидуальные настройки подсветки синтаксиса для каждого пользователя можно настраивать в конфигурационном файле /home/$USER/.bashrc
-
-# Checking personal setting (Проверяйте ваши персональные настройки)
-### Display user entries (Отображение пользовательских записей ) 
-#USER_ENTRIES=(USER_LANG TIMEZONE HOST_NAME USER_NAME LINUX_FW KERNEL \
-#DESKTOP DISPLAY_MAN GREETER AUR_HELPER POWER GPU_DRIVER HARD_VIDEO)
 
 ### Automatic error detection (Автоматическое обнаружение ошибок)
 _set() {
@@ -116,48 +89,9 @@ _set() {
     sleep 1; $$
 }
   
-### Display some notes (Дисплей некоторые заметки)
-_note() {
-    echo -e "${RED}\nNote: ${BLUE}${1}${NC}"
-}
-
 ### Display install steps (Отображение шагов установки)
 _info() {
     echo -e "${YELLOW}\n==> ${CYAN}${1}...${NC}"; sleep 1
-}
-
-### Ask some information (Спросите немного информации)
-_prompt() {
-    LENTH=${*}; COUNT=${#LENTH}
-    echo -ne "\n${YELLOW}==> ${GREEN}${1} ${RED}${2}"
-    echo -ne "${YELLOW}\n==> "
-    for (( CHAR=1; CHAR<=COUNT; CHAR++ )); do echo -ne "-"; done
-    echo -ne "\n==> ${NC}"
-}
-
-### Ask confirmation (Yes/No) (Запросите подтверждение (да / нет))
-_confirm() {
-    unset CONFIRM; COUNT=$(( ${#1} + 6 ))
-    until [[ ${CONFIRM} =~ ^(y|n|Y|N|yes|no|Yes|No|YES|NO)$ ]]; do
-        echo -ne "${YELLOW}\n==> ${GREEN}${1} ${RED}[y/n]${YELLOW}\n==> "
-        for (( CHAR=1; CHAR<=COUNT; CHAR++ )); do echo -ne "-"; done
-        echo -ne "\n==> ${NC}"
-        read -r CONFIRM
-    done
-}
-
-### Select an option (Выбрать параметр)
-_select() {
-    COUNT=0
-    echo -ne "${YELLOW}\n==> "
-    for ENTRY in "${@}"; do
-        echo -ne "${RED}[$(( ++COUNT ))] ${GREEN}${ENTRY} ${NC}"
-    done
-    LENTH=${*}; NUMBER=$(( ${#*} * 4 ))
-    COUNT=$(( ${#LENTH} + NUMBER + 1 ))
-    echo -ne "${YELLOW}\n==> "
-    for (( CHAR=1; CHAR<=COUNT; CHAR++ )); do echo -ne "-"; done
-    echo -ne "\n==> ${NC}"
 }
 
 ### Download show progress bar only (Скачать показывать только индикатор выполнения)
