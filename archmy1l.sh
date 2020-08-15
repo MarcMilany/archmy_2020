@@ -15,7 +15,7 @@ EDITOR=nano
 #EDITOR=nano visudo
 
 ### Installer default language (Язык установки по умолчанию)
-#ARCHMY1_LANG="russian"
+ARCHMY1_LANG="russian"
 
 script_path=$(readlink -f ${0%/*})
 
