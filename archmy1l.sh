@@ -867,10 +867,11 @@ echo -e "${BLUE}:: ### Приступим к добавлению раздело
 echo ""
 echo " Добавим раздел диск "C"(Local Disk) Windows? "
 while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+# read -p " 1 - Да добавим раздел, , 0 - Нет пропустить: " diskC  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+echo " Действия ввода, выполняется сразу после нажатия клавиши " 
     read -n1 -p  "
-    1 - да
-    
-    0 - нет: " diskC # sends right after the keypress
+    1 - Да добавим раздел,    0 - Нет пропустить: " diskC  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
     [[ "$diskC" =~ [^10] ]]
 do
@@ -888,6 +889,64 @@ if [[ $diskC == 0 ]]; then
   mount /dev/$diskCc /mnt/C
   fi
 
+############### Disk D ##############
+echo ""
+echo " Добавим раздел диск "D"(Data Disk) Windows? "
+while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+# read -p " 1 - Да добавим раздел, , 0 - Нет пропустить: " diskD  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+echo " Действия ввода, выполняется сразу после нажатия клавиши " 
+    read -n1 -p  "
+    1 - Да добавим раздел,    0 - Нет пропустить: " diskD  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$diskD" =~ [^10] ]]
+do
+    :
+done
+if [[ $diskD == 0 ]]; then
+  echo ' Действие пропущено '
+ elif [[ $diskD == 1 ]]; then
+   clear
+ lsblk -f
+  echo ""
+  echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+  read -p " Укажите диск "D" раздел(sda/sdb 1.2.3.4 (sda5 например)) : " diskDd
+  mkdir /mnt/D 
+  mount /dev/$diskDd /mnt/D
+  fi
+
+###### disk E ########
+echo ""
+echo " Добавим раздел диск "E"(Work Disk) Windows? "
+while
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+# read -p " 1 - Да добавим раздел, , 0 - Нет пропустить: " diskE  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+echo " Действия ввода, выполняется сразу после нажатия клавиши " 
+    read -n1 -p  "
+    1 - Да добавим раздел,    0 - Нет пропустить: " diskE  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$diskE" =~ [^10] ]]
+do
+    :
+done
+ if [[ $diskE == 1 ]]; then
+   clear
+ lsblk -f
+  echo ""
+  read -p " Укажите диск "E" раздел(sda/sdb 1.2.3.4 (sda5 например)) : " diskDe
+  mkdir /mnt/E 
+  mount /dev/$diskDe /mnt/E
+  elif [[ $diskE == 0 ]]; then
+  echo 'пропущено'
+  fi 
+  fi
+
+
+
+
+
+
+
 
 
 
@@ -897,11 +956,6 @@ if [[ $diskC == 0 ]]; then
 echo -e "${BLUE}:: ${NC}"
 #echo 'Вам нужна разметка диска?'
 # Do you need disk markup?
-
-
-
-
-
 
 echo ""
 echo -e "${BLUE}:: ${NC}Просмотреть подключённые диски с выводом информации о размере и свободном пространстве"
