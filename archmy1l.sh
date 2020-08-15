@@ -836,6 +836,12 @@ fi
 # - покажет куда был примонтирован sda
 # ===================================================================
 
+echo -e "${CYAN}
+  <<< Добавление (создание) разделов Windows (ntfs/fat32) >>>
+${NC}"
+# The addition (creation) of the Windows partitions (ntfs/fat32)
+
+echo ""
 echo -e "${BLUE}:: ${NC}Просмотреть подключённые диски с выводом информации о размере и свободном пространстве"
 #echo 'Просмотреть подключённые диски с выводом информации о размере и свободном пространстве'
 # View attached disks with information about size and free space
