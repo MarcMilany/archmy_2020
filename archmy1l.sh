@@ -623,8 +623,7 @@ ${NC}"
 
 #echo ""
 echo -e "${YELLOW}:: ${BOLD}Здесь Вы также можете подготовить разделы для Windows (ntfs/fat32)(С;D;E), и в дальнейшем после разбиения диска(ов), их примонтировать. ${NC}"
-#echo 'Вам нужна разметка диска?'
-# Do you need disk markup?
+# You can also prepare partitions for Windows (ntfs/fat32) (C; D;E), and then mount them after splitting the disk(s).
 echo -e "${GREEN}==> ${NC}Создание разделов диска для установки ArchLinux"
 #echo 'Создание разделов диска для установки ArchLinux'
 # Creating disk partitions for installing ArchLinux
@@ -848,7 +847,7 @@ ${NC}"
 echo -e "${GREEN}==> ${NC}Добавим разделы для Windows (ntfs/fat32)?"
 #echo 'Добавим разделы для Windows (ntfs/fat32)?'
 # Adding partitions for Windows (ntfs/fat32)?
-echo -e "${MAGENTA}=> ${BOLD}Если таковые были созданы во время разбиении вашего диска на разделы cfdisk! ${NC}"
+echo -e "${MAGENTA}=> ${BOLD}Если таковые были созданы во время разбиения вашего диска(ов) на разделы cfdisk! ${NC}"
 # If any were created while partitioning your disk to cfdisk partitions!
 while
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
@@ -863,9 +862,8 @@ do
 done
 if [[ $wind == 0 ]]; then
   echo ' Действие пропущено '
-  elif [[ $wind == 1 ]]; then
-echo -e "${BLUE}:: ### Приступим к добавлению разделов Windows ###${NC}"    
-#  echo " ### Приступим к добавлению разделов Windows ### "
+  elif [[ $wind == 1 ]]; then    
+  echo " ### Приступим к добавлению разделов Windows ### "
 ############### Disk C ##############
 echo ""
 echo " Добавим раздел диск "C"(Local Disk) Windows? "
