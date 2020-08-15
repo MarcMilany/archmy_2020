@@ -1263,7 +1263,15 @@ echo ""
 echo -e "${RED}==> ${NC}Куда Вы устанавливаете Arch Linux на PC, или на Виртуальную машину (VM;VMWare)?"
 #echo "Куда Вы устанавливаете Arch Linux на PC, или на Виртуальную машину (VM;VMWare)?"
 # Where do you install Arch Linux on a PC, or on a Virtual machine (VM;VMWare)?
-
+echo " . "
+# 
+echo " Огласите весь список, пожалуйста! "
+# Read out the entire list, please!
+echo " 1 -  "
+echo " 2 -  "
+echo " 3 -  "
+echo " 4 - Команда отфильтрует зеркала для 'Russia', 'Belarus', 'Ukraine',' и 'Poland' по протоколам (https,http), отсортирует их по скорости загрузки и обновит файл mirrorlist. "
+echo " Будьте внимательны! В любой ситуации выбор всегда остаётся за вами. "
 
 # Теперь приступим к установке Xorg.
 read -p " 1 - Да устанавливаем на VirtualBox, 0 - Нет на PC: " vm_setting
