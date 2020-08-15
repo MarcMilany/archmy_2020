@@ -622,6 +622,9 @@ ${NC}"
 # The whole layout of the disk is made only in cfdisk!
 
 #echo ""
+echo -e "${YELLOW}:: ${BOLD}Здесь Вы также можете подготовить разделы для Windows (ntfs/fat32)(С;D;E), и в дальнейшем после разбиения диска(ов), их примонтировать. ${NC}"
+#echo 'Вам нужна разметка диска?'
+# Do you need disk markup?
 echo -e "${GREEN}==> ${NC}Создание разделов диска для установки ArchLinux"
 #echo 'Создание разделов диска для установки ArchLinux'
 # Creating disk partitions for installing ArchLinux
