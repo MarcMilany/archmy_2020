@@ -1530,7 +1530,9 @@ echo " ############################################### "
 echo " Размонтирование всех смонтированных файловых систем (кроме корневой) "
 umount -a
 #reboot
-shutdown -r now 
+#reboot -f   # --force  Система мгновенно перезагрузится.
+shutdown -r +1 " Система перезагрузится через 1 минут. "
+#shutdown -r now 
   elif [[ $int == 2 ]]; then
   echo ""
   pacman -S wget --noconfirm --noprogressbar 
