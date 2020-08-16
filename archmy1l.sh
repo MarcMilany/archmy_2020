@@ -993,7 +993,7 @@ free -h
 # Команда free в Linux с примерами:
 # https://andreyex.ru/operacionnaya-sistema-linux/komanda-free-v-linux-s-primerami/
 # ============================================================================
-
+sleep 02
 echo ""
 ### Замена исходного mirrorlist (зеркал для загрузки) на мой список серверов-зеркал
 #echo 'Замена исходного mirrorlist (зеркал для загрузки)'
