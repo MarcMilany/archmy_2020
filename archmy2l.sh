@@ -1304,34 +1304,14 @@ Intel - свободный xf86-video-intel
 Intel - свободный xf86-video-nouveau    
 NVIDIA - Проприетарный nvidia nvidia-390xx (AUR)
 
-OpenGL переводится как Открытая Графическая Библиотека (Open Graphics Library), это означает, что OpenGL - это открытый и мобильный стандарт. Программы, написанные с помощью OpenGL можно переносить практически на любые платформы, получая при этом одинаковый результат, будь это графическая станция или суперкомпьютер
 
-AMD - свободный mesa
-ATI - свободный mesa
-Intel - свободный mesa
-Intel - свободный mesa    
-NVIDIA - Проприетарный nvidia-utils nnvidia-390xx-utils (AUR)
 
-OpenGL (multilib)
-AMD - свободный lib32-mesa
-ATI - свободный lib32-mesa
-Intel - свободный lib32-mesa
-Intel - свободный lib32-mesa    
-NVIDIA - Проприетарный nvidia-utils nnvidia-390xx-utils (AUR)
+
 
 sleep 01
 clear
 
 ###################################################
-Для того, чтобы ускорение видео работало, и часто для того, чтобы разблокировать все режимы, в которых может работать GPU, требуется правильный видеодрайвер:
-
-Бренд                Тип Драйвер                        OpenGL  OpenGL (multilib)   Документация
-AMD / ATI             Свободный   xf86-video-amdgpu   mesa         lib32-mesa       AMDGPU (Русский)
-xf86-video-ati  ATI (Русский)
-Intel   Свободный   xf86-video-intel    mesa    lib32-mesa  Intel graphics (Русский)
-NVIDIA  Свободный   xf86-video-nouveau  mesa    lib32-mesa  Nouveau (Русский)
-Проприетарный   nvidia  nvidia-utils    lib32-nvidia-utils  NVIDIA (Русский)
-nvidia-390xxAUR nvidia-390xx-utilsAUR   lib32-nvidia-390xx-utilsAUR
 
 
 
