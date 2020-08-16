@@ -1161,14 +1161,14 @@ echo ""
 echo -e "${RED}==> ${NC}Куда Вы устанавливаете Arch Linux на PC, или на Виртуальную машину (VM;VMWare)?"
 #echo "Куда Вы устанавливаете Arch Linux на PC, или на Виртуальную машину (VM;VMWare)?"
 # Where do you install Arch Linux on a PC, or on a Virtual machine (VM;VMWare)?
-echo " . "
-# 
+echo " Не переживайте в следующем абзаце скрипта у Вас будет возможность установить видео драйверы для (nvidia, amd, intel), и т.д... "
+# Do not worry in the next paragraph of the script You will be able to install video drivers for (nvidia, amd, intel), etc...
 echo -e "${MAGENTA}=> ${BOLD}Есть три варианта продолжения установки: ${NC}"
 echo " Давайте проанализируем действия, которые будут выполняться. "
 # 
-echo " 1 - Если у Вас стабильный трафик интернета (dhcpcd), то рекомендую вариант - "1" "
-echo " 2 - Если у Вас бывают проблемы трафика интернета (wifi), то выбирайте вариант - "2" "
-echo " 3 -  "
+echo " 1 - Если Вы устанавливаете Arch Linux на PC, то выбирайте вариант - "1" "
+echo " 2 - Если Вы устанавливаете Arch Linux на Виртуальную машину (VM;VMWare), то выбирайте вариант - "2" "
+echo " 3(0) - Если Вы устанавливаете Arch Linux на  "
 echo " 4 - Команда отфильтрует зеркала для 'Russia', 'Belarus', 'Ukraine',' и 'Poland' по протоколам (https,http), отсортирует их по скорости загрузки и обновит файл mirrorlist. "
 echo " Будьте внимательны! В любой ситуации выбор всегда остаётся за вами. "
 
