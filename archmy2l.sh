@@ -1207,9 +1207,31 @@ echo -e "${BLUE}:: ${NC}Ставим иксы и драйвера"
 # Put the x's and drivers
 echo " Выберите свой вариант (от 1-...), или по умолчанию нажмите кнопку 'Ввод' ("Enter") "
 pacman -S $gui_install   # --confirm   всегда спрашивать подтверждение
+echo ""
 pacman -Syy --noconfirm --noprogressbar --quiet
+sleep 01
+clear
 
-#echo "Какая видеокарта?"
+#######################################
+echo ""
+echo -e "${GREEN}==> ${NC}Устанавливаем драйвера видеокарт ."
+#echo "Устанавливаем Xorg (иксы) и драйвера.
+# Installing Xorg (XPS) and drivers
+echo " Не переживайте в следующем абзаце скрипта у Вас будет возможность установить видео драйверы для (nvidia, amd, intel), и т.д... "
+echo -e "${BLUE}:: ${NC}Сперва определим вашу видеокарту!"
+#echo "Сперва определим вашу видеокарту"
+# First, we will determine your video card!
+
+echo -e "${MAGENTA}=> ${BOLD}Вот данные по вашей видеокарте (даже, если Вы работаете на VM): ${NC}"
+#echo ""
+lspci | grep -e VGA -e 3D
+#lspci | grep -E "VGA|3D"   # узнаем производителя и название видеокарты
+lspci -nn | grep VGA
+#lspci | grep VGA        # узнаем ID шины 
+# После того как вы узнаете PCI-порт видеокарты, например 1с:00.0, можно получить о ней более подробную информацию:
+# sudo lspci -v -s 1с:00.0
+echo ""
+echo "Какая видеокарта?"
 #read -p "1 - nvidia, 2 - Amd, 3 - intel: " videocard
 #if [[ $videocard == 1 ]]; then
 #  pacman -S nvidia lib32-nvidia-utils nvidia-settings --noconfirm
@@ -1218,8 +1240,42 @@ pacman -Syy --noconfirm --noprogressbar --quiet
 #  pacman -S lib32-mesa xf86-video-amdgpu mesa-vdpau lib32-mesa-vdpau vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver --noconfirm
 #elif [[ $videocard == 3 ]]; then
 #  pacman -S lib32-mesa vulkan-intel libva-intel-driver lib32-libva-intel-driver lib32-vulkan-intel --noconfirm
-#fi
+fi
 
+#Если видео карта от Nvidia ставим драйвер (проприетарный по желанию)
+#      $ sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils
+
+#echo 'Ставим драйвера видеокарты intel'
+#sudo pacman -S xf86-video-intel vdpauinfo libva-utils libva-intel-driver libva lib32-libva-intel-driver libvdpau libvdpau-va-gl lib32-libvdpau --noconfirm
+
+#-------------------------------------------------------------------------------
+#               Дополнение от Александра Тибарина
+#               Проприетарные драйвера для видеокарт
+
+#Intel:
+#sudo pacman -S xf86-video-intel lib32-intel-dri
+
+#Nvidia:
+#sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils
+
+#AMD:
+#sudo pacman -S xf86-video-ati lib32-ati-dri
+
+#Если вы устанавливаете систему на виртуальную машину:
+#sudo pacman -S xf86-video-vesa
+
+# Видео драйверы, без них тоже ничего работать не будет вот список:
+# xf86-video-vesa - как я понял, это универсальный драйвер для ксорга (xorg), должен работать при любых обстоятельствах, но вы знаете как, только для того чтобы поставить подходящий.
+# xf86-video-ati - свободный ATI
+# xf86-video-intel - свободный Intel
+# xf86-video-nouveau - свободный Nvidia
+# Существуют также проприетарные драйверы, то есть разработаны самой Nvidia или AMD, но они часто не поддерживают новое ядро, или ещё какие-нибудь траблы.
+
+#Она покажет, какая видеокарта используется
+
+#grep -Eiwo -m1 'nvidia|amd|ati|intel' /var/log/Xorg.0.log
+
+##############################################################
 echo ""
 echo -e "${BLUE}:: ${NC}Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce"
 #echo 'Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce'
