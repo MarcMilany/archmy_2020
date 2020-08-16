@@ -1298,12 +1298,21 @@ xf86-video-vesa - как я понял, это универсальный дра
 # xf86-video-ati - свободный ATI
 # xf86-video-intel - свободный Intel
 # xf86-video-nouveau - свободный Nvidia
-AMD - свободный xf86-video-amdgpu xf86-video-ati
+AMD - свободный xf86-video-amdgpu 
 ATI - свободный xf86-video-ati
 Intel - свободный xf86-video-intel
 Intel - свободный xf86-video-nouveau    
-NVIDIA - 
+NVIDIA - Проприетарный nvidia nvidia-390xx (AUR)
 
+OpenGL переводится как Открытая Графическая Библиотека (Open Graphics Library), это означает, что OpenGL - это открытый и мобильный стандарт. Программы, написанные с помощью OpenGL можно переносить практически на любые платформы, получая при этом одинаковый результат, будь это графическая станция или суперкомпьютер
+
+AMD - свободный mesa
+ATI - свободный xf86-video-ati
+Intel - свободный xf86-video-intel
+Intel - свободный xf86-video-nouveau    
+NVIDIA - Проприетарный nvidia nvidia-390xx (AUR)
+
+OpenGL
 
 
 sleep 01
