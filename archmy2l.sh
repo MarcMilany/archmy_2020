@@ -1313,7 +1313,11 @@ Intel - свободный mesa
 NVIDIA - Проприетарный nvidia-utils nnvidia-390xx-utils (AUR)
 
 OpenGL(multilib)
-
+AMD - свободный mesa
+ATI - свободный mesa
+Intel - свободный mesa
+Intel - свободный mesa    
+NVIDIA - Проприетарный nvidia-utils nnvidia-390xx-utils (AUR)
 
 sleep 01
 clear
