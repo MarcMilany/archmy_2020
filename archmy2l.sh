@@ -1216,6 +1216,78 @@ clear
 ###### 2 Вариант установки Xorg (иксов).Установка X сервера 
 
 echo ""
+echo -e "${GREEN}==> ${NC}Устанавливаем драйвера видеокарт (AMD,Intel,Nvidia) - Свободные и Проприетарные."
+#echo "Устанавливаем драйвера видеокарт (AMD,Intel,Nvidia) - Свободные и Проприетарные..
+# Install video card drivers (AMD,Intel,Nvidia) - Free and Proprietary.
+echo " В следующем абзаце скрипта у Вас будет возможность установить Проприетарные драйвера для видеокарт для (nvidia, amd, intel), и т.д... "
+echo -e "${BLUE}:: ${NC}Сперва определим вашу видеокарту!"
+#echo "Сперва определим вашу видеокарту"
+# First, we will determine your video card!
+echo -e "${MAGENTA}=> ${BOLD}Вот данные по вашей видеокарте (даже, если Вы работаете на VM): ${NC}"
+#echo ""
+lspci | grep -e VGA -e 3D
+#lspci | grep -E "VGA|3D"   # узнаем производителя и название видеокарты
+lspci -nn | grep VGA
+#lspci | grep VGA        # узнаем ID шины 
+# После того как вы узнаете PCI-порт видеокарты, например 1с:00.0, можно получить о ней более подробную информацию:
+# sudo lspci -v -s 1с:00.0
+echo -e "${MAGENTA}=> ${BOLD}Есть три варианта установки Xorg (иксов): ${NC}"
+echo " Давайте проанализируем действия, которые будут выполняться. "
+# Let's analyze the actions that will be performed.
+echo " 1 - Если Вы устанавливаете Arch Linux на PC, то выбирайте вариант - "1". "
+echo " 2 - Если Вы устанавливаете Arch Linux на Виртуальную машину (VBox;VMWare), то выбирайте вариант - "2". "
+echo " 3(0) - Вы можете пропустить установку Xorg (иксов), если используете VDS (Virtual Dedicated Server), или VPS (Virtual Private Server), то выбирайте вариант - "0". "
+
+
+
+
+
+
+
+
+echo " VPS (Virtual Private Server) обозначает виртуализацию на уровне операционной системы, VDS (Virtual Dedicated Server) — аппаратную виртуализацию. Оба термина появились и развивались параллельно, и обозначают одно и то же: виртуальный выделенный сервер, запущенный на базе физического.. "
+echo " Будьте внимательны! Процесс установки Xorg (иксов) не был прописан полностью автоматическим, и было принято решение дать возможность пользователю сделать выбор. В любой ситуации выбор всегда остаётся за вами. "
+# Be careful! The Xorg installation process was not intended to be fully automatic, and the decision was made to allow the user to make a choice. In any situation, the choice is always yours.
+echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
+#echo 'Действия выполняются в указанном порядке'
+# Actions are performed in the order listed
+echo ""
+# Теперь приступим к установке Xorg.
+while
+# echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+# read -p " 1 - Устанавливаем на PC или (ноутбук), 2 - Устанавливаем на VirtualBox (VMWare), 0 - Пропустить (используется VDS, или VPS): " vm_setting  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p " 
+    1 - Устанавливаем на PC или (ноутбук),    2 - Устанавливаем на VirtualBox(VMWare), 
+
+    0 - Пропустить (используется VDS, или VPS): " vm_setting  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$vm_setting" =~ [^120] ]]
+do
+    :
+done
+
+
+
+
+
+
+sleep 01
+clear
+
+###################################################
+
+
+
+
+
+
+
+
+
+
+
+echo ""
 echo -e "${BLUE}:: ${NC}Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce"
 #echo 'Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce'
 # Put DE (from the English desktop environment-desktop environment) Xfce
