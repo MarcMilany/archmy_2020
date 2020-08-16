@@ -1165,13 +1165,17 @@ echo " Не переживайте в следующем абзаце скрип
 # Do not worry in the next paragraph of the script You will be able to install video drivers for (nvidia, amd, intel), etc...
 echo -e "${MAGENTA}=> ${BOLD}Есть три варианта продолжения установки: ${NC}"
 echo " Давайте проанализируем действия, которые будут выполняться. "
-# 
+# Let's analyze the actions that will be performed.
 echo " 1 - Если Вы устанавливаете Arch Linux на PC, то выбирайте вариант - "1". "
 echo " 2 - Если Вы устанавливаете Arch Linux на Виртуальную машину (VM;VMWare), то выбирайте вариант - "2". "
 echo " 3(0) - Вы можете пропустить установку Xorg (иксов), если используете VDS (Virtual Dedicated Server), или VPS (Virtual Private Server), то выбирайте вариант - "0". "
 echo " VPS (Virtual Private Server) обозначает виртуализацию на уровне операционной системы, VDS (Virtual Dedicated Server) — аппаратную виртуализацию. Оба термина появились и развивались параллельно, и обозначают одно и то же: виртуальный выделенный сервер, запущенный на базе физического.. "
 echo " Будьте внимательны! Процесс установки Xorg (иксов) не был прописан полностью автоматическим, и было принято решение дать возможность пользователю сделать выбор. В любой ситуации выбор всегда остаётся за вами. "
 # Be careful! The Xorg installation process was not intended to be fully automatic, and the decision was made to allow the user to make a choice. In any situation, the choice is always yours.
+echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
+#echo 'Действия выполняются в указанном порядке'
+# Actions are performed in the order listed
+echo ""
 # Теперь приступим к установке Xorg.
 while
 # echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
@@ -1204,6 +1208,17 @@ echo -e "${BLUE}:: ${NC}Ставим иксы и драйвера"
 echo " Выберите свой вариант (от 1-...), или по умолчанию нажмите кнопку 'Ввод' ("Enter") "
 pacman -S $gui_install   # --confirm   всегда спрашивать подтверждение
 pacman -Syy --noconfirm --noprogressbar --quiet
+
+#echo "Какая видеокарта?"
+#read -p "1 - nvidia, 2 - Amd, 3 - intel: " videocard
+#if [[ $videocard == 1 ]]; then
+#  pacman -S nvidia lib32-nvidia-utils nvidia-settings --noconfirm
+#  nvidia-xconfig
+#elif [[ $videocard == 2 ]]; then
+#  pacman -S lib32-mesa xf86-video-amdgpu mesa-vdpau lib32-mesa-vdpau vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver --noconfirm
+#elif [[ $videocard == 3 ]]; then
+#  pacman -S lib32-mesa vulkan-intel libva-intel-driver lib32-libva-intel-driver lib32-vulkan-intel --noconfirm
+#fi
 
 echo ""
 echo -e "${BLUE}:: ${NC}Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce"
