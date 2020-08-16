@@ -284,7 +284,7 @@ echo -e "${BLUE}:: ${NC}Проверка режим загрузки (UEFI, BIOS
 #echo 'Проверка режим загрузки (UEFI, BIOS (или CSM))'
 # Checking boot mode (UEFI, BIOS (or CSM))
 echo " Чтобы проверить режим загрузки, перечислим каталог efivars: "
-"${YELLOW}=> Примечание: ${NC}"
+echo -e "${YELLOW}=> Примечание: ${NC}"
 echo -e "${YELLOW}:: ${BOLD}Если команда показывает каталог без ошибок, то система загружается в режиме UEFI. Если каталог не существует, система может быть загружена в режиме BIOS (или CSM). ${NC}"
 ls /sys/firmware/efi/efivars
 
