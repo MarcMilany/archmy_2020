@@ -1163,7 +1163,7 @@ echo -e "${RED}==> ${NC}Куда Вы устанавливаете Arch Linux н
 # Where do you install Arch Linux on a PC, or on a Virtual machine VBox;VMWare)?
 echo " Не переживайте в следующем абзаце скрипта у Вас будет возможность установить видео драйверы для (nvidia, amd, intel), и т.д... "
 # Do not worry in the next paragraph of the script You will be able to install video drivers for (nvidia, amd, intel), etc...
-echo -e "${MAGENTA}=> ${BOLD}Есть три варианта продолжения установки: ${NC}"
+echo -e "${MAGENTA}=> ${BOLD}Есть три варианта установки Xorg (иксов): ${NC}"
 echo " Давайте проанализируем действия, которые будут выполняться. "
 # Let's analyze the actions that will be performed.
 echo " 1 - Если Вы устанавливаете Arch Linux на PC, то выбирайте вариант - "1". "
