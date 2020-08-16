@@ -1216,11 +1216,12 @@ clear
 ###### 2 Вариант установки Xorg (иксов).Установка X сервера 
 
 echo ""
-echo -e "${GREEN}==> ${NC}Устанавливаем драйвера видеокарт (AMD,Intel,Nvidia) - Свободные и Проприетарные."
-#echo "Устанавливаем драйвера видеокарт (AMD,Intel,Nvidia) - Свободные и Проприетарные..
-# Install video card drivers (AMD,Intel,Nvidia) - Free and Proprietary.
-echo " В следующем абзаце скрипта у Вас будет возможность установить Проприетарные драйвера для видеокарт для (nvidia, amd, intel), и т.д... "
-echo -e "${BLUE}:: ${NC}Сперва определим вашу видеокарту!"
+echo -e "${GREEN}==> ${NC}Устанавливаем драйвера видеокарт (AMD / ATI,Intel,Nvidia) - Свободные и Проприетарные."
+#echo "Устанавливаем драйвера видеокарт (AMD / ATI,Intel,Nvidia) - Свободные и Проприетарные..
+# Install video card drivers (AMD / ATI,Intel,Nvidia) - Free and Proprietary.
+echo -e "${YELLOW}:: ${BOLD}В данном скрипте присутствуют не все драйверы на видеокарты (вам будет выведен список драйверов). ${NC}"
+echo " Возможно! Ваши драйвера уже установились - при установке Xorg (иксов) и драйверов. "
+echo -e "${BLUE}:: ${NC}Сперва ещё раз определим вашу видеокарту!"
 #echo "Сперва определим вашу видеокарту"
 # First, we will determine your video card!
 echo -e "${MAGENTA}=> ${BOLD}Вот данные по вашей видеокарте (даже, если Вы работаете на VM): ${NC}"
@@ -1231,22 +1232,15 @@ lspci -nn | grep VGA
 #lspci | grep VGA        # узнаем ID шины 
 # После того как вы узнаете PCI-порт видеокарты, например 1с:00.0, можно получить о ней более подробную информацию:
 # sudo lspci -v -s 1с:00.0
-echo -e "${MAGENTA}=> ${BOLD}Есть три варианта установки Xorg (иксов): ${NC}"
+echo -e "${MAGENTA}=> ${BOLD}В сценарии скрипта присутствуют следующие варианты: ${NC}"
 echo " Давайте проанализируем действия, которые будут выполняться. "
 # Let's analyze the actions that will be performed.
-echo " 1 - Если Вы устанавливаете Arch Linux на PC, то выбирайте вариант - "1". "
+echo " 1 - Если видео карта от Nvidia, то ставим драйвер (проприетарный по желанию), то выбирайте вариант - "1". "
 echo " 2 - Если Вы устанавливаете Arch Linux на Виртуальную машину (VBox;VMWare), то выбирайте вариант - "2". "
 echo " 3(0) - Вы можете пропустить установку Xorg (иксов), если используете VDS (Virtual Dedicated Server), или VPS (Virtual Private Server), то выбирайте вариант - "0". "
-
-
-
-
-
-
-
-
-echo " VPS (Virtual Private Server) обозначает виртуализацию на уровне операционной системы, VDS (Virtual Dedicated Server) — аппаратную виртуализацию. Оба термина появились и развивались параллельно, и обозначают одно и то же: виртуальный выделенный сервер, запущенный на базе физического.. "
-echo " Будьте внимательны! Процесс установки Xorg (иксов) не был прописан полностью автоматическим, и было принято решение дать возможность пользователю сделать выбор. В любой ситуации выбор всегда остаётся за вами. "
+echo "  "
+echo "  "
+echo " Будьте внимательны! Возможно ваши драйвера уже установились при установке Xorg (иксов) не был прописан полностью автоматическим, и было принято решение дать возможность пользователю сделать выбор. В любой ситуации выбор всегда остаётся за вами. "
 # Be careful! The Xorg installation process was not intended to be fully automatic, and the decision was made to allow the user to make a choice. In any situation, the choice is always yours.
 echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
 #echo 'Действия выполняются в указанном порядке'
@@ -1267,8 +1261,48 @@ do
     :
 done
 
+if [[ $videocard == 1 ]]; then
+echo " Устанавливаются Проприетарные драйвера для видеокарт Nvidia "    
+  pacman -S nvidia lib32-nvidia-utils nvidia-settings --noconfirm
+  pacman -S nvidia lib32-nvidia-utils nvidia-utils --noconfirm
+  nvidia-xconfig  # помогает в настройке xorg.conf
+elif [[ $videocard == 2 ]]; then
+  pacman -S lib32-mesa xf86-video-amdgpu mesa-vdpau lib32-mesa-vdpau vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver --noconfirm
+elif [[ $videocard == 3 ]]; then
+  pacman -S lib32-mesa vulkan-intel libva-intel-driver lib32-libva-intel-driver lib32-vulkan-intel --noconfirm
+fi
 
+#Если видео карта от Nvidia ставим драйвер (проприетарный по желанию)
+      $ sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils
 
+#echo 'Ставим драйвера видеокарты intel'
+sudo pacman -S xf86-video-intel vdpauinfo libva-utils libva-intel-driver libva lib32-libva-intel-driver libvdpau libvdpau-va-gl lib32-libvdpau --noconfirm
+
+               Проприетарные драйвера для видеокарт
+
+Intel:
+sudo pacman -S xf86-video-intel lib32-intel-dri
+
+Nvidia:
+sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils
+
+AMD:
+sudo pacman -S xf86-video-ati lib32-ati-dri
+
+#Если вы устанавливаете систему на виртуальную машину:
+sudo pacman -S xf86-video-vesa
+
+# Видео драйверы, без них тоже ничего работать не будет вот список:
+# xf86-video-vesa - как я понял, это универсальный драйвер для ксорга (xorg), должен работать при любых обстоятельствах, но вы знаете как, только для того чтобы поставить подходящий.
+# xf86-video-amdgpu - свободный AMD
+# xf86-video-ati - свободный ATI
+# xf86-video-intel - свободный Intel
+# xf86-video-nouveau - свободный Nvidia
+AMD - свободный xf86-video-amdgpu xf86-video-ati
+ATI - свободный xf86-video-ati
+Intel - свободный xf86-video-intel
+Intel - свободный xf86-video-nouveau    
+NVIDIA - 
 
 
 
