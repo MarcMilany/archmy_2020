@@ -1158,9 +1158,9 @@ lspci -nn | grep VGA
 # После того как вы узнаете PCI-порт видеокарты, например 1с:00.0, можно получить о ней более подробную информацию:
 # sudo lspci -v -s 1с:00.0
 echo ""
-echo -e "${RED}==> ${NC}Куда Вы устанавливаете Arch Linux на PC, или на Виртуальную машину (VM;VMWare)?"
-#echo "Куда Вы устанавливаете Arch Linux на PC, или на Виртуальную машину (VM;VMWare)?"
-# Where do you install Arch Linux on a PC, or on a Virtual machine (VM;VMWare)?
+echo -e "${RED}==> ${NC}Куда Вы устанавливаете Arch Linux на PC, или на Виртуальную машину (VBox;VMWare)?"
+#echo "Куда Вы устанавливаете Arch Linux на PC, или на Виртуальную машину (VBox;VMWare)?"
+# Where do you install Arch Linux on a PC, or on a Virtual machine VBox;VMWare)?
 echo " Не переживайте в следующем абзаце скрипта у Вас будет возможность установить видео драйверы для (nvidia, amd, intel), и т.д... "
 # Do not worry in the next paragraph of the script You will be able to install video drivers for (nvidia, amd, intel), etc...
 echo -e "${MAGENTA}=> ${BOLD}Есть три варианта продолжения установки: ${NC}"
