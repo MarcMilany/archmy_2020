@@ -272,7 +272,7 @@ export LANG=ru_RU.UTF-8
 # ===============================================================
 
 echo ""
-echo -e "${GREEN}=> ${NC}Проверка подписи GnuPG" 
+echo -e "${BLUE}:: ${NC}Проверка подписи GnuPG" 
 #echo 'Проверка подписи GnuPG'
 # Checking the GnuPG signature
 "${YELLOW}=> Примечание: ${NC}"
@@ -280,7 +280,7 @@ echo -e "${YELLOW}:: ${BOLD}Сама подпись может быть изме
 pacman-key -v archlinux-version-x86_64.iso.sig
 
 echo ""
-echo -e "${GREEN}=> ${NC}Проверка режим загрузки (UEFI, BIOS (или CSM))" 
+echo -e "${BLUE}:: ${NC}Проверка режим загрузки (UEFI, BIOS (или CSM))" 
 #echo 'Проверка режим загрузки (UEFI, BIOS (или CSM))'
 # Checking boot mode (UEFI, BIOS (or CSM))
 echo " Чтобы проверить режим загрузки, перечислим каталог efivars: "
