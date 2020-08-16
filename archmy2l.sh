@@ -1265,8 +1265,9 @@ echo -e "${RED}==> ${NC}Куда Вы устанавливаете Arch Linux н
 # Where do you install Arch Linux on a PC, or on a Virtual machine (VM;VMWare)?
 echo " . "
 # 
-echo " Давайте проанализируем действия, которые выполняются. "
-# Let's analyze the actions that are being performed.
+echo -e "${MAGENTA}=> ${BOLD}Есть три варианта продолжения установки: ${NC}"
+echo " Давайте проанализируем действия, которые будут выполняться. "
+# 
 echo " 1 - Если у Вас стабильный трафик интернета (dhcpcd), то рекомендую вариант - "1" "
 echo " 2 - Если у Вас бывают проблемы трафика интернета (wifi), то выбирайте вариант - "2" "
 echo " 3 -  "
