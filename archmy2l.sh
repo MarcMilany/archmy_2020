@@ -1213,6 +1213,8 @@ pacman -Syy --noconfirm --noprogressbar --quiet
 sleep 01
 clear
 
+###### 2 Вариант установки Xorg (иксов).Установка X сервера 
+
 echo ""
 echo -e "${BLUE}:: ${NC}Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce"
 #echo 'Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce'
