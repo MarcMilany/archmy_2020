@@ -1206,6 +1206,7 @@ echo -e "${BLUE}:: ${NC}Ставим иксы и драйвера"
 #echo 'Ставим иксы и драйвера'
 # Put the x's and drivers
 echo " Выберите свой вариант (от 1-...), или по умолчанию нажмите кнопку 'Ввод' ("Enter") "
+echo " Далее после своего сделанного выбора, нажмите "Y или n" для подтверждения установки. "
 pacman -S $gui_install   # --confirm   всегда спрашивать подтверждение
 echo ""
 pacman -Syy --noconfirm --noprogressbar --quiet
