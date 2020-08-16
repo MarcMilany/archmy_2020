@@ -1571,10 +1571,10 @@ echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
 echo " ############################################### "
 echo " Размонтирование всех смонтированных файловых систем (кроме корневой) "
 umount -a
-reboot
+#reboot
 #reboot -f   # --force  Система мгновенно перезагрузится.
 #shutdown -r +1 " Система перезагрузится через 1 минут. "
-#shutdown -r now 
+shutdown -r now 
   elif [[ $int == 2 ]]; then
   echo ""
   pacman -S wget --noconfirm --noprogressbar 
