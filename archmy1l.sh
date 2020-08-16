@@ -272,23 +272,6 @@ export LANG=ru_RU.UTF-8
 # ===============================================================
 
 echo ""
-echo -e "${BLUE}:: ${NC}Проверка подписи GnuPG" 
-#echo 'Проверка подписи GnuPG'
-# Checking the GnuPG signature
-echo -e "${YELLOW}=> Примечание: ${NC}"
-echo -e "${YELLOW}:: ${BOLD}Сама подпись может быть изменена, если она загружена с зеркального сайта, а не с сайта-зеркала. archlinux.org как и выше. В этом случае убедитесь, что открытый ключ, который используется для декодирования подписи, подписан другим надежным ключом. ${NC}"
-#pacman-key -v archlinux-version-x86_64.iso.sig
-
-echo ""
-echo -e "${BLUE}:: ${NC}Проверка режим загрузки (UEFI, BIOS (или CSM))" 
-#echo 'Проверка режим загрузки (UEFI, BIOS (или CSM))'
-# Checking boot mode (UEFI, BIOS (or CSM))
-echo " Чтобы проверить режим загрузки, перечислим каталог efivars: "
-echo -e "${YELLOW}=> Примечание: ${NC}"
-echo -e "${YELLOW}:: ${BOLD}Если команда показывает каталог без ошибок, то система загружается в режиме UEFI. Если каталог не существует, система может быть загружена в режиме BIOS (или CSM). ${NC}"
-ls /sys/firmware/efi/efivars
-
-echo ""
 echo -e "${GREEN}=> ${NC}Убедитесь, что сетевой интерфейс указан и включен" 
 #echo 'Убедитесь, что ваш сетевой интерфейс указан и включен'
 #  Make sure that your network interface is specified and enabled
