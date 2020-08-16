@@ -1307,12 +1307,12 @@ NVIDIA - Проприетарный nvidia nvidia-390xx (AUR)
 OpenGL переводится как Открытая Графическая Библиотека (Open Graphics Library), это означает, что OpenGL - это открытый и мобильный стандарт. Программы, написанные с помощью OpenGL можно переносить практически на любые платформы, получая при этом одинаковый результат, будь это графическая станция или суперкомпьютер
 
 AMD - свободный mesa
-ATI - свободный xf86-video-ati
-Intel - свободный xf86-video-intel
-Intel - свободный xf86-video-nouveau    
-NVIDIA - Проприетарный nvidia nvidia-390xx (AUR)
+ATI - свободный mesa
+Intel - свободный mesa
+Intel - свободный mesa    
+NVIDIA - Проприетарный nvidia-utils nnvidia-390xx-utils (AUR)
 
-OpenGL
+OpenGL(multilib)
 
 
 sleep 01
