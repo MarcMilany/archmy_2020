@@ -1175,9 +1175,9 @@ echo " Будьте внимательны! В любой ситуации вы�
 # Теперь приступим к установке Xorg.
 read -p " 1 - Да устанавливаем на VirtualBox, 0 - Нет на PC: " vm_setting
 if [[ $vm_setting == 0 ]]; then
-  gui_install="xorg-server xorg-drivers xorg-xinit"  #(или на vmware) # --confirm   всегда спрашивать подтверждение
+  gui_install="xorg-server xorg-drivers xorg-xinit"  
 elif [[ $vm_setting == 1 ]]; then
-  gui_install="xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils"  # --confirm   всегда спрашивать подтверждение
+  gui_install="xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils"  #(или на vmware) # --confirm   всегда спрашивать подтверждение
 fi
 
 echo ""
