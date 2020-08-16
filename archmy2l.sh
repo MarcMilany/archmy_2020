@@ -1105,7 +1105,7 @@ done
 if [[ $i_multilib  == 0 ]]; then
 #clear
 echo ""
-echo " Добавление Multilib репозитория пропущено"
+echo " Добавление Multilib репозитория пропущено "
 elif [[ $i_multilib  == 1 ]]; then
 #echo 'Color = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 sed -i 's/#Color/Color/' /etc/pacman.conf
@@ -1166,18 +1166,36 @@ echo " Не переживайте в следующем абзаце скрип
 echo -e "${MAGENTA}=> ${BOLD}Есть три варианта продолжения установки: ${NC}"
 echo " Давайте проанализируем действия, которые будут выполняться. "
 # 
-echo " 1 - Если Вы устанавливаете Arch Linux на PC, то выбирайте вариант - "1" "
-echo " 2 - Если Вы устанавливаете Arch Linux на Виртуальную машину (VM;VMWare), то выбирайте вариант - "2" "
-echo " 3(0) - Если Вы устанавливаете Arch Linux на  "
-echo " 4 - Команда отфильтрует зеркала для 'Russia', 'Belarus', 'Ukraine',' и 'Poland' по протоколам (https,http), отсортирует их по скорости загрузки и обновит файл mirrorlist. "
-echo " Будьте внимательны! В любой ситуации выбор всегда остаётся за вами. "
-
+echo " 1 - Если Вы устанавливаете Arch Linux на PC, то выбирайте вариант - "1". "
+echo " 2 - Если Вы устанавливаете Arch Linux на Виртуальную машину (VM;VMWare), то выбирайте вариант - "2". "
+echo " 3(0) - Вы можете пропустить установку Xorg (иксов), если используете VDS (Virtual Dedicated Server), или VPS (Virtual Private Server), то выбирайте вариант - "0". "
+echo " VPS (Virtual Private Server) обозначает виртуализацию на уровне операционной системы, VDS (Virtual Dedicated Server) — аппаратную виртуализацию. Оба термина появились и развивались параллельно, и обозначают одно и то же: виртуальный выделенный сервер, запущенный на базе физического.. "
+echo " Будьте внимательны! Процесс установки Xorg (иксов) не был полностью автоматическим, и было принято решение дать возможность пользователю сделать выбор. В любой ситуации выбор всегда остаётся за вами. "
+# Be careful! The Xorg installation process was not fully automatic, and the decision was made to allow the user to make a choice. In any situation, the choice is always yours.
 # Теперь приступим к установке Xorg.
-read -p " 1 - Да устанавливаем на VirtualBox, 0 - Нет на PC: " vm_setting
+while
+# echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+
+
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p " 
+    1 - Устанавливаем на PC или (ноутбук),    2 - Устанавливаем на VirtualBox (VMWare), 
+
+    0 - Нет пропустить (используется VDS, или VPS): " vm_setting  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$vm_setting" =~ [^120] ]]
+do
+    :
+done
 if [[ $vm_setting == 0 ]]; then
-  gui_install="xorg-server xorg-drivers xorg-xinit"  
+echo ""
+echo " Установка Xorg (иксов) пропущена (используется VDS, или VPS) "  
 elif [[ $vm_setting == 1 ]]; then
-  gui_install="xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils"  #(или на vmware) # --confirm   всегда спрашивать подтверждение
+  gui_install="xorg-server xorg-drivers xorg-xinit"  #(или на vmware) # --confirm   всегда спрашивать подтверждение
+# gui_install="xorg-server xorg-drivers --noconfirm"     # xorg-xinit 
+elif [[ $vm_setting == 2 ]]; then
+  gui_install="xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils"  #(или на vmware) # --confirm   всегда 
+# gui_install="xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils --noconfirm" 
 fi
 
 echo ""
