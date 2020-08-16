@@ -225,49 +225,14 @@ echo -e "${BLUE}:: ${NC}The determination of the final access rights"
 umask     #umask 0022      # используется для определения конечных прав доступа
 
 echo ""
-echo -e "${GREEN}=> ${NC}Make sure that your network interface is specified and enabled" 
-#echo 'Make sure that your network interface is specified and enabled'
-# Убедитесь, что ваш сетевой интерфейс указан и включен
-# Показать все ip адреса и их интерфейсы
-ip a
-# Смотрим какие у нас есть интернет-интерфейсы
-#ip link
-# Если наш интерфейс wlan0. В скобках видно, что он UP. Исправляем:
-#ip link set wlan0 down
-# -----------------------------------------------------------------
-# После этого можно спокойно вызывать wifi-menu и подключатся.
-# (для проводных и беспроводных сетевых интерфейсов должны работать "из коробки")
-# Также можно посмотреть командой:
-#iw dev
-# Для беспроводной связи убедитесь, что беспроводная карта не заблокирована с помощью: 
-#rfkill 
-# ------------------------------------------------------------------
-######  Если нужен этот пункт - 'Раскомментируйте!' ##### 
-#echo -e "${GREEN}=> ${NC}Let's look at your DNS servers in the etc/resolv.conf file" 
-#echo 'Let's look at your DNS servers in the etc/resolv.conf file'
-# Давайте посмотрим на ваши DNS-серверы в etc / resolv.файл conf   
-#cat /etc/resolv.conf
-########################################################
-
-echo ""
-echo -e "${GREEN}=> ${NC}To check the Internet, you can ping a service" 
-#echo 'To check the Internet, you can ping a service'
-# Для проверки интернета можно пропинговать какой-либо сервис
-ping -c2 archlinux.org
-# Например Яндекс или Google: 
-#ping -c5 www.google.com
-#ping -c5 ya.ru
-
-echo -e "${CYAN}==> ${NC}If the ping goes we go further ..."
-#echo 'If the ping goes we go further ...' 
-# Если пинг идёт едем дальше ...)
-
-echo ""
 echo -e "${BLUE}:: ${NC}Setting up the Russian language, changing the console font to one that supports Cyrillic for ease of use" 
 #echo 'Setting up the Russian language, changing the console font to one that supports Cyrillic for ease of use'
 # Настроим русский язык, изменим консольный шрифт на тот, который поддерживает кириллицу для удобства работы
 loadkeys ru
 setfont cyr-sun16
+
+# Доступные макеты можно перечислить с помощью:
+#ls /usr/share/kbd/keymaps/**/*.map.gz
 ### ==== Engllish loadkeys =====
 #loadkeys us
 #setfont ter-v16b #pacman -S terminus-font --noconfirm
@@ -305,6 +270,53 @@ export LANG=ru_RU.UTF-8
 # When you uncomment the string '#export....', Be Careful!
 # As you name it, you will swim...
 # ===============================================================
+
+echo ""
+echo -e "${GREEN}=> ${NC}Убедитесь, что сетевой интерфейс указан и включен" 
+#echo 'Убедитесь, что ваш сетевой интерфейс указан и включен'
+#  Make sure that your network interface is specified and enabled
+echo " Показать все ip адреса и их интерфейсы "
+ip a
+# Смотрим какие у нас есть интернет-интерфейсы
+#ip link
+# Если наш интерфейс wlan0. В скобках видно, что он UP. Исправляем:
+#ip link set wlan0 down
+# -----------------------------------------------------------------
+# После этого можно спокойно вызывать wifi-menu и подключатся.
+# (для проводных и беспроводных сетевых интерфейсов должны работать "из коробки")
+# Также можно посмотреть командой:
+#iw dev
+# Для беспроводной связи убедитесь, что беспроводная карта не заблокирована с помощью: 
+#rfkill 
+# ------------------------------------------------------------------
+######  Если нужен этот пункт - 'Раскомментируйте!' ##### 
+#echo -e "${GREEN}=> ${NC}Let's look at your DNS servers in the etc/resolv.conf file" 
+#echo 'Let's look at your DNS servers in the etc/resolv.conf file'
+# Давайте посмотрим на ваши DNS-серверы в etc / resolv.файл conf   
+#cat /etc/resolv.conf
+########################################################
+
+echo ""
+echo -e "${GREEN}=> ${NC}Для проверки интернета можно пропинговать какой-либо сервис" 
+#echo 'Для проверки интернета можно пропинговать какой-либо сервис'
+# To check the Internet, you can ping a service
+ping -c2 archlinux.org
+# Например Яндекс или Google: 
+#ping -c5 www.google.com
+#ping -c5 ya.ru
+
+echo -e "${CYAN}==> ${NC}Если пинг идёт едем дальше ... :)"
+#echo 'Если пинг идёт едем дальше ... :)'
+# If the ping goes we go further ... :)
+
+echo ""
+echo -e "${GREEN}=> ${NC}Проверка подписи GnuPG" 
+#echo 'Для проверки интернета можно пропинговать какой-либо сервис'
+# To check the Internet, you can ping a service
+"${YELLOW}=> Примечание: ${NC}"
+echo -e "${YELLOW}:: ${BOLD}Сама подпись может быть изменена, если она загружена с зеркального сайта, а не с сайта-зеркала. archlinux.org как и выше. В этом случае убедитесь, что открытый ключ, который используется для декодирования подписи, подписан другим надежным ключом. ${NC}"
+pacman-key -v archlinux-version-x86_64.iso.sig
+
 #################################################################
 
 ### Display banner (Дисплей баннер)
