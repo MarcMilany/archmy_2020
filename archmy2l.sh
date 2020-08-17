@@ -167,10 +167,6 @@ echo -e "${CYAN}==> ${NC}Если пинг идёт едем дальше ... :)
 #echo 'Если пинг идёт едем дальше ... :)'
 # If the ping goes we go further ... :)
 
-echo ""
-echo -e "${BLUE}:: ${NC}Обновим вашу систему (базу данных пакетов)"
-#echo "Обновим вашу систему (базу данных пакетов)"
-# Update your system (package database)
 ### Specified Time
 echo ""
 echo -e "${BLUE}:: ${NC}Синхронизация системных часов"  
@@ -202,9 +198,13 @@ timedatectl
 #timedatectl set-timezone $timezone     # установка часового пояса
 
 echo ""
+echo -e "${BLUE}:: ${NC}Обновим вашу систему (базу данных пакетов)"
+#echo "Обновим вашу систему (базу данных пакетов)"
+# Update your system (package database)
 echo -e "${YELLOW}:: ${NC}Загружаем базу данных пакетов независимо от того, есть ли какие-либо изменения в версиях или нет."
 #echo 'Загружаем базу данных пакетов независимо от того, есть ли какие-либо изменения в версиях или нет.'
 # Loading the package database regardless of whether there are any changes in the versions or not.
+echo ""
 pacman -Syyu  --noconfirm  
 # ------------------------------------------------------------
 # Полный апдейт системы:
