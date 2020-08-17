@@ -902,14 +902,50 @@ echo " Установка программ (пакетов) пропущена. 
 sleep 01
 clear
 echo ""
-echo -e "${BLUE}:: ${NC}Добавляем пользователя и прописываем права, группы"
+echo -e "${GREEN}==> ${NC}Добавляем пользователя и прописываем права, группы. "
+#echo -e "${BLUE}:: ${NC}Добавляем пользователя и прописываем права, группы"
 #echo 'Добавляем пользователя и прописываем права, группы'
 # Adding a user and prescribing rights, groups
-#useradd -m -g users -G wheel -s /bin/bash $username
-# или есть команда с правами 'админа' :
-useradd -m -g users -G adm,audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel -s /bin/bash $username
-#useradd -m -g users -G audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel -s /bin/bash $username
+echo -e "${MAGENTA}=> ${BOLD}В сценарии скрипта присутствуют следующие варианты: ${NC}"
+echo " Давайте рассмотрим варианты, которые будут выполняться: "
+# Let's look at the options that will be performed:
+echo " 1 - Добавляем пользователя, прописываем права, и добавляем группы : - "audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel", то выбирайте вариант - "1". "
+echo " 2 - Добавляем пользователя, прописываем права, и добавляем группы : - "adm" + "audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel", то выбирайте вариант - "2". "
+echo " 3 - Добавляем пользователя, прописываем права, и добавляем пользователя в группу : - "wheel", то выбирайте вариант - "3". "
+echo " Далее, уже сам пользователь из установленной системы добавляет себя "любимого(ую)", в нужную группу /etc/group. "
+#echo 'Вы НЕ можете пропустить этот шаг!'
+# You CAN't skip this step!
+echo " Будьте внимательны! В этом варианте выбор остаётся за вами."
+# Be careful! In this case, the choice is yours.
+echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
+#echo 'Действия выполняются в указанном порядке'
+# Actions are performed in the order listed
+echo ""
+while
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+# read -p " 1 - С запросом пароля, 2 - БЕЗ запроса пароля, 0 - Пропустить этот шаг: " i_groups  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p " 
+    1 - Вы выбрали группы - (audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel), 
+
+    2 - Вы выбрали группы - (adm + audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel),    
+
+    3 - Вы выбрали группу - (wheel): " i_groups  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_groups" =~ [^120] ]]
+do
+    :
+done
+if [[ $i_groups  == 1 ]]; then
+useradd -m -g users -G audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel -s /bin/bash $username
 echo " Пользователь успешно добавлен в группы и права пользователя. "
+elif [[ $i_groups  == 2 ]]; then
+useradd -m -g users -G adm,audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel -s /bin/bash $username
+echo " Пользователь успешно добавлен в группы и права пользователя. "
+elif [[ $i_groups  == 3 ]]; then
+useradd -m -g users -G wheel -s /bin/bash $username
+echo " Пользователь успешно добавлен в группы и права пользователя. "
+fi
 
 ### Set User passwd
 ### User Password
