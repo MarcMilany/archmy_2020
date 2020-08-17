@@ -1146,7 +1146,7 @@ pacman -Sy   #--noconfirm --noprogressbar --quiet
 # =============================================================
 
 echo ""
-echo -e "${GREEN}==> ${NC}Устанавливаем Xorg (иксы) и драйвера."
+echo -e "${GREEN}==> ${NC}Устанавливаем X.Org Server (иксы) и драйвера."
 #echo "Устанавливаем Xorg (иксы) и драйвера.
 # Installing Xorg (XPS) and drivers
 echo -e "${YELLOW}:: ${BOLD}X.Org Foundation Open Source Public Implementation of X11 - это свободная открытая реализация оконной системы X11.${NC}"   
