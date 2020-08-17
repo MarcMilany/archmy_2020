@@ -171,6 +171,37 @@ echo ""
 echo -e "${BLUE}:: ${NC}Обновим вашу систему (базу данных пакетов)"
 #echo "Обновим вашу систему (базу данных пакетов)"
 # Update your system (package database)
+### Specified Time
+echo ""
+echo -e "${BLUE}:: ${NC}Синхронизация системных часов"  
+#echo '2.3 Синхронизация системных часов'
+# Syncing the system clock
+#echo 'Синхронизируем наши системные часы, включаем ntp, если надо сменим часовой пояс'
+# Sync our system clock, enable ntp, change the time zone if necessary
+timedatectl set-ntp true
+
+### Specified Time
+echo -e "${BLUE}:: ${NC}Проверим аппаратное время"
+#echo 'Проверим аппаратное время' 
+# Check the hardware time
+#hwclock
+hwclock --systohc
+#echo " hwclock --systohc --utc "
+#hwclock --systohc —utc
+#echo " hwclock --systohc --localtime "
+#hwclock --systohc --local
+
+### Specified Time
+echo -e "${BLUE}:: ${NC}Посмотрим текущее состояние аппаратных и программных часов"
+#echo 'Посмотрим текущее состояние аппаратных и программных часов'
+# Let's see the current state of the hardware and software clock
+timedatectl
+#curl https://ipapi.co/timezone  # используем геолокацию (в каком часовом поясе) 
+#curl http://ip-api.com/line?fields=timezone 
+#timedatectl set-timezone Europe/Moscow     # установка часового пояса
+#timedatectl set-timezone $timezone     # установка часового пояса
+
+echo ""
 echo -e "${YELLOW}:: ${NC}Загружаем базу данных пакетов независимо от того, есть ли какие-либо изменения в версиях или нет."
 #echo 'Загружаем базу данных пакетов независимо от того, есть ли какие-либо изменения в версиях или нет.'
 # Loading the package database regardless of whether there are any changes in the versions or not.
@@ -337,36 +368,6 @@ date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'    # одновременно отобра�
 #ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 # Эта команда создает, так называемую символическую ссылку выбранного пояса в папке /etc
 # ===============================================================
-
-### Specified Time
-echo ""
-echo -e "${BLUE}:: ${NC}Синхронизация системных часов"  
-#echo '2.3 Синхронизация системных часов'
-# Syncing the system clock
-#echo 'Синхронизируем наши системные часы, включаем ntp, если надо сменим часовой пояс'
-# Sync our system clock, enable ntp, change the time zone if necessary
-timedatectl set-ntp true
-
-### Specified Time
-echo -e "${BLUE}:: ${NC}Проверим аппаратное время"
-#echo 'Проверим аппаратное время' 
-# Check the hardware time
-#hwclock
-hwclock --systohc
-#echo " hwclock --systohc --utc "
-#hwclock --systohc —utc
-#echo " hwclock --systohc --localtime "
-#hwclock --systohc --local
-
-### Specified Time
-echo -e "${BLUE}:: ${NC}Посмотрим текущее состояние аппаратных и программных часов"
-#echo 'Посмотрим текущее состояние аппаратных и программных часов'
-# Let's see the current state of the hardware and software clock
-timedatectl
-#curl https://ipapi.co/timezone  # используем геолокацию (в каком часовом поясе) 
-#curl http://ip-api.com/line?fields=timezone 
-#timedatectl set-timezone Europe/Moscow     # установка часового пояса
-#timedatectl set-timezone $timezone     # установка часового пояса
 
 ### Specified Time
 echo ""
