@@ -1130,7 +1130,7 @@ echo -e "${GREEN}==> ${NC}Добавим репозиторий Multilib Для 
 echo -e "${BLUE}:: ${NC}Раскомментируем репозиторий multilib"
 #echo 'Раскомментируем репозиторий multilib Для работы 32-битных приложений в 64-битной системе.'
 # Uncomment the multilib repository For running 32-bit applications on a 64-bit system
-echo " Чтобы исключить в дальнейшем ошибки в работе системы рекомендую "1" "
+echo " Чтобы исключить в дальнейшем ошибки в работе системы рекомендую вариант "1" "
 # To avoid further errors in the system I recommend "1"
 echo -e "${YELLOW}:: ${BOLD}Multilib может пригодится позже при установке OpenGL (multilib) для драйверов видеокарт.${NC}"
 # The Multilib repository may come in handy later when installing OpenGL (multilib) for video card drivers.
