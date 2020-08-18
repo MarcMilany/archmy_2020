@@ -1207,8 +1207,8 @@ echo ""
 echo -e "${RED}==> ${NC}Куда Вы устанавливаете Arch Linux на PC, или на Виртуальную машину (VBox;VMWare)?"
 #echo "Куда Вы устанавливаете Arch Linux на PC, или на Виртуальную машину (VBox;VMWare)?"
 # Where do you install Arch Linux on a PC, or on a Virtual machine VBox;VMWare)?
-echo "  "
-# .
+echo " Для того, чтобы ускорение видео работало, и часто для того, чтобы разблокировать все режимы, в которых может работать GPU (графический процессор), требуется правильный видеодрайвер. "
+# In order for video acceleration to work, and often in order to unlock all the modes in which the GPU can work, the correct video driver is required.
 echo -e "${MAGENTA}=> ${BOLD}Есть три варианта установки Xorg (иксов): ${NC}"
 echo " Давайте проанализируем действия, которые будут выполняться. "
 # Let's analyze the actions that will be performed.
