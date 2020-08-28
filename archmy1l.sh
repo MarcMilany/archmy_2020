@@ -1539,23 +1539,27 @@ echo ""
 echo -e "${GREEN}==> ${NC}Меняем корень и переходим в нашу недавно скачанную систему" 
 #echo 'Меняем корень и переходим в нашу недавно скачанную систему'
 # Change the root and go to our recently downloaded system
-echo -e "${MAGENTA}=> ${BOLD}Есть два варианта продолжения установки: ${NC}"
+echo -e "${MAGENTA}=> ${BOLD}Есть три варианта продолжения установки: ${NC}"
   echo " 1 - Если у Вас стабильный трафик интернета (dhcpcd), то рекомендую вариант - "1" "
   echo " 2 - Если у Вас бывают проблемы трафика интернета (wifi), то выбирайте вариант - "2" "
-echo -e "${YELLOW}:: ${BOLD}В этих вариантах большого отличия нет, кроме команд выполнения (1вариант curl), (2вариант wget), и ещё во 2-ом варианте вам потребуется ввести команду на запуск скрипта "./archmy2l.sh", а также проверить подключение сети интернет "ping -c2 8.8.8.8" - т.е. пропинговать сеть. ${NC}"   
+echo -e "${YELLOW}:: ${BOLD}В этих вариантах большого отличия нет, кроме команд выполнения (1вариант curl), (2вариант wget), и ещё во 2-ом варианте вам потребуется ввести команду на запуск скрипта "./archmy2l.sh", а также проверить подключение сети интернет "ping -c2 8.8.8.8" - т.е. пропинговать сеть. ${NC}" 
+echo -e "${YELLOW}:: ${BOLD}Есть ещё 3й способ: команда выполнения как, и в 1ом варианте через (curl), и как во 2-ом варианте вам потребуется ввести команду на запуск скрипта "./archmy2l.sh", а также проверить подключение сети интернет "ping -c2 8.8.8.8" - т.е. пропинговать сеть. ${NC}"
+echo " 3 - Альтернативный вариант для (dhcpcd, wifi), если у Вас возникнут проблемы с первыми способами продолжения установки, то выбирайте вариант - "3" "  
 echo " Будьте внимательны! В любой ситуации выбор всегда остаётся за вами. "
 # Be careful! In any situation, the choice is always yours.
 echo ""
 while 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p  " 
-    1 - Stable Internet traffic (dhcpcd), 
+    1 - Stable Internet traffic (dhcpcd),
 
-    2 - Not Stable Internet traffic (wifi): " int # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    2 - Not Stable Internet traffic (wifi), 
+
+    3 - Alternative Option (dhcpcd, wifi): " int # sends right after the keypress; # отправляет сразу после нажатия клавиши 
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-# read -p " 1 - Stable Internet traffic (dhcpcd), 2 - Not Stable Internet traffic (wifi): " int  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+# read -p " 1 - Stable Internet traffic (dhcpcd), 2 - Not Stable Internet traffic (wifi), 3 - Alternative Option (dhcpcd, wifi): " int  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
     echo ''
-    [[ "$int" =~ [^12] ]]
+    [[ "$int" =~ [^120] ]]
 do
     :
 done
@@ -1564,10 +1568,9 @@ if [[ $int == 1 ]]; then
  echo " Первый этап установки Arch'a закончен " 
  echo 'Установка продолжится в ARCH-LINUX chroot' 
  echo ""
- pacman -S curl --noconfirm --noprogressbar
-#arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"
-#arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l.sh)"
-arch-chroot /mnt sh -c "$(curl -fsSL https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh)"
+# pacman -S curl --noconfirm --noprogressbar
+ arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"
+#arch-chroot /mnt sh -c "$(curl -fsSL https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh)"
 echo " ############################################### "
 echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
 echo " ############################################### "
@@ -1596,7 +1599,28 @@ echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
 echo " ############################################### "
 umount -a
 reboot 
-
+elif [[ $int == 3 ]]; then
+echo ""
+ #pacman -S curl --noconfirm --noprogressbar
+  curl -LO https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh
+  mv archmy2l.sh /mnt
+  chmod +x /mnt/archmy2l.sh
+ echo "" 
+ echo " Первый этап установки Arch'a закончен " 
+ echo 'Установка продолжится в ARCH-LINUX chroot' 
+ echo ""
+  echo -e "${YELLOW}:: ${BOLD}Важно! Для удачного продолжения установки выполните эти пунты: ${NC}"
+  echo " 1 - Проверьте подключение сети интернет для продолжения установки в arch-chroot - "ping -c2 8.8.8.8" "
+  echo " 2 - Вводим команду для продолжения установки "./archmy2l.sh" "  
+  echo ""
+  arch-chroot /mnt 
+echo " ############################################### "
+echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
+echo " ############################################### "
+echo " Размонтирование всех смонтированных файловых систем (кроме корневой) "
+umount -a
+reboot
+   
 fi
 
 ##############################################
