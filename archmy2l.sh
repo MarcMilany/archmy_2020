@@ -242,8 +242,6 @@ echo -e "${GREEN}==> ${NC}Вводим название компьютера (ho
 #echo 'Enter the computer name and user name'
 # Enter the computer name
 # Enter your username
-#read -p "Введите имя компьютера: " hostname
-#read -p "Введите имя пользователя: " username
 echo -e "${MAGENTA}=> ${BOLD}Используйте в названии (host name) только буквы латинского алфавита (a-zA-Z0-9) (можно с заглавной буквы). Латиница - это английские буквы. Кириллица - русские. ${NC}" 
 #echo -e "${MAGENTA}==> ${NC}" 
 echo ""
