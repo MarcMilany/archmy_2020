@@ -18,7 +18,7 @@ ARCHMY2_LANG="russian"
 
 script_path=$(readlink -f ${0%/*})
 
-#umask 0022
+umask 0022
 
 ##################################################################
 ##### <<<Arch Linux Fast Install LegasyBIOS (arch2020)>>>    #####
