@@ -1559,7 +1559,7 @@ echo " Действия ввода, выполняется сразу после
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 # read -p " 1 - Stable Internet traffic (dhcpcd), 2 - Not Stable Internet traffic (wifi), 3 - Alternative Option (dhcpcd, wifi): " int  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
     echo ''
-    [[ "$int" =~ [^120] ]]
+    [[ "$int" =~ [^123456780] ]]
 do
     :
 done
