@@ -1551,7 +1551,7 @@ echo ""
 while 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p  " 
-    1 - Stable Internet traffic (dhcpcd),
+    1 - Stable Internet traffic (dhcpcd),  
 
     2 - Not Stable Internet traffic (wifi), 
 
