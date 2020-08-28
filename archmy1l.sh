@@ -1564,8 +1564,8 @@ if [[ $int == 1 ]]; then
  echo " Первый этап установки Arch'a закончен " 
  echo 'Установка продолжится в ARCH-LINUX chroot' 
  echo ""
- #arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"
-arch-chroot /mnt sh -c "$(curl -fsSL https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh)"
+arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"
+#arch-chroot /mnt sh -c "$(curl -fsSL https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh)"
 echo " ############################################### "
 echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
 echo " ############################################### "
