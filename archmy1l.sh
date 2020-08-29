@@ -1132,8 +1132,7 @@ echo " Действия ввода, выполняется сразу после
 
     3 - Base + Base-Devel,              4 - Base: " x_pacstrap  # sends right after the keypress; # отправляет сразу после нажатия клавиши
 # echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "    
-# read -p " 1 - Base + Base-Devel + packages, 2 - Base + packages, 3 - Base + Base-Devel, 4 - Base: " x_pacstrap  
-# To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+# read -p " 1 - Base + Base-Devel + packages, 2 - Base + packages, 3 - Base + Base-Devel, 4 - Base: " x_pacstrap  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
     echo ''
     [[ "$x_pacstrap" =~ [^123456780] ]]
 do
