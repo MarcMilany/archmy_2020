@@ -1394,11 +1394,105 @@ clear
 # =================================================================
 
 echo ""
-echo -e "${BLUE}:: ${NC}Ставим DM (Display manager) менеджера входа"
+echo -e "${GREEN}==> ${NC}Ставим DM (Display manager) менеджера входа."
+echo " DM - Менеджер дисплеев , или Логин менеджер, обычно представляет собой графический пользовательский интерфейс , который отображается в конце процесса загрузки вместо оболочки по умолчанию. "
+#echo -e "${BLUE}:: ${NC}Ставим DM (Display manager) менеджера входа"
 #echo 'Ставим DM (Display manager) менеджера входа'
 # Install the DM (Display manager) of the login Manager
+echo -e "${YELLOW}:: ${BOLD}Существуют различные реализации дисплейных менеджеров, обычно с определенным количеством настроек и тематических функций, доступных для каждого из них. ${NC}"
+# There are various implementations of display managers, usually with a certain number of settings and thematic features available for each of them.
+echo -e "${MAGENTA}=> ${BOLD}Согласно аннотации ArchWiki рассмотрим список графических менеджеров дисплея, варианты установки DM (Display manager), и их совместимость с различными вариантами DE (средами рабочего стола). ${NC}"
+echo " Аннотация ArchWiki и действия, которые будут выполняться. "
+# Archwiki annotation and actions to be performed.
+echo " 1 - LightDM - Диспетчер дисплеев между рабочими столами, может использовать различные интерфейсы, написанные на любом наборе инструментов, вариант - "1". "
+echo -e "${YELLOW}:: ${NC}LightDM - идёт как основной DM в Xfce (окружение рабочего стола), совместим с Deepin, и т.д.. Его ключевые особенности: Кросс-десктоп - поддерживает различные настольные технологии, поддерживает различные технологии отображения (X, Mir, Wayland ...), низкое использование памяти и высокая производительность. Поддерживает гостевые сессии, поддерживает удаленный вход (входящий - XDMCP , VNC , исходящий - XDMCP), комплексный набор тестов, Низкая сложность кода... "
+echo " 2 - LXDM - Диспетчер отображения LXDE. Может использоваться независимо от среды рабочего стола LXDE, вариант - "2". "
+echo -e "${YELLOW}:: ${NC}LXDE  - идёт как основной DM в LXDE (окружение рабочего стола), совместим с Xfce, Mate, Deepin, и т.д.. Это легкий диспетчер отображения, пользовательский интерфейс реализован с помощью GTK 2. LXDM не поддерживает протокол XDMCP, альтернатива - LightDM. "
+echo " 3 - GDM - Диспетчер отображения GNOME, может использоваться независимо от среды рабочего стола GNOME, вариант - "3". "
+echo -e "${YELLOW}:: ${NC}GNOME Display Manager (GDM) - это программа, которая управляет серверами графического дисплея и обрабатывает логины пользователей в графическом режиме. GDM был написан с нуля и не содержит кода XDM или X Consortium. "
+echo " 4 - SDDM - Диспетчер отображения на основе QML и преемник KDM, вариант - "4". "
+echo -e "${YELLOW}:: ${NC}SDDM - рекомендуется для KDE Plasma Desktop, и LXQt(окружение рабочего стола). Simple Desktop Display Manager (SDDM) - это диспетчер дисплея (графическая программа входа в систему) для оконных систем X11 и Wayland. SDDM был написан с нуля на C ++ 11 и поддерживает тематику через QML. KDE выбрала SDDM в качестве преемника KDE Display Manager для KDE Plasma 5. "
+echo " 5(0) - Если Вам не нужен DM (Display manager), то выбирайте вариант - "0". "
+echo -e "${YELLOW}:: ${NC}Примечание! Если Вы при установке i3, сделали выбор без использования DM, то DM не ставим!!! "
+echo -e "${MAGENTA}=> ${BOLD}Это далеко не полный список менеджеров дисплея. Помните вам может потребоваться ручная настройка оконного менеджера. ${NC}"
+echo " Будьте внимательны! В любой ситуации выбор всегда остаётся за вами. "
+# Be careful! In any situation, the choice is always yours.
+echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
+#echo 'Установка производится в порядке перечисления'
+# Installation Is performed in the order listed
+echo "" 
+while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#read -p " 1 - LightDM, 2 - LXDM, 3 - GDM, 4 - SDDM, 0 - Пропустить установку DM (Display manager): " i_dm  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - LightDM,     2 - LXDM,
+
+    3 - GDM,         4 - SDDM, 
+
+    0 - Пропустить установку DM (Display manager): " i_dm  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_dm" =~ [^123456780] ]]
+do
+    :
+done 
+if [[ $i_dm == 0 ]]; then
+clear
+ echo "" 
+ echo ' Установка DM (Display manager) пропущена. '
+elif [[ $i_dm == 1 ]]; then
+  echo ""  
+  echo " Установка LightDM (менеджера входа) "
 pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm
 echo " Установка DM (менеджера входа) завершена "
+echo ""
+echo " Подключаем автозагрузку менеджера входа "
+#systemctl enable lightdm.service
+systemctl enable lightdm.service -f
+sleep 1 
+clear
+echo ""
+echo " Менеджера входа LightDM установлен и подключен в автозагрузку "
+elif [[ $i_dm == 2 ]]; then
+  echo ""  
+  echo " Установка LXDM (менеджера входа) "
+pacman -S lxdm --noconfirm
+echo " Установка DM (менеджера входа) завершена "
+echo ""
+echo " Подключаем автозагрузку менеджера входа "
+#systemctl enable lxdm.service
+systemctl enable lxdm.service -f
+sleep 1 
+clear
+echo ""
+echo " Менеджера входа LXDM установлен и подключен в автозагрузку "
+elif [[ $i_dm == 3 ]]; then
+  echo ""  
+  echo " Установка GDM (менеджера входа) "
+pacman -S gdm --noconfirm
+echo " Установка DM (менеджера входа) завершена "
+echo ""
+echo " Подключаем автозагрузку менеджера входа "
+#systemctl enable gdm.service
+systemctl enable gdm.service -f
+sleep 1
+clear
+echo ""
+echo " Менеджера входа GDM установлен и подключен в автозагрузку "
+elif [[ $i_dm == 4 ]]; then
+  echo ""  
+  echo " Установка SDDM (менеджера входа) "
+pacman -S sddm sddm-kcm --noconfirm
+echo " Установка DM (менеджера входа) завершена "
+echo ""
+echo " Подключаем автозагрузку менеджера входа "
+#systemctl enable sddm.service
+systemctl enable sddm.service -f
+sleep 1 
+clear
+echo ""
+echo " Менеджера входа SDDM установлен и подключен в автозагрузку " 
+fi
 
 echo ""
 echo -e "${GREEN}==> ${NC}Установить сетевые утилиты "Networkmanager"?"
@@ -1445,15 +1539,6 @@ echo -e "${BLUE}:: ${NC}Ставим шрифты"
 pacman -S ttf-liberation ttf-dejavu --noconfirm 
 pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-hanazono --noconfirm  # opendesktop-fonts 
 pacman -S ttf-fireflysung ttf-sazanami --noconfirm  # -китайские иероглифы
-
-echo ""
-echo -e "${BLUE}:: ${NC}Подключаем автозагрузку менеджера входа и интернет"
-#echo 'Подключаем автозагрузку менеджера входа и интернет'
-# Enabling auto-upload of the login Manager and the Internet
-systemctl enable lightdm.service
-#systemctl enable lightdm.service -f
-sleep 1 
-#systemctl enable NetworkManager
 
 echo ""
 echo -e "${GREEN}==> ${NC}Добавим службу Dhcpcd в автозагрузку (для проводного интернета)?"
