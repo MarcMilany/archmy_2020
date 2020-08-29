@@ -1228,14 +1228,13 @@ echo -e "${YELLOW}==> ${NC}Установка производится в пор
 # Installation Is performed in the order listed
 echo ""
 while
-echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-#read -p " 1 - LINUX, 2 - LINUX_HARDENED, 3 - LINUX_LTS, 4 - LINUX_ZEN: " x_pacstrap  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
-    read -p "      
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
     1 - LINUX,           2 - LINUX_HARDENED,
 
-    3 - LINUX_LTS,       4 - LINUX_ZEN: " x_pacstrap  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")   
-#echo " Действия ввода, выполняется сразу после нажатия клавиши "
-# read -n1 -p " 1 - LINUX, 2 - LINUX_HARDENED, 3 - LINUX_LTS, 4 - LINUX_ZEN: " x_pacstrap  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    3 - LINUX_LTS,       4 - LINUX_ZEN: " x_pacstrap  # sends right after the keypress; # отправляет сразу после нажатия клавиши  
+# echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+# read -p " 1 - LINUX, 2 - LINUX_HARDENED, 3 - LINUX_LTS, 4 - LINUX_ZEN: " x_pacstrap  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
     echo ''
     [[ "$x_pacstrap" =~ [^123456780] ]]
 do
