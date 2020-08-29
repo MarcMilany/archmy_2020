@@ -546,15 +546,16 @@ echo -e "${YELLOW}==> ${NC}Установка производится в пор
 #pacman -S --needed mkinitcpio 
 echo ""
 while
-echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")  "
-    read -p "     
+# echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")  "
+# read -p " 1 - для ядра LINUX, 2 - для ядра LINUX_HARDENED, 3 - для ядра LINUX_LTS, 4 - для ядра LINUX_ZEN, 0 - Пропустить создание загрузочного RAM диска: " x_ram  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+
+    read -n1 -p "     
     1 - для ядра LINUX,          2 - для ядра LINUX_HARDENED, 
 
     3 - для ядра LINUX_LTS,      4 - для ядра LINUX_ZEN, 
 
-    0 - Пропустить создание загрузочного RAM диска: " x_ram  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
-#echo " Действия ввода, выполняется сразу после нажатия клавиши "
-# read -n1 -p " 1 - для ядра LINUX, 2 - для ядра LINUX_HARDENED, 3 - для ядра LINUX_LTS, 4 - для ядра LINUX_ZEN, 0 - Пропустить создание загрузочного RAM диска: " x_ram  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    0 - Пропустить создание загрузочного RAM диска: " x_ram  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
     [[ "$x_ram" =~ [^123456780] ]]
 do
