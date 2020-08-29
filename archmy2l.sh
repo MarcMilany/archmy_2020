@@ -938,7 +938,7 @@ echo " Действия ввода, выполняется сразу после
 
     3 - Вы выбрали группу (wheel): " i_groups  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$i_groups" =~ [^1230] ]]
+    [[ "$i_groups" =~ [^123] ]]
 do
     :
 done
