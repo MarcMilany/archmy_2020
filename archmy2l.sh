@@ -935,7 +935,7 @@ echo " Действия ввода, выполняется сразу после
 
     3 - Вы выбрали группу (wheel): " i_groups  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$i_groups" =~ [^120] ]]
+    [[ "$i_groups" =~ [^123456780] ]]
 do
     :
 done
@@ -1260,12 +1260,23 @@ clear
 ###### 2 Вариант установки Xorg (иксов).Установка X сервера 
 
 echo ""
-echo -e "${BLUE}:: ${NC}Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce"
+echo -e "${GREEN}==> ${NC}Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce."
+#echo -e "${BLUE}:: ${NC}Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce"
 #echo 'Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce'
 # Put DE (from the English desktop environment-desktop environment) Xfce
-#pacman -S xfce4 xfce4-goodies
-pacman -S xfce4 xfce4-goodies --noconfirm
-# pacman -S xfce4 xfce4-goodies pavucontrol --noconfirm
+echo -e "${YELLOW}:: ${BOLD}Важно! Вы можете выбрать другое DE (среду,окружение рабочего стола), из представленных далее в скрипте. ${NC}"
+# You can choose a different DE (environment, desktop environment) from the ones shown below in the script!
+echo -e "${MAGENTA}=> ${BOLD}Есть два варианта установки Xfce(окружение рабочего стола): ${NC}"
+echo " Давайте проанализируем действия, которые будут выполняться. "
+# Let's analyze the actions that will be performed.
+echo " 1 - Если Вы устанавливаете Xfce пакет (xfce4) + "Goodies for Xfce" расширения для окружения рабочего стола Xfce4 пакет (xfce4-goodies), то выбирайте вариант - "1". "
+echo " Проект "Goodies for Xfce" включает в себя дополнительное программное обеспечение и художественные работы, связанные с рабочим столом Xfce, но не являющиеся частью официального релиза. Тем самым происходит Усовершенствования среды рабочего стола Xfce4. "
+echo " 2 - Если Вы устанавливаете просто окружение рабочего стола Xfce пакет (xfce4), без каких либо дополнений для окружения рабочего стола, то выбирайте вариант - "2". "
+echo " 3(0) - Вы можете пропустить установку Xfce(окружение рабочего стола), если будете использовать другое DE (среду,окружение рабочего стола), или вам не нужно DE, то выбирайте вариант - "0". "
+echo " Будьте внимательны! Процесс установки Xfce, после выбранного вами варианта установки был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
+# Be careful! The Xfce installation process was fully automatic after the installation option you selected. In any situation, the choice is always yours.
+echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
+#echo 'Действия выполняются в указанном порядке'
 echo ""
 echo " DE (среда рабочего стола) Xfce успешно установлено "
 
