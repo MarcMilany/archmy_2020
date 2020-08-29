@@ -809,11 +809,11 @@ echo -e "${BLUE}:: ${NC}Форматируем Home раздел?"
 #echo 'Форматирование домашнего раздела (HOME)'
 # Formatting the home partition
 while
-#echo " Действия ввода, выполняется сразу после нажатия клавиши " 
-# read -n1 -p " 1 - Да форматировать, 0 - Нет не форматировать: " homeF  # sends right after the keypress; # отправляет сразу после нажатия клавиши
-echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-    read -p " 
-    1 - Да форматировать,    0 - Нет не форматировать: " homeF  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+# echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") " 
+# read -p " 1 - Да форматировать, 0 - Нет не форматировать: " homeF  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p " 
+    1 - Да форматировать,    0 - Нет не форматировать: " homeF  # sends right after the keypress; # отправляет сразу после нажатия клавиши 
     echo ''
     [[ "$homeF" =~ [^10] ]]
 do
@@ -833,7 +833,7 @@ done
  lsblk -f
  echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
  read -p " Укажите HOME раздел (sda/sdb 1.2.3.4 (sda6 например)): " homeV  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
- mkdir /mnt/home
+ mkdir /mnt/home 
 #mkdir -v /mnt/home  
  mount /dev/$homeV /mnt/home
 #mount -v /dev/$homeV /mnt/home  # -v или --verbose Выводить сообщение о каждой создаваемой директории
