@@ -1558,7 +1558,7 @@ echo " Действия ввода, выполняется сразу после
 
     3 - Alternative Option (dhcpcd, wifi): " int # sends right after the keypress; # отправляет сразу после нажатия клавиши 
     echo ''
-    [[ "$int" =~ [^123456780] ]]
+    [[ "$int" =~ [^123] ]]
 do
     :
 done
