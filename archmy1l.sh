@@ -1316,7 +1316,7 @@ echo " Действия ввода, выполняется сразу после
 
     4 - PARTUUID genfstab -t PARTUUID: " x_fstab  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
     echo ''
-    [[ "$x_fstab" =~ [^123456780] ]]
+    [[ "$x_fstab" =~ [^1234] ]]
 do
     :
 done   
