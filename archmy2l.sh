@@ -328,11 +328,12 @@ echo " ln -sf /usr/share/zoneinfo/Зона/Субзона /etc/localtime "
 #echo " ln -svf /usr/share/zoneinfo/$timezone /etc/localtime "
 echo " ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime - это полный вид команды "
 echo -e "${CYAN}:: ${NC}Но для нас сейчас нужна малая толика от всей команды это - (Частъ Света/Город)."
-echo " Примеры (timezone): Europe/Moscow, Europe/Minsk, Europe/Kiev, Asia/Yekaterinburg, Asia/Almaty, Africa/Nairobi и т.д.... "
+echo -e "${GREEN}:: ${NC}Примеры (timezone): Europe/Moscow, Europe/Minsk, Europe/Kiev, Asia/Yekaterinburg, Asia/Almaty, Africa/Nairobi, America/Chicago,  и т.д...."
 #echo -e "${BLUE}:: ${NC}Выведем список временных зон только для Европы:"
 #timedatectl list-timezones | grep Europe | less  #воспользуемся grep и ограничим область поиска
 echo -e "${MAGENTA}=> ${BOLD}Используйте только буквы латинского алфавита (a-zA-Z) (начиная название с заглавной буквы). ${NC}"
 echo " (Example) - в переводе это Пример, Наглядный, типичный образец,... "
+echo " Итак создадим ссылку на нужный файл временной зоны: "
 echo " Укажите вашу (timezone), как это показано выше в примере. "
 echo ""
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
@@ -346,7 +347,9 @@ ls -lh /etc/localtime  # для просмотра символической с
 #cat /etc/timezone   # просмотреть файл /etc/timezone
 #timedatectl    # команда отображает обзор системы, включая часовой пояс
 echo ""
-echo " => Это ваш часовой пояс (timezone) - '$timezone' "
+echo -e "${GREEN}=> ${BOLD}Это ваш часовой пояс (timezone) - '$timezone' ${NC}"
+#echo -e "${GREEN}=> ${NC}Это ваш часовой пояс (timezone) - '$timezone' "
+#echo " => Это ваш часовой пояс (timezone) - '$timezone' "
 date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'    # одновременно отображает дату и часовой пояс
 
 # -------------------------------------------------
