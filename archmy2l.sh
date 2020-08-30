@@ -330,7 +330,7 @@ echo " ln -sf /usr/share/zoneinfo/Зона/Субзона /etc/localtime "
 #echo " ln -svf /usr/share/zoneinfo/$timezone /etc/localtime "
 echo " ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime - это полный вид команды "
 echo -e "${CYAN}:: ${NC}Но для нас сейчас нужна малая толика от всей команды это - (Частъ Света/Город)."
-echo -e "${GREEN}:: ${NC}Примеры (timezone): Europe/Moscow, Europe/Minsk, Europe/Kiev, Europe/Berlin, Europe/Paris, Asia/Yekaterinburg, Asia/Almaty, Africa/Nairobi, America/Chicago,  и т.д...."
+echo -e "${GREEN}:: ${NC}Примеры (timezone): Europe/Moscow, Europe/Minsk, Europe/Kiev, Europe/Berlin, Europe/Paris, Asia/Yekaterinburg, Asia/Almaty, Africa/Nairobi, America/Chicago, America/New_York, Australia/Sydney ..."
 #echo -e "${BLUE}:: ${NC}Выведем список временных зон только для Европы:"
 #timedatectl list-timezones | grep Europe | less  # воспользуемся grep и ограничим область поиска
 echo -e "${MAGENTA}=> ${BOLD}Используйте только буквы латинского алфавита (a-zA-Z) (начиная название с заглавной буквы). ${NC}"
