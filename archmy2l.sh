@@ -310,7 +310,7 @@ echo -e "${GREEN}==> ${NC}Устанавливаем ваш часовой по�
 #echo -e "${BLUE}:: ${NC}Устанавливаем ваш часовой пояс"
 #echo 'Устанавливаем ваш часовой пояс'
 # Setting your time zone
-echo " Все завязано на времени, поэтому очень важно, чтобы часы шли правильно... :) "
+echo " Всё завязано на времени, поэтому очень важно, чтобы часы шли правильно... :) "
 echo -e "${BLUE}:: ${BOLD}Для начала вот ваши данные по дате,времени и часовому поясу: ${NC}"
 date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'    # одновременно отображает дату и часовой пояс
 #rm -v /etc/localtime  # rm  - Удаление файлов и директорий, -v или --verbose - Выводить информацию об удаляемых файлах
@@ -330,7 +330,7 @@ echo " ln -sf /usr/share/zoneinfo/Зона/Субзона /etc/localtime "
 #echo " ln -svf /usr/share/zoneinfo/$timezone /etc/localtime "
 echo " ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime - это полный вид команды "
 echo -e "${CYAN}:: ${NC}Но для нас сейчас нужна малая толика от всей команды это - (Частъ Света/Город)."
-echo -e "${GREEN}:: ${NC}Примеры (timezone): Europe/Moscow, Europe/Minsk, Europe/Kiev, Europe/Berlin, Europe/Paris, Asia/Yekaterinburg, Asia/Almaty, Africa/Nairobi, America/Chicago, America/New_York, Australia/Sydney ..."
+echo -e "${GREEN}:: ${NC}Примеры (timezone): Europe/Moscow, Europe/Minsk, Europe/Kiev, Europe/Berlin, Europe/Paris, Asia/Yekaterinburg, Asia/Almaty, Africa/Nairobi, America/Chicago, America/New_York, America/Indiana/Indianapolis, Australia/Sydney, Antarctica/Vostok, Arctic/Longyearbyen, Atlantic/Azores, Indian/Maldives  ..."
 #echo -e "${BLUE}:: ${NC}Выведем список временных зон только для Европы:"
 #timedatectl list-timezones | grep Europe | less  # воспользуемся grep и ограничим область поиска
 echo -e "${MAGENTA}=> ${BOLD}Используйте только буквы латинского алфавита (a-zA-Z) (начиная название с заглавной буквы). ${NC}"
@@ -381,6 +381,8 @@ date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'    # одновременно отобра�
 #ln -s /usr/share/zoneinfo/Зона/Субзона /etc/localtime
 #ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 # Эта команда создает, так называемую символическую ссылку выбранного пояса в папке /etc
+# Список часовых поясов базы данных tz:
+# https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 # ===============================================================
 
 ### Specified Time
