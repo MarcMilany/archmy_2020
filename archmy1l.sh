@@ -759,11 +759,11 @@ echo " Если таковой был создан при разметке в cf
 #Если он был создан во время разметки в cfdisk'
 # If one was created during markup in cfdisk
 while
-#echo " Действия ввода, выполняется сразу после нажатия клавиши "
-# read -n1 -p " 1 - Да, 0 - Нет: " swap  # sends right after the keypress; # отправляет сразу после нажатия клавиши
-echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") " 
-    read -p " 
-    1 - Да,    0 - Нет: " swap  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")  
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") " 
+# read -p " 1 - Да, 0 - Нет: " swap  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p " 
+    1 - Да,    0 - Нет: " swap  # sends right after the keypress; # отправляет сразу после нажатия клавиши  
     echo ''
     [[ "$swap" =~ [^10] ]]
 do
