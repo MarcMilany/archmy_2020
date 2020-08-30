@@ -459,6 +459,7 @@ echo -e "${BLUE}:: ${NC}Посмотрим обновление времени (
 # See the time update (if the setting was not skipped)
 timedatectl show
 #timedatectl | grep Time
+#timedatectl set-timezone Europe/Moscow
 
 ### Set Hosts 
 echo ""
