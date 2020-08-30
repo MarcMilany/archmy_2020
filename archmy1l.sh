@@ -1532,7 +1532,11 @@ echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
 # Updating the package databases
 #sudo pacman-key --init
 #sudo pacman-key --refresh-keys
-sudo pacman -Sy  
+sudo pacman -Sy
+
+echo ""
+echo " Первый этап установки Arch'a закончен " 
+echo 'Установка продолжится в ARCH-LINUX chroot'   
 
 echo ""
 echo -e "${GREEN}==> ${NC}Меняем корень и переходим в нашу недавно скачанную систему" 
@@ -1563,10 +1567,10 @@ do
     :
 done
 if [[ $int == 1 ]]; then
- echo ""
- echo " Первый этап установки Arch'a закончен " 
- echo 'Установка продолжится в ARCH-LINUX chroot' 
- echo ""
+#  echo ""
+# echo " Первый этап установки Arch'a закончен " 
+# echo 'Установка продолжится в ARCH-LINUX chroot' 
+# echo ""   
 # pacman -S curl --noconfirm --noprogressbar
 #arch-chroot /mnt sh -c "$(curl -fsSL https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh)"
 arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"
