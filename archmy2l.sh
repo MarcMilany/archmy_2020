@@ -321,6 +321,7 @@ echo -e "${MAGENTA}=> ${BOLD}Мир состоит из шести частей 
 # Континент:
 # https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%82%D0%B8%D0%BD%D0%B5%D0%BD%D1%82
 #echo " ln -sf /usr/share/zoneinfo/${timezone} /etc/localtime "
+echo -e "${CYAN}==> ${NC}Если пинг идёт едем дальше ... :)"
 echo " ln -sf /usr/share/zoneinfo/Частъ Света/Город /etc/localtime "  # где Region - ваш регион, City - ваш город
 echo " ln -sf /usr/share/zoneinfo/Зона/Субзона /etc/localtime "
 #echo " ln -svf /usr/share/zoneinfo/$timezone /etc/localtime "
