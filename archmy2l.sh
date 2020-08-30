@@ -322,13 +322,13 @@ date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'    # одновременно отобра�
 echo -e "${MAGENTA}:: ${BOLD}Мир состоит из шести частей света: Азия, Африка, Америка, Европа, Австралия и Океания, Антарктика (Антарктида с прибрежными морями и островами). Иногда Океанию и Арктику выделяют в отдельные части света. ${NC}"
 #echo " ln -sf /usr/share/zoneinfo/${timezone} /etc/localtime "
 echo -e "${CYAN}:: ${NC}Наиболее популярный и поддерживаемый в большинстве дистрибутивов способ установки часового пояса для всех пользователей с помощью символической ссылки "/etc/localtime" на файл нужного часового пояса."
-echo -e "${CYAN}:: ${NC}Для создания символической ссылки используйте команду "ln -sf" или "ln -svf"."
+echo -e "${CYAN}:: ${NC}Для создания символической ссылки используется команда "ln -sf" или "ln -svf"."
 echo " ln -sf /usr/share/zoneinfo/Частъ Света/Город /etc/localtime "  # (где Region - ваш регион, City - ваш город)
 echo " ln -sf /usr/share/zoneinfo/Зона/Субзона /etc/localtime "
 #echo " ln -svf /usr/share/zoneinfo/$timezone /etc/localtime "
 echo " ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime - это полный вид команды "
 echo -e "${CYAN}:: ${NC}Для нас сейчас нужна малая толика от всей команды это - (Частъ Света/Город)."
-echo -e "${GREEN}:: ${NC}Примеры (timezone): Europe/Moscow, Europe/Minsk, Europe/Kiev, Europe/Berlin, Europe/Paris, Asia/Yekaterinburg, Asia/Almaty, Africa/Nairobi, America/Chicago, America/New_York, America/Indiana/Indianapolis, Australia/Sydney, Antarctica/Vostok, Arctic/Longyearbyen, Atlantic/Azores, Indian/Maldives..."
+echo -e "${GREEN}:: ${NC}Примеры (timezone): Europe/Moscow, Europe/Minsk, Europe/Kiev, Europe/Berlin, Europe/Paris, Asia/Yekaterinburg, Asia/Almaty, Africa/Nairobi, America/Chicago, America/New_York, America/Indiana/Indianapolis, Australia/Sydney, Antarctica/Vostok, Arctic/Longyearbyen, Atlantic/Azores, Indian/Maldives."
 #echo -e "${BLUE}:: ${NC}Выведем список временных зон только для Европы:"
 #timedatectl list-timezones | grep Europe | less  # воспользуемся grep и ограничим область поиска
 echo -e "${MAGENTA}=> ${BOLD}Используйте только буквы латинского алфавита (a-zA-Z) (начиная название с заглавной буквы). ${NC}"
