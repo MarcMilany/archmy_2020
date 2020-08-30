@@ -341,7 +341,7 @@ read -p " => Введите свою таймзону в формате Example/
 # Создадим ссылку на нужный файл временной зоны:   
 ln -svf /usr/share/zoneinfo/$timezone /etc/localtime
 #ln -sf /usr/share/zoneinfo/$timezone /etc/localtime
-# Сначала создайте резервную копию текущего часового пояса:
+# Создайте резервную копию текущего часового пояса:
 #cp /etc/localtime /etc/localtime.bak
 cp /etc/localtime /etc/localtime.backup
 # Запишем название часового пояса в /etc/timezone:
