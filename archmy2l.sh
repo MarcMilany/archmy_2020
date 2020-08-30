@@ -548,12 +548,12 @@ echo ""
 echo -e "${GREEN}==> ${NC}Создадим загрузочный RAM диск (начальный RAM-диск)"
 #echo 'Создадим загрузочный RAM диск (начальный RAM-диск)'
 # Creating a bootable RAM disk (initial RAM disk)
-echo " Arch Linux имеет mkinitcpio - это Bash скрипт используемый для создания начального загрузочного диска системы. "
+echo -e "${MAGENTA}:: ${BOLD}Arch Linux имеет mkinitcpio - это Bash скрипт используемый для создания начального загрузочного диска системы. ${NC}"
 # Arch Linux has mkinitcpio, a Bash script used to create the system's initial boot disk.
-echo " mkinitcpio является модульным инструментом для построения initramfs CPIO образа, предлагая много преимуществ по сравнению с альтернативными методами. Предоставляет много возможностей для настройки из командной строки ядра без необходимости пересборки образа. "
+echo -e "${CYAN}:: ${NC}mkinitcpio является модульным инструментом для построения initramfs CPIO образа, предлагая много преимуществ по сравнению с альтернативными методами. Предоставляет много возможностей для настройки из командной строки ядра без необходимости пересборки образа."
 # mkinitcpio is a modular tool for building an initramfs CPIO image, offering many advantages over alternative methods.
 # Provides many options for configuring the kernel from the command line without having to rebuild the image.
-echo " Чтобы избежать ошибки при создании RAM (mkinitcpio -p), вспомните какое именно ядро Вы выбрали ранее.  "
+echo -e "${YELLOW}:: ${NC}Чтобы избежать ошибки при создании RAM (mkinitcpio -p), вспомните какое именно ядро Вы выбрали ранее."
 # To avoid an error when creating RAM (mkinitcpio -p), remember which core you selected earlier.
 echo " Будьте внимательными! Здесь варианты создания RAM-диска, с конкретными ядрами. "
 # Be careful! Here are options for creating a RAM disk with specific cores.
