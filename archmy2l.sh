@@ -306,10 +306,11 @@ fi
 
 ### Set Timezone
 echo ""
-echo -e "${GREEN}==> ${NC}Устанавливаем ваш часовой пояс."
+echo -e "${GREEN}==> ${NC}Устанавливаем ваш часовой пояс (localtime)."
 #echo -e "${BLUE}:: ${NC}Устанавливаем ваш часовой пояс"
 #echo 'Устанавливаем ваш часовой пояс'
 # Setting your time zone
+echo -e "${BLUE}:: ${BOLD}Для начала вот ваши данные по дате,времени и часовому поясу: ${NC}"
 date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'    # одновременно отображает дату и часовой пояс
 #rm -v /etc/localtime  # rm  - Удаление файлов и директорий, -v или --verbose - Выводить информацию об удаляемых файлах
 #ln -s /usr/share/zoneinfo/Europe/Moscow
