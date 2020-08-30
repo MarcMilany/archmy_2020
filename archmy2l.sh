@@ -346,6 +346,7 @@ cp /etc/localtime /etc/localtime.back
 # Создадим ссылку на нужный файл временной зоны:   
 ln -svf /usr/share/zoneinfo/$timezone /etc/localtime
 #ln -sf /usr/share/zoneinfo/$timezone /etc/localtime
+# Запишем название часового пояса в /etc/timezone:
 echo $timezone > /etc/timezone
 # timedatectl set-timezone Europe/Moscow     # установка часового пояса
 #timedatectl set-timezone $timezone     # установка часового пояса
