@@ -324,8 +324,8 @@ echo -e "${MAGENTA}:: ${BOLD}Мир состоит из шести частей 
 # https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%82%D0%B8%D0%BD%D0%B5%D0%BD%D1%82
 #echo " ln -sf /usr/share/zoneinfo/${timezone} /etc/localtime "
 echo -e "${CYAN}:: ${NC}Наиболее популярный и поддерживаемый в большинстве дистрибутивов способ установки часового пояса для всех пользователей - с помощью символической ссылки "/etc/localtime" на файл нужного часового пояса."
-echo -e "${CYAN}:: ${NC}Для создания символической ссылки используйте команду "ln -sf" или "ln -svf" (где Region - ваш регион, City - ваш город)"
-echo " ln -sf /usr/share/zoneinfo/Частъ Света/Город /etc/localtime "  # где Region - ваш регион, City - ваш город
+echo -e "${CYAN}:: ${NC}Для создания символической ссылки используйте команду "ln -sf" или "ln -svf"."
+echo " ln -sf /usr/share/zoneinfo/Частъ Света/Город /etc/localtime "  # (где Region - ваш регион, City - ваш город)
 echo " ln -sf /usr/share/zoneinfo/Зона/Субзона /etc/localtime "
 #echo " ln -svf /usr/share/zoneinfo/$timezone /etc/localtime "
 echo " ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime - это полный вид команды "
