@@ -1113,8 +1113,8 @@ echo " Т.е., Если нужен AUR, ставь base и base-devel, если 
 # If you need AUR, put base and base-devel, if not, then put only base.
 echo " Огласите весь список, пожалуйста! "
 # Read out the entire list, please!
-echo " 1 - base + base-devel + packages (пакеты небходимые для сетевых настроек, и консольный текстовый редактор: - dhcpcd netctl which inetutils nano vim  #wget) "
-echo " 2 - base + packages (пакеты небходимые для сетевых настроек, и консольный текстовый редактор: - dhcpcd netctl which inetutils nano vim  #wget) "
+echo " 1 - base + base-devel + packages (пакеты небходимые для сетевых настроек, и консольный текстовый редактор: - dhcpcd netctl which inetutils nano vim ) "  #wget
+echo " 2 - base + packages (пакеты небходимые для сетевых настроек, и консольный текстовый редактор: - dhcpcd netctl which inetutils nano vim) "   #wget
 echo " 3 - base + base-devel (установятся группы, Т.е. base и base-devel, без каких либо дополнительных пакетов) "
 echo " 4 - base (установится группа, состоящая из определённого количества пакетов, Т.е. просто base, без каких либо дополнительных пакетов) "
 echo " Будьте осторожны! Если Вы сомневаетесь в своих действиях, можно установить (base + packages), а group-(группы) base-devel установить позже. "
@@ -1125,14 +1125,14 @@ echo -e "${YELLOW}==> ${NC}Установка производится в пор
 echo " Чтобы исключить ошибки в работе системы рекомендую пункт "1" "
 # To eliminate errors in the system, I recommend "1"
 echo ""
-while 
+while
+# echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "    
+# read -p " 1 - Base + Base-Devel + packages, 2 - Base + packages, 3 - Base + Base-Devel, 4 - Base: " x_pacstrap  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "    
     1 - Base + Base-Devel + packages,   2 - Base + packages, 
 
-    3 - Base + Base-Devel,              4 - Base: " x_pacstrap  # sends right after the keypress; # отправляет сразу после нажатия клавиши
-# echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "    
-# read -p " 1 - Base + Base-Devel + packages, 2 - Base + packages, 3 - Base + Base-Devel, 4 - Base: " x_pacstrap  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+    3 - Base + Base-Devel,              4 - Base: " x_pacstrap  # sends right after the keypress; # отправляет сразу после нажатия клавиши 
     echo ''
     [[ "$x_pacstrap" =~ [^1234] ]]
 do
