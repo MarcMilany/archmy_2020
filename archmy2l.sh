@@ -328,6 +328,8 @@ echo " ln -sf /usr/share/zoneinfo/Зона/Субзона /etc/localtime "
 #echo " ln -svf /usr/share/zoneinfo/$timezone /etc/localtime "
 echo " ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime - вид команды "
 echo " Примеры (timezone): Europe/Moscow, Europe/Minsk, Europe/Kiev, Asia/Yekaterinburg, Asia/Almaty, Africa/Nairobi и т.д.... "
+echo -e "${BLUE}:: ${NC}Выведем список временных зон только для Европы:"
+timedatectl list-timezones | grep Europe | less  #воспользоваться grep и ограничить область поиска
 echo -e "${MAGENTA}=> ${BOLD}Используйте только буквы латинского алфавита (a-zA-Z) (начиная название с заглавной буквы). ${NC}"
 echo " (Example) - в переводе это Пример, Наглядный, типичный образец,... "
 echo " Укажите вашу (timezone), как это показано выше в примере. "
