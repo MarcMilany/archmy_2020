@@ -325,6 +325,7 @@ echo -e "${CYAN}:: ${NC}Наиболее популярный и поддерж�
 echo -e "${CYAN}:: ${NC}Для создания символической ссылки используется команда "ln -sf" или "ln -svf"."
 echo " ln -sf /usr/share/zoneinfo/Частъ Света/Город /etc/localtime "  # (где Region - ваш регион, City - ваш город)
 echo " ln -sf /usr/share/zoneinfo/Зона/Субзона /etc/localtime "
+echo " ln -sf /usr/share/zoneinfo/Регион/Город /etc/localtime "
 #echo " ln -svf /usr/share/zoneinfo/$timezone /etc/localtime "
 echo " ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime - это полный вид команды "
 echo -e "${CYAN}:: ${NC}Для нас сейчас нужна малая толика от всей команды это - (Частъ Света/Город)."
