@@ -270,6 +270,10 @@ export LANG=ru_RU.UTF-8
 # When you uncomment the string '#export....', Be Careful!
 # As you name it, you will swim...
 # ===============================================================
+echo -e "${BLUE}:: ${NC}Проверяем, что все заявленные локали были созданы:"
+#echo 'Проверяем, что все заявленные локали были созданы:'
+# Checking that all the declared locales were created:
+locale -a
 
 echo ""
 echo -e "${GREEN}=> ${NC}Убедитесь, что сетевой интерфейс указан и включен" 
