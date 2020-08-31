@@ -176,17 +176,6 @@ echo -e "${BLUE}:: ${NC}Синхронизация системных часов
 # Sync our system clock, enable ntp, change the time zone if necessary
 timedatectl set-ntp true
 
-### Specified Time
-echo -e "${BLUE}:: ${NC}Проверим аппаратное время"
-#echo 'Проверим аппаратное время' 
-# Check the hardware time
-#hwclock
-hwclock --systohc
-#echo " hwclock --systohc --utc "
-#hwclock --systohc —utc
-#echo " hwclock --systohc --localtime "
-#hwclock --systohc --local
-
 echo -e "${BLUE}:: ${NC}Посмотрим статус службы NTP (NTP service)"
 #echo 'Посмотрим статус службы NTP (NTP service)'
 # Let's see the NTP service status
@@ -363,9 +352,7 @@ echo -e "${GREEN}=> ${BOLD}Это ваш часовой пояс (timezone) - '$
 #echo " => Это ваш часовой пояс (timezone) - '$timezone' "
 echo -e "${BLUE}:: ${BOLD}Ваши данные по дате, времени и часовому поясу: ${NC}"
 date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'    # одновременно отображает дату и часовой пояс
-# Запустим hwclock, чтобы сгенерировать /etc/adjtime
-hwclock --systohc 
-# Эта команда предполагает, что аппаратные часы настроены в формате UTC. Для получения дополнительной информации смотрите раздел System time#Time standard.
+
 # -------------------------------------------------
 # Чтобы изменить часовой пояс, создайте символическую ссылку /etc/localtime на соответствующий часовой пояс в /usr/share/zoneinfo/:
 #ln -sf /usr/share/zoneinfo/zoneinfo /etc/localtime
@@ -394,6 +381,17 @@ hwclock --systohc
 # Список часовых поясов базы данных tz:
 # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 # ===============================================================
+### Specified Time
+echo -e "${BLUE}:: ${NC}Синхронизируем аппаратное время с системным"
+echo " Устанавливаются аппаратные часы из системных часов. "
+# Кроме того, он обновляет /etc / adjtime или создает его.
+#echo 'Синхронизируем аппаратное время с системным' 
+# Synchronizing hardware time with system time
+#hwclock
+# Запустим hwclock, чтобы сгенерировать /etc/adjtime
+# Эта команда предполагает, что аппаратные часы настроены в формате UTC.
+hwclock --systohc
+# 
 
 ### Specified Time
 echo ""
