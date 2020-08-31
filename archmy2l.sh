@@ -357,7 +357,7 @@ echo -e "${GREEN}=> ${BOLD}Это ваш часовой пояс (timezone) - '$
 #echo " => Это ваш часовой пояс (timezone) - '$timezone' "
 echo -e "${BLUE}:: ${BOLD}Ваши данные по дате, времени и часовому поясу: ${NC}"
 date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'    # одновременно отображает дату и часовой пояс
-
+hwclock --systohc 
 # -------------------------------------------------
 # Чтобы изменить часовой пояс, создайте символическую ссылку /etc/localtime на соответствующий часовой пояс в /usr/share/zoneinfo/:
 #ln -sf /usr/share/zoneinfo/zoneinfo /etc/localtime
