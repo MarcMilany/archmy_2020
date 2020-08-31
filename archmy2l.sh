@@ -187,6 +187,11 @@ hwclock --systohc
 #echo " hwclock --systohc --localtime "
 #hwclock --systohc --local
 
+echo -e "${BLUE}:: ${NC}Посмотрим статус службы NTP (NTP service)"
+#echo 'Посмотрим статус службы NTP (NTP service)'
+# Let's see the NTP service status
+timedatectl status
+
 ### Specified Time
 echo -e "${BLUE}:: ${NC}Посмотрим текущее состояние аппаратных и программных часов"
 #echo 'Посмотрим текущее состояние аппаратных и программных часов'
