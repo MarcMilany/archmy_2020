@@ -1298,7 +1298,8 @@ echo ""
 echo -e "${BLUE}:: ${NC}Посмотреть содержмое каталога /mnt."
 #echo 'Посмотреть содержмое каталога /mnt.'
 # View the contents of the /mnt folder.
-ls /mnt
+#ls /mnt
+ls -l /mnt
 
 ### Set Fstab
 echo ""
