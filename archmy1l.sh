@@ -228,12 +228,12 @@ echo ""
 echo -e "${BLUE}:: ${NC}Setting up the Russian language, changing the console font to one that supports Cyrillic for ease of use" 
 #echo 'Setting up the Russian language, changing the console font to one that supports Cyrillic for ease of use'
 # Настроим русский язык, изменим консольный шрифт на тот, который поддерживает кириллицу для удобства работы
-pacman -Sy terminus-font 
+pacman -Sy terminus-font --noconfirm
 ls /usr/share/kbd/consolefonts/
 loadkeys ru
 #setfont cyr-sun16
-setfont ter-v32b
-#ter-v16v
+#setfont ter-v32b
+setfont ter-v32v
 
 # Доступные макеты можно перечислить с помощью:
 #ls /usr/share/kbd/keymaps/**/*.map.gz
