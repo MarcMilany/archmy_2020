@@ -1027,7 +1027,14 @@ free -h
 # https://andreyex.ru/operacionnaya-sistema-linux/komanda-free-v-linux-s-primerami/
 # ============================================================================
 sleep 02
+
 echo ""
+echo -e "${BLUE}:: ${NC}Посмотреть содержмое каталога /mnt."
+#echo 'Посмотреть содержмое каталога /mnt.'
+# View the contents of the /mnt folder.
+#ls /mnt
+ls -l /mnt
+
 ### Замена исходного mirrorlist (зеркал для загрузки) на мой список серверов-зеркал
 #echo 'Замена исходного mirrorlist (зеркал для загрузки)'
 #Ставим зеркало от Яндекс
@@ -1042,6 +1049,7 @@ echo ""
 #sudo pacman -Sy
 # -------------------------------------------------------------
 
+echo ""
 echo -e "${BLUE}:: ${NC}Выбор серверов-зеркал для загрузки. Ставим зеркало от Яндекс"
 #echo 'Выбор серверов-зеркал для загрузки. Ставим зеркало от Яндекс'
 # The choice of mirror sites to download. Putting a mirror from Yandex
@@ -1307,12 +1315,6 @@ echo ""
 # Kernel (Русский)
 # https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 # ------------------------------------------------------------------
-
-echo -e "${BLUE}:: ${NC}Посмотреть содержмое каталога /mnt."
-#echo 'Посмотреть содержмое каталога /mnt.'
-# View the contents of the /mnt folder.
-#ls /mnt
-ls -l /mnt
 
 ### Set Fstab
 echo ""
