@@ -1300,7 +1300,6 @@ echo -e "${BLUE}:: ${NC}Посмотреть содержмое каталога
 # View the contents of the /mnt folder.
 ls /mnt
 
-
 ### Set Fstab
 echo ""
 echo -e "${GREEN}==> ${NC}Настройка системы, генерируем fstab" 
