@@ -334,7 +334,7 @@ echo ""
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 read -p " => Введите свою таймзону в формате Example/Example: " timezone 
 # Создадим ссылку на нужный файл временной зоны:
-#ln -sv /usr/share/zoneinfo/UTC /etc/localtime   UTC - и аппаратные, и программные часы идут по Гринвичу
+#ln -sv /usr/share/zoneinfo/UTC /etc/localtime   # UTC - и аппаратные, и программные часы идут по Гринвичу
 ln -svf /usr/share/zoneinfo/$timezone /etc/localtime
 #ln -sf /usr/share/zoneinfo/$timezone /etc/localtime
 # Создадим резервную копию текущего часового пояса:
