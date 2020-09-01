@@ -233,8 +233,9 @@ echo -e "${BLUE}:: ${NC}Setting up the Russian language, changing the console fo
 loadkeys ru
 #setfont cyr-sun16
 #setfont ter-v16b
+#setfont ter-v24b
 setfont ter-v32b
-
+###setfont ter-v16v
 
 # Доступные макеты можно перечислить с помощью:
 #ls /usr/share/kbd/keymaps/**/*.map.gz
