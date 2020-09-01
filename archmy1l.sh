@@ -237,8 +237,8 @@ echo -e "${BLUE}:: ${NC}Setting up the Russian language, changing the console fo
 loadkeys ru
 #setfont cyr-sun16
 #setfont ter-v16b
-# Можно увеличить немного шрифт:
-# Просмотреть и отредактировать файл archmy1l.
+# Можно увеличить немного шрифт!
+# Просмотреть и отредактировать файл archmy1l:
 # Справка: Файл откроется через редактор <nano>, если нужно отредактировать двигаемся стрелочками вниз-вверх, и правим нужную вам строку. После чего Ctrl-O для сохранения жмём Enter, далее Ctrl-X. Или (Ctrl+X и Y и Enter).
 setfont ter-v20b
 #setfont ter-v22b
