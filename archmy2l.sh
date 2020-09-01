@@ -1557,6 +1557,10 @@ echo ""
 echo -e "${BLUE}:: ${NC}Подключаем Networkmanager в автозагрузку"
 # echo " Подключаем Networkmanager в автозагрузку "	
 systemctl enable NetworkManager
+echo " NetworkManager успешно добавлен в автозагрузку "
+#systemctl start NetworkManager
+echo " Посмотрим статус активности NetworkManager "
+systemctl status NetworkManager
  elif [[ $i_network  == 0 ]]; then
 echo " Установка NetworkManager пропущена "
  fi
