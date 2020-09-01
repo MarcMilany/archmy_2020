@@ -1559,9 +1559,6 @@ echo -e "${BLUE}:: ${NC}Подключаем Networkmanager в автозагр�
 # echo " Подключаем Networkmanager в автозагрузку "	
 systemctl enable NetworkManager
 echo " NetworkManager успешно добавлен в автозагрузку "
-#systemctl start NetworkManager
-echo " Посмотрим статус активности NetworkManager "
-systemctl status NetworkManager
  elif [[ $i_network  == 0 ]]; then
 echo " Установка NetworkManager пропущена "
  fi
@@ -1601,15 +1598,10 @@ do
 done
 if [[ $x_dhcpcd == 1 ]]; then
 systemctl enable dhcpcd
-echo " Dhcpcd успешно добавлен в автозагрузку "
-#systemctl start dhcpcd 
-echo " Посмотрим статус активности Dhcpcd "
-systemctl status dhcpcd   
+echo " Dhcpcd успешно добавлен в автозагрузку "  
 elif [[ $x_dhcpcd == 0 ]]; then
   echo ' Dhcpcd не включен в автозагрузку, при необходиости это можно будет сделать уже в установленной системе '
 fi
-#systemctl disable dhcpcd
-#systemctl status dhcpcd
 
 ### Install NTFS support "NTFS file support (Windows Drives)"
 echo ""
