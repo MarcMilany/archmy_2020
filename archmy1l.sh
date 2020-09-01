@@ -224,6 +224,7 @@ echo -e "${BLUE}:: ${NC}The determination of the final access rights"
 # Для суперпользователя (root) umask по умолчанию равна 0022
 umask     #umask 0022      # используется для определения конечных прав доступа
 pacman -Sy terminus-font --noconfirm
+#pacman -Syy terminus-font
 #ls /usr/share/kbd/consolefonts/   # посмотреть список шрифтов
 # Или так:
 #cd /usr/share/kbd/consolefonts
@@ -238,7 +239,7 @@ loadkeys ru
 #setfont ter-v16b
 #setfont ter-v24b
 #setfont ter-v32b    # чтобы шрифт стал побольше
-###setfont ter-v16v
+
 
 # Доступные макеты можно перечислить с помощью:
 #ls /usr/share/kbd/keymaps/**/*.map.gz
