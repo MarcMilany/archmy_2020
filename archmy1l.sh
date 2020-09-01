@@ -1034,6 +1034,7 @@ echo -e "${BLUE}:: ${NC}Посмотреть содержмое каталога
 # View the contents of the /mnt folder.
 #ls /mnt
 ls -l /mnt
+sleep 02
 
 ### Замена исходного mirrorlist (зеркал для загрузки) на мой список серверов-зеркал
 #echo 'Замена исходного mirrorlist (зеркал для загрузки)'
