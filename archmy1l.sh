@@ -223,17 +223,18 @@ echo -e "${BLUE}:: ${NC}The determination of the final access rights"
 # Определение окончательных прав доступа
 # Для суперпользователя (root) umask по умолчанию равна 0022
 umask     #umask 0022      # используется для определения конечных прав доступа
+pacman -Sy terminus-font --noconfirm
+ls /usr/share/kbd/consolefonts/
 
 echo ""
 echo -e "${BLUE}:: ${NC}Setting up the Russian language, changing the console font to one that supports Cyrillic for ease of use" 
 #echo 'Setting up the Russian language, changing the console font to one that supports Cyrillic for ease of use'
 # Настроим русский язык, изменим консольный шрифт на тот, который поддерживает кириллицу для удобства работы
-pacman -Sy terminus-font --noconfirm
-ls /usr/share/kbd/consolefonts/
 loadkeys ru
 #setfont cyr-sun16
-#setfont ter-v32b
-setfont ter-v32v
+#setfont ter-v16b
+setfont ter-v32b
+
 
 # Доступные макеты можно перечислить с помощью:
 #ls /usr/share/kbd/keymaps/**/*.map.gz
