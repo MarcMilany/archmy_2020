@@ -241,6 +241,15 @@ setfont cyr-sun16
 # loadkeys de-latin1
 # Консольные шрифты находятся внутри /usr/share/kbd/consolefonts/и также могут быть установлены с помощью setfont. 
 # ===================================================================
+### ==== Engllish loadkeys =====
+#loadkeys us
+#setfont ter-v16b #pacman -S terminus-font --noconfirm
+#pacman -Sy terminus-font
+#pacman -Sy terminus-font --noconfirm
+#cd /usr/share/kbd/consolefonts
+#ls
+#setfont ter-v32b   # чтобы шрифт стал побольше
+# -----------------------------------------------------------------
 
 #echo ""
 echo -e "${CYAN}==> ${NC}Добавим русскую локаль в систему установки"
