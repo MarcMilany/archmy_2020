@@ -236,10 +236,10 @@ echo -e "${BLUE}:: ${NC}Setting up the Russian language, changing the console fo
 # Настроим русский язык, изменим консольный шрифт на тот, который поддерживает кириллицу для удобства работы
 loadkeys ru
 #setfont cyr-sun16
+setfont sun12x22
 #setfont ter-v16b
 #setfont ter-v24b
 #setfont ter-v32b    # чтобы шрифт стал побольше
-
 
 # Доступные макеты можно перечислить с помощью:
 #ls /usr/share/kbd/keymaps/**/*.map.gz
