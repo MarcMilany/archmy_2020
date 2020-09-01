@@ -333,7 +333,8 @@ echo " Укажите вашу (timezone), как это показано выш
 echo ""
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 read -p " => Введите свою таймзону в формате Example/Example: " timezone 
-# Создадим ссылку на нужный файл временной зоны:   
+# Создадим ссылку на нужный файл временной зоны:
+ln -sv /usr/share/zoneinfo/UTC /etc/localtime   
 ln -svf /usr/share/zoneinfo/$timezone /etc/localtime
 #ln -sf /usr/share/zoneinfo/$timezone /etc/localtime
 # Создадим резервную копию текущего часового пояса:
