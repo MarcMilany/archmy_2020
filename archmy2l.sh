@@ -1600,7 +1600,10 @@ do
 done
 if [[ $x_dhcpcd == 1 ]]; then
 systemctl enable dhcpcd
-echo " Dhcpcd успешно добавлен в автозагрузку "    
+echo " Dhcpcd успешно добавлен в автозагрузку "
+#systemctl start dhcpcd 
+echo " Посмотрим статус активности Dhcpcd "
+systemctl status dhcpcd   
 elif [[ $x_dhcpcd == 0 ]]; then
   echo ' Dhcpcd не включен в автозагрузку, при необходиости это можно будет сделать уже в установленной системе '
 fi
