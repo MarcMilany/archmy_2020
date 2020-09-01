@@ -1032,9 +1032,8 @@ echo ""
 echo -e "${BLUE}:: ${NC}Посмотреть содержмое каталога /mnt."
 #echo 'Посмотреть содержмое каталога /mnt.'
 # View the contents of the /mnt folder.
-#ls /mnt
-ls -l /mnt
-sleep 02
+ls /mnt
+#ls -l /mnt
 
 ### Замена исходного mirrorlist (зеркал для загрузки) на мой список серверов-зеркал
 #echo 'Замена исходного mirrorlist (зеркал для загрузки)'
