@@ -1573,6 +1573,7 @@ echo -e "${BLUE}:: ${NC}Ставим шрифты"
 # Put the fonts
 pacman -S ttf-liberation ttf-dejavu --noconfirm 
 pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-hanazono --noconfirm  # opendesktop-fonts 
+pacman -S ttf-anonymous-pro --noconfirm  # Семейство из четырех шрифтов фиксированной ширины, разработанных специально с учетом кодирования
 pacman -S ttf-fireflysung ttf-sazanami --noconfirm  # -китайские иероглифы
 
 echo ""
