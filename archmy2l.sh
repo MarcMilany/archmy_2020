@@ -1597,7 +1597,7 @@ do
     :
 done
 if [[ $x_dhcpcd == 1 ]]; then
-systemctl enable dhcpcd
+systemctl enable dhcpcd   # для активации проводных соединений
 echo " Dhcpcd успешно добавлен в автозагрузку "  
 elif [[ $x_dhcpcd == 0 ]]; then
   echo ' Dhcpcd не включен в автозагрузку, при необходиости это можно будет сделать уже в установленной системе '
@@ -1843,6 +1843,7 @@ echo -e "${MAGENTA}==> ${BOLD}После перезагрузки и входа 
 echo -e "${MAGENTA}==> ${BOLD}Если у Вас беспроводное соединение, запустите nmtui и подключитесь к сети. ${NC}"
 #echo 'Если у Вас беспроводное соединение, запустите nmtui и подключитесь к сети.'
 # If you have a wireless connection, launch nmtui and connect to the network.
+# nmcli dev wifi connect имя_точки password пароль - для подключения к вайфаю
 
 echo -e "${YELLOW}==> ...${NC}"
 echo -e "${BLUE}:: ${NC}Если хотите подключить AUR, установить дополнительный софт (пакеты), установить мои конфиги XFCE, тогда после перезагрузки и входа в систему выполните команду:"
