@@ -1212,6 +1212,7 @@ echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
 #pacman -Syy
 pacman -Sy   #--noconfirm --noprogressbar --quiet
 #pacman -Syy --noconfirm --noprogressbar --quiet
+#pacman -Syu --noconfirm --noprogressbar --quiet
 # ------------------------------------------------------------
 # --noconfirm      не спрашивать каких-либо подтверждений
 # --noprogressbar  не показывать статус прогресса при загрузке 
