@@ -225,6 +225,9 @@ echo -e "${BLUE}:: ${NC}The determination of the final access rights"
 umask     #umask 0022      # используется для определения конечных прав доступа
 pacman -Sy terminus-font --noconfirm
 #pacman -Syy terminus-font
+# Пакет kbd предоставляет инструменты для изменения шрифта виртуальной консоли и сопоставления шрифтов.
+# Доступные шрифты сохраняются в /usr/share/kbd/consolefonts/каталоге.
+# Шрифты оканчивающиеся на .psfu или .psfu.gz, имеют встроенную карту перевода Unicode.
 #ls /usr/share/kbd/consolefonts/   # посмотреть список шрифтов
 # Или так:
 #cd /usr/share/kbd/consolefonts
