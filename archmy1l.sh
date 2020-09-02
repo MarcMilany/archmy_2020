@@ -225,6 +225,7 @@ echo -e "${BLUE}:: ${NC}The determination of the final access rights"
 umask     #umask 0022      # используется для определения конечных прав доступа
 pacman -Sy terminus-font --noconfirm
 #pacman -Syy terminus-font
+# Семейство из четырех шрифтов фиксированной ширины, разработанных специально с учетом кодирования
 # Пакет kbd предоставляет инструменты для изменения шрифта виртуальной консоли и сопоставления шрифтов.
 # Доступные шрифты сохраняются в /usr/share/kbd/consolefonts/каталоге.
 # Шрифты оканчивающиеся на .psfu или .psfu.gz, имеют встроенную карту перевода Unicode.
@@ -237,6 +238,7 @@ echo ""
 echo -e "${BLUE}:: ${NC}Setting up the Russian language, changing the console font to one that supports Cyrillic for ease of use" 
 #echo 'Setting up the Russian language, changing the console font to one that supports Cyrillic for ease of use'
 # Настроим русский язык, изменим консольный шрифт на тот, который поддерживает кириллицу для удобства работы
+# curl -L ${baseurl}/lng/${sel} | sed '/^#/ d'
 loadkeys ru
 setfont cyr-sun16
 #setfont ter-v16b
@@ -273,6 +275,8 @@ setfont cyr-sun16
 echo -e "${CYAN}==> ${NC}Добавим русскую локаль в систему установки"
 #echo 'Добавим русскую локаль в систему установки'
 # Adding a Russian locale to the installation system
+#cat /etc/locale.gen | grep ""#${locale}""
+#sed -i "/#${locale}/s/^#//g" /etc/locale.gen
 sed -i 's/#ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale.gen
 #nano /etc/locale.gen
 # В файле /etc/locale.gen раскомментируйте (уберите # вначале) строку #ru_RU.UTF-8 UTF-8
@@ -286,6 +290,7 @@ sleep 01
 echo -e "${BLUE}:: ${NC}Указываем язык системы"
 #echo 'Указываем язык системы'
 # Specify the system language
+#export LANG=${locale}
 #echo 'LANG="ru_RU.UTF-8"' > /etc/locale.conf
 export LANG=ru_RU.UTF-8
 #export LANG=en_US.UTF-8
