@@ -244,6 +244,7 @@ echo -e "${BLUE}:: ${NC}Setting up the Russian language, changing the console fo
 #echo 'Setting up the Russian language, changing the console font to one that supports Cyrillic for ease of use'
 # Настроим русский язык, изменим консольный шрифт на тот, который поддерживает кириллицу для удобства работы
 # curl -L ${baseurl}/lng/${sel} | sed '/^#/ d'
+# ls /usr/share/kbd/keymaps/**/*.map.gz  # посмотреть список доступных раскладок
 loadkeys ru
 setfont cyr-sun16
 #setfont ter-v16b
@@ -256,7 +257,7 @@ setfont cyr-sun16
 #setfont ter-v32b    # чтобы шрифт стал побольше
 
 # Доступные макеты можно перечислить с помощью:
-#ls /usr/share/kbd/keymaps/**/*.map.gz
+#ls /usr/share/kbd/keymaps/**/*.map.gz  # посмотреть список доступных раскладок
 ### ==== Engllish loadkeys =====
 #loadkeys us
 #setfont ter-v16b #pacman -S terminus-font --noconfirm
