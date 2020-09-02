@@ -224,11 +224,12 @@ echo -e "${BLUE}:: ${NC}The determination of the final access rights"
 # Для суперпользователя (root) umask по умолчанию равна 0022
 umask     #umask 0022      # используется для определения конечных прав доступа
 
-echo -e "${BLUE}:: ${NC}The determination of the final access rights"
-#echo 'The determination of the final access rights'
-# Определение окончательных прав доступа
+echo -e "${BLUE}:: ${NC}Install the Terminus font"
+#echo 'Install the Terminus font'
+# Установим шрифт Terminus
 pacman -Sy terminus-font --noconfirm
 #pacman -Syy terminus-font
+
 # Семейство из четырех шрифтов фиксированной ширины, разработанных специально с учетом кодирования
 # Пакет kbd предоставляет инструменты для изменения шрифта виртуальной консоли и сопоставления шрифтов.
 # Доступные шрифты сохраняются в /usr/share/kbd/consolefonts/каталоге.
