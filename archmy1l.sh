@@ -233,7 +233,7 @@ pacman -Sy ttf-anonymous-pro --noconfirm  # Семейство из четыре
 # Доступные шрифты сохраняются в /usr/share/kbd/consolefonts/каталоге.
 # Шрифты оканчивающиеся на .psfu или .psfu.gz, имеют встроенную карту перевода Unicode.
 # Пакет kbd предоставляет инструменты для изменения шрифта виртуальной консоли и сопоставления шрифтов.
-#ls /usr/share/kbd/consolefonts/   # посмотреть список консольных шрифтов
+ls /usr/share/kbd/consolefonts/   # посмотреть список консольных шрифтов
 # Или так:
 #cd /usr/share/kbd/consolefonts
 #ls
