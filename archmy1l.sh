@@ -15,7 +15,7 @@ EDITOR=nano
 #EDITOR=nano visudo
 
 ### Installer default language (Язык установки по умолчанию)
-ARCHMY1_LANG="russian"
+ARCHMY1_LANG="russian"   
 #ARCHMY2_LANG="russian"
 #ARCHMY3_LANG="russian"
 #ARCHMY4_LANG="russian"
