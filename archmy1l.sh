@@ -229,11 +229,10 @@ echo -e "${BLUE}:: ${NC}Install the Terminus font"
 # Установим шрифт Terminus
 pacman -Sy terminus-font --noconfirm
 #pacman -Syy terminus-font
-pacman -Sy ttf-anonymous-pro --noconfirm  # Семейство из четырех шрифтов фиксированной ширины, разработанных специально с учетом кодирования
 # Доступные шрифты сохраняются в /usr/share/kbd/consolefonts/каталоге.
 # Шрифты оканчивающиеся на .psfu или .psfu.gz, имеют встроенную карту перевода Unicode.
 # Пакет kbd предоставляет инструменты для изменения шрифта виртуальной консоли и сопоставления шрифтов.
-ls /usr/share/kbd/consolefonts/   # посмотреть список консольных шрифтов
+#ls /usr/share/kbd/consolefonts/   # посмотреть список консольных шрифтов
 # Или так:
 #cd /usr/share/kbd/consolefonts
 #ls
