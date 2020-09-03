@@ -1661,7 +1661,7 @@ elif [[ $prog_set == 1 ]]; then
  echo " Создание каталогов успешно выполнено "
 # Совет. Для принудительного создания каталогов с английскими именами LC_ALL=C xdg-user-dirs-update --force можно использовать.
 elif [[ $prog_set == 2 ]]; then
-  mkdir /home/$username/{Downloads,Music,Pictures,Videos,Documents,time}   
+  mkdir /home/$username/{Рабочий стол,Загрузки,Шаблоны,Общедоступные,Документы,Музыка,Изображения,Видео}   
   chown -R $username:users  /home/$username/{Рабочий стол,Загрузки,Шаблоны,Общедоступные,Документы,Музыка,Изображения,Видео}
 > /home/$username/.config/user-dirs.dirs
 cat <<EOF >>/home/$username/.config/user-dirs.dirs
@@ -1690,8 +1690,8 @@ cat <<EOF >>/home/$username/.config/user-dirs.locale
 ru_RU
 
 EOF
-#  mkdir /home/$username/{Downloads,Music,Pictures,Videos,Documents,time}   
-#  chown -R $username:users  /home/$username/{Downloads,Music,Pictures,Videos,Documents,time}
+#  mkdir /home/$username/{Desktop,Download,Templates,Publicshare,Documents,Music,Pictures,Videos,time}   
+#  chown -R $username:users  /home/$username/{Desktop,Download,Templates,Publicshare,Documents,Music,Pictures,Videos,time}
   echo " Создание каталогов успешно выполнено "
 fi
 clear
