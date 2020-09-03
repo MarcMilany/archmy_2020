@@ -148,7 +148,7 @@ set > old_vars.log
 APPNAME="arch_fast_install"
 VERSION="v1.6 LegasyBIOS Update"
 BRANCH="master"
-AUTHOR="ordanax"
+AUTHOR="ordanax_and_poruncov"
 LICENSE="GNU General Public License 3.0"
 
 ### Description (Описание)
