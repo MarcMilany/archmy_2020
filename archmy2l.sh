@@ -1655,7 +1655,6 @@ elif [[ $prog_set == 1 ]]; then
 elif [[ $prog_set == 2 ]]; then
   mkdir /home/$username/{Downloads,Music,Pictures,Videos,Documents,time}   
   chown -R $username:users  /home/$username/{Downloads,Music,Pictures,Videos,Documents,time}
-#exit
 fi
 clear
 # --------------------------------------------------------------
