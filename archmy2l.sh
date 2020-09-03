@@ -1303,12 +1303,17 @@ clear
 ###### 2 Вариант установки Xorg (иксов).Установка X сервера 
 
 echo ""
+echo -e "${CYAN}
+  <<< Важно! Вы можете выбрать другое DE (среду, окружение рабочего стола), из представленных далее в скрипте. >>>
+${NC}"
+
+#echo ""
 echo -e "${GREEN}==> ${NC}Ставим DE (графическое окружение) Xfce."
 echo " DE (от англ. desktop environment - среда рабочего стола), это обёртка для ядра Linux, предоставляющая основные функции дистрибутива в удобном для конечного пользователя наглядном виде (окна, кнопочки, стрелочки и пр.). "
 #echo -e "${BLUE}:: ${NC}Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce"
 #echo 'Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce'
 # Put DE (from the English desktop environment-desktop environment) Xfce
-echo -e "${YELLOW}:: ${CYAN}Важно! Вы можете выбрать другое DE (среду, окружение рабочего стола), из представленных далее в скрипте. ${NC}"
+echo -e "${YELLOW}:: ${BOLD}Важно! Вы можете выбрать другое DE (среду, окружение рабочего стола), из представленных далее в скрипте. ${NC}"
 # You can choose a different DE (environment, desktop environment) from the ones shown below in the script!
 echo -e "${MAGENTA}=> ${BOLD}Есть два варианта установки Xfce (окружение рабочего стола): ${NC}"
 echo " Давайте проанализируем действия, которые будут выполняться. "
