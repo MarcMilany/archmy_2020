@@ -381,6 +381,8 @@ date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'    # одновременно отобра�
 # https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%82%D0%B8%D0%BD%D0%B5%D0%BD%D1%82
 # Список часовых поясов базы данных tz:
 # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+# Символические и жесткие ссылки Linux:
+# https://losst.ru/simvolicheskie-i-zhestkie-ssylki-linux
 # ===============================================================
 ### Specified Time
 echo -e "${BLUE}:: ${NC}Синхронизируем аппаратное время с системным"
