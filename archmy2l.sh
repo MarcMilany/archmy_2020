@@ -1702,7 +1702,7 @@ VIDEOS=Videos
 
 EOF
 
-#  mkdir /home/$username/{Desktop,Downloads,Templates,Publicshare,Documents,Music,Pictures,Videos,time}   
+  mkdir /home/$username/{Downloads,Templates,Publicshare,Documents,Music,Pictures,Videos,time}   
   chown -R $username:users  /home/$username/{Desktop,Downloads,Templates,Publicshare,Documents,Music,Pictures,Videos,time}
   echo " Создание каталогов успешно выполнено "
 fi
