@@ -1663,6 +1663,45 @@ elif [[ $prog_set == 1 ]]; then
 elif [[ $prog_set == 2 ]]; then
   mkdir /home/$username/{Рабочий стол,Загрузки,Шаблоны,Общедоступные,Документы,Музыка,Изображения,Видео}   
   chown -R $username:users  /home/$username/{Рабочий стол,Загрузки,Шаблоны,Общедоступные,Документы,Музыка,Изображения,Видео}
+> /etc/xdg/user-dirs.conf
+cat <<EOF >>/etc/xdg/user-dirs.conf
+
+# This controls the behaviour of xdg-user-dirs-update which is run on user login
+# You can also have per-user config in ~/.config/user-dirs.conf, or specify
+# the XDG_CONFIG_HOME and/or XDG_CONFIG_DIRS to override this
+#
+
+enabled=True
+
+# This sets the filename encoding to use. You can specify an explicit
+# encoding, or "locale" which means the encoding of the users locale
+# will be used
+filename_encoding=UTF-8
+
+EOF
+
+> /etc/xdg/user-dirs.defaults
+cat <<EOF >>/etc/xdg/user-dirs.defaults
+
+# Default settings for user directories
+#
+# The values are relative pathnames from the home directory and
+# will be translated on a per-path-element basis into the users locale
+DESKTOP=Desktop
+DOWNLOAD=Downloads
+TEMPLATES=Templates
+PUBLICSHARE=Public
+DOCUMENTS=Documents
+MUSIC=Music
+PICTURES=Pictures
+VIDEOS=Videos
+# Another alternative is:
+#MUSIC=Documents/Music
+#PICTURES=Documents/Pictures
+#VIDEOS=Documents/Videos
+
+EOF
+
 > /home/$username/.config/user-dirs.dirs
 cat <<EOF >>/home/$username/.config/user-dirs.dirs
 
@@ -1690,6 +1729,7 @@ cat <<EOF >>/home/$username/.config/user-dirs.locale
 ru_RU
 
 EOF
+
 #  mkdir /home/$username/{Desktop,Download,Templates,Publicshare,Documents,Music,Pictures,Videos,time}   
 #  chown -R $username:users  /home/$username/{Desktop,Download,Templates,Publicshare,Documents,Music,Pictures,Videos,time}
   echo " Создание каталогов успешно выполнено "
