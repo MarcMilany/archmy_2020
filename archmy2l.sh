@@ -1651,10 +1651,12 @@ if [[ $prog_set == 0 ]]; then
 elif [[ $prog_set == 1 ]]; then
  sudo pacman -S xdg-user-dirs --noconfirm
  xdg-user-dirs-update 
+ echo " Создание каталогов успешно выполнено "
 # Совет. Для принудительного создания каталогов с английскими именами LC_ALL=C xdg-user-dirs-update --force можно использовать.
 elif [[ $prog_set == 2 ]]; then
   mkdir /home/$username/{Downloads,Music,Pictures,Videos,Documents,time}   
   chown -R $username:users  /home/$username/{Downloads,Music,Pictures,Videos,Documents,time}
+  echo " Создание каталогов успешно выполнено "
 fi
 clear
 # --------------------------------------------------------------
