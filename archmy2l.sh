@@ -1705,8 +1705,8 @@ EOF
   mkdir /home/$username/{Downloads,Templates,Publicshare,Documents,Music,Pictures,Videos,time}   
   chown -R $username:users  /home/$username/{Desktop,Downloads,Templates,Publicshare,Documents,Music,Pictures,Videos,time}
 
-> $(XDG_CONFIG_HOME)/user-dirs.dirs
-cat <<EOF >>$(XDG_CONFIG_HOME)/user-dirs.dirs
+> ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs
+cat <<EOF >>${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs
 
 # This file is written by xdg-user-dirs-update
 # If you want to change or add directories, just edit the line you're
