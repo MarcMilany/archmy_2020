@@ -1612,20 +1612,52 @@ echo -e "${BLUE}:: ${NC}Монтирование разделов NTFS и соз
 # NTFS support (optional)
 sudo pacman -S ntfs-3g --noconfirm
 
+clear
 echo ""
-echo -e "${BLUE}:: ${NC}Создаём нужные директории (Downloads,Music,Pictures,Videos,Documents)"
+echo -e "${GREEN}==> ${NC}Создаём папки в директории пользователя (Downloads,Music,Pictures,Videos,Documents). ${NC}"
+#echo -e "${BLUE}:: ${NC}Создаём нужные директории (Downloads,Music,Pictures,Videos,Documents)"
 #echo 'Создаём нужные директории (Downloads,Music,Pictures,Videos,Documents)'
 # Creating the necessary directories (Downloads,Music,Pictures,Videos,Documents)
-sudo pacman -S xdg-user-dirs --noconfirm
-xdg-user-dirs-update 
+echo " Создание полного набора локализованных пользовательских каталогов по умолчанию (Рабочий стол, Загрузки, Шаблоны, Общедоступные, Документы, Музыка, Изображения, Видео) в пределах "HOME" каталога. Созданные папки будут находиться на языке указанной вами локализации системы. "
+echo " Давайте проанализируем действия, которые выполняются. "
+# Let's analyze the actions that are being performed.
+echo " 1 - Создание каталогов по умолчанию с помощью (xdg-user-dirs), тогда укажите вариант "1". "
+echo " xdg-user-dirs - это инструмент, помогающий создать и управлять "хорошо известными" пользовательскими каталогами, такими как папка рабочего стола, папка с музыкой и т.д.. Он также выполняет локализацию (то есть перевод) имен файлов. "
+echo " Большинство файловых менеджеров обозначают пользовательские каталоги XDG специальными значками. "
+echo " 2 - Создание каталогов по умолчанию с помощью (mkdir и chown), тогда укажите вариант "2". " 
+echo " Команда mkdir - создаёт пользовательские каталоги, а команда chown -R, --recursive - рекурсивная обработка всех подкаталогов (при создании файла ему тот пользователь, от имени которого он был создан становится его владельцем, а группой устанавливается основная группа владельца). "
+echo " 3(0) - Если Вам не нужны папки в директории пользователя, или в дальнейшем уже в установленной системе, Вы сами создадите папки, тогда укажите "0". " 
+echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# Be careful! If you doubt your actions, think again...
+echo ""
+while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+# read -p " 1 - Создание каталогов с помощью (xdg-user-dirs), 2 - Создание каталогов с помощью (mkdir и chown), 0 - Пропустить создание каталогов: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p " 
+    1 - Создание каталогов с помощью (xdg-user-dirs),    2 - Создание каталогов с помощью (mkdir и chown), 
+
+    0 - Пропустить создание каталогов: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^120] ]]
+do
+    :
+done
+if [[ $prog_set == 0 ]]; then
+  echo ""  
+  echo ' Создание каталогов пропущено. '
+elif [[ $prog_set == 1 ]]; then
+ sudo pacman -S xdg-user-dirs --noconfirm
+ xdg-user-dirs-update 
+# Совет. Для принудительного создания каталогов с английскими именами LC_ALL=C xdg-user-dirs-update --force можно использовать.
+elif [[ $prog_set == 2 ]]; then
+  mkdir /home/$username/{Downloads,Music,Pictures,Videos,Documents,time}   
+  chown -R $username:users  /home/$username/{Downloads,Music,Pictures,Videos,Documents,time}
+exit
+fi
+clear
 # --------------------------------------------------------------
-# Создаем папки музыка, видео и т.д. в директории пользователя
-# mkdir /home/$username/{Downloads,Music,Pictures,Videos,Documents,time}   
-# chown -R $username:users  /home/$username/{Downloads,Music,Pictures,Videos,Documents,time}
-# mkdir - создаем папки, chown -R, --recursive - рекурсивная обработка всех подкаталогов
-# --------------------------------------------------------------
-# XDG: Пользовательские папки
-# xdg-user-dirs – инструмент, который помогает в управлении «всем известными» папками пользователей, такими, как папка Рабочий стол и папка с музыкальными файлами. Также он управляет локализацией (т.е. переводом) имён этих папок.
+
 # https://wiki.archlinux.org/index.php/XDG_user_directories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 # https://wiki.yola.ru/xdg/user-dirs
 # ==============================================================
