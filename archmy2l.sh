@@ -1704,6 +1704,34 @@ EOF
 
   mkdir /home/$username/{Downloads,Templates,Publicshare,Documents,Music,Pictures,Videos,time}   
   chown -R $username:users  /home/$username/{Desktop,Downloads,Templates,Publicshare,Documents,Music,Pictures,Videos,time}
+
+> $(XDG_CONFIG_HOME)/user-dirs.dirs
+cat <<EOF >>$(XDG_CONFIG_HOME)/user-dirs.dirs
+
+# This file is written by xdg-user-dirs-update
+# If you want to change or add directories, just edit the line you're
+# interested in. All local changes will be retained on the next run.
+# Format is XDG_xxx_DIR="$HOME/yyy", where yyy is a shell-escaped
+# homedir-relative path, or XDG_xxx_DIR="/yyy", where /yyy is an
+# absolute path. No other format is supported.
+# 
+XDG_DESKTOP_DIR="$HOME/Рабочий стол"
+XDG_DOWNLOAD_DIR="$HOME/Загрузки"
+XDG_TEMPLATES_DIR="$HOME/Шаблоны"
+XDG_PUBLICSHARE_DIR="$HOME/Общедоступные"
+XDG_DOCUMENTS_DIR="$HOME/Документы"
+XDG_MUSIC_DIR="$HOME/Музыка"
+XDG_PICTURES_DIR="$HOME/Изображения"
+XDG_VIDEOS_DIR="$HOME/Видео"
+
+EOF
+#-----------------------------------------------------------------
+> $(XDG_CONFIG_HOME)/user-dirs.locale
+cat <<EOF >>$(XDG_CONFIG_HOME)/user-dirs.locale
+
+ru_RU
+
+EOF
   echo " Создание каталогов успешно выполнено "
 fi
 clear
