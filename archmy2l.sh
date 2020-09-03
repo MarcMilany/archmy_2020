@@ -1614,10 +1614,12 @@ sudo pacman -S ntfs-3g --noconfirm
 
 clear
 echo ""
-echo -e "${GREEN}==> ${NC}Создаём папки в директории пользователя (Downloads,Music,Pictures,Videos,Documents). ${NC}"
-#echo -e "${BLUE}:: ${NC}Создаём нужные директории (Downloads,Music,Pictures,Videos,Documents)"
-#echo 'Создаём нужные директории (Downloads,Music,Pictures,Videos,Documents)'
-# Creating the necessary directories (Downloads,Music,Pictures,Videos,Documents)
+echo -e "${GREEN}==> ${NC}Создаём папки в директории пользователя (Downloads, Music, Pictures, Videos, Documents). ${NC}"
+#echo -e "${BLUE}:: ${NC}Создаём папки в директории пользователя (Downloads, Music, Pictures, Videos, Documents)"
+#echo 'Создаём папки в директории пользователя (Downloads, Music, Pictures, Videos, Documents)'
+# Creating folders in the user's directory (Downloads, Music, Pictures, Videos, Documents)
+echo -e "${CYAN}:: ${NC}По умолчанию в системе Arch Linux в каталоге "HOME" НЕ создаются папки (Рабочий стол, Загрузки, Шаблоны, Общедоступные, Документы, Музыка, Изображения, Видео). "
+echo -e "${CYAN}:: ${NC}Согласно философии Arch, вместо удаления ненужных пакетов, папок, пользователю предложена возможность построить систему, начиная с минимальной основы без каких-либо заранее выбранных шаблонов... "
 echo " Создание полного набора локализованных пользовательских каталогов по умолчанию (Рабочий стол, Загрузки, Шаблоны, Общедоступные, Документы, Музыка, Изображения, Видео) в пределах "HOME" каталога. Созданные папки будут находиться на языке указанной вами локализации системы. "
 echo " Давайте проанализируем действия, которые выполняются. "
 # Let's analyze the actions that are being performed.
