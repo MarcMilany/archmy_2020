@@ -1702,8 +1702,8 @@ VIDEOS=Videos
 
 EOF
 
-> ~/home/.config/user-dirs.dirs
-cat <<EOF >>~/home/.config/user-dirs.dirs
+> ~/.config/user-dirs.dirs
+cat <<EOF >>~/.config/user-dirs.dirs
 
 # This file is written by xdg-user-dirs-update
 # If you want to change or add directories, just edit the line you're
@@ -1723,8 +1723,8 @@ XDG_VIDEOS_DIR="$HOME/Видео"
 
 EOF
 #-----------------------------------------------------------------
-> ~/home/.config/user-dirs.locale
-cat <<EOF >>~/home/.config/user-dirs.locale
+> ~/.config/user-dirs.locale
+cat <<EOF >>~/.config/user-dirs.locale
 
 ru_RU
 
