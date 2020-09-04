@@ -1702,9 +1702,9 @@ VIDEOS=Videos
 
 EOF
 
-#  mkdir /home/$username/{Downloads,Templates,Publicshare,Documents,Music,Pictures,Videos,time} 
-  > /home/$username/.config/user-dirs.dirs
-cat <<EOF >>/home/$username/.config/user-dirs.dirs
+  mkdir /home/$username/{Downloads,Templates,Publicshare,Documents,Music,Pictures,Videos,time} 
+  > /mnt/user-dirs.dirs
+cat <<EOF >>/mnt/user-dirs.dirs
 
 # This file is written by xdg-user-dirs-update
 # If you want to change or add directories, just edit the line you're
@@ -1723,12 +1723,12 @@ XDG_PICTURES_DIR="$HOME/Изображения"
 XDG_VIDEOS_DIR="$HOME/Видео"
 
 EOF
-#  chown -R $username:users  /home/$username/{Desktop,Downloads,Templates,Publicshare,Documents,Music,Pictures,Videos,time}
 
+  chown -R $username:users  /home/$username/{Desktop,Downloads,Templates,Publicshare,Documents,Music,Pictures,Videos,time}
 
 #-----------------------------------------------------------------
-> /home/$username/.config/user-dirs.locale
-cat <<EOF >>/home/$username/.config/user-dirs.locale
+> /mnt/user-dirs.locale
+cat <<EOF >>/mnt/user-dirs.locale
 
 ru_RU
 
@@ -1748,6 +1748,7 @@ fi
 
 EOF
 
+chmod +x /usr/bin/xdg-user-dir
 xdg-user-dirs-update 
   echo " Создание каталогов успешно выполнено "
 fi
