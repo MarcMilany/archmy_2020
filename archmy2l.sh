@@ -1702,7 +1702,6 @@ VIDEOS=Videos
 
 EOF
 
-  mkdir /home/$username/{Downloads,Templates,Publicshare,Documents,Music,Pictures,Videos,time} 
   > /mnt/user-dirs.dirs
 cat <<EOF >>/mnt/user-dirs.dirs
 
@@ -1724,15 +1723,17 @@ XDG_VIDEOS_DIR="$HOME/Видео"
 
 EOF
 
-  chown -R $username:users  /home/$username/{Desktop,Downloads,Templates,Publicshare,Documents,Music,Pictures,Videos,time}
-
-#-----------------------------------------------------------------
 > /mnt/user-dirs.locale
 cat <<EOF >>/mnt/user-dirs.locale
 
 ru_RU
 
 EOF
+
+  mkdir /home/$username/{Downloads,Templates,Publicshare,Documents,Music,Pictures,Videos,time} 
+  chown -R $username:users  /home/$username/{Desktop,Downloads,Templates,Publicshare,Documents,Music,Pictures,Videos,time}
+
+#-----------------------------------------------------------------
 
 > /usr/bin/xdg-user-dir
 cat <<EOF >>/usr/bin/xdg-user-dir
