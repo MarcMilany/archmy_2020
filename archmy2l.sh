@@ -1656,7 +1656,7 @@ if [[ $prog_set == 0 ]]; then
   echo ""  
   echo ' Создание каталогов пропущено. '
 elif [[ $prog_set == 1 ]]; then
- sudo pacman -S xdg-user-dirs --noconfirm
+ pacman -S xdg-user-dirs --noconfirm
  xdg-user-dirs-update 
  echo " Создание каталогов успешно выполнено "
 # Совет. Для принудительного создания каталогов с английскими именами LC_ALL=C xdg-user-dirs-update --force можно использовать.
@@ -1703,8 +1703,8 @@ VIDEOS=Videos
 EOF
 
   mkdir /home/$username/{Downloads,Templates,Publicshare,Documents,Music,Pictures,Videos,time} 
-  > /home/$username/{/.config}/user-dirs.dirs
-cat <<EOF >>/home/$username/{/.config}/user-dirs.dirs
+  > /home/$username/.config/user-dirs.dirs
+cat <<EOF >>/home/$username/.config/user-dirs.dirs
 
 # This file is written by xdg-user-dirs-update
 # If you want to change or add directories, just edit the line you're
@@ -1727,12 +1727,28 @@ EOF
 
 
 #-----------------------------------------------------------------
-> ${XDG_CONFIG_HOME:-~/.config}/user-dirs.locale && . ${XDG_CONFIG_HOME:-~/.config}/user-dirs.locale
-cat <<EOF >>${XDG_CONFIG_HOME:-~/.config}/user-dirs.locale && . ${XDG_CONFIG_HOME:-~/.config}/user-dirs.locale
+> /home/$username/.config/user-dirs.locale
+cat <<EOF >>/home/$username/.config/user-dirs.locale
 
 ru_RU
 
 EOF
+
+> /usr/bin/xdg-user-dir
+cat <<EOF >>/usr/bin/xdg-user-dir
+
+#!/bin/sh
+
+test -f ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs && . ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs
+if [ "x$1" = "xDESKTOP" ]; then
+  eval echo \${XDG_${1}_DIR:-$HOME/Desktop}
+else
+  eval echo \${XDG_${1}_DIR:-$HOME}
+fi
+
+EOF
+
+xdg-user-dirs-update 
   echo " Создание каталогов успешно выполнено "
 fi
 clear
