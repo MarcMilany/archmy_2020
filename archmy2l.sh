@@ -1702,7 +1702,7 @@ VIDEOS=Videos
 
 EOF
 
-  mkdir /home/$username/{Downloads,Templates,Publicshare,Documents,Music,Pictures,Videos,time} 
+#  mkdir /home/$username/{Downloads,Templates,Publicshare,Documents,Music,Pictures,Videos,time} 
   > /home/$username/.config/user-dirs.dirs
 cat <<EOF >>/home/$username/.config/user-dirs.dirs
 
@@ -1723,7 +1723,7 @@ XDG_PICTURES_DIR="$HOME/Изображения"
 XDG_VIDEOS_DIR="$HOME/Видео"
 
 EOF
-  chown -R $username:users  /home/$username/{Desktop,Downloads,Templates,Publicshare,Documents,Music,Pictures,Videos,time}
+#  chown -R $username:users  /home/$username/{Desktop,Downloads,Templates,Publicshare,Documents,Music,Pictures,Videos,time}
 
 
 #-----------------------------------------------------------------
