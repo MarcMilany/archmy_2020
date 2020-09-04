@@ -1657,6 +1657,7 @@ if [[ $prog_set == 0 ]]; then
 elif [[ $prog_set == 1 ]]; then
  pacman -S xdg-user-dirs --noconfirm
  xdg-user-dirs-update 
+ echo "" 
  echo " Создание каталогов успешно выполнено "
 fi
 clear
