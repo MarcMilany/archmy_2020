@@ -57,7 +57,7 @@ umask 0022
 # Эта команда остановит выполнение сценария после сбоя команды и будет отправлен код ошибки:
 #set -e
 #set -e -u
-#set -e "\n${RED}Error: ${YELLOW}${*}${NC}"
+set -e "\n${RED}Error: ${YELLOW}${*}${NC}"
 # ----------------------------------------------------------------------
 # Если этот параметр '-e' задан, оболочка завершает работу, когда простая команда в списке команд завершается ненулевой (FALSE). Это не делается в ситуациях, когда код выхода уже проверен (if, while, until,||, &&)
 # Встроенная команда set:
@@ -1633,22 +1633,22 @@ echo " Давайте проанализируем действия, котор�
 echo " 1 - Создание каталогов по умолчанию с помощью (xdg-user-dirs), тогда укажите вариант "1". "
 echo " xdg-user-dirs - это инструмент, помогающий создать и управлять "хорошо известными" пользовательскими каталогами, такими как папка рабочего стола, папка с музыкой и т.д.. Он также выполняет локализацию (то есть перевод) имен файлов. "
 echo " Большинство файловых менеджеров обозначают пользовательские каталоги XDG специальными значками. "
-echo " 2 - Создание каталогов по умолчанию с помощью (mkdir и chown), тогда укажите вариант "2". " 
-echo " Команда mkdir - создаёт пользовательские каталоги, а команда chown -R, --recursive - рекурсивная обработка всех подкаталогов (при создании файла ему тот пользователь, от имени которого он был создан становится его владельцем, а группой устанавливается основная группа владельца). "
-echo " 3(0) - Если Вам не нужны папки в директории пользователя, или в дальнейшем уже в установленной системе, Вы сами создадите папки, тогда укажите "0". " 
+
+echo "  "
+echo " 2(0) - Если Вам не нужны папки в директории пользователя, или в дальнейшем уже в установленной системе, Вы сами создадите папки, тогда укажите "0". " 
 echo -e "${YELLOW}==> ${NC} Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте..."
 # Be careful! If you doubt your actions, think again...
 echo ""
 while 
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-# read -p " 1 - Создание каталогов с помощью (xdg-user-dirs), 2 - Создание каталогов с помощью (mkdir и chown), 0 - Пропустить создание каталогов: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+# read -p " 1 - Создание каталогов с помощью (xdg-user-dirs), 0 - Пропустить создание каталогов: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p " 
-    1 - Создание каталогов с помощью (xdg-user-dirs),    2 - Создание каталогов с помощью (mkdir,chown), 
+    1 - Создание каталогов с помощью (xdg-user-dirs), 
 
     0 - Пропустить создание каталогов: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^120] ]]
+    [[ "$prog_set" =~ [^10] ]]
 do
     :
 done
@@ -1660,98 +1660,6 @@ elif [[ $prog_set == 1 ]]; then
  xdg-user-dirs-update 
  echo " Создание каталогов успешно выполнено "
 # Совет. Для принудительного создания каталогов с английскими именами LC_ALL=C xdg-user-dirs-update --force можно использовать.
-elif [[ $prog_set == 2 ]]; then
-#  mkdir /home/$username/{Рабочий стол,Загрузки,Шаблоны,Общедоступные,Документы,Музыка,Изображения,Видео}   
-#  chown -R $username:users  /home/$username/{Рабочий стол,Загрузки,Шаблоны,Общедоступные,Документы,Музыка,Изображения,Видео}
-> /etc/xdg/user-dirs.conf
-cat <<EOF >>/etc/xdg/user-dirs.conf
-
-# This controls the behaviour of xdg-user-dirs-update which is run on user login
-# You can also have per-user config in ~/.config/user-dirs.conf, or specify
-# the XDG_CONFIG_HOME and/or XDG_CONFIG_DIRS to override this
-#
-
-enabled=True
-
-# This sets the filename encoding to use. You can specify an explicit
-# encoding, or "locale" which means the encoding of the users locale
-# will be used
-filename_encoding=UTF-8
-
-EOF
-
-> /etc/xdg/user-dirs.defaults
-cat <<EOF >>/etc/xdg/user-dirs.defaults
-
-# Default settings for user directories
-#
-# The values are relative pathnames from the home directory and
-# will be translated on a per-path-element basis into the users locale
-DESKTOP=Desktop
-DOWNLOAD=Downloads
-TEMPLATES=Templates
-PUBLICSHARE=Public
-DOCUMENTS=Documents
-MUSIC=Music
-PICTURES=Pictures
-VIDEOS=Videos
-# Another alternative is:
-#MUSIC=Documents/Music
-#PICTURES=Documents/Pictures
-#VIDEOS=Documents/Videos
-
-EOF
-
-  > /mnt/user-dirs.dirs
-cat <<EOF >>/mnt/user-dirs.dirs
-
-# This file is written by xdg-user-dirs-update
-# If you want to change or add directories, just edit the line you're
-# interested in. All local changes will be retained on the next run.
-# Format is XDG_xxx_DIR="$HOME/yyy", where yyy is a shell-escaped
-# homedir-relative path, or XDG_xxx_DIR="/yyy", where /yyy is an
-# absolute path. No other format is supported.
-# 
-XDG_DESKTOP_DIR="$HOME/Рабочий стол"
-XDG_DOWNLOAD_DIR="$HOME/Загрузки"
-XDG_TEMPLATES_DIR="$HOME/Шаблоны"
-XDG_PUBLICSHARE_DIR="$HOME/Общедоступные"
-XDG_DOCUMENTS_DIR="$HOME/Документы"
-XDG_MUSIC_DIR="$HOME/Музыка"
-XDG_PICTURES_DIR="$HOME/Изображения"
-XDG_VIDEOS_DIR="$HOME/Видео"
-
-EOF
-
-> /mnt/user-dirs.locale
-cat <<EOF >>/mnt/user-dirs.locale
-
-ru_RU
-
-EOF
-
-  mkdir /home/$username/{Downloads,Templates,Publicshare,Documents,Music,Pictures,Videos,time} 
-  chown -R $username:users  /home/$username/{Desktop,Downloads,Templates,Publicshare,Documents,Music,Pictures,Videos,time}
-
-#-----------------------------------------------------------------
-
-> /usr/bin/xdg-user-dir
-cat <<EOF >>/usr/bin/xdg-user-dir
-
-#!/bin/sh
-
-test -f ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs && . ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs
-if [ "x$1" = "xDESKTOP" ]; then
-  eval echo \${XDG_${1}_DIR:-$HOME/Desktop}
-else
-  eval echo \${XDG_${1}_DIR:-$HOME}
-fi
-
-EOF
-
-chmod +x /usr/bin/xdg-user-dir
-xdg-user-dirs-update 
-  echo " Создание каталогов успешно выполнено "
 fi
 clear
 # --------------------------------------------------------------
