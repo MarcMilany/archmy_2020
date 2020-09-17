@@ -2192,7 +2192,6 @@ echo -e "${BLUE}:: ${NC}Добавим в файл /etc/arch-release ссылк�
 # Add a link to the release information to the /etc/arch-release file
 > /etc/arch-release
 cat <<EOF >>/etc/arch-release
-
 Arch Linux release
 #../usr/lib/os-release
 #Request for release information (Запрос информации о релизе)
@@ -2211,8 +2210,7 @@ echo -e "${BLUE}:: ${NC}Создадим файл /etc/lsb-release (информ
 #echo 'Создадим файл /etc/lsb-release (информация о релизе)'
 # Create the file /etc/lsb-release (information about release)
 > /etc/lsb-release
-cat <<EOF >>/etc/lsb-release
- 
+cat <<EOF >>/etc/lsb-release 
 NAME="Arch Linux"
 PRETTY_NAME="Arch Linux"
 ID=arch
