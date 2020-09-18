@@ -2195,8 +2195,9 @@ cat <<EOF >>/etc/arch-release
 
 Arch Linux release
 #../usr/lib/os-release
-# cat /etc/*-release 
-
+#cat /etc/arch-release
+#cat /etc/*-release
+ 
 EOF
 
 # ==================================================================
