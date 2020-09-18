@@ -2185,6 +2185,31 @@ mv /etc/sysctl.conf /etc/sysctl.d/99-sysctl.conf
 # Чтобы сохранить изменения между перезагрузками, добавьте или измените соответствующие строки /etc/sysctl.d/99-sysctl.conf или другой подходящий файл параметров в /etc/sysctl.d/.
 # ==================================================================
 
+echo -e "${BLUE}:: ${NC}Добавим в файл /etc/arch-release ссылку на сведение о release"
+#echo 'Наведём красоту в файле /etc/issue'
+# Let's put the beauty in the /etc/issue file
+> /etc/arch-release
+cat <<EOF >>/etc/arch-release
+
+#Arch Linux release
+#../usr/lib/os-release
+# cat /etc/*-release 
+NAME="Arch Linux"
+PRETTY_NAME="Arch Linux"
+ID=arch
+DISTRIB_RELEASE=rolling
+DISTRIB_DESCRIPTION="Arch Linux"
+ANSI_COLOR="38;2;23;147;209"
+HOME_URL="https://www.archlinux.org/"
+DOCUMENTATION_URL="https://wiki.archlinux.org/"
+SUPPORT_URL="https://bbs.archlinux.org/"
+BUG_REPORT_URL="https://bugs.archlinux.org/"
+LOGO=archlinux
+
+EOF
+
+# ==================================================================
+
 #read -p "Введите допольнительные пакеты которые вы хотите установить: " packages 
 #pacman -S $packages --noconfirm
 
