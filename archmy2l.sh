@@ -1389,7 +1389,7 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done
-if [[ $prog_set== 1 ]]; then
+elif [[ $prog_set== 1 ]]; then
 echo " Установка Xfce + Goodies for Xfce "     
 #pacman -S xfce4 xfce4-goodies
 pacman -S xfce4 xfce4-goodies --noconfirm
@@ -1404,7 +1404,6 @@ pacman -S xfce4 --noconfirm
 clear 
 echo ""
 echo " DE (среда рабочего стола) Xfce успешно установлено " 
-fi
 fi
 
 ### Log in without DM (Display manager) 
