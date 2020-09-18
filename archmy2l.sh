@@ -2195,7 +2195,7 @@ cat <<EOF >>/etc/arch-release
 
 Arch Linux release
 #../usr/lib/os-release
-#Request for release information 
+#Request for release information (Запрос информации о релизе)
 #cat /etc/arch-release
 #cat /etc/*-release
 #cat /etc/issue
