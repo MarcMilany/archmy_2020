@@ -2211,15 +2211,12 @@ EOF
 
 # ==================================================================
 
-echo -e "${BLUE}:: ${NC}Добавим в файл /etc/arch-release ссылку на сведение о release"
+echo -e "${BLUE}:: ${NC}Создадим файл /etc/lsb-release (сведение о release)"
 #echo 'Наведём красоту в файле /etc/issue'
 # Let's put the beauty in the /etc/issue file
 > /etc/arch-release
 cat <<EOF >>/etc/arch-release
-
-#Arch Linux release
-#../usr/lib/os-release
-# cat /etc/*-release 
+ 
 NAME="Arch Linux"
 PRETTY_NAME="Arch Linux"
 ID=arch
