@@ -1408,7 +1408,7 @@ echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile
 echo ""
 echo " Действия по настройке автовхода без DM (Display manager) выполнены "
 fi
-pacman -R konqueror --noconfirm
+pacman -R konqueror --noconfirm  # Файловый менеджер и веб-браузер KDE
 clear
 elif [[ $x_de == 2 ]]; then
 echo " Установка Xfce + Goodies for Xfce "     
