@@ -1356,40 +1356,6 @@ if [[ $x_de == 0 ]]; then
 echo ""
 echo " Установка DE (среда рабочего стола) была пропущена "
 elif [[ $x_de == 1 ]]; then
-clear
-echo ""
-echo -e "${GREEN}==> ${NC}Ставим DE (графическое окружение) Xfce."
-echo -e "${CYAN}:: ${BOLD}Xfce воплощает традиционную философию UNIX модульности и возможности повторного использования. ${NC}"
-echo " Он состоит из ряда компонентов, которые обеспечивают полную функциональность, которую можно ожидать от современной среды рабочего стола, оставаясь при этом относительно легким. "
-#echo -e "${BLUE}:: ${NC}Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce"
-#echo 'Ставим DE (от англ. desktop environment — среда рабочего стола) Xfce'
-# Put DE (from the English desktop environment-desktop environment) Xfce
-echo -e "${MAGENTA}=> ${BOLD}Есть два варианта установки Xfce (окружение рабочего стола): ${NC}"
-echo " Давайте проанализируем действия, которые будут выполняться. "
-# Let's analyze the actions that will be performed.
-echo " 1 - Если Вы устанавливаете Xfce пакет (xfce4) + "Goodies for Xfce" расширения для окружения рабочего стола Xfce4 пакет (xfce4-goodies), то выбирайте вариант - "1". "
-echo -e "${CYAN}:: ${NC}Проект "Goodies for Xfce" включает в себя дополнительное программное обеспечение и художественные работы, связанные с рабочим столом Xfce, но не являющиеся частью официального релиза. Тем самым происходит Усовершенствования среды рабочего стола Xfce4."
-echo " 2 - Если Вы хотите поставить просто окружение рабочего стола Xfce пакет (xfce4), без каких либо дополнений для окружения рабочего стола, то выбирайте вариант - "2". "
-echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
-# Be careful! The Xfce installation process was fully automatic after the installation option you selected. In any situation, the choice is always yours.
-echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
-#echo 'Действия выполняются в указанном порядке'
-echo ""
-# Теперь приступим к установке Xfce.
-while
-# echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-# read -p " 1 - Устанавливаем Xfce + Goodies for Xfce, 2 - Устанавливаем просто Xfce, 0 - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
-echo " Действия ввода, выполняется сразу после нажатия клавиши "
-    read -n1 -p " 
-    1 - Устанавливаем Xfce + Goodies for Xfce,     
-
-    2 - Устанавливаем просто Xfce: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
-    echo ''
-    [[ "$prog_set" =~ [^12] ]]  #-ge
-do
-    :
-done
-elif [[ $prog_set== 1 ]]; then
 echo " Установка Xfce + Goodies for Xfce "     
 #pacman -S xfce4 xfce4-goodies
 pacman -S xfce4 xfce4-goodies --noconfirm
@@ -1397,14 +1363,6 @@ pacman -S xfce4 xfce4-goodies --noconfirm
 clear
 echo ""
 echo " DE (среда рабочего стола) Xfce успешно установлено "  
-elif [[ $prog_set == 2 ]]; then
-echo " Установка Xfce "     
-#pacman -S xfce4
-pacman -S xfce4 --noconfirm
-clear 
-echo ""
-echo " DE (среда рабочего стола) Xfce успешно установлено " 
-fi
 
 ### Log in without DM (Display manager) 
 echo ""
