@@ -1381,7 +1381,7 @@ echo ""
 # Теперь приступим к установке Xfce.
 while
 # echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-# read -p " 1 - Устанавливаем Xfce + Goodies for Xfce, 2 - Устанавливаем просто Xfce, 0 - Пропустить установку: " x_xfce  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+# read -p " 1 - Устанавливаем Xfce + Goodies for Xfce, 2 - Устанавливаем просто Xfce, 0 - Пропустить установку: " x_dexfce  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p " 
     1 - Устанавливаем Xfce + Goodies for Xfce,     
@@ -1393,6 +1393,7 @@ do
     :
 done
 if [[ $x_dexfce== 1 ]]; then
+echo " Установка Xfce + Goodies for Xfce "     
 #pacman -S xfce4 xfce4-goodies
 pacman -S xfce4 xfce4-goodies --noconfirm
 # pacman -S xfce4 xfce4-goodies pavucontrol --noconfirm
@@ -1400,6 +1401,7 @@ clear
 echo ""
 echo " DE (среда рабочего стола) Xfce успешно установлено "  
 elif [[ $x_dexfce == 2 ]]; then
+echo " Установка Xfce "     
 #pacman -S xfce4
 pacman -S xfce4 --noconfirm
 clear 
