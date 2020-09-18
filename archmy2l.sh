@@ -2195,9 +2195,14 @@ cat <<EOF >>/etc/arch-release
 
 Arch Linux release
 #../usr/lib/os-release
+#Request for release information 
 #cat /etc/arch-release
 #cat /etc/*-release
- 
+#cat /etc/issue
+#cat /etc/lsb-release
+#cat /etc/lsb-release | cut -c21-90
+#cat /proc/version
+
 EOF
 
 # ==================================================================
