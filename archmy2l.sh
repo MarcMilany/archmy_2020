@@ -1327,7 +1327,7 @@ echo ""
 # Теперь приступим к установке DE/WM.
 while
 # echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-# read -p " 1 - Xfce, 2 - KDE(Plasma), 3 - GNOME, 4 - LXDE, 5 - Deepin, 6 - Mate, 7 - Lxqt, 8 - i3 (  конфиги стандартные, возможна установка с автовходом ), 0 - Пропустить установку: " x_de  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+# read -p " 1 - KDE(Plasma), 2 - Xfce, 3 - GNOME, 4 - LXDE, 5 - Deepin, 6 - Mate, 7 - Lxqt, 8 - i3 (  конфиги стандартные, возможна установка с автовходом ), 0 - Пропустить установку: " x_de  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p " 
     1 - KDE(Plasma) - Plasma предлагает все инструменты, необходимые для современного настольного компьютера
@@ -1356,74 +1356,6 @@ if [[ $x_de == 0 ]]; then
 echo ""
 echo " Установка DE (среда рабочего стола) была пропущена "
 elif [[ $x_de == 1 ]]; then
-echo " Установка Xfce + Goodies for Xfce "     
-#pacman -S xfce4 xfce4-goodies
-pacman -S xfce4 xfce4-goodies --noconfirm
-# pacman -S xfce4 xfce4-goodies pavucontrol --noconfirm
-clear
-echo ""
-echo " DE (среда рабочего стола) Xfce успешно установлено "  
-
-### Log in without DM (Display manager) 
-echo ""
-echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Display manager) менеджера входа в Xfce"
-#echo -e "${BLUE}:: ${NC}Настройка автовхода без DM (Display manager) менеджера входа в Xfce"
-#echo 'Настройка автовхода без DM (Display manager) менеджера входа в Xfce'
-# Configuring AutoFill without the DM (Display manager) of the Xfce login Manager
-echo " Файл ~/.xinitrc представляет собой шелл-скрипт передаваемый xinit посредством команды startx.   "
-echo " Он используется для запуска Среды рабочего стола, Оконного менеджера и других программ запускаемых с X сервером (например запуска демонов, и установки переменных окружений. "
-echo " Программа xinit запускает Xorg сервер и работает в качестве программы первого клиента на системах не использующих Экранный менеджер. "
-# The ~/.xinitrc file is a shell script passed to xinit via the startx command. It is used to run the desktop Environment, Window Manager, and other programs that run with the X server (for example, running daemons, and setting environment variables. The xinit program starts the Xorg server and runs as the first client program on systems that do not use the Screen Manager.
-echo " Давайте проанализируем действия, которые выполняются. "
-# Let's analyze the actions that are being performed.
-echo " 1 - Если вам нужен автовход без DM (Display manager) тогда укажите "1". "
-echo " Вы хотите автологин определенного пользователя, автоматический запуск Иксов, запуск окружения (KDE, XFCE, Gnom и т.д.). "
-echo " Всё можно сделать без использования DM (например SDDM, LightDM и т.д.), поскольку реализация автозагрузки окружения реализован через startx. "
-echo " 2(0) - Если Вы по прежнему желаете использовать DM (например SDDM, LightDM и т.д.), или в дальнейшем захотите установить, и использовать 2(е) окружение (Т.е. DE - KDE, XFCE, Gnom и т.д.), тогда укажите "0" . " 
-echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-# Be careful! If you doubt your actions, think again...
-echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
-#echo 'Действия выполняются в указанном порядке'
-# Actions are performed in the order listed
-echo ""
-while
-# echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "    
-# read -p  " 1 - Да нужен автовход без DM, 0 - Нет буду использовать DM: " i_xfce   # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
-    echo " Действия ввода, выполняется сразу после нажатия клавиши " 
-    read -n1 -p  "
-    1 - Да нужен автовход без DM (Display manager), 
-
-    0 - Нет буду использовать DM (Display manager): " i_xfce   # sends right after the keypress; # отправляет сразу после нажатия клавиши   
-    echo ''
-    [[ "$i_xfce" =~ [^10] ]]
-do
-    :
-done
-if [[ $i_xfce  == 0 ]]; then
-echo " Буду использовать DM (Display manager) "
-elif [[ $i_xfce  == 1 ]]; then
-# Поскольку реализация автозагрузки окружения реализована через startx, 
-# то у Вас должен быть установлен пакет: xorg-xinit    
-pacman -S xorg-xinit --noconfirm
-# Если файл .xinitrc не существует, то копируем его из /etc/X11/xinit/xinitrc
-# в папку пользователя cp /etc/X11/xinit/xinitrc ~/.xinitrc
-cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc # копируем файл .xinitrc в каталог пользователя
-chown $username:users /home/$username/.xinitrc  # даем доступ пользователю к файлу
-chmod +x /home/$username/.xinitrc   # получаем права на исполнения скрипта
-sed -i 52,55d /home/$username/.xinitrc  # редактируем файл -> и прописываем команду на запуск
-# # Данные блоки нужны для того, чтобы StartX автоматически запускал нужное окружение, соответственно в секции Window Manager of your choice раскомментируйте нужную сессию
-echo "exec startxfce4 " >> /home/$username/.xinitrc  
-mkdir /etc/systemd/system/getty@tty1.service.d/  # создаём папку
-echo " [Service] " > /etc/systemd/system/getty@tty1.service.d/override.conf
-echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
-echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
-# Делаем автоматический запуск Иксов в нужной виртуальной консоли после залогинивания нашего пользователя
-echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile 
-echo ""
-echo " Действия по настройке автовхода без DM (Display manager) выполнены "
-fi
-clear
-elif [[ $x_de == 2 ]]; then
 echo " Установка KDE(Plasma) " 
 pacman -S  plasma plasma-meta plasma-pa plasma-desktop kde-system-meta kde-utilities-meta kio-extras kwalletmanager latte-dock  konsole  kwalletmanager --noconfirm
 clear 
