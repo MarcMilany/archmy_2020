@@ -2191,31 +2191,19 @@ echo -e "${BLUE}:: ${NC}Добавим в файл /etc/arch-release ссылк�
 > /etc/arch-release
 cat <<EOF >>/etc/arch-release
 
-#Arch Linux release
+Arch Linux release
 #../usr/lib/os-release
 # cat /etc/*-release 
-NAME="Arch Linux"
-PRETTY_NAME="Arch Linux"
-ID=arch
-DISTRIB_RELEASE=rolling
-DISTRIB_CODENAME="Arch"
-DISTRIB_DESCRIPTION="Arch Linux"
-ANSI_COLOR="38;2;23;147;209"
-HOME_URL="https://www.archlinux.org/"
-DOCUMENTATION_URL="https://wiki.archlinux.org/"
-SUPPORT_URL="https://bbs.archlinux.org/"
-BUG_REPORT_URL="https://bugs.archlinux.org/"
-LOGO=archlinux
 
 EOF
 
 # ==================================================================
 
-echo -e "${BLUE}:: ${NC}Создадим файл /etc/lsb-release (сведение о release)"
-#echo 'Наведём красоту в файле /etc/issue'
-# Let's put the beauty in the /etc/issue file
-> /etc/arch-release
-cat <<EOF >>/etc/arch-release
+echo -e "${BLUE}:: ${NC}Создадим файл /etc/lsb-release (информация о релизе)"
+#echo 'Создадим файл /etc/lsb-release (информация о релизе)'
+# Create the file /etc/lsb-release (information about release)
+> /etc/lsb-release
+cat <<EOF >>/etc/lsb-release
  
 NAME="Arch Linux"
 PRETTY_NAME="Arch Linux"
