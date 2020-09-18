@@ -2186,6 +2186,32 @@ mv /etc/sysctl.conf /etc/sysctl.d/99-sysctl.conf
 # ==================================================================
 
 echo -e "${BLUE}:: ${NC}Добавим в файл /etc/arch-release ссылку на сведение о release"
+#echo 'Добавим в файл /etc/arch-release ссылку на сведение о release'
+# Add a link to the release information to the /etc/arch-release file
+> /etc/arch-release
+cat <<EOF >>/etc/arch-release
+
+#Arch Linux release
+#../usr/lib/os-release
+# cat /etc/*-release 
+NAME="Arch Linux"
+PRETTY_NAME="Arch Linux"
+ID=arch
+DISTRIB_RELEASE=rolling
+DISTRIB_CODENAME="Arch"
+DISTRIB_DESCRIPTION="Arch Linux"
+ANSI_COLOR="38;2;23;147;209"
+HOME_URL="https://www.archlinux.org/"
+DOCUMENTATION_URL="https://wiki.archlinux.org/"
+SUPPORT_URL="https://bbs.archlinux.org/"
+BUG_REPORT_URL="https://bugs.archlinux.org/"
+LOGO=archlinux
+
+EOF
+
+# ==================================================================
+
+echo -e "${BLUE}:: ${NC}Добавим в файл /etc/arch-release ссылку на сведение о release"
 #echo 'Наведём красоту в файле /etc/issue'
 # Let's put the beauty in the /etc/issue file
 > /etc/arch-release
@@ -2198,6 +2224,7 @@ NAME="Arch Linux"
 PRETTY_NAME="Arch Linux"
 ID=arch
 DISTRIB_RELEASE=rolling
+DISTRIB_CODENAME="Arch"
 DISTRIB_DESCRIPTION="Arch Linux"
 ANSI_COLOR="38;2;23;147;209"
 HOME_URL="https://www.archlinux.org/"
