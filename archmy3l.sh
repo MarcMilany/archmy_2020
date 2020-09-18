@@ -12,8 +12,8 @@ EDITOR=nano
 
 ### Installer default language (Язык установки по умолчанию)
 #ARCHMY1_LANG="russian"
-ARCHMY2_LANG="russian"
-#ARCHMY3_LANG="russian"
+#ARCHMY2_LANG="russian"
+ARCHMY3_LANG="russian"
 #ARCHMY4_LANG="russian"
 
 script_path=$(readlink -f ${0%/*})
@@ -139,7 +139,6 @@ ${AUTHOR} ${RED}under ${LICENSE} ${GREEN}>>>${NC}"""
 
 ###################################################################
 
-# ============================================================================
 ### Warning (Предупреждение)
 _warning_banner() {
     echo -e "${YELLOW}
