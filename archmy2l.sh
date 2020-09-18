@@ -1388,7 +1388,7 @@ echo " Действия ввода, выполняется сразу после
 
     2 - Устанавливаем просто Xfce: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^12] ]]
+    [[ "$prog_set" =~ [^12] ]]  #-ge
 do
     :
 done
