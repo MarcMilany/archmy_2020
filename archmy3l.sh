@@ -1,69 +1,143 @@
 #!/bin/bash
-#
+#### Смотрите пометки (справочки) и доп.иформацию в самом скрипте! #### 
+
 apptitle="Arch Linux Fast Install v1.6 LegasyBIOS - Version: 2020.07.16.00.40.38 (GPLv3)"
-baseurl=https://raw.githubusercontent.com/MarcMilany/arch_2020/master/url%20links%20abbreviated/git%20url
+baseurl=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/url%20links%20abbreviated/git%20url
 cpl=0
 skipfont="0"
 fspkgs=""
-#
-# ============================================================================
-# Автоматическое обнаружение ошибок
-# Эта команда остановит выполнение сценария после сбоя команды и будет отправлен код ошибки
-set -e
+EDITOR=nano
+# Выполните команду с правами суперпользователя:
+#EDITOR=nano visudo
+
+### Installer default language (Язык установки по умолчанию)
+#ARCHMY1_LANG="russian"
+ARCHMY2_LANG="russian"
+#ARCHMY3_LANG="russian"
+#ARCHMY4_LANG="russian"
+
+script_path=$(readlink -f ${0%/*})
+
+umask 0022
+
+##################################################################
+##### <<<Arch Linux Fast Install LegasyBIOS (arch2020)>>>    #####
+##### Скрипты 'arch_2020' созданы на основе 2-х (скриптов):  #####
+#####   'ordanax/arch2018', и 'archlinux-script-install' -   #####
+##### (Poruncov,Grub-Legacy - 2020). При выполнении сценария #####
+##### (скрипта), Вы получаете возможность быстрой установки  #####
+#####  ArchLinux с вашими личными настройками (при условии,  #####
+##### что Вы его изменили под себя, в противном случае - с   #####
+##### моими настройками).                                    #####       
+#####  В скрипте прописана установка grub для LegasyBIOS, с  #####
+##### выбором DE/WM, а также DM (Менеджера входа), и т.д..   #####  
+##### Этот скрипт находится в процессе 'Внесение поправок в  ####
+#### наводку орудий по результатам наблюдений с наблюдате-   ####
+#### льных пунктов'.                                         ####
+#### Автор не несёт ответственности за любое нанесение вреда ####
+#### при использовании скрипта.                              ####
+#### Installation guide - Arch Wiki  (referance):            ####
+#### https://wiki.archlinux.org/index.php/Installation_guide ####
+#### Проект (project): https://github.com/ordanax/arch2018   ####
+#### Лицензия (license): LGPL-3.0                            #### 
+#### (http://opensource.org/licenses/lgpl-3.0.html           ####
+#### В разработке принимали участие (author) :               ####
+#### Алексей Бойко https://vk.com/ordanax                    ####
+#### Степан Скрябин https://vk.com/zurg3                     ####
+#### Михаил Сарвилин https://vk.com/michael170707            ####
+#### Данил Антошкин https://vk.com/danil.antoshkin           ####
+#### Юрий Порунцов https://vk.com/poruncov                   ####
+#### Jeremy Pardo (grm34) https://www.archboot.org/          ####
+#### Marc Milany - 'Не ищи меня 'Вконтакте',                 ####
+#####                в 'Одноклассниках'' нас нету, ...       ####
+#### Releases ArchLinux:                                     ####
+####    https://www.archlinux.org/releng/releases/           ####
+#################################################################
+
+# ======================================================================
+#echo 'Автоматическое обнаружение ошибок.'
+# Эта команда остановит выполнение сценария после сбоя команды и будет отправлен код ошибки:
+#set -e
+#set -e -u
+set -e "\n${RED}Error: ${YELLOW}${*}${NC}"
+# ----------------------------------------------------------------------
 # Если этот параметр '-e' задан, оболочка завершает работу, когда простая команда в списке команд завершается ненулевой (FALSE). Это не делается в ситуациях, когда код выхода уже проверен (if, while, until,||, &&)
 # Встроенная команда set:
 # https://www.sites.google.com/site/bashhackers/commands/set
-# ============================================================================
-#echo ""
-#echo "########################################################################"
-#echo "######    <<<Arch Linux Fast Install LegasyBIOS (arch2020)>>>     ######"
-#echo "####    Скрипты 'arch_2020' созданы на основе сценария (скрипта)    ####"
-#echo "#### 'ordanax/arch2018'. Скрипт (сценарий) archmy3 является         ####"
-#echo "### продолжением первой части скриптов (archmy1 и archmy2) из серии ####"
-#echo "#### 'arch_2020'. Для установки системы Arch'a' на PC (LegasyBIOS)  ####"
-#echo "#### с DE - рабочего стола Xfce.                                    ####"
-#echo "### В сценарии (скрипта) archmy3 прописана установка первоначально  ####" 
-#echo "#### необходимого софта (пакетов) и запуск необходимых служб.       ####"     
-#echo "#### При выполнении скрипта Вы получаете возможность быстрой        ####" 
-#echo "#### установки программ (пакетов) с вашими личными настройками      ####"
-#echo "#### (при условии, что Вы его изменили под себя, в противном случае ####"       
-#echo "#### с моими настройками).                                   ###########"  
-#echo "#### Этот скрипт находится в процессе 'Внесение поправок в   ####"
-#echo "#### наводку орудий по результатам наблюдений с наблюдате-   ####"
-#echo "#### льных пунктов'.                                         ####"
-#echo "#### Автор не несёт ответственности за любое нанесение вреда ####"
-#echo "#### при использовании скрипта.                              ####"
-#echo "#### Installation guide - Arch Wiki  (referance):            ####"
-#echo "#### https://wiki.archlinux.org/index.php/Installation_guide ####"
-#echo "#### Проект (project): https://github.com/ordanax/arch2018   ####"
-#echo "#### Лицензия (license): LGPL-3.0                            ####" 
-#echo "#### (http://opensource.org/licenses/lgpl-3.0.html           ####"
-#echo "#### В разработке принимали участие (author) :               ####"
-#echo "#### Алексей Бойко https://vk.com/ordanax                    ####"
-#echo "#### Степан Скрябин https://vk.com/zurg3                     ####"
-#echo "#### Михаил Сарвилин https://vk.com/michael170707            ####"
-#echo "#### Данил Антошкин https://vk.com/danil.antoshkin           ####"
-#echo "#### Юрий Порунцов https://vk.com/poruncov                   ####"
-#echo "#### Jeremy Pardo (grm34) https://www.archboot.org/          ####"
-#echo "#### Marc Milany - 'Не ищи меня 'Вконтакте',                 ####"
-#echo "####                в 'Одноклассниках'' нас нету, ...        ####"
-#echo "#### Releases ArchLinux:                                     ####"
-#echo "####    https://www.archlinux.org/releng/releases/           ####"
-#echo "#### <<<       Смотрите пометки в самом скрипте!         >>> ####" 
-#echo "#################################################################"
-#echo ""
-#sleep 4
-#clear
-#echo ""
-# ============================================================================
-### old_vars.log
-#set > old_vars.log
+# ======================================================================
+#####################################################
+### Help and usage (--help or -h) (Справка)
+_help() {
+    echo -e "${BLUE}
+Installation guide - Arch Wiki
+${BOLD}For more information, see the wiki: \
+${GREY}<https://wiki.archlinux.org/index.php/Installation_guide>${NC}"
+}
 
-#APPNAME="arch_fast_install"
-#VERSION="v1.6 LegasyBIOS"
-#BRANCH="master"
-#AUTHOR="ordanax"
-#LICENSE="GNU General Public License 3.0"
+### SHARED VARIABLES AND FUNCTIONS (ОБЩИЕ ПЕРЕМЕННЫЕ И ФУНКЦИИ)
+### Shell color codes (Цветовые коды оболочки)
+RED="\e[1;31m"; GREEN="\e[1;32m"; YELLOW="\e[1;33m"; GREY="\e[3;93m"
+BLUE="\e[1;34m"; CYAN="\e[1;36m"; BOLD="\e[1;37m"; MAGENTA="\e[1;35m"; NC="\e[0m"
+
+### Automatic error detection (Автоматическое обнаружение ошибок)
+_set() {
+    set [--abefhkmnptuvxBCHP] [-o option] [arg ...]
+}
+
+_set() {
+    set -e "\n${RED}Error: ${YELLOW}${*}${NC}"
+    _note "${MSG_ERROR}"
+    sleep 1; $$
+}
+  
+### Display install steps (Отображение шагов установки)
+_info() {
+    echo -e "${YELLOW}\n==> ${CYAN}${1}...${NC}"; sleep 1
+}
+
+### Download show progress bar only (Скачать показывать только индикатор выполнения)
+_wget() {
+    wget "${1}" --quiet --show-progress
+}
+
+### Execute action in chrooted environment (Выполнение действия в хромированной среде)
+_chroot() {
+    arch-chroot /mnt <<EOF "${1}"
+EOF
+}
+
+### Display error, cleanup and kill (Ошибка отображения, очистка и убийство)
+_error() {
+    echo -e "\n${RED}Error: ${YELLOW}${*}${NC}"
+    _note "${MSG_ERROR}"
+    sleep 1; _cleanup; _exit_msg; kill -9 $$
+}
+
+### Cleanup on keyboard interrupt (Очистка при прерывании работы клавиатуры)
+_trap() {
+trap '_error ${MSG_KEYBOARD}' 1 2 3 6
+}
+#trap "set -$-" RETURN; set +o nounset
+# Или
+#trap "set -${-//[is]}" RETURN; set +o nounset
+#..., устраняя недействительные флаги и действительно решая эту проблему!
+
+### Reboot with 10s timeout (Перезагрузка с таймаутом 10 секунд)
+_reboot() {
+    for (( SECOND=10; SECOND>=1; SECOND-- )); do
+        echo -ne "\r\033[K${GREEN}${MSG_REBOOT} ${SECOND}s...${NC}"
+        sleep 1
+    done
+    reboot; exit 0
+}
+
+### Say goodbye (Распрощаться)
+_exit_msg() {
+    echo -e "\n${GREEN}<<< ${BLUE}${APPNAME} ${VERSION} ${BOLD}by \
+${AUTHOR} ${RED}under ${LICENSE} ${GREEN}>>>${NC}"""
+}
+
+###################################################################
 
 # ============================================================================
 ### Warning (Предупреждение)
@@ -81,176 +155,6 @@ ${NC}
 Вы используйте его на свой страх и риск, или изменяйте под свои личные нужды. 
 В данный момент сценарий (скрипта) находится в процессе доработки по прописанию устанавливаемого софта (пакетов), и небольшой корректировке (Воен. Внесение поправок в наводку орудий по результатам наблюдений с наблюдательных пунктов).
 ${BLUE}===> ******************************************************* ${NC}"
-}
-
-# ============================================================================
-
-### Help and usage (--help or -h) (Справка)
-_help() {
-    echo -e "${BLUE}
-Installation guide - Arch Wiki
-
-    ${BOLD}Options${NC}
-        -h, --help          show this help message
-        -l, --lang          set installer language
-        -k, --keyboard      set keyboard layout
-
-    ${BOLD}Language${NC}
-        -l, --lang          english
-                            russian
-
-    ${BOLD}Keyboard${NC}
-        -k, --keyboard      keyboard layout
-                            (run loadkeys on start)
-                            (e.q., --keyboard fr)
-
-${BOLD}For more information, see the wiki: \
-${GREY}<https://wiki.archlinux.org/index.php/Installation_guide>${NC}"
-}
-
-### Installer default language (Язык установки по умолчанию)
-#ARCHMY1_LANG="russian"
-
-### SHARED VARIABLES AND FUNCTIONS (ОБЩИЕ ПЕРЕМЕННЫЕ И ФУНКЦИИ)
-### Shell color codes (Цветовые коды оболочки)
-RED="\e[1;31m"; GREEN="\e[1;32m"; YELLOW="\e[1;33m"; GREY="\e[3;93m"
-BLUE="\e[1;34m"; CYAN="\e[1;36m"; BOLD="\e[1;37m"; MAGENTA="\e[1;35m"; NC="\e[0m"
-
-# Вот список цветов, которые можно применять для подсветки синтаксиса в bash:
-# BLACK='\e[0;30m' GREEN='\e[0;32m' BLUE='\e[0;34m'    CYAN='\e[0;36m'
-# RED='\e[0;31m'   BROWN='\e[0;33m' MAGENTA='\e[0;35m' GRAY='\e[0;37m'
-# DEF='\e[0;39m'   'LRED='\e[1;31m    YELLOW='\e[1;33m' LMAGENTA='\e[1;35m' WHITE='\e[1;37m'
-# DGRAY='\e[1;30m'  LGREEN='\e[1;32m' LBLUE='\e[1;34m'  LCYAN='\e[1;36m'    NC='\e[0m' # No Color
-# Индивидуальные настройки подсветки синтаксиса для каждого пользователя можно настраивать в конфигурационном файле /home/$USER/.bashrc
-
-#----------------------------------------------------------------------------
-
-# Checking personal setting (Проверяйте ваши персональные настройки)
-### Display user entries (Отображение пользовательских записей ) 
-USER_ENTRIES=(USER_LANG TIMEZONE HOST_NAME USER_NAME LINUX_FW KERNEL \
-DESKTOP DISPLAY_MAN GREETER AUR_HELPER POWER GPU_DRIVER HARD_VIDEO)
-
-### Automatic error detection (Автоматическое обнаружение ошибок)
-_set() {
-    set [--abefhkmnptuvxBCHP] [-o option] [arg ...]
-}
-
-_set() {
-    set -e "\n${RED}Error: ${YELLOW}${*}${NC}"
-    _note "${MSG_ERROR}"
-    sleep 1; $$
-}
-
-### Display some notes (Дисплей некоторые заметки)
-_note() {
-    echo -e "${RED}\nNote: ${BLUE}${1}${NC}"
-}
-
-### Display install steps (Отображение шагов установки)
-_info() {
-    echo -e "${YELLOW}\n==> ${CYAN}${1}...${NC}"; sleep 1
-}
-
-### Ask some information (Спросите немного информации)
-_prompt() {
-    LENTH=${*}; COUNT=${#LENTH}
-    echo -ne "\n${YELLOW}==> ${GREEN}${1} ${RED}${2}"
-    echo -ne "${YELLOW}\n==> "
-    for (( CHAR=1; CHAR<=COUNT; CHAR++ )); do echo -ne "-"; done
-    echo -ne "\n==> ${NC}"
-}
-
-### Ask confirmation (Yes/No) (Запросите подтверждение (да / нет))
-_confirm() {
-    unset CONFIRM; COUNT=$(( ${#1} + 6 ))
-    until [[ ${CONFIRM} =~ ^(y|n|Y|N|yes|no|Yes|No|YES|NO)$ ]]; do
-        echo -ne "${YELLOW}\n==> ${GREEN}${1} ${RED}[y/n]${YELLOW}\n==> "
-        for (( CHAR=1; CHAR<=COUNT; CHAR++ )); do echo -ne "-"; done
-        echo -ne "\n==> ${NC}"
-        read -r CONFIRM
-    done
-}
-
-### Select an option (Выбрать параметр)
-_select() {
-    COUNT=0
-    echo -ne "${YELLOW}\n==> "
-    for ENTRY in "${@}"; do
-        echo -ne "${RED}[$(( ++COUNT ))] ${GREEN}${ENTRY} ${NC}"
-    done
-    LENTH=${*}; NUMBER=$(( ${#*} * 4 ))
-    COUNT=$(( ${#LENTH} + NUMBER + 1 ))
-    echo -ne "${YELLOW}\n==> "
-    for (( CHAR=1; CHAR<=COUNT; CHAR++ )); do echo -ne "-"; done
-    echo -ne "\n==> ${NC}"
-}
-
-### Download show progress bar only (Скачать показывать только индикатор выполнения)
-_wget() {
-    wget "${1}" --quiet --show-progress
-}
-
-### Execute action in chrooted environment (Выполнение действия в хромированной среде)
-_chroot() {
-    arch-chroot /mnt <<EOF "${1}"
-EOF
-}
-
-### Check command status and exit on error (Проверьте состояние команды и завершите работу с ошибкой)
-_check() {
-    "${@}"
-    local STATUS=$?
-    if [[ ${STATUS} -ne 0 ]]; then _error "${@}"; fi
-    return "${STATUS}"
-}
-
-### Display error, cleanup and kill (Ошибка отображения, очистка и убийство)
-_error() {
-    echo -e "\n${RED}Error: ${YELLOW}${*}${NC}"
-    _note "${MSG_ERROR}"
-    sleep 1; _cleanup; _exit_msg; kill -9 $$
-}
-
-### Cleanup on keyboard interrupt (Очистка при прерывании работы клавиатуры)
-trap '_error ${MSG_KEYBOARD}' 1 2 3 6
-#trap "set -$-" RETURN; set +o nounset
-# Или
-#trap "set -${-//[is]}" RETURN; set +o nounset
-#..., устраняя недействительные флаги и действительно решая эту проблему!
-
-### Delete sources and umount partitions (Удаление источников и размонтирование разделов)
-_cleanup() {
-    _info "${MSG_CLEANUP}"
-    SRC=(base bootloader desktop display firmware gpu_driver mirrorlist \
-mounting partitioning user desktop_apps display_apps gpu_apps system_apps \
-00-keyboard.conf language loader.conf timezone xinitrc xprofile \
-background.png Grub2-themes archboot* *.log english french german)
-
-    # Sources (rm) (Источники (rm))
-    for SOURCE in "${SRC[@]}"; do
-        if [[ -f "${SOURCE}" ]]; then rm -rfv "${SOURCE}"; fi
-    done
-
-    # Swap (swapoff) Своп (swapoff)
-    CHECK_SWAP=$( swapon -s ); if [[ ${CHECK_SWAP} ]]; then swapoff -av; fi
-
-    # Partitions (umount) Разделы (umount)
-    if mount | grep /mnt; then umount -Rfv /mnt; fi
-}
-
-### Reboot with 10s timeout (Перезагрузка с таймаутом 10 секунд)
-_reboot() {
-    for (( SECOND=10; SECOND>=1; SECOND-- )); do
-        echo -ne "\r\033[K${GREEN}${MSG_REBOOT} ${SECOND}s...${NC}"
-        sleep 1
-    done
-    reboot; exit 0
-}
-
-### Say goodbye (Распрощаться)
-_exit_msg() {
-    echo -e "\n${GREEN}<<< ${BLUE}${APPNAME} ${VERSION} ${BOLD}by \
-${AUTHOR} ${RED}under ${LICENSE} ${GREEN}>>>${NC}"""
 }
 
 # ============================================================================
