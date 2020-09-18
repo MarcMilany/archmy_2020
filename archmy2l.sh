@@ -2167,6 +2167,7 @@ cp /etc/sysctl.conf  /etc/sysctl.conf.back
 # Перемещаем и переименовываем исходный файл
 mv /etc/sysctl.conf /etc/sysctl.d/99-sysctl.conf
 # mv /etc/sysctl.conf.pacsave /etc/sysctl.d/99-sysctl.conf
+#mv /etc/sysctl.conf /etc/sysctl.d/99-sysctl-performance-tweaks.conf
 # Если в файл /etc/sysctl.conf не вносилось никаких изменений, то и делать ничего не нужно.
 # -----------------------------------------------------------------
 # Начиная с версии 207, systemd больше не будет применять настройки из файла /etc/sysctl.conf. Вместо этого будут использоваться файлы /etc/sysctl.d/*. Так-как настройки из нашего /etc/sysctl.conf из пакета procps-ng стали умолчаниями ядра, было решено отказаться от использования этого файла.
