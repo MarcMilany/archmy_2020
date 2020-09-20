@@ -416,7 +416,25 @@ echo " 3 - Установка 'AUR'-'pikaur' с помощью git clone, PKGBUI
 echo " Важно! Pikaur - идёт как зависимость для Octopi."
 echo " Будьте внимательны! В этом действии выбор остаётся за вами."
 # Be careful! In this action, the choice is yours.
-echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке"
+echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
+#echo 'Установка производится в порядке перечисления'
+# Installation Is performed in the order listed
+echo "" 
+while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#read -p " 1 - LightDM, 2 - LXDM, 3 - GDM, 4 - SDDM, 0 - Пропустить установку DM (Display manager): " i_dm  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - LightDM,     2 - LXDM,     3 - GDM,     4 - SDDM,
+
+    0 - Пропустить установку DM (Display manager): " i_dm  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_dm" =~ [^12340] ]]
+do
+    :
+done 
+if [[ $i_dm == 0 ]]; then
+
 
 sudo pacman -Syu
 wget git.io/yay-install.sh && sh yay-install.sh --noconfirm
