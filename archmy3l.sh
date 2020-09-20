@@ -404,12 +404,18 @@ echo -e "${MAGENTA}
 ${NC}"
 # Installing an Aur (Arch User Repository) - a repository where users upload scripts to install software.
 
-echo -e "${GREEN}==> ${NC}${BLUE}'Установка AUR Helper (yay)'${NC}"
-#echo 'Установка AUR Helper (yay)'
-# Installing AUR Helper (yay)
+echo -e "${GREEN}==> ${NC}Установка AUR Helper (yay) или (pikaur)"
+#echo 'Установка AUR Helper (yay) или (pikaur)'
+# Installing AUR Helper (yay) or (pikaur)
+echo -e "${YELLOW}==> ${BOLD}Важно! Pikaur - идёт как зависимость для Octopi. ${NC}"
+
+
+
 sudo pacman -Syu
 wget git.io/yay-install.sh && sh yay-install.sh --noconfirm
 echo " Установка AUR Helper (yay) завершена "
+# ------------------------------------------------------------
+# Скрипт yay-install.sh:
 #sudo pacman -S --noconfirm --needed wget curl git 
 #git clone https://aur.archlinux.org/yay-bin.git
 #cd yay-bin
