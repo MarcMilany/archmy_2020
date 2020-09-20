@@ -161,7 +161,7 @@ ${BLUE}===> ******************************************************* ${NC}"
 ### Display banner (Дисплей баннер)
 _warning_banner
 
-sleep 4
+sleep 5
 #echo -e "${MAGENTA}==> ${BOLD}Если у Вас беспроводное соединение, запустите nmtui и подключитесь к сети. ${NC}"
 #echo 'Если у Вас беспроводное соединение, запустите nmtui и подключитесь к сети.'
 # If you have a wireless connection, launch nmtui and connect to the network.
@@ -405,6 +405,7 @@ ${NC}"
 # Installing an Aur (Arch User Repository) - a repository where users upload scripts to install software.
 
 echo -e "${GREEN}==> ${NC}Установка AUR Helper (yay) или (pikaur)"
+#echo -e "${BLUE}:: ${NC}Установка AUR Helper (yay) или (pikaur)" 
 #echo 'Установка AUR Helper (yay) или (pikaur)'
 # Installing AUR Helper (yay) or (pikaur)
 echo -e "${YELLOW}==> ${BOLD}Важно! Pikaur - идёт как зависимость для Octopi. ${NC}"
@@ -434,10 +435,12 @@ do
     :
 done 
 if [[ $in_aur_help == 0 ]]; then
+clear    
 echo " Установка AUR Helper (yay) пропущена "
-
+elif [[ $in_aur_help == 1 ]]; then
 sudo pacman -Syu
 wget git.io/yay-install.sh && sh yay-install.sh --noconfirm
+clear
 echo " Установка AUR Helper (yay) завершена "
 # ------------------------------------------------------------
 # Скрипт yay-install.sh:
@@ -449,8 +452,29 @@ echo " Установка AUR Helper (yay) завершена "
 #cd ..
 #rm -rf yay-bin
 # ------------------------------------------------------------
-
-
+elif [[ $in_aur_help == 2 ]]; then
+sudo pacman -Syu
+cd /home/$username
+git clone https://aur.archlinux.org/yay.git
+chown -R $username:users /home/$username/yay
+chown -R $username:users /home/$username/yay/PKGBUILD 
+cd /home/$username/yay  
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/yay
+clear
+echo " Установка AUR Helper (yay) завершена "
+elif [[ $in_aur_help == 3 ]]; then
+sudo pacman -Syu    
+cd /home/$username
+git clone https://aur.archlinux.org/pikaur.git
+chown -R $username:users /home/$username/pikaur   
+chown -R $username:users /home/$username/pikaur/PKGBUILD 
+cd /home/$username/pikaur   
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/pikaur
+clear
+echo " Установка AUR Helper (pikaur) завершена "
+fi
 #--------------------------------------------------------------
 # AUR (Arch User Repository) - репозиторий, в который пользователи загружают скрипты для установки программного обеспечения. Там есть практически всё, что можно установить на Linux. В том числе и программы, которые для других дистробутивов пришлось бы собирать из исходников.
 # AUR'ом можно пользоваться и просто с помощью Git. Но куда удобнее использовать помощник AUR. Они бывают графические и консольные.
