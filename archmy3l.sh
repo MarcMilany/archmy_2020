@@ -399,8 +399,8 @@ mkdir ~/downloads
 cd ~/downloads
 clear
 
-echo -e "${GREEN}
-  <<< Начинается установка первоначально необходимого софта (пакетов) и запуск необходимых служб для системы Arch Linux >>>
+echo -e "${MAGENTA}
+  <<< Установка AUR (Arch User Repository) - репозитория, в который пользователи загружают скрипты для установки программного обеспечения >>>
 ${NC}"
 # Installation of utilities (packages) for the Arch Linux system begins
 
