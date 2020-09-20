@@ -499,11 +499,13 @@ sudo pacman -S alsa-utils alsa-plugins alsa-firmware alsa-lib alsa-utils --nocon
 sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth xfce4-pulseaudio-plugin --noconfirm #pulseaudio-equalizer-ladspa
 #systemctl enable bluetooth.service
 
+echo ""
 echo -e "${BLUE}:: ${NC}Ставим Архиваторы Компрессионные Инструменты" 
 #echo 'Ставим Архиваторы "Компрессионные Инструменты"'
 # Putting Archivers "Compression Tools
 sudo pacman -S zip unzip unrar p7zip zlib zziplib --noconfirm 
- 
+
+echo "" 
 echo -e "${BLUE}:: ${NC}Ставим дополнения к Архиваторам" 
 #echo 'Ставим дополнения к Архиваторам'
 # Adding extensions to Archivers
@@ -511,46 +513,55 @@ sudo pacman -S lha unace lrzip sharutils uudeview arj cabextract file-roller --n
 #file-roller легковесный архиватор ( для xfce-lxqt-lxde-gnome ) 
 #ark - архиватор для ( Plasma(kde)- так же можно использовать, и для другого de )
 
+echo ""
 echo -e "${BLUE}:: ${NC}Ставим Драйвера принтера (Поддержка печати)" 
 #echo 'Ставим Драйвера принтера (Поддержка печати)'
 # Putting the printer Drivers (Print support)
 sudo pacman -S cups ghostscript cups-pdf --noconfirm
 
+echo ""
 echo -e "${BLUE}:: ${NC}Установка базовых программ и пакетов" 
 #echo 'Установка базовых программ и пакетов'
 # Installing basic programs and packages
 sudo pacman -S aspell-ru arch-install-scripts bash-completion dosfstools f2fs-tools sane gvfs gnu-netcat htop iftop iotop nmap ntfs-3g ntp ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv reflector sox youtube-dl speedtest-cli python-pip pwgen scrot git curl xsel --noconfirm 
 
+echo ""
 echo -e "${BLUE}:: ${NC}Установка терминальных утилит для вывода информации о системе" 
 #echo 'Установка терминальных утилит для вывода информации о системе'
 # Installing terminal utilities for displaying system information
 sudo pacman -S screenfetch archey3 neofetch --noconfirm  
 
+echo ""
 echo -e "${BLUE}:: ${NC}Установка Мультимедиа кодеков (multimedia codecs), и утилит" 
 #echo 'Установка Мультимедиа кодеков (multimedia codecs), и утилит'
 # Installing Multimedia codecs and utilities
 sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-bad gst-plugins-ugly libdvdcss libdvdread libdvdnav dvd+rw-tools dvdauthor dvgrab cdrdao gst-libav gst-libav gpac --noconfirm
 
+echo ""
 echo -e "${BLUE}:: ${NC}Установка Мультимедиа утилит" 
 #echo 'Установка Мультимедиа утилит'
 # Installing Multimedia utilities
 sudo pacman -S audacity audacious audacious-plugins smplayer smplayer-skins smplayer-themes smtube deadbeef easytag subdownloader mediainfo-gui vlc --noconfirm
 
+echo ""
 echo -e "${BLUE}:: ${NC}Установка Текстовые редакторы и утилиты разработки" 
 #echo 'Установка Текстовые редакторы и утилиты разработки'
 # Installation Text editors and development tools
 sudo pacman -S gedit gedit-plugins geany geany-plugins --noconfirm
 
+echo ""
 echo -e "${BLUE}:: ${NC}Управления электронной почтой, новостными лентами, чатом и группам" 
 #echo 'Управления электронной почтой, новостными лентами, чатом и группам'
 # Manage email, news feeds, chat, and groups
 sudo pacman -S thunderbird thunderbird-i18n-ru pidgin pidgin-hotkeys --noconfirm
 
+echo ""
 echo -e "${BLUE}:: ${NC}Установка Браузеров и медиа-плагинов" 
 #echo 'Установка Браузеров и медиа-плагинов'
 # Installing Browsers and media plugins
 sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin pepper-flash --noconfirm
 
+echo ""
 echo -e "${BLUE}:: ${NC}Установка Брандмауэра UFW и Антивирусного пакета ClamAV (GUI)(GTK+)" 
 #echo 'Установка Брандмауэра UFW и Антивирусного пакета ClamAV (GUI)(GTK+)'
 # Installing the UFW Firewall and clamav Antivirus package (GUI) (GTK+)
@@ -568,6 +579,7 @@ elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ пропущена. '
 fi
 
+echo ""
 echo -e "${GREEN}==> ${NC}Установить Clam AntiVirus (GTK)?"
 #echo 'Установить Clam AntiVirus (GTK)?'
 # Install Clam AntiVirus (GTK)?
@@ -579,6 +591,7 @@ elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ пропущена. '
 fi
 
+echo ""
 echo -e "${BLUE}:: ${NC}Установка Torrent клиентов - Transmission, qBittorrent, Deluge (GTK)(Qt)(GTK+)" 
 #echo 'Установка Torrent клиентов - Transmission, qBittorrent, Deluge (GTK)(Qt)(GTK+)'
 # Installing Torrent clients - Transmission, qBittorrent, Deluge (GTK) (Qt) (GTK+)
@@ -605,6 +618,7 @@ elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ пропущена. '
 fi
 
+echo ""
 echo -e "${BLUE}:: ${NC}Установка Офиса (LibreOffice-still, или LibreOffice-fresh)" 
 #echo 'Установка Офиса (LibreOffice-still, или LibreOffice-fresh)'
 # Office installation (LibreOffice-still, or LibreOffice-fresh)
@@ -628,6 +642,7 @@ elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ LibreOffice пропущена. '
 fi
 
+echo ""
 echo -e "${GREEN}==> ${BOLD}Установить рекомендованные программы? ${NC}"
 #echo 'Установить рекомендованные программы?'
 # Install the recommended programs
@@ -643,11 +658,13 @@ elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ пропущена. '
 fi
 
+echo ""
 echo -e "${BLUE}:: ${NC}Утилиты для форматирования флэш-накопителя с файловой системой exFAT в Linux" 
 #echo 'Утилиты для форматирования флэш-накопителя с файловой системой exFAT в Linux'
 # Utilities for formatting a flash drive with the exFAT file system in Linux
 sudo pacman -S exfat-utils fuse-exfat --noconfirm 
 
+echo ""
 echo -e "${YELLOW}==> ${NC}Установить ssh(server) для удаленного доступа?"
 #echo 'Установить ssh(клиент) для удаленного доступа?'
 # Install ssh (client) for remote access?
@@ -659,6 +676,7 @@ elif [[ $prog_set == 0 ]]; then
   echo ' Установка пропущена. '
 fi
 
+echo ""
 echo -e "${BLUE}:: ${NC}Установка Pacman gui,Octopi (AUR)(GTK)(QT)" 
 #echo 'Установка "Pacman gui","Octopi" (AUR)(GTK)(QT)'
 # Installing "Pacman gui", "Octopi" (AUR)(GTK)(QT)
@@ -682,6 +700,7 @@ elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ пропущена. '
 fi
 
+echo ""
 echo -e "${BLUE}:: ${NC}Будете ли Вы подключать Android или Iphone к ПК через USB?" 
 #echo 'Будете ли Вы подключать Android или Iphone к ПК через USB?'
 # Will you connect your Android or Iphone to your PC via USB?
@@ -717,6 +736,7 @@ fi
 # Виден через наутилус как mtp://[usb:002,007]/
 # ============================================================================
 
+echo ""
 echo -e "${YELLOW}==> ${NC}Включаем UFW сетевой экран?"
 #echo 'Включаем сетевой экран?'
 # Enabling the network screen?
@@ -732,6 +752,7 @@ fi
 # Enabling the network screen
 #sudo ufw enable
 
+echo ""
 echo -e "${YELLOW}==> ${NC}Добавляем в автозагрузку сетевой экран?"
 #echo 'Добавляем в автозагрузку сетевой экран?'
 # Adding the network screen to auto-upload?
@@ -748,6 +769,7 @@ fi
 #sudo systemctl enable ufw
 
 sleep 1
+echo ""
 echo -e "${BLUE}:: ${NC}Проверим статус запуска сетевой экран UFW" 
 #echo 'Проверим статус запуска сетевой экран UFW'
 # Check the startup status of the UFW network screen
@@ -757,6 +779,7 @@ sudo ufw status
 # Если нужно выключить, то используйте команду:
 #sudo ufw disable
 
+echo ""
 echo -e "${YELLOW}==> ${NC}Добавляем в автозагрузку Bluetooth.service?"
 #echo 'Добавляем в автозагрузку сетевой экран?'
 # Adding the network screen to auto-upload?
@@ -768,6 +791,7 @@ elif [[ $prog_set == 0 ]]; then
   echo ' Bluetooth.service не включен в автозагрузку, при необходиости это можно будет сделать. '
 fi
 
+echo ""
 echo -e "${YELLOW}==> ${NC}Добавляем в автозагрузку ssh(server) для удаленного доступа к этому ПК?"
 #echo 'Добавляем в автозагрузку ssh(server) для удаленного доступа к этому ПК?'
 # Adding ssh(server) to the startup for remote access to this PC?
@@ -779,16 +803,19 @@ elif [[ $prog_set == 0 ]]; then
   echo ' Сервис sshd не включен. '
 fi
 
+echo ""
 echo -e "${BLUE}:: ${NC}Обновим информацию о шрифтах" 
 #echo 'Обновим информацию о шрифтах'
 # Update information about fonts
 sudo fc-cache -f -v
 
+echo ""
 echo -e "${BLUE}:: ${NC}Применяем настройки TLP (управления питанием) в зависимости от источника питания (батарея или от сети)" 
 #echo 'Применяем настройки TLP (управления питанием) в зависимости от источника питания (батарея или от сети)'
 # Apply TLP (power management) settings depending on the power source (battery or mains)
 sudo tlp start
 
+echo ""
 echo -e "${BLUE}:: ${NC}Создать резервную копию (дубликат) файла grub.cfg" 
 #echo 'Создать резервную копию (дубликат) файла grub.cfg'
 # Create a backup (duplicate) of the grub.cfg file
@@ -984,7 +1011,7 @@ sudo cp -vf /boot/grub/grub.cfg /boot/grub/grub.cfg.backup
 #Then logout and back in or Reboot. 
 
 # ============================================================================
-
+clear
 echo -e "${GREEN}
   <<< Поздравляем! Установка завершена. >>> ${NC}"
 # Congratulations! Installation is complete.
