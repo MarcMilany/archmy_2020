@@ -167,7 +167,7 @@ sleep 4
 # If you have a wireless connection, launch nmtui and connect to the network.
 
 echo -e "${GREEN}
-  <<< Начинается установка утилит (пакетов) для системы Arch Linux >>>
+  <<< Начинается установка первоначально необходимого софта (пакетов) и запуск необходимых служб для системы Arch Linux >>>
 ${NC}"
 # Installation of utilities (packages) for the Arch Linux system begins
 
