@@ -502,13 +502,14 @@ sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulsea
 echo -e "${BLUE}:: ${NC}Ставим Архиваторы Компрессионные Инструменты" 
 #echo 'Ставим Архиваторы "Компрессионные Инструменты"'
 # Putting Archivers "Compression Tools
-sudo pacman -S zip unzip unrar p7zip zlib zziplib --noconfirm
+sudo pacman -S zip unzip unrar p7zip zlib zziplib --noconfirm 
  
 echo -e "${BLUE}:: ${NC}Ставим дополнения к Архиваторам" 
 #echo 'Ставим дополнения к Архиваторам'
 # Adding extensions to Archivers
-sudo pacman -S lha unace lrzip sharutils uudeview arj cabextract --noconfirm  #file-roller 
+sudo pacman -S lha unace lrzip sharutils uudeview arj cabextract --noconfirm  #file-roller #ark
 #file-roller легковесный архиватор ( для xfce-lxqt-lxde-gnome ) 
+#ark - архиватор для ( Plasma(kde)- так же можно и для другого de )
 
 echo -e "${BLUE}:: ${NC}Ставим Драйвера принтера (Поддержка печати)" 
 #echo 'Ставим Драйвера принтера (Поддержка печати)'
