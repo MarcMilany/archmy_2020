@@ -191,6 +191,7 @@ echo -e "${BLUE}:: ${NC}Узнаем версию и данные о релиз�
 # Find out the version and release data for Arch ... :)
 cat /proc/version
 cat /etc/lsb-release
+sleep 02
 
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим вашу систему (базу данных пакетов)"
