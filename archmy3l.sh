@@ -408,7 +408,7 @@ echo -e "${GREEN}==> ${NC}Установка AUR Helper (yay) или (pikaur)"
 #echo 'Установка AUR Helper (yay) или (pikaur)'
 # Installing AUR Helper (yay) or (pikaur)
 echo -e "${YELLOW}==> ${BOLD}Важно! Pikaur - идёт как зависимость для Octopi. ${NC}"
-
+echo -e "${MAGENTA}:: ${NC} В AUR - есть практически всё, что можно установить на Linux. В том числе и программы, которые для других дистробутивов пришлось бы собирать из исходников"
 
 
 sudo pacman -Syu
