@@ -425,9 +425,9 @@ while
 #read -p " 1 - LightDM, 2 - LXDM, 3 - GDM, 4 - SDDM, 0 - Пропустить установку DM (Display manager): " i_dm  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - LightDM,     2 - LXDM,     3 - GDM,     4 - SDDM,
+    1 - AUR - yay (yay-install.sh),     2 - AUR - yay,     3 - AUR - pikaur,
 
-    0 - Пропустить установку DM (Display manager): " i_dm  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    0 - Пропустить установку AUR Helper: " i_dm  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
     [[ "$i_dm" =~ [^12340] ]]
 do
