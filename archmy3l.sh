@@ -409,7 +409,19 @@ echo -e "${GREEN}==> ${NC}Установка AUR Helper (yay) или (pikaur)"
 # Installing AUR Helper (yay) or (pikaur)
 echo -e "${YELLOW}==> ${BOLD}Важно! Pikaur - идёт как зависимость для Octopi. ${NC}"
 echo -e "${MAGENTA}:: ${NC} В AUR - есть практически всё, что можно установить на Linux. В том числе и программы, которые для других дистробутивов пришлось бы собирать из исходников"
-
+echo -e "${MAGENTA}=> ${BOLD}В сценарии скрипта присутствуют следующие варианты: ${NC}"
+echo " 1 - Установка 'AUR'-'yay' с помощью скрипта созданного (autor): Alex Creio https://cvc.hashbase.io/ - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/yay-git/), собирается и устанавливается, то выбирайте вариант - "1". "
+echo " 2 - Добавляем пользователя, прописываем права, и добавляем группы : "
+echo " (adm + audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel), то выбирайте вариант - "2". "
+echo " 3 - Добавляем пользователя, прописываем права, и добавляем пользователя в группу : "
+echo " (wheel), то выбирайте вариант - "3". "
+echo -e "${CYAN}:: ${BOLD}Далее, уже сам пользователь из установленной системы добавляет себя любимого(ую), в нужную группу /etc/group.${NC}"
+echo -e "${YELLOW}:: Вы НЕ можете пропустить этот шаг! ${NC}"
+#echo 'Вы НЕ можете пропустить этот шаг!'
+# You CAN't skip this step!
+echo " Будьте внимательны! В этом действии выбор остаётся за вами."
+# Be careful! In this action, the choice is yours.
+echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке"
 
 sudo pacman -Syu
 wget git.io/yay-install.sh && sh yay-install.sh --noconfirm
