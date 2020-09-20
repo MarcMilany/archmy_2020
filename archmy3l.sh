@@ -400,11 +400,9 @@ cd ~/downloads
 clear
 
 echo -e "${MAGENTA}
-echo "##################################################################################"
-  <<< Установка AUR (Arch User Repository) - репозитория, в который пользователи загружают скрипты для установки программного обеспечения >>>
-echo "##################################################################################"  
+  <<< Установка AUR (Arch User Repository) - репозиторий, в который пользователи загружают скрипты для установки программного обеспечения >>> 
 ${NC}"
-# Installation of utilities (packages) for the Arch Linux system begins
+# Installing an Aur (Arch User Repository) - a repository where users upload scripts to install software.
 
 echo -e "${GREEN}==> ${NC}${BLUE}'Установка AUR Helper (yay)'${NC}"
 #echo 'Установка AUR Helper (yay)'
