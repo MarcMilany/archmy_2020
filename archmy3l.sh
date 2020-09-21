@@ -922,20 +922,45 @@ sudo ufw status
 # Если нужно выключить, то используйте команду:
 #sudo ufw disable
 
+
+clear
+echo -e "${CYAN}
+  <<< Запуск и добавление установленных программ (пакетов), сервисов и служб в автозапуск. >>> 
+${NC}"
+# Launch and add installed programs (packages), services, and services to autorun.
+
 echo ""
-echo -e "${YELLOW}==> ${NC}Добавляем в автозагрузку Bluetooth.service?"
-#echo 'Добавляем в автозагрузку сетевой экран?'
-# Adding the network screen to auto-upload?
-read -p " 1 - Да, 0 - Нет: " prog_set
-if [[ $prog_set == 1 ]]; then
-sudo systemctl enable bluetooth.service
-echo ' Bluetooth успешно добавлен в автозагрузку '
-elif [[ $prog_set == 0 ]]; then
-  echo ' Bluetooth.service не включен в автозагрузку, при необходиости это можно будет сделать. '
+echo -e "${GREEN}==> ${NC}Добавляем в автозагрузку Bluetooth.service?"
+#echo 'Добавляем в автозагрузку Bluetooth.service?'
+# Adding Bluetooth.service to startup?
+echo -e "${YELLOW}:: ${BOLD}Запускаем сервис (bluetooth.service), если таковой был вами установлен. ${NC}"
+echo -e "${CYAN}:: ${NC}Вы сможете выполнить запуск (bluetooth.service) позже, воспользовавшись скриптом как шпаргалкой!"
+echo " Будьте внимательны! В любой ситуации выбор всегда остаётся за вами. "
+# Be careful! In any situation, the choice is always yours.
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again...
+echo "" 
+while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#read -p " 1 - Да добавляем, 0 - НЕТ - Пропустить действие: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да добавляем,     0 - НЕТ - Пропустить действие: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then    
+echo "  Bluetooth.service не включен в автозагрузку, при необходиости это можно будет сделать. "
+elif [[ $prog_set == 1 ]]; then
+  echo " Добавляем в автозагрузку (bluetooth.service)"
+sudo systemctl enable bluetooth.service 
+echo " Bluetooth успешно добавлен в автозагрузку" 
 fi
 
 echo ""
-echo -e "${YELLOW}==> ${NC}Добавляем в автозагрузку ssh(server) для удаленного доступа к этому ПК?"
+echo -e "${GREEN}==> ${NC}Добавляем в автозагрузку ssh(server) для удаленного доступа к этому ПК?"
 #echo 'Добавляем в автозагрузку ssh(server) для удаленного доступа к этому ПК?'
 # Adding ssh(server) to the startup for remote access to this PC?
 read -p " 1 - Да, 0 - Нет: " prog_set
@@ -945,11 +970,6 @@ echo ' Сервис sshd успешно добавлен в автозагруз
 elif [[ $prog_set == 0 ]]; then
   echo ' Сервис sshd не включен. '
 fi
-
-echo -e "${CYAN}
-  <<< Запуск и добавление установленных программ (пакетов), сервисов и служб в автозапуск. >>> 
-${NC}"
-# Launch and add installed programs (packages), services, and services to autorun.
 
 echo ""
 echo -e "${GREEN}==> ${NC}Запускаем и добавляем в автозапуск Драйвера принтера CUPS (cupsd.service)"
