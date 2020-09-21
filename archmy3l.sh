@@ -603,6 +603,7 @@ sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulsea
 #sudo systemctl enable bluetooth.service 
 fi
 
+#clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установить Blueman - диспетчер bluetooth устройств?"
 #echo -e "${BLUE}:: ${NC}Установить Blueman - диспетчер bluetooth устройств?" 
