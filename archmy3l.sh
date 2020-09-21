@@ -647,7 +647,7 @@ if [[ $prog_set == 0 ]]; then
 echo " Установка поддержки Драйвера принтера (Поддержка печати) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка поддержки Драйвера принтера (Поддержка печати) CUPS "
-sudo pacman -S cups ghostscript cups-pdf --noconfirm  #python-imaging hplip
+sudo pacman -S cups ghostscript cups-pdf --noconfirm  #python-imaging hplip #hplip-plugin
 fi
 
 echo ""
