@@ -500,9 +500,9 @@ yay -Syu
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установить Snap на Arch Linux?"
-#echo -e "${BLUE}:: ${NC}Установка AUR Helper (yay) или (pikaur)" 
-#echo 'Установка AUR Helper (yay) или (pikaur)'
-# Installing AUR Helper (yay) or (pikaur)
+#echo -e "${BLUE}:: ${NC}Установить Snap на Arch Linux?" 
+#echo 'Установить Snap на Arch Linux?'
+# To install Snap-on Arch Linux?
 echo -e "${MAGENTA}:: ${BOLD}Snap - это инструмент для развертывания программного обеспечения и управления пакетами,  которые обновляются автоматически, просты в установке, безопасны, кроссплатформенны и не имеют зависимостей. Изначально разработанный и созданный компанией Canonical, который работает в различных дистрибутивах Linux каждый день. ${NC}"
 echo -e "${CYAN}:: ${NC}Для управления пакетами snap, установим snapd (демон), а также snap-confine, который обеспечивает монтирование, изоляцию и запуск snap-пакетов.  "
 echo " Установка происходит из 'AUR'- с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/snapd.git)."
@@ -562,8 +562,8 @@ sudo snap remove hello-world
 echo ""
 echo " Snap теперь установлен и готов к работе! "
 fi
-clear
 
+clear
 echo ""
 echo -e "${GREEN}==> ${NC}Ставим Bluetooth и Поддержка звука"
 #echo -e "${BLUE}:: ${NC}Ставим Bluetooth и Поддержка звука" 
