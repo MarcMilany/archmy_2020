@@ -620,9 +620,17 @@ sudo pacman -S lha unace lrzip sharutils uudeview arj cabextract file-roller --n
 #ark - архиватор для ( Plasma(kde)- так же можно использовать, и для другого de )
 
 echo ""
+echo -e "${GREEN}==> ${NC}Ставим Драйвера принтера (Поддержка печати)"
 echo -e "${BLUE}:: ${NC}Ставим Драйвера принтера (Поддержка печати)" 
 #echo 'Ставим Драйвера принтера (Поддержка печати)'
 # Putting the printer Drivers (Print support)
+echo -e "${MAGENTA}:: ${BOLD}Драйверы принтеров CUPS состоят из одного или нескольких фильтров, упакованных в формате PPD (PostScript Printer Description). ${NC}"
+echo -e "${CYAN}:: ${NC}Все принтеры в CUPS (даже не поддерживающие PostScript) должны иметь файл PPD с описанием принтеров, специфических команд и фильтров. "
+echo " Установка происходит из 'AUR'- с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/snapd.git)."
+echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
+# Be careful! The installation process, after the option you selected, was registered fully automatic. In any situation, the choice is always yours.
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
 sudo pacman -S cups ghostscript cups-pdf --noconfirm
 
 echo ""
