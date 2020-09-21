@@ -1065,8 +1065,22 @@ echo " Добавляем в автозапуск Драйвера принте�
 sudo systemctl enable org.cups.cupsd.service 
 # Проверяем - переходим на страницу http://localhost:631:
 fi
-# ---------------------------------------------------------------------
-
+# --------------------- Важно! --------------------------------
+# Добавляем группу:
+# sudo groupadd printadmin
+# Добавляем Пользователя в неё:
+# sudo usermod -a -G printadmin $USER
+# Обновляем /etc/cups/cups-files.conf, меняем группу sys на printadmin:
+# 1 ...
+# 2 # Administrator user group, used to match @SYSTEM in cupsd.conf policy rules...
+# 3 # This cannot contain the Group value for security reasons...
+# 4 SystemGroup printadmin root
+# Перезапускаем сервис:
+# systemctl restart org.cups.cupsd
+# Доступные в cups бекенды для подключения принтера:
+# ls -1 /usr/lib/cups/backend/
+# Arch Linux: cups и hplip - подключение принтера
+# https://rtfm.co.ua/arch-linux-cups-i-hplip-podklyuchenie-printera/
 # ------------------------------------------------------------------------
 
 echo ""
