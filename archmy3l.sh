@@ -659,7 +659,7 @@ sudo pacman -S lha unace lrzip sharutils uudeview arj cabextract file-roller --n
 
 echo ""
 echo -e "${GREEN}==> ${NC}Ставим Драйвера принтера (Поддержка печати) CUPS, HP"
-echo -e "${BLUE}:: ${NC}Ставим Драйвера принтера (Поддержка печати) CUPS, HP" 
+#echo -e "${BLUE}:: ${NC}Ставим Драйвера принтера (Поддержка печати) CUPS, HP" 
 #echo 'Ставим Драйвера принтера (Поддержка печати) CUPS, HP'
 # Putting the printer Drivers (Print support) CUPS, HP
 echo -e "${MAGENTA}:: ${BOLD}CUPS- это стандартная система печати с открытым исходным кодом, разработанная Apple Inc. для MacOS® и других UNIX® - подобных операционных систем. Драйверы принтеров CUPS состоят из одного или нескольких фильтров, упакованных в формате PPD (PostScript Printer Description). ${NC}"
@@ -850,10 +850,13 @@ elif [[ $prog_set == 0 ]]; then
 fi
 
 echo ""
-echo -e "${BLUE}:: ${NC}Утилиты для форматирования флэш-накопителя с файловой системой exFAT в Linux" 
+
+#echo -e "${BLUE}:: ${NC}Утилиты для форматирования флэш-накопителя с файловой системой exFAT в Linux" 
 #echo 'Утилиты для форматирования флэш-накопителя с файловой системой exFAT в Linux'
 # Utilities for formatting a flash drive with the exFAT file system in Linux
-sudo pacman -S exfat-utils fuse-exfat --noconfirm 
+sudo pacman -S exfat-utils fuse-exfat --noconfirm  #exfatprogs  
+# exfatprogs - утилиты файловой системы exFAT файловой системы в пространстве пользователя драйвера ядра Linux файловой системы exFAT
+
 
 echo ""
 echo -e "${YELLOW}==> ${NC}Установить ssh(server) для удаленного доступа?"
