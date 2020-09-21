@@ -620,13 +620,14 @@ sudo pacman -S lha unace lrzip sharutils uudeview arj cabextract file-roller --n
 #ark - архиватор для ( Plasma(kde)- так же можно использовать, и для другого de )
 
 echo ""
-echo -e "${GREEN}==> ${NC}Ставим Драйвера принтера (Поддержка печати)"
-echo -e "${BLUE}:: ${NC}Ставим Драйвера принтера (Поддержка печати)" 
-#echo 'Ставим Драйвера принтера (Поддержка печати)'
-# Putting the printer Drivers (Print support)
+echo -e "${GREEN}==> ${NC}Ставим Драйвера принтера (Поддержка печати) CUPS, HP"
+echo -e "${BLUE}:: ${NC}Ставим Драйвера принтера (Поддержка печати) CUPS, HP" 
+#echo 'Ставим Драйвера принтера (Поддержка печати) CUPS, HP'
+# Putting the printer Drivers (Print support) CUPS, HP
 echo -e "${MAGENTA}:: ${BOLD}CUPS- это стандартная система печати с открытым исходным кодом, разработанная Apple Inc. для MacOS® и других UNIX® - подобных операционных систем. Драйверы принтеров CUPS состоят из одного или нескольких фильтров, упакованных в формате PPD (PostScript Printer Description). ${NC}"
 echo -e "${CYAN}:: ${NC}Все принтеры в CUPS (даже не поддерживающие PostScript) должны иметь файл PPD с описанием принтеров, специфических команд и фильтров."
 echo " В комплект поставки CUPS входят универсальные файлы PPD для сотен моделей принтеров."
+echo -e "${CYAN}:: ${NC}HP - Драйверы для DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых лазерных принтеров."
 echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
 # Be careful! The installation process, after the option you selected, was registered fully automatic. In any situation, the choice is always yours.
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -647,7 +648,8 @@ if [[ $prog_set == 0 ]]; then
 echo " Установка поддержки Драйвера принтера (Поддержка печати) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка поддержки Драйвера принтера (Поддержка печати) CUPS "
-sudo pacman -S cups ghostscript cups-pdf --noconfirm  #python-imaging gsfonts gutenprint  #hplip hplip-plugin 
+sudo pacman -S cups ghostscript cups-pdf --noconfirm   
+sudo pacman -S gsfonts gutenprint hplip --noconfirm   # python-imaging hplip-plugin
 fi
 # ---------------------------------------------------------------------
 # List of applications:
