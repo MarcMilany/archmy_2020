@@ -505,6 +505,8 @@ echo -e "${GREEN}==> ${NC}Установить Snap на Arch Linux?"
 # Installing AUR Helper (yay) or (pikaur)
 echo -e "${MAGENTA}:: ${BOLD}Snap - это инструмент для развертывания программного обеспечения и управления пакетами,  которые обновляются автоматически, просты в установке, безопасны, кроссплатформенны и не имеют зависимостей. Изначально разработанный и созданный компанией Canonical, который работает в различных дистрибутивах Linux каждый день. ${NC}"
 echo -e "${CYAN}:: ${NC}Для управления пакетами snap, установим snapd (демон), а также snap-confine, который обеспечивает монтирование, изоляцию и запуск snap-пакетов.  "
+
+echo " Установка происходит из 'AUR'- с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/snapd.git)."
 echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
 # Be careful! The installation process, after the option you selected, was registered fully automatic. In any situation, the choice is always yours.
 echo " В этом действии выбор остаётся за вами. Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
