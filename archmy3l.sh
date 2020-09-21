@@ -967,7 +967,7 @@ fi
 echo -e "${GREEN}==> ${NC}Добавляем в автозагрузку Firewall UFW (сетевой экран)?"
 #echo -e "{BLUE}:: ${NC}Добавляем в автозагрузку Firewall UFW (сетевой экран)?"
 #echo 'Добавляем в автозагрузку Firewall UFW (сетевой экран)?'
-# Enable firewall UFW (firewall)?
+# Adding Firewall UFW (firewall) to startup?
 echo -e "${YELLOW}:: ${BOLD}Добавляем в автозагрузку UFW (сетевой экран), если таковой был вами установлен. ${NC}"
 echo -e "${CYAN}:: ${NC}Вы сможете добавить в автозагрузку UFW (сетевой экран) позже, воспользовавшись скриптом как шпаргалкой!"
 echo " Будьте внимательны! В любой ситуации выбор всегда остаётся за вами. "
@@ -999,10 +999,12 @@ echo ""
 echo -e "${BLUE}:: ${NC}Проверим статус запуска Firewall UFW (сетевой экран)" 
 #echo 'Проверим статус запуска Firewall UFW (сетевой экран)'
 # Check the startup status of Firewall UFW (network screen)
+echo -e "${CYAN}:: ${NC}Если нужно ВЫКлючить UFW (сетевой экран), то используйте команду: sudo ufw disable."
 sudo ufw status
+#sudo ufw status --verbose
 # ----------------------------------------------------------
 # Вы можете проверить статус работы UFW следующей командой:
-# sudo ufw status verbose  # -v, --verbose    быть вербальным
+# sudo ufw status verbose  # -v, --verbose  -быть вербальным
 # Если нужно выключить, то используйте команду:
 # sudo ufw disable
 # ------------------------------------------------------------
