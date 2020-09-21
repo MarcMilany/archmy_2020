@@ -497,7 +497,7 @@ echo -e "${GREEN}==> ${NC}Ставим Bluetooth и Поддержка звук�
 #echo -e "${BLUE}:: ${NC}Ставим Bluetooth и Поддержка звука" 
 #echo 'Ставим Bluetooth и Поддержка звука'
 # Setting Bluetooth and Sound support
-echo -e "${CYAN}=> ${BOLD}Установка поддержки Bluetooth и Sound support (звука) - будет очень актуальна, если Вы установили DE DE (среда рабочего стола) XFCE. ${NC}"
+echo -e "${CYAN}=> ${BOLD}Установка поддержки Bluetooth и Sound support (звука) - будет очень актуальна, если Вы установили DE (среда рабочего стола) XFCE. ${NC}"
 echo -e "${BLUE}
 'Список программ (пакетов) для установки:${NC}
 bluez bluez-libs bluez-cups bluez-utils blueman alsa-utils alsa-plugins alsa-firmware alsa-lib alsa-utils pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth xfce4-pulseaudio-plugin' "
