@@ -947,6 +947,18 @@ elif [[ $prog_set == 0 ]]; then
 fi
 
 echo ""
+echo -e "${YELLOW}==> ${NC}Запускаем и добавляем в автозапуск cupsd.service"
+#echo 'Добавляем в автозагрузку ssh(server) для удаленного доступа к этому ПК?'
+# Adding ssh(server) to the startup for remote access to this PC?
+read -p " 1 - Да, 0 - Нет: " prog_set
+if [[ $prog_set == 1 ]]; then
+sudo systemctl enable sshd.service
+echo ' Сервис sshd успешно добавлен в автозагрузку ' 
+elif [[ $prog_set == 0 ]]; then
+  echo ' Сервис sshd не включен. '
+fi
+
+echo ""
 echo -e "${BLUE}:: ${NC}Обновим информацию о шрифтах" 
 #echo 'Обновим информацию о шрифтах'
 # Update information about fonts
