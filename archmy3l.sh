@@ -649,7 +649,7 @@ echo " Установка поддержки Драйвера принтера (
 elif [[ $prog_set == 1 ]]; then
   echo " Установка поддержки Драйвера принтера (Поддержка печати) CUPS "
 sudo pacman -S cups ghostscript cups-pdf --noconfirm   
-sudo pacman -S gsfonts gutenprint hplip --noconfirm   # python-imaging hplip-plugin
+sudo pacman -S gsfonts gutenprint hplip --noconfirm   # python-imaging 
 fi
 # ---------------------------------------------------------------------
 # List of applications:
