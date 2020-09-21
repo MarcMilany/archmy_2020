@@ -237,10 +237,12 @@ sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.old
 
 # ============================================================================
 
-#echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал для загрузки в mirrorlist"
+echo ""
+echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал для загрузки в mirrorlist"
 #echo 'Посмотреть список серверов-зеркал для загрузки в mirrorlist'
 # View the list of mirror servers to upload to mirrorlist
-#cat /etc/pacman.d/mirrorlist
+cat /etc/pacman.d/mirrorlist
+sleep 01
 
 # Pacman Mirrorlist Generator
 # https://www.archlinux.org/mirrorlist/
