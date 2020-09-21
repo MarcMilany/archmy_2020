@@ -947,18 +947,41 @@ elif [[ $prog_set == 0 ]]; then
 fi
 
 echo ""
-echo -e "${YELLOW}==> ${NC}Запускаем и добавляем в автозапуск Драйвера принтера CUPS (cupsd.service)"
+echo -e "${GREEN}==> ${NC}Запускаем и добавляем в автозапуск Драйвера принтера CUPS (cupsd.service)"
 #echo -e "${BLUE}:: ${NC}Запускаем и добавляем в автозапуск Драйвера принтера CUPS (cupsd.service)"
 #echo 'Запускаем и добавляем в автозапуск Драйвера принтера CUPS (cupsd.service)'
 # Launch and add the CUPS printer Driver to autorun (cupsd. service)
-
-read -p " 1 - Да, 0 - Нет: " prog_set
-if [[ $prog_set == 1 ]]; then
-sudo systemctl enable sshd.service
-echo ' Сервис sshd успешно добавлен в автозагрузку ' 
-elif [[ $prog_set == 0 ]]; then
-  echo ' Сервис sshd не включен. '
+echo -e "${YELLOW}:: ${BOLD}CUPS- это стандартная система печати с открытым исходным кодом, разработанная Apple Inc. для MacOS® и других UNIX® - подобных операционных систем. Драйверы принтеров CUPS состоят из одного или нескольких фильтров, упакованных в формате PPD (PostScript Printer Description). ${NC}"
+echo -e "${CYAN}:: ${NC}Все принтеры в CUPS (даже не поддерживающие PostScript) должны иметь файл PPD с описанием принтеров, специфических команд и фильтров."
+echo " В комплект поставки CUPS входят универсальные файлы PPD для сотен моделей принтеров."
+echo -e "${CYAN}:: ${NC}HP - Драйверы для DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых лазерных принтеров."
+echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
+# Be careful! The installation process, after the option you selected, was registered fully automatic. In any situation, the choice is always yours.
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
+while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then    
+echo "  Запуск и добавление в автозапуск (cupsd.service) пропущено "
+elif [[ $prog_set == 1 ]]; then
+  echo " Запускаем Драйвера принтера CUPS (cupsd.service) "
+sudo systemctl start org.cups.cupsd.service  
+echo " Добавляем в автозапуск Драйвера принтера CUPS (cupsd.service) " 
+sudo systemctl enable org.cups.cupsd.service 
 fi
+# ---------------------------------------------------------------------
+
+# ------------------------------------------------------------------------
 
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим информацию о шрифтах" 
