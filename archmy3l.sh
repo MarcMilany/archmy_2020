@@ -608,32 +608,33 @@ echo -e "${GREEN}==> ${NC}Установить Blueman - диспетчер blue
 #echo -e "${BLUE}:: ${NC}Установить Blueman - диспетчер bluetooth устройств?" 
 #echo 'Установить Blueman - диспетчер bluetooth устройств?'
 # Install Blueman-bluetooth device Manager?
-echo -e "${CYAN}:: ${BOLD}Установка поддержки Bluetooth и Sound support (звука) - будет очень актуальна, если Вы установили DE (среда рабочего стола) XFCE. ${NC}"
-
-echo " blueman --диспетчер blutooth устройств  "
-echo " "
-echo " полезно для i3 " 
+echo -e "${CYAN}:: ${BOLD}Blueman - это полнофункциональный менеджер Bluetooth, написанный на GTK. "
+echo -e "${YELLOW}:: ${NC}Обязательно включите демон Bluetooth и запустите Blueman с blueman-applet. Графическую панель настроек можно запустить с помощью blueman-manager."
+echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
+# Be careful! The installation process, after the option you selected, was registered fully automatic. In any situation, the choice is always yours.
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
 while 
-    read -n1 -p  "
-    1 - да 
-    
-    0 - нет: " i_blu # sends right after the keypress
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$i_blu" =~ [^10] ]]
+    [[ "$prog_set" =~ [^10] ]]
 do
     :
-done
-if [[ $i_blu == 0 ]]; then
+done 
+if [[ $prog_set == 0 ]]; then 
+clear   
+echo " Установка Blueman пропущена "
+elif [[ $prog_set == 1 ]]; then  
+  echo " Установка Blueman (менеджер Bluetooth) "
+sudo pacman -S blueman --noconfirm  # blueman --диспетчер bluetooth устройств (полезно для i3)
 clear
-echo " Установка пропущена "
-elif [[ $i_blu == 1 ]]; then
-pacman -S blueman --noconfirm
-clear
-echo " установка blueman завершена "
+echo " Установка Blueman (менеджер Bluetooth) завершена "
 fi
-
-
-
 # -------------------------------------------------------------------
 # Blueman:
 # https://wiki.archlinux.org/index.php/Blueman
