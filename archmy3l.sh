@@ -443,6 +443,11 @@ clear
 echo " Установка AUR Helper (yay) завершена "
 # ------------------------------------------------------------
 # Скрипт yay-install.sh:
+#!/usr/bin/env bash
+# Install script yay
+# autor: Alex Creio https://cvc.hashbase.io/
+
+# wget git.io/yay-install.sh && sh yay-install.sh
 #sudo pacman -S --noconfirm --needed wget curl git 
 #git clone https://aur.archlinux.org/yay-bin.git
 #cd yay-bin
@@ -525,8 +530,9 @@ sudo pacman -S bluez bluez-libs bluez-cups bluez-utils --noconfirm
 sudo pacman -S blueman --noconfirm
 # blueman --диспетчер blutooth устройств
 sudo pacman -S alsa-utils alsa-plugins alsa-firmware alsa-lib alsa-utils --noconfirm 
-sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth xfce4-pulseaudio-plugin --noconfirm #pulseaudio-equalizer-ladspa
-#systemctl enable bluetooth.service  
+sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth xfce4-pulseaudio-plugin --noconfirm #pulseaudio-equalizer-ladspa 
+#sudo pacman -Sy pulseaudio-bluetooth alsa-utils pulseaudio-equalizer-ladspa   --noconfirm
+#sudo systemctl enable bluetooth.service 
 fi
 
 echo ""
