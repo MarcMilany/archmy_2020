@@ -530,9 +530,10 @@ sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulsea
 fi
 
 echo ""
-echo -e "${BLUE}:: ${NC}Ставим Архиваторы - Компрессионные Инструменты" 
-#echo 'Ставим Архиваторы "Компрессионные Инструменты"'
-# Putting Archivers "Compression Tools
+echo -e "${GREEN}==> ${NC}Ставим Архиваторы - Компрессионные Инструменты и дополнения"
+#echo -e "${BLUE}:: ${NC}Ставим Архиваторы - Компрессионные Инструменты и дополнения" 
+#echo 'Ставим Архиваторы - "Компрессионные Инструменты" и дополнения'
+# Installing Archivers-Compression Tools and add-ons
 sudo pacman -S zip unzip unrar p7zip zlib zziplib --noconfirm 
 
 echo "" 
