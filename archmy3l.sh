@@ -501,35 +501,36 @@ echo -e "${CYAN}=> ${BOLD}Установка поддержки Bluetooth и Sou
 echo -e "${BLUE}
 'Список программ (пакетов) для установки:${NC}
 bluez bluez-libs bluez-cups bluez-utils blueman alsa-utils alsa-plugins alsa-firmware alsa-lib alsa-utils pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth xfce4-pulseaudio-plugin' "
-echo " Будьте внимательны! В этом действии выбор остаётся за вами."
-# Be careful! In this action, the choice is yours.
+echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
+# Be careful! The installation process, after the option you selected, was registered fully automatic. In any situation, the choice is always yours.
+echo " В этом действии выбор остаётся за вами. Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# In this action, the choice is yours. If you doubt your actions, think again... 
 echo "" 
 while 
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-#read -p " 1 - AUR - yay (yay-install.sh), 2 - AUR - yay, 3 - AUR - pikaur, 0 - Пропустить установку AUR Helper: " in_aur_help  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+#read -p " 1 - Да установить, 0 - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - Пропустить установку: " in_aur_help  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$in_aur_help" =~ [^1230] ]]
+    [[ "$prog_set" =~ [^10] ]]
 do
     :
 done 
-if [[ $in_aur_help == 0 ]]; then
-clear    
-echo " Установка AUR Helper (yay) пропущена "
-
-
-
+if [[ $prog_set == 0 ]]; then    
+echo " Установка поддержки Bluetooth и Sound support (звука) пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка поддержки Bluetooth и Sound support (звука) "
 sudo pacman -S bluez bluez-libs bluez-cups bluez-utils --noconfirm
 sudo pacman -S blueman --noconfirm
 # blueman --диспетчер blutooth устройств
 sudo pacman -S alsa-utils alsa-plugins alsa-firmware alsa-lib alsa-utils --noconfirm 
 sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth xfce4-pulseaudio-plugin --noconfirm #pulseaudio-equalizer-ladspa
-#systemctl enable bluetooth.service
+#systemctl enable bluetooth.service  
+fi
 
 echo ""
-echo -e "${BLUE}:: ${NC}Ставим Архиваторы Компрессионные Инструменты" 
+echo -e "${BLUE}:: ${NC}Ставим Архиваторы - Компрессионные Инструменты" 
 #echo 'Ставим Архиваторы "Компрессионные Инструменты"'
 # Putting Archivers "Compression Tools
 sudo pacman -S zip unzip unrar p7zip zlib zziplib --noconfirm 
