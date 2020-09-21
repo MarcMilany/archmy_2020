@@ -1064,8 +1064,6 @@ sudo reboot -f
 esac #окончание оператора case.
 #
 
-
-
 #echo ""
 #echo -e "${BLUE}:: ${NC}Информацию о видеокарте"
 #lshw -c video
