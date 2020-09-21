@@ -624,7 +624,7 @@ echo -e "${GREEN}==> ${NC}Ставим Драйвера принтера (Под
 echo -e "${BLUE}:: ${NC}Ставим Драйвера принтера (Поддержка печати)" 
 #echo 'Ставим Драйвера принтера (Поддержка печати)'
 # Putting the printer Drivers (Print support)
-echo -e "${MAGENTA}:: ${BOLD}Драйверы принтеров CUPS состоят из одного или нескольких фильтров, упакованных в формате PPD (PostScript Printer Description). ${NC}"
+echo -e "${MAGENTA}:: ${BOLD}CUPS- это стандартная система печати с открытым исходным кодом, разработанная Apple Inc. для MacOS® и других UNIX® - подобных операционных систем. Драйверы принтеров CUPS состоят из одного или нескольких фильтров, упакованных в формате PPD (PostScript Printer Description). ${NC}"
 echo -e "${CYAN}:: ${NC}Все принтеры в CUPS (даже не поддерживающие PostScript) должны иметь файл PPD с описанием принтеров, специфических команд и фильтров."
 echo " В комплект поставки CUPS входят универсальные файлы PPD для сотен моделей принтеров."
 echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
@@ -654,6 +654,8 @@ fi
 # https://wiki.archlinux.org/index.php/List_of_applications
 # CUPS (Русский)-
 # https://wiki.archlinux.org/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
+# CUPS (Русский)/Printer-specific problems (Русский)
+# https://wiki.archlinux.org/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Printer-specific_problems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 # ------------------------------------------------------------------------
 
 echo ""
