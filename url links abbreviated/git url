@@ -112,12 +112,44 @@ Via: 1.1 vegur
 
 https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh
 
+*****************************************************************************
+
+Сокращение ссылки для archmy3l.sh  
+
+3. https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy3l.sh
+
+curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy3l.sh" -F "code=archmy3l"
+
+Location: https://git.io/archmy3l
+
+alex @ Terminator  ~
+└─ $ ▶ curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy3l.sh" -F "code=archmy3l"
+HTTP/1.1 100 Continue
+
+HTTP/1.1 201 Created
+Server: Cowboy
+Connection: keep-alive
+Date: Mon, 21 Sep 2020 00:33:50 GMT
+Status: 201 Created
+Content-Type: text/html;charset=utf-8
+Location: https://git.io/archmy3l
+Content-Length: 75
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Runtime: 0.155949
+X-Node: fc94bf5c-ddcc-4d97-adf0-4346cfe2c6fc
+X-Revision: 392798d237fc1aa5cd55cada10d2945773e741a8
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Via: 1.1 vegur
+
+https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy3l.sh"
 
 **************************************************************************
 
 Сокращение ссылки для archmy3.sh  
 
-3. https://raw.githubusercontent.com/MarcMilany/arch_2020/master/archmy3.sh
+3.1 https://raw.githubusercontent.com/MarcMilany/arch_2020/master/archmy3.sh
 
 curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/arch_2020/master/archmy3.sh" -F "code=archmy3"
 
