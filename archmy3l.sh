@@ -497,6 +497,20 @@ echo -e "${BLUE}:: ${NC}Обновим всю систему включая AUR 
 yay -Syy
 yay -Syu
 
+clear
+echo ""
+echo -e "${GREEN}==> ${NC}Установить Snap на Arch Linux?"
+#echo -e "${BLUE}:: ${NC}Установка AUR Helper (yay) или (pikaur)" 
+#echo 'Установка AUR Helper (yay) или (pikaur)'
+# Installing AUR Helper (yay) or (pikaur)
+echo -e "${MAGENTA}:: ${BOLD}Snap - это инструмент для развертывания программного обеспечения и управления пакетами,  которые обновляются автоматически, просты в установке, безопасны, кроссплатформенны и не имеют зависимостей. Изначально разработанный и созданный компанией Canonical, который работает в различных дистрибутивах Linux каждый день. ${NC}"
+echo -e "${MAGENTA}:: ${NC}Для управления пакетами snap Сервис и инструменты для управления пакетами snap"
+
+
+
+
+
+
 echo ""
 echo -e "${GREEN}==> ${NC}Ставим Bluetooth и Поддержка звука"
 #echo -e "${BLUE}:: ${NC}Ставим Bluetooth и Поддержка звука" 
