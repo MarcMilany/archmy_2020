@@ -744,7 +744,8 @@ sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin pepper-flash
 
 #clear
 echo ""
-echo -e "${BLUE}:: ${NC}Установка Брандмауэра UFW и Антивирусного пакета ClamAV (GUI)(GTK+)" 
+echo -e "${GREEN}==> ${NC}Установка Брандмауэра UFW и Антивирусного пакета ClamAV (GUI)(GTK+)"
+#echo -e "${BLUE}:: ${NC}Установка Брандмауэра UFW и Антивирусного пакета ClamAV (GUI)(GTK+)" 
 #echo 'Установка Брандмауэра UFW и Антивирусного пакета ClamAV (GUI)(GTK+)'
 # Installing the UFW Firewall and clamav Antivirus package (GUI) (GTK+)
 # Ufw расшифровывается как Uncomplicated Firewall и представляет собой программу для управления межсетевым экраном netfilter. Он предоставляет интерфейс командной строки и стремится быть несложным и простым в использовании.
