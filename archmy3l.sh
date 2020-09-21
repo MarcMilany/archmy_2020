@@ -989,42 +989,23 @@ done
 if [[ $prog_set == 0 ]]; then    
 echo " UFW (сетевой экран) не был добавлен в автозагрузку. "
 elif [[ $prog_set == 1 ]]; then
-  echo " Запускаем UFW (сетевой экран) "
-sudo ufw enable
-fi
-
-
-
-
-
-
-
-
-
-
-
-echo ""
-echo -e "${YELLOW}==> ${NC}Добавляем в автозагрузку сетевой экран?"
-#echo 'Добавляем в автозагрузку сетевой экран?'
-# Adding the network screen to auto-upload?
-read -p " 1 - Да, 0 - Нет: " prog_set
-if [[ $prog_set == 1 ]]; then
+  echo " Добавляем в автозагрузку UFW (сетевой экран) "
 sudo systemctl enable ufw
 echo " UFW (сетевой экран) успешно добавлен в автозагрузку " 
-elif [[ $prog_set == 0 ]]; then
-  echo ' UFW (сетевой экран) не был добавлен в автозагрузку. '
 fi
 
 sleep 01
 echo ""
-echo -e "${BLUE}:: ${NC}Проверим статус запуска сетевой экран UFW" 
-#echo 'Проверим статус запуска сетевой экран UFW'
-# Check the startup status of the UFW network screen
+echo -e "${BLUE}:: ${NC}Проверим статус запуска Firewall UFW (сетевой экран)" 
+#echo 'Проверим статус запуска Firewall UFW (сетевой экран)'
+# Check the startup status of Firewall UFW (network screen)
 sudo ufw status
+# ----------------------------------------------------------
 # Вы можете проверить статус работы UFW следующей командой:
-#sudo ufw status verbose  # -v, --verbose    быть вербальным
+# sudo ufw status verbose  # -v, --verbose    быть вербальным
 # Если нужно выключить, то используйте команду:
-#sudo ufw disable
+# sudo ufw disable
+# ------------------------------------------------------------
 
 echo ""
 echo -e "${GREEN}==> ${NC}Добавляем в автозагрузку Bluetooth.service?"
