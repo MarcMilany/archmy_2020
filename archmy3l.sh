@@ -954,7 +954,7 @@ done
 if [[ $prog_set == 0 ]]; then    
 echo "  Bluetooth.service не включен в автозагрузку, при необходиости это можно будет сделать. "
 elif [[ $prog_set == 1 ]]; then
-  echo " Добавляем в автозагрузку (bluetooth.service)"
+  echo " Добавляем в автозагрузку (bluetooth.service) "
 sudo systemctl enable bluetooth.service 
 echo " Bluetooth успешно добавлен в автозагрузку " 
 fi
