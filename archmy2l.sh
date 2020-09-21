@@ -2005,7 +2005,8 @@ echo ""
 echo -e "${BLUE}:: ${NC}Монтирование разделов NTFS и создание ссылок"
 #echo 'Монтирование разделов NTFS и создание ссылок'
 # NTFS support (optional)
-sudo pacman -S ntfs-3g --noconfirm
+pacman -S ntfs-3g --noconfirm
+#sudo pacman -S ntfs-3g --noconfirm
 
 clear
 echo ""
