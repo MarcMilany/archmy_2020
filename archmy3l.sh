@@ -504,8 +504,27 @@ echo -e "${GREEN}==> ${NC}Установить Snap на Arch Linux?"
 #echo 'Установка AUR Helper (yay) или (pikaur)'
 # Installing AUR Helper (yay) or (pikaur)
 echo -e "${MAGENTA}:: ${BOLD}Snap - это инструмент для развертывания программного обеспечения и управления пакетами,  которые обновляются автоматически, просты в установке, безопасны, кроссплатформенны и не имеют зависимостей. Изначально разработанный и созданный компанией Canonical, который работает в различных дистрибутивах Linux каждый день. ${NC}"
-echo -e "${MAGENTA}:: ${NC}Для управления пакетами snap Сервис и инструменты для управления пакетами snap"
-
+echo -e "${CYAN}:: ${NC}Для управления пакетами snap, установим snapd (демон), а также snap-confine, который обеспечивает монтирование, изоляцию и запуск snap-пакетов.  "
+echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
+# Be careful! The installation process, after the option you selected, was registered fully automatic. In any situation, the choice is always yours.
+echo " В этом действии выбор остаётся за вами. Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# In this action, the choice is yours. If you doubt your actions, think again... 
+echo "" 
+while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then    
+echo " Установка Snap пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка поддержки Snap "
 
 
 
