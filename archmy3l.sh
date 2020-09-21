@@ -985,24 +985,8 @@ if [[ $prog_set == 0 ]]; then
 echo "  Сервис sshd не включен в автозагрузку, при необходиости это можно будет сделать. "
 elif [[ $prog_set == 1 ]]; then
   echo " Добавляем в автозагрузку (sshd.service)"
-sudo systemctl enable bluetooth.service 
-echo " Сервис sshd успешно добавлен в автозагрузку " 
-fi
-
-
-
-
-
-
-
-
-
-read -p " 1 - Да, 0 - Нет: " prog_set
-if [[ $prog_set == 1 ]]; then
 sudo systemctl enable sshd.service
-echo ' Сервис sshd успешно добавлен в автозагрузку ' 
-elif [[ $prog_set == 0 ]]; then
-  echo ' Сервис sshd не включен. '
+echo " Сервис sshd успешно добавлен в автозагрузку " 
 fi
 
 echo ""
