@@ -498,6 +498,29 @@ echo -e "${GREEN}==> ${NC}Ставим Bluetooth и Поддержка звук�
 #echo 'Ставим Bluetooth и Поддержка звука'
 # Setting Bluetooth and Sound support
 echo -e "${CYAN}=> ${BOLD}Установка поддержки Bluetooth и Sound support (звука) - будет очень актуальна, если Вы установили DE DE (среда рабочего стола) XFCE. ${NC}"
+echo -e "${BLUE}
+'Список программ (пакетов) для установки:${NC}
+bluez bluez-libs bluez-cups bluez-utils blueman alsa-utils alsa-plugins alsa-firmware alsa-lib alsa-utils pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth xfce4-pulseaudio-plugin' "
+echo " Будьте внимательны! В этом действии выбор остаётся за вами."
+# Be careful! In this action, the choice is yours.
+echo "" 
+while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#read -p " 1 - AUR - yay (yay-install.sh), 2 - AUR - yay, 3 - AUR - pikaur, 0 - Пропустить установку AUR Helper: " in_aur_help  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - Пропустить установку: " in_aur_help  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$in_aur_help" =~ [^1230] ]]
+do
+    :
+done 
+if [[ $in_aur_help == 0 ]]; then
+clear    
+echo " Установка AUR Helper (yay) пропущена "
+
+
+
 sudo pacman -S bluez bluez-libs bluez-cups bluez-utils --noconfirm
 sudo pacman -S blueman --noconfirm
 # blueman --диспетчер blutooth устройств
