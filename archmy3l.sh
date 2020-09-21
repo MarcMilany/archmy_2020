@@ -596,13 +596,21 @@ echo " Установка поддержки Bluetooth и Sound support (зву�
 elif [[ $prog_set == 1 ]]; then
   echo " Установка поддержки Bluetooth и Sound support (звука) "
 sudo pacman -S bluez bluez-libs bluez-cups bluez-utils --noconfirm
-sudo pacman -S blueman --noconfirm
-# blueman --диспетчер blutooth устройств (полезно для i3)
+#sudo pacman -S blueman --noconfirm  # blueman --диспетчер blutooth устройств (полезно для i3)
 sudo pacman -S alsa-utils alsa-plugins alsa-firmware alsa-lib alsa-utils --noconfirm 
 sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth xfce4-pulseaudio-plugin --noconfirm #pulseaudio-equalizer-ladspa 
 #sudo pacman -Sy pulseaudio-bluetooth alsa-utils pulseaudio-equalizer-ladspa   --noconfirm
 #sudo systemctl enable bluetooth.service 
 fi
+
+
+
+
+
+# -------------------------------------------------------------------
+# Blueman:
+# https://wiki.archlinux.org/index.php/Blueman
+# --------------------------------------------------------------------
 
 echo ""
 echo -e "${GREEN}==> ${NC}Ставим Архиваторы - Компрессионные Инструменты и дополнения"
