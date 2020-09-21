@@ -203,7 +203,7 @@ echo -e "${YELLOW}:: ${NC}Загружаем базу данных пакето�
 #echo 'Загружаем базу данных пакетов независимо от того, есть ли какие-либо изменения в версиях или нет.'
 # Loading the package database regardless of whether there are any changes in the versions or not.
 echo ""
-pacman -Syyu  --noconfirm  
+sudo pacman -Syyu  --noconfirm  
 
 # ============================================================
 
@@ -458,6 +458,7 @@ echo " Установка AUR Helper (yay) завершена "
 # ------------------------------------------------------------
 elif [[ $in_aur_help == 2 ]]; then
 sudo pacman -Syu
+#sudo pacman -S git
 cd /home/$username
 git clone https://aur.archlinux.org/yay.git
 chown -R $username:users /home/$username/yay
@@ -468,7 +469,8 @@ rm -Rf /home/$username/yay
 clear
 echo " Установка AUR Helper (yay) завершена "
 elif [[ $in_aur_help == 3 ]]; then
-sudo pacman -Syu    
+sudo pacman -Syu
+#sudo pacman -S git    
 cd /home/$username
 git clone https://aur.archlinux.org/pikaur.git
 chown -R $username:users /home/$username/pikaur   
@@ -526,6 +528,7 @@ if [[ $prog_set == 0 ]]; then
 echo " Установка Snap пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка поддержки Snap "
+#sudo pacman -S git  
 git clone https://aur.archlinux.org/snapd.git 
 chown -R $username:users /home/$username/snapd 
 chown -R $username:users /home/$username/snapd/PKGBUILD 
@@ -570,9 +573,8 @@ echo -e "${GREEN}==> ${NC}Ставим Bluetooth и Поддержка звук�
 #echo 'Ставим Bluetooth и Поддержка звука'
 # Setting Bluetooth and Sound support
 echo -e "${CYAN}=> ${BOLD}Установка поддержки Bluetooth и Sound support (звука) - будет очень актуальна, если Вы установили DE (среда рабочего стола) XFCE. ${NC}"
-echo -e "${BLUE}
-'Список программ (пакетов) для установки:${NC}
-bluez bluez-libs bluez-cups bluez-utils blueman alsa-utils alsa-plugins alsa-firmware alsa-lib alsa-utils pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth xfce4-pulseaudio-plugin' "
+echo -e "${BLUE} 'Список программ (пакетов) для установки:${GREEN}
+bluez bluez-libs bluez-cups bluez-utils blueman alsa-utils alsa-plugins alsa-firmware alsa-lib alsa-utils pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth xfce4-pulseaudio-plugin' ${NC}"
 echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
 # Be careful! The installation process, after the option you selected, was registered fully automatic. In any situation, the choice is always yours.
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
