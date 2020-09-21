@@ -978,6 +978,7 @@ elif [[ $prog_set == 1 ]]; then
 sudo systemctl start org.cups.cupsd.service  
 echo " Добавляем в автозапуск Драйвера принтера CUPS (cupsd.service) " 
 sudo systemctl enable org.cups.cupsd.service 
+# Проверяем - переходим на страницу http://localhost:631:
 fi
 # ---------------------------------------------------------------------
 
