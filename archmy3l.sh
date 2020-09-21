@@ -947,9 +947,11 @@ elif [[ $prog_set == 0 ]]; then
 fi
 
 echo ""
-echo -e "${YELLOW}==> ${NC}Запускаем и добавляем в автозапуск cupsd.service"
-#echo 'Добавляем в автозагрузку ssh(server) для удаленного доступа к этому ПК?'
-# Adding ssh(server) to the startup for remote access to this PC?
+echo -e "${YELLOW}==> ${NC}Запускаем и добавляем в автозапуск Драйвера принтера CUPS (cupsd.service)"
+#echo -e "${BLUE}:: ${NC}Запускаем и добавляем в автозапуск Драйвера принтера CUPS (cupsd.service)"
+#echo 'Запускаем и добавляем в автозапуск Драйвера принтера CUPS (cupsd.service)'
+# Launch and add the CUPS printer Driver to autorun (cupsd. service)
+
 read -p " 1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
 sudo systemctl enable sshd.service
