@@ -493,9 +493,11 @@ yay -Syy
 yay -Syu
 
 echo ""
-echo -e "${BLUE}:: ${NC}Ставим Bluetooth и Поддержка звука" 
+echo -e "${GREEN}==> ${NC}Ставим Bluetooth и Поддержка звука"
+#echo -e "${BLUE}:: ${NC}Ставим Bluetooth и Поддержка звука" 
 #echo 'Ставим Bluetooth и Поддержка звука'
 # Setting Bluetooth and Sound support
+echo -e "${CYAN}=> ${BOLD}Установка поддержки Bluetooth и Sound support (звука) - будет очень актуальна, если Вы установили DE DE (среда рабочего стола) XFCE. ${NC}"
 sudo pacman -S bluez bluez-libs bluez-cups bluez-utils --noconfirm
 sudo pacman -S blueman --noconfirm
 # blueman --диспетчер blutooth устройств
