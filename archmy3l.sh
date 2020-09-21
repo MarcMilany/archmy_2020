@@ -927,17 +927,54 @@ fi
 # Виден через наутилус как mtp://[usb:002,007]/
 # ============================================================================
 
-echo ""
-echo -e "${YELLOW}==> ${NC}Включаем UFW сетевой экран?"
-#echo 'Включаем сетевой экран?'
-# Enabling the network screen?
-read -p " 1 - Да, 0 - Нет: " prog_set
-if [[ $prog_set == 1 ]]; then
- echo " Включаем сетевой экран "   
+clear
+echo -e "${CYAN}
+  <<< Запуск и добавление установленных программ (пакетов), сервисов и служб в автозапуск. >>> 
+${NC}"
+# Launch and add installed programs (packages), services, and services to autorun.
+
+#echo ""
+echo -e "${BLUE}:: ${NC}Запускаем и добавляем в автозапуск Uncomplicated Firewall UFW (сетевой экран)"
+echo -e "${GREEN}==> ${NC}Включить Firewall UFW (сетевой экран)?"
+#echo -e "{BLUE}:: ${NC}Включить Firewall UFW (сетевой экран)?"
+#echo 'Включить Firewall UFW (сетевой экран)?'
+# Enable firewall UFW (firewall)?
+echo -e "${YELLOW}:: ${BOLD}Запускаем UFW (сетевой экран), если таковой был вами установлен. ${NC}"
+echo -e "${CYAN}:: ${NC}Вы сможете включить UFW (сетевой экран) позже, воспользовавшись скриптом как шпаргалкой!"
+echo " Будьте внимательны! В любой ситуации выбор всегда остаётся за вами. "
+# Be careful! In any situation, the choice is always yours.
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
+while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#read -p " 1 - Да включить UFW, 0 - НЕТ - Пропустить действие: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да включить UFW,     0 - НЕТ - Пропустить действие: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then    
+echo "  Запуск UFW (сетевой экран) пропущено "
+elif [[ $prog_set == 1 ]]; then
+  echo " Запускаем UFW (сетевой экран) "
 sudo ufw enable
-elif [[ $prog_set == 0 ]]; then
-  echo ' Запуск программы (пакета) пропущен. '
 fi
+
+
+
+
+
+
+
+
+
+
+
+
 
 echo ""
 echo -e "${YELLOW}==> ${NC}Добавляем в автозагрузку сетевой экран?"
@@ -951,11 +988,7 @@ elif [[ $prog_set == 0 ]]; then
   echo ' UFW (сетевой экран) не был добавлен в автозагрузку. '
 fi
 
-#echo 'Добавляем в автозагрузку сетевой экран'
-# Adding the network screen to auto-upload
-#sudo systemctl enable ufw
-
-sleep 1
+sleep 01
 echo ""
 echo -e "${BLUE}:: ${NC}Проверим статус запуска сетевой экран UFW" 
 #echo 'Проверим статус запуска сетевой экран UFW'
@@ -965,13 +998,6 @@ sudo ufw status
 #sudo ufw status verbose  # -v, --verbose    быть вербальным
 # Если нужно выключить, то используйте команду:
 #sudo ufw disable
-
-
-clear
-echo -e "${CYAN}
-  <<< Запуск и добавление установленных программ (пакетов), сервисов и служб в автозапуск. >>> 
-${NC}"
-# Launch and add installed programs (packages), services, and services to autorun.
 
 echo ""
 echo -e "${GREEN}==> ${NC}Добавляем в автозагрузку Bluetooth.service?"
