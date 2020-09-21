@@ -566,7 +566,7 @@ echo ""
 echo " Snap теперь установлен и готов к работе! "
 fi
 
-clear
+#clear
 echo ""
 echo -e "${GREEN}==> ${NC}Ставим Bluetooth и Поддержка звука"
 #echo -e "${BLUE}:: ${NC}Ставим Bluetooth и Поддержка звука" 
