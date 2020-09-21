@@ -574,7 +574,7 @@ echo -e "${GREEN}==> ${NC}Ставим Bluetooth и Поддержка звук�
 # Setting Bluetooth and Sound support
 echo -e "${CYAN}=> ${BOLD}Установка поддержки Bluetooth и Sound support (звука) - будет очень актуальна, если Вы установили DE (среда рабочего стола) XFCE. ${NC}"
 echo -e "${BLUE} 'Список программ (пакетов) для установки:${GREEN}
-bluez bluez-libs bluez-cups bluez-utils blueman alsa-utils alsa-plugins alsa-firmware alsa-lib alsa-utils pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth xfce4-pulseaudio-plugin' ${NC}"
+bluez bluez-libs bluez-cups bluez-utils alsa-utils alsa-plugins alsa-firmware alsa-lib alsa-utils pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth xfce4-pulseaudio-plugin' ${NC}"
 echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
 # Be careful! The installation process, after the option you selected, was registered fully automatic. In any situation, the choice is always yours.
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -596,14 +596,41 @@ echo " Установка поддержки Bluetooth и Sound support (зву�
 elif [[ $prog_set == 1 ]]; then
   echo " Установка поддержки Bluetooth и Sound support (звука) "
 sudo pacman -S bluez bluez-libs bluez-cups bluez-utils --noconfirm
-#sudo pacman -S blueman --noconfirm  # blueman --диспетчер blutooth устройств (полезно для i3)
+#sudo pacman -S blueman --noconfirm  # blueman --диспетчер bluetooth устройств (полезно для i3)
 sudo pacman -S alsa-utils alsa-plugins alsa-firmware alsa-lib alsa-utils --noconfirm 
 sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth xfce4-pulseaudio-plugin --noconfirm #pulseaudio-equalizer-ladspa 
 #sudo pacman -Sy pulseaudio-bluetooth alsa-utils pulseaudio-equalizer-ladspa   --noconfirm
 #sudo systemctl enable bluetooth.service 
 fi
 
+echo ""
+echo -e "${GREEN}==> ${NC}Установить Blueman - диспетчер bluetooth устройств?"
+#echo -e "${BLUE}:: ${NC}Установить Blueman - диспетчер bluetooth устройств?" 
+#echo 'Установить Blueman - диспетчер bluetooth устройств?'
+# Install Blueman-bluetooth device Manager?
+echo -e "${CYAN}:: ${BOLD}Установка поддержки Bluetooth и Sound support (звука) - будет очень актуальна, если Вы установили DE (среда рабочего стола) XFCE. ${NC}"
 
+echo " blueman --диспетчер blutooth устройств  "
+echo " "
+echo " полезно для i3 " 
+while 
+    read -n1 -p  "
+    1 - да 
+    
+    0 - нет: " i_blu # sends right after the keypress
+    echo ''
+    [[ "$i_blu" =~ [^10] ]]
+do
+    :
+done
+if [[ $i_blu == 0 ]]; then
+clear
+echo " Установка пропущена "
+elif [[ $i_blu == 1 ]]; then
+pacman -S blueman --noconfirm
+clear
+echo " установка blueman завершена "
+fi
 
 
 
