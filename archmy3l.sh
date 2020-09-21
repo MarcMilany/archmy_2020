@@ -963,8 +963,8 @@ echo ""
 echo -e "${GREEN}==> ${NC}Добавляем в автозагрузку ssh(server) для удаленного доступа к этому ПК?"
 #echo 'Добавляем в автозагрузку ssh(server) для удаленного доступа к этому ПК?'
 # Adding ssh(server) to the startup for remote access to this PC?
-echo -e "${YELLOW}:: ${BOLD}Запускаем сервис (bluetooth.service), если таковой был вами установлен. ${NC}"
-echo -e "${CYAN}:: ${NC}Вы сможете выполнить запуск (bluetooth.service) позже, воспользовавшись скриптом как шпаргалкой!"
+echo -e "${YELLOW}:: ${BOLD}Запускаем сервис (sshd.service), если таковой был вами установлен. ${NC}"
+echo -e "${CYAN}:: ${NC}Вы сможете выполнить запуск (sshd.service) позже, воспользовавшись скриптом как шпаргалкой!"
 echo " Будьте внимательны! В любой ситуации выбор всегда остаётся за вами. "
 # Be careful! In any situation, the choice is always yours.
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -984,7 +984,7 @@ done
 if [[ $prog_set == 0 ]]; then    
 echo "  Сервис sshd не включен в автозагрузку, при необходиости это можно будет сделать. "
 elif [[ $prog_set == 1 ]]; then
-  echo " Добавляем в автозагрузку (bluetooth.service)"
+  echo " Добавляем в автозагрузку (sshd.service)"
 sudo systemctl enable bluetooth.service 
 echo " Сервис sshd успешно добавлен в автозагрузку " 
 fi
