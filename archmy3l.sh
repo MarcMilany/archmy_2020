@@ -879,9 +879,9 @@ echo " Установка поддержки системой exFAT пропущ
 elif [[ $prog_set == 1 ]]; then
   echo " Установка поддержки системой exFAT в Linux "
 sudo pacman -S exfat-utils fuse-exfat --noconfirm  #exfatprogs
-# exfat-utils - 
+# exfat-utils - Утилиты для файловой системы exFAT
 # fuse-exfat - 
-# exfatprogs - утилиты файловой системы exFAT файловой системы в пространстве пользователя драйвера ядра Linux файловой системы exFAT
+# exfatprogs - Утилиты файловой системы exFAT файловой системы в пространстве пользователя драйвера ядра Linux файловой системы exFAT
 fi
 
 echo ""
