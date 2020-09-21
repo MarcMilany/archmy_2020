@@ -647,8 +647,14 @@ if [[ $prog_set == 0 ]]; then
 echo " Установка поддержки Драйвера принтера (Поддержка печати) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка поддержки Драйвера принтера (Поддержка печати) CUPS "
-sudo pacman -S cups ghostscript cups-pdf --noconfirm  #python-imaging hplip #hplip-plugin
+sudo pacman -S cups ghostscript cups-pdf --noconfirm  #python-imaging gsfonts gutenprint  #hplip hplip-plugin 
 fi
+# ---------------------------------------------------------------------
+# List of applications:
+# https://wiki.archlinux.org/index.php/List_of_applications
+# CUPS (Русский)-
+# https://wiki.archlinux.org/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
+# ------------------------------------------------------------------------
 
 echo ""
 echo -e "${BLUE}:: ${NC}Установка базовых программ и пакетов" 
