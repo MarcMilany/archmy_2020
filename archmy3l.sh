@@ -742,10 +742,12 @@ echo -e "${BLUE}:: ${NC}Установка Браузеров и медиа-пл
 # Installing Browsers and media plugins
 sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin pepper-flash --noconfirm
 
+#clear
 echo ""
 echo -e "${BLUE}:: ${NC}Установка Брандмауэра UFW и Антивирусного пакета ClamAV (GUI)(GTK+)" 
 #echo 'Установка Брандмауэра UFW и Антивирусного пакета ClamAV (GUI)(GTK+)'
 # Installing the UFW Firewall and clamav Antivirus package (GUI) (GTK+)
+# Ufw расшифровывается как Uncomplicated Firewall и представляет собой программу для управления межсетевым экраном netfilter. Он предоставляет интерфейс командной строки и стремится быть несложным и простым в использовании.
 echo -e "${BLUE}:: ${NC}Установка производится в порядке перечисления" 
 #echo 'Установка производится в порядке перечисления'
 # Installation Is performed in the order listed
@@ -771,6 +773,14 @@ echo " Установка Clam AntiVirus завершена "
 elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ пропущена. '
 fi
+# --------------------------------------------------
+# Uncomplicated Firewall
+# https://wiki.archlinux.org/index.php/Uncomplicated_Firewall
+# ufw home:
+# https://launchpad.net/ufw
+# Категория: Межсетевые экраны
+# https://wiki.archlinux.org/index.php/Category:Firewalls
+# ----------------------------------------------------------
 
 echo ""
 echo -e "${BLUE}:: ${NC}Установка Torrent клиентов - Transmission, qBittorrent, Deluge (GTK)(Qt)(GTK+)" 
@@ -928,10 +938,6 @@ sudo ufw enable
 elif [[ $prog_set == 0 ]]; then
   echo ' Запуск программы (пакета) пропущен. '
 fi
-
-#echo 'Включаем сетевой экран'
-# Enabling the network screen
-#sudo ufw enable
 
 echo ""
 echo -e "${YELLOW}==> ${NC}Добавляем в автозагрузку сетевой экран?"
