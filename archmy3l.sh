@@ -458,14 +458,13 @@ echo " Установка AUR Helper (yay) завершена "
 # ------------------------------------------------------------
 elif [[ $in_aur_help == 2 ]]; then
 sudo pacman -Syu
-#sudo pacman -S git
-cd /home/$username
+#sudo pacman -S --noconfirm --needed wget curl git
 git clone https://aur.archlinux.org/yay.git
-chown -R $username:users /home/$username/yay
-chown -R $username:users /home/$username/yay/PKGBUILD 
-cd /home/$username/yay  
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/yay
+cd yay 
+makepkg -si --noconfirm 
+# makepkg -si
+#makepkg -si --skipinteg 
+rm -Rf yay
 clear
 echo " Установка AUR Helper (yay) завершена "
 elif [[ $in_aur_help == 3 ]]; then
@@ -560,7 +559,8 @@ echo " Вы взаимодействуете с ним с помощью ком�
 # snap --help
 echo ""
 echo -e "${BLUE}:: ${NC}Протестируем систему, установив hello-world snap и убедимся, что она работает правильно."
-sudo snap install hello-world
+#sudo snap install hello-world
+snap install hello-world
 hello-world
 echo ""
 echo -e "${BLUE}:: ${NC}Список установленных snaps:"
