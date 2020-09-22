@@ -182,7 +182,7 @@ echo -e "${CYAN}==> ${NC}Если пинг идёт едем дальше ... :)
 # If the ping goes we go further ... :)
 
 echo ""
-echo -e "${CYAN}==> ${NC}Давайте проверим наш часовой пояс ... :)"
+echo -e "${MAGENTA}==> ${NC}Давайте проверим наш часовой пояс ... :)"
 #echo 'Давайте проверим наш часовой пояс ... :)'
 # Let's check our time zone ... :)
 timedatectl | grep "Time zone"
