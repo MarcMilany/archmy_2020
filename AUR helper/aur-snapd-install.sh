@@ -33,7 +33,8 @@ echo " Вы взаимодействуете с ним с помощью ком�
 # snap --help
 echo ""
 echo -e " Протестируем систему, установив hello-world snap и убедимся, что она работает правильно. "
-sudo snap install hello-world
+#sudo snap install hello-world
+snap install hello-world
 hello-world
 echo ""
 echo -e " Список установленных snaps: "
