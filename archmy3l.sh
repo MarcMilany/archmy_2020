@@ -534,8 +534,11 @@ chown -R $username:users /home/$username/snapd
 chown -R $username:users /home/$username/snapd/PKGBUILD 
 cd /home/$username/snapd 
 sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/snapd
+rm -Rf snapd
 clear
+echo " Установка Snap выполнена "
+fi
+########## Запускаем поддержку Snap ###############
 echo ""
 echo -e "${BLUE}:: ${NC}Включить модуль systemd, который управляет основным сокетом мгновенной связи" 
 sudo systemctl enable --now snapd.socket
@@ -564,7 +567,6 @@ echo -e "${BLUE}:: ${NC}Удалить установленный snap (hello-wo
 sudo snap remove hello-world
 echo ""
 echo " Snap теперь установлен и готов к работе! "
-fi
 
 #clear
 echo ""
