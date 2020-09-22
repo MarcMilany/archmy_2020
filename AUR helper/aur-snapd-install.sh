@@ -10,6 +10,7 @@ echo " Установка поддержки Snap "
 git clone https://aur.archlinux.org/snapd.git
 cd snapd
 # makepkg -si
+# makepkg -si --noconfirm   #-не спрашивать каких-либо подтверждений
 makepkg -si --skipinteg
 cd ..
 rm -rf snapd
@@ -47,3 +48,15 @@ sudo snap remove hello-world
 echo ""
 echo " Snap теперь установлен и готов к работе! "
 
+#
+# https://aur.archlinux.org/packages/snapd/
+# Сервис и инструменты для управления пакетами snap.
+# База пакета: Snapd
+# URL восходящего направления:	https://github.com/snapcore/snapd
+# Git Clone URL: https://aur.archlinux.org/snapd.git (только для чтения, нажмите, чтобы скопировать)
+# Первый отправленный:	2018-01-07 17:37
+# Последнее обновление:	2020-09-07 11:30
+#
+#
+#
+#
