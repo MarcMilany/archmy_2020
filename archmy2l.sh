@@ -2276,8 +2276,8 @@ pacman -Syu
 #sudo pacman -S git
 cd /home/$username
 git clone https://aur.archlinux.org/yay.git
-chown -R $username:users /home/$username/yay
-chown -R $username:users /home/$username/yay/PKGBUILD 
+chown -R $username:users /home/$username/yay   #-R, --recursive - рекурсивная обработка всех подкаталогов;
+chown -R $username:users /home/$username/yay/PKGBUILD  #-R, --recursive - рекурсивная обработка всех подкаталогов;
 cd /home/$username/yay  
 sudo -u $username  makepkg -si --noconfirm  
 rm -Rf /home/$username/yay
@@ -2289,8 +2289,8 @@ pacman -Syu
 #sudo pacman -S git    
 cd /home/$username
 git clone https://aur.archlinux.org/pikaur.git
-chown -R $username:users /home/$username/pikaur   
-chown -R $username:users /home/$username/pikaur/PKGBUILD 
+chown -R $username:users /home/$username/pikaur   #-R, --recursive - рекурсивная обработка всех подкаталогов;
+chown -R $username:users /home/$username/pikaur/PKGBUILD  #-R, --recursive - рекурсивная обработка всех подкаталогов;
 cd /home/$username/pikaur   
 sudo -u $username  makepkg -si --noconfirm  
 rm -Rf /home/$username/pikaur
@@ -2346,8 +2346,8 @@ elif [[ $prog_set == 1 ]]; then
   echo " Установка поддержки Snap "
 #sudo pacman -S git  
 git clone https://aur.archlinux.org/snapd.git 
-chown -R $username:users /home/$username/snapd 
-chown -R $username:users /home/$username/snapd/PKGBUILD 
+chown -R $username:users /home/$username/snapd  #-R, --recursive - рекурсивная обработка всех подкаталогов;
+chown -R $username:users /home/$username/snapd/PKGBUILD  #-R, --recursive - рекурсивная обработка всех подкаталогов;
 cd /home/$username/snapd 
 sudo -u $username  makepkg -si --noconfirm  
 rm -Rf /home/$username/snapd
