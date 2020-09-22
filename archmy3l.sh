@@ -527,16 +527,18 @@ done
 if [[ $prog_set == 0 ]]; then    
 echo " Установка Snap пропущена "
 elif [[ $prog_set == 1 ]]; then
-  echo " Установка поддержки Snap "
-#sudo pacman -S git  
-git clone https://aur.archlinux.org/snapd.git 
-chown -R $username:users /home/$username/snapd 
-chown -R $username:users /home/$username/snapd/PKGBUILD 
-cd /home/$username/snapd 
-sudo -u $username  makepkg -si --noconfirm  
+echo -e " Установка базовых программ и пакетов wget, curl, git "
+#sudo pacman -S --noconfirm --needed wget curl git 
+echo " Установка поддержки Snap "
+git clone https://aur.archlinux.org/snapd.git
+cd snapd
+# makepkg -si
+makepkg -si --skipinteg
+#makepkg -si --noconfirm
+cd ..  
 rm -Rf snapd
 clear
-echo " Установка Snap выполнена "
+echo " Установка Snapd выполнена "
 fi
 ########## Запускаем поддержку Snap ###############
 echo ""
