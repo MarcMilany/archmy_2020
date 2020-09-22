@@ -2062,7 +2062,7 @@ echo -e "${BLUE}:: ${NC}Установка базовых программ и п
 #echo 'Установка базовых программ и пакетов'
 # Installing basic programs and packages
 #sudo pacman -S wget --noconfirm
-pacman -S wget git --noconfirm  #curl
+pacman -S wget git curl --noconfirm  #
 # ==============================================================
 # GNU Wget - это бесплатный программный пакет для извлечения файлов с использованием HTTP, HTTPS, FTP и FTPS (FTPS начиная с версии 1.18) .
 # Это неинтерактивный инструмент командной строки, поэтому его легко вызывать из сценариев.
@@ -2236,20 +2236,18 @@ clear
 echo -e "${MAGENTA}
   <<< Установка AUR (Arch User Repository) - репозиторий, в который пользователи загружают скрипты для установки программного обеспечения >>> ${NC}"
 # Installing an Aur (Arch User Repository) - a repository where users upload scripts to install software.
-echo -e "${YELLOW}==> Примечание:${BOLD}Сейчас Вы можете пропустить установку "AUR", пункт для установки "AUR" будет продублирован в следующем скрипте (archmy3l). И Вы сможете установить "AUR Helper" уже из установленной системы.${NC}"
+echo -e "${YELLOW}==> Примечание:${BOLD}Сейчас Вы можете пропустить установку "AUR", пункт для установки "AUR" будет продублирован в следующем скрипте (archmy3l). И Вы сможете установить "AUR Helper" уже из установленной системы. Установка "Snap на Arch Linux", также будет продублирован в следующем скрипте. ${NC}"
 
-
+echo ""
 echo -e "${GREEN}==> ${NC}Установка AUR Helper (yay) или (pikaur)"
 #echo -e "${BLUE}:: ${NC}Установка AUR Helper (yay) или (pikaur)" 
 #echo 'Установка AUR Helper (yay) или (pikaur)'
 # Installing AUR Helper (yay) or (pikaur)
-echo -e "${YELLOW}==> ${BOLD}Важно! Pikaur - идёт как зависимость для Octopi. ${NC}"
 echo -e "${MAGENTA}:: ${NC} В AUR - есть практически всё, что можно установить на Linux. В том числе и программы, которые для других дистробутивов пришлось бы собирать из исходников"
 echo -e "${CYAN}=> ${BOLD}В сценарии скрипта присутствуют следующие варианты: ${NC}"
-echo " 1 - Установка 'AUR'-'yay' с помощью скрипта созданного (autor): Alex Creio https://cvc.hashbase.io/ - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/yay-git/), собирается и устанавливается, то выбирайте вариант - "1". "
-echo " 2 - Установка 'AUR'-'yay' с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/yay.git), собирается и устанавливается, то выбирайте вариант - "2"."
-echo " 3 - Установка 'AUR'-'pikaur' с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/pikaur.git), собирается и устанавливается, то выбирайте вариант - "3". "
-echo " Подчеркну (обратить внимание)! Pikaur - идёт как зависимость для Octopi."
+echo " 1 - Установка 'AUR'-'yay' с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/yay.git), собирается и устанавливается, то выбирайте вариант - "1". "
+echo " 2 - Установка 'AUR'-'pikaur' с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/pikaur.git), собирается и устанавливается, то выбирайте вариант - "2"."
+echo -e "${YELLOW}==> ${BOLD}Важно! Подчеркну (обратить внимание)! Pikaur - идёт как зависимость для Octopi. ${NC}"
 echo " Будьте внимательны! В этом действии выбор остаётся за вами."
 # Be careful! In this action, the choice is yours.
 echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
@@ -2261,7 +2259,7 @@ while
 #read -p " 1 - AUR - yay (yay-install.sh), 2 - AUR - yay, 3 - AUR - pikaur, 0 - Пропустить установку AUR Helper: " in_aur_help  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - AUR - yay (yay-install.sh),     2 - AUR - yay (git clone),     3 - AUR - pikaur (git clone),
+    1 - AUR - yay (git clone),     2 - AUR - pikaur (git clone),     
 
     0 - Пропустить установку AUR Helper: " in_aur_help  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
@@ -2273,26 +2271,6 @@ if [[ $in_aur_help == 0 ]]; then
 clear    
 echo " Установка AUR Helper (yay) пропущена "
 elif [[ $in_aur_help == 1 ]]; then
-sudo pacman -Syu
-wget git.io/yay-install.sh && sh yay-install.sh --noconfirm
-clear
-echo " Установка AUR Helper (yay) завершена "
-# ------------------------------------------------------------
-# Скрипт yay-install.sh:
-#!/usr/bin/env bash
-# Install script yay
-# autor: Alex Creio https://cvc.hashbase.io/
-
-# wget git.io/yay-install.sh && sh yay-install.sh
-#sudo pacman -S --noconfirm --needed wget curl git 
-#git clone https://aur.archlinux.org/yay-bin.git
-#cd yay-bin
-### makepkg -si
-#makepkg -si --skipinteg
-#cd ..
-#rm -rf yay-bin
-# ------------------------------------------------------------
-elif [[ $in_aur_help == 2 ]]; then
 pacman -Syu    
 #sudo pacman -Syu
 #sudo pacman -S git
@@ -2305,7 +2283,7 @@ sudo -u $username  makepkg -si --noconfirm
 rm -Rf /home/$username/yay
 clear
 echo " Установка AUR Helper (yay) завершена "
-elif [[ $in_aur_help == 3 ]]; then
+elif [[ $in_aur_help == 2 ]]; then
 pacman -Syu    
 #sudo pacman -Syu
 #sudo pacman -S git    
