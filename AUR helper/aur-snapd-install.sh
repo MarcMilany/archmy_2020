@@ -13,7 +13,10 @@ cd snapd
 makepkg -si --skipinteg
 cd ..
 rm -rf snapd
+#rm -Rf snapd
 clear
+echo " Установка Snapd выполнена "
+########## Запускаем поддержку Snap ###############
 echo ""
 echo -e " Включить модуль systemd, который управляет основным сокетом мгновенной связи " 
 sudo systemctl enable --now snapd.socket
