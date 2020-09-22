@@ -464,6 +464,7 @@ cd yay
 makepkg -si --noconfirm 
 # makepkg -si
 #makepkg -si --skipinteg 
+cd ..
 rm -Rf yay
 clear
 echo " Установка AUR Helper (yay) завершена "
@@ -475,6 +476,7 @@ cd pikaur
 makepkg -si --noconfirm 
 # makepkg -si
 #makepkg -si --skipinteg  
+cd ..
 rm -Rf pikaur
 clear
 echo " Установка AUR Helper (pikaur) завершена "
