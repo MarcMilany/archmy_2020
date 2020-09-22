@@ -2234,9 +2234,10 @@ EOF
 
 clear
 echo -e "${MAGENTA}
-  <<< Установка AUR (Arch User Repository) - репозиторий, в который пользователи загружают скрипты для установки программного обеспечения >>> 
-${NC}"
+  <<< Установка AUR (Arch User Repository) - репозиторий, в который пользователи загружают скрипты для установки программного обеспечения >>> ${NC}"
 # Installing an Aur (Arch User Repository) - a repository where users upload scripts to install software.
+echo -e "${YELLOW}==> Примечание:${BOLD}Сейчас Вы можете пропустить установку "AUR", пункт для установки "AUR" будет продублирован в следующем скрипте (archmy3l). И Вы сможете установить "AUR Helper" уже из установленной системы.${NC}"
+
 
 echo -e "${GREEN}==> ${NC}Установка AUR Helper (yay) или (pikaur)"
 #echo -e "${BLUE}:: ${NC}Установка AUR Helper (yay) или (pikaur)" 
@@ -2292,7 +2293,8 @@ echo " Установка AUR Helper (yay) завершена "
 #rm -rf yay-bin
 # ------------------------------------------------------------
 elif [[ $in_aur_help == 2 ]]; then
-sudo pacman -Syu
+pacman -Syu    
+#sudo pacman -Syu
 #sudo pacman -S git
 cd /home/$username
 git clone https://aur.archlinux.org/yay.git
@@ -2304,7 +2306,8 @@ rm -Rf /home/$username/yay
 clear
 echo " Установка AUR Helper (yay) завершена "
 elif [[ $in_aur_help == 3 ]]; then
-sudo pacman -Syu
+pacman -Syu    
+#sudo pacman -Syu
 #sudo pacman -S git    
 cd /home/$username
 git clone https://aur.archlinux.org/pikaur.git
