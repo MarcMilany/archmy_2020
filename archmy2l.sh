@@ -2344,7 +2344,10 @@ if [[ $prog_set == 0 ]]; then
 echo " Установка Snap пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка поддержки Snap "
-#sudo pacman -S git  
+#pacman -Syu    
+#sudo pacman -Syu
+#sudo pacman -S git    
+cd /home/$username 
 git clone https://aur.archlinux.org/snapd.git 
 chown -R $username:users /home/$username/snapd  #-R, --recursive - рекурсивная обработка всех подкаталогов;
 chown -R $username:users /home/$username/snapd/PKGBUILD  #-R, --recursive - рекурсивная обработка всех подкаталогов;
@@ -2352,6 +2355,9 @@ cd /home/$username/snapd
 sudo -u $username  makepkg -si --noconfirm  
 rm -Rf /home/$username/snapd
 clear
+echo " Установка Snap выполнена "
+fi
+
 echo ""
 echo -e "${BLUE}:: ${NC}Включить модуль systemd, который управляет основным сокетом мгновенной связи" 
 sudo systemctl enable --now snapd.socket
@@ -2381,7 +2387,6 @@ echo -e "${BLUE}:: ${NC}Удалить установленный snap (hello-wo
 sudo snap remove hello-world
 echo ""
 echo " Snap теперь установлен и готов к работе! "
-fi
 
 sleep 02
 clear
