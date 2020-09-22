@@ -2061,7 +2061,7 @@ echo ""
 echo -e "${BLUE}:: ${NC}Установка базовых программ и пакетов"
 #echo 'Установка базовых программ и пакетов'
 # Installing basic programs and packages
-#sudo pacman -S wget --noconfirm
+echo -e " Установка базовых программ (пакетов): wget, curl, git "
 pacman -S wget git curl --noconfirm  #
 # ==============================================================
 # GNU Wget - это бесплатный программный пакет для извлечения файлов с использованием HTTP, HTTPS, FTP и FTPS (FTPS начиная с версии 1.18) .
