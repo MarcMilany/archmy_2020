@@ -2233,6 +2233,183 @@ EOF
 #pacman -S $packages --noconfirm
 
 clear
+echo -e "${MAGENTA}
+  <<< Установка AUR (Arch User Repository) - репозиторий, в который пользователи загружают скрипты для установки программного обеспечения >>> 
+${NC}"
+# Installing an Aur (Arch User Repository) - a repository where users upload scripts to install software.
+
+echo -e "${GREEN}==> ${NC}Установка AUR Helper (yay) или (pikaur)"
+#echo -e "${BLUE}:: ${NC}Установка AUR Helper (yay) или (pikaur)" 
+#echo 'Установка AUR Helper (yay) или (pikaur)'
+# Installing AUR Helper (yay) or (pikaur)
+echo -e "${YELLOW}==> ${BOLD}Важно! Pikaur - идёт как зависимость для Octopi. ${NC}"
+echo -e "${MAGENTA}:: ${NC} В AUR - есть практически всё, что можно установить на Linux. В том числе и программы, которые для других дистробутивов пришлось бы собирать из исходников"
+echo -e "${CYAN}=> ${BOLD}В сценарии скрипта присутствуют следующие варианты: ${NC}"
+echo " 1 - Установка 'AUR'-'yay' с помощью скрипта созданного (autor): Alex Creio https://cvc.hashbase.io/ - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/yay-git/), собирается и устанавливается, то выбирайте вариант - "1". "
+echo " 2 - Установка 'AUR'-'yay' с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/yay.git), собирается и устанавливается, то выбирайте вариант - "2"."
+echo " 3 - Установка 'AUR'-'pikaur' с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/pikaur.git), собирается и устанавливается, то выбирайте вариант - "3". "
+echo " Подчеркну (обратить внимание)! Pikaur - идёт как зависимость для Octopi."
+echo " Будьте внимательны! В этом действии выбор остаётся за вами."
+# Be careful! In this action, the choice is yours.
+echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
+#echo 'Установка производится в порядке перечисления'
+# Installation Is performed in the order listed
+echo "" 
+while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#read -p " 1 - AUR - yay (yay-install.sh), 2 - AUR - yay, 3 - AUR - pikaur, 0 - Пропустить установку AUR Helper: " in_aur_help  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - AUR - yay (yay-install.sh),     2 - AUR - yay (git clone),     3 - AUR - pikaur (git clone),
+
+    0 - Пропустить установку AUR Helper: " in_aur_help  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$in_aur_help" =~ [^1230] ]]
+do
+    :
+done 
+if [[ $in_aur_help == 0 ]]; then
+clear    
+echo " Установка AUR Helper (yay) пропущена "
+elif [[ $in_aur_help == 1 ]]; then
+sudo pacman -Syu
+wget git.io/yay-install.sh && sh yay-install.sh --noconfirm
+clear
+echo " Установка AUR Helper (yay) завершена "
+# ------------------------------------------------------------
+# Скрипт yay-install.sh:
+#!/usr/bin/env bash
+# Install script yay
+# autor: Alex Creio https://cvc.hashbase.io/
+
+# wget git.io/yay-install.sh && sh yay-install.sh
+#sudo pacman -S --noconfirm --needed wget curl git 
+#git clone https://aur.archlinux.org/yay-bin.git
+#cd yay-bin
+### makepkg -si
+#makepkg -si --skipinteg
+#cd ..
+#rm -rf yay-bin
+# ------------------------------------------------------------
+elif [[ $in_aur_help == 2 ]]; then
+sudo pacman -Syu
+#sudo pacman -S git
+cd /home/$username
+git clone https://aur.archlinux.org/yay.git
+chown -R $username:users /home/$username/yay
+chown -R $username:users /home/$username/yay/PKGBUILD 
+cd /home/$username/yay  
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/yay
+clear
+echo " Установка AUR Helper (yay) завершена "
+elif [[ $in_aur_help == 3 ]]; then
+sudo pacman -Syu
+#sudo pacman -S git    
+cd /home/$username
+git clone https://aur.archlinux.org/pikaur.git
+chown -R $username:users /home/$username/pikaur   
+chown -R $username:users /home/$username/pikaur/PKGBUILD 
+cd /home/$username/pikaur   
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/pikaur
+clear
+echo " Установка AUR Helper (pikaur) завершена "
+fi
+#--------------------------------------------------------------
+# AUR (Arch User Repository) - репозиторий, в который пользователи загружают скрипты для установки программного обеспечения. Там есть практически всё, что можно установить на Linux. В том числе и программы, которые для других дистробутивов пришлось бы собирать из исходников.
+# AUR'ом можно пользоваться и просто с помощью Git. Но куда удобнее использовать помощник AUR. Они бывают графические и консольные.
+# Загвоздка в том, что все помощники доступны только в самом AUR 😅 Поэтому будем устанавливать через Git, так как по-сути, AUR состоит из git-репозиториев
+# git clone https://aur.archlinux.org/yay-bin.git
+# Если хотите, чтобы yay собирался из исходников, вместо yay-bin.git впишите yay.git.
+# https://aur.archlinux.org/packages/yay-bin/
+# https://aur.archlinux.org/packages/
+# https://github.com/Jguer/yay
+# ============================================================================
+
+echo ""
+echo -e "${BLUE}:: ${NC}Обновим всю систему включая AUR пакеты" 
+#echo 'Обновим всю систему включая AUR пакеты'
+# Update the entire system including AUR packages
+yay -Syy
+yay -Syu
+
+clear
+echo ""
+echo -e "${GREEN}==> ${NC}Установить Snap на Arch Linux?"
+#echo -e "${BLUE}:: ${NC}Установить Snap на Arch Linux?" 
+#echo 'Установить Snap на Arch Linux?'
+# To install Snap-on Arch Linux?
+echo -e "${MAGENTA}:: ${BOLD}Snap - это инструмент для развертывания программного обеспечения и управления пакетами,  которые обновляются автоматически, просты в установке, безопасны, кроссплатформенны и не имеют зависимостей. Изначально разработанный и созданный компанией Canonical, который работает в различных дистрибутивах Linux каждый день. ${NC}"
+echo -e "${CYAN}:: ${NC}Для управления пакетами snap, установим snapd (демон), а также snap-confine, который обеспечивает монтирование, изоляцию и запуск snap-пакетов.  "
+echo " Установка происходит из 'AUR'- с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/snapd.git)."
+echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
+# Be careful! The installation process, after the option you selected, was registered fully automatic. In any situation, the choice is always yours.
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
+while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then    
+echo " Установка Snap пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка поддержки Snap "
+#sudo pacman -S git  
+git clone https://aur.archlinux.org/snapd.git 
+chown -R $username:users /home/$username/snapd 
+chown -R $username:users /home/$username/snapd/PKGBUILD 
+cd /home/$username/snapd 
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/snapd
+clear
+echo ""
+echo -e "${BLUE}:: ${NC}Включить модуль systemd, который управляет основным сокетом мгновенной связи" 
+sudo systemctl enable --now snapd.socket
+# Проверить статус сервиса:
+# systemctl status snapd.socket
+echo ""
+echo -e "${BLUE}:: ${NC}Включить поддержку классической привязки, чтобы создать символическую ссылку между /var/lib/snapd/ snap и /snap" 
+sudo ln -s /var/lib/snapd/snap /snap
+echo ""
+echo -e "${BLUE}:: ${NC}Поскольку бинарный файл находится в каталоге /snap/bin/, нужно добавить его в переменную $PATH." 
+echo "export PATH=\$PATH:\/snap/bin/" | sudo tee -a /etc/profile
+source /etc/profile
+echo ""
+echo " Snapd теперь готов к использованию "
+echo " Вы взаимодействуете с ним с помощью команды snap. "
+# Посмотрите страницу помощи команды:
+# snap --help
+echo ""
+echo -e "${BLUE}:: ${NC}Протестируем систему, установив hello-world snap и убедимся, что она работает правильно."
+sudo snap install hello-world
+hello-world
+echo ""
+echo -e "${BLUE}:: ${NC}Список установленных snaps:"
+snap list
+echo -e "${BLUE}:: ${NC}Удалить установленный snap (hello-world)"
+sudo snap remove hello-world
+echo ""
+echo " Snap теперь установлен и готов к работе! "
+fi
+
+
+
+
+
+
+
+
+
+clear
 echo ""
 echo -e "${GREEN}=> ${BOLD}Вы хотите просмотреть и отредактировать файл /etc/fstab (отвечающий за монтирование разделов при запуске системы) ${NC}"
 #echo 'Вы хотите просмотреть и отредактировать файл /etc/fstab (отвечающий за монтирование разделов при запуске системы)'
