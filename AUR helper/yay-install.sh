@@ -7,7 +7,7 @@
 echo -e " Установка базовых программ и пакетов wget, curl, git "
 sudo pacman -S --noconfirm --needed wget curl git
 echo " Установка "AUR Helper" (yay) " 
-git clone https://aur.archlinux.org/yay-bin.git
+git clone https://aur.archlinux.org/yay.git
 cd yay
 # makepkg -si
 makepkg -si --noconfirm   #-не спрашивать каких-либо подтверждений
