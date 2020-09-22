@@ -2263,7 +2263,7 @@ echo " Действия ввода, выполняется сразу после
 
     0 - Пропустить установку AUR Helper: " in_aur_help  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$in_aur_help" =~ [^1230] ]]
+    [[ "$in_aur_help" =~ [^120] ]]
 do
     :
 done 
@@ -2357,7 +2357,7 @@ rm -Rf /home/$username/snapd
 clear
 echo " Установка Snap выполнена "
 fi
-
+########## Запускаем поддержку Snap ###############
 echo ""
 echo -e "${BLUE}:: ${NC}Включить модуль systemd, который управляет основным сокетом мгновенной связи" 
 sudo systemctl enable --now snapd.socket
