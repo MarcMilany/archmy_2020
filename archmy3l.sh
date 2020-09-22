@@ -469,14 +469,13 @@ clear
 echo " Установка AUR Helper (yay) завершена "
 elif [[ $in_aur_help == 3 ]]; then
 sudo pacman -Syu
-#sudo pacman -S git    
-cd /home/$username
-git clone https://aur.archlinux.org/pikaur.git
-chown -R $username:users /home/$username/pikaur   
-chown -R $username:users /home/$username/pikaur/PKGBUILD 
-cd /home/$username/pikaur   
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/pikaur
+#sudo pacman -S --noconfirm --needed wget curl git
+git clone https://aur.archlinux.org/pikaur.git 
+cd pikaur   
+makepkg -si --noconfirm 
+# makepkg -si
+#makepkg -si --skipinteg  
+rm -Rf pikaur
 clear
 echo " Установка AUR Helper (pikaur) завершена "
 fi
