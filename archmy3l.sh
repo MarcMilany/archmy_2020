@@ -532,7 +532,7 @@ git clone https://aur.archlinux.org/snapd.git
 cd snapd
 # makepkg -si
 makepkg -si --skipinteg
-#makepkg -si --noconfirm
+#makepkg -si --noconfirm  #-не спрашивать каких-либо подтверждений
 cd ..  
 rm -Rf snapd
 clear
