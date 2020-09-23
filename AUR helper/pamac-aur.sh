@@ -12,7 +12,8 @@ cd pamac-aur
 # makepkg -si
 makepkg -si --noconfirm   #-не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
-cd ..
+# pwd  # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf pamac-aur
 rm -Rf pamac-aur
 echo " Графический менеджер Pamac-aur успешно установлен! "
