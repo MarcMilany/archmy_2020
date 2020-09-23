@@ -1295,38 +1295,40 @@ done
  if [[ $x_pacstrap == 1 ]]; then
   clear
   echo ""
- echo " Установка выбранного вами ядра (Kernel linux) "
+ echo " Установка выбранного вами ядра (linux) "
  pacstrap /mnt linux linux-firmware # linux-headers
-  echo " Ядро (Kernel) операционной системы установленно "
+ clear
+echo " Ядро (linux) операционной системы установленно "
 # echo " Настройка системы, генерируем fstab "
 #  genfstab -pU /mnt >> /mnt/etc/fstab  
 elif [[ $x_pacstrap == 2 ]]; then
   clear
   echo ""
-  echo " Установка выбранного вами ядра (Kernel linux-hardened) "
+  echo " Установка выбранного вами ядра (linux-hardened) "
   pacstrap /mnt linux-hardened linux-firmware 
-  echo " Ядро (Kernel) операционной системы установленно "
+  clear
+echo " Ядро (linux-hardened) операционной системы установленно "
 # echo " Настройка системы, генерируем fstab "
 #  genfstab -pU /mnt >> /mnt/etc/fstab   
 elif [[ $x_pacstrap == 3 ]]; then
   clear
   echo ""
-  echo " Установка выбранного вами ядра (Kernel linux-lts) "
+  echo " Установка выбранного вами ядра (linux-lts) "
   pacstrap /mnt linux-lts linux-firmware 
-  echo " Ядро (Kernel) операционной системы установленно "
+  clear
+echo " Ядро (linux-lts) операционной системы установленно "
 # echo " Настройка системы, генерируем fstab "
 #  genfstab -pU /mnt >> /mnt/etc/fstab  
 elif [[ $x_pacstrap == 4 ]]; then
   clear
   echo ""
-  echo " Установка выбранного вами ядра (Kernel linux-zen) " 
+  echo " Установка выбранного вами ядра (linux-zen) " 
   pacstrap /mnt linux-zen linux-firmware 
-  echo " Ядро (Kernel) операционной системы установленно "
+  clear
+echo " Ядро (linux-zen) операционной системы установленно "
 # echo " Настройка системы, генерируем fstab "
 #  genfstab -pU /mnt >> /mnt/etc/fstab  
 fi
-clear
-echo ""
 # ------------------------------------------------------------------
 # Kernel (Русский)
 # https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
