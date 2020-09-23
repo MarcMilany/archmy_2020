@@ -2336,6 +2336,7 @@ cd /home/$username/pamac-aur
 sudo -u $username  makepkg -si --noconfirm  
 rm -Rf /home/$username/pamac-aur
 clear
+echo ""
 echo " Графический менеджер Pamac-aur успешно установлен! "
 elif [[ $prog_set == 2 ]]; then
 echo " Установка Графического менеджера Octopi "    
@@ -2372,6 +2373,7 @@ cd /home/$username/octopi
 sudo -u $username  makepkg -si --noconfirm  
 rm -Rf /home/$username/octopi
 clear
+echo ""
 echo " Графический менеджер Octopi успешно установлен! "
 elif [[ $prog_set == 3 ]]; then
 echo " Установка Графического менеджера Octopi - (pikaur) "    
@@ -2415,6 +2417,7 @@ cd /home/$username/gksu
 sudo -u $username  makepkg -si --noconfirm  
 rm -Rf /home/$username/gksu
 clear
+echo ""
 echo " Графический менеджер Octopi успешно установлен! "
 fi 
 
