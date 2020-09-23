@@ -1296,6 +1296,7 @@ done
  echo " Установка выбранного вами ядра (linux) "
  pacstrap /mnt linux linux-firmware # linux-headers
  clear
+ echo ""
 echo " Ядро (linux) операционной системы установленно "
 # echo " Настройка системы, генерируем fstab "
 #  genfstab -pU /mnt >> /mnt/etc/fstab  
@@ -1305,6 +1306,7 @@ elif [[ $x_pacstrap == 2 ]]; then
   echo " Установка выбранного вами ядра (linux-hardened) "
   pacstrap /mnt linux-hardened linux-firmware 
   clear
+  echo ""
 echo " Ядро (linux-hardened) операционной системы установленно "
 # echo " Настройка системы, генерируем fstab "
 #  genfstab -pU /mnt >> /mnt/etc/fstab   
@@ -1314,6 +1316,7 @@ elif [[ $x_pacstrap == 3 ]]; then
   echo " Установка выбранного вами ядра (linux-lts) "
   pacstrap /mnt linux-lts linux-firmware 
   clear
+  echo ""
 echo " Ядро (linux-lts) операционной системы установленно "
 # echo " Настройка системы, генерируем fstab "
 #  genfstab -pU /mnt >> /mnt/etc/fstab  
@@ -1323,6 +1326,7 @@ elif [[ $x_pacstrap == 4 ]]; then
   echo " Установка выбранного вами ядра (linux-zen) " 
   pacstrap /mnt linux-zen linux-firmware 
   clear
+  echo ""
 echo " Ядро (linux-zen) операционной системы установленно "
 # echo " Настройка системы, генерируем fstab "
 #  genfstab -pU /mnt >> /mnt/etc/fstab  
