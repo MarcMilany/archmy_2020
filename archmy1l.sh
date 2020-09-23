@@ -1161,7 +1161,8 @@ echo -e "${BLUE}:: ${NC}Arch Linux, Base devel (AUR only)"
 #echo 'Arch Linux, Base devel (AUR only)'
 echo " Сценарий pacstrap устанавливает (base) базовую систему. Для сборки пакетов из AUR (Arch User Repository) также требуется группа base-devel. "
 # The pacstrap script installs the base system. To build packages from AUR (Arch User Repository), the base-devel group is also required.
-echo " Т.е., Если нужен AUR, ставь base и base-devel, если нет, то ставь только base. "
+echo -e "${MAGENTA}=> ${BOLD}Т.е., Если нужен AUR, ставь base и base-devel, если нет, то ставь только base. ${NC}"
+# echo " Т.е., Если нужен AUR, ставь base и base-devel, если нет, то ставь только base. "
 # If you need AUR, put base and base-devel, if not, then put only base.
 echo " Огласите весь список, пожалуйста! "
 # Read out the entire list, please!
@@ -1264,8 +1265,8 @@ echo -e "${BLUE}:: ${NC}Kernel (optional), Firmware"
 #echo 'Kernel (optional), Firmware'
 echo " Дистрибутив Arch Linux основан на ядре Linux. Помимо основной стабильной (stable) версии в Arch Linux можно использовать некоторые альтернативные ядра. "
 # The ArchLinux distribution is based on the Linux kernel. In addition to the main stable version, some alternative kernels can be used in Arch Linux.
-echo " Т.е. выбрать-то можно, но тут главное не пропустить установку ядра :). "
-# You can choose something, but the main thing is not to skip the installation of the core :).
+echo " Т.е. выбрать-то можно, но тут главное не пропустить установку ядра :) "
+# You can choose something, but the main thing is not to skip the installation of the core :)
 echo " Огласите весь список, пожалуйста! "
 # Read out the entire list, please!
 echo " 1 - linux (Stable - ядро Linux с модулями и некоторыми патчами, поставляемое вместе с Rolling Release устанавливаемой системы Arch) "
@@ -1340,7 +1341,7 @@ echo " Файл /etc/fstab используется для настройки п
 # The /etc/fstab file is used to configure mounting parameters for various block devices, disk partitions, and remote file systems.
 echo " Таким образом, и локальные, и удаленные файловые системы, указанные в /etc/fstab, будут правильно смонтированы без дополнительной настройки. "
 # This way, both local and remote file systems specified in /etc/fstab will be correctly mounted without any additional configuration.
-echo " Существует четыре различных схемы для постоянного именования: по метке , по uuid , по id и по пути . Для тех, кто использует диски с таблицей разделов GUID (GPT) , могут использоваться две дополнительные схемы : -Partlabel и -Parduuid . Вы также можете использовать статические имена устройств с помощью Udev. "
+echo -e "${CYAN}:: ${NC}Существует четыре различных схемы для постоянного именования: по метке , по uuid , по id и по пути . Для тех, кто использует диски с таблицей разделов GUID (GPT) , могут использоваться две дополнительные схемы : -Partlabel и -Parduuid . Вы также можете использовать статические имена устройств с помощью Udev."
 # There are four different schemes for permanent naming: by label , by uuid, by id, and by path . For those who use disks with a GUID partition table (GPT) , two additional schemes can be used : -part label and-Parduuid . You can also use static device names using Udev.
 echo " Огласите весь список, пожалуйста! "
 # Read out the entire list, please!
