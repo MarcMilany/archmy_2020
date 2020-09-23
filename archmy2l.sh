@@ -2272,6 +2272,8 @@ echo -e "${GREEN}==> ${NC}Установить графический менед
 echo -e "${BLUE}:: ${NC}Установка Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)" 
 #echo 'Установка Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)'
 # Installing Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)
+Интерфейс Gtk3 для libalpm
+Графический менеджер пакетов для Manjaro Linux с поддержкой Alpm, AUR, Appstream, Flatpak и Snap
 echo -e "${MAGENTA}:: ${BOLD}Snap - это инструмент для развертывания программного обеспечения и управления пакетами,  которые обновляются автоматически, просты в установке, безопасны, кроссплатформенны и не имеют зависимостей. Изначально разработанный и созданный компанией Canonical, который работает в различных дистрибутивах Linux каждый день. ${NC}"
 echo -e "${CYAN}:: ${NC}Для управления пакетами snap, установим snapd (демон), а также snap-confine, который обеспечивает монтирование, изоляцию и запуск snap-пакетов.  "
 echo " Установка происходит из 'AUR'- с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/snapd.git)."
