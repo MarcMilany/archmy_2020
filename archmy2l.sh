@@ -2282,7 +2282,7 @@ echo " Вариант "2" Напрямую привязан к "Установк
 echo " Так как - Подчеркну (обратить внимание)! Pikaur - идёт как зависимость для Octopi. "
 echo " 3 - Octopi (octopi) - Графический менеджер пакетов (мощный интерфейс Pacman с использованием библиотек Qt5), тогда укажите вариант "3". " 
 echo " Вариант "3" Если ранее при "Установке AUR Helper" "НЕ БЫЛ УСТАНОВЛЕН" "AUR - (pikaur)". "
-echo " "Octopi" - рекомендуется для "KDE Plasma Desktop" (окружение рабочего стола). "
+echo " Pacman gui "Octopi" - рекомендуется для "KDE Plasma Desktop" (окружение рабочего стола). "
 echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
 # Be careful! The installation process, after the option you selected, was registered fully automatic. In any situation, the choice is always yours.
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
