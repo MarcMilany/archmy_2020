@@ -13,8 +13,9 @@ cd pikaur
 makepkg -si --noconfirm  #-не спрашивать каких-либо подтверждений
 # makepkg -si
 #makepkg -si --skipinteg
-cd ..  
-rm -Rf pikaur
+#pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)  
+rm -Rf pikaur  # удаляем директорию сборки
 # rm -rf pikaur 
 echo " Установка AUR Helper (pikaur) завершена "
 
