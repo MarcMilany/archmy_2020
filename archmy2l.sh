@@ -2270,6 +2270,7 @@ echo -e "${BLUE}:: ${NC}Обновим всю систему включая AUR 
 yay -Syy
 yay -Syu
 
+sleep 01
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установить графический менеджер пакетов для Archlinux?"
