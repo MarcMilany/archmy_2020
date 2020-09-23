@@ -12,8 +12,9 @@ cd snapd
 # makepkg -si
 # makepkg -si --noconfirm   #-не спрашивать каких-либо подтверждений
 makepkg -si --skipinteg
-cd ..
-rm -rf snapd
+#pwd   # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+rm -rf snapd  # удаляем директорию сборки
 #rm -Rf snapd
 clear
 echo " Установка Snapd выполнена "
