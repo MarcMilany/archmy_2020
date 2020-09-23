@@ -2273,7 +2273,6 @@ echo -e "${BLUE}:: ${NC}Установка Pacman gui (pamac-aur), Octopi (octop
 echo -e "${MAGENTA}:: ${BOLD}Сейчас Вы можете пропустить установку "Графического менеджера пакетов", пункт для установки будет продублирован в следующем скрипте (archmy3l). И Вы сможете установить уже из установленной системы. ${NC}"
 #echo 'Установка Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)'
 # Installing Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)
-echo -e "${CYAN}=> ${BOLD}В сценарии скрипта присутствуют следующие варианты: ${NC}"
 echo " Давайте проанализируем действия, которые выполняются. "
 # Let's analyze the actions that are being performed.
 echo " 1 - Pacman gui (pamac-aur) - Графический менеджер пакетов (интерфейс Gtk3 для libalpm), тогда укажите "1". "
