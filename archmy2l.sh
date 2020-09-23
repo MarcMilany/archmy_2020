@@ -1125,18 +1125,21 @@ do
 done
 if [[ $i_sudo  == 0 ]]; then
 clear
+echo ""
 echo " Добавление настройки sudo пропущено"
 elif [[ $i_sudo  == 1 ]]; then
 #echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 #cat /mnt/etc/sudoers
 clear
+echo ""
 echo " Sudo с запросом пароля выполнено "
 elif [[ $i_sudo  == 2 ]]; then
 #echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 sed -i 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
 #cat /mnt/etc/sudoers
 clear
+echo ""
 echo " Sudo nopassword (БЕЗ запроса пароля) добавлено  "
 fi
 # --------------------------------------------------------
@@ -1174,10 +1177,12 @@ echo -e "${GREEN}==> ${NC}Добавим репозиторий Multilib Для 
 echo -e "${BLUE}:: ${NC}Раскомментируем репозиторий multilib"
 #echo 'Раскомментируем репозиторий multilib Для работы 32-битных приложений в 64-битной системе.'
 # Uncomment the multilib repository For running 32-bit applications on a 64-bit system
-echo " Чтобы исключить в дальнейшем ошибки в работе системы рекомендую вариант "1". "
+echo -e "${CYAN}:: ${BOLD}Multilib может пригодится позже при установке OpenGL (multilib) для драйверов видеокарт, а также для различных библиотек необходимого вам софта. ${NC}"
+# Multilib can be useful later when installing OpenGL (multilib) for video card drivers, as well as for various libraries of the software you need.
+echo " Чтобы исключить в дальнейшем ошибки в работе системы, рекомендую вариант "1" (добавить Multilib репозиторий). "
 # To avoid further errors in the system I recommend "1"
-echo -e "${YELLOW}:: ${BOLD}Multilib может пригодится позже при установке OpenGL (multilib) для драйверов видеокарт.${NC}"
-# The Multilib repository may come in handy later when installing OpenGL (multilib) for video card drivers.
+echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# Be careful! If you doubt your actions, think again...
 echo ""
 while
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
@@ -1927,12 +1932,14 @@ echo " Менеджера входа SDDM установлен и подключ
 fi
 
 echo ""
-echo -e "${GREEN}==> ${NC}Установить сетевые утилиты "Networkmanager"?"
+echo -e "${GREEN}==> ${NC}Установить сетевые утилиты Networkmanager?"
 #echo -e "${BLUE}:: ${NC}Установить сетевые утилиты "Networkmanager"?"
 #echo 'Установить сетевые утилиты "Networkmanager"?'
 # Install the "Networkmanager" network utilities"
 echo " "Networkmanager" - сервис для работы интернета. Вместе с собой устанавливает программы (пакеты) для настройки. "
 echo " Поддержка OpenVPN в Network Manager также внесена в список устанавливаемых программ (пакетов). "
+echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# Be careful! If you doubt your actions, think again...
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
 #echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
 # You can skip this step if you are not sure of the correct choice
