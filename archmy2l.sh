@@ -2307,9 +2307,9 @@ do
     :
 done 
 if [[ $prog_set == 0 ]]; then    
-echo " Установка Графический менеджер пакетов пропущена "
+echo " Установка Графического менеджера пакетов пропущена "
 elif [[ $prog_set == 1 ]]; then
-  echo " Установка Графический менеджер Pacman gui (pamac-aur) "
+  echo " Установка Графического менеджера Pacman gui (pamac-aur) "
 ##### pamac-aur ######  
 cd /home/$username
  git clone https://aur.archlinux.org/pamac-aur.git
@@ -2321,7 +2321,7 @@ rm -Rf /home/$username/pamac-aur
 clear
 echo " Графический менеджер Pamac-aur успешно установлен! "
 elif [[ $prog_set == 2 ]]; then
-echo " Установка Графический менеджер Octopi "    
+echo " Установка Графического менеджера Octopi "    
 ##### alpm_octopi_utils ######    
 cd /home/$username
 git clone https://aur.archlinux.org/alpm_octopi_utils.git
@@ -2357,7 +2357,7 @@ rm -Rf /home/$username/octopi
 clear
 echo " Графический менеджер Octopi успешно установлен! "
 elif [[ $prog_set == 3 ]]; then
-echo " Установка Графический менеджер Octopi - (pikaur) "    
+echo " Установка Графического менеджера Octopi - (pikaur) "    
 ##### pikaur ######    
 cd /home/$username
 git clone https://aur.archlinux.org/pikaur.git
