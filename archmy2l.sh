@@ -2271,22 +2271,22 @@ yay -Syu
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установить графический менеджер пакетов для Archlinux?"
-echo -e "${BLUE}:: ${NC}Установка Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)" 
+echo -e "${BLUE}:: ${NC}Установка Pacman gui (pamac-aur), или Pacman gui (octopi) (AUR)(GTK)(QT)" 
 echo -e "${MAGENTA}:: ${BOLD}Сейчас Вы можете пропустить установку "Графического менеджера пакетов", пункт для установки будет прописан в следующем скрипте (archmy3l). И Вы сможете установить уже из установленной системы. ${NC}"
-#echo 'Установка Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)'
-# Installing Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)
+#echo 'Установка Pacman gui (pamac-aur), или Pacman gui (octopi) (AUR)(GTK)(QT)'
+# Installing Pacman gui (pacman-aur), or Pacman gui (octopi) (AUR)(GTK)(QT)
 echo " Давайте проанализируем действия, которые выполняются. "
 # Let's analyze the actions that are being performed.
 echo " 1 - Pacman gui (pamac-aur) - Графический менеджер пакетов (интерфейс Gtk3 для libalpm), тогда укажите "1". "
 echo " Графический менеджер пакетов для Arch, Manjaro Linux с поддержкой Alpm, AUR, Appstream, Flatpak и Snap. "
-echo " 2 - Octopi (octopi) - Графический менеджер пакетов (мощный интерфейс Pacman с использованием библиотек Qt5), тогда укажите вариант "2" . " 
+echo " 2 - Pacman gui (octopi) - Графический менеджер пакетов (мощный интерфейс Pacman с использованием библиотек Qt5), тогда укажите вариант "2" . " 
 echo " Вариант "2" Напрямую привязан к "Установке AUR Helper", если ранее "БЫЛ" выбран "AUR - (pikaur)". "
 echo " Так как - Подчеркну (обратить внимание)! Pikaur - идёт как зависимость для Octopi. "
-echo " 3 - Octopi (octopi) - Графический менеджер пакетов (мощный интерфейс Pacman с использованием библиотек Qt5), тогда укажите вариант "3". " 
+echo " 3 - Pacman gui (octopi) - Графический менеджер пакетов (мощный интерфейс Pacman с использованием библиотек Qt5), тогда укажите вариант "3". " 
 echo " Вариант "3" Если ранее при "Установке AUR Helper" "НЕ БЫЛ УСТАНОВЛЕН" "AUR - (pikaur)". "
 echo " Pacman gui "Octopi" - рекомендуется для "KDE Plasma Desktop" (окружение рабочего стола). "
-echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
-# Be careful! The installation process, after the option you selected, was registered fully automatic. In any situation, the choice is always yours.
+echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В данной опции выбор всегда остаётся за вами. "
+# Be careful! The installation process, after the option you selected, was registered fully automatic. In this option, the choice is always yours.
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
 # If you doubt your actions, think again... 
 echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
