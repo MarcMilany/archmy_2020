@@ -629,9 +629,7 @@ elif [[ $x_ram == 0 ]]; then
   echo " Создание загрузочного RAM диска пропущено " 
 fi
 #echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf
-sleep 01
-clear
-echo ""
+
 # ----------------------------------------------------------
 # Команда: mkinitcpio -p linux-lts  - применяется, если Вы устанавливаете
 # стабильное ядро (linux-ltc), иначе вай..вай... может быть ошибка!
@@ -664,6 +662,9 @@ echo ""
 #https://ru.wikipedia.org/wiki/Initrd
 # ==============================================================
 
+sleep 01
+clear
+echo ""
 ### Set Root passwd
 ### Root Password
 echo -e "${GREEN}==> ${NC}Создаём root пароль (Root Password)"
