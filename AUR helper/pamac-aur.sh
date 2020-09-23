@@ -10,12 +10,12 @@ echo " Установка графического менеджера "Pacman gu
 git clone https://aur.archlinux.org/pamac-aur.git 
 cd pamac-aur
 # makepkg -si
-makepkg -si --noconfirm   #-не спрашивать каких-либо подтверждений
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
 # pwd  # покажет в какой директории мы находимся
 cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf pamac-aur
-rm -Rf pamac-aur
+rm -Rf pamac-aur   # удаляем директорию сборки
 echo " Графический менеджер Pamac-aur успешно установлен! "
 
 #
