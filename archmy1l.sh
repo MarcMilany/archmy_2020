@@ -1176,7 +1176,7 @@ echo -e "${YELLOW}==> ${NC}Установка производится в пор
 #echo 'Установка производится в порядке перечисления'
 # Installation Is performed in the order listed
 echo " Чтобы исключить ошибки в работе системы рекомендую вариант - "1" "
-# To eliminate errors in the system, I recommend "1"
+# To exclude errors in the system, I recommend the option - " 1"
 echo ""
 while
 # echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "    
