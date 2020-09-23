@@ -1265,7 +1265,7 @@ echo -e "${BLUE}:: ${NC}Kernel (optional), Firmware"
 #echo 'Kernel (optional), Firmware'
 echo " Дистрибутив Arch Linux основан на ядре Linux. Помимо основной стабильной (stable) версии в Arch Linux можно использовать некоторые альтернативные ядра. "
 # The ArchLinux distribution is based on the Linux kernel. In addition to the main stable version, some alternative kernels can be used in Arch Linux.
-echo " Т.е. выбрать-то можно, но тут главное не пропустить установку ядра :) "
+echo -e "${MAGENTA}=> ${BOLD}Выбрать-то можно, но тут главное не пропустить установку ядра :) ${NC}"
 # You can choose something, but the main thing is not to skip the installation of the core :)
 echo " Огласите весь список, пожалуйста! "
 # Read out the entire list, please!
