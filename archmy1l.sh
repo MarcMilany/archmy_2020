@@ -1544,7 +1544,6 @@ reflector -c "Russia" -c "Belarus" -c "Ukraine" -c "Poland" -f 20 -l 20 -p https
    echo ' Смена зеркал пропущена. '   
 fi
 #pacman -Syy
-clear
 #lsblk -f
 # ------------------------------------------------------------
 # Важно:
@@ -1563,6 +1562,7 @@ clear
 # https://www.archlinux.org/mirrors/status/
 # =================================================================
 
+clear
 echo ""
 echo -e "${BLUE}:: ${NC}Копируем созданный список зеркал (mirrorlist) в /mnt"
 #echo 'Копируем созданный список зеркал (mirrorlist) в /mnt'
@@ -1588,9 +1588,9 @@ echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
 sudo pacman -Sy
 
 echo ""
-echo -e "${GREEN}==> ${NC}Меняем корень и переходим в нашу недавно скачанную систему" 
-#echo 'Меняем корень и переходим в нашу недавно скачанную систему'
-# Change the root and go to our recently downloaded system
+echo -e "${GREEN}==> ${NC}Меняем корень и переходим в нашу недавно скачанную систему (chroot)" 
+#echo 'Меняем корень и переходим в нашу недавно скачанную систему (chroot)'
+# Change the root and go to our recently downloaded system (chroot)
 echo -e "${MAGENTA}=> ${BOLD}Есть три варианта продолжения установки: ${NC}"
   echo " 1 - Если у Вас стабильный трафик интернета (dhcpcd), то выбирайте вариант - "1" "
   echo " 2 - Если у Вас бывают проблемы трафика интернета (wifi), то выбирайте вариант - "2" "
