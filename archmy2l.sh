@@ -2270,17 +2270,26 @@ clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установить графический менеджер пакетов для Archlinux?"
 echo -e "${BLUE}:: ${NC}Установка Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)" 
+echo -e "${MAGENTA}:: ${BOLD}Сейчас Вы можете пропустить установку "Графического менеджера пакетов", пункт для установки будет продублирован в следующем скрипте (archmy3l). И Вы сможете установить уже из установленной системы. ${NC}"
 #echo 'Установка Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)'
 # Installing Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)
-Интерфейс Gtk3 для libalpm
-Графический менеджер пакетов для Manjaro Linux с поддержкой Alpm, AUR, Appstream, Flatpak и Snap
-echo -e "${MAGENTA}:: ${BOLD}Snap - это инструмент для развертывания программного обеспечения и управления пакетами,  которые обновляются автоматически, просты в установке, безопасны, кроссплатформенны и не имеют зависимостей. Изначально разработанный и созданный компанией Canonical, который работает в различных дистрибутивах Linux каждый день. ${NC}"
-echo -e "${CYAN}:: ${NC}Для управления пакетами snap, установим snapd (демон), а также snap-confine, который обеспечивает монтирование, изоляцию и запуск snap-пакетов.  "
-echo " Установка происходит из 'AUR'- с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/snapd.git)."
+echo " Давайте проанализируем действия, которые выполняются. "
+# Let's analyze the actions that are being performed.
+echo " 1 - Pacman gui (pamac-aur) - Графический менеджер пакетов (интерфейс Gtk3 для libalpm), тогда укажите "1". "
+echo " Графический менеджер пакетов для Arch, Manjaro Linux с поддержкой Alpm, AUR, Appstream, Flatpak и Snap. "
+echo " 2 - Octopi (octopi) - Графический менеджер пакетов (мощный интерфейс Pacman с использованием библиотек Qt5), тогда укажите "2" . " 
+echo " 3 - Если Вы по прежнему желаете использовать DM (например SDDM, LightDM и т.д.), или в дальнейшем захотите установить, и использовать 2(е) окружение (Т.е. DE - KDE, XFCE, Gnom и т.д.), тогда укажите "0" . " 
 echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
 # Be careful! The installation process, after the option you selected, was registered fully automatic. In any situation, the choice is always yours.
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
 # If you doubt your actions, think again... 
+echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
+#echo 'Действия выполняются в указанном порядке'
+# Actions are performed in the order listed
+echo -e "${MAGENTA}:: ${BOLD}Snap - это инструмент для развертывания программного обеспечения и управления пакетами,  которые обновляются автоматически, просты в установке, безопасны, кроссплатформенны и не имеют зависимостей. Изначально разработанный и созданный компанией Canonical, который работает в различных дистрибутивах Linux каждый день. ${NC}"
+echo -e "${CYAN}:: ${NC}Для управления пакетами snap, установим snapd (демон), а также snap-confine, который обеспечивает монтирование, изоляцию и запуск snap-пакетов.  "
+echo " Установка происходит из 'AUR'- с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/snapd.git)."
+рекомендуется для KDE Plasma Desktop, и LXQt (окружение рабочего стола)
 echo "" 
 while 
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
