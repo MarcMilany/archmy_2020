@@ -2295,49 +2295,7 @@ if [[ $prog_set == 0 ]]; then
 echo " Установка Snap пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка поддержки Snap "
-#pacman -Syu    
-#sudo pacman -Syu
-#sudo pacman -S git    
-cd /home/$username 
-git clone https://aur.archlinux.org/snapd.git 
-chown -R $username:users /home/$username/snapd  #-R, --recursive - рекурсивная обработка всех подкаталогов;
-chown -R $username:users /home/$username/snapd/PKGBUILD  #-R, --recursive - рекурсивная обработка всех подкаталогов;
-cd /home/$username/snapd 
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/snapd
-clear
-echo " Установка Snap выполнена "
-fi
-########## Запускаем поддержку Snap ###############
-echo ""
-echo -e "${BLUE}:: ${NC}Включить модуль systemd, который управляет основным сокетом мгновенной связи" 
-sudo systemctl enable --now snapd.socket
-# Проверить статус сервиса:
-# systemctl status snapd.socket
-echo ""
-echo -e "${BLUE}:: ${NC}Включить поддержку классической привязки, чтобы создать символическую ссылку между /var/lib/snapd/ snap и /snap" 
-sudo ln -s /var/lib/snapd/snap /snap
-echo ""
-echo -e "${BLUE}:: ${NC}Поскольку бинарный файл находится в каталоге /snap/bin/, нужно добавить его в переменную $PATH." 
-echo "export PATH=\$PATH:\/snap/bin/" | sudo tee -a /etc/profile
-source /etc/profile
-echo ""
-echo " Snapd теперь готов к использованию "
-echo " Вы взаимодействуете с ним с помощью команды snap. "
-# Посмотрите страницу помощи команды:
-# snap --help
-echo ""
-echo -e "${BLUE}:: ${NC}Протестируем систему, установив hello-world snap и убедимся, что она работает правильно."
-#sudo snap install hello-world
-snap install hello-world
-hello-world
-echo ""
-echo -e "${BLUE}:: ${NC}Список установленных snaps:"
-snap list
-echo -e "${BLUE}:: ${NC}Удалить установленный snap (hello-world)"
-sudo snap remove hello-world
-echo ""
-echo " Snap теперь установлен и готов к работе! "
+
 
 sleep 02
 clear
