@@ -2197,9 +2197,9 @@ echo -e "${GREEN}==> ${NC}Установка AUR Helper (yay) или (pikaur)"
 echo -e "${MAGENTA}:: ${NC} В AUR - есть практически всё, что можно установить на Linux. В том числе и программы, которые для других дистробутивов пришлось бы собирать из исходников."
 echo -e "${CYAN}=> ${BOLD}В сценарии скрипта присутствуют следующие варианты: ${NC}"
 echo " 1 - Установка 'AUR'-'yay' с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/yay.git), собирается и устанавливается, то выбирайте вариант - "1". "
-echo " 2 - Установка 'AUR'-'pikaur' с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/pikaur.git), собирается и устанавливается, то выбирайте вариант - "2"."
+echo " 2 - Установка 'AUR'-'pikaur' с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/pikaur.git), собирается и устанавливается, то выбирайте вариант - "2". "
 echo -e "${YELLOW}==> ${BOLD}Важно! Подчеркну (обратить внимание)! Pikaur - идёт как зависимость для Octopi. ${NC}"
-echo " Будьте внимательны! В этом действии выбор остаётся за вами."
+echo " Будьте внимательны! В этом действии выбор остаётся за вами. "
 # Be careful! In this action, the choice is yours.
 echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
 #echo 'Установка производится в порядке перечисления'
