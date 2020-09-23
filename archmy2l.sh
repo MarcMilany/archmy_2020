@@ -2310,6 +2310,7 @@ if [[ $prog_set == 0 ]]; then
 echo " Установка Графический менеджер пакетов пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка Графический менеджер Pacman gui (pamac-aur) "
+##### pamac-aur ######  
 cd /home/$username
  git clone https://aur.archlinux.org/pamac-aur.git
 chown -R $username:users /home/$username/pamac-aur
@@ -2319,9 +2320,9 @@ sudo -u $username  makepkg -si --noconfirm
 rm -Rf /home/$username/pamac-aur
 clear
 echo " Графический менеджер Pamac-aur успешно установлен! "
-
-
 elif [[ $prog_set == 2 ]]; then
+echo " Установка Графический менеджер Octopi "    
+##### alpm_octopi_utils ######    
 cd /home/$username
 git clone https://aur.archlinux.org/alpm_octopi_utils.git
 chown -R $username:users /home/$username/alpm_octopi_utils
@@ -2329,7 +2330,7 @@ chown -R $username:users /home/$username/alpm_octopi_utils/PKGBUILD
 cd /home/$username/alpm_octopi_utils
 sudo -u $username  makepkg -si --noconfirm  
 rm -Rf /home/$username/alpm_octopi_utils
-################
+############ libgksu ##########
 cd /home/$username
 git clone https://aur.archlinux.org/libgksu.git
 chown -R $username:users /home/$username/libgksu
@@ -2337,7 +2338,7 @@ chown -R $username:users /home/$username/libgksu/PKGBUILD
 cd /home/$username/libgksu
 sudo -u $username  makepkg -si --noconfirm  
 rm -Rf /home/$username/libgksu
-################
+############ gksu ##########
 cd /home/$username
 git clone https://aur.archlinux.org/gksu.git
 chown -R $username:users /home/$username/gksu
@@ -2345,7 +2346,7 @@ chown -R $username:users /home/$username/gksu/PKGBUILD
 cd /home/$username/gksu
 sudo -u $username  makepkg -si --noconfirm  
 rm -Rf /home/$username/gksu
-#####
+######### octopi #######
 cd /home/$username
 git clone https://aur.archlinux.org/octopi.git
 chown -R $username:users /home/$username/octopi
@@ -2354,9 +2355,10 @@ cd /home/$username/octopi
 sudo -u $username  makepkg -si --noconfirm  
 rm -Rf /home/$username/octopi
 clear
-echo " Графический менеджер Octopi успешно установлен "
-
+echo " Графический менеджер Octopi успешно установлен! "
 elif [[ $prog_set == 3 ]]; then
+echo " Установка Графический менеджер Octopi - (pikaur) "    
+##### pikaur ######    
 cd /home/$username
 git clone https://aur.archlinux.org/pikaur.git
 chown -R $username:users /home/$username/pikaur   
@@ -2364,7 +2366,7 @@ chown -R $username:users /home/$username/pikaur/PKGBUILD
 cd /home/$username/pikaur   
 sudo -u $username  makepkg -si --noconfirm  
 rm -Rf /home/$username/pikaur
-#####
+##### alpm_octopi_utils ######
 cd /home/$username
 git clone https://aur.archlinux.org/alpm_octopi_utils.git
 chown -R $username:users /home/$username/alpm_octopi_utils
@@ -2372,7 +2374,7 @@ chown -R $username:users /home/$username/alpm_octopi_utils/PKGBUILD
 cd /home/$username/alpm_octopi_utils
 sudo -u $username  makepkg -si --noconfirm  
 rm -Rf /home/$username/alpm_octopi_utils
-################
+######### octopi #######
 cd /home/$username
 git clone https://aur.archlinux.org/octopi.git
 chown -R $username:users /home/$username/octopi
@@ -2380,7 +2382,7 @@ chown -R $username:users /home/$username/octopi/PKGBUILD
 cd /home/$username/octopi
 sudo -u $username  makepkg -si --noconfirm  
 rm -Rf /home/$username/octopi
-######################
+############ libgksu ##########
 cd /home/$username
 git clone https://aur.archlinux.org/libgksu.git
 chown -R $username:users /home/$username/libgksu
@@ -2388,7 +2390,7 @@ chown -R $username:users /home/$username/libgksu/PKGBUILD
 cd /home/$username/libgksu
 sudo -u $username  makepkg -si --noconfirm  
 rm -Rf /home/$username/libgksu
-######################
+############ gksu ##########
 git clone https://aur.archlinux.org/gksu.git
 chown -R $username:users /home/$username/gksu
 chown -R $username:users /home/$username/gksu/PKGBUILD 
@@ -2396,7 +2398,7 @@ cd /home/$username/gksu
 sudo -u $username  makepkg -si --noconfirm  
 rm -Rf /home/$username/gksu
 clear
-echo " Графический менеджер Octopi успешно установлен "
+echo " Графический менеджер Octopi успешно установлен! "
 fi 
  
 elif [[ $t_aur == 1 ]]; then
