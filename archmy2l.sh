@@ -2298,6 +2298,121 @@ echo " Установка Snap пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка поддержки Snap "
 
+echo ""
+echo " Установим графический менеджер пакетов для Archlinux ? : "
+while 
+    read -n1 -p  "
+    1 - octopi 
+    
+    2 - pamac-aur
+    
+    0 - пропустить : " t_aur # sends right after the keypress
+    echo ''
+    [[ "$t_aur" =~ [^120] ]]
+do
+    :
+done
+if [[ $t_aur == 0 ]]; then
+  echo 'уcтановка  пропущена' 
+elif [[ $t_aur == 1 ]]; then
+echo " Был ли выбран ранее pikaur ? : "
+while 
+    read -n1 -p  "
+    1 - да
+    
+    0 - нет: " t_picaur # sends right after the keypress
+    echo ''
+    [[ "$t_picaur" =~ [^10] ]]
+do
+    :
+done
+if [[ $t_picaur == 0 ]]; then
+cd /home/$username
+git clone https://aur.archlinux.org/pikaur.git
+chown -R $username:users /home/$username/pikaur   
+chown -R $username:users /home/$username/pikaur/PKGBUILD 
+cd /home/$username/pikaur   
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/pikaur
+#####
+cd /home/$username
+git clone https://aur.archlinux.org/alpm_octopi_utils.git
+chown -R $username:users /home/$username/alpm_octopi_utils
+chown -R $username:users /home/$username/alpm_octopi_utils/PKGBUILD 
+cd /home/$username/alpm_octopi_utils
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/alpm_octopi_utils
+################
+cd /home/$username
+git clone https://aur.archlinux.org/octopi.git
+chown -R $username:users /home/$username/octopi
+chown -R $username:users /home/$username/octopi/PKGBUILD 
+cd /home/$username/octopi
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/octopi
+######################
+cd /home/$username
+git clone https://aur.archlinux.org/libgksu.git
+chown -R $username:users /home/$username/libgksu
+chown -R $username:users /home/$username/libgksu/PKGBUILD 
+cd /home/$username/libgksu
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/libgksu
+######################
+git clone https://aur.archlinux.org/gksu.git
+chown -R $username:users /home/$username/gksu
+chown -R $username:users /home/$username/gksu/PKGBUILD 
+cd /home/$username/gksu
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/gksu
+echo " Octopi успешно установлен "
+elif [[ $t_picaur == 1 ]]; then
+cd /home/$username
+git clone https://aur.archlinux.org/alpm_octopi_utils.git
+chown -R $username:users /home/$username/alpm_octopi_utils
+chown -R $username:users /home/$username/alpm_octopi_utils/PKGBUILD 
+cd /home/$username/alpm_octopi_utils
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/alpm_octopi_utils
+################
+cd /home/$username
+git clone https://aur.archlinux.org/libgksu.git
+chown -R $username:users /home/$username/libgksu
+chown -R $username:users /home/$username/libgksu/PKGBUILD 
+cd /home/$username/libgksu
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/libgksu
+################
+cd /home/$username
+git clone https://aur.archlinux.org/gksu.git
+chown -R $username:users /home/$username/gksu
+chown -R $username:users /home/$username/gksu/PKGBUILD 
+cd /home/$username/gksu
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/gksu
+#####
+cd /home/$username
+git clone https://aur.archlinux.org/octopi.git
+chown -R $username:users /home/$username/octopi
+chown -R $username:users /home/$username/octopi/PKGBUILD 
+cd /home/$username/octopi
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/octopi
+clear
+echo " Octopi успешно установлен "
+fi
+
+elif [[ $t_aur == 2 ]]; then
+cd /home/$username
+ git clone https://aur.archlinux.org/pamac-aur.git
+chown -R $username:users /home/$username/pamac-aur
+chown -R $username:users /home/$username/pamac-aur/PKGBUILD 
+cd /home/$username/pamac-aur
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/pamac-aur
+clear
+echo " Pamac-aur успешно установлен! "
+fi 
 
 sleep 02
 clear
