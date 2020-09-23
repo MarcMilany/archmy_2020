@@ -704,8 +704,8 @@ echo -e "${YELLOW}:: ${BOLD}В этих вариантах большого от
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если у вас уже имеется BOOT раздел от другой (предыдущей) системы gnu-linux, с установленным на нём GRUB."
 #echo 'Вы можете пропустить этот шаг, если у вас уже имеется BOOT раздел от другой (предыдущей) системы gnu-linux, с установленным на нём GRUB.'
 # You can skip this step if you already have a BOOT partition from another (previous) gnu-linux system with GRUB installed on it.
-echo " Будьте внимательны! В любой ситуации выбор всегда остаётся за вами. "
-# Be careful! In any situation, the choice is always yours.
+echo " Будьте внимательны! В этом действии выбор остаётся за вами. "
+# Be careful! In this action, the choice is yours.
 echo ""
 while
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
