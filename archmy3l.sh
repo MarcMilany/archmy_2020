@@ -1413,7 +1413,7 @@ echo -e "${BLUE}:: ${NC}Посмотрим дату и время без хар�
 date
 time
 
-echo 'Удаление созданной папки (downloads), и скрипта установки программ (archmy3)'
+echo ' Удаление созданной папки (downloads), и скрипта установки программ (archmy3) '
 # Deleting the created folder (downloads) and the program installation script (archmy3)
 sudo rm -R ~/downloads/
 sudo rm -rf ~/archmy3
