@@ -909,9 +909,10 @@ elif [[ $prog_set == 0 ]]; then
 fi
 
 echo ""
-echo -e "${BLUE}:: ${NC}Установка Pacman gui,Octopi (AUR)(GTK)(QT)" 
-#echo 'Установка "Pacman gui","Octopi" (AUR)(GTK)(QT)'
-# Installing "Pacman gui", "Octopi" (AUR)(GTK)(QT)
+echo -e "${GREEN}==> ${NC}Установить графический менеджер пакетов для Archlinux?"
+echo -e "${BLUE}:: ${NC}Установка Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)" 
+#echo 'Установка Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)'
+# Installing Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)
 echo -e "${BLUE}:: ${NC}Установка производится в порядке перечисления" 
 #echo 'Установка производится в порядке перечисления'
 # Installation Is performed in the order listed
