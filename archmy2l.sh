@@ -2220,11 +2220,12 @@ do
 done 
 if [[ $in_aur_help == 0 ]]; then
 clear    
-echo " Установка AUR Helper (yay) пропущена "
+echo " Установка AUR Helper пропущена "
 elif [[ $in_aur_help == 1 ]]; then
 pacman -Syu    
 #sudo pacman -Syu
 #sudo pacman -S git
+echo " Установка AUR Helper - (yay) "
 cd /home/$username
 git clone https://aur.archlinux.org/yay.git
 chown -R $username:users /home/$username/yay   #-R, --recursive - рекурсивная обработка всех подкаталогов;
@@ -2237,7 +2238,8 @@ echo " Установка AUR Helper (yay) завершена "
 elif [[ $in_aur_help == 2 ]]; then
 pacman -Syu    
 #sudo pacman -Syu
-#sudo pacman -S git    
+#sudo pacman -S git
+echo " Установка AUR Helper - (pikaur) "    
 cd /home/$username
 git clone https://aur.archlinux.org/pikaur.git
 chown -R $username:users /home/$username/pikaur   #-R, --recursive - рекурсивная обработка всех подкаталогов;
@@ -2293,12 +2295,12 @@ echo -e "${YELLOW}==> ${NC}Действия выполняются в указа
 echo "" 
 while 
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-#read -p " 1 - Pacman gui (pamac-aur), 2 - Octopi - ранее "БЫЛ" выбран "AUR" - (pikaur), 3 - Pacman gui (pamac-aur), 0 - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+#read -p " 1 - Pacman gui (pamac-aur), 2 - Octopi - ранее БЫЛ выбран AUR - (pikaur), 3 - Octopi - ранее НЕ БЫЛ УСТАНОВЛЕН AUR - (pikaur), 0 - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
     1 - Pacman gui (pamac-aur),     2 - Octopi - ранее БЫЛ выбран AUR - (pikaur), 
 
-    2 - Octopi - ранее НЕ БЫЛ УСТАНОВЛЕН AUR - (pikaur),    
+    3 - Octopi - ранее НЕ БЫЛ УСТАНОВЛЕН AUR - (pikaur),    
 
     0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
