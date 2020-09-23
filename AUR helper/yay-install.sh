@@ -14,7 +14,7 @@ makepkg -si --noconfirm   #-не спрашивать каких-либо под
 # makepkg -si --skipinteg
 cd ..
 # rm -rf yay
-rm -Rf yay-bin
+rm -Rf yay
 echo " Установка AUR Helper (yay) завершена "
 
 #
