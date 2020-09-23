@@ -1319,8 +1319,8 @@ echo -e "${MAGENTA}=> ${BOLD}Среда рабочего стола объеди
 #echo -e "${BLUE}:: ${NC}Ставим DE (от англ. desktop environment — среда рабочего стола)"
 #echo 'Ставим DE (от англ. desktop environment — среда рабочего стола)'
 # Put DE (from the English desktop environment-desktop environment)
-echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
-# Be careful! The installation process, after the option you selected, was registered fully automatic. In any situation, the choice is always yours.
+echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В этом действии выбор остаётся за вами. "
+# Be careful! The installation process, after the option you selected, was registered fully automatic. In this action, the choice is yours.
 echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
 #echo 'Действия выполняются в указанном порядке'
 echo ""
@@ -1976,7 +1976,7 @@ echo ""
 echo -e "${GREEN}==> ${NC}Добавим службу Dhcpcd в автозагрузку (для проводного интернета)?"
 #echo 'Добавим службу Dhcpcd в автозагрузку (для проводного интернета)?'
 # Adding the Dhcpcd service to auto-upload (for wired Internet)?
-echo " Добавим dhcpcd в автозагрузку (для проводного интернета, который получает настройки от роутера), это можно будет сделать уже в установленной системе. "
+echo " Добавим dhcpcd в автозагрузку (для проводного интернета, который получает настройки от роутера). "
 echo -e "${CYAN}:: ${NC}Dhcpcd - свободная реализация клиента DHCP и DHCPv6. Пакет dhcpcd является частью группы base, поэтому, скорее всего он уже установлен в вашей системе."
 echo " Если необходимо добавить службу Dhcpcd в автозагрузку это можно сделать уже в установленной системе Arch'a "
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
