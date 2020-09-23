@@ -12,10 +12,14 @@ cd yay-bin
 # makepkg -si
 # makepkg -si --noconfirm   #-не спрашивать каких-либо подтверждений
 makepkg -si --skipinteg
-cd ..
-rm -rf yay-bin
+#pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+rm -rf yay-bin    # удаляем директорию сборки
 # rm -Rf yay-bin
 echo " Установка AUR Helper (yay-bin) завершена "
+
+echo " Если Вам не нужна зависимость go, то удалите её "
+#sudo pacman -Rs go
 
 #
 # https://aur.archlinux.org/packages/yay-git/
