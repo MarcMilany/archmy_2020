@@ -1107,12 +1107,12 @@ echo " Огласите весь список, пожалуйста! "
 # Read out the entire list, please!
 echo " 1 - Пользователям (членам) группы wheel доступ к sudo С запросом пароля. "
 echo " 2 - Пользователям (членам) группы wheel доступ к sudo (NOPASSWD) БЕЗ запроса пароля. "
-echo -e "${RED}==> ${BOLD}Выбрав (раскомментировав) данную опцию, особых требований к безопасности нет, но может есть какие-то очень негативные моменты в этом?... ${NC}"
-#echo 'Выбрав (раскомментировав) данную опцию, особых требований к безопасности нет, но может есть какие-то очень негативные моменты в этом?...'
-# By selecting (commenting out) this option, there are no special security requirements, but maybe there are some very negative points in this?...
+echo -e "${RED}==> ${BOLD}Выбрав '2' (раскомментировав) данную опцию, особых требований к безопасности нет, но может есть какие-то очень негативные моменты в этом?... ${NC}"
+#echo 'Выбрав '2' (раскомментировав) данную опцию, особых требований к безопасности нет, но может есть какие-то очень негативные моменты в этом?...'
+# By selecting '2' (commenting out) this option, there are no special security requirements, but maybe there are some very negative points in this?...
 echo " 3-(0) - Добавление настроек sudo пропущено. "
 echo " Все настройки в файле /etc/sudoers пользователь произведёт сам. "
-echo " Например: под строкой root ALL=(ALL) ALL  ., пропишет 'username' ALL=(ALL) ALL. "
+echo " Например: под строкой root ALL=(ALL) ALL  - пропишет - $username ALL=(ALL) ALL "
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
 #echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
 # You can skip this step if you are not sure of the correct choice
