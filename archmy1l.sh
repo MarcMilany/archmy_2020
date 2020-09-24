@@ -1502,7 +1502,7 @@ echo " Огласите весь список, пожалуйста! :) "
 echo " 1 - Команда отфильтрует зеркала для 'Russia' по протоколам (https, http), отсортирует их по скорости загрузки и обновит файл mirrorlist. "
 echo " 2 - Команда подробно выведет список 50 наиболее недавно обновленных HTTP-зеркал, отсортирует их по скорости загрузки и обновит файл mirrorlist. "
 echo " 3 - То же, что и в предыдущем примере, но будут взяты только зеркала, расположенные в Казахстане (Kazakhstan). "
-echo " 4 - Команда отфильтрует зеркала для 'Russia', 'Belarus', 'Ukraine',' и 'Poland' по протоколам (https, http), отсортирует их по скорости загрузки и обновит файл mirrorlist. "
+echo " 4 - Команда отфильтрует зеркала для 'Russia', 'Belarus', 'Ukraine', и 'Poland' по протоколам (https, http), отсортирует их по скорости загрузки и обновит файл mirrorlist. "
 echo " Будьте внимательны! Не переживайте, перед обновлением зеркал будет сделана копия (backup) предыдущего файла mirrorlist, и в последствии будет сделана копия (backup) нового файла mirrorlist. Эти копии (backup) Вы сможете найти в установленной системе в /etc/pacman.d/mirrorlist - (новый список), и в /etc/pacman.d/mirrorlist.backup (старый список). В данной опции выбор всегда остаётся за вами. "
 # Be careful! Don't worry, before updating mirrors, a copy (backup) of the previous mirrorlist file will be made, and later a copy (backup) of the new mirrorlist file will be made. These copies (backup) You can find it in the installed system in /etc/pacman.d/mirrorlist - (new list), and in /etc/pacman.d/mirrorlist.backup (the old list). In this option, the choice is always yours.
 echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
