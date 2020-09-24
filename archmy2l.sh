@@ -2564,7 +2564,8 @@ if [[ $prog_set == 0 ]]; then
   echo ""
 echo " Удаление зависимость go пропущен "      
 elif [[ $prog_set == 1 ]]; then
-
+#sudo pacman -Rs go
+pacman -Rs go
  echo "" 
  echo " Удаление зависимость go выполнено "
 fi
