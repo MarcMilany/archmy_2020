@@ -292,7 +292,7 @@ do
 done
 if [[ $i_rm == 0 ]]; then
 clear
-#echo ""
+echo ""
 echo " Очистка пропущена "
 elif [[ $i_rm == 1 ]]; then
 clear    
