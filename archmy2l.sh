@@ -920,8 +920,12 @@ echo -e "${GREEN}==> ${NC}Установить программы (пакеты)
 #echo -e "${BLUE}:: ${NC}Установить программы (пакеты) для Wi-fi?"
 #echo 'Установить программы (пакеты) для Wi-fi?'
 # Install programs (packages) for Wi-fi?
-echo " Если у вас есть Wi-fi модуль и Вы сейчас его не используете, но будете использовать в будущем. "
+echo -e "${CYAN}:: ${NC}Если у Вас есть Wi-fi модуль и Вы сейчас его не используете, но будете использовать в будущем."
+echo " Или Вы подключены через Wi-fi, то эти (пакеты) обязательно установите. "
 # If you have a Wi-fi module and you are not using it now, but will use It in the future.
+# Or you are connected via Wi-fi, then these (packages) must be installed.
+echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# Be careful! If you doubt your actions, think again...
 echo ""
 while
 echo " Действия ввода, выполняется сразу после нажатия клавиши " 
