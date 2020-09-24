@@ -990,12 +990,18 @@ do
 done
 if [[ $i_groups  == 1 ]]; then
 useradd -m -g users -G audio,games,lp,disk,network,optical,power,scanner,storage,video,rfkill,sys,wheel -s /bin/bash $username
+clear 
+echo ""
 echo " Пользователь успешно добавлен в группы и права пользователя. "
 elif [[ $i_groups  == 2 ]]; then
 useradd -m -g users -G adm,audio,games,lp,disk,network,optical,power,scanner,storage,video,rfkill,sys,wheel -s /bin/bash $username
+clear 
+echo ""
 echo " Пользователь успешно добавлен в группы и права пользователя. "
 elif [[ $i_groups  == 3 ]]; then
 useradd -m -g users -G wheel -s /bin/bash $username
+clear 
+echo ""
 echo " Пользователь успешно добавлен в группы и права пользователя. "
 fi
 
