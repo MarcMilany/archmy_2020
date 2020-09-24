@@ -6,7 +6,7 @@
 
 echo -e " Установка базовых программ и пакетов wget, curl, git "
 sudo pacman -S --noconfirm --needed wget curl git
-echo " Установка графического менеджера "Pacman gui" (pamac-aur) " 
+echo " Установка графического менеджера "Pacman gui" (pamac-all) " 
 git clone https://aur.archlinux.org/pamac-all.git
 cd pamac-all
 # makepkg -si
@@ -33,6 +33,7 @@ echo " Графический менеджер Pamac-aur успешно уста
 # 
 # Есть ещё один вариант Pamac-all:
 # https://aur.archlinux.org/packages/pamac-all-git/
+# Интерфейс Gtk3 для libalpm (все в одном пакете - snap, flatpak, appindicator)
 # База пакета: pamac-all-git
 # URL восходящего направления:	https://gitlab.manjaro.org/applications/pamac
 # Git Clone URL: https://aur.archlinux.org/pamac-all-git.git  (только для чтения, нажмите, чтобы скопировать)
