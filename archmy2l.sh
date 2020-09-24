@@ -2216,7 +2216,7 @@ echo -e "${MAGENTA}
   <<< Установка AUR (Arch User Repository) >>> ${NC}"
 # Installing an Aur (Arch User Repository) - a repository where users upload scripts to install software.
 echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете пропустить установку "AUR", пункт для установки будет продублирован в следующем скрипте (archmy3l). И Вы сможете установить "AUR Helper" уже из установленной системы." 
-echo -e "${YELLOW}==> Внимание! ${NC}Во время установки 'AUR', Вас попросят ввести (Пароль пользователя) '$username'." 
+echo -e "${YELLOW}==> Внимание! ${NC}Во время установки 'AUR', Вас попросят ввести (Пароль пользователя) для '$username'." 
 
 echo ""
 echo -e "${GREEN}==> ${NC}Установка AUR Helper (yay) или (pikaur)"
