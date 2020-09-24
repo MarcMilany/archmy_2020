@@ -2533,8 +2533,8 @@ echo ""
 elif [[ $vm_fstab == 1 ]]; then
 nano /etc/fstab
 elif [[ $vm_fstab == 2 ]]; then
-echo ""    
-echo ' Просмотреть содержимое файла fstab '
+echo ""
+echo " Просмотреть содержимое файла fstab "    
 # View the contents of the fstab file
 echo ""    
 cat /etc/fstab
@@ -2545,7 +2545,11 @@ fi
 echo -e "${YELLOW}==> Примечание: ${NC}Если! Вы сейчас устанавливали "AUR Helper" 'yay' вместе с ним установилась зависимость 'go' - (Основные инструменты компилятора для языка программирования Go), который весит 559,0 МБ. Так, что если вам не нужна зависимость 'go', для дальнейшей сборки пакетов в установленной системе СОВЕТУЮ удалите её. В случае, если "AUR" НЕ БЫЛ установлен, то пропустить этот шаг."
 
 
-
+echo ""
+echo -e "${BLUE}:: ${BOLD}Удаление зависимости 'go' после установки "AUR Helper". ${NC}"
+#echo -e "${BLUE}:: ${{NC}Удаление зависимости 'go' после установки "AUR Helper". "
+#echo 'Удаление зависимости 'go' после установки "AUR Helper".'
+# Removal of the dependency the 'go' button after installing the "AUR Helper"
 echo -e "${YELLOW}==> ${NC} Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте..."
 # Be careful! If you doubt your actions, think again...
 echo ""
@@ -2562,16 +2566,16 @@ do
 done
 if [[ $prog_set == 0 ]]; then
   echo ""
-echo " Удаление зависимость go пропущен "      
+echo " Удаление зависимость 'go' пропущен "      
 elif [[ $prog_set == 1 ]]; then
 #sudo pacman -Rs go
 pacman -Rs go
  echo "" 
- echo " Удаление зависимость go выполнено "
+ echo " Удаление зависимость 'go' выполнено "
 fi
 
 ### Clean pacman cache (Очистить кэш pacman)
-#echo ""
+echo ""
 echo -e "${BLUE}:: ${BOLD}Очистка кэша pacman ${NC}"
 #echo 'Очистка кэша pacman'
 # Clearing the pacman cache
