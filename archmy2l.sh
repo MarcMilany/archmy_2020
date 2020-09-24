@@ -1947,8 +1947,9 @@ echo -e "${GREEN}==> ${NC}Установить сетевые утилиты Net
 #echo -e "${BLUE}:: ${NC}Установить сетевые утилиты "Networkmanager"?"
 #echo 'Установить сетевые утилиты "Networkmanager"?'
 # Install the "Networkmanager" network utilities"
-echo " "Networkmanager" - сервис для работы интернета. Вместе с собой устанавливает программы (пакеты) для настройки. "
-echo " Поддержка OpenVPN в Network Manager также внесена в список устанавливаемых программ (пакетов). "
+echo -e "${BLUE}:: ${NC}'Networkmanager' - сервис для работы интернета."
+echo " Вместе с собой устанавливает программы (пакеты) для настройки сети. "
+echo -e "${CYAN}=> ${NC}Поддержка OpenVPN в Network Manager также внесена в список устанавливаемых программ (пакетов)."
 echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
 # Be careful! If you doubt your actions, think again...
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
