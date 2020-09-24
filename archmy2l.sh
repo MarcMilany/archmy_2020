@@ -2334,11 +2334,9 @@ echo " Действия ввода, выполняется сразу после
 
     3 - Octopi - ранее НЕ БЫЛ УСТАНОВЛЕН AUR - (pikaur), 
 
-    4 - Pacman gui - (pamac-all),     5 - Pacman gui - (pamac-all-git),      
-
     0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^123450] ]]
+    [[ "$prog_set" =~ [^1230] ]]
 do
     :
 done 
@@ -2440,32 +2438,6 @@ rm -Rf /home/$username/gksu
 clear
 echo ""
 echo " Графический менеджер Octopi успешно установлен! "
-elif [[ $prog_set == 4 ]]; then
-  echo " Установка Графического менеджера Pacman gui (pamac-all) "
-##### pamac-all ######  
-cd /home/$username
- git clone https://aur.archlinux.org/pamac-all.git
-chown -R $username:users /home/$username/pamac-all
-chown -R $username:users /home/$username/pamac-all/PKGBUILD 
-cd /home/$username/pamac-all
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/pamac-all
-clear
-echo ""
-echo " Графический менеджер Pamac-all успешно установлен! "
-elif [[ $prog_set == 5 ]]; then
-  echo " Установка Графического менеджера Pacman gui (pamac-all-git) "
-##### pamac-all-git ######  
-cd /home/$username
- git clone https://aur.archlinux.org/pamac-all-git.git
-chown -R $username:users /home/$username/pamac-all-git
-chown -R $username:users /home/$username/pamac-all-git/PKGBUILD 
-cd /home/$username/pamac-all-git
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/pamac-all-git
-clear
-echo ""
-echo " Графический менеджер Pamac-all-git успешно установлен! "
 fi 
 
 echo ""
