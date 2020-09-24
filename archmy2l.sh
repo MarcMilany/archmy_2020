@@ -2314,6 +2314,9 @@ echo -e "${CYAN}=> ${BOLD}Вариант '3' - Если ранее при Уст
 echo " Pacman gui "Octopi" - рекомендуется для KDE Plasma Desktop (окружение рабочего стола). "
 echo " 4 - Pacman gui (pamac-all) - Графический менеджер пакетов (интерфейс Gtk3 для libalpm), тогда укажите "4". " 
 echo -e "${MAGENTA}=> ${NC}Вариант '4' - Это НОВЫЙ Графический менеджер пакетов, впервые представлен '2020-08-25', и как говорится (всё в одном пакете - snap, flatpak, appindicator, и...). " 
+echo " 5 - Pacman gui (pamac-all-git) - Графический менеджер пакетов (интерфейс Gtk3 для libalpm), тогда укажите "5". " 
+echo -e "${MAGENTA}=> ${NC}Вариант '5' - Это НОВЫЙ Графический менеджер пакетов, впервые представлен '2020-08-25', и как говорится (всё в одном пакете - snap, flatpak, appindicator, и...). "
+echo " Pacman gui (pamac-all-git) в отличие от (pamac-all), имеет 'git' версию, и его популярность повыше. " 
 echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В данной опции выбор всегда остаётся за вами. "
 # Be careful! The installation process, after the option you selected, was registered fully automatic. In this option, the choice is always yours.
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
