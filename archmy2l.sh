@@ -2324,21 +2324,22 @@ echo -e "${YELLOW}==> ${NC}Действия выполняются в указа
 echo "" 
 while 
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-#read -p " 1 - Pacman gui (pamac-aur), 2 - Octopi - ранее БЫЛ выбран AUR - (pikaur), 3 - Octopi - ранее НЕ БЫЛ УСТАНОВЛЕН AUR - (pikaur), 0 - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+#read -p " 1 - Pacman gui (pamac-aur), 2 - Octopi - ранее БЫЛ выбран AUR - (pikaur), 3 - Octopi - ранее НЕ БЫЛ УСТАНОВЛЕН AUR - (pikaur), 4 - Pacman gui (pamac-all),0 - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
     1 - Pacman gui (pamac-aur),     2 - Octopi - ранее БЫЛ выбран AUR - (pikaur), 
 
-    3 - Octopi - ранее НЕ БЫЛ УСТАНОВЛЕН AUR - (pikaur),    
+    3 - Octopi - ранее НЕ БЫЛ УСТАНОВЛЕН AUR - (pikaur),     4 - Pacman gui (pamac-all),  
 
     0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^1230] ]]
+    [[ "$prog_set" =~ [^12340] ]]
 do
     :
 done 
 if [[ $prog_set == 0 ]]; then 
-clear   
+clear 
+echo ""  
 echo " Установка Графического менеджера пакетов пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка Графического менеджера Pacman gui (pamac-aur) "
@@ -2434,6 +2435,19 @@ rm -Rf /home/$username/gksu
 clear
 echo ""
 echo " Графический менеджер Octopi успешно установлен! "
+elif [[ $prog_set == 4 ]]; then
+  echo " Установка Графического менеджера Pacman gui (pamac-all) "
+##### pamac-all ######  
+cd /home/$username
+ git clone https://aur.archlinux.org/pamac-all.git
+chown -R $username:users /home/$username/pamac-all
+chown -R $username:users /home/$username/pamac-all/PKGBUILD 
+cd /home/$username/pamac-all
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/pamac-all
+clear
+echo ""
+echo " Графический менеджер Pamac-all успешно установлен! "
 fi 
 
 echo ""
