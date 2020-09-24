@@ -1443,9 +1443,9 @@ echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Displ
 #echo -e "${BLUE}:: ${NC}Настройка автовхода без DM (Display manager) менеджера входа в Xfce"
 #echo 'Настройка автовхода без DM (Display manager) менеджера входа в Xfce'
 # Configuring AutoFill without the DM (Display manager) of the Xfce login Manager
-echo " Файл ~/.xinitrc представляет собой шелл-скрипт передаваемый xinit посредством команды startx.   "
-echo " Он используется для запуска Среды рабочего стола, Оконного менеджера и других программ запускаемых с X сервером (например запуска демонов, и установки переменных окружений. "
-echo " Программа xinit запускает Xorg сервер и работает в качестве программы первого клиента на системах не использующих Экранный менеджер. "
+echo -e "${MAGENTA}=> ${BOLD}Файл ~/.xinitrc представляет собой шелл-скрипт передаваемый xinit посредством команды startx. ${NC}"
+echo -e "${MAGENTA}:: ${NC}Он используется для запуска Среды рабочего стола, Оконного менеджера и других программ запускаемых с X сервером (например запуска демонов, и установки переменных окружений."
+echo -e "${CYAN}:: ${NC}Программа xinit запускает Xorg сервер и работает в качестве программы первого клиента на системах не использующих Экранный менеджер."
 # The ~/.xinitrc file is a shell script passed to xinit via the startx command. It is used to run the desktop Environment, Window Manager, and other programs that run with the X server (for example, running daemons, and setting environment variables. The xinit program starts the Xorg server and runs as the first client program on systems that do not use the Screen Manager.
 echo " Давайте проанализируем действия, которые выполняются. "
 # Let's analyze the actions that are being performed.
