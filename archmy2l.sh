@@ -958,9 +958,9 @@ echo -e "${MAGENTA}=> ${BOLD}В сценарии (скрипта) прописа
 echo " Давайте рассмотрим варианты (действия), которые будут выполняться: "
 # Let's look at the options that will be performed:
 echo " 1 - Добавляем пользователя, прописываем права, и добавляем группы : "
-echo " (audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel), то выбирайте вариант - "1". "
+echo " (audio,games,lp,disk,network,optical,power,scanner,storage,video,rfkill,sys,wheel), то выбирайте вариант - "1". "
 echo " 2 - Добавляем пользователя, прописываем права, и добавляем группы : "
-echo " (adm + audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel), то выбирайте вариант - "2". "
+echo " (adm + audio,games,lp,disk,network,optical,power,scanner,storage,video,rfkill,sys,wheel), то выбирайте вариант - "2". "
 echo " 3 - Добавляем пользователя, прописываем права, и добавляем пользователя в группу : "
 echo " (wheel), то выбирайте вариант - "3". "
 echo -e "${CYAN}:: ${BOLD}Далее, пользователь из установленной системы добавляет себя любимого(ую), в нужную группу /etc/group.${NC}"
@@ -989,10 +989,10 @@ do
     :
 done
 if [[ $i_groups  == 1 ]]; then
-useradd -m -g users -G audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel -s /bin/bash $username
+useradd -m -g users -G audio,games,lp,disk,network,optical,power,scanner,storage,video,rfkill,sys,wheel -s /bin/bash $username
 echo " Пользователь успешно добавлен в группы и права пользователя. "
 elif [[ $i_groups  == 2 ]]; then
-useradd -m -g users -G adm,audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel -s /bin/bash $username
+useradd -m -g users -G adm,audio,games,lp,disk,network,optical,power,scanner,storage,video,rfkill,sys,wheel -s /bin/bash $username
 echo " Пользователь успешно добавлен в группы и права пользователя. "
 elif [[ $i_groups  == 3 ]]; then
 useradd -m -g users -G wheel -s /bin/bash $username
