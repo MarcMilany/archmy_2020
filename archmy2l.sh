@@ -2329,7 +2329,9 @@ echo " Действия ввода, выполняется сразу после
     read -n1 -p "      
     1 - Pacman gui (pamac-aur),     2 - Octopi - ранее БЫЛ выбран AUR - (pikaur), 
 
-    3 - Octopi - ранее НЕ БЫЛ УСТАНОВЛЕН AUR - (pikaur),     4 - Pacman gui (pamac-all),  
+    3 - Octopi - ранее НЕ БЫЛ УСТАНОВЛЕН AUR - (pikaur), 
+
+    4 - Pacman gui (pamac-all),      
 
     0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
