@@ -1199,6 +1199,9 @@ done
 #  pacstrap /mnt base-devel      #--noconfirm
 #  pacstrap /mnt --needed base-devel
 #  pacstrap /mnt nano vim dhcpcd netctl which inetutils #wget
+clear
+  echo ""
+  echo " Установка выбранного вами, групп (base + base-devel + packages) выполнена "
 elif [[ $x_pacstrap == 2 ]]; then
   clear
   echo ""
@@ -1206,6 +1209,9 @@ elif [[ $x_pacstrap == 2 ]]; then
   pacstrap /mnt base nano vim dhcpcd netctl which inetutils #wget
 #  pacstrap /mnt base
 #  pacstrap /mnt nano vim dhcpcd netctl which inetutils #wget
+clear
+  echo ""
+  echo " Установка выбранного вами, групп (base + base-devel + packages) выполнена "
 elif [[ $x_pacstrap == 3 ]]; then
   clear
   echo ""
@@ -1213,12 +1219,18 @@ elif [[ $x_pacstrap == 3 ]]; then
   pacstrap /mnt base base base-devel
 #  pacstrap /mnt base  
 #  pacstrap /mnt base-devel
-#  pacstrap /mnt --needed base-devel   
+#  pacstrap /mnt --needed base-devel 
+clear
+  echo ""
+  echo " Установка выбранного вами, групп (base + base-devel + packages) выполнена "  
 elif [[ $x_pacstrap == 4 ]]; then
   clear
   echo ""
   echo " Установка выбранной вами группы "
   pacstrap /mnt base 
+  clear
+  echo ""
+  echo " Установка выбранного вами, групп (base + base-devel + packages) выполнена "
 fi 
 
 # ----------------------------------------------------------------
@@ -1253,7 +1265,7 @@ fi
 
 ### Install Kernel
 #### Kernel (optional) - (Kernel (arbitrary) #####
-clear
+#clear
 echo ""
 echo -e "${GREEN}==> ${NC}Какое ядро (Kernel) Вы бы предпочли установить вместе с системой Arch Linux?"
 #echo 'Какое ядро (Kernel) Вы бы предпочли установить вместе с системой Arch Linux?'
