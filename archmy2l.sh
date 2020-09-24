@@ -978,9 +978,9 @@ while
 # read -p " 1 - Вы выбрали группы (audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel), 2 - Вы выбрали группы (adm + audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel), 3 - Вы выбрали группу (wheel): " i_groups  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p " 
-    1 - Группы (audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel), 
+    1 - Группы (audio,games,lp,disk,network,optical,power,scanner,storage,video,rfkill,sys,wheel), 
 
-    2 - Группы (adm + audio,games,lp,network,optical,power,scanner,storage,video,rfkill,sys,wheel),    
+    2 - Группы (adm + audio,games,lp,disk,network,optical,power,scanner,storage,video,rfkill,sys,wheel),    
 
     3 - Вы выбрали группу (wheel): " i_groups  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
