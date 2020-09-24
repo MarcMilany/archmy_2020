@@ -877,7 +877,7 @@ echo -e "${GREEN}==> ${NC}Если на компьютере будут неск
 #echo -e "${BLUE}:: ${NC}Если на компьютере будут несколько OS, то это также ставим."
 #echo 'Если на компьютере будут несколько ОС, то это также ставим.'
 # # If the system will have several operating systems, then this is also set
-echo " Для двойной загрузки Arch Linux с другой системой Linux, Windows, установить другой Linux без загрузчика, вам необходимо установить утилиту os-prober, необходимую для обнаружения других операционных систем. "
+echo -e "${YELLOW}=> ${NC}Для двойной загрузки Arch Linux с другой системой Linux, Windows, установить другой Linux без загрузчика, вам необходимо установить утилиту os-prober, необходимую для обнаружения других операционных систем."
 echo " И обновить загрузчик Arch Linux, чтобы иметь возможность загружать новую ОС."
 # To double boot Arch Linux with another Linux, Windows system, install another Linux without a loader, you need to install the os-prober utility needed to detect other operating systems.
 # And update the Arch Linux loader to be able to load the new OS.
