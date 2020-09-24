@@ -2324,18 +2324,18 @@ echo -e "${YELLOW}==> ${NC}Действия выполняются в указа
 echo "" 
 while 
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-#read -p " 1 - Pacman gui - (pamac-aur), 2 - Octopi - ранее БЫЛ выбран AUR - (pikaur), 3 - Octopi - ранее НЕ БЫЛ УСТАНОВЛЕН AUR - (pikaur), 4 - Pacman gui - (pamac-all),0 - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+#read -p " 1 - Pacman gui - (pamac-aur), 2 - Octopi - ранее БЫЛ выбран AUR - (pikaur), 3 - Octopi - ранее НЕ БЫЛ УСТАНОВЛЕН AUR - (pikaur), 4 - Pacman gui - (pamac-all), 5 - Pacman gui - (pamac-all-git), 0 - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
     1 - Pacman gui - (pamac-aur),     2 - Octopi - ранее БЫЛ выбран AUR - (pikaur), 
 
     3 - Octopi - ранее НЕ БЫЛ УСТАНОВЛЕН AUR - (pikaur), 
 
-    4 - Pacman gui - (pamac-all),      
+    4 - Pacman gui - (pamac-all),     5 - Pacman gui - (pamac-all-git),      
 
     0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^12340] ]]
+    [[ "$prog_set" =~ [^123450] ]]
 do
     :
 done 
