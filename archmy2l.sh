@@ -2249,7 +2249,8 @@ do
     :
 done 
 if [[ $in_aur_help == 0 ]]; then
-clear    
+clear
+echo ""    
 echo " Установка AUR Helper пропущена "
 elif [[ $in_aur_help == 1 ]]; then
 pacman -Syu    
@@ -2264,6 +2265,7 @@ cd /home/$username/yay
 sudo -u $username  makepkg -si --noconfirm  
 rm -Rf /home/$username/yay
 clear
+echo ""
 echo " Установка AUR Helper (yay) завершена "
 elif [[ $in_aur_help == 2 ]]; then
 pacman -Syu    
@@ -2278,6 +2280,7 @@ cd /home/$username/pikaur
 sudo -u $username  makepkg -si --noconfirm  
 rm -Rf /home/$username/pikaur
 clear
+echo ""
 echo " Установка AUR Helper (pikaur) завершена "
 fi
 #--------------------------------------------------------------
