@@ -2450,6 +2450,19 @@ rm -Rf /home/$username/pamac-all
 clear
 echo ""
 echo " Графический менеджер Pamac-all успешно установлен! "
+elif [[ $prog_set == 5 ]]; then
+  echo " Установка Графического менеджера Pacman gui (pamac-all-git) "
+##### pamac-all-git ######  
+cd /home/$username
+ git clone https://aur.archlinux.org/pamac-all-git.git
+chown -R $username:users /home/$username/pamac-all-git
+chown -R $username:users /home/$username/pamac-all-git/PKGBUILD 
+cd /home/$username/pamac-all-git
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/pamac-all-git
+clear
+echo ""
+echo " Графический менеджер Pamac-all-git успешно установлен! "
 fi 
 
 echo ""
