@@ -964,6 +964,20 @@ pacman -S dialog wpa_supplicant iw wireless_tools net-tools --noconfirm
  elif [[ $i_wifi  == 0 ]]; then
 echo " Установка программ (пакетов) пропущена. "
  fi
+# ------------------------------------------------------------
+# Разбор утилит для установки:
+# dialog  - 
+# wpa_supplicant  - Утилита, обеспечивающая согласование ключей для беспроводных сетей WPA
+# iw  -  
+# wireless_tools  - Графический менеджер настроек grub2
+# net-tools  -
+# 
+# https://www.archlinux.org/packages/core/x86_64/wpa_supplicant/
+# 
+# 
+# 
+# 
+# ============================================================
 
 ### Set User
 sleep 01
