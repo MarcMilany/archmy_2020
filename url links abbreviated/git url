@@ -320,9 +320,9 @@ Location: https://git.io/yay-bin-install
 
 Сокращение ссылки для yay-install.sh
 
-https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/AUR%20helper/yay-bin-install.sh
+hhttps://raw.githubusercontent.com/MarcMilany/archmy_2020/master/AUR%20helper/yay-install.sh
 
-curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/AUR%20helper/yay-bin-install.sh" -F "code=yay-install"
+curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/AUR%20helper/yay-install.sh" -F "code=yay-install"
 
 Location: https://git.io/yay-install
 
