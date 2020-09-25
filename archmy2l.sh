@@ -1107,7 +1107,7 @@ echo -e "${GREEN}==> ${NC}Настраиваем запрос пароля "По
 # Configuring the "User" password request when executing the "sudo" command"
 echo " Чтобы начать использовать sudo как непривилегированный пользователь, его нужно настроить должным образом. "
 # To start using sudo as an unprivileged user, you need to configure it properly.
-echo " Огласите весь список, пожалуйста! "
+echo " Огласите весь список, пожалуйста! :) "
 # Read out the entire list, please!
 echo " 1 - Пользователям (членам) группы wheel доступ к sudo С запросом пароля. "
 echo " 2 - Пользователям (членам) группы wheel доступ к sudo (NOPASSWD) БЕЗ запроса пароля. "
