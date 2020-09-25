@@ -1995,6 +1995,8 @@ echo " Установка NetworkManager пропущена "
 # https://www.archlinux.org/packages/extra/x86_64/networkmanager-openvpn/ 
 # =========================================================== 
 
+sleep 02
+clear
 echo ""
 echo -e "${GREEN}==> ${NC}Добавим службу Dhcpcd в автозагрузку (для проводного интернета)?"
 #echo 'Добавим службу Dhcpcd в автозагрузку (для проводного интернета)?'
