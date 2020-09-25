@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Install script pamac-aur
+# Install script pamac-all-git
 # autor: Marc Milany https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/url%20links%20abbreviated/git%20url
 
 # wget git.io/pamac-all-git.sh && sh pamac-all-git.sh
