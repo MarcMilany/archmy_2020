@@ -2074,6 +2074,10 @@ echo -e "${BLUE}:: ${NC}Монтирование разделов NTFS и соз
 # NTFS support (optional)
 pacman -S ntfs-3g --noconfirm
 #sudo pacman -S ntfs-3g --noconfirm
+# ---------------------------------------------------------
+# ntfs-3g  - Драйвер и утилиты файловой системы NTFS
+# https://www.archlinux.org/packages/extra/x86_64/ntfs-3g/
+# =========================================================
 
 echo ""
 echo -e "${BLUE}:: ${NC}Установка базовых программ и пакетов"
