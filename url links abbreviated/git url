@@ -308,7 +308,11 @@ Location: https://git.io/pikaur-install
 
 Сокращение ссылки для yay-bin-install.sh
 
+https://github.com/MarcMilany/archmy_2020/blob/master/AUR%20helper/pikaur-install.sh
 
+curl -i https://git.io -F "url=https://github.com/MarcMilany/archmy_2020/blob/master/AUR%20helper/pikaur-install.sh" -F "code=yay-bin-install"
+
+Location: https://git.io/yay-bin-install
 
 
 **************************************************************************
