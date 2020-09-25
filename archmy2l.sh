@@ -880,10 +880,13 @@ echo -e "${GREEN}==> ${NC}Если на компьютере будут неск
 #echo -e "${BLUE}:: ${NC}Если на компьютере будут несколько OS, то это также ставим."
 #echo 'Если на компьютере будут несколько ОС, то это также ставим.'
 # # If the system will have several operating systems, then this is also set
+echo -e "${CYAN}:: ${NC}Это утилиты для обнаружения других ОС на наборе дисков, для доступа к дискам MS-DOS, а также библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства."
 echo -e "${YELLOW}=> ${NC}Для двойной загрузки Arch Linux с другой системой Linux, Windows, установить другой Linux без загрузчика, вам необходимо установить утилиту os-prober, необходимую для обнаружения других операционных систем."
 echo " И обновить загрузчик Arch Linux, чтобы иметь возможность загружать новую ОС."
 # To double boot Arch Linux with another Linux, Windows system, install another Linux without a loader, you need to install the os-prober utility needed to detect other operating systems.
 # And update the Arch Linux loader to be able to load the new OS.
+echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# Be careful! If you doubt your actions, think again...
 echo ""
 while
 echo " Действия ввода, выполняется сразу после нажатия клавиши " 
@@ -903,13 +906,26 @@ pacman -S os-prober mtools fuse --noconfirm  #grub-customizer
  elif [[ $prog_set  == 0 ]]; then
 echo " Установка программ (пакетов) пропущена. "
  fi
-# 
+# ------------------------------------------------------------
+# Разбор утилит для установки:
+# os-prober  - Утилита для обнаружения других ОС на наборе дисков
+# mtools  - Сборник утилит для доступа к дискам MS-DOS
+# fuse  - (fuse2 и fuse-common) Общие файлы для пакетов fuse2 / 3. Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства. 
+# grub-customizer  - Графический менеджер настроек grub2
+# https://www.archlinux.org/packages/community/x86_64/os-prober/
+# https://www.archlinux.org/packages/extra/x86_64/mtools/
+# https://www.archlinux.org/packages/extra/x86_64/fuse2/
+# https://www.archlinux.org/packages/extra/x86_64/fuse-common/
+# https://github.com/libfuse/libfuse
+# https://www.archlinux.org/packages/community/x86_64/grub-customizer/
+# ============================================================
+
 echo ""
 echo -e "${BLUE}:: ${NC}Обновляем grub.cfg (Сгенерируем grub.cfg)"
 #echo 'Обновляем grub.cfg (Сгенерируем grub.cfg)'
 # Updating grub.cfg (Generating grub.cfg)
 grub-mkconfig -o /boot/grub/grub.cfg   # создаём конфигурационный файл
-# ----------------------------------------------------------------------------
+# ------------------------------------------------------------- 
 # Файл /etc/boot/grub/grub.cfg управляет непосредственно работой загрузчика, здесь указаны все его параметры и настройки, а также сформировано меню. 
 # Поэтому, изменяя этот файл, мы можем настроить Grub как угодно.
 # https://losst.ru/nastrojka-zagruzchika-grub
