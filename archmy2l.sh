@@ -2560,8 +2560,8 @@ if [[ $prog_set == 0 ]]; then
 echo " Удаление зависимости 'go' пропущено "      
 elif [[ $prog_set == 1 ]]; then
 #sudo pacman -Rs go
-pacman --noconfirm -Rs go    # --noconfirm  --не спрашивать каких-либо подтверждений
 #pacman -Rs go
+pacman --noconfirm -Rs go    # --noconfirm  --не спрашивать каких-либо подтверждений
  echo "" 
  echo " Удаление зависимость 'go' выполнено "
 fi
