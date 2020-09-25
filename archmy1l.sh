@@ -1153,7 +1153,7 @@ sudo pacman -Sy
 ### Install Base System
 clear
 echo ""
-echo -e "${GREEN}==> ${NC}Установка основных пакетов (base base-devel) базовой системы"
+echo -e "${GREEN}==> ${NC}Установка основных пакетов (base, base-devel) базовой системы"
 #echo 'Установка основных пакетов (base base-devel) базовой системы'
 # Installing basic packages (base base-devel)
 echo -e "${BLUE}:: ${NC}Arch Linux, Base devel (AUR only)"
