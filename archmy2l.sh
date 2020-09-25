@@ -1112,7 +1112,7 @@ echo -e "${RED}==> ${BOLD}Выбрав '2' (раскомментировав) д
 # By selecting '2' (commenting out) this option, there are no special security requirements, but maybe there are some very negative points in this?...
 echo " 3-(0) - Добавление настроек sudo пропущено. "
 echo " Все настройки в файле /etc/sudoers пользователь произведёт сам. "
-echo " Например: под строкой root ALL=(ALL) ALL  - пропишет - $username ALL=(ALL) ALL "
+echo " Например: под строкой root ALL=(ALL) ALL  - пропишет -  $username ALL=(ALL) ALL "
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
 #echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
 # You can skip this step if you are not sure of the correct choice
@@ -2216,7 +2216,7 @@ echo -e "${MAGENTA}
   <<< Установка AUR (Arch User Repository) >>> ${NC}"
 # Installing an Aur (Arch User Repository) - a repository where users upload scripts to install software.
 echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете пропустить установку "AUR", пункт для установки будет продублирован в следующем скрипте (archmy3l). И Вы сможете установить "AUR Helper" уже из установленной системы." 
-echo -e "${YELLOW}==> Внимание! ${NC}Во время установки 'AUR', Вас попросят ввести (Пароль пользователя) для '$username'." 
+echo -e "${YELLOW}==> Внимание! ${NC}Во время установки "AUR", Вас попросят ввести (Пароль пользователя) для $username." 
 
 echo ""
 echo -e "${GREEN}==> ${NC}Установка AUR Helper (yay) или (pikaur)"
