@@ -966,17 +966,16 @@ echo " Установка программ (пакетов) пропущена. 
  fi
 # ------------------------------------------------------------
 # Разбор утилит для установки:
-# dialog  - 
+# dialog  - Инструмент для отображения диалоговых окон из сценариев оболочки
 # wpa_supplicant  - Утилита, обеспечивающая согласование ключей для беспроводных сетей WPA
-# iw  -  
-# wireless_tools  - Графический менеджер настроек grub2
-# net-tools  -
-# 
+# iw  - Утилита настройки интерфейса командной строки на основе nl80211 для беспроводных устройств 
+# wireless_tools  - Инструменты, позволяющие управлять беспроводными расширениями
+# net-tools  - Инструменты настройки для сети Linux
+# https://www.archlinux.org/packages/core/x86_64/dialog/
 # https://www.archlinux.org/packages/core/x86_64/wpa_supplicant/
-# 
-# 
-# 
-# 
+# https://www.archlinux.org/packages/core/x86_64/iw/
+# https://www.archlinux.org/packages/core/x86_64/wireless_tools/
+# https://www.archlinux.org/packages/core/x86_64/net-tools/ 
 # ============================================================
 
 ### Set User
