@@ -709,7 +709,7 @@ echo ""
 echo -e "${BLUE}:: ${NC}Установка базовых программ и пакетов" 
 #echo 'Установка базовых программ и пакетов'
 # Installing basic programs and packages
-sudo pacman -S aspell-ru arch-install-scripts bash-completion dosfstools f2fs-tools sane gvfs gnu-netcat htop iftop iotop nmap ntfs-3g ntp ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv reflector sox youtube-dl speedtest-cli python-pip pwgen scrot curl xsel --noconfirm  #git
+sudo pacman -S aspell-ru arch-install-scripts bash-completion dosfstools f2fs-tools sane gvfs gnu-netcat htop iftop iotop nmap ntfs-3g ntp ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv reflector sox youtube-dl speedtest-cli python-pip pwgen scrot xsel --noconfirm  #git  #curl  - пока присутствует в pkglist.x86_64
 
 echo ""
 echo -e "${BLUE}:: ${NC}Установка терминальных утилит для вывода информации о системе" 
