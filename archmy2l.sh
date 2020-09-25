@@ -1990,15 +1990,6 @@ echo " Установка NetworkManager пропущена "
 # =========================================================== 
 
 echo ""
-echo -e "${BLUE}:: ${NC}Ставим шрифты"
-#echo 'Ставим шрифты'
-# Put the fonts
-pacman -S ttf-liberation ttf-dejavu --noconfirm 
-pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-hanazono --noconfirm  # opendesktop-fonts 
-pacman -S ttf-anonymous-pro --noconfirm  # Семейство из четырех шрифтов фиксированной ширины, разработанных специально с учетом кодирования
-pacman -S ttf-fireflysung ttf-sazanami --noconfirm  # -китайские иероглифы
-
-echo ""
 echo -e "${GREEN}==> ${NC}Добавим службу Dhcpcd в автозагрузку (для проводного интернета)?"
 #echo 'Добавим службу Dhcpcd в автозагрузку (для проводного интернета)?'
 # Adding the Dhcpcd service to auto-upload (for wired Internet)?
@@ -2028,6 +2019,15 @@ echo " Dhcpcd успешно добавлен в автозагрузку "
 elif [[ $x_dhcpcd == 0 ]]; then
   echo ' Dhcpcd не включен в автозагрузку, при необходиости это можно будет сделать уже в установленной системе '
 fi
+
+echo ""
+echo -e "${BLUE}:: ${NC}Ставим шрифты"
+#echo 'Ставим шрифты'
+# Put the fonts
+pacman -S ttf-liberation ttf-dejavu --noconfirm 
+pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-hanazono --noconfirm  # opendesktop-fonts 
+pacman -S ttf-anonymous-pro --noconfirm  # Семейство из четырех шрифтов фиксированной ширины, разработанных специально с учетом кодирования
+pacman -S ttf-fireflysung ttf-sazanami --noconfirm  # -китайские иероглифы
 
 ### Install NTFS support "NTFS file support (Windows Drives)"
 echo ""
