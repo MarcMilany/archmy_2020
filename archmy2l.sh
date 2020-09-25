@@ -805,7 +805,7 @@ echo -e "${BLUE}:: ${BOLD}Обновление Microcode (matching CPU) ${NC}"
 echo " Производители процессоров выпускают обновления стабильности и безопасности 
         для микрокода процессора "
 # Processor manufacturers release stability and security updates for the processor microcode.
-echo " Огласите весь список, пожалуйста! "
+echo " Огласите весь список, пожалуйста! :) "
 # Read out the entire list, please!
 echo " 1 - Для процессоров AMD установите пакет amd-ucode. "
 echo " 2 - Для процессоров Intel установите пакет intel-ucode. "
