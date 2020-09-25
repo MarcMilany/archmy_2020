@@ -260,9 +260,9 @@ Location: https://git.io/aur-snapd
 
 Сокращение ссылки для pamac-all.sh
 
-https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/AUR%20helper/aur-snapd.sh
+https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/AUR%20helper/pamac-all.sh
 
-curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/AUR%20helper/aur-snapd.sh" -F "code=pamac-all"
+curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/AUR%20helper/pamac-all.sh" -F "code=pamac-all"
 
 Location: https://git.io/pamac-all
 
@@ -284,7 +284,11 @@ Location: https://git.io/pamac-all-git
 
 Сокращение ссылки для pamac-aur.sh
 
+https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/AUR%20helper/pamac-aur.sh
 
+curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/AUR%20helper/pamac-aur.sh" -F "code=pamac-aur"
+
+Location: https://git.io/pamac-aur
 
 
 **************************************************************************
@@ -292,7 +296,11 @@ Location: https://git.io/pamac-all-git
 
 Сокращение ссылки для pikaur-install.sh
 
+https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/AUR%20helper/pamac-aur.sh
 
+curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/AUR%20helper/pamac-aur.sh" -F "code=pamac-aur"
+
+Location: https://git.io/pamac-aur
 
 
 **************************************************************************
