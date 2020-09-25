@@ -248,7 +248,11 @@ https://raw.githubusercontent.com/MarcMilany/arch_2020/master/arch2020.sh
 
 Сокращение ссылки для aur-snapd.sh
 
+https://raw.githubusercontent.com/MarcMilany/arch_2020/master/arch2020.sh
 
+curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/arch_2020/master/arch2020.sh" -F "code=aur-snapd"
+
+Location: https://git.io/aur-snapd
 
 
 **************************************************************************
