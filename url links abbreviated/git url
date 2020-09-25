@@ -296,9 +296,9 @@ Location: https://git.io/pamac-aur
 
 Сокращение ссылки для pikaur-install.sh
 
-https://github.com/MarcMilany/archmy_2020/blob/master/AUR%20helper/pikaur-install.sh
+https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/AUR%20helper/pikaur-install.sh
 
-curl -i https://git.io -F "url=https://github.com/MarcMilany/archmy_2020/blob/master/AUR%20helper/pikaur-install.sh" -F "code=pikaur-install"
+curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/AUR%20helper/pikaur-install.sh" -F "code=pikaur-install"
 
 Location: https://git.io/pikaur-install
 
