@@ -679,59 +679,16 @@ Server = https://mirror.yandex.ru/archlinux/\$repo/os/\$arch
 
 EOF
 
-# -----------------------------------------------------------------
-# Pacman Mirrorlist Generator
-# https://www.archlinux.org/mirrorlist/
-# Эта страница генерирует самый последний список зеркал, возможный для Arch Linux. Используемые здесь данные поступают непосредственно из внутренней базы данных зеркал разработчиков, используемой для отслеживания доступности и уровня зеркалирования. 
-# Есть два основных варианта: получить список зеркал с каждым доступным зеркалом или получить список зеркал, адаптированный к вашей географии.
-# Получение и ранжирование свежего списка зеркал
-# Воспользуйтесь Pacman Mirrorlist Generator, чтобы получить список актуальных зеркал определённых стран и отсортировать его с помощью rankmirrors. Команда ниже скачивает актуальный список зеркал во Франции и Великобритании, использующих протокол https, после чего удаляет комментарии, ранжирует сервера и выводит 5 наиболее быстрых из них.
-#
-#curl -s "https://www.archlinux.org/mirrorlist/?country=FR&country=GB&protocol=https&use_mirror_status=on" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 -
-#
-# Команда ниже скачивает актуальный список зеркал в России, использующих протокол https, после чего удаляет комментарии, ранжирует сервера и выводит 5 наиболее быстрых из них.
-# 
-#curl -s "https://www.archlinux.org/mirrorlist/?country=RU&country&protocol=https&use_mirror_status=on" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 -
-#
-# https://wiki.archlinux.org/index.php/Mirrors_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
-# ================================================================
-
 echo -e "${BLUE}:: ${NC}Создание (backup) резервного списка зеркал mirrorlist - (mirrorlist.backup)"
-#echo 'Создание (backup) резервного списка зеркал mirrorlist - (mirrorlist.backup)'
-# Creating a backup list of mirrors mirrorlist - (mirrorlist.backup)
 cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 
 echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал для загрузки в mirrorlist"
-#echo 'Посмотреть список серверов-зеркал для загрузки в mirrorlist'
-# View the list of mirror servers to upload to mirrorlist
 cat /etc/pacman.d/mirrorlist
 
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
-#echo 'Обновим базы данных пакетов'
-# Updating the package databases
 sudo pacman -Sy 
-# ------------------------------------------------------
-# Знакомьтесь, pacman - лучший пакетный менеджер в мире линукса!
-#pacman -Syy   - обновление баз пакмэна (как apt-get update в дэбианоподбных)
-#pacman -Syyu  - обновление баз плюс обновление пакетов
-# ---------------------------------------------------------
-### Если возникли проблемы с обновлением, или установкой пакетов ##
-# Выполните данные рекомендации:
-#echo 'Обновление ключей системы'
-# Updating of keys of a system
-#echo "Создаётся генерация мастер-ключа (брелка) pacman, введите пароль (не отображается)..."
-#sudo pacman-key --init
-#echo "Далее идёт поиск ключей..."
-#sudo pacman-key --populate archlinux
-#echo "Обновление ключей..."
-#sudo pacman-key --refresh-keys
-#echo "Обновление баз данных пакетов..."
-#sudo pacman -Sy
-# Или:
-#sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys && sudo pacman -Sy
-# ===========================================================
 
-### Install Base System
+###### Install Base System  #############
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установка основных пакетов (base, base-devel) базовой системы"
