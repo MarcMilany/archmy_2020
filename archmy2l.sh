@@ -515,19 +515,6 @@ pacman -S os-prober mtools fuse --noconfirm  #grub-customizer
  elif [[ $prog_set  == 0 ]]; then
 echo " Установка программ (пакетов) пропущена. "
  fi
-# ------------------------------------------------------------
-# Разбор утилит для установки:
-# os-prober  - Утилита для обнаружения других ОС на наборе дисков
-# mtools  - Сборник утилит для доступа к дискам MS-DOS
-# fuse  - (fuse2 и fuse-common) Общие файлы для пакетов fuse2 / 3. Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства. 
-# grub-customizer  - Графический менеджер настроек grub2
-# https://www.archlinux.org/packages/community/x86_64/os-prober/
-# https://www.archlinux.org/packages/extra/x86_64/mtools/
-# https://www.archlinux.org/packages/extra/x86_64/fuse2/
-# https://www.archlinux.org/packages/extra/x86_64/fuse-common/
-# https://github.com/libfuse/libfuse
-# https://www.archlinux.org/packages/community/x86_64/grub-customizer/
-# ============================================================
 
 echo ""
 echo -e "${BLUE}:: ${NC}Обновляем grub.cfg (Сгенерируем grub.cfg)"
