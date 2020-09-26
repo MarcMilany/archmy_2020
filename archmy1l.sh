@@ -654,6 +654,8 @@ cat <<EOF >>/etc/pacman.d/mirrorlist
 ## Arch Linux repository mirrorlist
 ## Generated on 2020-07-03
 ## HTTP IPv4 HTTPS
+## https://www.archlinux.org/mirrorlist/
+## https://www.archlinux.org/mirrorlist/?country=RU&protocol=http&protocol=https&ip_version=4
 ##
 
 ## Russia
