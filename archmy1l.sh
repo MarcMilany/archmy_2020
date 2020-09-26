@@ -188,7 +188,6 @@ setfont cyr-sun16
 #setfont ter-v20b  # Шрифт терминус и русская локаль # чтобы шрифт стал побольше
 ### setfont ter-v22b
 
-#echo ""
 echo -e "${CYAN}==> ${NC}Добавим русскую локаль в систему установки"
 # Adding a Russian locale to the installation system
 sed -i 's/#ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale.gen
@@ -367,7 +366,6 @@ elif [[ $sgdisk == 0 ]]; then
   echo 'Операция пропущена.'
 fi
 
-#clear
 echo -e "${MAGENTA}
   <<< Вся разметка диска(ов) производится только в cfdisk! >>>
 ${NC}"
@@ -414,7 +412,6 @@ echo -e "${GREEN}==> ${NC}Форматирование разделов диск
 echo -e "${BLUE}:: ${NC}Установка название флага boot,root,swap,home"
 echo -e "${BLUE}:: ${NC}Монтирование разделов диска"
 ########## Root  ########
-#clear
 lsblk -f
 echo ""
 echo -e "${BLUE}:: ${NC}Форматируем и монтируем ROOT раздел?"
@@ -575,7 +572,7 @@ if [[ $diskC == 0 ]]; then
   mkdir /mnt/C 
   mount /dev/$diskCc /mnt/C
   fi
-
+  
 ############### Disk D ##############
 echo ""
 echo -e "${BLUE}:: ${NC}Добавим раздел диск "D"(Data Disk) Windows?"
@@ -897,92 +894,35 @@ elif [[ $x_fstab == 4 ]]; then
 # cat /mnt/etc/fstab
 echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. "
 fi 
-# clear
-#echo ""
-# ----------------------------------------------------------------
-#(или genfstab -L /mnt >> /mnt/etc/fstab)
-#genfstab -p -L /mnt > /mnt/etc/fstab
-# -----------------------------------------------------------------
-# Нашёл ещё две команды для генерации fstab при установке:
-#genfstab -U -p /mnt >> /mnt/etc/fstab
-#genfstab /mnt >> /mnt/etc/fstab
-# Обе из них генерируют UUID хотя во второй команде этого ключа нет
-# Почему это так происходит ?
-# С ключом -U генерирует UUID без него раздел будет вида /dev/sda1 или что то в этом роде.
-# Учтите, что когда пишется >> то Вы добавляете в файл, а не переписываешь его с нуля.
-# То есть, если Вы вбивали два раза команды что написаны выше, то у Вас может в этом файле быть прописано монтирование одного и того же раздела в двух разных вариантах что чревато.
-# Команда genfstab -h может сказать многое в том числе для чего нужно -p. Исключает монтирование псевдо файловые системы. Ключик можно не использовать, ибо используется по дефолту.
-# Просмотреть все идентификаторы наших разделов можно командой: blkid или lsblk -f
-# ------------------------------------------------------------------
-# *****************************************************************
-# echo " 1 - По-UUID ("UUID" "genfstab -U"). UUID - это механизм, который присваивает каждой файловой системе уникальный идентификатор. Эти идентификаторы генерируются утилитами файловой системы (например mkfs.*), когда устройство отформатировано и спроектированы таким образом, что конфликты маловероятны. Все файловые системы GNU / Linux (включая заголовки swap и LUKS необработанных зашифрованных устройств) поддерживают UUID. Файловые системы FAT, exFAT и NTFS не поддерживают UUID. "
-# echo " 2 - По меткам ("LABEL" "genfstab -L"). Большинство файловых систем поддерживают установку метки при создании файловой системы, соответствующей mkfs.*утилиты. Для некоторых файловых систем также возможно изменить метки. "
-# echo " 3 - По меткам GPT ("PARTLABEL" "genfstab -t PARTLABEL"). Этот метод относится только к дискам с таблицей разделов GUID (GPT). Метки разделов GPT можно определить в заголовке записи раздела на GPT-дисках. Метод очень похож на метки файловой системы (by-label), за исключением того, что метки раздела не будут затронуты, если файловая система в разделе будет изменена. "
-# echo " 4 - По UUID GPT ("PARTUUID" "genfstab -t PARTUUID"). Как и метки разделов GPT , идентификаторы UUID разделов GPT определяются в записи разделов на дисках GPT. MBR не поддерживает UUID разделов, но Linux и программное обеспечение, использующее libblkid способны генерировать псевдо PARTUUID для разделов MBR. В отличие от обычного PARTUUID раздела GPT, псевдо PARTUUID MBR может меняться при изменении номера раздела. "
-# ******************************************************************
-# -------------------------------------------------------------------
-# Installation guide (Русский): fstab (Русский)
-# https://wiki.archlinux.org/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
-# https://wiki.archlinux.org/index.php/Persistent_block_device_naming#by-uuid
-# ====================================================================
 
-### Set Fstab
+### Set Fstab ######
 echo ""
 echo -e "${BLUE}:: ${NC}Просмотреть содержимое файла fstab"
-#echo 'Просмотреть содержимое файла fstab'
-# View the contents of the fstab file
 cat /mnt/etc/fstab
 #cat < /mnt/etc/fstab | grep -v "Static information"
-# --------------------------------------------------------------------
-# Был создан файл содержащий данные о монтируемых файловых системах.
-# Чтобы система знала какие разделы монтировать при старте.
-# ====================================================================
 
 sleep 01   # или sleep 02
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist"
-#echo 'Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist'
-# Delete files /etc/pacman.d/mirrorlist
-# Удалим mirrorlist из /mnt/etc/pacman.d/mirrorlist
 rm /mnt/etc/pacman.d/mirrorlist 
 #rm -rf /mnt/etc/pacman.d/mirrorlist
-#Удалите файл /etc/pacman.d/mirrorlist
-#rm -rf /etc/pacman.d/mirrorlist
-# Удаления старой резервной копии (если она есть, если нет, то пропустите этот шаг):
-#rm /etc/pacman.d/mirrorlist.old
-# -------------------------------------------------------------------
-#
-#clear
+
 echo ""
 echo -e "${GREEN}==> ${NC}Сменить зеркала для увеличения скорости загрузки пакетов?" 
-#echo 'Сменить зеркала для увеличения скорости загрузки пакетов?'
-# Change mirrors to increase the download speed of packages?
 echo -e "${BLUE}:: ${NC}Загрузка свежего списка зеркал со страницы Mirror Status, и обновление файла mirrorlist."
-#echo 'Загрузка свежего списка зеркал со страницы Mirror Status, и обновление файла mirrorlist.'
-# Loading a fresh list of mirrors from the Mirror Status page, and updating the mirrorlist file.
-# Устанавливаем и запускаем скрипт - Reflector.
-# Install and run the reflector script.
 echo -e "${MAGENTA}=> ${BOLD}Если Вы перед запуском скрипта просмотрели его, то может возникнуть резонный вопрос зачем вновь менять список зеркал и обновлять файл mirrorlist, ведь перед установкой основной системы (base base-devel kernel) эта операция уже была выполнена. Это связано с тем что, начиная с релиза Arch Linux 2020.07.01-x86_64.iso в установочный образ был добавлен reflector. Тем самым во время установки основной системы происходит запуск скрипта - reflector, и обновляется ранее прописанный список зеркал в mirrorlist. ${NC}"
-# If you looked at the script before running it, you may have a reasonable question why change the list of mirrors again and update the mirrorlist file, because this operation was already performed before installing the main system (base base-devel kernel). This is because, since the release of Arch Linux 2020.07.01-x86_64.iso a reflector was added to the installation image. Thus, during the installation of the main system, the reflector script is launched, and the previously registered list of mirrors in the mirrorlist is updated. You will be presented with several options for changing mirrors to increase the speed of loading packages.
 echo " Вам будет представлено несколько вариантов смены зеркал для увеличения скорости загрузки пакетов. "
 echo " Огласите весь список, пожалуйста! :) "
-# Read out the entire list, please!
 echo " 1 - Команда отфильтрует зеркала для 'Russia' по протоколам (https, http), отсортирует их по скорости загрузки и обновит файл mirrorlist. "
 echo " 2 - Команда подробно выведет список 50 наиболее недавно обновленных HTTP-зеркал, отсортирует их по скорости загрузки и обновит файл mirrorlist. "
 echo " 3 - То же, что и в предыдущем примере, но будут взяты только зеркала, расположенные в Казахстане (Kazakhstan). "
 echo " 4 - Команда отфильтрует зеркала для 'Russia', 'Belarus', 'Ukraine', и 'Poland' по протоколам (https, http), отсортирует их по скорости загрузки и обновит файл mirrorlist. "
 echo " Будьте внимательны! Не переживайте, перед обновлением зеркал будет сделана копия (backup) предыдущего файла mirrorlist, и в последствии будет сделана копия (backup) нового файла mirrorlist. Эти копии (backup) Вы сможете найти в установленной системе в /etc/pacman.d/mirrorlist - (новый список), и в /etc/pacman.d/mirrorlist.backup (старый список). В данной опции выбор всегда остаётся за вами. "
-# Be careful! Don't worry, before updating mirrors, a copy (backup) of the previous mirrorlist file will be made, and later a copy (backup) of the new mirrorlist file will be made. These copies (backup) You can find it in the installed system in /etc/pacman.d/mirrorlist - (new list), and in /etc/pacman.d/mirrorlist.backup (the old list). In this option, the choice is always yours.
 echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
-#echo 'Установка производится в порядке перечисления'
-# Installation Is performed in the order listed
 echo " Если Вы находитесь в России рекомендую выбрать вариант "1" "
-# To eliminate errors in the system, I recommend "1"
 echo "" 
-while 
-#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-#read -p " 1 - Russia (https,http), 2 - 50 HTTP-зеркал, 3 - Kazakhstan (http), 4 - Russia, Belarus, Ukraine, Poland (https,http), 0 - Пропустить обновление зеркал: " zerkala  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
     1 - Russia (https, http),     2 - 50 HTTP-зеркал,
