@@ -763,25 +763,16 @@ fi
 #clear
 echo ""
 echo -e "${GREEN}==> ${NC}Какое ядро (Kernel) Вы бы предпочли установить вместе с системой Arch Linux?"
-#echo 'Какое ядро (Kernel) Вы бы предпочли установить вместе с системой Arch Linux?'
-# Which kernel) Would you prefer to install with the Arch Linux system?
 echo -e "${BLUE}:: ${NC}Kernel (optional), Firmware"
-#echo 'Kernel (optional), Firmware'
 echo " Дистрибутив Arch Linux основан на ядре Linux. Помимо основной стабильной (stable) версии в Arch Linux можно использовать некоторые альтернативные ядра. "
-# The ArchLinux distribution is based on the Linux kernel. In addition to the main stable version, some alternative kernels can be used in Arch Linux.
 echo -e "${MAGENTA}=> ${BOLD}Выбрать-то можно, но тут главное не пропустить установку ядра :) ${NC}"
-# You can choose something, but the main thing is not to skip the installation of the core :)
 echo " Огласите весь список, пожалуйста! :) "
-# Read out the entire list, please!
 echo " 1 - linux (Stable - ядро Linux с модулями и некоторыми патчами, поставляемое вместе с Rolling Release устанавливаемой системы Arch) "
 echo " 2 - linux-hardened (Ядро Hardened - ориентированная на безопасность версия с набором патчей, защищающих от эксплойтов ядра и пространства пользователя. Внедрение защитных возможностей в этом ядре происходит быстрее, чем в linux) "
 echo " 3 - linux-lts (Версия ядра и модулей с долгосрочной поддержкой - Long Term Support, LTS) "
 echo " 4 - linux-zen (Результат коллективных усилий исследователей с целью создать лучшее из возможных ядер Linux для систем общего назначения.) "
 echo " Будьте осторожны! Если Вы сомневаетесь в своих действиях, можно установить (linux Stable) ядро поставляемое вместе с Rolling Release. "
-# Be careful! If you doubt your actions, you can install (linux Stable) the core supplied with the Rolling Release.
 echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
-#echo 'Установка производится в порядке перечисления'
-# Installation Is performed in the order listed
 echo ""
 while
 # echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
