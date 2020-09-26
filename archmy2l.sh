@@ -718,10 +718,7 @@ echo " Multilib репозиторий добавлен (раскомменти�
 fi
 
 echo ""
-echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
-# sudo pacman-key --init
-# sudo pacman-key --refresh-keys
-# sudo pacman -Sy  
+echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"  
 #pacman -Syy
 pacman -Sy   #--noconfirm --noprogressbar --quiet
 #pacman -Syy --noconfirm --noprogressbar --quiet
