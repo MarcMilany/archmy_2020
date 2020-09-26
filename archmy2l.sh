@@ -439,64 +439,25 @@ elif [[ $i_grub == 0 ]]; then
   echo ""  
   echo 'Операция пропущена.'
 fi
-# ------------------------------------------------------------------
-# Установка boot loader'а (загрузчика grub)
-# Их существует несколько, но grub, наверное самый популярный в Linux.
-# (или grub-install /dev/sdb , или grub-install /dev/sdс в зависимости от маркировки вашего диска, флешки куда будет установлен загрузчик grub (для BIOS))
-# Загрузчик - первая программа, которая загружается с диска при старте компьютера, и отвечает за загрузку и передачу управления ядру ОС. 
-# Ядро, в свою очередь, запускает остальную часть операционной системы.
-# -----------------------------------------------------------------
-# Если Вы получили сообщение об ошибке, то используйте команду:
-# grub-install --recheck /dev/sda
-# Также в некоторых случаях может помочь вариант:
-# grub-install --recheck --no-floppy /dev/sda
-# Записываем загрузчик в MBR (Master Boot Record) нашего внутреннего накопителя.
-#grub-install --target=i386-pc --force --recheck /dev/sda 
-#grub-install --target=i386-pc /dev/sda   #(для платформ i386-pc) 
-#grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
-#read -p " => Укажите диск (sda/sdb например sda или sdb) : " cfd
-#grub-install /dev/$cfd  #sda sdb sdc sdd
-# -------------------------------------------------------------------
-# Если вы хотите установить Grub на флешку в MBR, то тут тоже нет проблем просто примонтируйте флешку и выполните такую команду:
-#sudo grub-install --root-directory=/mnt/USB/ /dev/sdb
-# Здесь /mnt/USB - папка, куда была смотирована ваша флешка, а /seb/sdb - сама флешка. Только здесь есть одна проблема, конфигурационный файл придется делать вручную.
-# GRUB (Русский)
-# https://wiki.archlinux.org/index.php/GRUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
-# https://losst.ru/nastrojka-zagruzchika-grub
-# =====================================================================
 
-### Install Microcode
+### Install Microcode ###########
 #clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установить Микрокод для процессора INTEL_CPU, AMD_CPU?"
-#echo 'Установить Микрокод для процессора INTEL_CPU, AMD_CPU?'
-# Install the Microcode for the CPU INTEL_CPU, AMD_CPU?
 echo -e "${BLUE}:: ${BOLD}Обновление Microcode (matching CPU) ${NC}"
-#echo 'Обновление Microcode (matching CPU)'
-# Microcode update (matching CPU) 
 echo " Производители процессоров выпускают обновления стабильности и безопасности 
         для микрокода процессора "
-# Processor manufacturers release stability and security updates for the processor microcode.
 echo " Огласите весь список, пожалуйста! :) "
-# Read out the entire list, please!
 echo " 1 - Для процессоров AMD установите пакет amd-ucode. "
 echo " 2 - Для процессоров Intel установите пакет intel-ucode. "
 echo " 3 - Если Arch находится на съемном носителе, Вы должны установить микрокод для обоих производителей процессоров. "
 echo " Для Arch Linux на съемном носителе добавьте оба файла initrd в настройки загрузчика. "
 echo " Их порядок не имеет значения, если они оба указаны до реального образа initramfs. "
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
-#echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
-# You can skip this step if you are not sure of the correct choice
 echo " Будьте внимательны! Без этих обновлений Вы можете наблюдать ложные падения или неожиданные зависания системы, которые может быть сложно отследить. "
-# Be careful! Without these updates, you may see false crashes or unexpected system freezes that can be difficult to track.
 echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
-#echo 'Установка производится в порядке перечисления'
-# Installation Is performed in the order listed
-# Microcode (matching CPU) - У Вас amd или intel?
 echo ""
 while 
-#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-# read -p " 1 - AMD, 2 - INTEL, 3 - AMD и INTEL, 0 - Нет Пропустить этот шаг: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p " 
     1 - Для процессоров AMD,    2 - Для процессоров INTEL, 
