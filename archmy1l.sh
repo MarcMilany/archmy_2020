@@ -987,8 +987,6 @@ sudo pacman -Sy
 
 echo ""
 echo -e "${GREEN}==> ${NC}Меняем корень и переходим в нашу недавно скачанную систему (chroot)" 
-#echo 'Меняем корень и переходим в нашу недавно скачанную систему (chroot)'
-# Change the root and go to our recently downloaded system (chroot)
 echo -e "${MAGENTA}=> ${BOLD}Есть три варианта продолжения установки: ${NC}"
   echo " 1 - Если у Вас стабильный трафик интернета (dhcpcd), то выбирайте вариант - "1" "
   echo " 2 - Если у Вас бывают проблемы трафика интернета (wifi), то выбирайте вариант - "2" "
@@ -996,11 +994,8 @@ echo -e "${CYAN}:: ${NC}В этих вариантах большого отли
 echo -e "${YELLOW}:: ${BOLD}Есть ещё 3й способ: команда выполнения как, и в 1ом варианте через (curl), и как во 2-ом варианте вам потребуется ввести команду на запуск скрипта "./archmy2l.sh", а также проверить подключение сети интернет "ping -c2 8.8.8.8" - т.е. пропинговать сеть. ${NC}"
 echo " 3 - Альтернативный вариант для (dhcpcd, wifi), если у Вас возникнут проблемы с первыми способами продолжения установки, то рекомендую вариант - "3" "  
 echo " Будьте внимательны! В данной опции выбор всегда остаётся за вами. "
-# Be careful! In this option, the choice is always yours.
 echo ""
 while 
-#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-# read -p " 1 - Stable Internet traffic (dhcpcd), 2 - Not Stable Internet traffic (wifi), 3 - Alternative Option (dhcpcd, wifi): " int  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p  " 
     1 - Stable Internet traffic (dhcpcd),  
