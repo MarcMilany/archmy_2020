@@ -22,9 +22,9 @@
 # Создание скриптов 
 
 Скрипты созданы на основе 2-х (скриптов): 
-##### 'ordanax/arch2018'  - https://github.com/ordanax/arch2018
+'ordanax/arch2018'  - https://github.com/ordanax/arch2018
 ArchLinux Fast Install - Для работы с Legasy/BIOS
-Алексея Бойко https://vk.com/ordanax 
+Алексей Бойко https://vk.com/ordanax 
 Cкрипт основан на чек листе ручной установке ArchLinux https://vk.cc/7JTg6U 
 ##### 'archlinux-script-install' - https://github.com/poruncov/archlinux-script-install 
 UEFI - Grub или Systemd-boot на выбор - (Poruncov,Grub-Legacy - 2020)
