@@ -1303,8 +1303,7 @@ if [[ $i_network  == 1 ]]; then
 pacman -S networkmanager networkmanager-openvpn network-manager-applet ppp --noconfirm
 #pacman -Sy networkmanager networkmanager-openvpn network-manager-applet ppp --noconfirm
 echo ""
-echo -e "${BLUE}:: ${NC}Подключаем Networkmanager в автозагрузку"
-# echo " Подключаем Networkmanager в автозагрузку "	
+echo -e "${BLUE}:: ${NC}Подключаем Networkmanager в автозагрузку"	
 systemctl enable NetworkManager
 echo " NetworkManager успешно добавлен в автозагрузку "
  elif [[ $i_network  == 0 ]]; then
