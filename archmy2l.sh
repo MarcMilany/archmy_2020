@@ -1314,23 +1314,16 @@ sleep 02
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Добавим службу Dhcpcd в автозагрузку (для проводного интернета)?"
-#echo 'Добавим службу Dhcpcd в автозагрузку (для проводного интернета)?'
-# Adding the Dhcpcd service to auto-upload (for wired Internet)?
 echo " Добавим dhcpcd в автозагрузку (для проводного интернета, который получает настройки от роутера). "
 echo -e "${CYAN}:: ${NC}Dhcpcd - свободная реализация клиента DHCP и DHCPv6. Пакет dhcpcd является частью группы base, поэтому, скорее всего он уже установлен в вашей системе."
 echo " Если необходимо добавить службу Dhcpcd в автозагрузку это можно сделать уже в установленной системе Arch'a "
 echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-# Be careful! If you doubt your actions, think again...
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
-#echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
-# You can skip this step if you are not sure of the correct choice
 echo ""
 while
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p  " 
     1 - Включить dhcpcd,    0 - Нет - пропустить этот шаг: " x_dhcpcd   # sends right after the keypress; # отправляет сразу после нажатия клавиши
-#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "   
-#  read -p " 1 - Включить dhcpcd, 0 - Нет - пропустить этот шаг: " x_dhcpcd  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
     echo ''
     [[ "$x_dhcpcd" =~ [^10] ]]
 do
@@ -1345,8 +1338,6 @@ fi
 
 echo ""
 echo -e "${BLUE}:: ${NC}Ставим шрифты"
-#echo 'Ставим шрифты'
-# Put the fonts
 pacman -S ttf-liberation ttf-dejavu --noconfirm 
 pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-hanazono --noconfirm  # opendesktop-fonts 
 pacman -S ttf-anonymous-pro --noconfirm  # Семейство из четырех шрифтов фиксированной ширины, разработанных специально с учетом кодирования
@@ -1355,14 +1346,7 @@ pacman -S ttf-fireflysung ttf-sazanami --noconfirm  # -китайские иер
 ### Install NTFS support "NTFS file support (Windows Drives)"
 echo ""
 echo -e "${BLUE}:: ${NC}Монтирование разделов NTFS и создание ссылок"
-#echo 'Монтирование разделов NTFS и создание ссылок'
-# NTFS support (optional)
 pacman -S ntfs-3g --noconfirm
-#sudo pacman -S ntfs-3g --noconfirm
-# ---------------------------------------------------------
-# ntfs-3g  - Драйвер и утилиты файловой системы NTFS
-# https://www.archlinux.org/packages/extra/x86_64/ntfs-3g/
-# =========================================================
 
 echo ""
 echo -e "${BLUE}:: ${NC}Установка базовых программ и пакетов"
