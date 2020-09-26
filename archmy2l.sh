@@ -719,37 +719,19 @@ fi
 
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
-#echo 'Обновим базы данных пакетов'
-# Updating the package databases
-#sudo pacman-key --init
-#sudo pacman-key --refresh-keys
-#sudo pacman -Sy  
+# sudo pacman-key --init
+# sudo pacman-key --refresh-keys
+# sudo pacman -Sy  
 #pacman -Syy
 pacman -Sy   #--noconfirm --noprogressbar --quiet
 #pacman -Syy --noconfirm --noprogressbar --quiet
-#pacman -Syu --noconfirm --noprogressbar --quiet
-# ------------------------------------------------------------
-# --noconfirm      не спрашивать каких-либо подтверждений
-# --noprogressbar  не показывать статус прогресса при загрузке 
-# --quiet          показать меньше информации для запроса и поиска
-# -------------------------------------------------------------
-# Знакомьтесь, pacman - лучший пакетный менеджер в мире линукса!
-#pacman -Syy   - обновление баз пакмэна(как apt-get update в дэбианоподбных)
-#pacman -Syyu  - обновление баз плюс обновление пакетов
-#pacman -Syy --noconfirm --noprogressbar --quiet
-# Синхронизация и обновление пакетов (-yy принудительно обновить даже если обновленные)
-# =============================================================
 
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Устанавливаем X.Org Server (иксы) и драйвера."
-#echo "Устанавливаем Xorg (иксы) и драйвера.
-# Installing Xorg (XPS) and drivers
 echo -e "${YELLOW}:: ${BOLD}X.Org Foundation Open Source Public Implementation of X11 - это свободная открытая реализация оконной системы X11.${NC}"   
 echo " Xorg очень популярен среди пользователей Linux, что привело к тому, что большинство приложений с графическим интерфейсом используют X11, из-за этого Xorg доступен в большинстве дистрибутивов. "
 echo -e "${BLUE}:: ${NC}Сперва определим вашу видеокарту!"
-#echo "Сперва определим вашу видеокарту"
-# First, we will determine your video card!
 echo -e "${MAGENTA}=> ${BOLD}Вот данные по вашей видеокарте (даже, если Вы работаете на VM): ${NC}"
 #echo ""
 lspci | grep -e VGA -e 3D
