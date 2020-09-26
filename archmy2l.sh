@@ -157,33 +157,17 @@ echo ""
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 read -p " => Введите имя пользователя: " username 
 
-### Set Hostname
+### Set Hostname ###########
 echo -e "${BLUE}:: ${NC}Прописываем имя компьютера"
 echo $hostname > /etc/hostname
-#echo "имя_компьютера" > /etc/hostname
-#echo HostName > /etc/hostname
-# ----------------------------------------------------
-# Разберём команду для localhost >>>
-# Вместо ArchLinux впишите свое название
-# echo "ArchLinux" > /etc/hostname  - Можно написать с Заглавной буквы.
-# echo имя_компьютера > /etc/hostname
-# =======================================================
 
-### Clear the HOME FOLDER
+### Clear the HOME FOLDER #####
 echo ""
-echo -e "${RED}==> ${NC}Очистить папку конфигурации (настроек), кеш, и скрытые каталоги в /home/$username от старой установленной системы? "
-#echo 'Очистить папку конфигурации, кеш, и скрытые каталоги в /home/$username от старой установленной системы?' 
-# Clear the config folder, cache, and hidden directories in /home/$username from the old installed system? 
+echo -e "${RED}==> ${NC}Очистить папку конфигурации (настроек), кеш, и скрытые каталоги в /home/$username от старой установленной системы? " 
 echo -e "${CYAN}:: ${BOLD}Если таковая присутствует, и не была удалена при создании новой разметки диска. ${NC}"
-#echo 'Если таковая присутствует, и не была удалена при создании новой разметки диска.' 
-# If present, and was not deleted when creating the new disk markup.
 echo -e "${YELLOW}==> ${NC}Будьте осторожны! Если Вы сомневаетесь в своих действиях, просто пропустите этот пункт."
-#echo 'Будьте осторожны! Если Вы сомневаетесь в своих действиях, просто пропустите этот пункт.'
-# Be careful! If you are in doubt about your actions, just skip this point.
 echo ""
 while
-#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") " 
-#  read -p  " 1 - Да очистить папки конфигов, 0 - Нет пропустить очистку: " i_rm   # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p " 
     1 - Да очистить папки конфигов,    0 - Нет пропустить очистку: " i_rm  # sends right after the keypress; # отправляет сразу после нажатия клавиши     
@@ -203,29 +187,19 @@ echo ""
 echo " Очистка завершена "
 fi 
 
-### Set Timezone
+### Set Timezone ########
 echo ""
 echo -e "${GREEN}==> ${NC}Устанавливаем ваш часовой пояс (localtime)."
-#echo -e "${BLUE}:: ${NC}Устанавливаем ваш часовой пояс"
-#echo 'Устанавливаем ваш часовой пояс'
-# Setting your time zone
 echo " Всё завязано на времени, поэтому очень важно, чтобы часы шли правильно... :) "
 echo -e "${BLUE}:: ${BOLD}Для начала вот ваши данные по дате, времени и часовому поясу: ${NC}"
 date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'    # одновременно отображает дату и часовой пояс
-#rm -v /etc/localtime  # rm  - Удаление файлов и директорий, -v или --verbose - Выводить информацию об удаляемых файлах
-#ln -s /usr/share/zoneinfo/Europe/Moscow
-#ln -s /usr/share/zoneinfo/Europe/Moscow /etc/localtime
-#ls /usr/share/zoneinfo
-#ls /usr/share/zoneinfo/Europe
-# -------------------------------------------------
+
 echo -e "${MAGENTA}:: ${BOLD}Мир состоит из шести частей света: Азия, Африка, Америка, Европа, Австралия и Океания, Антарктика (Антарктида с прибрежными морями и островами). Иногда Океанию и Арктику выделяют в отдельные части света. ${NC}"
-#echo " ln -sf /usr/share/zoneinfo/${timezone} /etc/localtime "
 echo -e "${CYAN}:: ${NC}Наиболее популярный и поддерживаемый в большинстве дистрибутивов способ установки часового пояса для всех пользователей с помощью символической ссылки (symbolic link) "/etc/localtime" - на файл нужного часового пояса."
 echo -e "${CYAN}:: ${NC}Для создания символической ссылки используется команда "ln -sf" или "ln -svf"."
 echo " ln -sf /usr/share/zoneinfo/Частъ Света/Город /etc/localtime "  # (где Region - ваш регион, City - ваш город)
 echo " ln -sf /usr/share/zoneinfo/Зона/Субзона /etc/localtime "
 echo " ln -sf /usr/share/zoneinfo/Регион/Город /etc/localtime "
-#echo " ln -svf /usr/share/zoneinfo/$timezone /etc/localtime "
 echo " ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime - это полный вид команды "
 echo -e "${CYAN}:: ${NC}Для нас сейчас нужна малая толика от всей команды это - (Частъ Света/Город)."
 echo -e "${GREEN}:: ${NC}Примеры (timezone): Europe/Moscow, Europe/Minsk, Europe/Kiev, Europe/Berlin, Europe/Paris, Asia/Yekaterinburg, Asia/Almaty, Africa/Nairobi, America/Chicago, America/New_York, America/Indiana/Indianapolis, Australia/Sydney, Antarctica/Vostok, Arctic/Longyearbyen, Atlantic/Azores, Indian/Maldives, и так далее..."
