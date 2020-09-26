@@ -974,24 +974,15 @@ echo ""
 echo " DE (среда рабочего стола) LXDE успешно установлено " 
 echo ""
 echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Display manager) менеджера входа в LXDE"
-#echo -e "${BLUE}:: ${NC}Настройка автовхода без DM (Display manager) менеджера входа в LXDE"
-#echo 'Настройка автовхода без DM (Display manager) менеджера входа в LXDE'
-# Configuring AutoFill without the DM (Display manager) of the LXDE login Manager
 echo " Давайте проанализируем действия, которые выполняются. "
-# Let's analyze the actions that are being performed.
 echo " 1 - Если вам нужен автовход без DM (Display manager) тогда укажите "1". "
 echo " Вы хотите автологин определенного пользователя, автоматический запуск Иксов, запуск окружения (KDE, XFCE, Gnom и т.д.). "
 echo " Всё можно сделать без использования DM (например SDDM, LightDM и т.д.), поскольку реализация автозагрузки окружения реализован через startx. "
 echo " 2(0) - Если Вы по прежнему желаете использовать DM (например SDDM, LightDM и т.д.), или в дальнейшем захотите установить, и использовать 2(е) окружение (Т.е. DE - KDE, XFCE, Gnom и т.д.), тогда укажите "0" . " 
 echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-# Be careful! If you doubt your actions, think again...
 echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
-#echo 'Действия выполняются в указанном порядке'
-# Actions are performed in the order listed
 echo ""
 while
-# echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "    
-# read -p  " 1 - Да нужен автовход без DM, 0 - Нет буду использовать DM: " i_lxde   # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
     echo " Действия ввода, выполняется сразу после нажатия клавиши " 
     read -n1 -p  "
     1 - Да нужен автовход без DM (Display manager), 
@@ -1028,11 +1019,7 @@ echo ""
 echo " DE (среда рабочего стола) Deepin успешно установлено " 
 echo ""
 echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Display manager) менеджера входа в Deepin"
-#echo -e "${BLUE}:: ${NC}Настройка автовхода без DM (Display manager) менеджера входа в Deepin"
-#echo 'Настройка автовхода без DM (Display manager) менеджера входа в Deepin'
-# Configuring AutoFill without the DM (Display manager) of the Deepin login Manager
 echo " Давайте проанализируем действия, которые выполняются. "
-# Let's analyze the actions that are being performed.
 echo " 1 - Если вам нужен автовход без DM (Display manager) тогда укажите "1". "
 echo " Вы хотите автологин определенного пользователя, автоматический запуск Иксов, запуск окружения (KDE, XFCE, Gnom и т.д.). "
 echo " Всё можно сделать без использования DM (например SDDM, LightDM и т.д.), поскольку реализация автозагрузки окружения реализован через startx. "
