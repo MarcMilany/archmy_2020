@@ -635,52 +635,20 @@ df -h
 
 echo ""
 echo -e "${BLUE}:: ${NC}Просмотреть все идентификаторы наших разделов"
-#echo 'Просмотреть все идентификаторы наших разделов'
-# View all IDs of our sections
 blkid
-# --------------------------------------------------------------------
-# BLKID — выводит информацию о разделах файловой системы, среди них такие атрибуты как UUID, а так же тип файловой системы. Однако эта утилита не сообщает о дисковом пространстве на разделах.
-# ====================================================================
 
 echo ""
 echo -e "${BLUE}:: ${NC}Просмотреть информацию об использовании памяти в системе"
-#echo 'Просмотреть информацию об использовании памяти в системе'
-# View information about memory usage in the system
 free -h
-# Команда проверяет объем используемой и свободной оперативной памяти, имеющейся в системе:
-#free -m
-# -------------------------------------------------------------------
-# Команда free в Linux с примерами:
-# https://andreyex.ru/operacionnaya-sistema-linux/komanda-free-v-linux-s-primerami/
-# ============================================================================
 sleep 02
 
 echo ""
 echo -e "${BLUE}:: ${NC}Посмотреть содержмое каталога /mnt."
-#echo 'Посмотреть содержмое каталога /mnt.'
-# View the contents of the /mnt folder.
 ls /mnt
 #ls -l /mnt
 
-### Замена исходного mirrorlist (зеркал для загрузки) на мой список серверов-зеркал
-#echo 'Замена исходного mirrorlist (зеркал для загрузки)'
-#Ставим зеркало от Яндекс
-# Удалим старый файл /etc/pacman.d/mirrorlist
-#rm -rf /etc/pacman.d/mirrorlist
-# Загрузка нового файла mirrorlis (список серверов-зеркал)
-#pacman -S wget --noconfirm
-#wget https://raw.githubusercontent.com/MarcMilany/arch_2020/master/Mirrorlist/mirrorlist
-# Переместим нового файла mirrorlist в /etc/pacman.d/mirrorlist
-#mv -f ~/mirrorlist /etc/pacman.d/mirrorlist
-#echo "Обновление баз данных пакетов..."
-#sudo pacman -Sy
-# -------------------------------------------------------------
-
 echo ""
 echo -e "${BLUE}:: ${NC}Выбор серверов-зеркал для загрузки. Ставим зеркало от Яндекс"
-#echo 'Выбор серверов-зеркал для загрузки. Ставим зеркало от Яндекс'
-# The choice of mirror sites to download. Putting a mirror from Yandex
-#echo "Server = http://mirror.yandex.ru/archlinux/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
 > /etc/pacman.d/mirrorlist
 cat <<EOF >>/etc/pacman.d/mirrorlist
 
