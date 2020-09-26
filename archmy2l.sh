@@ -2620,56 +2620,28 @@ pacman --noconfirm -Rs go    # --noconfirm  --не спрашивать каки
  echo " Удаление зависимость 'go' выполнено "
 fi
 
-### Clean pacman cache (Очистить кэш pacman)
+### Clean pacman cache (Очистить кэш pacman) ####
 echo ""
 echo -e "${BLUE}:: ${BOLD}Очистка кэша pacman ${NC}"
-#echo 'Очистка кэша pacman'
-# Clearing the pacman cache
+
 echo -e "${CYAN}=> ${NC}Очистка кэша неустановленных пакетов, и репозиториев..."
-pacman --noconfirm -Sc       # Очистка кэша неустановленных пакетов
-# pacman -Sc                 # --noconfirm      не спрашивать каких-либо подтверждений
-# pacman --noconfirm -Scc    # Очистка кэша пакетов - удалить вообще все файлы из кэша
-# pacman -Scc                # --noconfirm      не спрашивать каких-либо подтверждений
-# pacman -Qqe                # Список установленных пакетов в системе
-# ==============================================================
- 
+pacman --noconfirm -Sc  # Очистка кэша неустановленных пакетов  # --noconfirm  -не спрашивать каких-либо подтверждений
+
 clear             
 echo -e "${GREEN}
   <<< Поздравляем! Установка завершена. Перезагрузите систему. >>> ${NC}"
-# Congratulations! Installation is complete. Reboot the system.
-#
+
 echo -e "${BLUE}:: ${BOLD}Посмотрим дату и время ... ${NC}"
-#echo 'Посмотрим дату и время'
-# Let's look at the date and time
 date
 date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'     # одновременно отображает дату и часовой пояс
-#
+
 echo -e "${BLUE}:: ${BOLD}Отобразить время работы системы ... ${NC}"
-#echo 'Отобразить время работы системы'
-# Display the system's operating time 
 uptime
-# ---------------------------------------------------------
-# 12:35:19 – текущее системное время.
-# up 8 min – это время, в течение которого система работала.
-# 1 user количество зарегистрированных пользователей.
-# load average: 0.66, 0.62, 0.35 – средние значения загрузки системы за последние 1, 5 и 15 минут.
-# Как использовать команду Uptime:
-# https://andreyex.ru/operacionnaya-sistema-linux/komanda-uptime-v-linux/
-# ============================================================
 
 echo -e "${MAGENTA}==> ${BOLD}После перезагрузки и входа в систему проверьте ваши персональные настройки. ${NC}"
-#echo 'После перезагрузки и входа в систему проверьте ваши персональные настройки.'
-# After restarting and logging in, check your personal settings.
-
 echo -e "${MAGENTA}==> ${BOLD}Если у Вас беспроводное соединение, запустите nmtui (Network Manager Text User Interface) и подключитесь к сети. ${NC}"
-#echo 'Если у Вас беспроводное соединение, запустите nmtui и подключитесь к сети.'
-# If you have a wireless connection, launch nmtui and connect to the network.
-# nmcli dev wifi connect имя_точки password пароль - для подключения к вайфаю
-
 echo -e "${YELLOW}==> ...${NC}"
 echo -e "${BLUE}:: ${NC}Если хотите подключить AUR, установить дополнительный софт (пакеты), установить мои конфиги для DE/XFCE, тогда после перезагрузки и входа в систему выполните команду:"
-#echo 'Если хотите подключить AUR, установить дополнительный софт (пакеты), установить мои конфиги XFCE, тогда после перезагрузки и входа в систему выполните команду:'
-# If you want to connect AUR, install additional software (packages), install my Xfce configs, then after restarting and logging in, run the command:
 echo -e "${YELLOW}==> ${CYAN}wget git.io/archmy3l && sh archmy3l ${NC}"
 echo -e "${CYAN}:: ${NC}Цель скрипта (archmy3l) - это установка первоначально необходимого софта (пакетов) и запуск необходимых служб."
 echo -e "${CYAN}:: ${NC}Скриптом можно пользоваться как шпаргалкой, открыв его в текстовом редакторе, копируя команды по установке необходимых пакетов, и запуска служб."
@@ -2678,16 +2650,10 @@ echo -e "${GREEN}
 echo ""
 echo -e "${RED}### ${BLUE}########################################################### ${RED}### ${NC}" 
 echo -e "${RED}==> ${BOLD}Выходим из установленной системы ${NC}"
-#echo 'Выходим из установленной системы'
-# Exiting the installed system
 
 echo -e "${BLUE}:: ${BOLD}Теперь вам надо ввести exit, затем reboot, чтобы перезагрузиться ${NC}"
-#echo 'Теперь вам надо ввести exit, затем reboot, чтобы перезагрузитьсься'
-#'Now you need to enter 'reboot' to reboot"'
 exit
 exit
-# ========================================================
-###########################################################
-# **********************************************************   
+  
 
 
