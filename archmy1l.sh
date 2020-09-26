@@ -692,32 +692,19 @@ sudo pacman -Sy
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установка основных пакетов (base, base-devel) базовой системы"
-#echo 'Установка основных пакетов (base base-devel) базовой системы'
-# Installing basic packages (base base-devel)
 echo -e "${BLUE}:: ${NC}Arch Linux, Base devel (AUR only)"
-#echo 'Arch Linux, Base devel (AUR only)'
 echo " Сценарий pacstrap устанавливает (base) базовую систему. Для сборки пакетов из AUR (Arch User Repository) также требуется группа base-devel. "
-# The pacstrap script installs the base system. To build packages from AUR (Arch User Repository), the base-devel group is also required.
 echo -e "${MAGENTA}=> ${BOLD}Т.е., Если нужен AUR, ставь base и base-devel, если нет, то ставь только base. ${NC}"
-# echo " Т.е., Если нужен AUR, ставь base и base-devel, если нет, то ставь только base. "
-# If you need AUR, put base and base-devel, if not, then put only base.
 echo " Огласите весь список, пожалуйста! :) "
-# Read out the entire list, please!
 echo " 1 - base + base-devel + packages (пакеты небходимые для сетевых настроек, и консольный текстовый редактор: - dhcpcd netctl which inetutils nano vim ), то выбирайте вариант - "1". "  #wget
 echo " 2 - base + packages (пакеты небходимые для сетевых настроек, и консольный текстовый редактор: - dhcpcd netctl which inetutils nano vim), то выбирайте вариант - "2". "   #wget
 echo " 3 - base + base-devel (установятся группы, Т.е. base и base-devel, без каких либо дополнительных пакетов), то выбирайте вариант - "3". "
 echo " 4 - base (установится группа, состоящая из определённого количества пакетов, Т.е. просто base, без каких либо дополнительных пакетов), то выбирайте вариант - "4". "
 echo " Будьте осторожны! Если Вы сомневаетесь в своих действиях, можно установить (base + packages), а group-(группы) base-devel установить позже. "
-# Be careful! If you doubt your actions, you can install (base + packages), group base-devel later.
 echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
-#echo 'Установка производится в порядке перечисления'
-# Installation Is performed in the order listed
 echo " Чтобы исключить ошибки в работе системы рекомендую вариант - "1" "
-# To exclude errors in the system, I recommend the option - " 1"
 echo ""
 while
-# echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "    
-# read -p " 1 - Base + Base-Devel + packages, 2 - Base + packages, 3 - Base + Base-Devel, 4 - Base: " x_pacstrap  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "    
     1 - Base + Base-Devel + packages,   2 - Base + packages, 
@@ -770,36 +757,6 @@ elif [[ $x_pacstrap == 4 ]]; then
   echo ""
   echo " Установка выбранной вами, группы (base) выполнена "
 fi 
-
-# ----------------------------------------------------------------
-# В официальном wiki от arch https://wiki.archlinux.org/index.php/Installation_guide ,
-# написано pacstrap /mnt base, советую тут повторить за мной, ибо если Вам нужен доступ к AUR (Arch User Repository) Вам надо будет base-devel (есть возможность поставить когда угодно).
-# Основные элементы уже у Вас на жестком диске, теперь надо сделать чтобы оно всё запускалось и работало.
-# ==========================================================
-
-#####        "Справка утилит"   ######
-# base - основные программы.
-# base-devel - утилиты для разработчиков. Нужны для AUR.
-# linux - ядро.
-# linux-firmware - файлы прошивок для linux.
-# linux-headers-[версия] - заголовочные файлы ядра: linux-headers-$(uname -r).
-# linux-image-[версия] – бинарный образ ядра.
-# -----------------------------------------------------------
-# linux-extra-[версия] – дополнительные внешние модули ядра для расширения функционала.
-# nano - простой консольный текстовый редактор. Если умете работать в vim, то можете поставить его вместо nano.
-# vim -  - это настраиваемый текстовый редактор.
-# ------------------------------------------------------------
-# grub - загрузчик операционной системы. Без него даже загрузиться в новую систему не сможем.
-# efibootmgr - поможет grub установить себя в загрузку UEFI.
-# sudo - позволяет обычным пользователем совершать действия от лица суперпользователя.
-# git - приложение для работы с репозиториями Git. Нужен для AUR и много чего ещё.
-# networkmanager - сервис для работы интернета. Вместе с собой устанавливает программы для настройки.
-# wget linux - утилита выполняет загрузку файлов даже в фоновом режиме - без участия пользователя
-# libnewt - Not Erik's Windowing Toolkit - оконный режим в текстовом режиме со сленгом
-# ---------------------------------------------------------------
-# man-db - просмотрщик man-страниц.
-# man-pages - куча man-страниц (руководств).
-# ==========================================================
 
 ### Install Kernel
 #### Kernel (optional) - (Kernel (arbitrary) #####
