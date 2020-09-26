@@ -361,12 +361,13 @@ echo -e "${MAGENTA}
 echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете установить "AUR Helper", если пропустили это действие в предыдущем скрипте (при установке основной системы)." 
 echo -e "${YELLOW}==> Внимание! ${NC}Во время установки "AUR", Вас попросят ввести (Пароль пользователя) для $username."
 
+echo ""
 echo -e "${GREEN}==> ${NC}Установка AUR Helper (yay) или (pikaur)"
 #echo -e "${BLUE}:: ${NC}Установка AUR Helper (yay) или (pikaur)" 
 #echo 'Установка AUR Helper (yay) или (pikaur)'
 # Installing AUR Helper (yay) or (pikaur)
-echo -e "${YELLOW}==> ${BOLD}Важно! Pikaur - идёт как зависимость для Octopi. ${NC}"
-echo -e "${MAGENTA}:: ${NC} В AUR - есть практически всё, что можно установить на Linux. В том числе и программы, которые для других дистробутивов пришлось бы собирать из исходников"
+echo -e "${MAGENTA}:: ${NC} AUR - Пользовательский репозиторий, поддерживаемое сообществом хранилище ПО, в который пользователи загружают скрипты для установки программного обеспечения."
+echo " В AUR - есть практически всё, что можно установить на Linux. В том числе и программы, которые для других дистробутивов пришлось бы собирать из исходников. "
 echo -e "${CYAN}=> ${BOLD}В сценарии скрипта присутствуют следующие варианты: ${NC}"
 echo " 1 - Установка 'AUR'-'yay-bin' с помощью скрипта созданного (autor): Alex Creio https://cvc.hashbase.io/ - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/yay-git/), собирается и устанавливается, то выбирайте вариант - "1". "
 echo " 2 - Установка 'AUR'-'yay' с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/yay.git), собирается и устанавливается, то выбирайте вариант - "2"."
@@ -396,27 +397,26 @@ clear
 echo " Установка AUR Helper (yay) пропущена "
 elif [[ $in_aur_help == 1 ]]; then
 sudo pacman -Syu
-wget git.io/yay-install.sh && sh yay-install.sh --noconfirm
+#wget git.io/yay-install.sh && sh yay-install.sh --noconfirm
+#echo " Установка базовых программ и пакетов wget, curl, git "
+#sudo pacman -S --noconfirm --needed wget curl git
+echo " Установка AUR Helper (yay-bin) "
+git clone https://aur.archlinux.org/yay-bin.git
+cd yay-bin
+# makepkg -si
+# makepkg -si --noconfirm   #-не спрашивать каких-либо подтверждений
+makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+rm -rf yay-bin    # удаляем директорию сборки
+# rm -Rf yay-bin
 clear
-echo " Установка AUR Helper (yay) завершена "
-# ------------------------------------------------------------
-# Скрипт yay-install.sh:
-#!/usr/bin/env bash
-# Install script yay
-# autor: Alex Creio https://cvc.hashbase.io/
-
-# wget git.io/yay-install.sh && sh yay-install.sh
-#sudo pacman -S --noconfirm --needed wget curl git 
-#git clone https://aur.archlinux.org/yay-bin.git
-#cd yay-bin
-### makepkg -si
-#makepkg -si --skipinteg
-#cd ..
-#rm -rf yay-bin
-# ------------------------------------------------------------
+echo " Установка AUR Helper (yay-bin) завершена "
 elif [[ $in_aur_help == 2 ]]; then
 sudo pacman -Syu
+#echo " Установка базовых программ и пакетов wget, curl, git "
 #sudo pacman -S --noconfirm --needed wget curl git
+echo " Установка AUR Helper (yay) "
 git clone https://aur.archlinux.org/yay.git
 cd yay 
 makepkg -si --noconfirm 
@@ -428,7 +428,9 @@ clear
 echo " Установка AUR Helper (yay) завершена "
 elif [[ $in_aur_help == 3 ]]; then
 sudo pacman -Syu
+#echo " Установка базовых программ и пакетов wget, curl, git "
 #sudo pacman -S --noconfirm --needed wget curl git
+echo " Установка AUR Helper (pikaur) "
 git clone https://aur.archlinux.org/pikaur.git 
 cd pikaur   
 makepkg -si --noconfirm 
@@ -448,6 +450,8 @@ fi
 # https://aur.archlinux.org/packages/yay-bin/
 # https://aur.archlinux.org/packages/
 # https://github.com/Jguer/yay
+# Если в системе не установлены необходимые зависимости, makepkg предупредит вас об этом и отменит сборку. Если задать флаг -s/--syncdeps, то makepkg самостоятельно установит недостающие зависимости и соберёт пакет.
+# $ makepkg --syncdeps
 # ============================================================================
 
 echo ""
