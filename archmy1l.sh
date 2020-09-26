@@ -418,8 +418,6 @@ echo -e "${BLUE}:: ${NC}Монтирование разделов диска"
 lsblk -f
 echo ""
 echo -e "${BLUE}:: ${NC}Форматируем и монтируем ROOT раздел?"
-#echo 'Форматирование и монтирование корневого раздела (ROOT)'
-# Formatting and mounting a partition (ROOT)
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 read -p " Укажите ROOT раздел (sda/sdb 1.2.3.4 (sda5 например)): " root  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo ""
