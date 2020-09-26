@@ -77,6 +77,11 @@ _set() {
     _note "${MSG_ERROR}"
     sleep 1; $$
 }
+
+### Display install steps (Отображение шагов установки)
+_info() {
+    echo -e "${YELLOW}\n==> ${CYAN}${1}...${NC}"; sleep 1
+}
   
 ### Download show progress bar only (Скачать показывать только индикатор выполнения)
 _wget() {
