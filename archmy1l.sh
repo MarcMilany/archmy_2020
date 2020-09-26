@@ -579,14 +579,8 @@ if [[ $diskC == 0 ]]; then
 ############### Disk D ##############
 echo ""
 echo -e "${BLUE}:: ${NC}Добавим раздел диск "D"(Data Disk) Windows?"
-#echo " Добавим раздел диск "D"(Data Disk) Windows? "
-# Adding the "D"(Data Disk) Windows partition?
 echo " Если таковой был создан при разметке в cfdisk "
-#Если он был создан во время разметки в cfdisk'
-# If one was created during markup in cfdisk
 while 
-#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-# read -p " 1 - Да добавим раздел, , 0 - Нет пропустить: " diskD  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo " Действия ввода, выполняется сразу после нажатия клавиши " 
     read -n1 -p  "
     1 - Да добавим раздел,    0 - Нет пропустить: " diskD  # sends right after the keypress; # отправляет сразу после нажатия клавиши
