@@ -7,14 +7,9 @@ cpl=0
 skipfont="0"
 fspkgs=""
 EDITOR=nano
-# Выполните команду с правами суперпользователя:
-#EDITOR=nano visudo
+#EDITOR=nano visudo  # Выполните команду с правами суперпользователя
 
-### Installer default language (Язык установки по умолчанию)
-#ARCHMY1_LANG="russian"
-ARCHMY2_LANG="russian"
-#ARCHMY3_LANG="russian"
-#ARCHMY4_LANG="russian"
+ARCHMY2_LANG="russian"  # Installer default language (Язык установки по умолчанию)
 
 script_path=$(readlink -f ${0%/*})
 
