@@ -329,10 +329,14 @@ Location: https://git.io/yay-install
 
 **************************************************************************
 **************************************************************************
+проверить
+Сокращение ссылки для yay-git-install.sh
 
-Сокращение ссылки для .sh
+https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/AUR%20helper/yay-git-install.sh
 
+curl -i https://git.io -F "url=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/AUR%20helper/yay-git-install.sh" -F "code=yay-git-install"
 
+Location: https://git.io/yay-git-install
 
 
 **************************************************************************
