@@ -285,15 +285,11 @@ date
 
 ###echo ""
 ###echo -e "${YELLOW}==> ${NC}Обновить и добавить новые ключи?"
-#echo 'Обновить и добавить новые ключи?'
 # Update and add new keys?
 ###echo " Данный этап поможет вам избежать проблем с ключами Pacmаn, если Вы используете не свежий образ ArchLinux для установки! "
-# This step will help you avoid problems with Pacman keys if you are not using a fresh ArchLinux image for installation!
 ###echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, можно пропустить запуск обновления ключей. "
-# Be careful! If you are in doubt about your actions, you can skip running the key update.
 ###echo -e "${RED}==> ${BOLD}Примечание: - Иногда при запуске обновления ключей возникает ошибка, не переживайте просто перезапустите работу скрипта (sh -название скрипта-)${NC}"
 ###echo -e "${RED}==> ${BOLD}Примечание: - Лучше ПРОПУСТИТЕ этот пункт!"
-# Note: - Sometimes when you start updating keys, an error occurs, do not worry, just restart the script (sh -script name-)
 ###echo ""
 ###while
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
@@ -329,18 +325,15 @@ pacman -S dmidecode --noconfirm
 
 echo ""
 echo -e "${BLUE}:: ${NC}Смотрим информацию о BIOS"
-#echo 'Смотрим информацию о BIOS'
 # View information about the BIOS
-dmidecode -t bios
+dmidecode -t bios  # BIOS – это предпрограмма (код, вшитый в материнскую плату компьютера)
 #dmidecode --type BIOS
-# BIOS – это предпрограмма (код, вшитый в материнскую плату компьютера). 
+
 
 ### Если ли надо раскомментируйте нужные вам значения
 # -----------------------------------------------------
 #echo -e "${BLUE}:: ${NC}Смотрим информацию о материнской плате"
-#echo 'Смотрим информацию о материнской плате'
 # View information about the motherboard
-#echo " Информация о материнской плате "
 #dmidecode -t baseboard
 #dmidecode --type baseboard
 
