@@ -431,16 +431,10 @@ echo ""
 lsblk -f
 echo ""
 echo -e "${BLUE}:: ${NC}Форматируем BOOT раздел?"
-#echo 'Форматирование загрузочного раздела (BOOT)'
-# Formatting the BOOT partition
 echo " Если таковой был создан при разметке в cfdisk "
-#Если он был создан во время разметки в cfdisk'
-# If one was created during markup in cfdisk
 echo " 1 - Форматировать и монтировать на отдельный раздел "
 echo " 2 - Пропустить если BOOT раздела нет на отдельном разделе, и он находится в корневом разделе ROOT "
 while
-# echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-# read -p " 1 - Да форматировать, 0 - Нет пропустить: " boots  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p " 
     1 - Да форматировать,    2 - Нет пропустить: " boots  # sends right after the keypress; # отправляет сразу после нажатия клавиши
@@ -452,8 +446,6 @@ done
 if [[ $boots == 1 ]]; then
   echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "  
   read -p " Укажите BOOT раздел (sda/sdb 1.2.3.4 (sda7 например)): " bootd  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
-  #mkfs.fat -F32 /dev/$bootd
-  #mkfs.ext2  /dev/$bootd
   mkfs.ext2  /dev/$bootd -L boot
   mkdir /mnt/boot
 #  mkdir -v /mnt/boot
@@ -468,14 +460,8 @@ echo ""
 lsblk -f
 echo ""
 echo -e "${BLUE}:: ${NC}Форматируем Swap раздел?"
-#echo 'Форматирование раздела подкачки (SWAP)'
-# Format the Swap section
 echo " Если таковой был создан при разметке в cfdisk "
-#Если он был создан во время разметки в cfdisk'
-# If one was created during markup in cfdisk
 while
-#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") " 
-# read -p " 1 - Да, 0 - Нет: " swap  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p " 
     1 - Да,    0 - Нет: " swap  # sends right after the keypress; # отправляет сразу после нажатия клавиши  
