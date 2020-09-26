@@ -182,8 +182,6 @@ pacman -Sy terminus-font --noconfirm
 echo ""
 echo -e "${BLUE}:: ${NC}Setting up the Russian language, changing the console font to one that supports Cyrillic for ease of use" 
 # Настроим русский язык, изменим консольный шрифт на тот, который поддерживает кириллицу для удобства работы
-# curl -L ${baseurl}/lng/${sel} | sed '/^#/ d'
-# ls /usr/share/kbd/keymaps/**/*.map.gz  # посмотреть список доступных раскладок
 loadkeys ru
 setfont cyr-sun16
 #setfont ter-v16b
