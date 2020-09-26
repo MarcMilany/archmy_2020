@@ -348,7 +348,6 @@ sgdisk -p /dev/$cfd  #sda sdb sdc sdd
 
 echo ""
 echo -e "${RED}==> ${NC}Удалить (стереть) таблицу разделов на выбранном диске (sdX)?"
-# Delete (erase) the partition table on the selected disk (sdX)?
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
 while
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
@@ -373,14 +372,10 @@ fi
 echo -e "${MAGENTA}
   <<< Вся разметка диска(ов) производится только в cfdisk! >>>
 ${NC}"
-# The whole layout of the disk is made only in cfdisk!
 
 echo -e "${YELLOW}:: ${BOLD}Здесь Вы также можете подготовить разделы для Windows (ntfs/fat32)(С;D;E), и в дальнейшем после разбиения диска(ов), их примонтировать. ${NC}"
 echo -e "${GREEN}==> ${NC}Создание разделов диска для установки ArchLinux"
-# Creating disk partitions for installing ArchLinux
 echo -e "${BLUE}:: ${NC}Вам нужна разметка диска?"
-#echo 'Вам нужна разметка диска?'
-# Do you need disk markup?
 while
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p " 
