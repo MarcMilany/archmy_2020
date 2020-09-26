@@ -165,9 +165,6 @@ ${NC}
 # Команды по установке :
 # archiso login: root (automatic login)
 
-##### Важно! #####
-# Если возникает ошибка /usr/bin/arch-chroot Argument list too long - (слишком длинный список аргументов /usr/bin/arch-chroot)
-# Все это из за того что файлов больше чем допустимый лимит, проверить который можно командой:
 echo -e "${RED}=> ${NC}Acceptable limit for the list of arguments..."
 # Допустимый лимит (предел) списка аргументов...'
 getconf ARG_MAX
