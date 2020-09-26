@@ -1282,25 +1282,17 @@ fi
 
 echo ""
 echo -e "${GREEN}==> ${NC}Установить сетевые утилиты Networkmanager?"
-#echo -e "${BLUE}:: ${NC}Установить сетевые утилиты "Networkmanager"?"
-#echo 'Установить сетевые утилиты "Networkmanager"?'
-# Install the "Networkmanager" network utilities"
 echo -e "${BLUE}:: ${NC}'Networkmanager' - сервис для работы интернета."
 echo " NetworkManager можно установить с пакетом networkmanager, который содержит демон, интерфейс командной строки (nmcli) и интерфейс на основе curses (nmtui). Вместе с собой устанавливает программы (пакеты) для настройки сети. "
 echo -e "${CYAN}=> ${NC}После запуска демона NetworkManager он автоматически подключается к любым доступным системным соединениям, которые уже были настроены. Любые пользовательские подключения или ненастроенные подключения потребуют nmcli или апплета для настройки и подключения."
 echo -e "${CYAN}=> ${NC}Поддержка OpenVPN в Network Manager также внесена в список устанавливаемых программ (пакетов)."
 echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-# Be careful! If you doubt your actions, think again...
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
-#echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
-# You can skip this step if you are not sure of the correct choice
 echo ""
 while
 echo " Действия ввода, выполняется сразу после нажатия клавиши " 
     read -n1 -p  " 
-    1 - Да установить,    0 - Нет пропустить: " i_network   # sends right after the keypress; # отправляет сразу после нажатия клавиши
-#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "    
-# read -p " 1 - Да установить, 0 - Нет пропустить: " i_network  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")     
+    1 - Да установить,    0 - Нет пропустить: " i_network   # sends right after the keypress; # отправляет сразу после нажатия клавиши    
     echo ''
     [[ "$i_network" =~ [^10] ]]
 do
