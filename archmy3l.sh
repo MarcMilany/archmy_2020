@@ -419,7 +419,8 @@ sudo pacman -Syu
 echo " Установка AUR Helper (yay) "
 git clone https://aur.archlinux.org/yay.git
 cd yay 
-makepkg -si --noconfirm 
+makepkg -si --noconfirm
+pwd 
 # makepkg -si
 #makepkg -si --skipinteg 
 cd ..
@@ -433,7 +434,8 @@ sudo pacman -Syu
 echo " Установка AUR Helper (pikaur) "
 git clone https://aur.archlinux.org/pikaur.git 
 cd pikaur   
-makepkg -si --noconfirm 
+makepkg -si --noconfirm
+pwd 
 # makepkg -si
 #makepkg -si --skipinteg  
 cd ..
