@@ -1308,7 +1308,7 @@ systemctl enable NetworkManager
 echo " NetworkManager успешно добавлен в автозагрузку "
  elif [[ $i_network  == 0 ]]; then
 echo " Установка NetworkManager пропущена "
- fi
+fi
 
 sleep 02
 clear
