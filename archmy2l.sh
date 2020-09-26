@@ -115,104 +115,45 @@ _arch_fast_install_banner_2
 sleep 02
 echo ""
 echo -e "${GREEN}=> ${NC}Для проверки интернета можно пропинговать какой-либо сервис" 
-#echo 'Для проверки интернета можно пропинговать какой-либо сервис'
-# To check the Internet, you can ping a service
 ping -c2 archlinux.org
-# Например Яндекс или Google: 
-#ping -c5 www.google.com
-#ping -c5 ya.ru
 
 echo -e "${CYAN}==> ${NC}Если пинг идёт едем дальше ... :)"
-#echo 'Если пинг идёт едем дальше ... :)'
-# If the ping goes we go further ... :)
 
 ### Specified Time
 echo ""
 echo -e "${BLUE}:: ${NC}Синхронизация системных часов"  
-#echo '2.3 Синхронизация системных часов'
-# Syncing the system clock
-#echo 'Синхронизируем наши системные часы, включаем ntp, если надо сменим часовой пояс'
-# Sync our system clock, enable ntp, change the time zone if necessary
 timedatectl set-ntp true
 
 echo -e "${BLUE}:: ${NC}Посмотрим статус службы NTP (NTP service)"
-#echo 'Посмотрим статус службы NTP (NTP service)'
-# Let's see the NTP service status
 timedatectl status
 
 ### Specified Time
 echo -e "${BLUE}:: ${NC}Посмотрим текущее состояние аппаратных и программных часов"
-#echo 'Посмотрим текущее состояние аппаратных и программных часов'
-# Let's see the current state of the hardware and software clock
 timedatectl
-#curl https://ipapi.co/timezone  # используем геолокацию (в каком часовом поясе) 
-#curl http://ip-api.com/line?fields=timezone 
-#timedatectl set-timezone Europe/Moscow     # установка часового пояса
-#timedatectl set-timezone $timezone     # установка часового пояса
 
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим вашу систему (базу данных пакетов)"
-#echo "Обновим вашу систему (базу данных пакетов)"
-# Update your system (package database)
 echo -e "${YELLOW}:: ${NC}Загружаем базу данных пакетов независимо от того, есть ли какие-либо изменения в версиях или нет."
-#echo 'Загружаем базу данных пакетов независимо от того, есть ли какие-либо изменения в версиях или нет.'
-# Loading the package database regardless of whether there are any changes in the versions or not.
 echo ""
 pacman -Syyu  --noconfirm  
-# ------------------------------------------------------------
-# Полный апдейт системы:
-#pacman -Syyuu  --noconfirm
-# Не рекомендуется использовать sudo pacman -Syyu всё время!
-# --------------------------------------------------------------
-#pacman -Syy --noconfirm --noprogressbar --quiet
-# Синхронизация и обновление пакетов (-yy принудительно обновить даже если обновленные)
-# -------------------------------------------------------------
-# Команды управления ARCH Linux:
-# sudo pacman -Syu   - Обновление баз данных пакетов и полное обновление системы
-# sudo pacman -Sy       - Обновление баз данных пакетов
-# sudo pacman -Su       - Полное обновление системы
-# pacman -Ss пакет             - Поиск пакетов
-# sudo pacman -S пакет       - Установить пакет
-# sudo pacman -Sw пакет     - Загрузить пакет, но не устанавливать
-# sudo pacman -Rsn пакет      - Удалить пакет с зависимостями (не используемыми другими пакетами) и его конфигурационные файлы
-# sudo pacman -Rs пакет       - Удалить пакет с зависимостями (не используемыми другими пакетами)
-# sudo pacman -R пакет       - Удалить пакет
-# sudo pacman -Qdtq    - Удаление всех пакетов-сирот
-# sudo pacman -Qdt      - Список всех пакетов-сирот
-# sudo pacman -Sc       - Очистка кэша неустановленных пакетов
-# sudo pacman -Scc     - Очистка кэша пакетов
-# pacman -Qqe       - Список установленных пакетов в системе
-# ==============================================================
 
-### Hostname
-### Username
+### Hostname Username ##### 
 sleep 01
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Вводим название компьютера (host name), и имя пользователя (user name)"
-#echo -e "${BLUE}:: ${NC}Вводим имя компьютера (host name), и имя пользователя (user name)"
-#echo 'Вводим имя компьютера (hostname), и имя пользователя (username)'
-#echo 'Enter the computer name and user name'
-# Enter the computer name
-# Enter your username
-#read -p "Введите имя компьютера: " hostname
-#read -p "Введите имя пользователя: " username
-echo -e "${MAGENTA}=> ${BOLD}Используйте в названии (host name) только буквы латинского алфавита (a-zA-Z0-9) (можно с заглавной буквы). Латиница - это английские буквы. Кириллица - русские. ${NC}" 
-#echo -e "${MAGENTA}==> ${NC}" 
+echo -e "${MAGENTA}=> ${BOLD}Используйте в названии (host name) только буквы латинского алфавита (a-zA-Z0-9) (можно с заглавной буквы). Латиница - это английские буквы. Кириллица - русские. ${NC}"  
 echo ""
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 read -p " => Введите имя компьютера: " hostname
 echo ""
 echo -e "${MAGENTA}=> ${BOLD}Используйте в имени (user name) только буквы латинского алфавита (в нижнем (маленькие) регистре (a-z)(a-z0-9_-)), и цифры ${NC}"	        
-#echo -e "${MAGENTA}==> ${NC}"
 echo ""                    
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 read -p " => Введите имя пользователя: " username 
 
 ### Set Hostname
 echo -e "${BLUE}:: ${NC}Прописываем имя компьютера"
-#echo 'Прописываем имя компьютера'
-# Entering the computer name
 echo $hostname > /etc/hostname
 #echo "имя_компьютера" > /etc/hostname
 #echo HostName > /etc/hostname
