@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Install script pikaur
-# autor: Marc Milany https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/url%20links%20abbreviated/git%20url
-
+# autor: Marc Milany 
+# baseurl=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/url%20links%20abbreviated/git%20url
 # wget git.io/pikaur-install.sh && sh pikaur-install.sh
 
 echo -e " Установка базовых программ и пакетов wget, curl, git "
