@@ -830,31 +830,20 @@ fi
 ### Set Fstab #####
 echo ""
 echo -e "${GREEN}==> ${NC}Настройка системы, генерируем fstab" 
-#echo 'Настройка системы, генерируем fstab'
-# Configuring the system, generating fstab
 echo -e "${MAGENTA}=> ${BOLD}Файл /etc/fstab используется для настройки параметров монтирования различных блочных устройств, разделов на диске и удаленных файловых систем. ${NC}"
-# The /etc/fstab file is used to configure mounting parameters for various block devices, disk partitions, and remote file systems.
 echo " Таким образом, и локальные, и удаленные файловые системы, указанные в /etc/fstab, будут правильно смонтированы без дополнительной настройки. "
 echo -e "${CYAN}:: ${NC}Существует четыре различных схемы для постоянного именования: по метке, по uuid, по id и по пути. Для тех, кто использует диски с таблицей разделов GUID (GPT), существуют ещё две дополнительные схемы: - "Partlabel" и "Parduuid". Вы также можете использовать статические имена устройств с помощью Udev."
 echo " Огласите весь список, пожалуйста! :) "
-# Read out the entire list, please!
 echo " 1 - По-UUID ("UUID" "genfstab -U"). "
 echo " 2 - По меткам ("LABEL" "genfstab -L"). "
 echo " 3 - По меткам GPT ("PARTLABEL" "genfstab -t PARTLABEL"). "
 echo " 4 - По UUID GPT ("PARTUUID" "genfstab -t PARTUUID"). "
 echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз взгляните на разметку вашего диска, и таблицу разделов (MBR или GPT). "
-# Be careful! If you doubt your actions, take another look at your disk layout and partition table (MBR or GPT).
 echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
-#echo 'Установка производится в порядке перечисления'
-# Installation Is performed in the order listed
 echo " Чтобы исключить ошибки в работе системы рекомендую "1" вариант "
-# To eliminate errors in the system, I recommend "1" option
 echo -e "${MAGENTA}:: ${NC}Преимущество использования метода UUID состоит в том, что вероятность столкновения имен намного меньше, чем с метками. Далее он генерируется автоматически при создании файловой системы."
-# The advantage of using the UUID method is that the probability of names colliding is much less than with placemarks. It is then generated automatically when the file system is created.
 echo ""
-while
-#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-# read -p " 1 - UUID genfstab -U, 2 - LABEL genfstab -L, 3 - PARTLABEL genfstab -t PARTLABEL, 4 - PARTUUID genfstab -t PARTUUID: " x_fstab  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")            
+while           
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "    
     1 - UUID genfstab -U,                 2 - LABEL genfstab -L,
