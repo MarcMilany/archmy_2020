@@ -222,97 +222,27 @@ cp /etc/localtime /etc/localtime.backup
 # Запишем название часового пояса в /etc/timezone:
 echo $timezone > /etc/timezone
 # timedatectl set-timezone Europe/Moscow     # установка часового пояса
-#timedatectl set-timezone $timezone     # установка часового пояса
+#timedatectl set-timezone $timezone          # установка часового пояса
 ls -lh /etc/localtime  # для просмотра символической ссылки, которая указывает на текущий часовой пояс, используемый в системе 
-#cat /etc/timezone   # просмотреть файл /etc/timezone
-#timedatectl    # команда отображает обзор системы, включая часовой пояс
+
 echo ""
 echo -e "${GREEN}=> ${BOLD}Это ваш часовой пояс (timezone) - '$timezone' ${NC}"
-#echo -e "${GREEN}=> ${NC}Это ваш часовой пояс (timezone) - '$timezone' "
-#echo " => Это ваш часовой пояс (timezone) - '$timezone' "
 echo -e "${BLUE}:: ${BOLD}Ваши данные по дате, времени и часовому поясу: ${NC}"
 date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'    # одновременно отображает дату и часовой пояс
 
-# -------------------------------------------------
-# Чтобы изменить часовой пояс, создайте символическую ссылку /etc/localtime на соответствующий часовой пояс в /usr/share/zoneinfo/:
-#ln -sf /usr/share/zoneinfo/zoneinfo /etc/localtime
-# Флаг -s позволяет создавать символическую ссылку, флаг -f удаляет существующий файл назначения, который в этом случае является старая символьная ссылка /etc/localtime.
-# --------------------------------------------------
-#ln -svf /usr/share/zoneinfo/'$timezone' /etc/localtime
-###ln -svf /usr/share/zoneinfo/Europe/Moscow /etc/localtime  # -эта команда
-##ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
-#timedatectl set-ntp true
-#ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
-#ln -s /usr/share/zoneinfo/Europe/Moscow /etc/localtime
-#ln -svf /usr/share/zoneinfo/Asia/Yekaterinburg /etc/localtime
-#ln -svf /usr/share/zoneinfo/Europe/Kiev /etc/localtime
-# -------------------------------------------------------------
-# Если Вы живите не в московском временной поясе, то Вам нужно выбрать подходящий ваш часовой пояс.
-# Смотрим доступные пояса: 
-#ls /usr/share/zoneinfo
-#ls /usr/share/zoneinfo/Нужный_Регион
-# Разберём команду для localtime >>>
-# Выбираем часовой пояс:
-#ln -s /usr/share/zoneinfo/Зона/Субзона /etc/localtime
-#ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
-# Эта команда создает, так называемую символическую ссылку выбранного пояса в папке /etc
-# Континент:
-# https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%82%D0%B8%D0%BD%D0%B5%D0%BD%D1%82
-# Список часовых поясов базы данных tz:
-# https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-# Символические и жесткие ссылки Linux:
-# https://losst.ru/simvolicheskie-i-zhestkie-ssylki-linux
-# ===============================================================
-### Specified Time
+### Specified Time  #####
 echo -e "${BLUE}:: ${NC}Синхронизируем аппаратное время с системным"
 echo " Устанавливаются аппаратные часы из системных часов. "
-# Кроме того, он обновляет /etc / adjtime или создает его.
-#echo 'Синхронизируем аппаратное время с системным' 
-# Synchronizing hardware time with system time
-# Даже если аппаратное время настроено в режиме времени UTC, команда hwclock по умолчанию отображает местное время
-# hwclock
-# Чтобы опеределить текущее аппаратное время компьютера
-# hwclock -r
-# Считывание аппаратных часов
-# hwclock --show
-# Если системное время отличается от аппаратного, то можно выравнить системное время до значения аппаратного (аппаратное время - это время которое выставлено в BIOS).
-# hwclock --hctosys
-# Синхронизируем аппаратное время с системным!
-# Выполним hwclock, чтобы сгенерировать файл /etc/adjtime, в котором хранятся соответсвующие настройки
 # Эта команда предполагает, что аппаратные часы настроены в формате UTC.
 hwclock --systohc
-# Порой значение аппаратного времени может сбиваться — выровняем!
-# hwclock --adjust
+# hwclock --adjust  # Порой значение аппаратного времени может сбиваться - выровняем!
 
-### Specified Time
+### Specified Time ######
 echo ""
-echo -e "${GREEN}==> ${NC}Настроим состояние аппаратных и программных часов."
-#echo -e "${BLUE}:: ${NC}Настроим состояние аппаратных и программных часов"
-#echo 'Настроим состояние аппаратных и программных часов'
-# Setting up the state of the hardware and software clock    
+echo -e "${GREEN}==> ${NC}Настроим состояние аппаратных и программных часов."   
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если сейчас ваш часовой пояс настроен правильно, или Вы не уверены в правильности выбора! "
-#echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
-# You can skip this step if you are not sure of the correct choice
-# ============================================================================
-# Windows и Linux работают по-разному с этими двумя часами. 
-# Есть два способа работы:
-# UTC - и аппаратные, и программные часы идут по Гринвичу. 
-# То есть часы дают универсальное время на нулевом часовом поясе. 
-# Например, если у вас часовой пояс GMT+3, Киев, то часы будут отставать на три часа. 
-# А уже пользователи локально прибавляют к этому времени поправку на часовой пояс, например, плюс +3. 
-# Каждый пользователь добавляет нужную ему поправку. Так делается на серверах, 
-# чтобы каждый пользователь мог получить правильное для своего часового пояса время.
-# localtime - в этом варианте программные часы тоже идут по Гринвичу, 
-# но аппаратные часы идут по времени локального часового пояса. 
-# Для пользователя разницы никакой нет, все равно нужно добавлять поправку на свой часовой пояс. 
-# Но при загрузке и синхронизации времени Windows вычитает из аппаратного времени 3 часа 
-# (или другую поправку на часовой пояс), чтобы программное время было верным.
-# Вы можете пропустить этот шаг, если не уверены в правильности выбора.
-# ============================================================================
 echo ""
 while 
-#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-# read -p " 1 - UTC, 2 - Localtime, 0 - Пропустить настройку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p " 
     1 - UTC,    2 - Localtime, 
@@ -337,136 +267,56 @@ elif [[ $prog_set == 0 ]]; then
   echo ""  
   echo ' Настройка пропущена. '
 fi
-# ---------------------------------------------------------------------------
-# Где в Arch жёстко прописать чтоб апаратное время равнялось локальному?
-# Я делаю так:
-# sudo hwclock --localtime
-# sudo timedatectl set-local-rtc 1
-#hwclock --systohc --utc
-#hwclock --systohc --local
-# Команды для исправления уже в установленной системе:
-# Исправим ошибку времени, если она есть
-#sudo timedatectl set-local-rtc 1 --adjust-system-clock
-# Как вернуть обратно -
-#sudo timedatectl set-local-rtc 0
-# Для понимания сути команд статья с примерами -
-# https://losst.ru/sbivaetsya-vremya-v-ubuntu-i-windows
-# https://www.ekzorchik.ru/2012/04/hardware-time-settings-hwclock/
-# ============================================================================
 
-### Specified Time
+### Specified Time #############
 echo ""
 echo -e "${BLUE}:: ${NC}Посмотрим обновление времени (если настройка не была пропущена)"
-#echo 'Посмотрим обновление времени (если настройка не была пропущена)'
-# See the time update (if the setting was not skipped)
 timedatectl show
 #timedatectl | grep Time
 #timedatectl set-timezone Europe/Moscow
 
-### Set Hosts 
+### Set Hosts ########
 echo ""
 echo -e "${BLUE}:: ${NC}Изменяем имя хоста"
-#echo 'Изменяем имя хоста'
-# Changing the host name
 echo "127.0.0.1	localhost.(none)" > /etc/hosts
 echo "127.0.1.1	$hostname" >> /etc/hosts
 echo "::1	localhost ip6-localhost ip6-loopback" >> /etc/hosts
 echo "ff02::1 ip6-allnodes" >> /etc/hosts
 echo "ff02::2 ip6-allrouters" >> /etc/hosts
-# -----------------------------------------------------------
-# echo "127.0.1.1 имя_компьютера" >> /etc/hosts
-# - Можно написать с Заглавной буквы.
-# Это дейсвие не обязательно! Мы можем это сделаем из установленной ситемы, если данные не пропишутся автоматом.
-# ============================================================
 
-### Set Locale
+### Set Locale #####
 echo -e "${BLUE}:: ${NC}Добавляем русскую локаль системы"
-#echo 'Добавляем русскую локаль системы'
-# Adding the system's Russian locale
 echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen 
-# -----------------------------------------------------------
-# Есть ещё команды по добавлению русскую локаль в систему:
-#echo -e "en_US.UTF-8 UTF-8\nru_RU.UTF-8 UTF-8" >> /etc/locale.gen
-# Можно раскомментирвать нужные локали (и убирать #)
-#sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
-#sed -i 's/#ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale.gen
-# ===========================================================
 
-### Set Locale
+### Set Locale #######
 echo -e "${BLUE}:: ${NC}Обновим текущую локаль системы"
-#echo 'Обновим текущую локаль системы'
-# Update the current system locale
-locale-gen
-# Мы ввели locale-gen для генерации тех самых локалей.
-#
-### Set Locale
+locale-gen  # Мы ввели locale-gen для генерации тех самых локалей.
+
+### Set Locale ###########
 sleep 02
 echo -e "${BLUE}:: ${NC}Указываем язык системы"
-#echo 'Указываем язык системы'
-# Specify the system language
 echo 'LANG="ru_RU.UTF-8"' > /etc/locale.conf
 #echo 'LANG="en_US.UTF-8"' > /etc/locale.conf
-#export LANG=ru_RU.UTF-8
-#export LANG=en_US.UTF-8
-# ---------------------------------------------------------
-# Эта команда сама пропишет в файлике locale.conf нужные нам параметры.
-# Ну и конечно, раз это переменные окружения, то мы можем установить их временно в текущей сессии терминала
-# При раскомментировании строки '#export ....', - Будьте Внимательными!
-# Как назовёшь, так и поплывёшь...
-# When you uncomment the string '#export....', Be Careful!
-# As you name it, you will swim...
-# ==========================================================
 
-### Set Vconsole
+### Set Vconsole ##########
 echo -e "${BLUE}:: ${NC}Вписываем KEYMAP=ru FONT=cyr-sun16"
-#echo 'Вписываем KEYMAP=ru FONT=cyr-sun16'
-# Enter KEYMAP=ru FONT=cyr-sun16
 echo 'KEYMAP=ru' >> /etc/vconsole.conf
 echo 'FONT=cyr-sun16' >> /etc/vconsole.conf
 echo 'FONT_MAP=' >> /etc/vconsole.conf
 echo 'CONSOLEMAP' >> /etc/vconsole.conf
 echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf
-#-----------------------------------------------------------
-#echo 'Вписываем KEYMAP=ru FONT=ter-v16n'
-#echo 'KEYMAP=us' >> /etc/vconsole.conf
-#echo 'FONT=ter-v16n' >> /etc/vconsole.conf
-# Можно изменить шрифт:
-# pacman -S terminus-font - качаем шрифт терминус
-#loadkeys us
-#pacman -Syy
-#pacman -S terminus-font --noconfirm
-#setfont ter-v16b
-# nano /etc/vconsole.conf - устанавливаем шрифт и переключение клавиатуры по Ctrl-Shift
-# (только в консоли, я не уверен нужно ли это вообще, но помню в убунте надо было писать на русском "да/нет").
-# Если есть желание экспериментировать, консольные шрифты находятся в /usr/share/kbd/consolefonts/ смотрим с помощью ls 
-# ============================================================
 
 #clear
 echo ""
 echo -e "${GREEN}==> ${NC}Создадим загрузочный RAM диск (начальный RAM-диск)"
-#echo 'Создадим загрузочный RAM диск (начальный RAM-диск)'
-# Creating a bootable RAM disk (initial RAM disk)
 echo -e "${MAGENTA}:: ${BOLD}Arch Linux имеет mkinitcpio - это Bash скрипт используемый для создания начального загрузочного диска системы. ${NC}"
-# Arch Linux has mkinitcpio, a Bash script used to create the system's initial boot disk.
 echo -e "${CYAN}:: ${NC}mkinitcpio является модульным инструментом для построения initramfs CPIO образа, предлагая много преимуществ по сравнению с альтернативными методами. Предоставляет много возможностей для настройки из командной строки ядра без необходимости пересборки образа."
-# mkinitcpio is a modular tool for building an initramfs CPIO image, offering many advantages over alternative methods.
-# Provides many options for configuring the kernel from the command line without having to rebuild the image.
 echo -e "${YELLOW}:: ${NC}Чтобы избежать ошибки при создании RAM (mkinitcpio -p), вспомните какое именно ядро Вы выбрали ранее."
-# To avoid an error when creating RAM (mkinitcpio -p), remember which core you selected earlier.
 echo " Будьте внимательными! Здесь варианты создания RAM-диска, с конкретными ядрами. "
-# Be careful! Here are options for creating a RAM disk with specific cores.
-#echo -e "${MAGENTA}==> ${BOLD}Давайте поcмотрим, какое ядро сейчас используется в установочном .iso ${NC}"
-# Let's see which kernel is currently being used in the installation .iso
-#uname -r
 echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
-#echo 'Установка производится в порядке перечисления'
-# Installation Is performed in the order listed  
-#pacman -S --needed mkinitcpio 
 echo ""
 while
-# echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")  "
-# read -p " 1 - для ядра LINUX, 2 - для ядра LINUX_HARDENED, 3 - для ядра LINUX_LTS, 4 - для ядра LINUX_ZEN, 0 - Пропустить создание загрузочного RAM диска: " x_ram  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
 
     read -n1 -p "     
