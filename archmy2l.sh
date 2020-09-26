@@ -529,9 +529,7 @@ echo ""
 while
 echo " Действия ввода, выполняется сразу после нажатия клавиши " 
     read -n1 -p  " 
-    1 - Да установить,    0 - Нет пропустить: " i_wifi   # sends right after the keypress; # отправляет сразу после нажатия клавиши
-#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "    
-# read -p " 1 - Да установить, 0 - Нет пропустить: " i_wifi  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")      
+    1 - Да установить,    0 - Нет пропустить: " i_wifi   # sends right after the keypress; # отправляет сразу после нажатия клавиши    
     echo ''
     [[ "$i_wifi" =~ [^10] ]]
 do
@@ -545,21 +543,7 @@ pacman -S dialog wpa_supplicant iw wireless_tools net-tools --noconfirm
 echo " Установка программ (пакетов) пропущена. "
  fi
 
-# ------------------------------------------------------------
-# Разбор утилит для установки:
-# dialog  - Инструмент для отображения диалоговых окон из сценариев оболочки
-# wpa_supplicant  - Утилита, обеспечивающая согласование ключей для беспроводных сетей WPA
-# iw  - Утилита настройки интерфейса командной строки на основе nl80211 для беспроводных устройств 
-# wireless_tools  - Инструменты, позволяющие управлять беспроводными расширениями
-# net-tools  - Инструменты настройки для сети Linux
-# https://www.archlinux.org/packages/core/x86_64/dialog/
-# https://www.archlinux.org/packages/core/x86_64/wpa_supplicant/
-# https://www.archlinux.org/packages/core/x86_64/iw/
-# https://www.archlinux.org/packages/core/x86_64/wireless_tools/
-# https://www.archlinux.org/packages/core/x86_64/net-tools/ 
-# ============================================================
-
-### Set User
+### Set User ######
 sleep 01
 clear
 echo ""
