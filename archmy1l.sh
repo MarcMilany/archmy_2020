@@ -758,7 +758,7 @@ elif [[ $x_pacstrap == 4 ]]; then
   echo " Установка выбранной вами, группы (base) выполнена "
 fi 
 
-### Install Kernel
+### Install Kernel ###
 #### Kernel (optional) - (Kernel (arbitrary) #####
 #clear
 echo ""
