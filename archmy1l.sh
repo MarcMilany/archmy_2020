@@ -36,41 +36,32 @@ umask 0022 # Определение окончательных прав дост
 ##### моими настройками).                                    #####       
 #####  В скрипте прописана установка grub для LegasyBIOS, с  #####
 ##### выбором DE/WM, а также DM (Менеджера входа), и т.д..   #####  
-##### Этот скрипт находится в процессе 'Внесение поправок в  ####
-#### наводку орудий по результатам наблюдений с наблюдате-   ####
-#### льных пунктов'.                                         ####
-#### Автор не несёт ответственности за любое нанесение вреда ####
-#### при использовании скрипта.                              ####
-#### Installation guide - Arch Wiki  (referance):            ####
-#### https://wiki.archlinux.org/index.php/Installation_guide ####
-#### Проект (project): https://github.com/ordanax/arch2018   ####
-#### Лицензия (license): LGPL-3.0                            #### 
-#### (http://opensource.org/licenses/lgpl-3.0.html           ####
-#### В разработке принимали участие (author) :               ####
-#### Алексей Бойко https://vk.com/ordanax                    ####
-#### Степан Скрябин https://vk.com/zurg3                     ####
-#### Михаил Сарвилин https://vk.com/michael170707            ####
-#### Данил Антошкин https://vk.com/danil.antoshkin           ####
-#### Юрий Порунцов https://vk.com/poruncov                   ####
-#### Jeremy Pardo (grm34) https://www.archboot.org/          ####
-#### Marc Milany - 'Не ищи меня 'Вконтакте',                 ####
-#####                в 'Одноклассниках'' нас нету, ...       ####
-#### Releases ArchLinux:                                     ####
-####    https://www.archlinux.org/releng/releases/           ####
-#################################################################
+##### Этот скрипт находится в процессе 'Внесение поправок в  #####
+##### наводку орудий по результатам наблюдений с наблюдате-  #####
+##### льных пунктов'.                                        #####
+##### Автор не несёт ответственности за любое нанесение вреда ####
+##### при использовании скрипта.                             #####
+##### Installation guide - Arch Wiki  (referance):           #####
+##### https://wiki.archlinux.org/index.php/Installation_guide ####
+##### Проект (project): https://github.com/ordanax/arch2018  #####
+##### Лицензия (license): LGPL-3.0                           ##### 
+##### (http://opensource.org/licenses/lgpl-3.0.html          #####
+##### В разработке принимали участие (author) :              #####
+##### Алексей Бойко https://vk.com/ordanax                   #####
+##### Степан Скрябин https://vk.com/zurg3                    #####
+##### Михаил Сарвилин https://vk.com/michael170707           #####
+##### Данил Антошкин https://vk.com/danil.antoshkin          #####
+##### Юрий Порунцов https://vk.com/poruncov                  #####
+##### Jeremy Pardo (grm34) https://www.archboot.org/         #####
+##### Marc Milany - 'Не ищи меня 'Вконтакте',                #####
+#####                в 'Одноклассниках'' нас нету, ...       #####
+##### Releases ArchLinux:                                    #####
+#####    https://www.archlinux.org/releng/releases/          #####
+##################################################################
 
-# ======================================================================
-#echo 'Автоматическое обнаружение ошибок.'
-# Эта команда остановит выполнение сценария после сбоя команды и будет отправлен код ошибки:
-#set -e
-#set -e -u
-set -e "\n${RED}Error: ${YELLOW}${*}${NC}"
-# ---------------------------------------------------
-# Если этот параметр '-e' задан, оболочка завершает работу, когда простая команда в списке команд завершается ненулевой (FALSE). Это не делается в ситуациях, когда код выхода уже проверен (if, while, until,||, &&)
-# Встроенная команда set:
-# https://www.sites.google.com/site/bashhackers/commands/set
-# ====================================================
-#####################################################
+
+set -e "\n${RED}Error: ${YELLOW}${*}${NC}"  # Эта команда остановит выполнение сценария после сбоя команды и будет отправлен код ошибки
+
 ### Help and usage (--help or -h) (Справка)
 _help() {
     echo -e "${BLUE}
@@ -274,25 +265,19 @@ ${NC}"
 # The installation of the minimum Arch Linux system starts
 
 echo -e "${BLUE}:: ${NC}Установка и настройка начата в $(date +%T)" 
-#echo "Установка и настройка начата в $(date +%T)"
 # Installation and configuration started in $(date +%T)
 
 echo -e "${BLUE}:: ${NC}Синхронизация системных часов"  
-#echo 'Синхронизация системных часов'
 # Syncing the system clock
-#echo 'Синхронизируем наши системные часы, включаем ntp, если надо сменим часовой пояс'
 # Sync our system clock, enable ntp, change the time zone if necessary
-# Активации ntp, и проверка статуса
-timedatectl set-ntp true
-#timedatectl status
+timedatectl set-ntp true  # Синхронизируем наши системные часы, включаем ntp, если надо сменим часовой пояс
+
 
 echo -e "${BLUE}:: ${NC}Посмотрим статус службы NTP (NTP service)"
-#echo 'Посмотрим статус службы NTP (NTP service)'
 # Let's see the NTP service status
-timedatectl status
+timedatectl status 
 
 echo -e "${BLUE}:: ${NC}Посмотрим дату и время без характеристик для проверки времени"
-#echo 'Посмотрим дату и время без характеристик для проверки времени'
 # Let's look at the date and time without characteristics to check the time
 date
 
@@ -333,23 +318,14 @@ date
 
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
-#echo 'Обновим базы данных пакетов'
 # Updating the package databases
-#echo "Обновление баз данных пакетов..."
 pacman -Sy --noconfirm
 
 echo ""
 echo -e "${BLUE}:: ${NC}Dmidecode. Получаем информацию о железе"
-#echo 'Dmidecode. Получаем информацию о железе'
 # View information about the motherboard
 echo " DMI (Desktop Management Interface) - интерфейс (API), позволяющий программному обеспечению собирать данные о характеристиках компьютера. "
 pacman -S dmidecode --noconfirm 
-# ------------------------------------------------------------------------------
-# DMI (Desktop Management Interface) - интерфейс (API), позволяющий программному обеспечению собирать данные о характеристиках компьютера.
-# Dmidecode - программа для linux, позволяющая работать с DMI. Можно получить информацию о:
-# (bios, system, baseboard, chassis, processor, memory, cache, connector, slot,...)
-# http://linux-bash.ru/menusistem/106-dmidecode.html
-# ============================================================================
 
 echo ""
 echo -e "${BLUE}:: ${NC}Смотрим информацию о BIOS"
