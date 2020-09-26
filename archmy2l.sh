@@ -1310,12 +1310,6 @@ echo " NetworkManager успешно добавлен в автозагрузк�
  elif [[ $i_network  == 0 ]]; then
 echo " Установка NetworkManager пропущена "
  fi
-# ----------------------------------------------------------
-# Сетевой менеджер:
-# https://wiki.archlinux.org/index.php/NetworkManager
-# https://wiki.archlinux.org/index.php/Networkmanager-openvpn
-# https://www.archlinux.org/packages/extra/x86_64/networkmanager-openvpn/ 
-# =========================================================== 
 
 sleep 02
 clear
