@@ -209,75 +209,35 @@ setfont cyr-sun16
 
 #echo ""
 echo -e "${CYAN}==> ${NC}Добавим русскую локаль в систему установки"
-#echo 'Добавим русскую локаль в систему установки'
 # Adding a Russian locale to the installation system
-#cat /etc/locale.gen | grep ""#${locale}""
-#sed -i "/#${locale}/s/^#//g" /etc/locale.gen
 sed -i 's/#ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale.gen
-#nano /etc/locale.gen
-# В файле /etc/locale.gen раскомментируйте (уберите # вначале) строку #ru_RU.UTF-8 UTF-8
+
 echo -e "${BLUE}:: ${NC}Обновим текущую локаль системы"
 # Update the current system locale
-locale-gen
-# Мы ввели locale-gen для генерации тех самых локалей.
+locale-gen  # Мы ввели locale-gen для генерации тех самых локалей.
 
 sleep 01
 echo -e "${BLUE}:: ${NC}Указываем язык системы"
-#echo 'Указываем язык системы'
 # Specify the system language
-#export LANG=${locale}
-#echo 'LANG="ru_RU.UTF-8"' > /etc/locale.conf
 export LANG=ru_RU.UTF-8
 #export LANG=en_US.UTF-8
-# --------------------------------------------------------------
-# Эта команда сама пропишет в файлике locale.conf нужные нам параметры.
-# Ну и конечно, раз это переменные окружения, то мы можем установить их временно в текущей сессии терминала
-# При раскомментировании строки '#export ....', - Будьте Внимательными!
-# Как назовёшь, так и поплывёшь...
-# When you uncomment the string '#export....', Be Careful!
-# As you name it, you will swim...
-# ===============================================================
+
 echo -e "${BLUE}:: ${NC}Проверяем, что все заявленные локали были созданы:"
-#echo 'Проверяем, что все заявленные локали были созданы:'
 # Checking that all the declared locales were created:
 locale -a
 
 echo ""
 echo -e "${GREEN}=> ${NC}Убедитесь, что сетевой интерфейс указан и включен" 
-#echo 'Убедитесь, что ваш сетевой интерфейс указан и включен'
 #  Make sure that your network interface is specified and enabled
 echo " Показать все ip адреса и их интерфейсы "
-ip a
-# Смотрим какие у нас есть интернет-интерфейсы
-#ip link
-# Если наш интерфейс wlan0. В скобках видно, что он UP. Исправляем:
-#ip link set wlan0 down
-# -----------------------------------------------------------------
-# После этого можно спокойно вызывать wifi-menu и подключатся.
-# (для проводных и беспроводных сетевых интерфейсов должны работать "из коробки")
-# Также можно посмотреть командой:
-#iw dev
-# Для беспроводной связи убедитесь, что беспроводная карта не заблокирована с помощью: 
-#rfkill 
-# ------------------------------------------------------------------
-######  Если нужен этот пункт - 'Раскомментируйте!' ##### 
-#echo -e "${GREEN}=> ${NC}Let's look at your DNS servers in the etc/resolv.conf file" 
-#echo 'Let's look at your DNS servers in the etc/resolv.conf file'
-# Давайте посмотрим на ваши DNS-серверы в etc / resolv.файл conf   
-#cat /etc/resolv.conf
-########################################################
-
+ip a  # Смотрим какие у нас есть интернет-интерфейсы
+ 
 echo ""
 echo -e "${GREEN}=> ${NC}Для проверки интернета можно пропинговать какой-либо сервис" 
-#echo 'Для проверки интернета можно пропинговать какой-либо сервис'
 # To check the Internet, you can ping a service
 ping -c2 archlinux.org
-# Например Яндекс или Google: 
-#ping -c5 www.google.com
-#ping -c5 ya.ru
 
 echo -e "${CYAN}==> ${NC}Если пинг идёт едем дальше ... :)"
-#echo 'Если пинг идёт едем дальше ... :)'
 # If the ping goes we go further ... :)
 
 #################################################################
@@ -289,14 +249,11 @@ sleep 02
 echo ""
 ### Installing ArchLinux 
 echo -e "${GREEN}==> ${NC}Вы готовы приступить к установке Arch Linux? "
-#echo 'Вы готовы приступить к установке Arch Linux'
 # Are you ready to start installing Arch Linux?
 while
 echo " Действия ввода, выполняется сразу после нажатия клавиши " 
     read -n1 -p " 
     1 - Да приступить,    0 - Нет отменить: " hello  # sends right after the keypress; # отправляет сразу после нажатия клавиши  
-#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-# read -p " 1 - Да приступить, 0 - Нет отменить: " hello  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")  
     echo ''
     [[ "$hello" =~ [^10] ]]
 do
