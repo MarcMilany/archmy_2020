@@ -7,18 +7,14 @@ cpl=0
 skipfont="0"
 fspkgs=""
 EDITOR=nano
-# Выполните команду с правами суперпользователя:
-#EDITOR=nano visudo
+#EDITOR=nano visudo  # Выполните команду с правами суперпользователя
 
-### Installer default language (Язык установки по умолчанию)
-#ARCHMY1_LANG="russian"
-#ARCHMY2_LANG="russian"
-ARCHMY3_LANG="russian"
-#ARCHMY4_LANG="russian"
+ARCHMY2_LANG="russian"  # Installer default language (Язык установки по умолчанию)
 
 script_path=$(readlink -f ${0%/*})
 
-umask 0022
+umask 0022 # Определение окончательных прав доступа
+# Для суперпользователя (root) umask по умолчанию равна 0022
 
 ##################################################################
 ##### <<<Arch Linux Fast Install LegasyBIOS (arch2020)>>>    #####
@@ -27,41 +23,33 @@ umask 0022
 ##### (Poruncov,Grub-Legacy - 2020).                         #####
 ##### Скрипт (сценарий) archmy3 является продолжением первой #####
 #### части скриптов (archmy1 и archmy2) из серии 'arch_2020'. ####  
-#### Этот скрипт находится в процессе 'Внесение поправок в   ####
-#### наводку орудий по результатам наблюдений с наблюдате-   ####
-#### льных пунктов'.                                         ####
-#### Автор не несёт ответственности за любое нанесение вреда ####
-#### при использовании скрипта.                              ####
-#### Installation guide - Arch Wiki  (referance):            ####
-#### https://wiki.archlinux.org/index.php/Installation_guide ####
-#### Проект (project): https://github.com/ordanax/arch2018   ####
-#### Лицензия (license): LGPL-3.0                            #### 
-#### (http://opensource.org/licenses/lgpl-3.0.html           ####
-#### В разработке принимали участие (author) :               ####
-#### Алексей Бойко https://vk.com/ordanax                    ####
-#### Степан Скрябин https://vk.com/zurg3                     ####
-#### Михаил Сарвилин https://vk.com/michael170707            ####
-#### Данил Антошкин https://vk.com/danil.antoshkin           ####
-#### Юрий Порунцов https://vk.com/poruncov                   ####
-#### Jeremy Pardo (grm34) https://www.archboot.org/          ####
-#### Marc Milany - 'Не ищи меня 'Вконтакте',                 ####
-#####                в 'Одноклассниках'' нас нету, ...       ####
-#### Releases ArchLinux:                                     ####
-####    https://www.archlinux.org/releng/releases/           ####
-#################################################################
+##### Этот скрипт находится в процессе 'Внесение поправок в  #####
+##### наводку орудий по результатам наблюдений с наблюдате-  #####
+##### льных пунктов'.                                        #####
+##### Автор не несёт ответственности за любое нанесение вреда ####
+##### при использовании скрипта.                             #####
+##### Installation guide - Arch Wiki  (referance):           #####
+##### https://wiki.archlinux.org/index.php/Installation_guide ####
+##### Проект (project): https://github.com/ordanax/arch2018  #####
+##### Лицензия (license): LGPL-3.0                           ##### 
+##### (http://opensource.org/licenses/lgpl-3.0.html          #####
+##### В разработке принимали участие (author) :              #####
+##### Алексей Бойко https://vk.com/ordanax                   #####
+##### Степан Скрябин https://vk.com/zurg3                    #####
+##### Михаил Сарвилин https://vk.com/michael170707           #####
+##### Данил Антошкин https://vk.com/danil.antoshkin          #####
+##### Юрий Порунцов https://vk.com/poruncov                  #####
+##### Jeremy Pardo (grm34) https://www.archboot.org/         #####
+##### Marc Milany - 'Не ищи меня 'Вконтакте',                #####
+#####                в 'Одноклассниках'' нас нету, ...       #####
+##### Releases ArchLinux:                                    #####
+#####    https://www.archlinux.org/releng/releases/          #####
+##################################################################
 
-# ======================================================================
-#echo 'Автоматическое обнаружение ошибок.'
-# Эта команда остановит выполнение сценария после сбоя команды и будет отправлен код ошибки:
-#set -e
-#set -e -u
-set -e "\n${RED}Error: ${YELLOW}${*}${NC}"
-# ----------------------------------------------------------------------
-# Если этот параметр '-e' задан, оболочка завершает работу, когда простая команда в списке команд завершается ненулевой (FALSE). Это не делается в ситуациях, когда код выхода уже проверен (if, while, until,||, &&)
-# Встроенная команда set:
-# https://www.sites.google.com/site/bashhackers/commands/set
-# ======================================================================
-#####################################################
+set -e "\n${RED}Error: ${YELLOW}${*}${NC}"  # Эта команда остановит выполнение сценария после сбоя команды и будет отправлен код ошибки
+
+###################################################################
+
 ### Help and usage (--help or -h) (Справка)
 _help() {
     echo -e "${BLUE}
@@ -85,12 +73,12 @@ _set() {
     _note "${MSG_ERROR}"
     sleep 1; $$
 }
-  
+
 ### Display install steps (Отображение шагов установки)
 _info() {
     echo -e "${YELLOW}\n==> ${CYAN}${1}...${NC}"; sleep 1
 }
-
+  
 ### Download show progress bar only (Скачать показывать только индикатор выполнения)
 _wget() {
     wget "${1}" --quiet --show-progress
@@ -100,37 +88,6 @@ _wget() {
 _chroot() {
     arch-chroot /mnt <<EOF "${1}"
 EOF
-}
-
-### Display error, cleanup and kill (Ошибка отображения, очистка и убийство)
-_error() {
-    echo -e "\n${RED}Error: ${YELLOW}${*}${NC}"
-    _note "${MSG_ERROR}"
-    sleep 1; _cleanup; _exit_msg; kill -9 $$
-}
-
-### Cleanup on keyboard interrupt (Очистка при прерывании работы клавиатуры)
-_trap() {
-trap '_error ${MSG_KEYBOARD}' 1 2 3 6
-}
-#trap "set -$-" RETURN; set +o nounset
-# Или
-#trap "set -${-//[is]}" RETURN; set +o nounset
-#..., устраняя недействительные флаги и действительно решая эту проблему!
-
-### Reboot with 10s timeout (Перезагрузка с таймаутом 10 секунд)
-_reboot() {
-    for (( SECOND=10; SECOND>=1; SECOND-- )); do
-        echo -ne "\r\033[K${GREEN}${MSG_REBOOT} ${SECOND}s...${NC}"
-        sleep 1
-    done
-    reboot; exit 0
-}
-
-### Say goodbye (Распрощаться)
-_exit_msg() {
-    echo -e "\n${GREEN}<<< ${BLUE}${APPNAME} ${VERSION} ${BOLD}by \
-${AUTHOR} ${RED}under ${LICENSE} ${GREEN}>>>${NC}"""
 }
 
 ###################################################################
