@@ -376,8 +376,9 @@ echo -e "${BLUE}:: ${NC}Смотрим, какие диски есть в наш
 # Let's see what drives we have at our disposal
 lsblk -f
 
-echo ""
+
 # Ещё раз проверте правильность разбивки на разделы!
+echo ""
 echo -e "${BLUE}:: ${NC}Посмотрим структуру диска созданного установщиком"
 # Let's look at the disk structure created by the installer
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
@@ -386,17 +387,12 @@ sgdisk -p /dev/$cfd  #sda sdb sdc sdd
 
 echo ""
 echo -e "${RED}==> ${NC}Удалить (стереть) таблицу разделов на выбранном диске (sdX)?"
-#echo 'Удалить (стереть) таблицу разделов на выбранном диске (sdX)?'
 # Delete (erase) the partition table on the selected disk (sdX)?
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
-#echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
-# You can skip this step if you are not sure of the correct choice
 while
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p " 
     1 - Да удалить таблицу разделов ,    0 - Нет пропустить: " sgdisk  # sends right after the keypress; # отправляет сразу после нажатия клавиши 
-#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-# read -p " 1 - Да удалить таблицу разделов, 0 - Нет пропустить: " sgdisk  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
     echo ''
     [[ "$sgdisk" =~ [^10] ]]
 do
