@@ -572,7 +572,7 @@ if [[ $diskC == 0 ]]; then
   mkdir /mnt/C 
   mount /dev/$diskCc /mnt/C
   fi
-  
+
 ############### Disk D ##############
 echo ""
 echo -e "${BLUE}:: ${NC}Добавим раздел диск "D"(Data Disk) Windows?"
@@ -967,24 +967,6 @@ reflector -c "Russia" -c "Belarus" -c "Ukraine" -c "Poland" -f 20 -l 20 -p https
    echo "" 
    echo ' Смена зеркал пропущена. '   
 fi
-#pacman -Syy
-#lsblk -f
-# ------------------------------------------------------------
-# Важно:
-# Обязательно сделайте резервную копию файла /etc/pacman.d/mirrorlist:
-# cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-# Чтобы увидеть список всех доступных опций, наберите:
-#reflector --help
-# Команда отфильтрует 12 зеркал russia, отсортирует по скорости и обновит файл mirrorlist
-#sudo reflector -c "Russia" -f 12 -l 12 --verbose --save /etc/pacman.d/mirrorlist
-#------------------------------------------------------------------------
-# Reflector (Русский) Wiki:
-# https://wiki.archlinux.org/index.php/Reflector_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
-# Reflector — скрипт, который автоматизирует процесс настройки зеркал, включающий в себя загрузку свежего списка зеркал со страницы Mirror Status, фильтрацию из них наиболее обновленных, сортировку по скорости и сохранение в /etc/pacman.d/mirrorlist.
-# https://www.linuxsecrets.com/archlinux-wiki/wiki.archlinux.org/index.php/
-# Эта страница сообщает о состоянии всех известных, общедоступных и активных зеркал Arch Linux:
-# https://www.archlinux.org/mirrors/status/
-# =================================================================
 
 clear
 echo ""
