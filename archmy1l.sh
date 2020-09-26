@@ -824,7 +824,7 @@ echo " Ядро (linux-zen) операционной системы устано
 #  genfstab -pU /mnt >> /mnt/etc/fstab  
 fi
 
-### Set Fstab #####
+### Set Fstab generating #####
 echo ""
 echo -e "${GREEN}==> ${NC}Настройка системы, генерируем fstab" 
 echo -e "${MAGENTA}=> ${BOLD}Файл /etc/fstab используется для настройки параметров монтирования различных блочных устройств, разделов на диске и удаленных файловых систем. ${NC}"
