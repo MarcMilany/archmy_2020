@@ -121,7 +121,7 @@ Cостоит из 4 частей + ?.
 
 ### 15.05.2020 ArchLinux Fast Install v1.6 LegasyBIOS
 - Скрипт изменен (читать справку README_SOFT.md)
-- Новые изиенения - читать History of changes (История изменений)
+- Новые изменения - читать History of changes (История изменений)
 Файл находится в папке 'Manual/History of changes (История изменений)'
 
 ### 22.09.2019 ArchLinux Fast Install v1.6
