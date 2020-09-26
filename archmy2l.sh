@@ -682,51 +682,15 @@ clear
 echo ""
 echo " Sudo nopassword (БЕЗ запроса пароля) добавлено  "
 fi
-# --------------------------------------------------------
-#Выполните sudo -ll для вывода текущей конфигурации sudo.
-#Просмотр текущих настроек:
-#nano /etc/sudoers
-#cat /mnt/etc/sudoers
-# ---------------------------------------------------------
-###################################################################
-##### <<<  sudo и %wheel ALL=(ALL) NOPASSWD: ALL   >>>        #####
-#### Кстати, рекомендую добавить запрет выполнения нескольких  ####
-#### команд -                                                  ####
-####                                                              #############
-#### ##Groups of commands.  Often used to group related commands together. ####
-#### Cmnd_Alias SHELLS = /bin/sh,/bin/csh,/usr/local/bin/tcsh     #############
-#### Cmnd_Alias SSH = /usr/bin/ssh                             ####       
-#### Cmnd_Alias SU = /bin/su                                   ####
-#### dreamer ALL = (ALL) NOPASSWD: ALL,!SU,SHELLS,!SSH         ####
-####                                                           #### 
-#### чтобы не было возможности стать рутом через $sudo su      ####
-#### (многи об этой фиче забывают)!                            #### 
-#####                                                         #####
-###################################################################
-# -------------------------------------------------------------
-# Чтобы начать использовать sudo как непривилегированный пользователь, его нужно настроить должным образом. 
-# Для этого прочтите раздел о настройке.
-# Sudo (Русский):
-# https://wiki.archlinux.org/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
-# Крайне важно, чтобы файл sudoers был без синтаксических ошибок! 
-# Любая ошибка делает sudo неработоспособным.
-# ============================================================
 
 echo ""
 echo -e "${GREEN}==> ${NC}Добавим репозиторий "Multilib" - Для работы 32-битных приложений в 64-битной системе?"
 echo -e "${BLUE}:: ${NC}Раскомментируем репозиторий [multilib]"
-#echo 'Раскомментируем репозиторий multilib Для работы 32-битных приложений в 64-битной системе.'
-# Uncomment the multilib repository For running 32-bit applications on a 64-bit system
 echo -e "${CYAN}:: ${BOLD}"Multilib" репозиторий может пригодится позже при установке OpenGL (multilib) для драйверов видеокарт, а также для различных библиотек необходимого вам софта. ${NC}"
-# Multilib can be useful later when installing OpenGL (multilib) for video card drivers, as well as for various libraries of the software you need.
 echo " Чтобы исключить в дальнейшем ошибки в работе системы, рекомендую вариант "1" (добавить Multilib репозиторий). "
-# To avoid further errors in the system I recommend "1"
 echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-# Be careful! If you doubt your actions, think again...
 echo ""
 while
-#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-# read -p " 1 - Да добавить, 0 - Нет пропустить настройку: " i_multilib  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo " Действия ввода, выполняется сразу после нажатия клавиши " 
     read -n1 -p  "
     1 - Да добавить Multilib репозиторий 
