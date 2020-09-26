@@ -537,13 +537,8 @@ echo -e "${CYAN}
 ${NC}"
 
 echo -e "${GREEN}==> ${NC}Добавим разделы для Windows (ntfs/fat32)?"
-#echo 'Добавим разделы для Windows (ntfs/fat32)?'
-# Adding partitions for Windows (ntfs/fat32)?
 echo -e "${MAGENTA}=> ${BOLD}Если таковые были созданы во время разбиения вашего диска(ов) на разделы cfdisk! ${NC}"
-# If any were created while partitioning your disk to cfdisk partitions!
 while
-#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-# read -p " 1 - Да добавим разделы, , 0 - Нет пропустить этот шаг: " wind  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo " Действия ввода, выполняется сразу после нажатия клавиши " 
     read -n1 -p  "
     1 - Да добавим разделы,    0 - Нет пропустить этот шаг: " wind  # sends right after the keypress; # отправляет сразу после нажатия клавиши
