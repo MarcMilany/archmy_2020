@@ -411,14 +411,8 @@ sleep 02
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Форматирование разделов диска"
-#echo 'Форматирование разделов диска'
-# Formatting disk partitions
 echo -e "${BLUE}:: ${NC}Установка название флага boot,root,swap,home"
-#echo 'Установка название флага boot,root,swap,home'
-# Setting the flag name boot, root,swap, home
 echo -e "${BLUE}:: ${NC}Монтирование разделов диска"
-#echo 'Монтирование разделов диска'
-# Mounting disk partitions
 ########## Root  ########
 #clear
 lsblk -f
