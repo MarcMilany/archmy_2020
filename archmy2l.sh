@@ -518,29 +518,13 @@ echo " Установка программ (пакетов) пропущена. 
 
 echo ""
 echo -e "${BLUE}:: ${NC}Обновляем grub.cfg (Сгенерируем grub.cfg)"
-#echo 'Обновляем grub.cfg (Сгенерируем grub.cfg)'
-# Updating grub.cfg (Generating grub.cfg)
 grub-mkconfig -o /boot/grub/grub.cfg   # создаём конфигурационный файл
-# ------------------------------------------------------------- 
-# Файл /etc/boot/grub/grub.cfg управляет непосредственно работой загрузчика, здесь указаны все его параметры и настройки, а также сформировано меню. 
-# Поэтому, изменяя этот файл, мы можем настроить Grub как угодно.
-# https://losst.ru/nastrojka-zagruzchika-grub
-# Можно (нужно) создать резервную копию (дубликат) файла 'grub.cfg', и это мы сделаем уже в установленной системе.
-# Команда для backup (duplicate) of the grub.cfg file :
-#sudo cp /boot/grub/grub.cfg grub.cfg.backup
-# =====================================================================
 
 echo ""
 echo -e "${GREEN}==> ${NC}Установить программы (пакеты) для Wi-fi?"
-#echo -e "${BLUE}:: ${NC}Установить программы (пакеты) для Wi-fi?"
-#echo 'Установить программы (пакеты) для Wi-fi?'
-# Install programs (packages) for Wi-fi?
 echo -e "${CYAN}:: ${NC}Если у Вас есть Wi-fi модуль и Вы сейчас его не используете, но будете использовать в будущем."
 echo " Или Вы подключены через Wi-fi, то эти (пакеты) обязательно установите. "
-# If you have a Wi-fi module and you are not using it now, but will use It in the future.
-# Or you are connected via Wi-fi, then these (packages) must be installed.
 echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-# Be careful! If you doubt your actions, think again...
 echo ""
 while
 echo " Действия ввода, выполняется сразу после нажатия клавиши " 
