@@ -639,36 +639,21 @@ pacman -S sudo --noconfirm
 
 echo ""
 echo -e "${GREEN}==> ${NC}Настраиваем запрос пароля "Пользователя" при выполнении команды "sudo". "
-#echo -e "${BLUE}:: ${NC}Настраиваем запрос пароля "Пользователя" при выполнении команды "sudo"."
-#echo 'Настраиваем запрос пароля "Пользователя" при выполнении команды "sudo".'
-# Configuring the "User" password request when executing the "sudo" command"
 echo " Чтобы начать использовать sudo как непривилегированный пользователь, его нужно настроить должным образом. "
-# To start using sudo as an unprivileged user, you need to configure it properly.
 echo " Огласите весь список, пожалуйста! :) "
-# Read out the entire list, please!
 echo " 1 - Пользователям (членам) группы wheel доступ к sudo С запросом пароля. "
 echo " 2 - Пользователям (членам) группы wheel доступ к sudo (NOPASSWD) БЕЗ запроса пароля. "
 echo -e "${RED}==> ${BOLD}Выбрав '2' (раскомментировав) данную опцию, особых требований к безопасности нет, но может есть какие-то очень негативные моменты в этом?... ${NC}"
-#echo 'Выбрав '2' (раскомментировав) данную опцию, особых требований к безопасности нет, но может есть какие-то очень негативные моменты в этом?...'
-# By selecting '2' (commenting out) this option, there are no special security requirements, but maybe there are some very negative points in this?...
 echo " 3-(0) - Добавление настроек sudo пропущено. "
 echo " Все настройки в файле /etc/sudoers пользователь произведёт сам. "
 echo " Например: под строкой root ALL=(ALL) ALL  - пропишет -  $username ALL=(ALL) ALL "
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
-#echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
-# You can skip this step if you are not sure of the correct choice
 echo " Будьте внимательны! В любой ситуации выбор всегда остаётся за вами."
-# Be careful! In any situation, the choice is always yours.
 echo -e "${CYAN}:: ${NC}На данном этапе порекомендую вариант "1" (sudo С запросом пароля) "
 echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
-#echo 'Действия выполняются в указанном порядке'
-# Actions are performed in the order listed
 echo ""
 while
-#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-# read -p " 1 - С запросом пароля, 2 - БЕЗ запроса пароля, 0 - Пропустить этот шаг: " i_sudo  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
-#read -n1 -p " 1 - С запросом пароля, 2 - БЕЗ запроса пароля, 0 - Пропустить этот шаг: " i_sudo  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     read -n1 -p " 
     1 - С запросом пароля,    2 - БЕЗ запроса пароля, 
 
