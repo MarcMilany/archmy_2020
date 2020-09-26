@@ -554,14 +554,8 @@ if [[ $wind == 0 ]]; then
 ############### Disk C ##############
 echo ""
 echo -e "${BLUE}:: ${NC}Добавим раздел диск "C"(Local Disk) Windows?"
-#echo " Добавим раздел диск "C"(Local Disk) Windows? "
-# Adding the "C"(Local Disk) Windows partition?
 echo " Если таковой был создан при разметке в cfdisk "
-#Если он был создан во время разметки в cfdisk'
-# If one was created during markup in cfdisk
 while 
-#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-# read -p " 1 - Да добавим раздел, , 0 - Нет пропустить: " diskC  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 echo " Действия ввода, выполняется сразу после нажатия клавиши " 
     read -n1 -p  "
     1 - Да добавим раздел,    0 - Нет пропустить: " diskC  # sends right after the keypress; # отправляет сразу после нажатия клавиши
