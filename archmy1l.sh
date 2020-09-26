@@ -971,26 +971,18 @@ fi
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Копируем созданный список зеркал (mirrorlist) в /mnt"
-#echo 'Копируем созданный список зеркал (mirrorlist) в /mnt'
-# Copying the created list of mirrors (mirrorlist) to /mnt
 cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
 
 echo -e "${BLUE}:: ${NC}Копируем резервного списка зеркал (mirrorlist.backup) в /mnt"
-#echo 'Копируем резервного списка зеркал (mirrorlist.backup) в /mnt'
-# Copying the backup list of mirrors (mirrorlist.backup) in /mnt
 cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup
 
 echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал /mnt/etc/pacman.d/mirrorlist"
-#echo 'Посмотреть список серверов-зеркал /mnt/etc/pacman.d/mirrorlist'
-# View the list of mirror servers /mnt/etc/pacman.d/mirrorlist
 cat /mnt/etc/pacman.d/mirrorlist
 
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
-#echo 'Обновим базы данных пакетов'
-# Updating the package databases
-#sudo pacman-key --init
-#sudo pacman-key --refresh-keys
+# sudo pacman-key --init
+# sudo pacman-key --refresh-keys
 sudo pacman -Sy
 
 echo ""
