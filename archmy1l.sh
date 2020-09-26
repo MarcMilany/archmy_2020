@@ -250,17 +250,12 @@ ${NC}"
 echo -e "${BLUE}:: ${NC}Установка и настройка начата в $(date +%T)" 
 
 echo -e "${BLUE}:: ${NC}Синхронизация системных часов"  
-# Syncing the system clock
-# Sync our system clock, enable ntp, change the time zone if necessary
 timedatectl set-ntp true  # Синхронизируем наши системные часы, включаем ntp, если надо сменим часовой пояс
 
-
 echo -e "${BLUE}:: ${NC}Посмотрим статус службы NTP (NTP service)"
-# Let's see the NTP service status
 timedatectl status 
 
 echo -e "${BLUE}:: ${NC}Посмотрим дату и время без характеристик для проверки времени"
-# Let's look at the date and time without characteristics to check the time
 date
 
 ### Если ли вам нужен этот пункт в скрипте, то раскомментируйте ниже в меню все тройные решётки (###)
