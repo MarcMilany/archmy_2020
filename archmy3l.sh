@@ -888,6 +888,145 @@ elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ пропущена. '
 fi
 
+clear
+echo -e "${MAGENTA}
+  <<< Установка графического менеджера пакетов для Archlinux (Pacman gui) >>> ${NC}"
+# Installing an Aur (Arch User Repository).
+echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете установить "Pacman gui", если пропустили это действие в предыдущем скрипте (при установке основной системы)." 
+echo -e "${YELLOW}==> Внимание! ${NC}Во время установки "AUR", Вас попросят ввести (Пароль пользователя) для $username."
+
+echo ""
+echo -e "${BLUE}:: ${NC}Установка Pacman gui (pamac-aur), или Pacman gui (octopi) (AUR)(GTK)(QT)" 
+echo -e "${YELLOW}:: ${BOLD}Сейчас Вы можете пропустить установку "Графического менеджера пакетов", пункт для установки будет прописан в следующем скрипте (archmy3l). И Вы сможете установить уже из установленной системы. ${NC}"
+echo " Давайте проанализируем действия, которые выполняются. "
+echo " 1 - Pacman gui (pamac-aur) - Графический менеджер пакетов (интерфейс Gtk3 для libalpm), тогда укажите "1". "
+echo " Графический менеджер пакетов для Arch, Manjaro Linux с поддержкой Alpm, AUR, и Snap. "
+echo " 2 - Pacman gui (octopi) - Графический менеджер пакетов (мощный интерфейс Pacman с использованием библиотек Qt5), тогда укажите вариант "2". " 
+echo -e "${CYAN}=> ${BOLD}Вариант '2' Напрямую привязан к Установке AUR Helper, если ранее БЫЛ выбран AUR - (pikaur). ${NC}"
+echo -e "${YELLOW}:: ${NC}Так как - Подчеркну (обратить внимание)! 'Pikaur' - идёт как зависимость для Octopi." 
+echo " 3 - Pacman gui (octopi) - Графический менеджер пакетов (мощный интерфейс Pacman с использованием библиотек Qt5), тогда укажите вариант "3". "
+echo -e "${CYAN}=> ${BOLD}Вариант '3' - Если ранее при Установке 'AUR Helper' НЕ БЫЛ УСТАНОВЛЕН AUR - (pikaur). ${NC}"
+echo " Pacman gui "Octopi" - рекомендуется для KDE Plasma Desktop (окружение рабочего стола). " 
+echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В данной опции выбор всегда остаётся за вами. "
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке"        
+echo "" 
+while 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Pacman gui - (pamac-aur),     2 - Octopi - ранее БЫЛ выбран AUR - (pikaur), 
+
+    3 - Octopi - ранее НЕ БЫЛ УСТАНОВЛЕН AUR - (pikaur), 
+
+    0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^1230] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+clear 
+echo ""  
+echo " Установка Графического менеджера пакетов пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка Графического менеджера Pacman gui (pamac-aur) "
+##### pamac-aur ######  
+cd /home/$username
+ git clone https://aur.archlinux.org/pamac-aur.git
+chown -R $username:users /home/$username/pamac-aur
+chown -R $username:users /home/$username/pamac-aur/PKGBUILD 
+cd /home/$username/pamac-aur
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/pamac-aur
+clear
+echo ""
+echo " Графический менеджер Pamac-aur успешно установлен! "
+elif [[ $prog_set == 2 ]]; then
+echo " Установка Графического менеджера Octopi "    
+##### alpm_octopi_utils ######    
+cd /home/$username
+git clone https://aur.archlinux.org/alpm_octopi_utils.git
+chown -R $username:users /home/$username/alpm_octopi_utils
+chown -R $username:users /home/$username/alpm_octopi_utils/PKGBUILD 
+cd /home/$username/alpm_octopi_utils
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/alpm_octopi_utils
+############ libgksu ##########
+cd /home/$username
+git clone https://aur.archlinux.org/libgksu.git
+chown -R $username:users /home/$username/libgksu
+chown -R $username:users /home/$username/libgksu/PKGBUILD 
+cd /home/$username/libgksu
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/libgksu
+############ gksu ##########
+cd /home/$username
+git clone https://aur.archlinux.org/gksu.git
+chown -R $username:users /home/$username/gksu
+chown -R $username:users /home/$username/gksu/PKGBUILD 
+cd /home/$username/gksu
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/gksu
+######### octopi #######
+cd /home/$username
+git clone https://aur.archlinux.org/octopi.git
+chown -R $username:users /home/$username/octopi
+chown -R $username:users /home/$username/octopi/PKGBUILD 
+cd /home/$username/octopi
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/octopi
+clear
+echo ""
+echo " Графический менеджер Octopi успешно установлен! "
+elif [[ $prog_set == 3 ]]; then
+echo " Установка Графического менеджера Octopi - (pikaur) "    
+##### pikaur ######    
+cd /home/$username
+git clone https://aur.archlinux.org/pikaur.git
+chown -R $username:users /home/$username/pikaur   
+chown -R $username:users /home/$username/pikaur/PKGBUILD 
+cd /home/$username/pikaur   
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/pikaur
+##### alpm_octopi_utils ######
+cd /home/$username
+git clone https://aur.archlinux.org/alpm_octopi_utils.git
+chown -R $username:users /home/$username/alpm_octopi_utils
+chown -R $username:users /home/$username/alpm_octopi_utils/PKGBUILD 
+cd /home/$username/alpm_octopi_utils
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/alpm_octopi_utils
+######### octopi #######
+cd /home/$username
+git clone https://aur.archlinux.org/octopi.git
+chown -R $username:users /home/$username/octopi
+chown -R $username:users /home/$username/octopi/PKGBUILD 
+cd /home/$username/octopi
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/octopi
+############ libgksu ##########
+cd /home/$username
+git clone https://aur.archlinux.org/libgksu.git
+chown -R $username:users /home/$username/libgksu
+chown -R $username:users /home/$username/libgksu/PKGBUILD 
+cd /home/$username/libgksu
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/libgksu
+############ gksu ##########
+git clone https://aur.archlinux.org/gksu.git
+chown -R $username:users /home/$username/gksu
+chown -R $username:users /home/$username/gksu/PKGBUILD 
+cd /home/$username/gksu
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/gksu
+clear
+echo ""
+echo " Графический менеджер Octopi успешно установлен! "
+fi 
+
+
+
+
 echo ""
 echo -e "${GREEN}==> ${NC}Ставим Драйвера принтера (Поддержка печати) CUPS, HP"
 #echo -e "${BLUE}:: ${NC}Ставим Драйвера принтера (Поддержка печати) CUPS, HP" 
