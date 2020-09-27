@@ -951,7 +951,6 @@ echo " Snap теперь установлен и готов к работе! "
 sleep 03
 
 ######## Pacman gui ###############
-
 clear
 echo -e "${MAGENTA}
   <<< Установка графического менеджера пакетов для Archlinux (Pacman gui) >>> ${NC}"
