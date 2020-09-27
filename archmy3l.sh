@@ -1530,18 +1530,17 @@ fi
 # Arch Linux: cups и hplip - подключение принтера
 # https://rtfm.co.ua/arch-linux-cups-i-hplip-podklyuchenie-printera/
 # ------------------------------------------------------------------------
+echo ""
+echo -e "${BLUE}:: ${NC}Применяем настройки TLP (управления питанием) в зависимости от источника питания (батарея или от сети)" 
+#echo 'Применяем настройки TLP (управления питанием) в зависимости от источника питания (батарея или от сети)'
+# Apply TLP (power management) settings depending on the power source (battery or mains)
+sudo tlp start
 
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим информацию о шрифтах" 
 #echo 'Обновим информацию о шрифтах'
 # Update information about fonts
 sudo fc-cache -f -v
-
-echo ""
-echo -e "${BLUE}:: ${NC}Применяем настройки TLP (управления питанием) в зависимости от источника питания (батарея или от сети)" 
-#echo 'Применяем настройки TLP (управления питанием) в зависимости от источника питания (батарея или от сети)'
-# Apply TLP (power management) settings depending on the power source (battery or mains)
-sudo tlp start
 
 echo ""
 echo -e "${BLUE}:: ${NC}Создать резервную копию (дубликат) файла grub.cfg" 
