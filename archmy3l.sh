@@ -833,6 +833,16 @@ echo " Установка LibreOffice-fresh завершена "
 elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ LibreOffice пропущена. '
 fi
+# ----------------------------------------------------
+# https://www.libreoffice.org/
+# LibreOffice-still  - Филиал обслуживания LibreOffice 
+# https://www.archlinux.org/packages/extra/x86_64/libreoffice-still/
+# LibreOffice-fresh  -  Ветвь LibreOffice, содержащая новые функции и улучшения программы
+# https://www.archlinux.org/packages/extra/x86_64/libreoffice-fresh/
+# Libreoffice-fresh-ru  -  Пакет русского языка для LibreOffice Fresh
+# https://www.archlinux.org/packages/extra/any/libreoffice-fresh-ru/
+# https://www.documentfoundation.org
+# ---------------------------------------------------
 
 echo ""
 echo -e "${GREEN}==> ${BOLD}Установить рекомендованные программы? ${NC}"
