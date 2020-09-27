@@ -1038,8 +1038,8 @@ echo " Графический менеджер Pamac-aur успешно уста
 elif [[ $prog_set == 2 ]]; then
 echo " Установка Графического менеджера Octopi "    
 ##### alpm_octopi_utils ######    
-cd alpm_octopi_utils
 git clone https://aur.archlinux.org/alpm_octopi_utils.git
+cd alpm_octopi_utils
 # makepkg -si
 makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
@@ -1048,8 +1048,8 @@ cd ..   # поднимаемся на уровень выше (выходим и
 # rm -rf alpm_octopi_utils  
 rm -Rf alpm_octopi_utils
 ############ libgksu ##########
-cd libgksu
 git clone https://aur.archlinux.org/libgksu.git
+cd libgksu
 # makepkg -si
 makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
@@ -1068,13 +1068,15 @@ cd ..   # поднимаемся на уровень выше (выходим и
 # rm -rf gksu  
 rm -Rf gksu
 ######### octopi #######
-cd /home/$username
+cd octopi
 git clone https://aur.archlinux.org/octopi.git
-chown -R $username:users /home/$username/octopi
-chown -R $username:users /home/$username/octopi/PKGBUILD 
-cd /home/$username/octopi
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/octopi
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf octopi  
+rm -Rf octopi
 clear
 echo ""
 echo " Графический менеджер Octopi успешно установлен! "
