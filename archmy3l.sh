@@ -541,16 +541,14 @@ echo -e "${YELLOW}==> ${NC}Установка производится в пор
 #echo 'Установка производится в порядке перечисления'
 # Installation Is performed in the order listed
 echo "" 
-while 
-#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-#read -p " 1 - AUR - yay-bin (git clone), 2 - AUR - yay, 3 - AUR - pikaur, 0 - Пропустить установку AUR Helper: " in_aur_help  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
     1 - Обновление через - AUR (Yay),     2 - Обновление через - AUR (Pikaur), 
 
     0 - Пропустить установку AUR Helper: " in_aur_help  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$in_aur_help" =~ [^1230] ]]
+    [[ "$in_aur_help" =~ [^120] ]]
 do
     :
 done 
