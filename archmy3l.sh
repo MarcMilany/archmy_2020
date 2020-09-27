@@ -1204,20 +1204,34 @@ clear
 echo ""  
 echo " Установка Графического менеджера пакетов пропущена "
 elif [[ $prog_set == 1 ]]; then
-  echo " Установка Графического менеджера Pacman gui (pamac-aur) "
-##### pamac-aur ###### 
-
-
-
-
- 
- 
-
-
-
-
-
-
+  echo " Установка Графического менеджера Pacman gui (pamac-all) "
+git clone https://aur.archlinux.org/pamac-all.git
+cd pamac-all
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf pamac-all
+rm -Rf pamac-all   # удаляем директорию сборки
+clear 
+echo ""
+echo " Графический менеджер Pacman gui (pamac-all) успешно установлен! "
+elif [[ $prog_set == 2 ]]; then
+  echo " Установка Графического менеджера Pacman gui (pamac-all-git) "
+git clone https://aur.archlinux.org/pamac-all-git.git
+cd pamac-all-git
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf pamac-all
+rm -Rf pamac-all-git   # удаляем директорию сборки
+clear
+echo ""
+echo " Графический менеджер Pacman gui (pamac-all-git) успешно установлен! "
+fi
 #####################################
 
 echo ""
