@@ -21,6 +21,15 @@ rm -Rf pikaur  # удаляем директорию сборки
 # rm -rf pikaur 
 echo " Установка AUR Helper (pikaur) завершена "
 
+# ---------------------------------------------------
+#  Запускать без установки:
+# git clone https://github.com/actionless/pikaur.git
+# cd pikaur
+# python3 ./pikaur.py -S AUR_PACKAGE_NAME
+# Конфигурация:
+# ~ / .config / pikaur.conf
+# ---------------------------------------------------
+
 #
 # https://aur.archlinux.org/packages/yay/
 # Йогурт (yogurt). Обертка Pacman и помощник AUR, написанные на языке go.
