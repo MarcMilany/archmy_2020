@@ -1094,19 +1094,24 @@ cd ..
 rm -Rf pikaur
 ##### alpm_octopi_utils ######
 git clone https://aur.archlinux.org/alpm_octopi_utils.git
-chown -R $username:users /home/$username/alpm_octopi_utils
-chown -R $username:users /home/$username/alpm_octopi_utils/PKGBUILD 
-cd /home/$username/alpm_octopi_utils
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/alpm_octopi_utils
+cd alpm_octopi_utils
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf alpm_octopi_utils  
+rm -Rf alpm_octopi_utils
 ######### octopi #######
-cd /home/$username
 git clone https://aur.archlinux.org/octopi.git
-chown -R $username:users /home/$username/octopi
-chown -R $username:users /home/$username/octopi/PKGBUILD 
-cd /home/$username/octopi
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/octopi
+cd octopi
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf octopi  
+rm -Rf octopi
 ############ libgksu ##########
 cd /home/$username
 git clone https://aur.archlinux.org/libgksu.git
