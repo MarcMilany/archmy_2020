@@ -1124,18 +1124,18 @@ cd ..   # поднимаемся на уровень выше (выходим и
 rm -Rf libgksu
 ############ gksu ##########
 git clone https://aur.archlinux.org/gksu.git
-chown -R $username:users /home/$username/gksu
-chown -R $username:users /home/$username/gksu/PKGBUILD 
-cd /home/$username/gksu
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/gksu
+cd gksu
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf gksu  
+rm -Rf gksu
 clear
 echo ""
 echo " Графический менеджер Octopi успешно установлен! "
 fi 
-
-
-
 
 echo ""
 echo -e "${GREEN}==> ${NC}Ставим Драйвера принтера (Поддержка печати) CUPS, HP"
