@@ -1058,8 +1058,8 @@ cd ..   # поднимаемся на уровень выше (выходим и
 # rm -rf libgksu 
 rm -Rf libgksu
 ############ gksu ##########
-cd gksu
 git clone https://aur.archlinux.org/gksu.git
+cd gksu
 # makepkg -si
 makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
@@ -1068,8 +1068,8 @@ cd ..   # поднимаемся на уровень выше (выходим и
 # rm -rf gksu  
 rm -Rf gksu
 ######### octopi #######
-cd octopi
 git clone https://aur.archlinux.org/octopi.git
+cd octopi
 # makepkg -si
 makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
