@@ -1183,13 +1183,29 @@ echo " 2 - Pacman gui (pamac-all-git) - Графический менеджер 
 echo " Это НОВЫЙ Графический менеджер пакетов, впервые представлен '2020-08-25', и как говорится (всё в одном пакете - snap, flatpak, appindicator, и...) "
 echo " Pacman gui (pamac-all-git) в отличие от (pamac-all), имеет 'git' версию, и его популярность повыше. "
 echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В данной опции выбор всегда остаётся за вами. "
-# Be careful! The installation process, after the option you selected, was registered fully automatic. In this option, the choice is always yours.
-echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-# If you doubt your actions, think again... 
+# Be careful! The installation process, after the option you selected, was registered fully automatic. In this option, the choice is always yours. 
 echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
 #echo 'Действия выполняются в указанном порядке'
 # Actions are performed in the order listed
+echo "" 
+while 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Pacman gui - (pamac-all),     2 - Pacman gui - (pamac-all-git), 
 
+    0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^120] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+clear 
+echo ""  
+echo " Установка Графического менеджера пакетов пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка Графического менеджера Pacman gui (pamac-aur) "
+##### pamac-aur ###### 
 
 
 
