@@ -958,18 +958,17 @@ echo -e "${MAGENTA}
   <<< Установка графического менеджера пакетов для Archlinux (Pacman gui) >>> ${NC}"
 # Installing an Aur (Arch User Repository).
 echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете установить "Pacman gui", если пропустили это действие в предыдущем скрипте (при установке основной системы), или пропустите установку." 
-echo -e "${YELLOW}==> Внимание! ${NC}Появился НОВЫЙ Графический менеджер пакетов (pamac-all), впервые представлен '2020-08-25', и как говорится (всё в одном пакете - snap, flatpak, appindicator, и...)."
-echo -e "${YELLOW}:: ${BOLD}Если Вы желаете установить НОВЫЙ (pamac-all), пункт для установки будет прописан в скрипте (через 2 пункта), а значит предложенные варианты 'ДО' пропустите! ${NC}"
 
 echo -e "${BLUE}=> ${NC}В скрипте представлены несколько вариантов установки графического менеджера пакетов Pacman gui (pamac-aur), (octopi), или НОВОГО (pamac-all):" 
 
 echo -e "${CYAN}:: ${NC}1 - В первом варианте представлена установка Pacman gui (pamac-aur), и (octopi), если Вы ранее установили 'AUR Helper - (yay)'. То есть установка (pamac-aur), или (octopi) проходит через (yay -S #####)."
 echo " Вы можете пропустить этот шаг, если не установлен '(yay)', или Вы выбрали другой вариант установки графического менеджера пакетов. "
 
-echo -e "${CYAN}:: ${NC}2 - Во втором варианте представлена установка Pacman gui (pamac-aur), и (octopi), через сборку из исходников. То есть установка (pamac-aur), или (octopi) проходит с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/pamac-aur/),(https://aur.archlinux.org/packages/octopi/), собирается и устанавливается. "
+echo -e "${CYAN}:: ${NC}2 - Во втором варианте представлена установка Pacman gui (pamac-aur), и (octopi), проходит через сборку из исходников. То есть установка (pamac-aur), или (octopi) проходит с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/pamac-aur/),(https://aur.archlinux.org/packages/octopi/), собирается и устанавливается. "
 echo " Вы можете пропустить этот шаг, если не установлен '(yay)', или Вы выбрали другой вариант установки графического менеджера пакетов. "
 
-echo -e "${CYAN}:: ${NC}3 - В третьем варианте представлена установка НОВОГО Pacman gui (pamac-all), и (pamac-all-git), через сборку из исходников. То есть установка (pamac-all), и (pamac-all-git) проходит с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/pamac-all/),(https://aur.archlinux.org/packages/pamac-all-git/), собирается и устанавливается. "
+echo -e "${CYAN}:: ${NC}3 - В третьем варианте представлен НОВЫЙ Графический менеджер пакетов (pamac-all), впервые представлен '2020-08-25', и как говорится (всё в одном пакете - snap, flatpak, appindicator, и...). Установка Pacman gui (pamac-all), и (pamac-all-git), проходит через сборку из исходников. То есть установка (pamac-all), и (pamac-all-git) производиться с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/pamac-all/),(https://aur.archlinux.org/packages/pamac-all-git/), собирается и устанавливается. "
+echo -e "${YELLOW}:: ${BOLD}Если Вы желаете установить (pamac-all), пункт для установки будет прописан в скрипте (через 2 первых пункта), а значит предложенные варианты 'ДО' пропустите! ${NC}"
 echo -e "${RED}==> Внимание! ${BOLD}Если Вы не знакомы с НОВЫМ Pacman gui (pamac-all), или (pamac-all-git), то СОВЕТУЮ зайдите на сайт загрузки (указаны выше), изучите 'Конфликты и Зависимости'. ${NC}"
 
 echo " Будьте внимательны! В любой ситуации выбор всегда остаётся за вами. "
