@@ -1049,7 +1049,7 @@ elif [[ $prog_set == 1 ]]; then
 yay -S pamac-aur --noconfirm
 echo ""
 echo " Графический менеджер Pamac-aur установлен! "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $prog_set == 2 ]]; then
   echo " Установка Графического менеджера Pacman gui (octopi) "
 yay -S octopi --noconfirm
 echo ""
