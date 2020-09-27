@@ -1,14 +1,17 @@
 #!/usr/bin/env bash
 # Install script pamac-all
-# autor: Marc Milany https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/url%20links%20abbreviated/git%20url
+# autor: Marc Milany
+# baseurl=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/url%20links%20abbreviated/git%20url
 
 # wget git.io/pamac-all.sh && sh pamac-all.sh
 
 echo -e " Установка базовых программ и пакетов wget, curl, git "
+# sudo pacman -S --needed base-devel git
 sudo pacman -S --noconfirm --needed wget curl git
 echo " Установка графического менеджера "Pacman gui" (pamac-all) " 
 git clone https://aur.archlinux.org/pamac-all.git
 cd pamac-all
+#makepkg -fsri
 # makepkg -si
 makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
@@ -16,7 +19,7 @@ makepkg -si --noconfirm   #--не спрашивать каких-либо по�
 cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf pamac-all
 rm -Rf pamac-all   # удаляем директорию сборки
-echo " Графический менеджер Pamac-aur успешно установлен! "
+echo " Графический менеджер Pacman gui (pamac-all) успешно установлен! "
 
 #
 # https://aur.archlinux.org/packages/pamac-all/
