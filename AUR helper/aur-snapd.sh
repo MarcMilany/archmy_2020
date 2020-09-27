@@ -5,10 +5,12 @@
 # wget git.io/aur-snapd.sh && sh aur-snapd.sh
 
 echo -e " Установка базовых программ и пакетов wget, curl, git "
+# sudo pacman -S --needed base-devel git
 sudo pacman -S --noconfirm --needed wget curl git 
 echo " Установка поддержки Snap "
 git clone https://aur.archlinux.org/snapd.git
 cd snapd
+#makepkg -fsri
 # makepkg -si
 # makepkg -si --noconfirm   #-не спрашивать каких-либо подтверждений
 makepkg -si --skipinteg
