@@ -5,10 +5,12 @@
 # wget git.io/yay-bin-install.sh && sh yay-bin-install.sh
 
 echo -e " Установка базовых программ и пакетов wget, curl, git "
+# sudo pacman -S --needed base-devel git
 sudo pacman -S --noconfirm --needed wget curl git 
 echo " Установка "AUR Helper" (yay-bin) "
 git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin
+#makepkg -fsri
 # makepkg -si
 # makepkg -si --noconfirm   #-не спрашивать каких-либо подтверждений
 makepkg -si --skipinteg
