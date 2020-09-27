@@ -980,24 +980,44 @@ echo -e "${GREEN}==> ${NC}Установка Pacman gui (pamac-aur), Octopi (oct
 #echo 'Установка Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)'
 # Installing Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)
 echo -e "${RED}==> Внимание! ${BOLD}Здесь представлен вариант установки Pacman gui (pamac-aur), и (octopi), если Вы ранее установили 'AUR Helper - (yay)'. То есть команды прописаны через (yay -S ##### --noconfirm). ${NC}" 
+echo " Давайте проанализируем действия, которые выполняются. "
+echo " 1 - Pacman gui (pamac-aur) - Графический менеджер пакетов (интерфейс Gtk3 для libalpm), тогда укажите "1". "
+echo " Графический менеджер пакетов для Arch, Manjaro Linux с поддержкой Alpm, AUR, и Snap. "
+echo " 2 - Pacman gui (octopi) - Графический менеджер пакетов (мощный интерфейс Pacman с использованием библиотек Qt5), тогда укажите вариант "2". " 
+echo " Pacman gui "Octopi" - рекомендуется для KDE Plasma Desktop (окружение рабочего стола). " 
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. "
 # Be careful! The installation process was fully automatic. In any situation, the choice is always yours.
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не установлен '(yay)', или Вы выбрали другой вариант установки графического менеджера пакетов. "
 #echo 'Вы можете пропустить этот шаг, если не установлен '(yay)', или Вы выбрали другой вариант установки графического менеджера пакетов.'
-# You can skip this step if '(yay) is not set)', or you chose another option to install the graphical package Manager.
+# You can skip this step if '(yay) is not set)', or you chose another option to install the graphical package Manager.       
+echo "" 
+while 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Pacman gui - (pamac-aur),     2 - Pacman gui - (octopi),  
 
-
-
-read -p " 1 - Pacmac-aur, 2 - Octopi, 0 - Нет пропустить этот шаг: " prog_set
-if [[ $prog_set == 1 ]]; then
+    0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^120] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+clear 
+echo ""  
+echo " Установка Графического менеджера пакетов пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка Графического менеджера Pacman gui (pamac-aur) "
 yay -S pamac-aur --noconfirm
-echo " Установка Pacmac-aur завершена "
-elif [[ $prog_set == 2 ]]; then
+echo ""
+echo " Графический менеджер Pamac-aur установлен! "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка Графического менеджера Pacman gui (octopi) "
 yay -S octopi --noconfirm
-echo " Установка Octopi завершена "
-elif [[ $prog_set == 0 ]]; then
-  echo ' Установка программ пропущена. '
+echo ""
+echo " Графический менеджер Octopi установлен! "
 fi
+sleep 02
 
 clear
 echo ""
