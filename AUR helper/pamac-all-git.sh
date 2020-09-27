@@ -5,10 +5,12 @@
 # wget git.io/pamac-all-git.sh && sh pamac-all-git.sh
 
 echo -e " Установка базовых программ и пакетов wget, curl, git "
+# sudo pacman -S --needed base-devel git
 sudo pacman -S --noconfirm --needed wget curl git
 echo " Установка графического менеджера "Pacman gui" (pamac-all-git) " 
 git clone https://aur.archlinux.org/pamac-all-git.git
 cd pamac-all-git
+#makepkg -fsri 
 # makepkg -si
 makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
