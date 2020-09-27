@@ -575,13 +575,15 @@ elif [[ $prog_set == 1 ]]; then
   echo " Установка UFW (Несложный Брандмауэр) "
 sudo pacman -S ufw gufw --noconfirm
 echo " Установка Брандмауэра UFW завершена "
+fi
 
 echo ""
 echo -e "${GREEN}==> ${NC}Установить Clam AntiVirus (GTK)?"
 #echo 'Установить Clam AntiVirus (GTK)?'
 # Install Clam AntiVirus (GTK)?
-
-
+echo -e "${CYAN}:: ${BOLD}  ${NC}"
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic.
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
 # If you doubt your actions, think again... 
 echo "" 
@@ -597,22 +599,11 @@ do
     :
 done 
 if [[ $prog_set == 0 ]]; then    
-echo " Установка Брандмауэра UFW пропущена "
+echo " Установка Антивирусного пакета ClamAV пропущена "
 elif [[ $prog_set == 1 ]]; then
-  echo " Установка UFW (Несложный Брандмауэр) "
-sudo pacman -S ufw gufw --noconfirm
-echo " Установка Брандмауэра UFW завершена "
-
-
-
-
-
-read -p " 1 - Да, 0 - Нет: " prog_set
-if [[ $prog_set == 1 ]]; then
+  echo " Установка Clam AntiVirus "
 sudo pacman -S clamav clamtk --noconfirm
 echo " Установка Clam AntiVirus завершена "
-elif [[ $prog_set == 0 ]]; then
-  echo ' Установка программ пропущена. '
 fi
 # --------------------------------------------------
 # Uncomplicated Firewall
