@@ -536,17 +536,14 @@ sleep 01
 
 clear
 echo -e "${MAGENTA}
-  <<< Установка сетевого экрана и антивируса для Archlinux >>> ${NC}"
-# Installing a firewall and antivirus for Archlinux.
+  <<< Установка сетевого экрана (брандмауэр UFW) и антивируса (ClamAV) для Archlinux >>> ${NC}"
+# Installing firewall (UFW firewall) and antivirus (ClamAV) for Archlinux
 echo -e "${CYAN}:: ${NC}Если Вы "Дока", то настройте под свои нужды утилиту 'Iptables'(firewall)"
 echo -e "${YELLOW}==> Примечание: ${NC}Вы можете установить предложенный софт (пакеты), или пропустите установку."
  
 echo ""
-echo -e "${GREEN}==> ${NC}Установка Брандмауэра UFW и Антивирусного пакета ClamAV (GUI)(GTK+)"
-#echo -e "${BLUE}:: ${NC}Установка Брандмауэра UFW и Антивирусного пакета ClamAV (GUI)(GTK+)" 
-#echo 'Установка Брандмауэра UFW и Антивирусного пакета ClamAV (GUI)(GTK+)'
-# Installing the UFW Firewall and clamav Antivirus package (GUI) (GTK+)
 echo -e "${GREEN}==> ${NC}Установить UFW (Несложный Брандмауэр) (ufw, gufw) (GUI)(GTK)?"
+#echo -e "${BLUE}:: ${NC}Установить UFW (Несложный Брандмауэр) (ufw, gufw) (GUI)(GTK)?"
 #echo 'Установить UFW (Несложный Брандмауэр) (GTK)?'
 # Install UFW (Uncomplicated Firewall) (GTK)?
 echo -e "${CYAN}:: ${BOLD}Ufw расшифровывается как Uncomplicated Firewall и представляет собой программу для управления межсетевым экраном netfilter. ${NC}"
@@ -576,8 +573,9 @@ fi
 
 echo ""
 echo -e "${GREEN}==> ${NC}Установить Clam AntiVirus (clamav, clamtk) (GUI)(GTK)?"
-#echo 'Установить Clam AntiVirus (GTK)?'
-# Install Clam AntiVirus (GTK)?
+#echo -e "${BLUE}:: ${NC}Установить Clam AntiVirus (clamav, clamtk) (GUI)(GTK)?" 
+#echo 'Установить Clam AntiVirus (clamav, clamtk) (GUI)(GTK)?'
+# Install Clam AntiVirus (clamav, clamtk) (GUI)(GTK)?
 echo -e "${CYAN}:: ${BOLD}ClamAV - это антивирусный движок с открытым исходным кодом для обнаружения троянов, вирусов, вредоносных программ и других вредоносных угроз. ${NC}"
 echo " ClamAV включает в себя демон многопоточного сканера, утилиты для сканирования файлов по запросу, почтовых шлюзов с открытым исходным кодом и автоматическое обновление сигнатур. "
 echo " Поддерживает несколько форматов файлов, распаковку файлов и архивов, а также несколько языков подписи. "
