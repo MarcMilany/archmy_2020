@@ -955,7 +955,7 @@ sleep 03
 clear
 echo -e "${MAGENTA}
   <<< Установка графического менеджера пакетов для Archlinux (Pacman gui) >>> ${NC}"
-# Installing an Aur (Arch User Repository).
+# Installing the graphical package Manager for Archlinux (Pacman gui).
 echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете установить "Pacman gui", если пропустили это действие в предыдущем скрипте (при установке основной системы), или пропустите установку." 
 
 echo -e "${BLUE}=> ${NC}В скрипте представлены несколько вариантов установки графического менеджера пакетов Pacman gui (pamac-aur), (octopi), а также НОВОЙ Pacman gui (pamac-all)." 
