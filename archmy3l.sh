@@ -530,6 +530,37 @@ echo ""
 echo -e "${BLUE}:: ${NC}Обновим всю систему включая AUR пакеты" 
 #echo 'Обновим всю систему включая AUR пакеты'
 # Update the entire system including AUR packages
+echo -e "${YELLOW}==> Примечание: ${NC}Выберите вариант обновления софта (пакетов), в зависимости от установленного вами AUR Helper (yay; pikaur), или пропустите обновления - (если AUR НЕ установлен)."
+echo -e "${CYAN}=> ${BOLD}В сценарии скрипта присутствуют следующие варианты: ${NC}"
+echo " 1 - Обновление репозиториев и пакетов через 'AUR'-'yay', то выбирайте вариант - "1". "
+echo " 2 - Установка обновлений репозиториев и пакетов через 'AUR'-'pikaur', то выбирайте вариант - "2"."
+
+echo " Будьте внимательны! В этом действии выбор остаётся за вами."
+# Be careful! In this action, the choice is yours.
+echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
+#echo 'Установка производится в порядке перечисления'
+# Installation Is performed in the order listed
+echo "" 
+while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#read -p " 1 - AUR - yay-bin (git clone), 2 - AUR - yay, 3 - AUR - pikaur, 0 - Пропустить установку AUR Helper: " in_aur_help  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Обновление через - AUR (Yay),     2 - Обновление через - AUR (Pikaur), 
+
+    0 - Пропустить установку AUR Helper: " in_aur_help  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$in_aur_help" =~ [^1230] ]]
+do
+    :
+done 
+if [[ $in_aur_help == 0 ]]; then
+clear    
+echo " Установка AUR Helper (yay) пропущена "
+elif [[ $in_aur_help == 1 ]]; then
+
+
+
 yay -Syy
 yay -Syu
 sleep 01
