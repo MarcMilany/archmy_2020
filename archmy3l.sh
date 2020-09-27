@@ -1020,7 +1020,8 @@ sleep 02
 
 clear
 echo ""
-echo -e "${BLUE}:: ${NC}Установка Pacman gui (pamac-aur), или Pacman gui (octopi) (AUR)(GTK)(QT)" 
+echo -e "${GREEN}==> ${NC}Установка Pacman gui (pamac-aur), или Pacman gui (octopi) (AUR)(GTK)(QT)" 
+#echo -e "${BLUE}:: ${NC}Установка Pacman gui (pamac-aur), или Pacman gui (octopi) (AUR)(GTK)(QT)" 
 echo " Давайте проанализируем действия, которые выполняются. "
 echo " 1 - Pacman gui (pamac-aur) - Графический менеджер пакетов (интерфейс Gtk3 для libalpm), тогда укажите "1". "
 echo " Графический менеджер пакетов для Arch, Manjaro Linux с поддержкой Alpm, AUR, и Snap. "
@@ -1169,7 +1170,43 @@ clear
 echo ""
 echo " Графический менеджер Octopi успешно установлен! "
 fi 
-##############################################
+
+#####Pacman gui - (pamac-all)##########
+echo ""
+echo -e "${GREEN}==> ${NC}Установка Pacman gui (pamac-all), или Pacman gui (pamac-all-git) (AUR)(GTK)"
+#echo -e "${BLUE}:: ${NC}Установка Pacman gui (pamac-all), или Pacman gui (pamac-all-git) (AUR)(GTK)" 
+echo " Давайте проанализируем действия, которые выполняются. "
+echo " 1 - Pacman gui (pamac-all) - Графический менеджер пакетов (интерфейс Gtk3 для libalpm), тогда укажите "1". "
+echo " Это НОВЫЙ Графический менеджер пакетов, впервые представлен '2020-08-25', и как говорится (всё в одном пакете - snap, flatpak, appindicator, и...) "
+echo " 2 - Pacman gui (octopi) - Графический менеджер пакетов (мощный интерфейс Pacman с использованием библиотек Qt5), тогда укажите вариант "2". " 
+echo -e "${CYAN}=> ${BOLD}Вариант '2' Напрямую привязан к Установке AUR Helper, если ранее БЫЛ выбран AUR - (pikaur). ${NC}"
+echo -e "${YELLOW}:: ${NC}Так как - Подчеркну (обратить внимание)! 'Pikaur' - идёт как зависимость для Octopi." 
+echo " 3 - Pacman gui (octopi) - Графический менеджер пакетов (мощный интерфейс Pacman с использованием библиотек Qt5), тогда укажите вариант "3". "
+echo -e "${CYAN}=> ${BOLD}Вариант '3' - Если ранее при Установке 'AUR Helper' НЕ БЫЛ УСТАНОВЛЕН AUR - (pikaur). ${NC}"
+echo " Pacman gui "Octopi" - рекомендуется для KDE Plasma Desktop (окружение рабочего стола). " 
+echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В данной опции выбор всегда остаётся за вами. "
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке"
+
+
+
+echo " 5 - Pacman gui (pamac-all-git) - Графический менеджер пакетов (интерфейс Gtk3 для libalpm), тогда укажите "5". " 
+echo -e "${MAGENTA}=> ${NC}Вариант '5' - Это НОВЫЙ Графический менеджер пакетов, впервые представлен '2020-08-25', и как говорится (всё в одном пакете - snap, flatpak, appindicator, и...). "
+echo " Pacman gui (pamac-all-git) в отличие от (pamac-all), имеет 'git' версию, и его популярность повыше. " 
+echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В данной опции выбор всегда остаётся за вами. "
+# Be careful! The installation process, after the option you selected, was registered fully automatic. In this option, the choice is always yours.
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
+#echo 'Действия выполняются в указанном порядке'
+# Actions are performed in the order listed 
+
+
+
+
+
+
+#####################################
 
 echo ""
 echo -e "${GREEN}==> ${NC}Ставим Драйвера принтера (Поддержка печати) CUPS, HP"
