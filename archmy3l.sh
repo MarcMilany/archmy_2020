@@ -1080,16 +1080,19 @@ echo ""
 echo " Графический менеджер Octopi успешно установлен! "
 elif [[ $prog_set == 3 ]]; then
 echo " Установка Графического менеджера Octopi - (pikaur) "    
-##### pikaur ######    
-cd /home/$username
-git clone https://aur.archlinux.org/pikaur.git
-chown -R $username:users /home/$username/pikaur   
-chown -R $username:users /home/$username/pikaur/PKGBUILD 
-cd /home/$username/pikaur   
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/pikaur
+##### pikaur ###### 
+git clone https://aur.archlinux.org/pikaur.git 
+cd pikaur
+# makepkg -si   
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd 
+# makepkg -si
+#makepkg -si --skipinteg  
+cd ..
+# rm -rf pikaur
+rm -Rf pikaur
 ##### alpm_octopi_utils ######
-cd /home/$username
 git clone https://aur.archlinux.org/alpm_octopi_utils.git
 chown -R $username:users /home/$username/alpm_octopi_utils
 chown -R $username:users /home/$username/alpm_octopi_utils/PKGBUILD 
