@@ -1175,6 +1175,7 @@ fi
 echo ""
 echo -e "${GREEN}==> ${NC}Установка Pacman gui (pamac-all), или Pacman gui (pamac-all-git) (AUR)(GTK)"
 #echo -e "${BLUE}:: ${NC}Установка Pacman gui (pamac-all), или Pacman gui (pamac-all-git) (AUR)(GTK)" 
+echo -e "${RED}==> Внимание! ${BOLD}Если Вы не знакомы с НОВЫМ Pacman gui (pamac-all), или (pamac-all-git), то СОВЕТУЮ зайдите на сайт загрузки 'Arch Linux' (https://aur.archlinux.org/packages/pamac-all/), (https://aur.archlinux.org/packages/pamac-all-git/), и изучите 'Конфликты и Зависимости'. ${NC}"
 echo " Давайте проанализируем действия, которые выполняются. "
 echo " 1 - Pacman gui (pamac-all) - Графический менеджер пакетов (интерфейс Gtk3 для libalpm), тогда укажите "1". "
 echo " Это НОВЫЙ Графический менеджер пакетов, впервые представлен '2020-08-25', и как говорится (всё в одном пакете - snap, flatpak, appindicator, и...) "
