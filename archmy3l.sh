@@ -550,7 +550,7 @@ do
 done 
 if [[ $in_aur_update == 0 ]]; then    
 echo " Обновление баз данных пакетов, и системы пропущено "
-elif [[ $in_aur_help == 1 ]]; then
+elif [[ $in_aur_update == 1 ]]; then
 echo " Обновление баз данных пакетов, и системы через - AUR (Yay) "
 yay -Syy
 yay -Syu
