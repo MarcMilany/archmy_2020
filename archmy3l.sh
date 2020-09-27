@@ -837,6 +837,9 @@ fi
 # https://www.libreoffice.org/
 # LibreOffice-still  - Филиал обслуживания LibreOffice 
 # https://www.archlinux.org/packages/extra/x86_64/libreoffice-still/
+# Libreoffice-still-ru  -  Пакет русского языка для LibreOffice still
+# https://www.archlinux.org/packages/extra/any/libreoffice-still-ru/
+# https://www.documentfoundation.org
 # LibreOffice-fresh  -  Ветвь LibreOffice, содержащая новые функции и улучшения программы
 # https://www.archlinux.org/packages/extra/x86_64/libreoffice-fresh/
 # Libreoffice-fresh-ru  -  Пакет русского языка для LibreOffice Fresh
