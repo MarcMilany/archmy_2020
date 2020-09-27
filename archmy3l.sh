@@ -887,8 +887,8 @@ echo -e "${GREEN}==> ${NC}Установить Snap на Arch Linux?"
 echo -e "${MAGENTA}:: ${BOLD}Snap - это инструмент для развертывания программного обеспечения и управления пакетами,  которые обновляются автоматически, просты в установке, безопасны, кроссплатформенны и не имеют зависимостей. Изначально разработанный и созданный компанией Canonical, который работает в различных дистрибутивах Linux каждый день. ${NC}"
 echo -e "${CYAN}:: ${NC}Для управления пакетами snap, установим snapd (демон), а также snap-confine, который обеспечивает монтирование, изоляцию и запуск snap-пакетов.  "
 echo " Установка происходит из 'AUR'- с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/snapd.git)."
-echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
-# Be careful! The installation process, after the option you selected, was registered fully automatic. In any situation, the choice is always yours.
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
+# Be careful! The installation process was fully automatic. In any situation, the choice is always yours.
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
 # If you doubt your actions, think again... 
 echo "" 
@@ -951,22 +951,33 @@ echo ""
 echo " Snap теперь установлен и готов к работе! "
 sleep 03
 
-##########################################################
+######## Pacman gui ###############
 
+clear
+echo -e "${MAGENTA}
+  <<< Установка графического менеджера пакетов для Archlinux (Pacman gui) >>> ${NC}"
+# Installing an Aur (Arch User Repository).
+echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете установить "Pacman gui", если пропустили это действие в предыдущем скрипте (при установке основной системы), или пропустите установку." 
+echo -e "${YELLOW}==> Внимание! ${NC}Появился НОВЫЙ Графический менеджер пакетов (pamac-all), впервые представлен '2020-08-25', и как говорится (всё в одном пакете - snap, flatpak, appindicator, и...)."
+echo -e "${YELLOW}:: ${BOLD}Если Вы желаете установить НОВЫЙ (pamac-all), пункт для установки будет прописан в скрипте (через 2 пункта), а значит предложенные варианты 'ДО' пропустите! ${NC}"
+
+
+
+
+echo " Будьте внимательны! В любой ситуации выбор всегда остаётся за вами. "
+
+clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установка Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)"
 #echo -e "${BLUE}:: ${NC}Установка Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)" 
 #echo 'Установка Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)'
 # Installing Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)
-echo -e "${BLUE}:: ${NC}Установка производится в порядке перечисления" 
-#echo 'Установка производится в порядке перечисления'
-# Installation Is performed in the order listed
-echo -e "${GREEN}==> ${NC}Установить pamac-aur, octopi?"
-#echo 'Установить "pamac-aur", "octopi"?'
-# Install "pacman-aur", "octopi"?
-echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
-#echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
-# You can skip this step if you are not sure of the correct choice
+echo -e "${RED}==> Внимание! ${BOLD}Здесь представлен вариант установки Pacman gui (pamac-aur), и (octopi), если Вы ранее установили 'AUR Helper - (yay)'. То есть команды прописаны через (yay -S ##### --noconfirm). ${NC}" 
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. "
+# Be careful! The installation process was fully automatic. In any situation, the choice is always yours.
+echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не установлен '(yay)', или Вы выбрали другой вариант установки графического менеджера пакетов. "
+#echo 'Вы можете пропустить этот шаг, если не установлен '(yay)', или Вы выбрали другой вариант установки графического менеджера пакетов.'
+# You can skip this step if '(yay) is not set)', or you chose another option to install the graphical package Manager.
 read -p " 1 - Pacmac-aur, 2 - Octopi, 0 - Нет пропустить этот шаг: " prog_set
 if [[ $prog_set == 1 ]]; then
 yay -S pamac-aur --noconfirm
@@ -979,15 +990,8 @@ elif [[ $prog_set == 0 ]]; then
 fi
 
 clear
-echo -e "${MAGENTA}
-  <<< Установка графического менеджера пакетов для Archlinux (Pacman gui) >>> ${NC}"
-# Installing an Aur (Arch User Repository).
-echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете установить "Pacman gui", если пропустили это действие в предыдущем скрипте (при установке основной системы), или пропустить установку." 
-echo -e "${YELLOW}==> Внимание! ${NC}Появился НОВЫЙ Графический менеджер пакетов, впервые представлен '2020-08-25', и как говорится (всё в одном пакете - snap, flatpak, appindicator, и...)."
-
 echo ""
 echo -e "${BLUE}:: ${NC}Установка Pacman gui (pamac-aur), или Pacman gui (octopi) (AUR)(GTK)(QT)" 
-echo -e "${YELLOW}:: ${BOLD}Сейчас Вы можете пропустить установку "Графического менеджера пакетов", пункт для установки будет прописан в следующем скрипте (archmy3l). И Вы сможете установить уже из установленной системы. ${NC}"
 echo " Давайте проанализируем действия, которые выполняются. "
 echo " 1 - Pacman gui (pamac-aur) - Графический менеджер пакетов (интерфейс Gtk3 для libalpm), тогда укажите "1". "
 echo " Графический менеджер пакетов для Arch, Manjaro Linux с поддержкой Alpm, AUR, и Snap. "
