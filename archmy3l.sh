@@ -1023,42 +1023,50 @@ echo " Установка Графического менеджера пакет
 elif [[ $prog_set == 1 ]]; then
   echo " Установка Графического менеджера Pacman gui (pamac-aur) "
 ##### pamac-aur ######  
-cd /home/$username
- git clone https://aur.archlinux.org/pamac-aur.git
-chown -R $username:users /home/$username/pamac-aur
-chown -R $username:users /home/$username/pamac-aur/PKGBUILD 
-cd /home/$username/pamac-aur
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/pamac-aur
+git clone https://aur.archlinux.org/pamac-aur.git 
+cd pamac-aur
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf pamac-aur
+rm -Rf pamac-aur   # удаляем директорию сборки
 clear
 echo ""
 echo " Графический менеджер Pamac-aur успешно установлен! "
 elif [[ $prog_set == 2 ]]; then
 echo " Установка Графического менеджера Octopi "    
 ##### alpm_octopi_utils ######    
-cd /home/$username
+cd alpm_octopi_utils
 git clone https://aur.archlinux.org/alpm_octopi_utils.git
-chown -R $username:users /home/$username/alpm_octopi_utils
-chown -R $username:users /home/$username/alpm_octopi_utils/PKGBUILD 
-cd /home/$username/alpm_octopi_utils
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/alpm_octopi_utils
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf alpm_octopi_utils  
+rm -Rf alpm_octopi_utils
 ############ libgksu ##########
-cd /home/$username
+cd libgksu
 git clone https://aur.archlinux.org/libgksu.git
-chown -R $username:users /home/$username/libgksu
-chown -R $username:users /home/$username/libgksu/PKGBUILD 
-cd /home/$username/libgksu
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/libgksu
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf libgksu 
+rm -Rf libgksu
 ############ gksu ##########
-cd /home/$username
+cd gksu
 git clone https://aur.archlinux.org/gksu.git
-chown -R $username:users /home/$username/gksu
-chown -R $username:users /home/$username/gksu/PKGBUILD 
-cd /home/$username/gksu
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/gksu
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf gksu  
+rm -Rf gksu
 ######### octopi #######
 cd /home/$username
 git clone https://aur.archlinux.org/octopi.git
