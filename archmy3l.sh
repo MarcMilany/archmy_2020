@@ -537,16 +537,24 @@ yay -Syu
 sleep 01
 
 clear
+echo -e "${MAGENTA}
+  <<< Установка сетевого экрана и антивируса для Archlinux >>> ${NC}"
+# Installing a firewall and antivirus for Archlinux.
+echo -e "${CYAN}:: ${NC}Если Вы "Дока", то настройте под свои нужды утилиту 'Iptables'(firewall)"
+echo -e "${YELLOW}==> Примечание: ${NC}Вы можете установить предложенный софт (пакеты), или пропустите установку."
+ 
 echo ""
-echo -e "${GREEN}==> ${NC}Установить Snap на Arch Linux?"
-#echo -e "${BLUE}:: ${NC}Установить Snap на Arch Linux?" 
-#echo 'Установить Snap на Arch Linux?'
-# To install Snap-on Arch Linux?
-echo -e "${MAGENTA}:: ${BOLD}Snap - это инструмент для развертывания программного обеспечения и управления пакетами,  которые обновляются автоматически, просты в установке, безопасны, кроссплатформенны и не имеют зависимостей. Изначально разработанный и созданный компанией Canonical, который работает в различных дистрибутивах Linux каждый день. ${NC}"
-echo -e "${CYAN}:: ${NC}Для управления пакетами snap, установим snapd (демон), а также snap-confine, который обеспечивает монтирование, изоляцию и запуск snap-пакетов.  "
-echo " Установка происходит из 'AUR'- с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/snapd.git)."
-echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
-# Be careful! The installation process, after the option you selected, was registered fully automatic. In any situation, the choice is always yours.
+echo -e "${GREEN}==> ${NC}Установка Брандмауэра UFW и Антивирусного пакета ClamAV (GUI)(GTK+)"
+#echo -e "${BLUE}:: ${NC}Установка Брандмауэра UFW и Антивирусного пакета ClamAV (GUI)(GTK+)" 
+#echo 'Установка Брандмауэра UFW и Антивирусного пакета ClamAV (GUI)(GTK+)'
+# Installing the UFW Firewall and clamav Antivirus package (GUI) (GTK+)
+echo -e "${CYAN}:: ${BOLD}Ufw расшифровывается как Uncomplicated Firewall и представляет собой программу для управления межсетевым экраном netfilter. ${NC}"
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic.
+echo ""
+echo -e "${GREEN}==> ${NC}Установить UFW (Несложный Брандмауэр) (GTK)?"
+#echo 'Установить UFW (Несложный Брандмауэр) (GTK)?'
+# Install UFW (Uncomplicated Firewall) (GTK)?
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
 # If you doubt your actions, think again... 
 echo "" 
@@ -562,52 +570,61 @@ do
     :
 done 
 if [[ $prog_set == 0 ]]; then    
-echo " Установка Snap пропущена "
+echo " Установка Брандмауэра UFW пропущена "
 elif [[ $prog_set == 1 ]]; then
-echo -e " Установка базовых программ и пакетов wget, curl, git "
-#sudo pacman -S --noconfirm --needed wget curl git 
-echo " Установка поддержки Snap "
-git clone https://aur.archlinux.org/snapd.git
-cd snapd
-# makepkg -si
-makepkg -si --skipinteg
-#makepkg -si --noconfirm  #-не спрашивать каких-либо подтверждений
-cd ..  
-rm -Rf snapd
-clear
-echo " Установка Snapd выполнена "
+  echo " Установка UFW (Несложный Брандмауэр) "
+sudo pacman -S ufw gufw --noconfirm
+echo " Установка Брандмауэра UFW завершена "
+
+echo ""
+echo -e "${GREEN}==> ${NC}Установить Clam AntiVirus (GTK)?"
+#echo 'Установить Clam AntiVirus (GTK)?'
+# Install Clam AntiVirus (GTK)?
+
+
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
+while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then    
+echo " Установка Брандмауэра UFW пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка UFW (Несложный Брандмауэр) "
+sudo pacman -S ufw gufw --noconfirm
+echo " Установка Брандмауэра UFW завершена "
+
+
+
+
+
+read -p " 1 - Да, 0 - Нет: " prog_set
+if [[ $prog_set == 1 ]]; then
+sudo pacman -S clamav clamtk --noconfirm
+echo " Установка Clam AntiVirus завершена "
+elif [[ $prog_set == 0 ]]; then
+  echo ' Установка программ пропущена. '
 fi
-########## Запускаем поддержку Snap ###############
-echo ""
-echo -e "${BLUE}:: ${NC}Включить модуль systemd, который управляет основным сокетом мгновенной связи" 
-sudo systemctl enable --now snapd.socket
-# Проверить статус сервиса:
-# systemctl status snapd.socket
-echo ""
-echo -e "${BLUE}:: ${NC}Включить поддержку классической привязки, чтобы создать символическую ссылку между /var/lib/snapd/ snap и /snap" 
-sudo ln -s /var/lib/snapd/snap /snap
-echo ""
-echo -e "${BLUE}:: ${NC}Поскольку бинарный файл находится в каталоге /snap/bin/, нужно добавить его в переменную $PATH." 
-echo "export PATH=\$PATH:\/snap/bin/" | sudo tee -a /etc/profile
-source /etc/profile
-echo ""
-echo " Snapd теперь готов к использованию "
-echo " Вы взаимодействуете с ним с помощью команды snap. "
-# Посмотрите страницу помощи команды:
-# snap --help
-echo ""
-echo -e "${BLUE}:: ${NC}Протестируем систему, установив hello-world snap и убедимся, что она работает правильно."
-#sudo snap install hello-world
-snap install hello-world
-hello-world
-echo ""
-echo -e "${BLUE}:: ${NC}Список установленных snaps:"
-snap list
-echo -e "${BLUE}:: ${NC}Удалить установленный snap (hello-world)"
-sudo snap remove hello-world
-echo ""
-echo " Snap теперь установлен и готов к работе! "
-sleep 02
+# --------------------------------------------------
+# Uncomplicated Firewall
+# https://wiki.archlinux.org/index.php/Uncomplicated_Firewall
+# ufw home:
+# https://launchpad.net/ufw
+# Категория: Межсетевые экраны
+# https://wiki.archlinux.org/index.php/Category:Firewalls
+# Руководство по iptables (Iptables Tutorial 1.1.19):
+# https://www.opennet.ru/docs/RUS/iptables/
+# ----------------------------------------------------------
+
 
 clear
 echo -e "${MAGENTA}
@@ -747,55 +764,6 @@ echo -e "${BLUE}:: ${NC}Установка Браузеров и медиа-пл
 # Installing Browsers and media plugins
 sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin pepper-flash --noconfirm
 
-clear
-echo -e "${MAGENTA}
-  <<< Установка сетевого экрана и антивируса для Archlinux >>> ${NC}"
-# Installing a firewall and antivirus for Archlinux.
-echo -e "${CYAN}:: ${NC}Если Вы "Дока", то настройте под свои нужды утилиту 'Iptables'(firewall)"
-echo -e "${YELLOW}==> Примечание: ${NC}Вы можете установить предложенный софт (пакеты), или пропустите установку."
- 
-echo ""
-echo -e "${GREEN}==> ${NC}Установка Брандмауэра UFW и Антивирусного пакета ClamAV (GUI)(GTK+)"
-#echo -e "${BLUE}:: ${NC}Установка Брандмауэра UFW и Антивирусного пакета ClamAV (GUI)(GTK+)" 
-#echo 'Установка Брандмауэра UFW и Антивирусного пакета ClamAV (GUI)(GTK+)'
-# Installing the UFW Firewall and clamav Antivirus package (GUI) (GTK+)
-# Ufw расшифровывается как Uncomplicated Firewall и представляет собой программу для управления межсетевым экраном netfilter. Он предоставляет интерфейс командной строки и стремится быть несложным и простым в использовании.
-echo -e "${BLUE}:: ${NC}Установка производится в порядке перечисления" 
-#echo 'Установка производится в порядке перечисления'
-# Installation Is performed in the order listed
-echo -e "${GREEN}==> ${NC}Установить UFW (Несложный Брандмауэр) (GTK)?"
-#echo 'Установить UFW (Несложный Брандмауэр) (GTK)?'
-# Install UFW (Uncomplicated Firewall) (GTK)?
-read -p " 1 - Да, 0 - Нет: " prog_set
-if [[ $prog_set == 1 ]]; then
-sudo pacman -S ufw gufw --noconfirm
-echo " Установка Брандмауэра UFW завершена "
-elif [[ $prog_set == 0 ]]; then
-  echo ' Установка программ пропущена. '
-fi
-
-echo ""
-echo -e "${GREEN}==> ${NC}Установить Clam AntiVirus (GTK)?"
-#echo 'Установить Clam AntiVirus (GTK)?'
-# Install Clam AntiVirus (GTK)?
-read -p " 1 - Да, 0 - Нет: " prog_set
-if [[ $prog_set == 1 ]]; then
-sudo pacman -S clamav clamtk --noconfirm
-echo " Установка Clam AntiVirus завершена "
-elif [[ $prog_set == 0 ]]; then
-  echo ' Установка программ пропущена. '
-fi
-# --------------------------------------------------
-# Uncomplicated Firewall
-# https://wiki.archlinux.org/index.php/Uncomplicated_Firewall
-# ufw home:
-# https://launchpad.net/ufw
-# Категория: Межсетевые экраны
-# https://wiki.archlinux.org/index.php/Category:Firewalls
-# Руководство по iptables (Iptables Tutorial 1.1.19):
-# https://www.opennet.ru/docs/RUS/iptables/
-# ----------------------------------------------------------
-
 echo ""
 echo -e "${BLUE}:: ${NC}Установка Torrent клиентов - Transmission, qBittorrent, Deluge (GTK)(Qt)(GTK+)" 
 #echo 'Установка Torrent клиентов - Transmission, qBittorrent, Deluge (GTK)(Qt)(GTK+)'
@@ -915,6 +883,83 @@ echo " SSH (клиент) установлен "
 elif [[ $prog_set == 0 ]]; then
   echo ' Установка пропущена. '
 fi
+
+#####################################################################
+
+clear
+echo ""
+echo -e "${GREEN}==> ${NC}Установить Snap на Arch Linux?"
+#echo -e "${BLUE}:: ${NC}Установить Snap на Arch Linux?" 
+#echo 'Установить Snap на Arch Linux?'
+# To install Snap-on Arch Linux?
+echo -e "${MAGENTA}:: ${BOLD}Snap - это инструмент для развертывания программного обеспечения и управления пакетами,  которые обновляются автоматически, просты в установке, безопасны, кроссплатформенны и не имеют зависимостей. Изначально разработанный и созданный компанией Canonical, который работает в различных дистрибутивах Linux каждый день. ${NC}"
+echo -e "${CYAN}:: ${NC}Для управления пакетами snap, установим snapd (демон), а также snap-confine, который обеспечивает монтирование, изоляцию и запуск snap-пакетов.  "
+echo " Установка происходит из 'AUR'- с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/snapd.git)."
+echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
+# Be careful! The installation process, after the option you selected, was registered fully automatic. In any situation, the choice is always yours.
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
+while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then    
+echo " Установка Snap пропущена "
+elif [[ $prog_set == 1 ]]; then
+echo -e " Установка базовых программ и пакетов wget, curl, git "
+#sudo pacman -S --noconfirm --needed wget curl git 
+echo " Установка поддержки Snap "
+git clone https://aur.archlinux.org/snapd.git
+cd snapd
+# makepkg -si
+makepkg -si --skipinteg
+#makepkg -si --noconfirm  #-не спрашивать каких-либо подтверждений
+cd ..  
+rm -Rf snapd
+clear
+echo " Установка Snapd выполнена "
+fi
+########## Запускаем поддержку Snap ###############
+echo ""
+echo -e "${BLUE}:: ${NC}Включить модуль systemd, который управляет основным сокетом мгновенной связи" 
+sudo systemctl enable --now snapd.socket
+# Проверить статус сервиса:
+# systemctl status snapd.socket
+echo ""
+echo -e "${BLUE}:: ${NC}Включить поддержку классической привязки, чтобы создать символическую ссылку между /var/lib/snapd/ snap и /snap" 
+sudo ln -s /var/lib/snapd/snap /snap
+echo ""
+echo -e "${BLUE}:: ${NC}Поскольку бинарный файл находится в каталоге /snap/bin/, нужно добавить его в переменную $PATH." 
+echo "export PATH=\$PATH:\/snap/bin/" | sudo tee -a /etc/profile
+source /etc/profile
+echo ""
+echo " Snapd теперь готов к использованию "
+echo " Вы взаимодействуете с ним с помощью команды snap. "
+# Посмотрите страницу помощи команды:
+# snap --help
+echo ""
+echo -e "${BLUE}:: ${NC}Протестируем систему, установив hello-world snap и убедимся, что она работает правильно."
+#sudo snap install hello-world
+snap install hello-world
+hello-world
+echo ""
+echo -e "${BLUE}:: ${NC}Список установленных snaps:"
+snap list
+echo -e "${BLUE}:: ${NC}Удалить установленный snap (hello-world)"
+sudo snap remove hello-world
+echo ""
+echo " Snap теперь установлен и готов к работе! "
+sleep 03
+
+##########################################################
 
 echo ""
 echo -e "${GREEN}==> ${NC}Установка Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)"
