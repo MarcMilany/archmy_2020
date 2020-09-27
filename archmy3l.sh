@@ -219,6 +219,7 @@ echo -e "${BLUE}:: ${NC}Загрузка свежего списка зерка�
 sudo pacman -Sy --noconfirm --noprogressbar --quiet reflector
 sudo reflector --verbose --country 'Russia' -l 7 -p https -p http -n 7 --save /etc/pacman.d/mirrorlist.pacnew --sort rate  
 #reflector --verbose --country 'Russia' -l 5 -p https -p http -n 5 --sort rate --save /etc/pacman.d/mirrorlist
+echo -e "${CYAN}:: ${NC}Уведомление о загрузке и обновлении свежего списка зеркал"
 # Собственные уведомления (notify):
 notify-send "mirrorlist обновлен" -i gtk-info
 
