@@ -1113,13 +1113,15 @@ cd ..   # поднимаемся на уровень выше (выходим и
 # rm -rf octopi  
 rm -Rf octopi
 ############ libgksu ##########
-cd /home/$username
 git clone https://aur.archlinux.org/libgksu.git
-chown -R $username:users /home/$username/libgksu
-chown -R $username:users /home/$username/libgksu/PKGBUILD 
-cd /home/$username/libgksu
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/libgksu
+cd libgksu
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf libgksu 
+rm -Rf libgksu
 ############ gksu ##########
 git clone https://aur.archlinux.org/gksu.git
 chown -R $username:users /home/$username/gksu
