@@ -5,11 +5,13 @@
 # wget git.io/pikaur-install.sh && sh pikaur-install.sh
 
 echo -e " Установка базовых программ и пакетов wget, curl, git "
+# sudo pacman -S --needed base-devel git
 sudo pacman -S --noconfirm --needed wget curl git
 echo " Установка "AUR Helper" (pikaur) "
 echo " Важно (обратить внимание)! Pikaur - идёт как зависимость для Octopi. " 
 git clone https://aur.archlinux.org/pikaur.git
-cd pikaur   
+cd pikaur 
+#makepkg -fsri  
 makepkg -si --noconfirm  #-не спрашивать каких-либо подтверждений
 # makepkg -si
 #makepkg -si --skipinteg
