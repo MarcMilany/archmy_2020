@@ -6,10 +6,12 @@
 # wget git.io/yay-git-install.sh && sh yay-git-install.sh
 
 echo -e " Установка базовых программ и пакетов wget, curl, git "
+# sudo pacman -S --needed base-devel git
 sudo pacman -S --noconfirm --needed wget curl git 
-echo " Установка "AUR Helper" (yay-bin) "
+echo " Установка "AUR Helper" (yay-git) "
 git clone https://aur.archlinux.org/yay-git.git
 cd yay-git
+#makepkg -fsri
 # makepkg -si
 # makepkg -si --noconfirm   #-не спрашивать каких-либо подтверждений
 makepkg -si --skipinteg
@@ -17,7 +19,7 @@ makepkg -si --skipinteg
 cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 rm -rf yay-git    # удаляем директорию сборки
 # rm -Rf yay-git
-echo " Установка AUR Helper (yay-bin) завершена "
+echo " Установка AUR Helper (yay-git) завершена "
 
 echo " Если Вам не нужна зависимость go, то удалите её "
 #sudo pacman -Rs go
