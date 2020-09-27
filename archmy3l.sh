@@ -346,10 +346,10 @@ sudo pacman -Sy
 # Или:
 #sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys && sudo pacman -Sy
 # ============================================================================
+
 clear
 echo -e "${MAGENTA}
   <<< Создание полного набора локализованных пользовательских каталогов по умолчанию (Загрузки, Шаблоны, Общедоступные, Документы, Музыка, Изображения, Видео) в пределах "HOME" каталога. >>> ${NC}"
-# Installing an Aur (Arch User Repository).
 echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете создать, если пропустили это действие в предыдущем скрипте (при установке основной системы), или пропустить установку." 
 
 echo ""
@@ -444,7 +444,7 @@ echo " Установка AUR Helper (yay-bin) "
 git clone https://aur.archlinux.org/yay-bin.git 
 cd yay-bin
 # makepkg -si
-# makepkg -si --noconfirm   #-не спрашивать каких-либо подтверждений
+#makepkg -si --noconfirm   #-не спрашивать каких-либо подтверждений
 makepkg -si --skipinteg
 pwd    # покажет в какой директории мы находимся
 cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
@@ -534,8 +534,8 @@ echo -e "${BLUE}:: ${NC}Обновим всю систему включая AUR 
 # Update the entire system including AUR packages
 yay -Syy
 yay -Syu
-
 sleep 01
+
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установить Snap на Arch Linux?"
@@ -607,8 +607,14 @@ echo -e "${BLUE}:: ${NC}Удалить установленный snap (hello-wo
 sudo snap remove hello-world
 echo ""
 echo " Snap теперь установлен и готов к работе! "
+sleep 02
 
-#clear
+clear
+echo -e "${MAGENTA}
+  <<< Установка первоначально необходимого софта (пакетов) для Archlinux >>> ${NC}"
+# Installation of initially required software (packages) for Archlinux.
+echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете установить софт: поддержки Bluetooth,поддержки звука, архиваторы, утилиты для вывода информации о системе, мультимедиа, текстовые редакторы, утилиты разработки, браузеры, управления электронной почтой, торрент-клиент, офисные утилиты и т.д., или пропустите установку."  
+
 echo ""
 echo -e "${GREEN}==> ${NC}Ставим Bluetooth и Поддержка звука"
 #echo -e "${BLUE}:: ${NC}Ставим Bluetooth и Поддержка звука" 
@@ -741,7 +747,13 @@ echo -e "${BLUE}:: ${NC}Установка Браузеров и медиа-пл
 # Installing Browsers and media plugins
 sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin pepper-flash --noconfirm
 
-#clear
+clear
+echo -e "${MAGENTA}
+  <<< Установка сетевого экрана и антивируса для Archlinux >>> ${NC}"
+# Installing a firewall and antivirus for Archlinux.
+echo -e "${CYAN}:: ${NC}Если Вы "Дока", то настройте под свои нужды утилиту 'Iptables'(firewall)"
+echo -e "${YELLOW}==> Примечание: ${NC}Вы можете установить предложенный софт (пакеты), или пропустите установку."
+ 
 echo ""
 echo -e "${GREEN}==> ${NC}Установка Брандмауэра UFW и Антивирусного пакета ClamAV (GUI)(GTK+)"
 #echo -e "${BLUE}:: ${NC}Установка Брандмауэра UFW и Антивирусного пакета ClamAV (GUI)(GTK+)" 
@@ -780,6 +792,8 @@ fi
 # https://launchpad.net/ufw
 # Категория: Межсетевые экраны
 # https://wiki.archlinux.org/index.php/Category:Firewalls
+# Руководство по iptables (Iptables Tutorial 1.1.19):
+# https://www.opennet.ru/docs/RUS/iptables/
 # ----------------------------------------------------------
 
 echo ""
@@ -903,8 +917,8 @@ elif [[ $prog_set == 0 ]]; then
 fi
 
 echo ""
-echo -e "${GREEN}==> ${NC}Установить графический менеджер пакетов для Archlinux?"
-echo -e "${BLUE}:: ${NC}Установка Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)" 
+echo -e "${GREEN}==> ${NC}Установка Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)"
+#echo -e "${BLUE}:: ${NC}Установка Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)" 
 #echo 'Установка Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)'
 # Installing Pacman gui (pamac-aur), Octopi (octopi) (AUR)(GTK)(QT)
 echo -e "${BLUE}:: ${NC}Установка производится в порядке перечисления" 
