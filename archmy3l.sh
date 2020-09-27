@@ -616,7 +616,7 @@ fi
 # https://www.opennet.ru/docs/RUS/iptables/
 # ----------------------------------------------------------
 
-
+sleep 02
 clear
 echo -e "${MAGENTA}
   <<< Установка первоначально необходимого софта (пакетов) для Archlinux >>> ${NC}"
