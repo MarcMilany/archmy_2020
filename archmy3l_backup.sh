@@ -1391,10 +1391,12 @@ clear
 echo ""  
 echo " Установка драйверов для видеокарт (nvidia) выполнена "
 elif [[ $videocard == 2 ]]; then
-echo " Установка Проприетарных драйверов для AMD "
+echo " Установка Свободных драйверов для AMD "
 pacman -S lib32-mesa xf86-video-amdgpu mesa-vdpau lib32-mesa-vdpau vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver --noconfirm
-
-
+clear 
+echo "" 
+echo " Установка драйверов для видеокарт (nvidia) выполнена "
+elif [[ $videocard == 3 ]]; then
 
 
 fi
