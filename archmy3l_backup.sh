@@ -1372,7 +1372,7 @@ echo " Если Вы сомневаетесь в своих действиях, 
 echo ""
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - драйвера для NVIDIA,     2 - Amd - (pamac-all-git),     3 - intel - (pamac-all-git), 
+    1 - драйвера для NVIDIA,     2 - драйвера для AMD,     3 - драйвера для Intel, 
 
     0 - Пропустить установку: " videocard  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
@@ -1390,6 +1390,10 @@ pacman -S nvidia lib32-nvidia-utils nvidia-settings --noconfirm  # nvidia-xconfi
 clear 
 echo ""  
 echo " Установка драйверов для видеокарт (nvidia) выполнена "
+elif [[ $videocard == 2 ]]; then
+echo " Установка Проприетарных драйверов для AMD "
+pacman -S lib32-mesa xf86-video-amdgpu mesa-vdpau lib32-mesa-vdpau vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver --noconfirm
+
 
 
 
@@ -1397,8 +1401,8 @@ fi
 
 echo "Какая видеокарта?"
  
-#elif [[ $videocard == 2 ]]; then
-#  pacman -S lib32-mesa xf86-video-amdgpu mesa-vdpau lib32-mesa-vdpau vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver --noconfirm
+
+
 #elif [[ $videocard == 3 ]]; then
 #  pacman -S lib32-mesa vulkan-intel libva-intel-driver lib32-libva-intel-driver lib32-vulkan-intel --noconfirm
 #
