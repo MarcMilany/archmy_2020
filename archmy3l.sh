@@ -1345,6 +1345,36 @@ fi
 # https://aur.archlinux.org/packages/gksu/
 # ==================================================
 
+######### Drivers ##############
+echo -e "${MAGENTA}
+  <<< Установка Свободных и Проприетарных драйверов для видеокарт (nvidia, amd, intel), а также драйверов для принтера. >>> ${NC}"
+# Install Proprietary drivers for video cards (nvidia, amd, intel), as well as printer drivers.
+
+echo ""
+echo -e "${GREEN}==> ${NC}Устанавливаем видеодрайверы для чипов Intel, AMD и NVIDIA"
+echo -e "${BLUE}:: ${NC}Сперва определим вашу видеокарту!"
+#echo "Сперва определим вашу видеокарту"
+# First, we will determine your video card!
+echo -e "${MAGENTA}=> ${BOLD}Вот данные по вашей видеокарте (даже, если Вы работаете на VM): ${NC}"
+#echo ""
+lspci | grep -e VGA -e 3D
+#lspci | grep -E "VGA|3D"   # узнаем производителя и название видеокарты
+lspci -nn | grep VGA
+#lspci | grep VGA        # узнаем ID шины 
+# После того как вы узнаете PCI-порт видеокарты, например 1с:00.0, можно получить о ней более подробную информацию:
+# sudo lspci -v -s 1с:00.0
+# Она покажет, какая видеокарта используется:
+#grep -Eiwo -m1 'nvidia|amd|ati|intel' /var/log/Xorg.0.log
+echo ""
+
+
+
+
+
+
+
+
+
 echo ""
 echo -e "${GREEN}==> ${NC}Ставим Драйвера принтера (Поддержка печати) CUPS, HP"
 #echo -e "${BLUE}:: ${NC}Ставим Драйвера принтера (Поддержка печати) CUPS, HP" 
