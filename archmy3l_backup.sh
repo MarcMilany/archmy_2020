@@ -1392,7 +1392,8 @@ echo ""
 echo " Установка драйверов для видеокарт (nvidia, amd, intel) пропущена "
 elif [[ $videocard == 1 ]]; then
   echo " Установка Проприетарных драйверов для NVIDIA "
-pacman -S nvidia lib32-nvidia-utils nvidia-settings --noconfirm  # nvidia-xconfig
+pacman -S nvidia lib32-nvidia-utils nvidia-settings --noconfirm 
+# nvidia-xconfig - сгенерировать конфиг nvidia-xconfig
 clear 
 echo ""  
 echo " Установка драйверов для видеокарт (nvidia) выполнена "
