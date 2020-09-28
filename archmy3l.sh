@@ -150,17 +150,26 @@ echo -e "${BLUE}:: ${NC}Если NetworkManager запущен смотрим с
 # sudo systemctl start NetworkManager
 # Если NetworkManager запущен смотрим состояние интерфейсов (с помощью - nmcli):  
 nmcli general status
-# посмотреть имя хоста:
+
+echo -e "${BLUE}:: ${NC}Посмотреть имя хоста"
+# View host name
 nmcli general hostname 
-# Получаем состояние интерфейсов:
+
+echo -e "${BLUE}:: ${NC}Получаем состояние интерфейсов"
+# Getting the state of interfaces
 nmcli device status
-# Смотрим список доступных подключений:
-# nmcli connection show
+
+echo -e "${BLUE}:: ${NC}Смотрим список доступных подключений"
+# See the list of available connections
+nmcli connection show
+
+echo -e "${BLUE}:: ${NC}Смотрим состояние wifi подключения"
+# Looking at the status of the wifi connection
+nmcli radio wifi
+
 # -------------------------------------------
 # Посмотреть список доступных сетей wifi:
-#nmcli device wifi list
-# Смотрим состояние wifi:
-# nmcli radio wifi
+# nmcli device wifi list
 # Теперь включаем:
 # nmcli radio wifi on
 # Или отключаем:
