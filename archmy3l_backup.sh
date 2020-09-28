@@ -1395,20 +1395,17 @@ echo " Установка Свободных драйверов для AMD "
 pacman -S lib32-mesa xf86-video-amdgpu mesa-vdpau lib32-mesa-vdpau vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver --noconfirm
 clear 
 echo "" 
-echo " Установка драйверов для видеокарт (nvidia) выполнена "
+echo " Установка драйверов для видеокарт (amd) выполнена "
 elif [[ $videocard == 3 ]]; then
-
-
+echo " Установка Свободных драйверов для Intel "
+pacman -S lib32-mesa vulkan-intel libva-intel-driver lib32-libva-intel-driver lib32-vulkan-intel --noconfirm
+clear 
+echo "" 
+echo " Установка драйверов для видеокарт (intel) выполнена "
 fi
 
+
 echo "Какая видеокарта?"
- 
-
-
-#elif [[ $videocard == 3 ]]; then
-#  pacman -S lib32-mesa vulkan-intel libva-intel-driver lib32-libva-intel-driver lib32-vulkan-intel --noconfirm
-#
-
 #Если видео карта от Nvidia ставим драйвер (проприетарный по желанию)
 #      $ sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils
 
