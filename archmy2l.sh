@@ -1701,6 +1701,134 @@ echo ""
 echo " Графический менеджер Octopi успешно установлен! "
 fi 
 
+#####Pacman gui - (pamac-all)##########
+echo ""
+echo -e "${GREEN}==> ${NC}Установка Pacman gui (pamac-all), или Pacman gui (pamac-all-git) (AUR)(GTK)"
+#echo -e "${BLUE}:: ${NC}Установка Pacman gui (pamac-all), или Pacman gui (pamac-all-git) (AUR)(GTK)" 
+echo -e "${RED}==> Внимание! ${BOLD}Если Вы не знакомы с НОВЫМ Pacman gui (pamac-all), или (pamac-all-git), то СОВЕТУЮ зайдите на сайт загрузки 'Arch Linux' (https://aur.archlinux.org/packages/pamac-all/), (https://aur.archlinux.org/packages/pamac-all-git/), и изучите 'Конфликты и Зависимости'. ${NC}"
+echo " Давайте проанализируем действия, которые выполняются. "
+echo " 1 - Pacman gui (pamac-all) - Графический менеджер пакетов (интерфейс Gtk3 для libalpm), тогда укажите "1". "
+echo " Это НОВЫЙ Графический менеджер пакетов, впервые представлен '2020-08-25', и как говорится (всё в одном пакете - snap, flatpak, appindicator, и...) "
+echo " 2 - Pacman gui (pamac-all-git) - Графический менеджер пакетов (интерфейс Gtk3 для libalpm), укажите вариант "2". " 
+echo " Это НОВЫЙ Графический менеджер пакетов, впервые представлен '2020-08-25', и как говорится (всё в одном пакете - snap, flatpak, appindicator, и...) "
+echo " Pacman gui (pamac-all-git) в отличие от (pamac-all), имеет 'git' версию, и его популярность повыше. "
+echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В данной опции выбор всегда остаётся за вами. "
+# Be careful! The installation process, after the option you selected, was registered fully automatic. In this option, the choice is always yours. 
+echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
+#echo 'Действия выполняются в указанном порядке'
+# Actions are performed in the order listed
+echo "" 
+while 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Pacman gui - (pamac-all),     2 - Pacman gui - (pamac-all-git), 
+
+    0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^120] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+clear 
+echo ""  
+echo " Установка Графического менеджера пакетов пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка Графического менеджера Pacman gui (pamac-all) "
+git clone https://aur.archlinux.org/pamac-all.git
+cd pamac-all
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf pamac-all
+rm -Rf pamac-all   # удаляем директорию сборки
+clear 
+echo ""
+echo " Графический менеджер Pacman gui (pamac-all) успешно установлен! "
+elif [[ $prog_set == 2 ]]; then
+  echo " Установка Графического менеджера Pacman gui (pamac-all-git) "
+git clone https://aur.archlinux.org/pamac-all-git.git
+cd pamac-all-git
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf pamac-all
+rm -Rf pamac-all-git   # удаляем директорию сборки
+clear
+echo ""
+echo " Графический менеджер Pacman gui (pamac-all-git) успешно установлен! "
+fi
+
+######### Gksu ###############
+echo -e "${RED}
+==> Внимание! ${BOLD}Если Вы установили Графический менеджер пакетов (octopi), либо планируете его установить, то СОВЕТУЮ пропустить установку Gksu. Так как в сценарии установки Pacman gui (octopi), уже прописана установка пакетов (gksu) и (libgksu). ${NC}"
+echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете пропустить установку "Gksu", пункт для установки будет продублирован в следующем скрипте (archmy3l). И Вы сможете установить "Gksu" уже из установленной системы."
+ 
+echo ""
+echo -e "${GREEN}==> ${NC}Установить Gksu - Графический интерфейс для su"
+#echo -e "${BLUE}:: ${NC}Установить Gksu - Графический интерфейс для su" 
+#echo 'Установить Gksu - Графический интерфейс для su'
+# To install Gksu - Graphical UI for subversion
+echo " Ставим пакет (gksu) - графический интерфейс для su, и пакет (libgksu) - библиотека авторизации gksu "
+echo -e "${CYAN}:: ${NC}Чтобы реализовать максимально безопасный интерфейс для работы с правами суперпользователя в Linux была разработана команда sudo."
+echo -e "${MAGENTA}:: ${BOLD}Для запуска графических приложений от имени суперпользователя существуют специальные утилиты. Они сохраняют все необходимые переменные окружения и полномочия. В KDE это команда kdesu, а в Gnome,Xfce,... - команда gksu (gksu nautilus). ${NC}"
+echo " Программа запросит пароль, уже в графическом окне, а потом откроется файловый менеджер. "
+echo " Теперь программы, требующие дополнительных привилегий в системе, не вызовут у вас проблем. "
+echo -e "${CYAN}:: ${NC}Установка Gksu (gksu), и (libgksu), проходит через сборку из исходников. То есть установка производиться с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/gksu/), (https://aur.archlinux.org/packages/libgksu/), собирается и устанавливается. "
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В данной опции выбор остаётся за вами. "
+# Be careful! The installation process was fully automatic. In this option, the choice is yours.
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
+while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then
+clear
+echo ""
+echo " Установка графического интерфейса для su (gksu) пропущена "
+elif [[ $prog_set == 1 ]]; then
+ echo " Установка libgksu - библиотека авторизации gksu "
+############ libgksu ##########
+git clone https://aur.archlinux.org/libgksu.git
+cd libgksu
+#makepkg -fsri
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf libgksu 
+rm -Rf libgksu
+echo " Установка gksu - Графический интерфейс для su "
+############ gksu ##########
+git clone https://aur.archlinux.org/gksu.git
+cd gksu
+#makepkg -fsri
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf gksu  
+rm -Rf gksu
+clear
+echo ""
+echo " Графический интерфейс для su (gksu) успешно установлен! "
+fi
+
 echo ""
 echo -e "${GREEN}==> ${NC}Создаём папки в директории пользователя (Downloads, Music, Pictures, Videos, Documents). ${NC}"
 echo -e "${BLUE}:: ${NC}Создание полного набора локализованных пользовательских каталогов по умолчанию (Загрузки, Шаблоны, Общедоступные, Документы, Музыка, Изображения, Видео) в пределах "HOME" каталога."
