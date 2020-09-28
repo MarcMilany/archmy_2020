@@ -143,6 +143,7 @@ echo -e "${MAGENTA}==> ${NC}Давайте проверим наш часово�
 # Let's check our time zone ... :)
 timedatectl | grep "Time zone"
 
+echo ""
 echo -e "${BLUE}:: ${NC}Если NetworkManager запущен смотрим состояние интерфейсов" 
 #echo "Если NetworkManager запущен смотрим состояние интерфейсов"
 # If NetworkManager is running look at the state of the interfaces
@@ -151,18 +152,22 @@ echo -e "${BLUE}:: ${NC}Если NetworkManager запущен смотрим с
 # Если NetworkManager запущен смотрим состояние интерфейсов (с помощью - nmcli):  
 nmcli general status
 
+echo ""
 echo -e "${BLUE}:: ${NC}Посмотреть имя хоста"
 # View host name
 nmcli general hostname 
 
+echo ""
 echo -e "${BLUE}:: ${NC}Получаем состояние интерфейсов"
 # Getting the state of interfaces
 nmcli device status
 
+echo ""
 echo -e "${BLUE}:: ${NC}Смотрим список доступных подключений"
 # See the list of available connections
 nmcli connection show
 
+echo ""
 echo -e "${BLUE}:: ${NC}Смотрим состояние wifi подключения"
 # Looking at the status of the wifi connection
 nmcli radio wifi
