@@ -1367,6 +1367,10 @@ lspci -nn | grep VGA
 # sudo lspci -v -s 1с:00.0
 # Она покажет, какая видеокарта используется:
 #grep -Eiwo -m1 'nvidia|amd|ati|intel' /var/log/Xorg.0.log
+echo -e "${CYAN}=> ${BOLD}В сценарии скрипта присутствуют следующие варианты: ${NC}"
+echo " 1 - , то выбирайте вариант - "1". "
+echo " 2 - , то выбирайте вариант - "2"."
+echo " 3 - , то выбирайте вариант - "3"."
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В данной опции выбор остаётся за вами. "
 # Be careful! The installation process was fully automatic. In this option, the choice is yours.
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
