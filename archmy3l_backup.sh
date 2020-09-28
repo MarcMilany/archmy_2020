@@ -1365,16 +1365,37 @@ lspci -nn | grep VGA
 # sudo lspci -v -s 1с:00.0
 # Она покажет, какая видеокарта используется:
 #grep -Eiwo -m1 'nvidia|amd|ati|intel' /var/log/Xorg.0.log
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В данной опции выбор остаётся за вами. "
+# Be careful! The installation process was fully automatic. In this option, the choice is yours.
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
 echo ""
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Pacman gui - (pamac-all),     2 - Pacman gui - (pamac-all-git),     3 - Pacman gui - (pamac-all-git), 
 
-
+    0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^1230] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+clear 
+echo ""  
+echo " Установка драйверов для видеокарт (nvidia, amd, intel) пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка Графического менеджера Pacman gui (pamac-all) "
+pacman -S nvidia lib32-nvidia-utils nvidia-settings --noconfirm  # nvidia-xconfig
+clear 
+echo ""  
+echo " Установка драйверов для видеокарт (nvidia, amd, intel) выполнена "
 
 
 echo "Какая видеокарта?"
 #read -p "1 - nvidia, 2 - Amd, 3 - intel: " videocard
 #if [[ $videocard == 1 ]]; then
-#  pacman -S nvidia lib32-nvidia-utils nvidia-settings --noconfirm
-#  nvidia-xconfig
+#  
 #elif [[ $videocard == 2 ]]; then
 #  pacman -S lib32-mesa xf86-video-amdgpu mesa-vdpau lib32-mesa-vdpau vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver --noconfirm
 #elif [[ $videocard == 3 ]]; then
