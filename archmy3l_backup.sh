@@ -1411,7 +1411,6 @@ echo ""
 echo " Установка драйверов для видеокарт (intel) выполнена "
 fi
 
-
 echo "Какая видеокарта?"
 #Если видео карта от Nvidia ставим драйвер (проприетарный по желанию)
 #      $ sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils
