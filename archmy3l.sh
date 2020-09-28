@@ -1370,9 +1370,48 @@ echo ""
 
 
 
+echo "Какая видеокарта?"
+#read -p "1 - nvidia, 2 - Amd, 3 - intel: " videocard
+#if [[ $videocard == 1 ]]; then
+#  pacman -S nvidia lib32-nvidia-utils nvidia-settings --noconfirm
+#  nvidia-xconfig
+#elif [[ $videocard == 2 ]]; then
+#  pacman -S lib32-mesa xf86-video-amdgpu mesa-vdpau lib32-mesa-vdpau vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver --noconfirm
+#elif [[ $videocard == 3 ]]; then
+#  pacman -S lib32-mesa vulkan-intel libva-intel-driver lib32-libva-intel-driver lib32-vulkan-intel --noconfirm
+#fi
+
+#Если видео карта от Nvidia ставим драйвер (проприетарный по желанию)
+#      $ sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils
+
+#echo 'Ставим драйвера видеокарты intel'
+#sudo pacman -S xf86-video-intel vdpauinfo libva-utils libva-intel-driver libva lib32-libva-intel-driver libvdpau libvdpau-va-gl lib32-libvdpau --noconfirm
+
+#-------------------------------------------------------------------------------
+#               Дополнение от Александра Тибарина
+#               Проприетарные драйвера для видеокарт
+
+#Intel:
+#sudo pacman -S xf86-video-intel lib32-intel-dri
+
+#Nvidia:
+#sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils
+
+#AMD:
+#sudo pacman -S xf86-video-ati lib32-ati-dri
+
+#Если вы устанавливаете систему на виртуальную машину:
+#sudo pacman -S xf86-video-vesa
+
+# Видео драйверы, без них тоже ничего работать не будет вот список:
+# xf86-video-vesa - как я понял, это универсальный драйвер для ксорга (xorg), должен работать при любых обстоятельствах, но вы знаете как, только для того чтобы поставить подходящий.
+# xf86-video-ati - свободный ATI
+# xf86-video-intel - свободный Intel
+# xf86-video-nouveau - свободный Nvidia
+# Существуют также проприетарные драйверы, то есть разработаны самой Nvidia или AMD, но они часто не поддерживают новое ядро, или ещё какие-нибудь траблы.
 
 
-
+##############################################################
 
 
 echo ""
