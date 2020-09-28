@@ -1372,35 +1372,36 @@ echo " Если Вы сомневаетесь в своих действиях, 
 echo ""
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Pacman gui - (pamac-all),     2 - Pacman gui - (pamac-all-git),     3 - Pacman gui - (pamac-all-git), 
+    1 - драйвера для NVIDIA,     2 - Amd - (pamac-all-git),     3 - intel - (pamac-all-git), 
 
-    0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    0 - Пропустить установку: " videocard  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^1230] ]]
+    [[ "$videocard" =~ [^1230] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then 
+if [[ $videocard == 0 ]]; then 
 clear 
 echo ""  
 echo " Установка драйверов для видеокарт (nvidia, amd, intel) пропущена "
-elif [[ $prog_set == 1 ]]; then
-  echo " Установка Графического менеджера Pacman gui (pamac-all) "
+elif [[ $videocard == 1 ]]; then
+  echo " Установка Проприетарных драйверов для NVIDIA "
 pacman -S nvidia lib32-nvidia-utils nvidia-settings --noconfirm  # nvidia-xconfig
 clear 
 echo ""  
-echo " Установка драйверов для видеокарт (nvidia, amd, intel) выполнена "
+echo " Установка драйверов для видеокарт (nvidia) выполнена "
 
+
+
+fi
 
 echo "Какая видеокарта?"
-#read -p "1 - nvidia, 2 - Amd, 3 - intel: " videocard
-#if [[ $videocard == 1 ]]; then
-#  
+ 
 #elif [[ $videocard == 2 ]]; then
 #  pacman -S lib32-mesa xf86-video-amdgpu mesa-vdpau lib32-mesa-vdpau vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver --noconfirm
 #elif [[ $videocard == 3 ]]; then
 #  pacman -S lib32-mesa vulkan-intel libva-intel-driver lib32-libva-intel-driver lib32-vulkan-intel --noconfirm
-#fi
+#
 
 #Если видео карта от Nvidia ставим драйвер (проприетарный по желанию)
 #      $ sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils
