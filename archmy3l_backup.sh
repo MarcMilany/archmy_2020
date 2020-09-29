@@ -1367,7 +1367,7 @@ lspci -nn | grep VGA
 # Она покажет, какая видеокарта используется:
 #grep -Eiwo -m1 'nvidia|amd|ati|intel' /var/log/Xorg.0.log
 echo -e "${YELLOW}==> Примечание: ${NC}Для установки библиотек для (некоторых) драйверов видеокарт, нужен репозиторий [multilib], надеюсь Вы добавили репозиторий "Multilib" (при установке основной системы)."
-echo -e "${CYAN}=> ${BOLD}В сценарии скрипта присутствуют следующие варианты: ${NC}"
+echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие варианты: ${NC}"
 echo " 1 - NVIDIA - Если видео карта от Nvidia ставим драйвер (проприетарный по желанию), то выбирайте вариант - "1". "
 echo " 2 - AMD/(ATI) - Если видео карта от Amd ставим драйвер (свободный по желанию), то выбирайте вариант - "2"."
 echo " 3 - Intel - Если видео карта от Intel ставим драйвер (свободный по желанию), то выбирайте вариант - "3"."
@@ -1401,12 +1401,12 @@ clear
 echo ""  
 echo " Установка драйверов для видеокарт (nvidia) выполнена "
 elif [[ $videocard == 2 ]]; then
-echo " Установка Свободных драйверов для AMD "
+echo " Установка Свободных драйверов для AMD/(ATI) "
 pacman -S lib32-mesa xf86-video-amdgpu mesa-vdpau lib32-mesa-vdpau vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver --noconfirm
 #pacman -S xf86-video-ati lib32-ati-dri --noconfirm  # libvdpau-va-gl libva-xvba-driver
 clear 
 echo "" 
-echo " Установка драйверов для видеокарт (amd) выполнена "
+echo " Установка драйверов для видеокарт (amd/ati) выполнена "
 elif [[ $videocard == 3 ]]; then
 echo " Установка Свободных драйверов для Intel "
 sudo pacman -S xf86-video-intel vdpauinfo libva-utils libva libvdpau libvdpau-va-gl lib32-libvdpau --noconfirm  # lib32-intel-dri
