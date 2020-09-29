@@ -1471,6 +1471,7 @@ echo " Установка Xfce + Goodies for Xfce "
 #pacman -S xfce4 xfce4-goodies
 pacman -S xfce4 xfce4-goodies --noconfirm
 # pacman -S xfce4 xfce4-goodies pavucontrol --noconfirm
+#mv /usr/share/xsessions/xfce.desktop ~/
 clear
 echo ""
 echo " DE (среда рабочего стола) Xfce успешно установлено "  
