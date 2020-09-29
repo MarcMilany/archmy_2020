@@ -1386,6 +1386,86 @@ fi
 # ==================================================
 
 ######### Drivers ##############
+echo -e "${MAGENTA}
+  <<< Установка Свободных и Проприетарных драйверов для видеокарт (nvidia, amd, intel), а также драйверов для принтера. >>> ${NC}"
+# Install Proprietary drivers for video cards (nvidia, amd, intel), as well as printer drivers. 
+echo -e "${RED}==> Внимание! ${NC}Если у Вас ноутбук, и установлен X.Org Server (иксы), то в большинстве случаев драйвера для видеокарты уже установлены. Возможно! общий драйвер vesa (xf86-video-vesa), который поддерживает большое количество чипсетов (но не включает 2D или 3D ускорение)."
+
+echo ""
+echo -e "${GREEN}==> ${NC}Устанавливаем видео драйверы для чипов Intel, AMD/(ATI) и NVIDIA"
+echo -e "${BLUE}:: ${NC}Сперва определим вашу видеокарту!"
+#echo "Сперва определим вашу видеокарту"
+# First, we will determine your video card!
+echo -e "${MAGENTA}=> ${BOLD}Вот данные по вашей видеокарте (даже, если Вы работаете на VM): ${NC}"
+#echo ""
+lspci | grep -e VGA -e 3D
+#lspci | grep -E "VGA|3D"   # узнаем производителя и название видеокарты
+lspci -nn | grep VGA
+#lspci | grep VGA        # узнаем ID шины 
+# После того как вы узнаете PCI-порт видеокарты, например 1с:00.0, можно получить о ней более подробную информацию:
+# sudo lspci -v -s 1с:00.0
+# Она покажет, какая видеокарта используется:
+#grep -Eiwo -m1 'nvidia|amd|ati|intel' /var/log/Xorg.0.log
+echo -e "${YELLOW}==> Примечание: ${NC}Для установки библиотек (некоторых) драйверов видеокарт, нужен репозиторий [multilib], надеюсь Вы добавили репозиторий "Multilib" (при установке основной системы)."
+echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие варианты: ${NC}"
+echo " 1 - NVIDIA - Если видео карта от Nvidia ставим драйвер (проприетарный по желанию), то выбирайте вариант - "1". "
+echo " 2 - AMD/(ATI) - Если видео карта от Amd ставим драйвер (свободный по желанию), то выбирайте вариант - "2"."
+echo " 3 - Intel - Если видео карта от Intel ставим драйвер (свободный по желанию), то выбирайте вариант - "3"."
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В данной опции выбор остаётся за вами. "
+# Be careful! The installation process was fully automatic. In this option, the choice is yours.
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
+while 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - драйвера для NVIDIA,     2 - драйвера для AMD/(ATI),     3 - драйвера для Intel, 
+
+    0 - Пропустить установку: " videocard  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$videocard" =~ [^1230] ]]
+do
+    :
+done 
+if [[ $videocard == 0 ]]; then 
+clear 
+echo ""  
+echo " Установка драйверов для видеокарт (nvidia, amd, intel) пропущена "
+elif [[ $videocard == 1 ]]; then
+  echo " Установка Проприетарных драйверов для NVIDIA "
+pacman -S nvidia nvidia-utils lib32-nvidia-utils nvidia-settings --noconfirm 
+#pacman -S libvdpau lib32-libvdpau --noconfirm   # Библиотека Nvidia VDPAU
+# pacman -S xf86-video-nouveau --noconfirm  # - свободный Nvidia (Драйвер 3D-ускорения с открытым исходным кодом)
+# nvidia-xconfig     # сгенерировать конфиг nvidia-xconfig (для настройки xorg.conf)
+clear 
+echo ""  
+echo " Установка драйверов для видеокарт (nvidia) выполнена "
+elif [[ $videocard == 2 ]]; then
+echo " Установка Свободных драйверов для AMD/(ATI) "
+pacman -S lib32-mesa xf86-video-amdgpu mesa-vdpau lib32-mesa-vdpau vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver --noconfirm
+#pacman -S xf86-video-ati lib32-ati-dri --noconfirm  # libvdpau-va-gl libva-xvba-driver
+clear 
+echo "" 
+echo " Установка драйверов для видеокарт (amd/ati) выполнена "
+elif [[ $videocard == 3 ]]; then
+echo " Установка Свободных драйверов для Intel "
+sudo pacman -S xf86-video-intel vdpauinfo libva-utils libva libvdpau libvdpau-va-gl lib32-libvdpau --noconfirm  # lib32-intel-dri
+pacman -S lib32-mesa vulkan-intel libva-intel-driver lib32-libva-intel-driver lib32-vulkan-intel --noconfirm
+clear 
+echo "" 
+echo " Установка драйверов для видеокарт (intel) выполнена "
+fi
+# -----------------------------------------
+#Если вы устанавливаете систему на виртуальную машину:
+#sudo pacman -S xf86-video-vesa
+# virtualbox-guest-utils - для виртуалбокса, активируем коммандой:
+#systemctl enable vboxservice - вводим дважды пароль
+# Видео драйверы, без них тоже ничего работать не будет вот список:
+# xf86-video-ati - свободный ATI
+# xf86-video-intel - свободный Intel
+# xf86-video-nouveau - свободный Nvidia
+# Существуют также проприетарные драйверы, то есть разработаны самой Nvidia или AMD, но они часто не поддерживают новое ядро, или ещё какие-нибудь траблы.
+###########################################
 
 
 
