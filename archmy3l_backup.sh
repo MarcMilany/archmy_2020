@@ -1716,7 +1716,7 @@ echo -e "${BLUE}:: ${NC}Создать резервную копию (дубли
 #sudo cp /boot/grub/grub.cfg grub.cfg.backup
 sudo cp -vf /boot/grub/grub.cfg /boot/grub/grub.cfg.backup 
 
-###         "Дополнительные Настройки"
+###         "Дополнительные Настройки" (Additional settings for Xfce)
 # ============================================================================
 # Часы:
 #Europe/Moscow
