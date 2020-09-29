@@ -1348,8 +1348,7 @@ fi
 ######### Drivers ##############
 echo -e "${MAGENTA}
   <<< Установка Свободных и Проприетарных драйверов для видеокарт (nvidia, amd, intel), а также драйверов для принтера. >>> ${NC}"
-# Install Proprietary drivers for video cards (nvidia, amd, intel), as well as printer drivers.
-echo -e "${YELLOW}==> Примечание: ${NC}Для установки библиотек для (некоторых) драйверов видеокарт, нужен репозиторий [multilib], надеюсь Вы добавили репозиторий "Multilib" (при установке основной системы)." 
+# Install Proprietary drivers for video cards (nvidia, amd, intel), as well as printer drivers. 
 echo -e "${RED}==> Внимание! ${NC}Если у Вас ноутбук, и установлен X.Org Server (иксы), в большинстве случаев драйвера для видеокарты уже установлены. Возможно! общий драйвер vesa (xf86-video-vesa), который поддерживает большое количество чипсетов (но не включает 2D или 3D ускорение)."
 
 echo ""
@@ -1367,6 +1366,7 @@ lspci -nn | grep VGA
 # sudo lspci -v -s 1с:00.0
 # Она покажет, какая видеокарта используется:
 #grep -Eiwo -m1 'nvidia|amd|ati|intel' /var/log/Xorg.0.log
+echo -e "${YELLOW}==> Примечание: ${NC}Для установки библиотек для (некоторых) драйверов видеокарт, нужен репозиторий [multilib], надеюсь Вы добавили репозиторий "Multilib" (при установке основной системы)."
 echo -e "${CYAN}=> ${BOLD}В сценарии скрипта присутствуют следующие варианты: ${NC}"
 echo " 1 - NVIDIA - Если видео карта от Nvidia ставим драйвер (проприетарный по желанию), то выбирайте вариант - "1". "
 echo " 2 - AMD/(ATI) - Если видео карта от Amd ставим драйвер (свободный по желанию), то выбирайте вариант - "2"."
@@ -1409,25 +1409,21 @@ echo ""
 echo " Установка драйверов для видеокарт (amd) выполнена "
 elif [[ $videocard == 3 ]]; then
 echo " Установка Свободных драйверов для Intel "
-#sudo pacman -S xf86-video-intel vdpauinfo libva-utils libva libvdpau libvdpau-va-gl lib32-libvdpau --noconfirm  # lib32-intel-dri
+sudo pacman -S xf86-video-intel vdpauinfo libva-utils libva libvdpau libvdpau-va-gl lib32-libvdpau --noconfirm  # lib32-intel-dri
 pacman -S lib32-mesa vulkan-intel libva-intel-driver lib32-libva-intel-driver lib32-vulkan-intel --noconfirm
 clear 
 echo "" 
 echo " Установка драйверов для видеокарт (intel) выполнена "
 fi
-
+# -----------------------------------------
 #Если вы устанавливаете систему на виртуальную машину:
 #sudo pacman -S xf86-video-vesa
-
 # Видео драйверы, без них тоже ничего работать не будет вот список:
 # xf86-video-ati - свободный ATI
 # xf86-video-intel - свободный Intel
 # xf86-video-nouveau - свободный Nvidia
 # Существуют также проприетарные драйверы, то есть разработаны самой Nvidia или AMD, но они часто не поддерживают новое ядро, или ещё какие-нибудь траблы.
-
-
-##############################################################
-
+###########################################
 
 echo ""
 echo -e "${GREEN}==> ${NC}Ставим Драйвера принтера (Поддержка печати) CUPS, HP"
