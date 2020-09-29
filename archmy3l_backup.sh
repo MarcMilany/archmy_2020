@@ -1395,6 +1395,7 @@ elif [[ $videocard == 1 ]]; then
   echo " Установка Проприетарных драйверов для NVIDIA "
 pacman -S nvidia nvidia-utils lib32-nvidia-utils nvidia-settings --noconfirm 
 #pacman -S libvdpau lib32-libvdpau --noconfirm   # Библиотека Nvidia VDPAU
+# pacman -S xf86-video-nouveau --noconfirm  # - свободный Nvidia (Драйвер 3D-ускорения с открытым исходным кодом)
 # nvidia-xconfig     # сгенерировать конфиг nvidia-xconfig (для настройки xorg.conf)
 clear 
 echo ""  
@@ -1402,43 +1403,23 @@ echo " Установка драйверов для видеокарт (nvidia) 
 elif [[ $videocard == 2 ]]; then
 echo " Установка Свободных драйверов для AMD "
 pacman -S lib32-mesa xf86-video-amdgpu mesa-vdpau lib32-mesa-vdpau vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver --noconfirm
-pacman -S  --noconfirm
+#pacman -S xf86-video-ati lib32-ati-dri --noconfirm  # libvdpau-va-gl libva-xvba-driver
 clear 
 echo "" 
 echo " Установка драйверов для видеокарт (amd) выполнена "
 elif [[ $videocard == 3 ]]; then
 echo " Установка Свободных драйверов для Intel "
+#sudo pacman -S xf86-video-intel vdpauinfo libva-utils libva libvdpau libvdpau-va-gl lib32-libvdpau --noconfirm  # lib32-intel-dri
 pacman -S lib32-mesa vulkan-intel libva-intel-driver lib32-libva-intel-driver lib32-vulkan-intel --noconfirm
 clear 
 echo "" 
 echo " Установка драйверов для видеокарт (intel) выполнена "
 fi
 
-echo "Какая видеокарта?"
-#Если видео карта от Nvidia ставим драйвер (проприетарный по желанию)
-#      $ sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils
-
-#echo 'Ставим драйвера видеокарты intel'
-#sudo pacman -S xf86-video-intel vdpauinfo libva-utils libva-intel-driver libva lib32-libva-intel-driver libvdpau libvdpau-va-gl lib32-libvdpau --noconfirm
-
-#-------------------------------------------------------------------------------
-#               Дополнение от Александра Тибарина
-#               Проприетарные драйвера для видеокарт
-
-#Intel:
-#sudo pacman -S xf86-video-intel lib32-intel-dri
-
-#Nvidia:
-#sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils
-
-#AMD:
-#sudo pacman -S xf86-video-ati lib32-ati-dri
-
 #Если вы устанавливаете систему на виртуальную машину:
 #sudo pacman -S xf86-video-vesa
 
 # Видео драйверы, без них тоже ничего работать не будет вот список:
-# xf86-video-vesa - как я понял, это универсальный драйвер для ксорга (xorg), должен работать при любых обстоятельствах, но вы знаете как, только для того чтобы поставить подходящий.
 # xf86-video-ati - свободный ATI
 # xf86-video-intel - свободный Intel
 # xf86-video-nouveau - свободный Nvidia
