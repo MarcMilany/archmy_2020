@@ -303,12 +303,21 @@ echo 'LANG="ru_RU.UTF-8"' > /etc/locale.conf
 ### Set Vconsole ##########
 echo -e "${BLUE}:: ${NC}Вписываем KEYMAP=ru FONT=cyr-sun16 FONT=ter-v16n FONT=ter-v16b"
 echo 'KEYMAP=ru' >> /etc/vconsole.conf
+echo '#LOCALE=ru_RU.UTF-8' >> /etc/vconsole.conf
+
 echo 'FONT=cyr-sun16' >> /etc/vconsole.conf
 echo '#FONT=ter-v16n' >> /etc/vconsole.conf
 echo '#FONT=ter-v16b' >> /etc/vconsole.conf
+echo '#FONT=ter-u16b' >> /etc/vconsole.conf
 echo 'FONT_MAP=' >> /etc/vconsole.conf
 echo 'CONSOLEMAP' >> /etc/vconsole.conf
+echo '#TIMEZONE=Europe/Moscow' >> /etc/vconsole.conf
+
 echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf
+# --------------------------------------------------
+HARDWARECLOCK=UTC
+USECOLOR=yes
+
 
 #clear
 echo ""
