@@ -777,7 +777,13 @@ echo ""
 echo -e "${BLUE}:: ${NC}Ставим дополнения к Архиваторам" 
 #echo 'Ставим дополнения к Архиваторам'
 # Adding extensions to Archivers
-sudo pacman -S lha unace lrzip sharutils uudeview arj cabextract file-roller --noconfirm  #file-roller #ark
+sudo pacman -S lha unace lrzip sharutils uudeview arj cabextract --noconfirm
+
+echo "" 
+echo -e "${BLUE}:: ${NC}Ставим Менеджер архивов (графический интерфейс) для среды рабочего стола" 
+#echo 'Ставим Менеджер архивов (графический интерфейс) для среды рабочего стола'
+# Setting the archive Manager (graphical interface) for the desktop environment
+sudo pacman -S ark file-roller --noconfirm  
 #file-roller легковесный архиватор ( для xfce-lxqt-lxde-gnome ) 
 #ark - архиватор для ( Plasma(kde)- так же можно использовать, и для другого de )
 
