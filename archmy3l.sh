@@ -814,17 +814,18 @@ done
 if [[ $prog_set == 0 ]]; then    
 echo " Установка Менеджера архивов (графический интерфейс) пропущено "
 elif [[ $prog_set == 1 ]]; then
-echo " Обновление баз данных пакетов, и системы через - AUR (Yay) "
+echo " Установка Менеджера архивов (file-roller) "
 sudo pacman -S file-roller --noconfirm  # легковесный архиватор ( для xfce-lxqt-lxde-gnome ) 
 elif [[ $prog_set == 2 ]]; then
-echo " Обновление баз данных пакетов, и системы через - AUR (Pikaur) "
+echo " Установка Менеджера архивов (ark) "
 sudo pacman -S ark --noconfirm  # архиватор для ( Plasma(kde)- так же можно использовать, и для другого de )
 elif [[ $prog_set == 3 ]]; then
+echo " Установка Менеджера архивов (xarchiver-gtk2) "    
 sudo pacman -S xarchiver-gtk2 --noconfirm  # легкий настольный независимый менеджер архивов  
 fi
 
 
-#pacman -S ark file-roller --noconfirm  
+
 #   Интерфейс GTK + к различным архиваторам командной строки (версия GTK + 2)
 
 
