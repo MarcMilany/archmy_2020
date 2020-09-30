@@ -803,11 +803,11 @@ echo ""
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - File Roller,     2 - Ark, 
+    1 - File Roller,     2 - Ark,     3 - Xarchiver (GTK+2), 
 
     0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^120] ]]
+    [[ "$prog_set" =~ [^1230] ]]
 do
     :
 done 
@@ -819,11 +819,13 @@ sudo pacman -S file-roller --noconfirm  # легковесный архиват�
 elif [[ $prog_set == 2 ]]; then
 echo " Обновление баз данных пакетов, и системы через - AUR (Pikaur) "
 sudo pacman -S ark --noconfirm  # архиватор для ( Plasma(kde)- так же можно использовать, и для другого de )
+elif [[ $prog_set == 3 ]]; then
+sudo pacman -S xarchiver-gtk2 --noconfirm  # легкий настольный независимый менеджер архивов  
 fi
 
 
 #pacman -S ark file-roller --noconfirm  
-
+#   Интерфейс GTK + к различным архиваторам командной строки (версия GTK + 2)
 
 
 echo ""
@@ -942,7 +944,7 @@ bleachbit gparted grub-customizer conky conky-manager dconf-editor doublecmd-gtk
 ${NC}" # xarchiver-gtk2 catdoc unrtf id3lib toxcore mlocate
 read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S bleachbit gparted grub-customizer conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot frei0r-plugins redshift veracrypt onboard clonezilla moc filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk glances tlp tlp-rdw meld cmake xterm lsof dmidecode --noconfirm  #xarchiver-gtk2 catdoc unrtf id3lib toxcore mlocate
+sudo pacman -S bleachbit gparted grub-customizer conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot frei0r-plugins redshift veracrypt onboard clonezilla moc filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk glances tlp tlp-rdw meld cmake xterm lsof dmidecode --noconfirm  #catdoc unrtf id3lib toxcore mlocate
 echo " Установка утилит (пакетов) завершена " 
 elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ пропущена. '
