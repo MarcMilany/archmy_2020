@@ -790,7 +790,7 @@ echo -e "${GREEN}==> ${NC}Ставим Менеджер архивов (граф
 # Setting the archive Manager (graphical interface)
 echo -e "${MAGENTA}:: ${NC}Выберите графический интерфейс для установленных пакетов архиваторов - (консольных), если установлены соответствующие. "
 echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие варианты: ${NC}"
-echo " 1 - File Roller - Менеджер архивов для среды рабочего стола GNOME, можно использовать, и для другого DE (XFCE, LXDE, Lxqt...), то выбирайте вариант - "1". "
+echo " 1 - File Roller - Менеджер архивов для среды рабочего стола GNOME, можно использовать и для другого DE (XFCE, LXDE, Lxqt...), то выбирайте вариант - "1". "
 echo " File Roller поддерживает множество типов архивов, включая gzip (tar.gz, tar.xz, tgz), bzip (tar.bz, tbz), bzip2 (tar.bz2, tbz2), Z (tar.Z, taz), lzop ( tar.lzo, tzo), zip, jar (jar, ear, war), lha, lzh, rar, ace, 7z, alz, ar и arj. "
 echo " Кроме того, он поддерживает типы архивов cab, cpio, deb, iso, cbr, rpm, bin, sit, tar.7z, cbz и zoo, а также отдельные файлы, сжатые с помощью xz, gzip, bzip, bzip2. , lzop, lzip, z или rzip алгоритмы сжатия. "
 echo " 2 - Ark (в переводе Ковчег) - Менеджер архивов для среды рабочего стола KDE(Plasma), можно использовать, и для другого DE, то выбирайте вариант - "2". "
