@@ -797,38 +797,24 @@ echo " Действия ввода, выполняется сразу после
     read -n1 -p "      
     1 - File Roller,     2 - Обновление через - AUR (Pikaur), 
 
-    0 - Пропустить обновление баз данных пакетов, и системы: " in_aur_update  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    0 - Пропустить обновление баз данных пакетов, и системы: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$in_aur_update" =~ [^120] ]]
+    [[ "$prog_set" =~ [^120] ]]
 do
     :
 done 
-if [[ $in_aur_update == 0 ]]; then    
-echo " Обновление баз данных пакетов, и системы пропущено "
-elif [[ $in_aur_update == 1 ]]; then
+if [[ $prog_set == 0 ]]; then    
+echo " Установка Менеджера архивов (графический интерфейс) пропущено "
+elif [[ $prog_set == 1 ]]; then
 echo " Обновление баз данных пакетов, и системы через - AUR (Yay) "
-yay -Syy
-yay -Syu
-elif [[ $in_aur_update == 2 ]]; then
+sudo pacman -S file-roller --noconfirm  # легковесный архиватор ( для xfce-lxqt-lxde-gnome ) 
+elif [[ $prog_set == 2 ]]; then
 echo " Обновление баз данных пакетов, и системы через - AUR (Pikaur) "
-pikaur -Syy
-pikaur -Syu
+sudo pacman -S ark --noconfirm  # архиватор для ( Plasma(kde)- так же можно использовать, и для другого de )
 fi
 
 
-
-
-
-
-
 #pacman -S ark file-roller --noconfirm  
-# file-roller легковесный архиватор ( для xfce-lxqt-lxde-gnome ) 
-# ark - архиватор для ( Plasma(kde)- так же можно использовать, и для другого de )
-
-
-
-
-
 
 
 
