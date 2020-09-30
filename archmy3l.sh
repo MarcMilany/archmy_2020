@@ -778,8 +778,7 @@ echo -e "${BLUE}:: ${NC}Ставим дополнения к Архиватор�
 #echo 'Ставим дополнения к Архиваторам'
 # Adding extensions to Archivers
 sudo pacman -S lha unace lrzip sharutils uudeview arj cabextract sharutils --noconfirm
-sudo pacman -S sharutils --noconfirm
-#  - sharutils - Делает так называемые архивы оболочки из множества файлов
+sudo pacman -S sharutils --noconfirm  # Делает так называемые архивы оболочки из множества файлов
 
 echo ""
 echo -e "${GREEN}==> ${NC}Ставим Менеджер архивов (графический интерфейс)"
