@@ -779,6 +779,8 @@ echo -e "${BLUE}:: ${NC}Ставим дополнения к Архиватор�
 # Adding extensions to Archivers
 sudo pacman -S lha unace lrzip sharutils uudeview arj cabextract --noconfirm
 # sharutils - Делает так называемые архивы оболочки из множества файлов
+unzip-natspec libnatspec zip-natspec
+
 
 clear
 echo ""
