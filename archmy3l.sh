@@ -789,17 +789,15 @@ echo -e "${GREEN}==> ${NC}Ставим Менеджер архивов (граф
 #echo 'Ставим Менеджер архивов (графический интерфейс)'
 # Setting the archive Manager (graphical interface)
 echo -e "${MAGENTA}:: ${NC}Выберите графический интерфейс для установленных пакетов архиваторов - (консольных)"
+echo " Если установлены соответствующие командной строке пакеты. "
 echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие варианты: ${NC}"
 echo " 1 - File Roller - Менеджер архивов для среды рабочего стола GNOME,, можно использовать, и для другого DE (XFCE, LXDE, Lxqt...), то выбирайте вариант - "1". "
 echo " File Roller поддерживает множество типов архивов, включая gzip (tar.gz, tar.xz, tgz), bzip (tar.bz, tbz), bzip2 (tar.bz2, tbz2), Z (tar.Z, taz), lzop ( tar.lzo, tzo), zip, jar (jar, ear, war), lha, lzh, rar, ace, 7z, alz, ar и arj. "
 echo " Кроме того, он поддерживает типы архивов cab, cpio, deb, iso, cbr, rpm, bin, sit, tar.7z, cbz и zoo, а также отдельные файлы, сжатые с помощью xz, gzip, bzip, bzip2. , lzop, lzip, z или rzip алгоритмы сжатия. "
-echo " Если установлены соответствующие командной строке пакеты. "
 echo " 2 - Ark (в переводе Ковчег) - Менеджер архивов для среды рабочего стола KDE(Plasma), можно использовать, и для другого DE, то выбирайте вариант - "2". "
 echo " Ark поддерживает работу со всеми основными форматами архивов: - (tar, gzip, bzip, bzip2, zip, xpi, lha, zoo, ar, rar) и некоторые другие. Поддерживаются и двойные - архивы (например, tar.gz, tzr.bz2 и прочие). "
-echo " Если установлены соответствующие командной строке пакеты. "
 echo " 3 - Xarchiver (GTK+2) - Легковесный настольный независимый менеджер архивов, созданный с помощью набора инструментов (GTK+2), можно использовать с любой средой рабочего стола, то выбирайте вариант - "3". "
 echo " Xarchiver (GTK+2) поддерживает работу со всеми основными форматами архивов: - (7-zip, arj, bzip2, gzip, rar, lha, lzma, lzop, deb, rpm, tar, zip) и некоторые другие. Поддерживаются и двойные - архивы (например, zip, 7-zip, rar и прочие). "
-echo " Если установлены соответствующие командной строке пакеты. "
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В данной опции выбор всегда остаётся за вами. "
 echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
 echo "" 
@@ -827,15 +825,14 @@ echo " Установка Менеджера архивов (xarchiver-gtk2) "
 sudo pacman -S xarchiver-gtk2 --noconfirm  # легкий настольный независимый менеджер архивов  
 fi
 
-
-
-#   Интерфейс GTK + к различным архиваторам командной строки (версия GTK + 2)
-
-
+clear
+echo -e "${MAGENTA}
+  <<< Установка дополнительного софта (пакетов) для Archlinux >>> ${NC}"
+# Installing additional software (packages) for Archlinux
 echo ""
-echo -e "${BLUE}:: ${NC}Установка базовых программ и пакетов" 
-#echo 'Установка базовых программ и пакетов'
-# Installing basic programs and packages
+echo -e "${BLUE}:: ${NC}Установка дополнительных базовых программ (пакетов)" 
+#echo 'Установка дополнительных базовых программ (пакетов)'
+# Installing additional basic programs (packages)
 sudo pacman -S aspell-ru arch-install-scripts bash-completion dosfstools f2fs-tools sane gvfs gnu-netcat htop iftop iotop nmap ntfs-3g ntp ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv reflector sox youtube-dl speedtest-cli python-pip pwgen scrot xsel --noconfirm  #git  #curl  - пока присутствует в pkglist.x86_64
 
 echo ""
