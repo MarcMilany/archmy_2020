@@ -814,7 +814,7 @@ do
     :
 done 
 if [[ $prog_set == 0 ]]; then    
-echo " Установка Менеджера архивов (графический интерфейс) пропущено "
+echo " Установка Менеджера архивов (графического интерфейса) пропущено "
 elif [[ $prog_set == 1 ]]; then
 echo " Установка Менеджера архивов (file-roller) "
 sudo pacman -S file-roller --noconfirm  # легковесный архиватор ( для xfce-lxqt-lxde-gnome ) 
@@ -830,6 +830,7 @@ clear
 echo -e "${MAGENTA}
   <<< Установка дополнительного софта (пакетов) для Archlinux >>> ${NC}"
 # Installing additional software (packages) for Archlinux
+
 echo ""
 echo -e "${BLUE}:: ${NC}Установка дополнительных базовых программ (пакетов)" 
 #echo 'Установка дополнительных базовых программ (пакетов)'
