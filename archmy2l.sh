@@ -309,6 +309,7 @@ echo '#FONT=ter-v16n' >> /etc/vconsole.conf
 echo '#FONT=ter-v16b' >> /etc/vconsole.conf
 echo '#FONT=ter-u16b' >> /etc/vconsole.conf
 echo 'FONT_MAP=' >> /etc/vconsole.conf
+echo '#CONSOLEFONT="cyr-sun16' >> /etc/vconsole.conf
 echo 'CONSOLEMAP' >> /etc/vconsole.conf
 echo '#TIMEZONE=Europe/Moscow' >> /etc/vconsole.conf
 echo '#HARDWARECLOCK=UTC' >> /etc/vconsole.conf
