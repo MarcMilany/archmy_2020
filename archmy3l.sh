@@ -783,9 +783,9 @@ echo ""
 echo -e "${BLUE}:: ${NC}Ставим Менеджер архивов (графический интерфейс) для среды рабочего стола" 
 #echo 'Ставим Менеджер архивов (графический интерфейс) для среды рабочего стола'
 # Setting the archive Manager (graphical interface) for the desktop environment
-sudo pacman -S ark file-roller --noconfirm  
-#file-roller легковесный архиватор ( для xfce-lxqt-lxde-gnome ) 
-#ark - архиватор для ( Plasma(kde)- так же можно использовать, и для другого de )
+#pacman -S ark file-roller --noconfirm  
+# file-roller легковесный архиватор ( для xfce-lxqt-lxde-gnome ) 
+# ark - архиватор для ( Plasma(kde)- так же можно использовать, и для другого de )
 
 echo ""
 echo -e "${BLUE}:: ${NC}Установка базовых программ и пакетов" 
