@@ -872,6 +872,63 @@ echo -e "${GREEN}==> ${NC}Установка Браузеров и медиа-п
 #echo -e "${BLUE}:: ${NC}Установка Браузеров и медиа-плагинов" 
 #echo 'Установка Браузеров и медиа-плагинов'
 # Installing Browsers and media plugins
+
+
+"################################################################"
+echo ""
+echo " Установим браузер? : "
+while 
+    read -n1 -p  "
+    1 - google-chrome 
+    
+    2 - firefox 
+    
+    3 - chromium
+    
+    4 - opera ( + pepper-flash )
+    
+    5 - установить все
+    
+    0 - пропустить: " g_chrome # sends right after the keypress
+    echo ''
+    [[ "$g_chrome" =~ [^123450] ]]
+do
+    :
+done
+if [[ $g_chrome == 0 ]]; then
+  echo ' установка браузера пропущена после установки системы вы сможете установить браузер на свой усмотрение!!!!' 
+elif [[ $g_chrome == 1 ]]; then
+cd /home/$username   
+git clone https://aur.archlinux.org/google-chrome.git
+chown -R $username:users /home/$username/google-chrome 
+chown -R $username:users /home/$username/google-chrome/PKGBUILD 
+cd /home/$username/google-chrome  
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/google-chrome
+clear
+elif [[ $g_chrome == 2 ]]; then
+pacman -S firefox firefox-i18n-ru --noconfirm 
+clear
+elif [[ $g_chrome == 3 ]]; then
+pacman -S chromium --noconfirm 
+elif [[ $g_chrome == 4 ]]; then
+pacman -S opera pepper-flash --noconfirm 
+elif [[ $g_chrome == 5 ]]; then
+pacman -S chromium opera pepper-flash firefox firefox-developer-edition-i18n-ru --noconfirm 
+cd /home/$username   
+git clone https://aur.archlinux.org/google-chrome.git
+chown -R $username:users /home/$username/google-chrome 
+chown -R $username:users /home/$username/google-chrome/PKGBUILD 
+cd /home/$username/google-chrome  
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/google-chrome
+clear
+fi
+#############################################################################
+
+
+
+
 sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin pepper-flash --noconfirm
 
 echo ""
