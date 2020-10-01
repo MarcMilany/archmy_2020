@@ -989,6 +989,7 @@ echo -e "${GREEN}==> ${NC}Установим Офисный пакет - LibreOf
 #echo 'Установка Офиса (LibreOffice-still, или LibreOffice-fresh)'
 # Office installation (LibreOffice-still, or LibreOffice-fresh)
 echo -e "${MAGENTA}:: ${BOLD}Офисный пакет - FreeOffice будет представлен для установки в следующем скрипте, так как устанавливаются из 'AUR', или установите (freeoffice) сами. ${NC}"
+echo " Убедитесь, что у Вас установлены шрифты: - ttf-dejavu, artwiz-fonts (AUR), в противном случае Вы увидите прямоугольники вместо букв. Пакет artwiz-fonts (AUR) - Это набор (улучшенных) шрифтов artwiz, его можно установить позже. "
 echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие варианты: ${NC}"
 echo " 1 - LibreOffice-still - это , то выбирайте вариант - "1". "
 echo " 2 - LibreOffice-fresh - , то выбирайте вариант - "2". "
@@ -1018,7 +1019,7 @@ clear
 echo ""    
 echo " Установка LibreOffice-still выполнена "
 elif [[ $prog_set == 2 ]]; then
-sudo pacman -S libreoffice libreoffice-fresh-ru --noconfirm
+sudo pacman -S libreoffice-fresh libreoffice-fresh-ru --noconfirm
 clear
 echo ""    
 echo " Установка LibreOffice-fresh выполнена "
