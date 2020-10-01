@@ -868,7 +868,8 @@ echo -e "${BLUE}:: ${NC}Управления электронной почтой
 sudo pacman -S thunderbird thunderbird-i18n-ru pidgin pidgin-hotkeys --noconfirm
 
 echo ""
-echo -e "${BLUE}:: ${NC}Установка Браузеров и медиа-плагинов" 
+echo -e "${GREEN}==> ${NC}Установка Браузеров и медиа-плагинов"
+#echo -e "${BLUE}:: ${NC}Установка Браузеров и медиа-плагинов" 
 #echo 'Установка Браузеров и медиа-плагинов'
 # Installing Browsers and media plugins
 sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin pepper-flash --noconfirm
