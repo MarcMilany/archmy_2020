@@ -929,20 +929,16 @@ echo -e "${GREEN}==> ${NC}Установка Torrent клиентов - Transmis
 # Installing Torrent clients - Transmission, qBittorrent, Deluge (GTK) (Qt) (GTK+)
 echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие варианты: ${NC}"
 echo " 1 - Transmission - это легкий, быстрый, простой, бесплатный и кроссплатформенный BitTorrent-клиент (GTK + GUI), то выбирайте вариант - "1". "
-
-
-
-echo " Единственный поддерживаемый Firefox плагин - flashplugin - Adobe Flash Player (NPAPI-версия). "
-echo " 2 - qBittorrent - Графический веб-браузер, с открытым исходным кодом, основанный на движке Blink, созданный для скорости, простоты и безопасности, разрабатываемый Google совместно с сообществом (и другими корпорациями), то выбирайте вариант - "2". "
-echo " Поддерживаемый плагин - pepper-flash - Adobe Flash Player (PPAPI-версия): эти плагины работают в Chromium (и Chrome), Opera и Vivaldi. "
-echo " 3 - Deluge - Графический веб-браузер, с открытым исходным кодом, основанный на движке Blink, быстрый, безопасный и простой в использовании браузер, теперь со встроенным блокировщиком рекламы, функцией экономии заряда батареи и бесплатным VPN, то выбирайте вариант - "3". "
+echo " 2 - qBittorrent - Усовершенствованный клиент BitTorrent, написанный на C ++, основанный на инструментарии Qt и libtorrent-rasterbar, то выбирайте вариант - "2". "
+echo " 3 - Deluge - BitTorrent-клиент написанное на Python 3, с несколькими пользовательскими интерфейсами в модели клиент / сервер, то выбирайте вариант - "3". "
+echo " Оно имеет множество функций, поддержку DHT, магнитные ссылки, систему плагинов, поддержку UPnP, полнопотоковое шифрование, поддержка прокси и три различных клиентских приложения. "
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В данной опции выбор всегда остаётся за вами. "
 echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
 echo "" 
 while
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Transmission,     2 - qBittorrent,     3 - Deluge,    
+    1 - Transmission (GTK+),     2 - qBittorrent (Qt),     3 - Deluge (GTK),    
 
     0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
@@ -955,7 +951,8 @@ clear
 echo ""    
 echo " Установка Torrent клиентов пропущена "
 elif [[ $prog_set == 1 ]]; then
-sudo pacman -S transmission-gtk transmission-cli --noconfirm  # transmission-qt # -графический интерфейс Qt 5
+sudo pacman -S transmission-gtk transmission-cli --noconfirm
+#sudo pacman -S transmission-qt transmission-cli --noconfirm  # графический интерфейс Qt 5 
 clear
 echo ""    
 echo " Установка torrent клиента Transmission выполнена "
