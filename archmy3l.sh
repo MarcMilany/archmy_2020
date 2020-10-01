@@ -989,12 +989,10 @@ echo -e "${GREEN}==> ${NC}Установим Офисный пакет - LibreOf
 #echo 'Установка Офиса (LibreOffice-still, или LibreOffice-fresh)'
 # Office installation (LibreOffice-still, or LibreOffice-fresh)
 echo -e "${MAGENTA}:: ${BOLD}Офисный пакет - FreeOffice будет представлен для установки в следующем скрипте, так как устанавливаются из 'AUR', или установите (freeoffice) сами. ${NC}"
-echo " Убедитесь, что у Вас установлены шрифты: - ttf-dejavu, artwiz-fonts (AUR), в противном случае Вы увидите прямоугольники вместо букв. Пакет artwiz-fonts (AUR) - Это набор (улучшенных) шрифтов artwiz, его можно установить позже. "
 echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие варианты: ${NC}"
-echo " 1 - LibreOffice-still - это , то выбирайте вариант - "1". "
-echo " 2 - LibreOffice-fresh - , то выбирайте вариант - "2". "
-echo "  "
-echo "  "
+echo " 1 - LibreOffice-still - это мощный, официально поддерживаемый офисный пакет, имеется стабильная ветвь обновлений, то выбирайте вариант - "1". "
+echo " 2 - LibreOffice-fresh - это офисный пакет, новые функции появляются сначала здесь, часто обновляется, то выбирайте вариант - "2". "
+echo " Убедитесь, что у Вас установлены шрифты: - ttf-dejavu, artwiz-fonts (AUR), в противном случае Вы увидите прямоугольники вместо букв. Пакет artwiz-fonts (AUR) - Это набор (улучшенных) шрифтов artwiz, его можно установить позже. "
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В данной опции выбор всегда остаётся за вами. Вы можете пропустить этот шаг, если не уверены в правильности выбора. "
 echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
 echo "" 
@@ -1024,23 +1022,14 @@ clear
 echo ""    
 echo " Установка LibreOffice-fresh выполнена "
 fi
-
-
-
-
-
-
-read -p " 1 - LibreOffice-still, 2 - LibreOffice-fresh, 0 - Нет пропустить этот шаг: " prog_set
-if [[ $prog_set == 1 ]]; then
-sudo pacman -S libreoffice-still libreoffice-still-ru --noconfirm
-echo " Установка LibreOffice-still завершена "
-elif [[ $prog_set == 2 ]]; then
-sudo pacman -S libreoffice libreoffice-fresh-ru --noconfirm
-echo " Установка LibreOffice-fresh завершена "
-elif [[ $prog_set == 0 ]]; then
-  echo ' Установка программ LibreOffice пропущена. '
-fi
-# ----------------------------------------------------
+# ------------------------------------
+# Поддержка языков в LibreOffice реализуется отдельными пакетами.
+# Смотреть список пакетов:
+# $ pacman -Ss libreoffice | grep \\-ru
+# extra/libreoffice-fresh-ru 5.3.0-1
+# extra/libreoffice-still-ru 5.2.5-1
+# После чего установите LibreOffice необходимой версии с русской локализацией.
+# -----------------------------------------
 # https://www.libreoffice.org/
 # LibreOffice-still  - Филиал обслуживания LibreOffice 
 # https://www.archlinux.org/packages/extra/x86_64/libreoffice-still/
@@ -1052,7 +1041,11 @@ fi
 # Libreoffice-fresh-ru  -  Пакет русского языка для LibreOffice Fresh
 # https://www.archlinux.org/packages/extra/any/libreoffice-fresh-ru/
 # https://www.documentfoundation.org
-# ---------------------------------------------------
+# ========================================
+
+echo -e "${MAGENTA}
+  <<< Установка рекомендованных программ (пакетов) - по вашему выбору и желанию >>> ${NC}"
+# Installation of recommended programs - according to your choice and desire  
 
 echo ""
 echo -e "${GREEN}==> ${BOLD}Установить рекомендованные программы? ${NC}"
