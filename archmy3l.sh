@@ -941,7 +941,7 @@ echo " Действия ввода, выполняется сразу после
     read -n1 -p "      
     1 - Transmission,     2 - qBittorrent,     3 - Deluge,    
 
-    4 - Установить все веб-браузеры,     0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
     [[ "$prog_set" =~ [^12340] ]]
 do
@@ -950,7 +950,7 @@ done
 if [[ $prog_set == 0 ]]; then 
 clear
 echo ""    
-echo " Установка веб-браузера(ов) пропущена "
+echo " Установка Torrent клиентов пропущена "
 elif [[ $prog_set == 1 ]]; then
 sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin --noconfirm
 #sudo pacman -S firefox-developer-edition firefox-developer-edition-i18n-ru firefox-spell-ru flashplugin --noconfirm  # Версия для разработчиков
