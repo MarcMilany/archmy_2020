@@ -952,8 +952,8 @@ echo ""
 echo " Установка Torrent клиентов пропущена "
 elif [[ $prog_set == 1 ]]; then
 sudo pacman -S transmission-gtk transmission-cli --noconfirm  # графический интерфейс GTK 3, и демон, с CLI 
-#sudo pacman -S transmission-qt transmission-cli --noconfirm  # графический интерфейс Qt 5 
-#sudo pacman -S transmission-remote-gtk transmission-cli --noconfirm  # графический интерфейс GTK 3 для демона
+#sudo pacman -S transmission-qt transmission-cli --noconfirm  # графический интерфейс Qt 5, и демон, с CLI 
+#sudo pacman -S transmission-remote-gtk transmission-cli --noconfirm  # графический интерфейс GTK 3 для демона, и демон, с CLI
 clear
 echo ""    
 echo " Установка torrent клиента Transmission выполнена "
