@@ -975,26 +975,60 @@ clear
 echo ""    
 echo " Установка BitTorrent-клиента Deluge выполнена "
 fi
+# ------------------------------------
+# Transmission-cli - демон с интерфейсами CLI и веб-клиента ( http: // localhost: 9091 ).
+# Transmission-remote-cli - Интерфейс Curses для демона.
+# Transmission-gtk - пакет GTK + 3.
+# Transmission-qt - пакет Qt5.
+# Transmission-remote-gtk - Графический интерфейс GTK 3 
 ####################################
+
 echo ""
 echo -e "${GREEN}==> ${NC}Установим Офисный пакет - LibreOffice: (libreOffice-still, или libreOffice-fresh)"
 #echo -e "${BLUE}:: ${NC}Установка Офиса (LibreOffice-still, или LibreOffice-fresh)" 
 #echo 'Установка Офиса (LibreOffice-still, или LibreOffice-fresh)'
 # Office installation (LibreOffice-still, or LibreOffice-fresh)
-echo -e "${MAGENTA}:: ${BOLD}Веб-браузер Google Ghrome, и Vivaldi будут представлены для установки в следующем скрипте, так как устанавливаются из 'AUR', или установите их сами. ${NC}"
+echo -e "${MAGENTA}:: ${BOLD}Офисный пакет - FreeOffice будет представлен для установки в следующем скрипте, так как устанавливаются из 'AUR', или установите (freeoffice) сами. ${NC}"
+echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие варианты: ${NC}"
+echo " 1 - LibreOffice-still - это , то выбирайте вариант - "1". "
+echo " 2 - LibreOffice-fresh - , то выбирайте вариант - "2". "
+echo "  "
+echo "  "
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В данной опции выбор всегда остаётся за вами. Вы можете пропустить этот шаг, если не уверены в правильности выбора. "
+echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
+echo "" 
+while
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - LibreOffice-still,     2 - LibreOffice-fresh,    
+
+    0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^120] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+clear
+echo ""    
+echo " Установка пакета LibreOffice пропущена "
+elif [[ $prog_set == 1 ]]; then
+sudo pacman -S libreoffice-still libreoffice-still-ru --noconfirm
+clear
+echo ""    
+echo " Установка LibreOffice-still выполнена "
+elif [[ $prog_set == 2 ]]; then
+sudo pacman -S libreoffice libreoffice-fresh-ru --noconfirm
+clear
+echo ""    
+echo " Установка LibreOffice-fresh выполнена "
+fi
 
 
 
 
-echo -e "${BLUE}:: ${NC}Установка производится в порядке перечисления" 
-#echo 'Установка производится в порядке перечисления'
-# Installation Is performed in the order listed
-echo -e "${GREEN}==> ${NC}Установить LibreOffice-still, LibreOffice-fresh?"
-#echo 'Установить LibreOffice-still, LibreOffice-fresh?'
-# Install the LibreOffice-still and LibreOffice-fresh?
-echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
-#echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
-# You can skip this step if you are not sure of the correct choice
+
+
 read -p " 1 - LibreOffice-still, 2 - LibreOffice-fresh, 0 - Нет пропустить этот шаг: " prog_set
 if [[ $prog_set == 1 ]]; then
 sudo pacman -S libreoffice-still libreoffice-still-ru --noconfirm
