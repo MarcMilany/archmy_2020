@@ -379,11 +379,18 @@ sudo pacman -Sy
 ###  echo " Обновление ключей пропущено "   
 ###fi
 ###sleep 1
-###clear   # Очистка экрана
+
 # Или:
 #sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys && sudo pacman -Sy
-
-# ============================================================================
+# ----------------------------
+# Ошибки про archlinux-keyring
+# Если вы получаете ошибки, связанные с ключами (например, ключ A634567E8t6574 не может быть найден удаленно) при попытке обновить вашу систему, вы должны выполнить следующие четыре команды от имени пользователя root:
+# rm -R /etc/pacman.d/gnupg/
+# rm -R / root / .gnupg /
+# gpg –refresh-keys
+# pacman-key –init && pacman-key –populate archlinux
+# pacman-key –refresh-keys
+# ==================================
 
 clear
 echo -e "${MAGENTA}
@@ -968,16 +975,17 @@ clear
 echo ""    
 echo " Установка BitTorrent-клиента Deluge выполнена "
 fi
-
-
 ####################################
-
-
 echo ""
-echo -e "${GREEN}==> ${NC}Установка Офиса (LibreOffice-still, или LibreOffice-fresh)"
-echo -e "${BLUE}:: ${NC}Установка Офиса (LibreOffice-still, или LibreOffice-fresh)" 
+echo -e "${GREEN}==> ${NC}Установим Офисный пакет - LibreOffice: (libreOffice-still, или libreOffice-fresh)"
+#echo -e "${BLUE}:: ${NC}Установка Офиса (LibreOffice-still, или LibreOffice-fresh)" 
 #echo 'Установка Офиса (LibreOffice-still, или LibreOffice-fresh)'
 # Office installation (LibreOffice-still, or LibreOffice-fresh)
+echo -e "${MAGENTA}:: ${BOLD}Веб-браузер Google Ghrome, и Vivaldi будут представлены для установки в следующем скрипте, так как устанавливаются из 'AUR', или установите их сами. ${NC}"
+
+
+
+
 echo -e "${BLUE}:: ${NC}Установка производится в порядке перечисления" 
 #echo 'Установка производится в порядке перечисления'
 # Installation Is performed in the order listed
