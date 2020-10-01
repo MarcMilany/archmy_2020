@@ -306,7 +306,7 @@ ttf-bitstream-vera freemind '
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S ttf-bitstream-vera freemind --noconfirm
+sudo pacman -S ttf-linux-libertine ttf-freefont ttf-bitstream-vera freemind --noconfirm
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка дополнительных шрифтов пропущена.'
 fi
@@ -324,6 +324,8 @@ ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
 yay -S ttf-ms-fonts font-manager --noconfirm 
+yay -S font-manager --noconfirm 
+yay -S artwiz-fonts --noconfirm  # Для пакета LibreOffice
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка дополнительных шрифтов AUR пропущена.'
 fi
@@ -340,7 +342,7 @@ echo -e "${BLUE}
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S --noconfirm
+sudo pacman -S deadbeef easytag subdownloader mediainfo-gui --noconfirm
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка Мультимедиа утилит пропущена.'
 fi
@@ -353,7 +355,17 @@ radiotray spotify vlc-tunein-radio vlc-pause-click-plugin audiobook-git cozy-aud
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-yay -S radiotray spotify vlc-tunein-radio vlc-pause-click-plugin audiobook-git cozy-audiobooks m4baker-git mp3gain easymp3gain-gtk2 myrulib-git --noconfirm 
+yay -S radiotray --noconfirm 
+yay -S spotify --noconfirm
+yay -S vlc-tunein-radio --noconfirm
+yay -S vlc-pause-click-plugin --noconfirm
+yay -S audiobook-git --noconfirm
+yay -S cozy-audiobooks --noconfirm
+yay -S m4baker-git --noconfirm
+yay -S mp3gain --noconfirm
+yay -S easymp3gain-gtk2 --noconfirm
+yay -S myrulib-git --noconfirm
+yay -S  --noconfirm
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка Мультимедиа утилит AUR пропущена.'
 fi

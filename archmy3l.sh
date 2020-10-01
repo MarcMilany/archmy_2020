@@ -9,7 +9,7 @@ fspkgs=""
 EDITOR=nano
 #EDITOR=nano visudo  # Выполните команду с правами суперпользователя
 
-ARCHMY2_LANG="russian"  # Installer default language (Язык установки по умолчанию)
+ARCHMY3_LANG="russian"  # Installer default language (Язык установки по умолчанию)
 
 script_path=$(readlink -f ${0%/*})
 
