@@ -887,77 +887,44 @@ echo ""
 while 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Firefox (+ flashplugin),     2 - Chromium (),     3 - Chromium     
+    1 - Firefox (+ flashplugin),     2 - Chromium (+ pepper-flash),     3 - Opera (+ pepper-flash),    
 
-    0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    4 - Установить все веб-браузеры,     0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^10] ]]
+    [[ "$prog_set" =~ [^12340] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then    
-echo " Установка поддержки системой exFAT пропущена "
+if [[ $prog_set == 0 ]]; then 
+clear
+echo ""    
+echo " Установка веб-браузера(ов) пропущена "
 elif [[ $prog_set == 1 ]]; then
-
-
-
-
-
-
-
-
-
-
-
-    read -n1 -p  "
-    1 - google-chrome 
-    
-    2 - Firefox 
-    
-    3 - Chromium 
-    
-    4 - opera ( + pepper-flash )
-    
-    5 - установить все
-    
-    0 - пропустить: " g_chrome # sends right after the keypress
-    echo ''
-    [[ "$g_chrome" =~ [^123450] ]]
-do
-    :
-done
-if [[ $g_chrome == 0 ]]; then
-  echo ' установка браузера пропущена после установки системы вы сможете установить браузер на свой усмотрение!!!!' 
-elif [[ $g_chrome == 1 ]]; then
-cd /home/$username   
-git clone https://aur.archlinux.org/google-chrome.git
-chown -R $username:users /home/$username/google-chrome 
-chown -R $username:users /home/$username/google-chrome/PKGBUILD 
-cd /home/$username/google-chrome  
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/google-chrome
+sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin --noconfirm
+#sudo pacman -S firefox-developer-edition firefox-developer-edition-i18n-ru firefox-spell-ru flashplugin --noconfirm  # Версия для разработчиков
 clear
-elif [[ $g_chrome == 2 ]]; then
-pacman -S firefox firefox-i18n-ru --noconfirm 
+echo ""    
+echo " Установка веб-браузера Firefox (+ flashplugin) выполнена "
+elif [[ $prog_set == 2 ]]; then
+sudo pacman -S chromium pepper-flash --noconfirm
 clear
-elif [[ $g_chrome == 3 ]]; then
-pacman -S chromium --noconfirm 
-elif [[ $g_chrome == 4 ]]; then
-pacman -S opera pepper-flash --noconfirm 
-elif [[ $g_chrome == 5 ]]; then
-pacman -S chromium opera pepper-flash firefox firefox-developer-edition-i18n-ru --noconfirm 
-cd /home/$username   
-git clone https://aur.archlinux.org/google-chrome.git
-chown -R $username:users /home/$username/google-chrome 
-chown -R $username:users /home/$username/google-chrome/PKGBUILD 
-cd /home/$username/google-chrome  
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/google-chrome
+echo ""    
+echo " Установка веб-браузера Chromium (+ pepper-flash) выполнена "
+elif [[ $prog_set == 3 ]]; then
+sudo pacman -S opera pepper-flash --noconfirm
 clear
+echo ""    
+echo " Установка веб-браузера Opera (+ pepper-flash) выполнена "
+elif [[ $prog_set == 4 ]]; then
+sudo pacman -S chromium opera pepper-flash firefox firefox-i18n-ru firefox-spell-ru flashplugin --noconfirm 
+clear
+echo ""    
+echo " Установка веб-браузеров выполнена "
 fi
+
 #############################################################################
 
-sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin pepper-flash --noconfirm
+
 
 
 
