@@ -952,48 +952,28 @@ clear
 echo ""    
 echo " Установка Torrent клиентов пропущена "
 elif [[ $prog_set == 1 ]]; then
-sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin --noconfirm
-#sudo pacman -S firefox-developer-edition firefox-developer-edition-i18n-ru firefox-spell-ru flashplugin --noconfirm  # Версия для разработчиков
+sudo pacman -S transmission-gtk transmission-cli --noconfirm
 clear
 echo ""    
-echo " Установка веб-браузера Firefox (+ flashplugin) выполнена "
+echo " Установка torrent клиента Transmission выполнена "
 elif [[ $prog_set == 2 ]]; then
-sudo pacman -S chromium pepper-flash --noconfirm
+sudo pacman -S qbittorrent --noconfirm
 clear
 echo ""    
-echo " Установка веб-браузера Chromium (+ pepper-flash) выполнена "
+echo " Установка torrent клиента qBittorrent выполнена "
 elif [[ $prog_set == 3 ]]; then
-sudo pacman -S opera pepper-flash --noconfirm
+sudo pacman -S deluge --noconfirm
 clear
 echo ""    
-echo " Установка веб-браузера Opera (+ pepper-flash) выполнена "
-elif [[ $prog_set == 4 ]]; then
-sudo pacman -S chromium opera pepper-flash firefox firefox-i18n-ru firefox-spell-ru flashplugin --noconfirm 
-clear
-echo ""    
-echo " Установка веб-браузеров выполнена "
+echo " Установка torrent клиента Deluge выполнена "
 fi
-
-
 
 
 ####################################
 
-read -p " 1 - Transmission, 2 - qBittorrent, 3 - Deluge, 0 - Нет пропустить этот шаг: " prog_set
-if [[ $prog_set == 1 ]]; then
-sudo pacman -S transmission-gtk transmission-cli --noconfirm
-echo " Установка Transmission завершена "
-elif [[ $prog_set == 2 ]]; then
-sudo pacman -S qbittorrent --noconfirm
-echo " Установка qBittorrent завершена "
-elif [[ $prog_set == 3 ]]; then
-sudo pacman -S deluge --noconfirm
-echo " Установка Deluge завершена "
-elif [[ $prog_set == 0 ]]; then
-  echo ' Установка программ пропущена. '
-fi
 
 echo ""
+echo -e "${GREEN}==> ${NC}Установка Офиса (LibreOffice-still, или LibreOffice-fresh)"
 echo -e "${BLUE}:: ${NC}Установка Офиса (LibreOffice-still, или LibreOffice-fresh)" 
 #echo 'Установка Офиса (LibreOffice-still, или LibreOffice-fresh)'
 # Office installation (LibreOffice-still, or LibreOffice-fresh)
