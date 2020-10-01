@@ -923,7 +923,7 @@ echo " Установка веб-браузеров выполнена "
 fi
 
 echo ""
-echo -e "${GREEN}==> ${NC}Установка Torrent клиентов - Transmission, qBittorrent, Deluge (GTK)(Qt)(GTK+)"
+echo -e "${GREEN}==> ${NC}Установка BitTorrent-клиентов - Transmission, qBittorrent, Deluge (GTK)(Qt)(GTK+)"
 #echo -e "${BLUE}:: ${NC}Установка Torrent клиентов - Transmission, qBittorrent, Deluge (GTK)(Qt)(GTK+)" 
 #echo 'Установка Torrent клиентов - Transmission, qBittorrent, Deluge (GTK)(Qt)(GTK+)'
 # Installing Torrent clients - Transmission, qBittorrent, Deluge (GTK) (Qt) (GTK+)
@@ -949,24 +949,24 @@ done
 if [[ $prog_set == 0 ]]; then 
 clear
 echo ""    
-echo " Установка Torrent клиентов пропущена "
+echo " Установка BitTorrent-клиентов пропущена "
 elif [[ $prog_set == 1 ]]; then
 sudo pacman -S transmission-gtk transmission-cli --noconfirm  # графический интерфейс GTK 3, и демон, с CLI 
 #sudo pacman -S transmission-qt transmission-cli --noconfirm  # графический интерфейс Qt 5, и демон, с CLI 
 #sudo pacman -S transmission-remote-gtk transmission-cli --noconfirm  # графический интерфейс GTK 3 для демона, и демон, с CLI
 clear
 echo ""    
-echo " Установка torrent клиента Transmission выполнена "
+echo " Установка BitTorrent-клиента Transmission выполнена "
 elif [[ $prog_set == 2 ]]; then
 sudo pacman -S qbittorrent --noconfirm
 clear
 echo ""    
-echo " Установка torrent клиента qBittorrent выполнена "
+echo " Установка BitTorrent-клиента qBittorrent выполнена "
 elif [[ $prog_set == 3 ]]; then
 sudo pacman -S deluge --noconfirm
 clear
 echo ""    
-echo " Установка torrent клиента Deluge выполнена "
+echo " Установка BitTorrent-клиента Deluge выполнена "
 fi
 
 
