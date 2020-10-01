@@ -922,8 +922,6 @@ echo ""
 echo " Установка веб-браузеров выполнена "
 fi
 
-#############################################################################
-
 echo ""
 echo -e "${GREEN}==> ${NC}Установка Torrent клиентов - Transmission, qBittorrent, Deluge (GTK)(Qt)(GTK+)"
 #echo -e "${BLUE}:: ${NC}Установка Torrent клиентов - Transmission, qBittorrent, Deluge (GTK)(Qt)(GTK+)" 
@@ -939,11 +937,47 @@ echo " Будьте внимательны! Процесс установки, �
 echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
 echo "" 
 while
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Transmission,     2 - qBittorrent,     3 - Deluge,    
+
+    4 - Установить все веб-браузеры,     0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^12340] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+clear
+echo ""    
+echo " Установка веб-браузера(ов) пропущена "
+elif [[ $prog_set == 1 ]]; then
+sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin --noconfirm
+#sudo pacman -S firefox-developer-edition firefox-developer-edition-i18n-ru firefox-spell-ru flashplugin --noconfirm  # Версия для разработчиков
+clear
+echo ""    
+echo " Установка веб-браузера Firefox (+ flashplugin) выполнена "
+elif [[ $prog_set == 2 ]]; then
+sudo pacman -S chromium pepper-flash --noconfirm
+clear
+echo ""    
+echo " Установка веб-браузера Chromium (+ pepper-flash) выполнена "
+elif [[ $prog_set == 3 ]]; then
+sudo pacman -S opera pepper-flash --noconfirm
+clear
+echo ""    
+echo " Установка веб-браузера Opera (+ pepper-flash) выполнена "
+elif [[ $prog_set == 4 ]]; then
+sudo pacman -S chromium opera pepper-flash firefox firefox-i18n-ru firefox-spell-ru flashplugin --noconfirm 
+clear
+echo ""    
+echo " Установка веб-браузеров выполнена "
+fi
 
 
 
 
-
+####################################
 
 read -p " 1 - Transmission, 2 - qBittorrent, 3 - Deluge, 0 - Нет пропустить этот шаг: " prog_set
 if [[ $prog_set == 1 ]]; then
