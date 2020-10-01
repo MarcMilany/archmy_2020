@@ -924,24 +924,27 @@ fi
 
 #############################################################################
 
-
-
-
-
-
 echo ""
-echo -e "${BLUE}:: ${NC}Установка Torrent клиентов - Transmission, qBittorrent, Deluge (GTK)(Qt)(GTK+)" 
+echo -e "${GREEN}==> ${NC}Установка Torrent клиентов - Transmission, qBittorrent, Deluge (GTK)(Qt)(GTK+)"
+#echo -e "${BLUE}:: ${NC}Установка Torrent клиентов - Transmission, qBittorrent, Deluge (GTK)(Qt)(GTK+)" 
 #echo 'Установка Torrent клиентов - Transmission, qBittorrent, Deluge (GTK)(Qt)(GTK+)'
 # Installing Torrent clients - Transmission, qBittorrent, Deluge (GTK) (Qt) (GTK+)
-echo -e "${BLUE}:: ${NC}Установка производится в порядке перечисления" 
-#echo 'Установка производится в порядке перечисления'
-# Installation Is performed in the order listed
-echo -e "${GREEN}==> ${NC}Установить Transmission, qBittorrent, Deluge?"
-#echo 'Установить Transmission, qBittorrent, Deluge?'
-# Install Transmission, qBittorrent, Deluge?
-echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
-#echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
-# You can skip this step if you are not sure of the correct choice
+echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие варианты: ${NC}"
+echo " 1 - Transmission - Популярный, графический, автономный веб-браузер, с открытым исходным кодом, разрабатываемый Mozilla(mozilla.org), то выбирайте вариант - "1". "
+echo " Единственный поддерживаемый Firefox плагин - flashplugin - Adobe Flash Player (NPAPI-версия). "
+echo " 2 - qBittorrent - Графический веб-браузер, с открытым исходным кодом, основанный на движке Blink, созданный для скорости, простоты и безопасности, разрабатываемый Google совместно с сообществом (и другими корпорациями), то выбирайте вариант - "2". "
+echo " Поддерживаемый плагин - pepper-flash - Adobe Flash Player (PPAPI-версия): эти плагины работают в Chromium (и Chrome), Opera и Vivaldi. "
+echo " 3 - Deluge - Графический веб-браузер, с открытым исходным кодом, основанный на движке Blink, быстрый, безопасный и простой в использовании браузер, теперь со встроенным блокировщиком рекламы, функцией экономии заряда батареи и бесплатным VPN, то выбирайте вариант - "3". "
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В данной опции выбор всегда остаётся за вами. "
+echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
+echo "" 
+while
+
+
+
+
+
+
 read -p " 1 - Transmission, 2 - qBittorrent, 3 - Deluge, 0 - Нет пропустить этот шаг: " prog_set
 if [[ $prog_set == 1 ]]; then
 sudo pacman -S transmission-gtk transmission-cli --noconfirm
