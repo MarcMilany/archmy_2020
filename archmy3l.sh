@@ -928,7 +928,10 @@ echo -e "${GREEN}==> ${NC}Установка Torrent клиентов - Transmis
 #echo 'Установка Torrent клиентов - Transmission, qBittorrent, Deluge (GTK)(Qt)(GTK+)'
 # Installing Torrent clients - Transmission, qBittorrent, Deluge (GTK) (Qt) (GTK+)
 echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие варианты: ${NC}"
-echo " 1 - Transmission - Популярный, графический, автономный веб-браузер, с открытым исходным кодом, разрабатываемый Mozilla(mozilla.org), то выбирайте вариант - "1". "
+echo " 1 - Transmission - это легкий, быстрый, простой, бесплатный и кроссплатформенный BitTorrent-клиент (GTK + GUI), то выбирайте вариант - "1". "
+
+
+
 echo " Единственный поддерживаемый Firefox плагин - flashplugin - Adobe Flash Player (NPAPI-версия). "
 echo " 2 - qBittorrent - Графический веб-браузер, с открытым исходным кодом, основанный на движке Blink, созданный для скорости, простоты и безопасности, разрабатываемый Google совместно с сообществом (и другими корпорациями), то выбирайте вариант - "2". "
 echo " Поддерживаемый плагин - pepper-flash - Adobe Flash Player (PPAPI-версия): эти плагины работают в Chromium (и Chrome), Opera и Vivaldi. "
@@ -952,7 +955,7 @@ clear
 echo ""    
 echo " Установка Torrent клиентов пропущена "
 elif [[ $prog_set == 1 ]]; then
-sudo pacman -S transmission-gtk transmission-cli --noconfirm
+sudo pacman -S transmission-gtk transmission-cli --noconfirm  # transmission-qt # -графический интерфейс Qt 5
 clear
 echo ""    
 echo " Установка torrent клиента Transmission выполнена "
