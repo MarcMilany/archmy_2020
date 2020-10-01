@@ -867,12 +867,25 @@ echo -e "${BLUE}:: ${NC}Управления электронной почтой
 # Manage email, news feeds, chat, and groups
 sudo pacman -S thunderbird thunderbird-i18n-ru pidgin pidgin-hotkeys --noconfirm
 
+clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установка Браузеров и медиа-плагинов"
 #echo -e "${BLUE}:: ${NC}Установка Браузеров и медиа-плагинов" 
 #echo 'Установка Браузеров и медиа-плагинов'
 # Installing Browsers and media plugins
+echo -e "${MAGENTA}:: ${BOLD}Веб-браузер Google Ghrome будет представлен для установки в следующем скрипте, так как устанавливается из 'AUR', или установите его сами. ${NC}"
+echo -e "${CYAN}:: ${NC}Другие предложенные веб-браузеры Вы можете установить, либо пропустите установку."
+echo " 1 - Firefox - Популярный графический,автономный веб-браузер, с открытым исходным кодом, разрабатываемый Mozilla(mozilla.org) то выбирайте вариант - "1". "
 
+
+
+echo " В установку включены поддерживаемые плагины: flashplugin - Adobe Flash Player (NPAPI-версия), и pepper-flash - Adobe Flash Player (PPAPI-версия) . "
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В данной опции выбор всегда остаётся за вами. "
+
+1 - Автономный веб-браузер от 
+ — популярный графический веб-браузер . 
+Единственный поддерживаемый Firefox плагин - flashplugin - Adobe Flash Player (NPAPI-версия) 
+2 - Веб-браузер, созданный для скорости, простоты и безопасности
 
 "################################################################"
 echo ""
@@ -881,9 +894,9 @@ while
     read -n1 -p  "
     1 - google-chrome 
     
-    2 - firefox 
+    2 - Firefox 
     
-    3 - chromium
+    3 - Chromium 
     
     4 - opera ( + pepper-flash )
     
@@ -926,10 +939,10 @@ clear
 fi
 #############################################################################
 
-
-
-
 sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin pepper-flash --noconfirm
+
+
+
 
 echo ""
 echo -e "${BLUE}:: ${NC}Установка Torrent клиентов - Transmission, qBittorrent, Deluge (GTK)(Qt)(GTK+)" 
