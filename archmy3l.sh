@@ -993,7 +993,7 @@ fi
 
 clear
 echo -e "${MAGENTA}
-  <<< Установка Мультимедиа плееров, утилит (пакетов) и кодеков (multimedia codecs) в Archlinux >>> ${NC}"
+  <<< Установка Мультимедиа плееров, проигрывателей, утилит и кодеков в Archlinux >>> ${NC}"
 # Installing multimedia utilities (packages) and codecs (multimedia codecs) for Archlinux
 
 echo ""
