@@ -876,10 +876,11 @@ echo -e "${MAGENTA}
 # Installing additional software (packages) for Archlinux
 
 echo ""
-echo -e "${BLUE}:: ${NC}Установка дополнительных базовых программ (пакетов)" 
+echo -e "${GREEN}==> ${NC}Установка дополнительных базовых программ (пакетов)"
+#echo -e "${BLUE}:: ${NC}Установка дополнительных базовых программ (пакетов)" 
 #echo 'Установка дополнительных базовых программ (пакетов)'
 # Installing additional basic programs (packages)
-echo " Список программ (пакетов) для установки: - (alsa-utils, alsa-plugins, alsa-firmware, alsa-lib, alsa-utils, pulseaudio, pulseaudio-alsa, pavucontrol, pulseaudio-zeroconf, pulseaudio-bluetooth и xfce4-pulseaudio-plugin) " 
+echo " Список программ (пакетов) для установки: - (aspell-ru, arch-install-scripts, bash-completion, dosfstools, f2fs-tools, sane, gvfs, gnu-netcat, iftop, nmap, ntp, ncdu, hydra, isomd5sum, python-isomd5sum, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, pwgen, scrot, xsel, и reflector) " 
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -899,55 +900,56 @@ done
 if [[ $prog_set == 0 ]]; then 
 clear
 echo ""   
-echo " Установка поддержки Sound support пропущена "
+echo " Установка дополнительных базовых программ (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
-  echo " Установка пакетов поддержки Sound support (alsa, pulseaudio...) "
-
+  echo " Установка дополнительных базовых программ (пакетов) "
+sudo pacman -S aspell-ru arch-install-scripts bash-completion dosfstools f2fs-tools sane gvfs gnu-netcat iftop nmap ntfs-3g ntp ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip pwgen scrot xsel reflector --noconfirm  # git curl  - пока присутствует в pkglist.x86_64   powertop - Специализированная (ага, снова) утилита от intel для мониторинга потребления мощности (электрической мощности!) разными процессами 
 clear
 echo ""   
-echo " Установка пакетов Поддержки звука выполнена "
+echo " Установка дополнительных базовых программ (пакетов) выполнена "
 fi
-sudo pacman -S aspell-ru arch-install-scripts bash-completion dosfstools f2fs-tools sane gvfs gnu-netcat iftop nmap ntfs-3g ntp ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip pwgen scrot xsel reflector --noconfirm  # git curl  - пока присутствует в pkglist.x86_64
-
-
 
 echo ""
-echo -e "${BLUE}:: ${NC}Установка Интерактивного просмотрщика процессов (системы)" 
+echo -e "${GREEN}==> ${NC}Установка Интерактивного просмотрщика процессов (системы)"
+#echo -e "${BLUE}:: ${NC}Установка Интерактивного просмотрщика процессов (системы)" 
 #echo 'Установка Интерактивного просмотрщика процессов (системы)'
 # Installing The interactive process viewer (system)
-echo " Список программ (пакетов) для установки: - (htop - интерактивный просмотрщик процессов, iotop - Просмотр использования процессов ввода-вывода) " 
+echo " Список программ (пакетов) для установки: - (htop - интерактивный просмотрщик запущенных процессов, iotop - просмотр процессов ввода-вывода по использованию жесткого диска) " 
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
 # If you doubt your actions, think again... 
-
-
-
 echo "" 
-while 
-    read -n1 -p  "
-    1 - да 
-    
-    0 - нет: " i_htop # sends right after the keypress
+while
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_htop  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
     [[ "$i_htop" =~ [^10] ]]
 do
     :
-done
+done 
 if [[ $i_htop == 0 ]]; then
 clear
-echo " Установка пропущена "
+echo "" 
+echo " Установка просмотрщика процессов (системы) пропущена "
 elif [[ $i_htop == 1 ]]; then
-pacman -S htop xterm --noconfirm
+sudo pacman -S htop iotop --noconfirm
+#sudo pacman -S atop --noconfirm  # сбор статистики и наблюдение за системой в реальном времени
 clear
-echo " установка htop  завершена "
+echo ""   
+echo " Установка htop, iotop (пакетов) выполнена "
 fi
+
 echo ""
 echo -e "${BLUE}:: ${NC}Установка терминальных утилит для вывода информации о системе" 
 #echo 'Установка терминальных утилит для вывода информации о системе'
 # Installing terminal utilities for displaying system information
 sudo pacman -S screenfetch archey3 neofetch --noconfirm  
 
+###################
 echo ""
 echo -e "${BLUE}:: ${NC}Установка Мультимедиа кодеков (multimedia codecs), и утилит" 
 #echo 'Установка Мультимедиа кодеков (multimedia codecs), и утилит'
@@ -1156,7 +1158,7 @@ bleachbit gparted grub-customizer conky conky-manager dconf-editor doublecmd-gtk
 ${NC}" # xarchiver-gtk2 catdoc unrtf id3lib toxcore mlocate
 read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S bleachbit gparted grub-customizer conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot frei0r-plugins redshift veracrypt onboard clonezilla moc filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk glances tlp tlp-rdw meld cmake xterm lsof dmidecode --noconfirm  #catdoc unrtf id3lib toxcore mlocate
+sudo pacman -S bleachbit gparted grub-customizer conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot frei0r-plugins redshift veracrypt onboard clonezilla moc filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk glances tlp tlp-rdw meld cmake xterm lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate
 echo " Установка утилит (пакетов) завершена " 
 elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ пропущена. '
