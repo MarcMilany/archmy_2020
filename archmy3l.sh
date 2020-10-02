@@ -880,7 +880,7 @@ echo -e "${GREEN}==> ${NC}Установка дополнительных баз
 #echo -e "${BLUE}:: ${NC}Установка дополнительных базовых программ (пакетов)" 
 #echo 'Установка дополнительных базовых программ (пакетов)'
 # Installing additional basic programs (packages)
-echo " Список программ (пакетов) для установки: - (aspell-ru, arch-install-scripts, bash-completion, dosfstools, f2fs-tools, sane, gvfs, gnu-netcat, iftop, nmap, ntp, ncdu, hydra, isomd5sum, python-isomd5sum, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, pwgen, scrot, xsel, и reflector) " 
+echo " Список программ (пакетов) для установки: - (aspell-ru, arch-install-scripts, bash-completion, dosfstools, f2fs-tools, sane, gvfs, gnu-netcat, iftop, nmap, ntp, ncdu, hydra, isomd5sum, python-isomd5sum, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, pwgen, scrot, xsel, powertop, и reflector) " 
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
