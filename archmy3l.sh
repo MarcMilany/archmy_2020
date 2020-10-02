@@ -1002,7 +1002,7 @@ echo -e "${GREEN}==> ${NC}Установка мультимедиа кодеко
 #echo -e "${BLUE}:: ${NC}Установка мультимедиа кодеков (multimedia codecs), и утилит" 
 #echo 'Установка Мультимедиа кодеков (multimedia codecs), и утилит'
 # Installing Multimedia codecs and utilities
-echo " Список утилит (пакетов) для установки: - (a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-bad gst-plugins-ugly libdvdcss libdvdread libdvdnav dvd+rw-tools dvdauthor dvgrab cdrdao gst-libav gst-libav gpac) " 
+echo " Список утилит (пакетов) для установки: - (a52dec, faac, faad2, flac, jasper, lame, libdca, libdv, libmad, libmpeg2, libtheora, libvorbis, libxv, wavpack, x264, xvidcore, gst-plugins-base, gst-plugins-base-libs, gst-plugins-good, gst-plugins-bad, gst-plugins-ugly, libdvdcss, libdvdread, libdvdnav, dvd+rw-tools, dvdauthor, dvgrab, cdrdao, gst-libav, gst-libav, gpac) " 
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
