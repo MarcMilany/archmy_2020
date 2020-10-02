@@ -1119,19 +1119,25 @@ echo ""
 echo -e "${BLUE}:: ${NC}Установка Текстового редактора (gedit)" 
 #echo 'Установка Текстового редактора (gedit)'
 # Installing a text editor (gedit)
-sudo pacman -S gedit gedit-plugins --noconfirm
+sudo pacman -S gedit gedit-plugins --noconfirm  # Текстовый редактор GNOME
 
 echo ""
 echo -e "${BLUE}:: ${NC}Установка Утилиты разработки (geany)" 
 #echo 'Установка Утилиты разработки (geany)'
 # Installing the development utility (geany)
-sudo pacman -S geany geany-plugins --noconfirm
+sudo pacman -S geany geany-plugins --noconfirm  # Быстрая и легкая IDE
+
+clear
+echo -e "${MAGENTA}
+  <<< Установка утилит (пакетов) управления электронной почтой, новостными лентами, чатом и группам >>> ${NC}"
+# Installing utilities (packages) for managing email, news feeds, chat, and groups
 
 echo ""
 echo -e "${BLUE}:: ${NC}Управления электронной почтой, новостными лентами, чатом и группам" 
 #echo 'Управления электронной почтой, новостными лентами, чатом и группам'
 # Manage email, news feeds, chat, and groups
 sudo pacman -S thunderbird thunderbird-i18n-ru pidgin pidgin-hotkeys --noconfirm
+
 ##############################
 
 clear
