@@ -961,7 +961,7 @@ echo ""
 echo -e "${BLUE}:: ${NC}Установка Мультимедиа утилит (пакетов)" 
 #echo 'Установка Мультимедиа утилит'
 # Installing Multimedia utilities
-sudo pacman -S audacity audacious audacious-plugins smplayer smplayer-skins smplayer-themes smtube deadbeef easytag subdownloader mediainfo-gui vlc --noconfirm
+sudo pacman -S audacity audacious audacious-plugins smplayer smplayer-skins smplayer-themes smtube vlc --noconfirm
 
 echo ""
 echo -e "${BLUE}:: ${NC}Установка Текстовые редакторы и утилиты разработки" 

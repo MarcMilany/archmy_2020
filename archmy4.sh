@@ -222,7 +222,7 @@ echo -e "${BLUE}
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S deadbeef easytag subdownloader mediainfo-gui --noconfirm
+sudo pacman -S deadbeef easytag subdownloader moc mediainfo-gui --noconfirm
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка Мультимедиа утилит пропущена.'
 fi
