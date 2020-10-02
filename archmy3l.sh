@@ -1038,7 +1038,7 @@ echo -e "${GREEN}==> ${NC}Установка Мультимедиа аудиоп
 echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие варианты: ${NC}"
 echo " 1 - Audacious - Легкий, продвинутый аудиоплеер, ориентированный на качество звука. "
 echo -e "${YELLOW}:: ${NC} "
-echo " 2 - Smplayer - , то выбирайте вариант - "2". "
+echo " 2 - Smplayer - Медиаплеер со встроенными кодеками, который может воспроизводить практически все видео и аудио форматы. "
 echo " 3 - VLC - , то выбирайте вариант - "3". "
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В этом действии выбор остаётся за вами. "
 # Be careful! The installation process was fully automatic. In this action, the choice is yours.
@@ -1058,7 +1058,7 @@ do
 done 
 if [[ $prog_set == 0 ]]; then 
 echo ""   
-echo " Установка пропущена "
+echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка аудиоплеер Audacious "
 sudo pacman -S audacious audacious-plugins --noconfirm
@@ -1067,7 +1067,7 @@ echo " Установка утилит (пакетов) выполнена "
 fi
 
 echo "" 
-echo -e "${BLUE}:: ${NC}Установить аудиоплеер Audacious?" 
+echo -e "${BLUE}:: ${NC}Установить аудиоплеер Smplayer?" 
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
@@ -1079,12 +1079,11 @@ do
     :
 done 
 if [[ $prog_set == 0 ]]; then 
-clear
 echo ""   
-echo " Установка мультимедиа кодеков и утилит (пакетов) пропущена "
+echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
-  echo " Установка аудиоплеер Audacious "
-sudo pacman -S audacious audacious-plugins --noconfirm
+  echo " Установка аудиоплеер Smplayer "
+sudo pacman -S smplayer smplayer-skins smplayer-themes smtube --noconfirm
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
