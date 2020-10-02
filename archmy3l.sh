@@ -1120,14 +1120,14 @@ echo -e "${BLUE}:: ${NC}Установка Текстового редактор
 #echo 'Установка Текстового редактора (gedit)'
 # Installing a text editor (gedit)
 sudo pacman -S gedit gedit-plugins --noconfirm  # Текстовый редактор GNOME
-# gedit — свободный текстовый редактор рабочей среды GNOME с поддержкой Юникода.
+# gedit - свободный текстовый редактор рабочей среды GNOME с поддержкой Юникода.
 
 echo ""
 echo -e "${BLUE}:: ${NC}Установка Утилиты разработки (geany)" 
 #echo 'Установка Утилиты разработки (geany)'
 # Installing the development utility (geany)
 sudo pacman -S geany geany-plugins --noconfirm  # Быстрая и легкая IDE
-# Geany — это текстовый редактор, который позволяет подключать сторонние библиотеки для создания полноценной среды разработки.
+# Geany - это текстовый редактор, который позволяет подключать сторонние библиотеки для создания полноценной среды разработки.
 
 clear
 echo -e "${MAGENTA}
