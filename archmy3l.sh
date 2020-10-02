@@ -1116,10 +1116,16 @@ echo -e "${MAGENTA}
 # Installing a Text editor and development utility in Archlinux
 
 echo ""
-echo -e "${BLUE}:: ${NC}Установка Текстового редактора и утилиты разработки" 
+echo -e "${BLUE}:: ${NC}Установка Текстового редактора (gedit)" 
 #echo 'Установка Текстовые редакторы и утилиты разработки'
 # Installation Text editors and development tools
-sudo pacman -S gedit gedit-plugins geany geany-plugins --noconfirm
+sudo pacman -S gedit gedit-plugins --noconfirm
+
+echo ""
+echo -e "${BLUE}:: ${NC}Установка Утилиты разработки (geany)" 
+#echo 'Установка Текстовые редакторы и утилиты разработки'
+# Installation Text editors and development tools
+sudo pacman -S geany geany-plugins --noconfirm
 
 echo ""
 echo -e "${BLUE}:: ${NC}Управления электронной почтой, новостными лентами, чатом и группам" 
