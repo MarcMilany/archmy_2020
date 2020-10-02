@@ -796,12 +796,12 @@ do
     :
 done 
 if [[ $prog_set == 0 ]]; then 
-clear   
+echo ""  
 echo " Установка Blueman пропущена "
 elif [[ $prog_set == 1 ]]; then  
   echo " Установка Blueman (менеджер Bluetooth) "
 sudo pacman -S blueman --noconfirm  # blueman --диспетчер bluetooth устройств (полезно для i3)
-clear
+echo "" 
 echo " Установка Blueman (менеджер Bluetooth) завершена "
 fi
 # -------------------------------------------------------------------
@@ -809,6 +809,7 @@ fi
 # https://wiki.archlinux.org/index.php/Blueman
 # --------------------------------------------------------------------
 
+clear  
 echo -e "${MAGENTA}
   <<< Установка Архиваторов (консольных), дополнений для архиваторов, менеджеров архивов (графический интерфейс) >>> ${NC}"
 # Install Archivers (console), add-ons to archivers, archive managers (graphical interface)
