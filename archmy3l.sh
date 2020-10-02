@@ -704,7 +704,7 @@ echo -e "${GREEN}==> ${NC}Установим поддержку Bluetooth?"
 #echo 'Установим поддержку Bluetooth?'
 # Install Bluetooth support?
 echo -e "${CYAN}=> ${BOLD}Установка поддержки Bluetooth и Sound support (звука) - будет очень актуальна, если Вы установили DE (среда рабочего стола) XFCE. ${NC}"
-echo " Список программ (пакетов) для установки: - (bluez bluez-libs bluez-cups bluez-utils) " 
+echo " Список программ (пакетов) для установки: - (bluez, bluez-libs, bluez-cups, bluez-utils) " 
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -722,28 +722,21 @@ do
     :
 done 
 if [[ $prog_set == 0 ]]; then    
-echo " Установка Брандмауэра UFW пропущена "
+echo " Установка поддержки Bluetooth пропущена "
 elif [[ $prog_set == 1 ]]; then
-  echo " Установка UFW (Несложный Брандмауэр) "
-sudo pacman -S ufw gufw --noconfirm
-echo " Установка Брандмауэра UFW завершена "
+  echo " Установка поддержки Bluetooth "
+sudo pacman -S bluez bluez-libs bluez-cups bluez-utils --noconfirm
+#sudo pacman -S blueman --noconfirm  # blueman --диспетчер bluetooth устройств (полезно для i3)
 fi
 
-
-
-
 echo ""
-echo -e "${GREEN}==> ${NC}Ставим Bluetooth и Поддержка звука"
-#echo -e "${BLUE}:: ${NC}Ставим Bluetooth и Поддержка звука" 
-#echo 'Ставим Bluetooth и Поддержка звука'
-# Setting Bluetooth and Sound support
-
-
-
-echo -e "${BLUE} 'Список программ (пакетов) для установки:${GREEN}
-bluez bluez-libs bluez-cups bluez-utils alsa-utils alsa-plugins alsa-firmware alsa-lib alsa-utils pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth xfce4-pulseaudio-plugin' ${NC}"
-echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
-# Be careful! The installation process was fully automatic. In any situation, the choice is always yours.
+echo -e "${GREEN}==> ${NC}Ставим пакеты Поддержки звука (alsa, pulseaudio...)?"
+#echo -e "${BLUE}:: ${NC}Ставим пакеты Поддержки звука (alsa, pulseaudio...)?" 
+#echo 'Ставим пакеты Поддержки звука (alsa, pulseaudio...)?'
+# Installing sound support packages (alsa, pulseaudio...)?
+echo " Список программ (пакетов) для установки: - (alsa-utils, alsa-plugins, alsa-firmware, alsa-lib, alsa-utils, pulseaudio, pulseaudio-alsa, pavucontrol, pulseaudio-zeroconf, pulseaudio-bluetooth и xfce4-pulseaudio-plugin) " 
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
 # If you doubt your actions, think again... 
 echo "" 
@@ -759,13 +752,12 @@ do
     :
 done 
 if [[ $prog_set == 0 ]]; then    
-echo " Установка поддержки Bluetooth и Sound support (звука) пропущена "
+echo " Установка поддержки Sound support пропущена "
 elif [[ $prog_set == 1 ]]; then
-  echo " Установка поддержки Bluetooth и Sound support (звука) "
-sudo pacman -S bluez bluez-libs bluez-cups bluez-utils --noconfirm
-#sudo pacman -S blueman --noconfirm  # blueman --диспетчер bluetooth устройств (полезно для i3)
+  echo " Установка пакетов поддержки Sound support (alsa, pulseaudio...) "
 sudo pacman -S alsa-utils alsa-plugins alsa-firmware alsa-lib alsa-utils --noconfirm 
-sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth xfce4-pulseaudio-plugin --noconfirm #pulseaudio-equalizer-ladspa 
+sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth --noconfirm  # pulseaudio-equalizer-ladspa
+sudo pacman -S xfce4-pulseaudio-plugin --noconfirm  
 #sudo pacman -Sy pulseaudio-bluetooth alsa-utils pulseaudio-equalizer-ladspa   --noconfirm
 #sudo systemctl enable bluetooth.service 
 fi
