@@ -725,6 +725,7 @@ if [[ $prog_set == 0 ]]; then
 #echo ""  
 echo " Установка поддержки Bluetooth пропущена "
 elif [[ $prog_set == 1 ]]; then
+#echo ""    
   echo " Установка пакетов поддержки Bluetooth "
 sudo pacman -S bluez bluez-libs bluez-cups bluez-utils --noconfirm
 #sudo pacman -S blueman --noconfirm  # blueman --диспетчер bluetooth устройств (полезно для i3)
