@@ -903,7 +903,7 @@ echo ""
 echo " Установка дополнительных базовых программ (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка дополнительных базовых программ (пакетов) "
-sudo pacman -S aspell-ru arch-install-scripts bash-completion dosfstools f2fs-tools sane gvfs gnu-netcat iftop nmap ntfs-3g ntp ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip pwgen scrot xsel reflector --noconfirm  # git curl  - пока присутствует в pkglist.x86_64   powertop - Специализированная (ага, снова) утилита от intel для мониторинга потребления мощности (электрической мощности!) разными процессами 
+sudo pacman -S aspell-ru arch-install-scripts bash-completion dosfstools f2fs-tools sane gvfs gnu-netcat iftop nmap ntfs-3g ntp ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip pwgen scrot xsel reflector --noconfirm  # git curl  - пока присутствует в pkglist.x86_64   
 clear
 echo ""   
 echo " Установка дополнительных базовых программ (пакетов) выполнена "
@@ -1154,15 +1154,31 @@ echo -e "${GREEN}==> ${BOLD}Установить рекомендованные 
 # Install the recommended programs
 echo -e "${BLUE}
 'Список программ рекомендованных к установке:${GREEN}
-bleachbit gparted grub-customizer conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot frei0r-plugins redshift veracrypt onboard clonezilla moc filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget xarchiver-gtk2 rofi gsmartcontrol testdisk glances tlp tlp-rdw meld cmake xterm lsof dmidecode' 
+bleachbit gparted grub-customizer conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot frei0r-plugins redshift veracrypt onboard clonezilla moc filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget xarchiver-gtk2 rofi gsmartcontrol testdisk glances meld cmake xterm lsof dmidecode' 
 ${NC}" # xarchiver-gtk2 catdoc unrtf id3lib toxcore mlocate
 read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S bleachbit gparted grub-customizer conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot frei0r-plugins redshift veracrypt onboard clonezilla moc filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk glances tlp tlp-rdw meld cmake xterm lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate
+sudo pacman -S bleachbit gparted grub-customizer conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot frei0r-plugins redshift veracrypt onboard clonezilla moc filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk glances meld cmake xterm lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate
 echo " Установка утилит (пакетов) завершена " 
 elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ пропущена. '
 fi
+
+echo ""
+echo -e "${GREEN}==> ${NC}Установим TLP - Для увеличения продолжительности времени работы от батареи"
+#echo -e "${BLUE}:: ${NC}Установим TLP - Для увеличения продолжительности времени работы от батареи" 
+#echo 'Установим TLP - Для увеличения продолжительности времени работы от батареи'
+# Set TLP - to increase the duration Of battery life
+echo -e "${MAGENTA}:: ${BOLD}TLP - это продвинутая, консольная утилита для управления питанием, которая автоматически применяет нужные настройки для конкретного аппаратного оборудования. ${NC}"
+echo -e "${CYAN}:: ${NC}TLP применяет настройки автоматически при запуске и каждый раз при смене источника питания. Грубо говоря, стоит только установить TLP и многое будет работать искаропки."
+echo " Утилита TLP - будет очень актуальна, если Вы пользуетесь 'Ноутбуком'! "
+
+
+tlp tlp-rdw powertop
+tlp 
+tlp-rdw
+powertop    # утилита от intel для мониторинга потребления (электрической мощности!) разными процессами 
+
 
 clear
 echo ""
