@@ -1032,7 +1032,8 @@ fi
 
 ################### СДЕЛАТЬ
 echo ""
-echo -e "${BLUE}:: ${NC}Установка Мультимедиа плееров и утилит (пакетов)" 
+echo -e "${GREEN}==> ${NC}Установка Мультимедиа плееров и утилит (пакетов)"
+#echo -e "${BLUE}:: ${NC}Установка Мультимедиа плееров и утилит (пакетов)" 
 #echo 'Установка Мультимедиа утилит'
 # Installing Multimedia utilities
 sudo pacman -S audacity audacious audacious-plugins smplayer smplayer-skins smplayer-themes smtube vlc --noconfirm
