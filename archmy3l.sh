@@ -945,9 +945,45 @@ fi
 
 ################### СДЕЛАТЬ
 echo ""
-echo -e "${BLUE}:: ${NC}Установка терминальных утилит для вывода информации о системе" 
+echo -e "${GREEN}==> ${NC}Установка терминальных утилит (пакетов) для вывода информации о системе (с лого в консоли)"
+#echo -e "${BLUE}:: ${NC}Установка терминальных утилит для вывода информации о системе" 
 #echo 'Установка терминальных утилит для вывода информации о системе'
 # Installing terminal utilities for displaying system information
+echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие варианты: ${NC}"
+echo " 1 - ScreenFetch - Скрипт CLI Bash для отображения информации о системе, то выбирайте вариант - "1". "
+echo -e "${YELLOW}:: ${NC}Простая терминальная утилита для вывода информации о системе, драйвере и ОЗУ в Linux."
+echo " 2 - Neofetch - Инструмент системной информации CLI, написанный на BASH, который поддерживает отображение изображений, то выбирайте вариант - "2". "
+echo " 3 - Archey3 - , то выбирайте вариант - "3". "
+echo " . "
+echo " Будьте внимательны! В этом действии выбор остаётся за вами. "
+# Be careful! In this action, the choice is yours.
+echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
+#echo 'Установка производится в порядке перечисления'
+# Installation Is performed in the order listed
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - ScreenFetch,     2 - Neofetch,     3 - Archey3,
+
+    0 - Пропустить установку AUR Helper: " in_aur_help  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$in_aur_help" =~ [^1230] ]]
+do
+    :
+done 
+if [[ $in_aur_help == 0 ]]; then
+
+
+
+
+
+
+
+
+
+
+
 sudo pacman -S screenfetch archey3 neofetch --noconfirm  
 
 
