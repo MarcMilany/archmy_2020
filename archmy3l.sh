@@ -1043,17 +1043,17 @@ do
     :
 done 
 if [[ $prog_set == 0 ]]; then 
-clear
+#clear
 echo ""    
 echo " Установка пакета LibreOffice пропущена "
 elif [[ $prog_set == 1 ]]; then
 sudo pacman -S libreoffice-still libreoffice-still-ru --noconfirm
-clear
+#clear
 echo ""    
 echo " Установка LibreOffice-still выполнена "
 elif [[ $prog_set == 2 ]]; then
 sudo pacman -S libreoffice-fresh libreoffice-fresh-ru --noconfirm
-clear
+#clear
 echo ""    
 echo " Установка LibreOffice-fresh выполнена "
 fi
@@ -1078,6 +1078,7 @@ fi
 # https://www.documentfoundation.org
 # ========================================
 
+clear
 echo -e "${MAGENTA}
   <<< Установка рекомендованных программ (пакетов) - по вашему выбору и желанию >>> ${NC}"
 # Installation of recommended programs - according to your choice and desire  
