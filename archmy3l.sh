@@ -1156,11 +1156,11 @@ echo -e "${GREEN}==> ${BOLD}Установить рекомендованные 
 # Install the recommended programs
 echo -e "${BLUE}
 'Список программ рекомендованных к установке:${GREEN}
-bleachbit gparted grub-customizer conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot cmake frei0r-plugins redshift veracrypt onboard clonezilla moc filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget xarchiver-gtk2 rofi gsmartcontrol testdisk glances meld xterm lsof dmidecode' 
+bleachbit gparted grub-customizer conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot cmake frei0r-plugins redshift veracrypt onboard clonezilla filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget xarchiver-gtk2 rofi gsmartcontrol testdisk glances meld xterm lsof dmidecode' 
 ${NC}" # xarchiver-gtk2 catdoc unrtf id3lib toxcore mlocate
 read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S bleachbit gparted grub-customizer conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot cmake frei0r-plugins redshift veracrypt onboard clonezilla moc filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk glances meld xterm lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate
+sudo pacman -S bleachbit gparted grub-customizer conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot cmake frei0r-plugins redshift veracrypt onboard clonezilla filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk glances meld xterm lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate
 echo " Установка утилит (пакетов) завершена " 
 elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ пропущена. '
