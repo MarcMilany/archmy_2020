@@ -943,7 +943,6 @@ echo ""
 echo " Установка htop, iotop (пакетов) выполнена "
 fi
 
-################### СДЕЛАТЬ
 echo ""
 echo -e "${GREEN}==> ${NC}Установка терминальных утилит (пакетов) для вывода информации о системе (с лого в консоли)"
 #echo -e "${BLUE}:: ${NC}Установка терминальных утилит для вывода информации о системе" 
@@ -964,11 +963,11 @@ echo ""
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - ScreenFetch,     2 - Neofetch,     3 - Archey3,
+    1 - ScreenFetch,     2 - Neofetch,     3 - Archey3,     4 - ScreenFetch, Neofetch, Archey3,
 
-    0 - Пропустить установку AUR Helper: " in_aur_help  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    0 - Пропустить установку: " in_aur_help  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$in_aur_help" =~ [^1230] ]]
+    [[ "$in_aur_help" =~ [^12340] ]]
 do
     :
 done 
@@ -984,9 +983,9 @@ if [[ $in_aur_help == 0 ]]; then
 
 
 
-sudo pacman -S screenfetch archey3 neofetch --noconfirm  
+sudo pacman -S screenfetch neofetch archey3 --noconfirm  
 
-
+################### СДЕЛАТЬ
 echo ""
 echo -e "${BLUE}:: ${NC}Установка Мультимедиа кодеков (multimedia codecs), и утилит" 
 #echo 'Установка Мультимедиа кодеков (multimedia codecs), и утилит'
