@@ -975,24 +975,21 @@ echo ""
 echo " Установка утилит (пакетов) для вывода информации о системе пропущена "
 elif [[ $prog_set == 1 ]]; then
 echo ""    
-echo " Установка утилиты (пакета)  "  
+echo " Установка утилиты (пакета) ScreenFetch "  
 sudo pacman -S screenfetch --noconfirm 
 elif [[ $prog_set == 2 ]]; then
 echo ""    
-echo " Установка утилиты (пакета)  "     
+echo " Установка утилиты (пакета) Neofetch "     
 sudo pacman -S neofetch --noconfirm
 elif [[ $prog_set == 3 ]]; then
 echo ""    
-echo " Установка утилиты (пакета)  " 
+echo " Установка утилиты (пакета) Archey3 " 
 sudo pacman -S archey3 --noconfirm
 elif [[ $prog_set == 4 ]]; then
 echo ""    
-echo " Установка утилит (пакетов)  " 
+echo " Установка утилит (пакетов) ScreenFetch, Neofetch, Archey3 " 
 sudo pacman -S screenfetch neofetch archey3 --noconfirm 
-
-
-
- 
+fi
 
 ################### СДЕЛАТЬ
 echo ""
