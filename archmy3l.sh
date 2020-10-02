@@ -1057,6 +1057,28 @@ do
     :
 done 
 if [[ $prog_set == 0 ]]; then 
+echo ""   
+echo " Установка пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка аудиоплеер Audacious "
+sudo pacman -S audacious audacious-plugins --noconfirm
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
+
+echo "" 
+echo -e "${BLUE}:: ${NC}Установить аудиоплеер Audacious?" 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
 clear
 echo ""   
 echo " Установка мультимедиа кодеков и утилит (пакетов) пропущена "
@@ -1070,10 +1092,10 @@ fi
 
 
 
-
-
 sudo pacman -S audacious audacious-plugins smplayer smplayer-skins smplayer-themes smtube vlc --noconfirm
 
+
+################### СДЕЛАТЬ
 echo ""
 echo -e "${BLUE}:: ${NC}Установка Текстовые редакторы и утилиты разработки" 
 #echo 'Установка Текстовые редакторы и утилиты разработки'
