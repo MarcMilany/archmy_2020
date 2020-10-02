@@ -993,8 +993,8 @@ fi
 
 clear
 echo -e "${MAGENTA}
-  <<< Установка Мультимедиа плееров, проигрывателей, утилит и кодеков в Archlinux >>> ${NC}"
-# Installing multimedia utilities (packages) and codecs (multimedia codecs) for Archlinux
+  <<< Установка Мультимедиа аудиоплееров, видео-проигрывателей, утилит и кодеков в Archlinux >>> ${NC}"
+# Installing Multimedia audio players, video players, utilities, and codecs in Archlinux
 
 echo ""
 echo -e "${GREEN}==> ${NC}Установка мультимедиа кодеков (multimedia codecs), и утилит"
@@ -1032,16 +1032,15 @@ fi
 
 ################### СДЕЛАТЬ
 echo ""
-echo -e "${GREEN}==> ${NC}Установка Мультимедиа плееров и утилит (пакетов)"
+echo -e "${GREEN}==> ${NC}Установка Мультимедиа аудиоплееров, видео-проигрывателей"
 #echo -e "${BLUE}:: ${NC}Установка Мультимедиа плееров и утилит (пакетов)" 
 #echo 'Установка Мультимедиа утилит'
 # Installing Multimedia utilities
 echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие варианты: ${NC}"
-echo " 1 - Audacity - , то выбирайте вариант - "1". "
+echo " 1 - Audacious - Легкий, продвинутый аудиоплеер, ориентированный на качество звука. "
 echo -e "${YELLOW}:: ${NC} "
-echo " 2 - Audacious - , то выбирайте вариант - "2". "
-echo " 3 - Smplayer - , то выбирайте вариант - "3". "
-echo " 4 - VLC - , то выбирайте вариант - "3". "
+echo " 2 - Smplayer - , то выбирайте вариант - "2". "
+echo " 3 - VLC - , то выбирайте вариант - "3". "
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В этом действии выбор остаётся за вами. "
 # Be careful! The installation process was fully automatic. In this action, the choice is yours.
 echo -e "${YELLOW}==> ${NC}Установка будет производится в порядке перечисления" 
