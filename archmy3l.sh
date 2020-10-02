@@ -607,7 +607,7 @@ pikaur -Syy
 pikaur -Syu
 fi
 
-sleep 01
+sleep 02
 clear
 echo -e "${MAGENTA}
   <<< Установка сетевого экрана (брандмауэр UFW) и антивируса (ClamAV) для Archlinux >>> ${NC}"
