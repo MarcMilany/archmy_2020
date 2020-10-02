@@ -2128,11 +2128,29 @@ fi
 # Arch Linux: cups и hplip - подключение принтера
 # https://rtfm.co.ua/arch-linux-cups-i-hplip-podklyuchenie-printera/
 # ------------------------------------------------------------------------
+
 echo ""
-echo -e "${BLUE}:: ${NC}Применяем настройки TLP (управления питанием) в зависимости от источника питания (батарея или от сети)" 
+echo -e "${BLUE}:: ${NC}Настроить автозапуск сервисов TLP (управления питанием)" 
+# выполнив следующие команды по очереди:
+sudo systemctl disable systemd-rfkill.service
+sudo systemctl mask systemd-rfkill.socket systemd-rfkill.service
+sudo systemctl enable tlp.service
+sudo systemctl enable tlp-sleep.service
+
+echo ""
+echo -e "${BLUE}:: ${NC}Также вы можете запустить TLP (управления питанием), не перезагружаясь" 
 #echo 'Применяем настройки TLP (управления питанием) в зависимости от источника питания (батарея или от сети)'
 # Apply TLP (power management) settings depending on the power source (battery or mains)
 sudo tlp start
+
+echo ""
+echo -e "${BLUE}:: ${NC}Проверяем работу TLP (управления питанием)" 
+echo " Вы увидите планировщик который вы указали при питании от сети, в моем случае - performance, либо же powersave при работе от батареи "
+cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+
+echo ""
+echo -e "${BLUE}:: ${NC}Получение подробного вывода TLP (управления питанием)"
+sudo tlp-stat
 
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим информацию о шрифтах" 
