@@ -1205,7 +1205,7 @@ elif [[ $prog_set == 1 ]]; then
   echo ""  
   echo " Установка (пакетов) для управления питанием "
 sudo pacman -S tlp tlp-rdw --noconfirm 
-#sudo pacman -S tp_smapi acpi_call --noconfirm 
+#sudo pacman -S tp_smapi acpi_call --noconfirm  # Для ThinkPad (ноутбуков), или Интел платформ Sandy Bridge
 echo ""
 echo " Установка утилит (пакетов) завершена " 
 fi
