@@ -992,6 +992,11 @@ sudo pacman -S screenfetch neofetch archey3 --noconfirm
 fi
 
 ################### СДЕЛАТЬ
+clear
+echo -e "${MAGENTA}
+  <<< Установка Мультимедиа утилит (пакетов) и кодеков (multimedia codecs) в Archlinux >>> ${NC}"
+# Installing multimedia utilities (packages) and codecs (multimedia codecs) for Archlinux
+
 echo ""
 echo -e "${BLUE}:: ${NC}Установка Мультимедиа кодеков (multimedia codecs), и утилит" 
 #echo 'Установка Мультимедиа кодеков (multimedia codecs), и утилит'
