@@ -1141,7 +1141,7 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка текстового редактора (gedit) "
-sudo pacman -S gedit gedit-plugins --noconfirm
+sudo pacman -S gedit gedit-plugins --noconfirm  # Текстовый редактор GNOME
 echo ""   
 echo " Установка текстового редактора (gedit) выполнена "
 fi
