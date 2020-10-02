@@ -1211,10 +1211,12 @@ echo ""
 echo " Установка утилит (пакетов) завершена " 
 fi
 # --------------------------------
-#
-#
-#
-#
+# Управление питанием с помощью tlp (настройка производительности)
+# https://manjaro.ru/how-to/upravlenie-pitaniem-s-pomoschyu-tlp-nastroyka-proizvoditelnosti.html
+# https://wiki.archlinux.org/index.php/TLP
+# https://linrunner.de/tlp/settings/
+# https://linrunner.de/tlp/
+# https://linrunner.de/tlp/settings/disks.html
 # ===============================
 
 clear
