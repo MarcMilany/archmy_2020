@@ -1117,14 +1117,14 @@ echo -e "${MAGENTA}
 
 echo ""
 echo -e "${BLUE}:: ${NC}Установка Текстового редактора (gedit)" 
-#echo 'Установка Текстовые редакторы и утилиты разработки'
-# Installation Text editors and development tools
+#echo 'Установка Текстового редактора (gedit)'
+# Installing a text editor (gedit)
 sudo pacman -S gedit gedit-plugins --noconfirm
 
 echo ""
 echo -e "${BLUE}:: ${NC}Установка Утилиты разработки (geany)" 
-#echo 'Установка Текстовые редакторы и утилиты разработки'
-# Installation Text editors and development tools
+#echo 'Установка Утилиты разработки (geany)'
+# Installing the development utility (geany)
 sudo pacman -S geany geany-plugins --noconfirm
 
 echo ""
