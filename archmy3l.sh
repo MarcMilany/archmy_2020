@@ -1127,6 +1127,7 @@ echo -e "${BLUE}:: ${NC}Установка Утилиты разработки (
 #echo 'Установка Утилиты разработки (geany)'
 # Installing the development utility (geany)
 sudo pacman -S geany geany-plugins --noconfirm  # Быстрая и легкая IDE
+# Geany — это текстовый редактор, который позволяет подключать сторонние библиотеки для создания полноценной среды разработки.
 
 clear
 echo -e "${MAGENTA}
