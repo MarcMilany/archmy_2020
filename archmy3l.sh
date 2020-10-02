@@ -1116,6 +1116,7 @@ echo -e "${MAGENTA}
 # Installing a Text editor and development utility in Archlinux
 
 echo ""
+echo -e "${GREEN}==> ${NC}Установка Текстового редактора (gedit)"
 echo -e "${BLUE}:: ${NC}Установка Текстового редактора (gedit)" 
 #echo 'Установка Текстового редактора (gedit)'
 # Installing a text editor (gedit)
@@ -1123,6 +1124,7 @@ sudo pacman -S gedit gedit-plugins --noconfirm  # Текстовый редак�
 # gedit - свободный текстовый редактор рабочей среды GNOME с поддержкой Юникода.
 
 echo ""
+echo -e "${GREEN}==> ${NC}Установка Утилиты разработки (geany)"
 echo -e "${BLUE}:: ${NC}Установка Утилиты разработки (geany)" 
 #echo 'Установка Утилиты разработки (geany)'
 # Installing the development utility (geany)
