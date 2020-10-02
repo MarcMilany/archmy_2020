@@ -756,7 +756,7 @@ echo " Установка поддержки Sound support пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка пакетов поддержки Sound support (alsa, pulseaudio...) "
 sudo pacman -S alsa-utils alsa-plugins alsa-firmware alsa-lib alsa-utils --noconfirm 
-sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth --noconfirm  # pulseaudio-equalizer-ladspa
+sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth pulseaudio-equalizer-ladspa --noconfirm  
 sudo pacman -S xfce4-pulseaudio-plugin --noconfirm  
 #sudo pacman -Sy pulseaudio-bluetooth alsa-utils pulseaudio-equalizer-ladspa   --noconfirm
 #sudo systemctl enable bluetooth.service 
