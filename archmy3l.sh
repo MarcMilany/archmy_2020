@@ -2144,11 +2144,17 @@ fi
 ######### Сделать и настроить #######
 echo ""
 echo -e "${BLUE}:: ${NC}Настроить автозапуск сервисов TLP (управления питанием)" 
+# При использовании Мастера радиоустройств ( tlp-rdw ) необходимо использовать NetworkManager и включить NetworkManager-dispatcher.service 
 # выполнив следующие команды по очереди:
 sudo systemctl disable systemd-rfkill.service
 sudo systemctl mask systemd-rfkill.socket systemd-rfkill.service
 sudo systemctl enable tlp.service
 sudo systemctl enable tlp-sleep.service
+# Далее необходимо настроить конфигурационный файл tlp:
+# sudo nano /etc/default/tlp
+# Вы должны настроить, какие параметры вы хотите использовать, а также какой регулятор, в режиме зарядки(AC) и работе от батареи(BAT).
+# Доступные CPU регуляторы, вы можете узнать, введя команду
+# cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors
 
 echo ""
 echo -e "${BLUE}:: ${NC}Также вы можете запустить TLP (управления питанием), не перезагружаясь" 
