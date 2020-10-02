@@ -1173,17 +1173,32 @@ echo " Пользовательская оболочка ИЗМЕНЕНА, с BA
 fi
 fi 
 
-
+##### SSH (client) ###
 echo ""
-echo -e "${YELLOW}==> ${NC}Установить ssh(server) для удаленного доступа?"
+echo -e "${GREEN}==> ${NC}Установить ssh(server) на Arch Linux - для удаленного доступа?"
+#echo -e "${BLUE}:: ${NC}Установить ssh(server) на Arch Linux - для удаленного доступа?" 
 #echo 'Установить ssh(клиент) для удаленного доступа?'
 # Install ssh (client) for remote access?
-read -p " 1 - Да, 0 - Нет: " prog_set
-if [[ $prog_set == 1 ]]; then
+
+Первоклассный инструмент подключения для удаленного входа по протоколу SSH
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В данной опции выбор всегда остаётся за вами. "
+echo "" 
+while
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then  
+echo ""  
+echo " Установка пропущена "
+elif [[ $prog_set== 1 ]]; then 
 sudo pacman -S openssh --noconfirm
-echo " SSH (клиент) установлен " 
-elif [[ $prog_set == 0 ]]; then
-  echo ' Установка пропущена. '
+echo "" 
+echo " SSH (клиент) установлен "
 fi
 
 ###### SNAP ##############
@@ -1194,7 +1209,7 @@ echo -e "${GREEN}==> ${NC}Установить Snap на Arch Linux?"
 #echo 'Установить Snap на Arch Linux?'
 # To install Snap-on Arch Linux?
 echo -e "${MAGENTA}:: ${BOLD}Snap - это инструмент для развертывания программного обеспечения и управления пакетами,  которые обновляются автоматически, просты в установке, безопасны, кроссплатформенны и не имеют зависимостей. Изначально разработанный и созданный компанией Canonical, который работает в различных дистрибутивах Linux каждый день. ${NC}"
-echo -e "${CYAN}:: ${NC}Для управления пакетами snap, установим snapd (демон), а также snap-confine, который обеспечивает монтирование, изоляцию и запуск snap-пакетов.  "
+echo -e "${CYAN}:: ${NC}Для управления пакетами snap, установим snapd (демон), а также snap-confine, который обеспечивает монтирование, изоляцию и запуск snap-пакетов."
 echo " Установка происходит из 'AUR'- с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/snapd.git)."
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
 # Be careful! The installation process was fully automatic. In any situation, the choice is always yours.
