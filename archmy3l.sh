@@ -970,19 +970,29 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then
+if [[ $prog_set == 0 ]]; then 
+echo ""    
+echo " Установка утилит (пакетов) для вывода информации о системе пропущена "
+elif [[ $prog_set == 1 ]]; then
+echo ""    
+echo " Установка утилиты (пакета)  "  
+sudo pacman -S screenfetch --noconfirm 
+elif [[ $prog_set == 2 ]]; then
+echo ""    
+echo " Установка утилиты (пакета)  "     
+sudo pacman -S neofetch --noconfirm
+elif [[ $prog_set == 3 ]]; then
+echo ""    
+echo " Установка утилиты (пакета)  " 
+sudo pacman -S archey3 --noconfirm
+elif [[ $prog_set == 4 ]]; then
+echo ""    
+echo " Установка утилит (пакетов)  " 
+sudo pacman -S screenfetch neofetch archey3 --noconfirm 
 
 
 
-
-
-
-
-
-
-
-
-sudo pacman -S screenfetch neofetch archey3 --noconfirm  
+ 
 
 ################### СДЕЛАТЬ
 echo ""
