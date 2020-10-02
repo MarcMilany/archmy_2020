@@ -879,8 +879,69 @@ echo ""
 echo -e "${BLUE}:: ${NC}Установка дополнительных базовых программ (пакетов)" 
 #echo 'Установка дополнительных базовых программ (пакетов)'
 # Installing additional basic programs (packages)
-sudo pacman -S aspell-ru arch-install-scripts bash-completion dosfstools f2fs-tools sane gvfs gnu-netcat htop iftop iotop nmap ntfs-3g ntp ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip pwgen scrot xsel reflector --noconfirm  # git curl  - пока присутствует в pkglist.x86_64
+echo " Список программ (пакетов) для установки: - (alsa-utils, alsa-plugins, alsa-firmware, alsa-lib, alsa-utils, pulseaudio, pulseaudio-alsa, pavucontrol, pulseaudio-zeroconf, pulseaudio-bluetooth и xfce4-pulseaudio-plugin) " 
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
+while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+clear
+echo ""   
+echo " Установка поддержки Sound support пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка пакетов поддержки Sound support (alsa, pulseaudio...) "
 
+clear
+echo ""   
+echo " Установка пакетов Поддержки звука выполнена "
+fi
+sudo pacman -S aspell-ru arch-install-scripts bash-completion dosfstools f2fs-tools sane gvfs gnu-netcat iftop nmap ntfs-3g ntp ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip pwgen scrot xsel reflector --noconfirm  # git curl  - пока присутствует в pkglist.x86_64
+
+
+
+echo ""
+echo -e "${BLUE}:: ${NC}Установка Интерактивного просмотрщика процессов (системы)" 
+#echo 'Установка Интерактивного просмотрщика процессов (системы)'
+# Installing The interactive process viewer (system)
+echo " Список программ (пакетов) для установки: - (htop - интерактивный просмотрщик процессов, iotop - Просмотр использования процессов ввода-вывода) " 
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+
+
+
+echo "" 
+while 
+    read -n1 -p  "
+    1 - да 
+    
+    0 - нет: " i_htop # sends right after the keypress
+    echo ''
+    [[ "$i_htop" =~ [^10] ]]
+do
+    :
+done
+if [[ $i_htop == 0 ]]; then
+clear
+echo " Установка пропущена "
+elif [[ $i_htop == 1 ]]; then
+pacman -S htop xterm --noconfirm
+clear
+echo " установка htop  завершена "
+fi
 echo ""
 echo -e "${BLUE}:: ${NC}Установка терминальных утилит для вывода информации о системе" 
 #echo 'Установка терминальных утилит для вывода информации о системе'
