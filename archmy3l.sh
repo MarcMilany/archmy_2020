@@ -903,7 +903,7 @@ echo ""
 echo " Установка дополнительных базовых программ (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка дополнительных базовых программ (пакетов) "
-sudo pacman -S aspell-ru arch-install-scripts bash-completion dosfstools f2fs-tools sane gvfs gnu-netcat iftop nmap ntfs-3g ntp ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip pwgen scrot xsel reflector --noconfirm  # git curl  - пока присутствует в pkglist.x86_64   
+sudo pacman -S aspell-ru arch-install-scripts bash-completion dosfstools f2fs-tools sane gvfs gnu-netcat iftop nmap ntfs-3g ntp ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip pwgen scrot xsel powertop reflector --noconfirm  # git curl  - пока присутствует в pkglist.x86_64   
 clear
 echo ""   
 echo " Установка дополнительных базовых программ (пакетов) выполнена "
@@ -1179,7 +1179,7 @@ echo " Утилита TLP - будет очень актуальна, если �
 tlp tlp-rdw powertop
 tlp  # Расширенное управление питанием в Linux
 tlp-rdw  # 
-powertop    # Утилита от intel для мониторинга потребления (электрической мощности!) разными процессами 
+   
 
 Получение подробного вывода tlp
 # tlp stat
