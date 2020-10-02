@@ -998,10 +998,38 @@ echo -e "${MAGENTA}
 # Installing multimedia utilities (packages) and codecs (multimedia codecs) for Archlinux
 
 echo ""
-echo -e "${BLUE}:: ${NC}Установка Мультимедиа кодеков (multimedia codecs), и утилит" 
+echo -e "${GREEN}==> ${NC}Установка мультимедиа кодеков (multimedia codecs), и утилит"
+#echo -e "${BLUE}:: ${NC}Установка мультимедиа кодеков (multimedia codecs), и утилит" 
 #echo 'Установка Мультимедиа кодеков (multimedia codecs), и утилит'
 # Installing Multimedia codecs and utilities
-sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-bad gst-plugins-ugly libdvdcss libdvdread libdvdnav dvd+rw-tools dvdauthor dvgrab cdrdao gst-libav gst-libav gpac --noconfirm
+echo " Список утилит (пакетов) для установки: - (a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-bad gst-plugins-ugly libdvdcss libdvdread libdvdnav dvd+rw-tools dvdauthor dvgrab cdrdao gst-libav gst-libav gpac) " 
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
+while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+clear
+echo ""   
+echo " Установка дополнительных базовых программ (пакетов) пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка дополнительных базовых программ (пакетов) "
+sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-bad gst-plugins-ugly libdvdcss libdvdread libdvdnav dvd+rw-tools dvdauthor dvgrab cdrdao gst-libav gst-libav gpac --noconfirm  
+clear
+echo ""   
+echo " Установка дополнительных базовых программ (пакетов) выполнена "
+fi
 
 echo ""
 echo -e "${BLUE}:: ${NC}Установка Мультимедиа плееров и утилит (пакетов)" 
