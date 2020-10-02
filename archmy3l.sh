@@ -1036,7 +1036,29 @@ echo -e "${GREEN}==> ${NC}Установка Мультимедиа плееро
 #echo -e "${BLUE}:: ${NC}Установка Мультимедиа плееров и утилит (пакетов)" 
 #echo 'Установка Мультимедиа утилит'
 # Installing Multimedia utilities
-sudo pacman -S audacity audacious audacious-plugins smplayer smplayer-skins smplayer-themes smtube vlc --noconfirm
+echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие варианты: ${NC}"
+echo " 1 - Audacity - , то выбирайте вариант - "1". "
+echo -e "${YELLOW}:: ${NC} "
+echo " 2 - Audacious - , то выбирайте вариант - "2". "
+echo " 3 - Smplayer - , то выбирайте вариант - "3". "
+echo " 4 - VLC - , то выбирайте вариант - "3". "
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В этом действии выбор остаётся за вами. "
+# Be careful! The installation process was fully automatic. In this action, the choice is yours.
+echo -e "${YELLOW}==> ${NC}Установка будет производится в порядке перечисления" 
+#echo 'Установка производится в порядке перечисления'
+# Installation Is performed in the order listed
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+
+
+
+
+
+
+
+
+sudo pacman -S audacious audacious-plugins smplayer smplayer-skins smplayer-themes smtube vlc --noconfirm
 
 echo ""
 echo -e "${BLUE}:: ${NC}Установка Текстовые редакторы и утилиты разработки" 
