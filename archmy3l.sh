@@ -991,7 +991,6 @@ echo " Установка утилит (пакетов) ScreenFetch, Neofetch, A
 sudo pacman -S screenfetch neofetch archey3 --noconfirm 
 fi
 
-################### СДЕЛАТЬ
 clear
 echo -e "${MAGENTA}
   <<< Установка Мультимедиа плееров, утилит (пакетов) и кодеков (multimedia codecs) в Archlinux >>> ${NC}"
@@ -1031,6 +1030,7 @@ echo ""
 echo " Установка мультимедиа кодеков и утилит (пакетов) выполнена "
 fi
 
+################### СДЕЛАТЬ
 echo ""
 echo -e "${BLUE}:: ${NC}Установка Мультимедиа плееров и утилит (пакетов)" 
 #echo 'Установка Мультимедиа утилит'
