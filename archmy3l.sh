@@ -994,7 +994,7 @@ fi
 ################### СДЕЛАТЬ
 clear
 echo -e "${MAGENTA}
-  <<< Установка Мультимедиа утилит (пакетов) и кодеков (multimedia codecs) в Archlinux >>> ${NC}"
+  <<< Установка Мультимедиа плееров, утилит (пакетов) и кодеков (multimedia codecs) в Archlinux >>> ${NC}"
 # Installing multimedia utilities (packages) and codecs (multimedia codecs) for Archlinux
 
 echo ""
@@ -1004,7 +1004,7 @@ echo -e "${BLUE}:: ${NC}Установка Мультимедиа кодеков
 sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-bad gst-plugins-ugly libdvdcss libdvdread libdvdnav dvd+rw-tools dvdauthor dvgrab cdrdao gst-libav gst-libav gpac --noconfirm
 
 echo ""
-echo -e "${BLUE}:: ${NC}Установка Мультимедиа утилит (пакетов)" 
+echo -e "${BLUE}:: ${NC}Установка Мультимедиа плееров и утилит (пакетов)" 
 #echo 'Установка Мультимедиа утилит'
 # Installing Multimedia utilities
 sudo pacman -S audacity audacious audacious-plugins smplayer smplayer-skins smplayer-themes smtube vlc --noconfirm
