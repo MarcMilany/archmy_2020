@@ -1117,15 +1117,40 @@ echo -e "${MAGENTA}
 
 echo ""
 echo -e "${GREEN}==> ${NC}Установка Текстового редактора (gedit)"
-echo -e "${BLUE}:: ${NC}Установка Текстового редактора (gedit)" 
+#echo -e "${BLUE}:: ${NC}Установка Текстового редактора (gedit)" 
 #echo 'Установка Текстового редактора (gedit)'
 # Installing a text editor (gedit)
-sudo pacman -S gedit gedit-plugins --noconfirm  # Текстовый редактор GNOME
+echo " Список программ (пакетов) для установки: - (gedit, gedit-plugins) " 
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка текстового редактора (gedit) "
+sudo pacman -S gedit gedit-plugins --noconfirm
+echo ""   
+echo " Установка текстового редактора (gedit) выполнена "
+fi
+
+# Текстовый редактор GNOME
 # gedit - свободный текстовый редактор рабочей среды GNOME с поддержкой Юникода.
 
 echo ""
 echo -e "${GREEN}==> ${NC}Установка Утилиты разработки (geany)"
-echo -e "${BLUE}:: ${NC}Установка Утилиты разработки (geany)" 
+#echo -e "${BLUE}:: ${NC}Установка Утилиты разработки (geany)" 
 #echo 'Установка Утилиты разработки (geany)'
 # Installing the development utility (geany)
 sudo pacman -S geany geany-plugins --noconfirm  # Быстрая и легкая IDE
