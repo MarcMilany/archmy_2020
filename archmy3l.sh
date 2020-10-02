@@ -699,11 +699,47 @@ echo -e "${MAGENTA}
 echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете установить софт: поддержки Bluetooth, поддержки звука, архиваторы, утилиты для вывода информации о системе, мультимедиа, текстовые редакторы, утилиты разработки, браузеры, управления электронной почтой, торрент-клиент, офисные утилиты и т.д., или пропустите установку."  
 
 echo ""
+echo -e "${GREEN}==> ${NC}Установим поддержку Bluetooth?"
+#echo -e "${BLUE}:: ${NC}Установим поддержку Bluetooth?" 
+#echo 'Установим поддержку Bluetooth?'
+# Install Bluetooth support?
+echo -e "${CYAN}=> ${BOLD}Установка поддержки Bluetooth и Sound support (звука) - будет очень актуальна, если Вы установили DE (среда рабочего стола) XFCE. ${NC}"
+echo " Список программ (пакетов) для установки: - (bluez bluez-libs bluez-cups bluez-utils) " 
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
+while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then    
+echo " Установка Брандмауэра UFW пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка UFW (Несложный Брандмауэр) "
+sudo pacman -S ufw gufw --noconfirm
+echo " Установка Брандмауэра UFW завершена "
+fi
+
+
+
+
+echo ""
 echo -e "${GREEN}==> ${NC}Ставим Bluetooth и Поддержка звука"
 #echo -e "${BLUE}:: ${NC}Ставим Bluetooth и Поддержка звука" 
 #echo 'Ставим Bluetooth и Поддержка звука'
 # Setting Bluetooth and Sound support
-echo -e "${CYAN}=> ${BOLD}Установка поддержки Bluetooth и Sound support (звука) - будет очень актуальна, если Вы установили DE (среда рабочего стола) XFCE. ${NC}"
+
+
+
 echo -e "${BLUE} 'Список программ (пакетов) для установки:${GREEN}
 bluez bluez-libs bluez-cups bluez-utils alsa-utils alsa-plugins alsa-firmware alsa-lib alsa-utils pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth xfce4-pulseaudio-plugin' ${NC}"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
