@@ -1120,6 +1120,7 @@ echo -e "${BLUE}:: ${NC}Установка Текстового редактор
 #echo 'Установка Текстового редактора (gedit)'
 # Installing a text editor (gedit)
 sudo pacman -S gedit gedit-plugins --noconfirm  # Текстовый редактор GNOME
+# gedit — свободный текстовый редактор рабочей среды GNOME с поддержкой Юникода.
 
 echo ""
 echo -e "${BLUE}:: ${NC}Установка Утилиты разработки (geany)" 
