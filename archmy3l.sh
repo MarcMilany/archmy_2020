@@ -1022,13 +1022,13 @@ done
 if [[ $prog_set == 0 ]]; then 
 clear
 echo ""   
-echo " Установка дополнительных базовых программ (пакетов) пропущена "
+echo " Установка мультимедиа кодеков и утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка дополнительных базовых программ (пакетов) "
 sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-bad gst-plugins-ugly libdvdcss libdvdread libdvdnav dvd+rw-tools dvdauthor dvgrab cdrdao gst-libav gst-libav gpac --noconfirm  
 clear
 echo ""   
-echo " Установка дополнительных базовых программ (пакетов) выполнена "
+echo " Установка мультимедиа кодеков и утилит (пакетов) выполнена "
 fi
 
 echo ""
