@@ -727,6 +727,7 @@ elif [[ $prog_set == 1 ]]; then
   echo " Установка пакетов поддержки Bluetooth "
 sudo pacman -S bluez bluez-libs bluez-cups bluez-utils --noconfirm
 #sudo pacman -S blueman --noconfirm  # blueman --диспетчер bluetooth устройств (полезно для i3)
+#sudo systemctl enable bluetooth.service 
 fi
 
 echo ""
@@ -759,7 +760,6 @@ sudo pacman -S alsa-utils alsa-plugins alsa-firmware alsa-lib alsa-utils --nocon
 sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth pulseaudio-equalizer-ladspa --noconfirm  
 sudo pacman -S xfce4-pulseaudio-plugin --noconfirm  
 #sudo pacman -Sy pulseaudio-bluetooth alsa-utils pulseaudio-equalizer-ladspa   --noconfirm
-#sudo systemctl enable bluetooth.service 
 fi
 
 #clear
