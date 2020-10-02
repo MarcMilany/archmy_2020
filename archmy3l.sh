@@ -1191,6 +1191,8 @@ echo -e "${BLUE}:: ${NC}Управления электронной почтой
 # Manage email, news feeds, chat, and groups
 sudo pacman -S thunderbird thunderbird-i18n-ru pidgin pidgin-hotkeys --noconfirm
 
+# 
+# 
 ##############################
 
 clear
