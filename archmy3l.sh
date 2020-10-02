@@ -1111,8 +1111,12 @@ fi
 
 ################### СДЕЛАТЬ
 clear
+echo -e "${MAGENTA}
+  <<< Установка Текстового редактора и утилиты разработки в Archlinux >>> ${NC}"
+# Installing a Text editor and development utility in Archlinux
+
 echo ""
-echo -e "${BLUE}:: ${NC}Установка Текстовые редакторы и утилиты разработки" 
+echo -e "${BLUE}:: ${NC}Установка Текстового редактора и утилиты разработки" 
 #echo 'Установка Текстовые редакторы и утилиты разработки'
 # Installation Text editors and development tools
 sudo pacman -S gedit gedit-plugins geany geany-plugins --noconfirm
