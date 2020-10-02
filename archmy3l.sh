@@ -943,13 +943,14 @@ echo ""
 echo " Установка htop, iotop (пакетов) выполнена "
 fi
 
+################### СДЕЛАТЬ
 echo ""
 echo -e "${BLUE}:: ${NC}Установка терминальных утилит для вывода информации о системе" 
 #echo 'Установка терминальных утилит для вывода информации о системе'
 # Installing terminal utilities for displaying system information
 sudo pacman -S screenfetch archey3 neofetch --noconfirm  
 
-###################
+
 echo ""
 echo -e "${BLUE}:: ${NC}Установка Мультимедиа кодеков (multimedia codecs), и утилит" 
 #echo 'Установка Мультимедиа кодеков (multimedia codecs), и утилит'
@@ -973,6 +974,7 @@ echo -e "${BLUE}:: ${NC}Управления электронной почтой
 #echo 'Управления электронной почтой, новостными лентами, чатом и группам'
 # Manage email, news feeds, chat, and groups
 sudo pacman -S thunderbird thunderbird-i18n-ru pidgin pidgin-hotkeys --noconfirm
+##############################
 
 clear
 echo ""
@@ -1174,6 +1176,12 @@ echo -e "${MAGENTA}:: ${BOLD}TLP - это продвинутая, консоль
 echo -e "${CYAN}:: ${NC}TLP применяет настройки автоматически при запуске и каждый раз при смене источника питания. Грубо говоря, стоит только установить TLP и многое будет работать искаропки."
 echo " Утилита TLP - будет очень актуальна, если Вы пользуетесь 'Ноутбуком'! "
 echo " Список программ (пакетов) для установки: - (tlp - расширенное управление питанием в Linux, tlp-rdw - Linux Advanced Power Management - Мастер радиоустройств) " 
+echo -e "${YELLOW}==> ${NC}Если у вас ThinkPad (ноутбук), или Интел платформа Sandy Bridge, то нужно установите следующие пакеты: "
+echo " tp_smapi - необходим для пороговых значений заряда батареи ThinkPad, повторной калибровки и вывода специального статуса tlp-stat "
+echo " acpi_call - необходим для пороговых значений заряда аккумулятора и повторной калибровки на Sandy Bridge и более новых моделях (X220 / T420, X230 / T430 и др.). "
+echo " Используйте acpi_call-dkms, если ядра не из официальных репозиториев. "
+
+
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -1197,6 +1205,7 @@ elif [[ $prog_set == 1 ]]; then
   echo ""  
   echo " Установка (пакетов) для управления питанием "
 sudo pacman -S tlp tlp-rdw --noconfirm 
+#sudo pacman -S tp_smapi acpi_call --noconfirm 
 echo ""
 echo " Установка утилит (пакетов) завершена " 
 fi
