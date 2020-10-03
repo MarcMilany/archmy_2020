@@ -1293,7 +1293,7 @@ echo "  "
 
 
 
-sudo pacman -S thunderbird thunderbird-i18n-ru pidgin pidgin-hotkeys --noconfirm
+sudo pacman -S pidgin pidgin-hotkeys --noconfirm
 
 
 
