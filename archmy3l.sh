@@ -1781,19 +1781,41 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+echo "" 
+echo -e "${BLUE}:: ${NC}Установить VeraCrypt (ПО для шифрования)?" 
+echo -e "${MAGENTA}:: ${BOLD}  ${NC}"
+echo "  " 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка  "
+sudo pacman -S veracrypt --noconfirm  
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
 
 
-
-
+Шифрование диска с надежной защитой на основе TrueCrypt
 
 
 clear   galculator-gtk2
 ################### СДЕЛАТЬ
-echo " Список утилит (пакетов) для установки: - (gnome-system-monitor, openshot, frei0r-plugins, veracrypt, onboard, clonezilla, gnome-calculator, nomacs, osmo, synapse, plank, psensor, copyq, variety, grsync, numlockx, modem-manager-gui, uget, rofi, gsmartcontrol, testdisk, meld, lsof, dmidecode). " 
+echo " Список утилит (пакетов) для установки: - (gnome-system-monitor, openshot, frei0r-plugins, onboard, clonezilla, gnome-calculator, nomacs, osmo, synapse, plank, psensor, copyq, variety, grsync, numlockx, modem-manager-gui, uget, rofi, gsmartcontrol, testdisk, meld, lsof, dmidecode). " 
 
 read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S gnome-system-monitor openshot frei0r-plugins veracrypt onboard clonezilla gnome-calculator nomacs osmo synapse plank psensor copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld lsof dmidecode --noconfirm  
+sudo pacman -S gnome-system-monitor openshot frei0r-plugins onboard clonezilla gnome-calculator nomacs osmo synapse plank psensor copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld lsof dmidecode --noconfirm  
 echo " Установка утилит (пакетов) завершена " 
 elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ пропущена. '
