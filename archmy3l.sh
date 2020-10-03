@@ -813,7 +813,6 @@ clear
 echo -e "${MAGENTA}
   <<< Установка Архиваторов (консольных), дополнений для архиваторов, менеджеров архивов (графический интерфейс) >>> ${NC}"
 # Install Archivers (console), add-ons to archivers, archive managers (graphical interface)
-
 echo ""
 echo -e "${GREEN}==> ${NC}Ставим Архиваторы (консольные) - компрессионные инструменты"
 #echo -e "${BLUE}:: ${NC}Ставим Архиваторы - Компрессионные Инструменты и дополнения" 
