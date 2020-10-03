@@ -1804,7 +1804,7 @@ echo " Установка утилит (пакетов) выполнена "
 fi
 
 echo "" 
-echo -e "${BLUE}:: ${NC}Установить  ()?" 
+echo -e "${BLUE}:: ${NC}Установить Nomacs (для просмотра изображений)?" 
 echo -e "${MAGENTA}:: ${BOLD} ${NC}"
 echo "  " 
 echo "" 
