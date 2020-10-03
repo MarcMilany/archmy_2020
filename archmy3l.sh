@@ -1876,7 +1876,7 @@ echo " Установка утилит (пакетов) выполнена "
 fi
 
 echo "" 
-echo -e "${BLUE}:: ${NC}Установить  ()?" 
+echo -e "${BLUE}:: ${NC}Установить Plank (док-панель)?" 
 echo -e "${MAGENTA}:: ${BOLD} ${NC}"
 echo " " 
 echo "" 
@@ -1894,7 +1894,7 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка Meld (сравнение файлов)"
-sudo pacman -S meld --noconfirm  # для сравнения файлов, каталогов и рабочих копий
+sudo pacman -S plank --noconfirm  # док-панель
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
@@ -1906,7 +1906,7 @@ fi
 
 Plank - самая простая док-панель в мире для linux
 Элегантная, простая и чистая док-станция
-  uget plank
+  uget 
 
 clear   galculator-gtk2
 ################### СДЕЛАТЬ
