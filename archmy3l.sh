@@ -1478,16 +1478,20 @@ fi
 clear
 echo -e "${MAGENTA}
   <<< Установка рекомендованных программ (пакетов) - по вашему выбору и желанию >>> ${NC}"
-# Installation of recommended programs - according to your choice and desire  
+# Installation of recommended programs (packages) - according to your choice and desire 
+echo ""
+echo -e "${YELLOW}==> Примечание: ${NC}Установка будет производится в порядке перечисления (по очереди), или пропустите установку."
 
 echo ""
-echo -e "${GREEN}==> ${BOLD}Установить рекомендованные программы? ${NC}"
+echo -e "${GREEN}==> ${BOLD}Установить рекомендованные программы (пакеты)? ${NC}"
+#echo -e "${BLUE}:: ${NC}Установить рекомендованные программы (пакеты)?"
 #echo 'Установить рекомендованные программы?'
 # Install the recommended programs
-echo -e "${BLUE}
-'Список программ рекомендованных к установке:${GREEN}
+
+
+
 bleachbit gparted grub-customizer conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot cmake frei0r-plugins redshift veracrypt onboard clonezilla filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld xterm lsof dmidecode' 
-${NC}" 
+
 
 
 
