@@ -1845,7 +1845,7 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
-  echo " Установка  "
+  echo " Установка Onboard (экранной клавиатуры) "
 sudo pacman -S onboard --noconfirm  # Экранная клавиатура
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
