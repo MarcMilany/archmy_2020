@@ -1487,7 +1487,7 @@ echo -e "${GREEN}==> ${BOLD}Установить рекомендованные 
 #echo -e "${BLUE}:: ${NC}Установить рекомендованные программы (пакеты)?"
 #echo 'Установить рекомендованные программы?'
 # Install the recommended programs
-echo " Список утилит (пакетов) для установки: - (bleachbit gparted grub-customizer conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio, openshot flameshot cmake frei0r-plugins redshift veracrypt onboard clonezilla filezilla gnome-calculator nomacs osmo, synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol, testdisk meld xterm lsof dmidecode) " 
+echo " Список утилит (пакетов) для установки: - (bleachbit, gparted, grub-customizer, conky, conky-manager, dconf-editor, doublecmd-gtk2, gnome-system-monitor, obs-studio, openshot, flameshot, cmake, frei0r-plugins, redshift, veracrypt, onboard, clonezilla, filezilla, gnome-calculator, nomacs, osmo, synapse, telegram-desktop, plank, psensor, keepass, copyq, variety, grsync, numlockx, modem-manager-gui, uget, rofi, gsmartcontrol, testdisk, meld, xterm, lsof, dmidecode) " 
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
