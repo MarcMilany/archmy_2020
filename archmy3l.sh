@@ -1878,7 +1878,7 @@ fi
 
 
 
-
+Элегантная, простая и чистая док-станция
   uget plank
 
 clear   galculator-gtk2
