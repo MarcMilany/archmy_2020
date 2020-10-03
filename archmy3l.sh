@@ -1918,7 +1918,7 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка "
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S uget --noconfirm  # 
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
@@ -1928,7 +1928,7 @@ fi
 
 
 
-  uget 
+  
 
 clear   galculator-gtk2
 ################### СДЕЛАТЬ
