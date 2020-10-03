@@ -1846,14 +1846,14 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка  "
-sudo pacman -S onboard --noconfirm 
+sudo pacman -S onboard --noconfirm  # Экранная клавиатура
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
 
 
-Экранная клавиатура 
+
  meld uget plank
 
 clear   galculator-gtk2
