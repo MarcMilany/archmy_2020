@@ -1513,13 +1513,16 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка Gparted "
-sudo pacman -S gparted --noconfirm
+sudo pacman -S gparted --noconfirm  # (создавать, удалять, перемещать, копировать, изменять размер и др.) без потери данных.
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить grub-customizer?" 
+
+
+Grub Customizer - это новый менеджер настроек для GRUB2 на гуях. На данный момент он позволяет: переименовывать, переупорядочивать, удалять/добавлять и скрывать элементы меню выбора загрузчика.
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
@@ -1534,8 +1537,8 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
-  echo " Установка grub-customizer "
-sudo pacman -S grub-customizer --noconfirm
+  echo " Установка Grub Customizer "
+sudo pacman -S grub-customizer --noconfirm  # Графический менеджер настроек grub2
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
