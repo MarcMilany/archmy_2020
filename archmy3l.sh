@@ -1655,11 +1655,17 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
-  echo " Установка FileZilla "
+  echo " Установка Telegram Desktop "
 sudo pacman -S telegram-desktop --noconfirm  # Официальный клиент Telegram Desktop
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
+
+
+pacman -S flameshot --noconfirm
+clear
+echo " Установка завершена "
+
 
 
 
