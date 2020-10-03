@@ -1519,7 +1519,7 @@ echo " Установка утилит (пакетов) выполнена "
 fi
 
 echo "" 
-echo -e "${BLUE}:: ${NC}Установить медиаплеер Smplayer?" 
+echo -e "${BLUE}:: ${NC}Установить grub-customizer?" 
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
@@ -1534,8 +1534,8 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
-  echo " Установка медиаплеер Smplayer "
-sudo pacman -S  --noconfirm
+  echo " Установка grub-customizer "
+sudo pacman -S grub-customizer --noconfirm
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
@@ -1576,7 +1576,7 @@ fi
 
 read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S bleachbit grub-customizer conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot cmake frei0r-plugins redshift veracrypt onboard clonezilla filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld xterm lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate
+sudo pacman -S bleachbit conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot cmake frei0r-plugins redshift veracrypt onboard clonezilla filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld xterm lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate
 echo " Установка утилит (пакетов) завершена " 
 elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ пропущена. '
