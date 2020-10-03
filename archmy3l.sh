@@ -1485,7 +1485,7 @@ echo -e "${GREEN}==> ${BOLD}Установить рекомендованные 
 #echo -e "${BLUE}:: ${NC}Установить рекомендованные программы (пакеты)?"
 #echo 'Установить рекомендованные программы?'
 # Install the recommended programs
-echo " Список утилит (пакетов) для установки: - (bleachbit, gparted, grub-customizer, conky, conky-manager, dconf-editor, doublecmd-gtk2, gnome-system-monitor, obs-studio, openshot, flameshot, cmake, frei0r-plugins, redshift, veracrypt, onboard, clonezilla, filezilla, gnome-calculator, nomacs, osmo, synapse, telegram-desktop, plank, psensor, keepass, copyq, variety, grsync, numlockx, modem-manager-gui, uget, rofi, gsmartcontrol, testdisk, meld, lsof, dmidecode). " 
+echo " Список утилит (пакетов) для установки: - (gparted, grub-customizer, dconf-editor, conky, conky-manager, obs-studio, filezilla, telegram-desktop, flameshot, redshift, bleachbit, doublecmd-gtk2, keepass, veracrypt, nomacs, onboard, meld, uget, plank). " 
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -1805,14 +1805,36 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+echo "" 
+echo -e "${BLUE}:: ${NC}Установить  ()?" 
+echo -e "${MAGENTA}:: ${BOLD} ${NC}"
+echo "  " 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка  "
+sudo pacman -S nomacs --noconfirm  
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
 
 
 
 
 
 
-
-onboard nomacs meld uget plank
+onboard meld uget plank
 
 clear   galculator-gtk2
 ################### СДЕЛАТЬ
