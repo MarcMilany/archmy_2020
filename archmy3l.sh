@@ -1592,7 +1592,7 @@ fi
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить Open Broadcaster Software®️ (OBS)?" 
 echo -e "${MAGENTA}:: ${BOLD}OBS Studio - это бесплатное программное обеспечение с открытым исходным кодом для прямой трансляции и записи. ${NC}"
-echo "  " 
+echo " Программа на русском языке для записи видео и стримов на Twitch, YouTube, GoodGame, SC2TV, Hitbox.TV и любые другие RTMP-серверы трансляций. " 
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
@@ -1608,7 +1608,7 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка OBS Studio "
-sudo pacman -S obs-studio --noconfirm  #  для записи видео и потокового вещания
+sudo pacman -S obs-studio --noconfirm  # для записи видео и потокового вещания
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
