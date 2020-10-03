@@ -1704,7 +1704,7 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка  "
-sudo pacman -S  --noconfirm  
+sudo pacman -S redshift --noconfirm  
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
@@ -1715,7 +1715,7 @@ fi
 
 
 
-redshift
+
 clear   galculator-gtk2
 ################### СДЕЛАТЬ
 echo " Список утилит (пакетов) для установки: - (bleachbit, doublecmd-gtk2, gnome-system-monitor, openshot, frei0r-plugins, redshift, veracrypt, onboard, clonezilla, gnome-calculator, nomacs, osmo, synapse, plank, psensor, keepass, copyq, variety, grsync, numlockx, modem-manager-gui, uget, rofi, gsmartcontrol, testdisk, meld, lsof, dmidecode). " 
