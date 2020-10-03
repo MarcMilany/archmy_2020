@@ -1827,12 +1827,34 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+echo "" 
+echo -e "${BLUE}:: ${NC}Установить Onboard (экранная клавиатура)?" 
+echo -e "${MAGENTA}:: ${BOLD}Onboard - это экранная клавиатура полезна на планшетных ПК или для пользователей с ограниченными физическими возможностями. ${NC}"
+echo "  " 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка  "
+sudo pacman -S onboard --noconfirm 
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
 
 
 
-
-
-onboard meld uget plank
+Экранная клавиатура 
+ meld uget plank
 
 clear   galculator-gtk2
 ################### СДЕЛАТЬ
