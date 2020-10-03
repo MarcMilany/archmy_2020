@@ -1585,7 +1585,7 @@ if [[ $conky_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $conky_set == 1 ]]; then
-  echo " Установка Редактора dconf "
+  echo " Установка утилит (пакетов) Conky и Conky Manager "
 sudo pacman -S conky conky conky-manager --noconfirm 
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
