@@ -1586,27 +1586,19 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $conky_set == 1 ]]; then
   echo " Установка Редактора dconf "
-sudo pacman -S conky conky-manager --noconfirm 
+sudo pacman -S conky conky conky-manager --noconfirm 
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
 
 
-echo 'Установить conky?'
-read -p "1 - Да, 0 - Нет: " conky_set
-if [[ $conky_set == 1 ]]; then
-  
-  wget git.io/conky.tar.gz
-  tar -xzf conky.tar.gz -C ~/
-elif [[ $conky_set == 0 ]]; then
-  echo 'Установка conky пропущена.'
-fi
 
+Бесплатное программное обеспечение с открытым исходным кодом для прямой трансляции и записи
 
 read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S bleachbit conky conky-manager doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot frei0r-plugins redshift veracrypt onboard clonezilla filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate # dosfstools
+sudo pacman -S bleachbit doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot frei0r-plugins redshift veracrypt onboard clonezilla filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate # dosfstools
 echo " Установка утилит (пакетов) завершена " 
 elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ пропущена. '
