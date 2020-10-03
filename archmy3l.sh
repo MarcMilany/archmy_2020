@@ -1487,7 +1487,19 @@ echo -e "${GREEN}==> ${BOLD}Установить рекомендованные 
 echo -e "${BLUE}
 'Список программ рекомендованных к установке:${GREEN}
 bleachbit gparted grub-customizer conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot cmake frei0r-plugins redshift veracrypt onboard clonezilla filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget xarchiver-gtk2 rofi gsmartcontrol testdisk meld xterm lsof dmidecode' 
-${NC}" # xarchiver-gtk2 catdoc unrtf id3lib toxcore mlocate
+${NC}" #  catdoc unrtf id3lib toxcore mlocate
+
+
+
+
+
+
+
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В этом действии выбор остаётся за вами. "
+# Be careful! The installation process was fully automatic. In this action, the choice is yours.
+echo -e "${YELLOW}==> ${NC}Установка будет производится в порядке перечисления (по очереди)" 
+#echo 'Установка будет производится в порядке перечисления (по очереди)'
+# Installation will be performed in the order listed (one at a time)
 read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set
 if [[ $prog_set == 1 ]]; then
 sudo pacman -S bleachbit gparted grub-customizer conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot cmake frei0r-plugins redshift veracrypt onboard clonezilla filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld xterm lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate
