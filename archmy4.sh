@@ -372,7 +372,7 @@ galculator-gtk2'
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S galculator-gtk2 --noconfirm # gnome-calculator catdoc unrtf id3lib toxcore mlocate dosfstools
+sudo pacman -S galculator-gtk2 --noconfirm # gnome-calculator notepadqq catdoc unrtf id3lib toxcore mlocate dosfstools
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.' 
 fi
