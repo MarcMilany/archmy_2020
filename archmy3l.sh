@@ -1877,7 +1877,7 @@ fi
 
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить Plank (док-панель)?" 
-echo -e "${MAGENTA}:: ${BOLD} ${NC}"
+echo -e "${MAGENTA}:: ${BOLD}Plank - самая элегантная, простая док-панель в мире для linux. ${NC}"
 echo " " 
 echo "" 
 while  
@@ -1893,7 +1893,7 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
-  echo " Установка Meld (сравнение файлов)"
+  echo " Установка Plank (док-панель)"
 sudo pacman -S plank --noconfirm  # док-панель
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
@@ -1904,8 +1904,8 @@ fi
 
 
 
-Plank - самая простая док-панель в мире для linux
-Элегантная, простая и чистая док-станция
+
+
   uget 
 
 clear   galculator-gtk2
