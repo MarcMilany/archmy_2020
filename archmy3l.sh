@@ -846,24 +846,37 @@ echo ""
 echo " Установка (консольных) архиваторов завершена "
 fi
 
-
-
-
-
-
-
-
-
-
-
-
 echo "" 
 echo -e "${GREEN}==> ${NC}Ставим дополнения к Архиваторам (консольным)"
 #echo -e "${BLUE}:: ${NC}Ставим дополнения к Архиваторам (консольным)" 
 #echo 'Ставим дополнения к Архиваторам'
 # Adding extensions to Archivers
+echo " Список программ (пакетов) для установки: - (lha unace lrzip sharutils uudeview arj cabextract) " 
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
+while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+echo ""  
+echo " Установка дополнительных утилит для архивации пропущена "
+elif [[ $prog_set == 1 ]]; then  
+  echo " Установка дополнительных утилит для архивации "
 sudo pacman -S lha unace lrzip sharutils uudeview arj cabextract --noconfirm
-# sharutils - Делает так называемые архивы оболочки из множества файлов
+echo "" 
+echo " Установка дополнительных утилит для архивации выполнена "
+fi
 
 clear
 echo ""
