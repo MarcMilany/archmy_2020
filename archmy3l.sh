@@ -1799,7 +1799,7 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
-  echo " Установка  "
+  echo " Установка VeraCrypt "
 sudo pacman -S veracrypt --noconfirm  
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
