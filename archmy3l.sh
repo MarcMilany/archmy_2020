@@ -1710,7 +1710,7 @@ echo " Установка утилит (пакетов) выполнена "
 fi
 
 echo "" 
-echo -e "${BLUE}:: ${NC}Установить BleachBit ()?" 
+echo -e "${BLUE}:: ${NC}Установить BleachBit (для тщательной очистки)?" 
 echo -e "${MAGENTA}:: ${BOLD}BleachBit. ${NC}"
 echo " . " 
 echo "" 
