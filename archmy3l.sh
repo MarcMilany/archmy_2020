@@ -1805,7 +1805,7 @@ fi
 
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить Nomacs (для просмотра изображений)?" 
-echo -e "${MAGENTA}:: ${BOLD} ${NC}"
+echo -e "${MAGENTA}:: ${BOLD}Nomacs - это бесплатная программа для просмотра изображений, Вы можете использовать его для просмотра всех распространенных форматов изображений, включая изображения RAW и psd. ${NC}"
 echo "  " 
 echo "" 
 while  
@@ -1822,7 +1822,7 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка Nomacs "
-sudo pacman -S nomacs --noconfirm  
+sudo pacman -S nomacs --noconfirm  # для просмотра изображений Qt
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
