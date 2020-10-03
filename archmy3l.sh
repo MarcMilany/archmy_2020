@@ -1566,14 +1566,37 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+echo "" 
+echo -e "${BLUE}:: ${NC}Установить Conky и Conky-Manager (пакет dconf-editor)?" 
+echo -e "${MAGENTA}:: ${BOLD}Conky - мощный и легко настраиваемый системный монитор. ${NC}"
+echo -e "${CYAN}:: ${BOLD}Conky Manager - это графический интерфейс для управления файлами конфигурации Conky.${NC}"
+echo " Он предоставляет опции для запуска / остановки, просмотра и редактирования тем Conky, установленных в системе. " 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " conky_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$conky_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $conky_set == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $conky_set == 1 ]]; then
+  echo " Установка Редактора dconf "
+sudo pacman -S conky conky-manager --noconfirm 
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
 
 
-Conky - мощный и легко настраиваемый системный монитор.
-Графический интерфейс для управления файлами конфигурации Conky с опциями для просмотра и редактирования тем
+
 echo 'Установить conky?'
 read -p "1 - Да, 0 - Нет: " conky_set
 if [[ $conky_set == 1 ]]; then
-  sudo pacman -S conky conky-manager --noconfirm
+  
   wget git.io/conky.tar.gz
   tar -xzf conky.tar.gz -C ~/
 elif [[ $conky_set == 0 ]]; then
