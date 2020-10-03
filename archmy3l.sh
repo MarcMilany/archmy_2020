@@ -1588,7 +1588,7 @@ sudo pacman -S conky conky-manager --noconfirm
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
-################### СДЕЛАТЬ
+
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить Open Broadcaster Software®️ (OBS)?" 
 echo -e "${MAGENTA}:: ${BOLD}OBS Studio - это бесплатное программное обеспечение с открытым исходным кодом для прямой трансляции и записи. ${NC}"
@@ -1615,7 +1615,7 @@ fi
 
 
 
-
+################### СДЕЛАТЬ
 read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set
 if [[ $prog_set == 1 ]]; then
 sudo pacman -S bleachbit doublecmd-gtk2 gnome-system-monitor openshot flameshot frei0r-plugins redshift veracrypt onboard clonezilla filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate # dosfstools
