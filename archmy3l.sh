@@ -1679,21 +1679,50 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
-  echo " Установка  "
+  echo " Установка Flameshot "
 sudo pacman -S flameshot --noconfirm  # для создания снимков экрана
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
+
+echo "" 
+echo -e "${BLUE}:: ${NC}Установить ?" 
+echo -e "${MAGENTA}:: ${BOLD}. ${NC}"
+echo "  " 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка  "
+sudo pacman -S  --noconfirm  
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
 
 
+
+
+
+
+redshift
 clear   galculator-gtk2
 ################### СДЕЛАТЬ
 echo " Список утилит (пакетов) для установки: - (bleachbit, doublecmd-gtk2, gnome-system-monitor, openshot, frei0r-plugins, redshift, veracrypt, onboard, clonezilla, gnome-calculator, nomacs, osmo, synapse, plank, psensor, keepass, copyq, variety, grsync, numlockx, modem-manager-gui, uget, rofi, gsmartcontrol, testdisk, meld, lsof, dmidecode). " 
 
 read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S bleachbit doublecmd-gtk2 gnome-system-monitor openshot frei0r-plugins redshift veracrypt onboard clonezilla gnome-calculator nomacs osmo synapse plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate # dosfstools
+sudo pacman -S bleachbit doublecmd-gtk2 gnome-system-monitor openshot frei0r-plugins veracrypt onboard clonezilla gnome-calculator nomacs osmo synapse plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate # dosfstools
 echo " Установка утилит (пакетов) завершена " 
 elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ пропущена. '
