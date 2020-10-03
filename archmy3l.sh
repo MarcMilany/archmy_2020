@@ -1477,8 +1477,6 @@ clear
 echo -e "${MAGENTA}
   <<< Установка рекомендованных программ (пакетов) - по вашему выбору и желанию >>> ${NC}"
 # Installation of recommended programs (packages) - according to your choice and desire 
-echo ""
-echo -e "${YELLOW}==> Примечание: ${NC}Установка будет производится в порядке перечисления (по очереди), или пропустите установку."
 
 echo ""
 echo -e "${GREEN}==> ${BOLD}Установить рекомендованные программы (пакеты)? ${NC}"
