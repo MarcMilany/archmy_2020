@@ -1639,8 +1639,8 @@ fi
 
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить Telegram Desktop (мессенджер)?" 
-echo -e "${MAGENTA}:: ${BOLD}FileZilla - это быстрый и надежный клиент FTP, FTPS и SFTP. ${NC}"
-echo " С помощью специальных данных для доступа, выводит пользователю файловую систему определенного сайта. " 
+echo -e "${MAGENTA}:: ${BOLD}Telegram Desktop - это официальное приложение Telegram для настольных операционных систем. ${NC}"
+echo " 'Telegram Desktop' - является прямой реализацией веб-сайта Telegram. Бесплатный (никаких платных подписок) мессенджер от компании Павла Дурова. " 
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
@@ -1656,23 +1656,12 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка FileZilla "
-sudo pacman -S filezilla --noconfirm  # для работы с файлами на сервере
+sudo pacman -S telegram-desktop --noconfirm  # Официальный клиент Telegram Desktop
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
 
-
-
-
-
-
-telegram-desktop
-
-Официальный клиент Telegram Desktop
-Telegram Desktop — это официальное приложение Telegram для настольных операционных систем. Бесплатный (никаких платных подписок) мессенджер от компании Павла Дурова.
-
-"Telegram Desktop" - является прямой реализацией веб-сайта Telegram.
 
 ################### СДЕЛАТЬ
 echo " Список утилит (пакетов) для установки: - (bleachbit, gparted, grub-customizer, conky, conky-manager, dconf-editor, doublecmd-gtk2, gnome-system-monitor, obs-studio, openshot, flameshot, cmake, frei0r-plugins, redshift, veracrypt, onboard, clonezilla, filezilla, gnome-calculator, nomacs, osmo, synapse, telegram-desktop, plank, psensor, keepass, copyq, variety, grsync, numlockx, modem-manager-gui, uget, rofi, gsmartcontrol, testdisk, meld, lsof, dmidecode). " 
