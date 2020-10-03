@@ -1632,7 +1632,7 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка FileZilla "
-sudo pacman -S filezilla --noconfirm  # для записи видео и потокового вещания
+sudo pacman -S filezilla --noconfirm  # для работы с файлами на сервере
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
