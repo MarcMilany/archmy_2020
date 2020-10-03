@@ -1613,15 +1613,31 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+echo "" 
+echo -e "${BLUE}:: ${NC}Установить FileZilla (клиент FTP)?" 
+echo -e "${MAGENTA}:: ${BOLD}FileZilla - это быстрый и надежный клиент FTP, FTPS и SFTP. ${NC}"
+echo " С помощью специальных данных для доступа, выводит пользователю файловую систему определенного сайта. " 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка FileZilla "
+sudo pacman -S filezilla --noconfirm  # для записи видео и потокового вещания
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
 
 
-
-
-
-
-
-
-filezilla
 ################### СДЕЛАТЬ
 echo " Список утилит (пакетов) для установки: - (bleachbit, gparted, grub-customizer, conky, conky-manager, dconf-editor, doublecmd-gtk2, gnome-system-monitor, obs-studio, openshot, flameshot, cmake, frei0r-plugins, redshift, veracrypt, onboard, clonezilla, filezilla, gnome-calculator, nomacs, osmo, synapse, telegram-desktop, plank, psensor, keepass, copyq, variety, grsync, numlockx, modem-manager-gui, uget, rofi, gsmartcontrol, testdisk, meld, lsof, dmidecode). " 
 
