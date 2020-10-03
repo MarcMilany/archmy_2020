@@ -1544,8 +1544,8 @@ fi
 
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить Редактор dconf (пакет dconf-editor)?" 
-
-
+echo -e "${MAGENTA}:: ${BOLD} ${NC}"
+echo " . " 
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
