@@ -1495,7 +1495,7 @@ echo " Если Вы сомневаетесь в своих действиях, 
 echo -e "${YELLOW}==> ${NC}Установка будет производится в порядке перечисления (по очереди)" 
 #echo 'Установка будет производится в порядке перечисления (по очереди)'
 # Installation will be performed in the order listed (one at a time)
-echo -e "${BLUE}:: ${NC}Установить аудиоплеер Audacious?" 
+echo -e "${BLUE}:: ${NC}Установить Gparted?" 
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
@@ -1511,7 +1511,7 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка аудиоплеер Audacious "
-sudo pacman -S audacious audacious-plugins --noconfirm
+sudo pacman -S gparted --noconfirm
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
@@ -1533,7 +1533,7 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка медиаплеер Smplayer "
-sudo pacman -S smplayer smplayer-skins smplayer-themes smtube --noconfirm
+sudo pacman -S  --noconfirm
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
@@ -1555,7 +1555,7 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка многоплатформенного проигрывателя VLC "
-sudo pacman -S vlc --noconfirm
+sudo pacman -S  --noconfirm
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
@@ -1574,7 +1574,7 @@ fi
 
 read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S bleachbit gparted grub-customizer conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot cmake frei0r-plugins redshift veracrypt onboard clonezilla filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld xterm lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate
+sudo pacman -S bleachbit grub-customizer conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot cmake frei0r-plugins redshift veracrypt onboard clonezilla filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld xterm lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate
 echo " Установка утилит (пакетов) завершена " 
 elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ пропущена. '
