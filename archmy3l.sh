@@ -930,7 +930,7 @@ echo -e "${GREEN}==> ${NC}Установка дополнительных баз
 #echo -e "${BLUE}:: ${NC}Установка дополнительных базовых программ (пакетов)" 
 #echo 'Установка дополнительных базовых программ (пакетов)'
 # Installing additional basic programs (packages)
-echo " Список программ (пакетов) для установки: - (aspell-ru, arch-install-scripts, bash-completion, dosfstools, f2fs-tools, sane, gvfs, gnu-netcat, iftop, nmap, ntp, ncdu, hydra, isomd5sum, python-isomd5sum, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, pwgen, scrot, xsel, powertop, smartmontools, ethtool, glances и reflector) " 
+echo " Список программ (пакетов) для установки: - (aspell-ru, arch-install-scripts, bash-completion, cmake, dosfstools, f2fs-tools, sane, gvfs, gnu-netcat, iftop, nmap, ntp, ncdu, hydra, isomd5sum, python-isomd5sum, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, pwgen, scrot, xsel, powertop, smartmontools, ethtool, glances и reflector) " 
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -953,7 +953,7 @@ echo ""
 echo " Установка дополнительных базовых программ (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка дополнительных базовых программ (пакетов) "
-sudo pacman -S aspell-ru arch-install-scripts bash-completion dosfstools f2fs-tools sane gvfs gnu-netcat iftop nmap ntp ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip pwgen scrot xsel powertop smartmontools ethtool glances reflector --noconfirm  # git curl  - пока присутствует в pkglist.x86_64   
+sudo pacman -S aspell-ru arch-install-scripts bash-completion cmake dosfstools f2fs-tools sane gvfs gnu-netcat iftop nmap ntp ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip pwgen scrot xsel powertop smartmontools ethtool glances reflector --noconfirm  # git curl  - пока присутствует в pkglist.x86_64   
 clear
 echo ""   
 echo " Установка дополнительных базовых программ (пакетов) выполнена "
@@ -1568,17 +1568,9 @@ fi
 
 
 
-
-
-
-
-
-
-
-
 read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S bleachbit conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot cmake frei0r-plugins redshift veracrypt onboard clonezilla filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld xterm lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate
+sudo pacman -S bleachbit conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot frei0r-plugins redshift veracrypt onboard clonezilla filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld xterm lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate # dosfstools
 echo " Установка утилит (пакетов) завершена " 
 elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ пропущена. '
