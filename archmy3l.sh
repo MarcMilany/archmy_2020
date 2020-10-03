@@ -1869,13 +1869,16 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
-  echo " Установка Meld "
-sudo pacman -S meld --noconfirm  # для сравнения файлов
+  echo " Установка Meld (сравнение файлов)"
+sudo pacman -S meld --noconfirm  # для сравнения файлов, каталогов и рабочих копий
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
-Сравните файлы, каталоги и рабочие копии
+
+
+
+
   uget plank
 
 clear   galculator-gtk2
