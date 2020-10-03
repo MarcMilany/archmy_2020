@@ -815,7 +815,7 @@ echo -e "${MAGENTA}
 # Install Archivers (console), add-ons to archivers, archive managers (graphical interface)
 echo ""
 echo -e "${GREEN}==> ${NC}Ставим Архиваторы (консольные) - компрессионные инструменты"
-#echo -e "${BLUE}:: ${NC}Ставим Архиваторы - Компрессионные Инструменты и дополнения" 
+#echo -e "${BLUE}:: ${NC}Ставим Архиваторы (консольные) - компрессионные инструменты" 
 #echo 'Ставим Архиваторы - "Компрессионные Инструменты" и дополнения'
 # Installing Archivers-Compression Tools and add-ons
 echo " Список программ (пакетов) для установки: - (zip, unzip, unrar, p7zip, zlib, zziplib) " 
@@ -829,16 +829,16 @@ while
 #read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_zip  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^10] ]]
+    [[ "$i_zip" =~ [^10] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then 
+if [[ $i_zip == 0 ]]; then 
 echo ""  
 echo " Установка консольных архиваторов пропущена "
-elif [[ $prog_set == 1 ]]; then  
+elif [[ $i_zip == 1 ]]; then  
   echo " Установка компрессионных инструментов "
 sudo pacman -S zip unzip unrar p7zip zlib zziplib --noconfirm 
 echo "" 
@@ -847,8 +847,8 @@ fi
 
 #clear
 echo "" 
-echo -e "${GREEN}==> ${NC}Ставим дополнения к Архиваторам (консольным)"
-#echo -e "${BLUE}:: ${NC}Ставим дополнения к Архиваторам (консольным)" 
+echo -e "${GREEN}==> ${NC}Ставим дополнения (утилиты) для работы с архивами"
+#echo -e "${BLUE}:: ${NC}Ставим дополнения (утилиты) для работы с архивами" 
 #echo 'Ставим дополнения к Архиваторам'
 # Adding extensions to Archivers
 echo " Список программ (пакетов) для установки: - (lha unace lrzip sharutils uudeview arj cabextract) " 
@@ -870,12 +870,12 @@ do
 done 
 if [[ $prog_set == 0 ]]; then 
 echo ""  
-echo " Установка дополнительных утилит для архивации пропущена "
+echo " Установка дополнительных утилит для работы с архивами пропущена "
 elif [[ $prog_set == 1 ]]; then  
-  echo " Установка дополнительных утилит для архивации "
+  echo " Установка дополнительных утилит для работы с архивами "
 sudo pacman -S lha unace lrzip sharutils uudeview arj cabextract --noconfirm
 echo "" 
-echo " Установка дополнительных утилит для архивации выполнена "
+echo " Установка дополнительных утилит (пакетов) для работы с архивами выполнена "
 fi
 
 clear
@@ -884,7 +884,7 @@ echo -e "${GREEN}==> ${NC}Ставим Менеджер архивов (граф
 #echo -e "${BLUE}:: ${NC}Ставим Менеджер архивов (графический интерфейс)" 
 #echo 'Ставим Менеджер архивов (графический интерфейс)'
 # Setting the archive Manager (graphical interface)
-echo -e "${MAGENTA}:: ${NC}Выберите графический интерфейс для установленных пакетов архиваторов - (консольных), если установлены соответствующие. "
+echo -e "${MAGENTA}:: ${NC}Выберите графический интерфейс для установленных (пакетов) архиваторов - (консольных), если установлены соответствующие. "
 echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие варианты: ${NC}"
 echo " 1 - File Roller - Легковесный менеджер архивов для среды рабочего стола GNOME, можно использовать и для другого DE (XFCE, LXDE, Lxqt...), то выбирайте вариант - "1". "
 echo " File Roller поддерживает множество типов архивов, включая gzip (tar.gz, tar.xz, tgz), bzip (tar.bz, tbz), bzip2 (tar.bz2, tbz2), Z (tar.Z, taz), lzop ( tar.lzo, tzo), zip, jar (jar, ear, war), lha, lzh, rar, ace, 7z, alz, ar и arj. "
