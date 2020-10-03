@@ -1918,31 +1918,42 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка uGet (менеджер загрузок) "
-sudo pacman -S uget --noconfirm  # 
+sudo pacman -S uget --noconfirm  # менеджер загрузок
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
-
-
-
-
-
-  
-
-clear   galculator-gtk2
-################### СДЕЛАТЬ
+clear
+echo ""
+echo -e "${GREEN}==> ${BOLD}Установить рекомендованные программы (пакеты)? ${NC}"
+#echo -e "${BLUE}:: ${NC}Установить рекомендованные программы (пакеты)?"
+#echo 'Установить рекомендованные программы?'
+# Install the recommended programs
 echo " Список утилит (пакетов) для установки: - (gnome-system-monitor, openshot, frei0r-plugins, clonezilla, gnome-calculator, osmo, synapse, psensor, copyq, variety, grsync, numlockx, modem-manager-gui, rofi, gsmartcontrol, testdisk, lsof, dmidecode). " 
-
-read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set
-if [[ $prog_set == 1 ]]; then
-sudo pacman -S gnome-system-monitor openshot frei0r-plugins clonezilla gnome-calculator osmo synapse psensor copyq variety grsync numlockx modem-manager-gui rofi gsmartcontrol testdisk lsof dmidecode --noconfirm  
-echo " Установка утилит (пакетов) завершена " 
-elif [[ $prog_set == 0 ]]; then
-  echo ' Установка программ пропущена. '
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo -e "${YELLOW}==> ${NC}Установка будет производится всех утилит (пакетов) сразу (без выбора)" 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка рекомендованных утилит (пакетов) "
+sudo pacman -S gnome-system-monitor openshot frei0r-plugins clonezilla gnome-calculator osmo synapse psensor copyq variety grsync numlockx modem-manager-gui rofi gsmartcontrol testdisk lsof dmidecode --noconfirm  # galculator-gtk2
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
 fi
-##############################
-
 
 clear
 echo ""
