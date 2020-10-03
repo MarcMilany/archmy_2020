@@ -1662,9 +1662,9 @@ echo " Установка утилит (пакетов) выполнена "
 fi
 
 echo "" 
-echo -e "${BLUE}:: ${NC}Установить ?" 
-echo -e "${MAGENTA}:: ${BOLD}. ${NC}"
-echo " . " 
+echo -e "${BLUE}:: ${NC}Установить Flameshot (создания скриншотов)?" 
+echo -e "${MAGENTA}:: ${BOLD}Flameshot - инструмент для создания и редактирования скриншотов в Linux. ${NC}"
+echo " Что подкупило в Flameshot, так это то, что во время создания снимка имеется возможность редактирования, без необходимости предварительного сохранения снимка, т.е. создание и редактирование в одном окне или на лету. " 
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
@@ -1680,30 +1680,20 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка  "
-sudo pacman -S flameshot --noconfirm
+sudo pacman -S flameshot --noconfirm  # для создания снимков экрана
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
 
 
-
-
-
-
-
-
-
-
-
-
 clear
 ################### СДЕЛАТЬ
-echo " Список утилит (пакетов) для установки: - (bleachbit, gparted, grub-customizer, conky, conky-manager, dconf-editor, doublecmd-gtk2, gnome-system-monitor, obs-studio, openshot, flameshot, cmake, frei0r-plugins, redshift, veracrypt, onboard, clonezilla, filezilla, gnome-calculator, nomacs, osmo, synapse, telegram-desktop, plank, psensor, keepass, copyq, variety, grsync, numlockx, modem-manager-gui, uget, rofi, gsmartcontrol, testdisk, meld, lsof, dmidecode). " 
+echo " Список утилит (пакетов) для установки: - (bleachbit, doublecmd-gtk2, gnome-system-monitor, openshot, frei0r-plugins, redshift, veracrypt, onboard, clonezilla, gnome-calculator, nomacs, osmo, synapse, plank, psensor, keepass, copyq, variety, grsync, numlockx, modem-manager-gui, uget, rofi, gsmartcontrol, testdisk, meld, lsof, dmidecode). " 
 
 read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S bleachbit doublecmd-gtk2 gnome-system-monitor openshot flameshot frei0r-plugins redshift veracrypt onboard clonezilla gnome-calculator nomacs osmo synapse plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate # dosfstools
+sudo pacman -S bleachbit doublecmd-gtk2 gnome-system-monitor openshot frei0r-plugins redshift veracrypt onboard clonezilla gnome-calculator nomacs osmo synapse plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate # dosfstools
 echo " Установка утилит (пакетов) завершена " 
 elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ пропущена. '
