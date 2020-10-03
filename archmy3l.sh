@@ -1565,7 +1565,15 @@ echo " Установка утилит (пакетов) выполнена "
 fi
 
 
-
+echo 'Установить conky?'
+read -p "1 - Да, 0 - Нет: " conky_set
+if [[ $conky_set == 1 ]]; then
+  sudo pacman -S conky conky-manager --noconfirm
+  wget git.io/conky.tar.gz
+  tar -xzf conky.tar.gz -C ~/
+elif [[ $conky_set == 0 ]]; then
+  echo 'Установка conky пропущена.'
+fi
 
 
 read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set
