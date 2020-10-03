@@ -1816,7 +1816,7 @@ onboard nomacs meld uget plank
 
 clear   galculator-gtk2
 ################### СДЕЛАТЬ
-echo " Список утилит (пакетов) для установки: - (gnome-system-monitor, openshot, frei0r-plugins, onboard, clonezilla, gnome-calculator, nomacs, osmo, synapse, plank, psensor, copyq, variety, grsync, numlockx, modem-manager-gui, uget, rofi, gsmartcontrol, testdisk, meld, lsof, dmidecode). " 
+echo " Список утилит (пакетов) для установки: - (gnome-system-monitor, openshot, frei0r-plugins, clonezilla, gnome-calculator, osmo, synapse, psensor, copyq, variety, grsync, numlockx, modem-manager-gui, rofi, gsmartcontrol, testdisk, lsof, dmidecode). " 
 
 read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set
 if [[ $prog_set == 1 ]]; then
