@@ -1473,8 +1473,6 @@ fi
 # https://www.documentfoundation.org
 # ========================================
 
-################### СДЕЛАТЬ
-
 clear
 echo -e "${MAGENTA}
   <<< Установка рекомендованных программ (пакетов) - по вашему выбору и желанию >>> ${NC}"
@@ -1567,7 +1565,7 @@ echo " Установка утилит (пакетов) выполнена "
 fi
 
 echo "" 
-echo -e "${BLUE}:: ${NC}Установить Conky и Conky-Manager (пакет dconf-editor)?" 
+echo -e "${BLUE}:: ${NC}Установить Conky и Conky-Manager (пакеты conky conky-manager)?" 
 echo -e "${MAGENTA}:: ${BOLD}Conky - мощный и легко настраиваемый системный монитор. ${NC}"
 echo -e "${CYAN}:: ${BOLD}Conky Manager - это графический интерфейс для управления файлами конфигурации Conky.${NC}"
 echo " Он предоставляет опции для запуска и остановки, просмотра и редактирования тем Conky, установленных в системе. " 
@@ -1586,7 +1584,31 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $conky_set == 1 ]]; then
   echo " Установка утилит (пакетов) Conky и Conky Manager "
-sudo pacman -S conky conky conky-manager --noconfirm 
+sudo pacman -S conky conky-manager --noconfirm 
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
+################### СДЕЛАТЬ
+echo "" 
+echo -e "${BLUE}:: ${NC}Установить Open Broadcaster Software®️ (OBS)?" 
+echo -e "${MAGENTA}:: ${BOLD}OBS Studio - это бесплатное программное обеспечение с открытым исходным кодом для прямой трансляции и записи. ${NC}"
+echo "  " 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка OBS Studio "
+sudo pacman -S obs-studio --noconfirm  #  для записи видео и потокового вещания
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
@@ -1594,11 +1616,9 @@ fi
 
 
 
-Бесплатное программное обеспечение с открытым исходным кодом для прямой трансляции и записи
-
 read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S bleachbit doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot frei0r-plugins redshift veracrypt onboard clonezilla filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate # dosfstools
+sudo pacman -S bleachbit doublecmd-gtk2 gnome-system-monitor openshot flameshot frei0r-plugins redshift veracrypt onboard clonezilla filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate # dosfstools
 echo " Установка утилит (пакетов) завершена " 
 elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ пропущена. '
