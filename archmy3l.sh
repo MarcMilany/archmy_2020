@@ -1710,8 +1710,8 @@ echo " Установка утилит (пакетов) выполнена "
 fi
 
 echo "" 
-echo -e "${BLUE}:: ${NC}Установить  ()?" 
-echo -e "${MAGENTA}:: ${BOLD}. ${NC}"
+echo -e "${BLUE}:: ${NC}Установить BleachBit ()?" 
+echo -e "${MAGENTA}:: ${BOLD}BleachBit. ${NC}"
 echo " . " 
 echo "" 
 while  
@@ -1727,7 +1727,7 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
-  echo " Установка  "
+  echo " Установка BleachBit "
 sudo pacman -S bleachbit --noconfirm  
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
