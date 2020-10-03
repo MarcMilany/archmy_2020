@@ -1544,8 +1544,8 @@ fi
 
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить Редактор dconf (пакет dconf-editor)?" 
-echo -e "${MAGENTA}:: ${BOLD} ${NC}"
-echo " . " 
+echo -e "${MAGENTA}:: ${BOLD}Редактор dconf - общий инструмент для настройки GNOME 3, Unity, MATE и Cinnamon. ${NC}"
+echo " Файл dconf, также называют системным реестром Linux. Этот файл двоичный, создается в момент создания профиля нового пользователя. " 
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
