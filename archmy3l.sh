@@ -815,14 +815,51 @@ echo -e "${MAGENTA}
 # Install Archivers (console), add-ons to archivers, archive managers (graphical interface)
 
 echo ""
-echo -e "${GREEN}==> ${NC}Ставим Архиваторы - Компрессионные Инструменты и дополнения"
+echo -e "${GREEN}==> ${NC}Ставим Архиваторы (консольные) - компрессионные инструменты"
 #echo -e "${BLUE}:: ${NC}Ставим Архиваторы - Компрессионные Инструменты и дополнения" 
 #echo 'Ставим Архиваторы - "Компрессионные Инструменты" и дополнения'
 # Installing Archivers-Compression Tools and add-ons
+echo " Список программ (пакетов) для установки: - (zip, unzip, unrar, p7zip, zlib, zziplib) " 
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
+while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+echo ""  
+echo " Установка консольных архиваторов пропущена "
+elif [[ $prog_set == 1 ]]; then  
+  echo " Установка компрессионных инструментов "
 sudo pacman -S zip unzip unrar p7zip zlib zziplib --noconfirm 
+echo "" 
+echo " Установка (консольных) архиваторов завершена "
+fi
+
+
+
+
+
+
+
+
+
+
+
 
 echo "" 
-echo -e "${BLUE}:: ${NC}Ставим дополнения к Архиваторам" 
+echo -e "${GREEN}==> ${NC}Ставим дополнения к Архиваторам (консольным)"
+#echo -e "${BLUE}:: ${NC}Ставим дополнения к Архиваторам (консольным)" 
 #echo 'Ставим дополнения к Архиваторам'
 # Adding extensions to Archivers
 sudo pacman -S lha unace lrzip sharutils uudeview arj cabextract --noconfirm
@@ -1186,7 +1223,8 @@ echo -e "${MAGENTA}
 # Installing utilities (packages) for managing email, news feeds, chat, and groups
 
 echo ""
-echo -e "${BLUE}:: ${NC}Управления электронной почтой, новостными лентами, чатом и группам" 
+e "${GREEN}==> ${NC}Установка Браузеров и медиа-плагинов"
+#echo -e "${BLUE}:: ${NC}Управления электронной почтой, новостными лентами, чатом и группам" 
 #echo 'Управления электронной почтой, новостными лентами, чатом и группам'
 # Manage email, news feeds, chat, and groups
 sudo pacman -S thunderbird thunderbird-i18n-ru pidgin pidgin-hotkeys --noconfirm
