@@ -1752,26 +1752,26 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка Double Commander "
-sudo pacman -S doublecmd-gtk2 --noconfirm  # двухпанельный файловый менеджер
+sudo pacman -S doublecmd-gtk2 --noconfirm  # двухпанельный файловый менеджер (GTK2)
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
 
 
+для хранения паролей
+KeePass
 
+Простой в использовании менеджер паролей для Windows, Linux, Mac OS X и мобильных устройств
 
-
-
-двухпанельный (командирский) файловый менеджер (GTK2)
-
+keepass
 clear   galculator-gtk2
 ################### СДЕЛАТЬ
-echo " Список утилит (пакетов) для установки: - (gnome-system-monitor, openshot, frei0r-plugins, veracrypt, onboard, clonezilla, gnome-calculator, nomacs, osmo, synapse, plank, psensor, keepass, copyq, variety, grsync, numlockx, modem-manager-gui, uget, rofi, gsmartcontrol, testdisk, meld, lsof, dmidecode). " 
+echo " Список утилит (пакетов) для установки: - (gnome-system-monitor, openshot, frei0r-plugins, veracrypt, onboard, clonezilla, gnome-calculator, nomacs, osmo, synapse, plank, psensor, copyq, variety, grsync, numlockx, modem-manager-gui, uget, rofi, gsmartcontrol, testdisk, meld, lsof, dmidecode). " 
 
 read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S gnome-system-monitor openshot frei0r-plugins veracrypt onboard clonezilla gnome-calculator nomacs osmo synapse plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate # dosfstools
+sudo pacman -S gnome-system-monitor openshot frei0r-plugins veracrypt onboard clonezilla gnome-calculator nomacs osmo synapse plank psensor copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate # dosfstools
 echo " Установка утилит (пакетов) завершена " 
 elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ пропущена. '
