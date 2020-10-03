@@ -1757,14 +1757,36 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+echo "" 
+echo -e "${BLUE}:: ${NC}Установить KeePass (для хранения паролей)?" 
+echo -e "${MAGENTA}:: ${BOLD}KeePass - простой в использовании менеджер паролей для Windows, Linux, Mac OS X и мобильных устройств. ${NC}"
+echo " KeePass очень удобна и мобильна, ее можно переносить на любой диск компьютера, флешку и любое другое устройство. " 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка KeePass "
+sudo pacman -S keepass --noconfirm  # менеджер паролей
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
 
 
-для хранения паролей
-KeePass
 
-Простой в использовании менеджер паролей для Windows, Linux, Mac OS X и мобильных устройств
 
-keepass
+
+
+
 clear   galculator-gtk2
 ################### СДЕЛАТЬ
 echo " Список утилит (пакетов) для установки: - (gnome-system-monitor, openshot, frei0r-plugins, veracrypt, onboard, clonezilla, gnome-calculator, nomacs, osmo, synapse, plank, psensor, copyq, variety, grsync, numlockx, modem-manager-gui, uget, rofi, gsmartcontrol, testdisk, meld, lsof, dmidecode). " 
