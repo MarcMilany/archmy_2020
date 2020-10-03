@@ -1264,7 +1264,8 @@ sudo pacman -S thunderbird thunderbird-i18n-ru --noconfirm  # программа
 echo ""   
 echo " Установка утилиты (пакета) Thunderbird выполнена "
 fi
- 
+
+clear 
 echo ""
 e "${GREEN}==> ${NC}Ставим Pidgin (Мессенджер) - управления чатом и группам"
 #echo -e "${BLUE}:: ${NC}Управления электронной почтой, новостными лентами, чатом и группам" 
