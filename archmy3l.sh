@@ -1793,7 +1793,7 @@ echo " Список утилит (пакетов) для установки: - (
 
 read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S gnome-system-monitor openshot frei0r-plugins veracrypt onboard clonezilla gnome-calculator nomacs osmo synapse plank psensor copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate # dosfstools
+sudo pacman -S gnome-system-monitor openshot frei0r-plugins veracrypt onboard clonezilla gnome-calculator nomacs osmo synapse plank psensor copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld lsof dmidecode --noconfirm  
 echo " Установка утилит (пакетов) завершена " 
 elif [[ $prog_set == 0 ]]; then
   echo ' Установка программ пропущена. '
