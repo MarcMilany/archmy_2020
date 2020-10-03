@@ -1239,6 +1239,18 @@ e "${GREEN}==> ${NC}Ставим Thunderbird - управления электр
 #echo -e "${BLUE}:: ${NC}Управления электронной почтой, новостными лентами, чатом и группам" 
 #echo 'Управления электронной почтой, новостными лентами, чатом и группам'
 # Manage email, news feeds, chat, and groups
+echo -e "${MAGENTA}:: ${BOLD}Thunderbird - Автономная, бесплатная кроссплатформенная свободно распространяемая программа для работы с электронной почтой и группами новостей, а при установке расширения Lightning, и с календарём. ${NC}"
+echo -e "${CYAN}:: ${NC}Является составной частью проекта Mozilla (mozilla.org). Поддерживает протоколы: SMTP, POP3, IMAP, NNTP, RSS."
+echo "  "
+ 
+
+
+
+
+
+
+
+
 sudo pacman -S thunderbird thunderbird-i18n-ru pidgin pidgin-hotkeys --noconfirm
 
 
@@ -1254,10 +1266,17 @@ e "${GREEN}==> ${NC}Ставим Thunderbird - управления электр
 #echo -e "${BLUE}:: ${NC}Управления электронной почтой, новостными лентами, чатом и группам" 
 #echo 'Управления электронной почтой, новостными лентами, чатом и группам'
 # Manage email, news feeds, chat, and groups
+echo -e "${MAGENTA}:: ${BOLD}Thunderbird -  ${NC}"
+echo -e "${CYAN}:: ${NC}"
+echo "  "
+
+
+
 sudo pacman -S thunderbird thunderbird-i18n-ru pidgin pidgin-hotkeys --noconfirm
-# Thunderbird 
-# thunderbird - Автономная программа для чтения почты и новостей от mozilla.org
-# Mozilla Thunderbird - бесплатная кроссплатформенная свободно распространяемая программа для работы с электронной почтой и группами новостей, а при установке расширения Lightning, и с календарём. Является составной частью проекта Mozilla. Поддерживает протоколы: SMTP, POP3, IMAP, NNTP, RSS.
+
+
+
+# Mozilla Thunderbird 
 # https://www.thunderbird.net/ru/
 # ------------------------
 # Pidgin (Мессенджер)
