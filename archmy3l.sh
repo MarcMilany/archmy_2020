@@ -1560,11 +1560,13 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
-  echo " Установка многоплатформенного проигрывателя VLC "
+  echo " Установка Редактора dconf "
 sudo pacman -S dconf-editor --noconfirm  # редактор dconf
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
+
+
 
 
 echo 'Установить conky?'
