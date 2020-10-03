@@ -1293,7 +1293,7 @@ echo "  "
 
 
 
-sudo pacman -S pidgin pidgin-hotkeys --noconfirm
+sudo pacman -S pidgin pidgin-hotkeys --noconfirm  # клиент обмена мгновенными сообщениями
 
 
 
