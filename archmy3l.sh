@@ -1487,23 +1487,91 @@ echo -e "${GREEN}==> ${BOLD}Установить рекомендованные 
 #echo -e "${BLUE}:: ${NC}Установить рекомендованные программы (пакеты)?"
 #echo 'Установить рекомендованные программы?'
 # Install the recommended programs
-
-
-
-bleachbit gparted grub-customizer conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot cmake frei0r-plugins redshift veracrypt onboard clonezilla filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld xterm lsof dmidecode' 
-
-
-
-
-
-
-
-
-echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В этом действии выбор остаётся за вами. "
-# Be careful! The installation process was fully automatic. In this action, the choice is yours.
+echo " Список утилит (пакетов) для установки: - (bleachbit gparted grub-customizer conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio, openshot flameshot cmake frei0r-plugins redshift veracrypt onboard clonezilla filezilla gnome-calculator nomacs osmo, synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol, testdisk meld xterm lsof dmidecode) " 
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
 echo -e "${YELLOW}==> ${NC}Установка будет производится в порядке перечисления (по очереди)" 
 #echo 'Установка будет производится в порядке перечисления (по очереди)'
 # Installation will be performed in the order listed (one at a time)
+echo -e "${BLUE}:: ${NC}Установить аудиоплеер Audacious?" 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка аудиоплеер Audacious "
+sudo pacman -S audacious audacious-plugins --noconfirm
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
+
+echo "" 
+echo -e "${BLUE}:: ${NC}Установить медиаплеер Smplayer?" 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка медиаплеер Smplayer "
+sudo pacman -S smplayer smplayer-skins smplayer-themes smtube --noconfirm
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
+
+echo "" 
+echo -e "${BLUE}:: ${NC}Установить многоплатформенный проигрыватель VLC ?" 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка многоплатформенного проигрывателя VLC "
+sudo pacman -S vlc --noconfirm
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
 read -p " 1 - Да установить, 0 - Нет пропустить: " prog_set
 if [[ $prog_set == 1 ]]; then
 sudo pacman -S bleachbit gparted grub-customizer conky conky-manager dconf-editor doublecmd-gtk2 gnome-system-monitor obs-studio openshot flameshot cmake frei0r-plugins redshift veracrypt onboard clonezilla filezilla gnome-calculator nomacs osmo synapse telegram-desktop plank psensor keepass copyq variety grsync numlockx modem-manager-gui uget rofi gsmartcontrol testdisk meld xterm lsof dmidecode --noconfirm  # catdoc unrtf id3lib toxcore mlocate
