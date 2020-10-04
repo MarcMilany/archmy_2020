@@ -1926,7 +1926,7 @@ fi
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить GNOME Calculator (калькулятор)?" 
 echo -e "${MAGENTA}:: ${BOLD}GNOME Calculator - ранее известная как gcalctool(Calctool), является программным обеспечение калькулятор интегрирован с настольной GNOME среды. ${NC}"
-echo " Он запрограммирован в C и Val и часть приложений GNOME Key. " 
+echo " Научный калькулятор - он запрограммирован в C и Val и часть приложений GNOME Key. " 
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
@@ -1941,8 +1941,8 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
-  echo " Установка  GNOME Calculator "
-sudo pacman -S gnome-calculator --noconfirm  # 
+  echo " Установка GNOME Calculator (калькулятор) "
+sudo pacman -S gnome-calculator --noconfirm  # Научный калькулятор GNOME
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
