@@ -1914,6 +1914,8 @@ if [[ $prog_set == 0 ]]; then
 echo ""  
 echo " Создание каталогов пропущено "
 elif [[ $prog_set == 1 ]]; then
+echo ""  
+echo " Создание пользовательских каталогов по умолчанию "     
  pacman -S xdg-user-dirs --noconfirm
  xdg-user-dirs-update 
  echo "" 
