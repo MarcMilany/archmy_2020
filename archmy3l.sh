@@ -3022,9 +3022,11 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then    
+if [[ $prog_set == 0 ]]; then
+echo ""    
 echo "  Сервис sshd не включен в автозагрузку, при необходиости это можно будет сделать. "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Добавляем в автозагрузку (sshd.service)"
 sudo systemctl enable sshd.service
 echo " Сервис sshd успешно добавлен в автозагрузку " 
