@@ -2144,9 +2144,11 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then    
+if [[ $prog_set == 0 ]]; then
+echo ""    
 echo " Установка поддержки системой exFAT пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка поддержки системой exFAT в Linux "
 sudo pacman -S exfat-utils fuse-exfat --noconfirm  #exfatprogs
 fi
