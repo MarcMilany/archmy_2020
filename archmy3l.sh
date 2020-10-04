@@ -1225,6 +1225,7 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка текстового редактора (gedit) "
 sudo pacman -S gedit gedit-plugins --noconfirm  # Текстовый редактор GNOME
 echo ""   
@@ -1258,6 +1259,7 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка утилиты разработки (geany) "
 sudo pacman -S geany geany-plugins --noconfirm  # Быстрая и легкая IDE
 echo ""   
