@@ -1305,7 +1305,7 @@ fi
 
 clear 
 echo ""
-e "${GREEN}==> ${NC}Ставим Pidgin (Мессенджер) - управления чатом и группам"
+echo -e "${GREEN}==> ${NC}Ставим Pidgin (Мессенджер) - управления чатом и группам"
 #echo -e "${BLUE}:: ${NC}Управления электронной почтой, новостными лентами, чатом и группам" 
 #echo 'Управления электронной почтой, новостными лентами, чатом и группам'
 # Manage email, news feeds, chat, and groups
@@ -1376,22 +1376,26 @@ clear
 echo ""    
 echo " Установка веб-браузера(ов) пропущена "
 elif [[ $prog_set == 1 ]]; then
+echo ""   
 sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin --noconfirm
 #sudo pacman -S firefox-developer-edition firefox-developer-edition-i18n-ru firefox-spell-ru flashplugin --noconfirm  # Версия для разработчиков
 clear
 echo ""    
 echo " Установка веб-браузера Firefox (+ flashplugin) выполнена "
 elif [[ $prog_set == 2 ]]; then
+echo ""     
 sudo pacman -S chromium pepper-flash --noconfirm
 clear
 echo ""    
 echo " Установка веб-браузера Chromium (+ pepper-flash) выполнена "
 elif [[ $prog_set == 3 ]]; then
+echo ""     
 sudo pacman -S opera pepper-flash --noconfirm
 clear
 echo ""    
 echo " Установка веб-браузера Opera (+ pepper-flash) выполнена "
 elif [[ $prog_set == 4 ]]; then
+echo ""     
 sudo pacman -S chromium opera pepper-flash firefox firefox-i18n-ru firefox-spell-ru flashplugin --noconfirm 
 clear
 echo ""    
@@ -1427,6 +1431,7 @@ clear
 echo ""    
 echo " Установка BitTorrent-клиентов пропущена "
 elif [[ $prog_set == 1 ]]; then
+echo ""    
 sudo pacman -S transmission-gtk transmission-cli --noconfirm  # графический интерфейс GTK 3, и демон, с CLI 
 #sudo pacman -S transmission-qt transmission-cli --noconfirm  # графический интерфейс Qt 5, и демон, с CLI 
 #sudo pacman -S transmission-remote-gtk transmission-cli --noconfirm  # графический интерфейс GTK 3 для демона, и демон, с CLI
@@ -1434,11 +1439,13 @@ clear
 echo ""    
 echo " Установка BitTorrent-клиента Transmission выполнена "
 elif [[ $prog_set == 2 ]]; then
+echo ""    
 sudo pacman -S qbittorrent --noconfirm
 clear
 echo ""    
 echo " Установка BitTorrent-клиента qBittorrent выполнена "
 elif [[ $prog_set == 3 ]]; then
+echo ""    
 sudo pacman -S deluge --noconfirm
 clear
 echo ""    
