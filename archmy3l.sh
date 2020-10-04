@@ -1772,6 +1772,7 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить BleachBit (для тщательной очистки)?" 
 echo -e "${MAGENTA}:: ${BOLD}BleachBit - это мощное приложение, предназначенное для тщательной очистки компьютера и удаления ненужных файлов, что помогает освободить место на дисках и удалить конфиденциальные данные. ${NC}"
@@ -1790,12 +1791,14 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка BleachBit "
 sudo pacman -S bleachbit --noconfirm  
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить Double Commander (файловый менеджер)?" 
 echo -e "${MAGENTA}:: ${BOLD}Double Commander - двухпанельный файловый менеджер с открытым исходным кодом, работающий под Linux (два варианта, с использованием библиотек GTK+ или Qt). ${NC}"
@@ -1814,12 +1817,14 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка Double Commander "
 sudo pacman -S doublecmd-gtk2 --noconfirm  # двухпанельный файловый менеджер (GTK2)
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить KeePass (для хранения паролей)?" 
 echo -e "${MAGENTA}:: ${BOLD}KeePass - простой в использовании менеджер паролей для Windows, Linux, Mac OS X и мобильных устройств. ${NC}"
@@ -1838,12 +1843,14 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка KeePass "
 sudo pacman -S keepass --noconfirm  # менеджер паролей
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить VeraCrypt (ПО для шифрования)?" 
 echo -e "${MAGENTA}:: ${BOLD}VeraCrypt - шифрование диска с надежной защитой на основе TrueCrypt. ${NC}"
@@ -1862,12 +1869,14 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка VeraCrypt "
 sudo pacman -S veracrypt --noconfirm  
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить Nomacs (для просмотра изображений)?" 
 echo -e "${MAGENTA}:: ${BOLD}Nomacs - это бесплатная программа для просмотра изображений, Вы можете использовать его для просмотра всех распространенных форматов изображений, включая изображения RAW и psd. ${NC}"
