@@ -1913,7 +1913,7 @@ do
 done
 if [[ $prog_set == 0 ]]; then
   echo ""  
-  echo ' Создание каталогов пропущено. '
+  echo " Создание каталогов пропущено "
 elif [[ $prog_set == 1 ]]; then
  pacman -S xdg-user-dirs --noconfirm
  xdg-user-dirs-update 
