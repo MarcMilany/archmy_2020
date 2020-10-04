@@ -1636,12 +1636,14 @@ if [[ $conky_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $conky_set == 1 ]]; then
+  echo ""  
   echo " Установка утилит (пакетов) Conky и Conky-Manager "
 sudo pacman -S conky conky-manager --noconfirm 
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить Open Broadcaster Software®️ (OBS)?" 
 echo -e "${MAGENTA}:: ${BOLD}OBS Studio - это бесплатное программное обеспечение с открытым исходным кодом для прямой трансляции и записи. ${NC}"
