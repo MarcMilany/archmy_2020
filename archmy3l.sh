@@ -1950,7 +1950,7 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка рекомендованных утилит (пакетов) "
-sudo pacman -S gnome-system-monitor openshot frei0r-plugins clonezilla gnome-calculator osmo synapse psensor copyq variety grsync numlockx modem-manager-gui rofi gsmartcontrol testdisk lsof dmidecode --noconfirm  # galculator-gtk2
+sudo pacman -S gnome-system-monitor openshot frei0r-plugins clonezilla gnome-calculator osmo synapse psensor copyq variety grsync numlockx modem-manager-gui rofi gsmartcontrol testdisk lsof dmidecode --noconfirm  
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
