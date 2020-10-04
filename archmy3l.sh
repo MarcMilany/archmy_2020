@@ -795,7 +795,7 @@ echo -e "${GREEN}==> ${NC}Установить Blueman - диспетчер blue
 #echo 'Установить Blueman - диспетчер bluetooth устройств?'
 # Install Blueman-bluetooth device Manager?
 echo -e "${CYAN}:: ${BOLD}Blueman - это полнофункциональный менеджер Bluetooth, написанный на GTK. ${NC}"
-echo -e "${YELLOW}:: ${NC}Обязательно включите демон Bluetooth и запустите Blueman с blueman-applet. Графическую панель настроек можно запустить с помощью blueman-manager."
+echo -e "${YELLOW}=> ${NC}Обязательно включите демон Bluetooth и запустите Blueman с blueman-applet. Графическую панель настроек можно запустить с помощью blueman-manager."
 echo " Чтобы получать файлы, не забудьте щелкнуть правой кнопкой мыши значок Blueman на панели задач> Локальные службы> Передача> Получение файлов (Object Push) и установить флажок 'Принимать файлы с доверенных устройств'. "
 echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В данной опции выбор всегда остаётся за вами. "
 # Be careful! The installation process, after the option you selected, was registered fully automatic. In this option, the choice is always yours.
