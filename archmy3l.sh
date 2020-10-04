@@ -2291,6 +2291,7 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка Snap пропущена "
 elif [[ $prog_set == 1 ]]; then
+echo ""    
 echo -e " Установка базовых программ и пакетов wget, curl, git "
 #sudo pacman -S --noconfirm --needed wget curl git 
 echo " Установка поддержки Snap "
