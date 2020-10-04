@@ -778,6 +778,7 @@ clear
 echo ""   
 echo " Установка поддержки Sound support пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка пакетов поддержки Sound support (alsa, pulseaudio...) "
 sudo pacman -S alsa-utils alsa-plugins alsa-firmware alsa-lib alsa-utils --noconfirm 
 sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth pulseaudio-equalizer-ladspa --noconfirm  
