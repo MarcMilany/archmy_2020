@@ -2726,7 +2726,10 @@ fi
 # https://rtfm.co.ua/arch-linux-cups-i-hplip-podklyuchenie-printera/
 # ------------------------------------------------------------------------
 
+clear
 echo ""
+echo -e "${GREEN}==> ${NC}Ставим Драйвера принтера (Поддержка печати) CUPS, HP"
+
 echo -e "${BLUE}:: ${NC}Будете ли Вы подключать Android или Iphone к ПК через USB?" 
 #echo 'Будете ли Вы подключать Android или Iphone к ПК через USB?'
 # Will you connect your Android or Iphone to your PC via USB?
