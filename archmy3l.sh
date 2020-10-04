@@ -1662,12 +1662,14 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка OBS Studio "
 sudo pacman -S obs-studio --noconfirm  # для записи видео и потокового вещания
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить FileZilla (клиент FTP)?" 
 echo -e "${MAGENTA}:: ${BOLD}FileZilla - это быстрый и надежный клиент FTP, FTPS и SFTP. ${NC}"
@@ -1686,12 +1688,14 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка FileZilla "
 sudo pacman -S filezilla --noconfirm  # графический клиент для работы с FTP/SFTP
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить Telegram Desktop (мессенджер)?" 
 echo -e "${MAGENTA}:: ${BOLD}Telegram Desktop - это официальное приложение Telegram для настольных операционных систем. ${NC}"
@@ -1734,6 +1738,7 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка Flameshot "
 sudo pacman -S flameshot --noconfirm  # для создания снимков экрана
 echo ""   
