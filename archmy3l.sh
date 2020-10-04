@@ -2943,9 +2943,11 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then    
+if [[ $prog_set == 0 ]]; then
+echo ""    
 echo " UFW (сетевой экран) не был добавлен в автозагрузку. "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Добавляем в автозагрузку UFW (сетевой экран) "
 sudo systemctl enable ufw
 echo " UFW (сетевой экран) успешно добавлен в автозагрузку " 
