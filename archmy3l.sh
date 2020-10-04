@@ -649,9 +649,11 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then    
+if [[ $prog_set == 0 ]]; then 
+echo ""   
 echo " Установка Брандмауэра UFW пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""    
   echo " Установка UFW (Несложный Брандмауэр) "
 sudo pacman -S ufw gufw --noconfirm
 echo " Установка Брандмауэра UFW завершена "
@@ -681,9 +683,11 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then    
+if [[ $prog_set == 0 ]]; then
+echo ""    
 echo " Установка Антивирусного пакета ClamAV пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка Clam AntiVirus "
 sudo pacman -S clamav clamtk --noconfirm
 echo " Установка Clam AntiVirus завершена "
