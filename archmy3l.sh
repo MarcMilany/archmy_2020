@@ -2732,10 +2732,10 @@ echo -e "${GREEN}==> ${NC}Будете ли Вы подключать Android и
 #echo -e "${BLUE}:: ${NC}Будете ли Вы подключать Android или Iphone к ПК через USB?" 
 #echo 'Будете ли Вы подключать Android или Iphone к ПК через USB?'
 # Will you connect your Android or Iphone to your PC via USB?
-echo -e "${MAGENTA}=> ${NC}Установка поддержки для устройств на Android или Iphone к ПК через USB. "
+echo -e "${MAGENTA}=> ${NC}Установка поддержки для устройств на (базе) Android или Iphone к ПК через USB. "
 # Installing support for Android or Iphone devices to a PC via USB
-echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
-# Be careful! The installation process, after the option you selected, was registered fully automatic. In any situation, the choice is always yours.
+echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В данной опции выбор остаётся за вами. "
+# Be careful! The installation process, after the option you selected, was registered fully automatic. In this option, the choice is yours. 
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
 #echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
 # You can skip this step if you are not sure of the correct choice
