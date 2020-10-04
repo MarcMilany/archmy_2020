@@ -604,13 +604,16 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done 
-if [[ $in_aur_update == 0 ]]; then    
+if [[ $in_aur_update == 0 ]]; then
+echo ""    
 echo " Обновление баз данных пакетов, и системы пропущено "
 elif [[ $in_aur_update == 1 ]]; then
+echo ""    
 echo " Обновление баз данных пакетов, и системы через - AUR (Yay) "
 yay -Syy
 yay -Syu
 elif [[ $in_aur_update == 2 ]]; then
+echo ""    
 echo " Обновление баз данных пакетов, и системы через - AUR (Pikaur) "
 pikaur -Syy
 pikaur -Syu
