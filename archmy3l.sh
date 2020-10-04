@@ -1947,12 +1947,14 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка Meld (сравнение файлов) "
 sudo pacman -S meld --noconfirm  # для сравнения файлов, каталогов и рабочих копий
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить Plank (док-панель)?" 
 echo -e "${MAGENTA}:: ${BOLD}Plank - самая элегантная, простая док-панель в мире для linux. ${NC}"
@@ -1971,12 +1973,14 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка Plank (док-панель) "
 sudo pacman -S plank --noconfirm  # док-панель
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить uGet (менеджер загрузок)?" 
 echo -e "${MAGENTA}:: ${BOLD}uGet - это универсальный менеджер закачек, который поддерживает докачку файлов, сортировку по группам, закачку через торренты и мета-ссылки (с помощью плагина aria2). ${NC}"
@@ -1995,12 +1999,14 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка uGet (менеджер загрузок) "
 sudo pacman -S uget --noconfirm  # менеджер загрузок
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить GNOME Calculator (калькулятор)?" 
 echo -e "${MAGENTA}:: ${BOLD}GNOME Calculator - ранее известная как gcalctool(Calctool), является программным обеспечение калькулятор интегрирован с настольной GNOME среды. ${NC}"
