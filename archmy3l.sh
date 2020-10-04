@@ -1590,6 +1590,7 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить Редактор dconf (пакет dconf-editor)?" 
 echo -e "${MAGENTA}:: ${BOLD}Редактор dconf - общий инструмент для настройки GNOME 3, Unity, MATE и Cinnamon. ${NC}"
@@ -1608,12 +1609,14 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка Редактора dconf "
 sudo pacman -S dconf-editor --noconfirm  # редактор dconf
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить Conky и Conky-Manager (пакеты conky conky-manager)?" 
 echo -e "${MAGENTA}:: ${BOLD}Conky - мощный и легко настраиваемый системный монитор. ${NC}"
