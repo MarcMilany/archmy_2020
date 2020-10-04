@@ -1945,7 +1945,7 @@ do
 done
 if [[ $vm_fstab == 0 ]]; then
 echo ""    
-  echo " Этап редактирования пропущен " 
+echo " Этап редактирования пропущен " 
 elif [[ $vm_fstab == 1 ]]; then
 nano /etc/fstab
 elif [[ $vm_fstab == 2 ]]; then
