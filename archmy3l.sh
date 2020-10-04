@@ -3032,6 +3032,7 @@ sudo systemctl enable sshd.service
 echo " Сервис sshd успешно добавлен в автозагрузку " 
 fi
 
+clear
 echo ""
 echo -e "${GREEN}==> ${NC}Запускаем и добавляем в автозапуск Драйвера принтера CUPS (cupsd.service)"
 #echo -e "${BLUE}:: ${NC}Запускаем и добавляем в автозапуск Драйвера принтера CUPS (cupsd.service)"
@@ -3055,9 +3056,11 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then    
+if [[ $prog_set == 0 ]]; then
+echo ""    
 echo "  Запуск и добавление в автозапуск (cupsd.service) пропущено "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Запускаем Драйвера принтера CUPS (cupsd.service) "
 sudo systemctl start org.cups.cupsd.service  
 echo " Добавляем в автозапуск Драйвера принтера CUPS (cupsd.service) " 
@@ -3107,9 +3110,11 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then    
+if [[ $prog_set == 0 ]]; then
+echo ""    
 echo "  Запуск TLP (управления питанием) пропущено "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Запускаем сервис TLP (управления питанием) "
 # При использовании Мастера радиоустройств ( tlp-rdw ) необходимо использовать NetworkManager и включить NetworkManager-dispatcher.service 
 # выполнив следующие команды по очереди:
@@ -3171,6 +3176,7 @@ if [[ $prog_set == 0 ]]; then
   echo ""
 echo " Удаление зависимости 'go' пропущено "      
 elif [[ $prog_set == 1 ]]; then
+echo ""    
 # sudo pacman -Rs go
 #pacman -Rs go
 pacman --noconfirm -Rs go    # --noconfirm  --не спрашивать каких-либо подтверждений
