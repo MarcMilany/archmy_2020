@@ -1139,12 +1139,14 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка аудиоплеер Audacious "
 sudo pacman -S audacious audacious-plugins --noconfirm
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить медиаплеер Smplayer?" 
 echo "" 
@@ -1161,12 +1163,14 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка медиаплеер Smplayer "
 sudo pacman -S smplayer smplayer-skins smplayer-themes smtube --noconfirm
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить многоплатформенный проигрыватель VLC ?" 
 echo "" 
@@ -1183,6 +1187,7 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка многоплатформенного проигрывателя VLC "
 sudo pacman -S vlc --noconfirm
 echo ""   
