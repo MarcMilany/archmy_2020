@@ -2990,9 +2990,11 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then    
+if [[ $prog_set == 0 ]]; then
+echo ""    
 echo "  Bluetooth.service не включен в автозагрузку, при необходиости это можно будет сделать. "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Добавляем в автозагрузку (bluetooth.service) "
 sudo systemctl enable bluetooth.service 
 echo " Bluetooth успешно добавлен в автозагрузку " 
