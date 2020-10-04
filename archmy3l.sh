@@ -421,8 +421,8 @@ do
     :
 done
 if [[ $prog_set == 0 ]]; then
-  echo ""  
-  echo ' Создание каталогов пропущено. '
+echo ""  
+echo " Создание каталогов пропущено "
 elif [[ $prog_set == 1 ]]; then
 sudo pacman -S xdg-user-dirs --noconfirm
 xdg-user-dirs-update 
