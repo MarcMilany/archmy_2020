@@ -1583,6 +1583,7 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка Grub Customizer "
 sudo pacman -S grub-customizer --noconfirm  # Графический менеджер настроек grub2
 echo ""   
