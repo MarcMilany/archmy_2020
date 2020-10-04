@@ -2226,6 +2226,7 @@ elif [[ $t_shell == 1 ]]; then
 chsh -s /bin/zsh
 chsh -s /bin/zsh $username
 clear
+echo ""
 echo " Важно! При первом запуске консоли (терминала) - нажмите "0" "
 echo " Пользовательская оболочка ИЗМЕНЕНА, с BASH на на ZSH "
 fi
