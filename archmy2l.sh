@@ -1975,7 +1975,7 @@ do
     :
 done
 if [[ $prog_set == 0 ]]; then
-  echo ""
+echo ""
 echo " Удаление зависимости 'go' пропущено "      
 elif [[ $prog_set == 1 ]]; then
 # sudo pacman -Rs go
