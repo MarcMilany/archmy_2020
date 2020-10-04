@@ -1895,6 +1895,7 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка Nomacs "
 sudo pacman -S nomacs --noconfirm  # для просмотра изображений Qt
 echo ""   
