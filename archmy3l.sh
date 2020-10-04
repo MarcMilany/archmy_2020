@@ -1531,7 +1531,7 @@ echo -e "${GREEN}==> ${BOLD}Установить рекомендованные 
 #echo -e "${BLUE}:: ${NC}Установить рекомендованные программы (пакеты)?"
 #echo 'Установить рекомендованные программы?'
 # Install the recommended programs
-echo " Список утилит (пакетов) для установки: - (gparted, grub-customizer, dconf-editor, conky, conky-manager, obs-studio, filezilla, telegram-desktop, flameshot, redshift, bleachbit, doublecmd-gtk2, keepass, veracrypt, nomacs, onboard, meld, uget, plank). " 
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gparted, grub-customizer, dconf-editor, conky, conky-manager, obs-studio, filezilla, telegram-desktop, flameshot, redshift, bleachbit, doublecmd-gtk2, keepass, veracrypt, nomacs, onboard, meld, uget, plank)." 
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -1539,6 +1539,7 @@ echo " Если Вы сомневаетесь в своих действиях, 
 echo -e "${YELLOW}==> ${NC}Установка будет производится в порядке перечисления (по очереди)" 
 #echo 'Установка будет производится в порядке перечисления (по очереди)'
 # Installation will be performed in the order listed (one at a time)
+echo ""
 echo -e "${BLUE}:: ${NC}Установить Gparted?" 
 echo -e "${MAGENTA}:: ${BOLD}GParted (Gnome Partition Editor) - это программа для создания, изменения и удаления дисковых разделов. ${NC}"
 echo " GParted - Клон Partition Magic, интерфейс для GNU Parted. " 
