@@ -2968,6 +2968,7 @@ sudo ufw status
 # sudo ufw disable
 # ------------------------------------------------------------
 
+clear
 echo ""
 echo -e "${GREEN}==> ${NC}Добавляем в автозагрузку Bluetooth.service?"
 #echo 'Добавляем в автозагрузку Bluetooth.service?'
@@ -3000,6 +3001,7 @@ sudo systemctl enable bluetooth.service
 echo " Bluetooth успешно добавлен в автозагрузку " 
 fi
 
+clear
 echo ""
 echo -e "${GREEN}==> ${NC}Добавляем в автозагрузку ssh(server) для удаленного доступа к этому ПК?"
 #echo 'Добавляем в автозагрузку ssh(server) для удаленного доступа к этому ПК?'
