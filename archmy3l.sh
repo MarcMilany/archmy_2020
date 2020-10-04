@@ -2996,14 +2996,7 @@ done
 if [[ $prog_set == 0 ]]; then    
 echo "  Запуск TLP (управления питанием) пропущено "
 elif [[ $prog_set == 1 ]]; then
-  echo " Запускаем TLP (управления питанием) "
-
-
-fi
-
-
-
-
+  echo " Запускаем сервис TLP (управления питанием) "
 # При использовании Мастера радиоустройств ( tlp-rdw ) необходимо использовать NetworkManager и включить NetworkManager-dispatcher.service 
 # выполнив следующие команды по очереди:
 sudo systemctl disable systemd-rfkill.service
@@ -3015,21 +3008,27 @@ sudo systemctl enable tlp-sleep.service
 # Вы должны настроить, какие параметры вы хотите использовать, а также какой регулятор, в режиме зарядки(AC) и работе от батареи(BAT).
 # Доступные CPU регуляторы, вы можете узнать, введя команду
 # cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors
-
 echo ""
-echo -e "${BLUE}:: ${NC}Также вы можете запустить TLP (управления питанием), не перезагружаясь" 
+echo " Запускаем TLP (управления питанием), не перезагружаясь "
+#echo -e "${BLUE}:: ${NC}Также вы можете запустить TLP (управления питанием), не перезагружаясь" 
 #echo 'Применяем настройки TLP (управления питанием) в зависимости от источника питания (батарея или от сети)'
 # Apply TLP (power management) settings depending on the power source (battery or mains)
 sudo tlp start
-
 #echo ""
 #echo -e "${BLUE}:: ${NC}Проверяем работу TLP (управления питанием)" 
 #echo " Вы увидите планировщик который вы указали при питании от сети, в моем случае - performance, либо же powersave при работе от батареи "
 #cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-
 #echo ""
 #echo -e "${BLUE}:: ${NC}Получение подробного вывода TLP (управления питанием)"
 #sudo tlp-stat
+fi
+
+
+
+
+
+
+
 
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим информацию о шрифтах" 
