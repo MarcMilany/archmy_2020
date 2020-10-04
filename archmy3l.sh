@@ -2025,6 +2025,7 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка GNOME Calculator (калькулятор) "
 sudo pacman -S gnome-calculator --noconfirm  # Научный калькулятор GNOME
 echo ""   
