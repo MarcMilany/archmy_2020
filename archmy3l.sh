@@ -484,6 +484,7 @@ if [[ $in_aur_help == 0 ]]; then
 clear    
 echo " Установка AUR Helper (yay) пропущена "
 elif [[ $in_aur_help == 1 ]]; then
+echo ""     
 sudo pacman -Syu
 #wget git.io/yay-install.sh && sh yay-install.sh --noconfirm
 #echo " Установка базовых программ и пакетов wget, curl, git "
@@ -499,8 +500,10 @@ cd ..   # поднимаемся на уровень выше (выходим и
 rm -rf yay-bin    # удаляем директорию сборки
 # rm -Rf yay-bin
 clear
+echo ""
 echo " Установка AUR Helper (yay-bin) завершена "
 elif [[ $in_aur_help == 2 ]]; then
+echo ""    
 sudo pacman -Syu
 #echo " Установка базовых программ и пакетов wget, curl, git "
 #sudo pacman -S --noconfirm --needed wget curl git
@@ -514,8 +517,10 @@ pwd
 cd ..
 rm -Rf yay
 clear
+echo ""
 echo " Установка AUR Helper (yay) завершена "
 elif [[ $in_aur_help == 3 ]]; then
+echo ""    
 sudo pacman -Syu
 #echo " Установка базовых программ и пакетов wget, curl, git "
 #sudo pacman -S --noconfirm --needed wget curl git
@@ -529,6 +534,7 @@ pwd
 cd ..
 rm -Rf pikaur
 clear
+echo ""
 echo " Установка AUR Helper (pikaur) завершена "
 fi
 #--------------------------------------------------------------
