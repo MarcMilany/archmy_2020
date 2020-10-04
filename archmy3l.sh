@@ -955,7 +955,7 @@ echo -e "${GREEN}==> ${NC}Установка дополнительных баз
 #echo -e "${BLUE}:: ${NC}Установка дополнительных базовых программ (пакетов)" 
 #echo 'Установка дополнительных базовых программ (пакетов)'
 # Installing additional basic programs (packages)
-echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (aspell-ru, arch-install-scripts, bash-completion, cmake, dosfstools, f2fs-tools, sane, gvfs, gnu-netcat, iftop, nmap, ntp, ncdu, hydra, isomd5sum, python-isomd5sum, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, pwgen, scrot, xsel, powertop, smartmontools, ethtool, glances, xterm и reflector)."
+echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (aspell-ru, arch-install-scripts, bash-completion, cmake, dosfstools, f2fs-tools, sane, gvfs, gnu-netcat, iftop, nmap, ntp, ncdu, hydra, isomd5sum, python-isomd5sum, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, pwgen, scrot, xsel, powertop, smartmontools, ethtool, glances, xterm)."
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -979,7 +979,7 @@ echo " Установка дополнительных базовых прогр
 elif [[ $prog_set == 1 ]]; then
   echo ""  
   echo " Установка дополнительных базовых программ (пакетов) "
-sudo pacman -S aspell-ru arch-install-scripts bash-completion cmake dosfstools f2fs-tools sane gvfs gnu-netcat iftop nmap ntp ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip pwgen scrot xsel powertop smartmontools ethtool glances xterm reflector --noconfirm  # git curl  - пока присутствует в pkglist.x86_64   
+sudo pacman -S aspell-ru arch-install-scripts bash-completion cmake dosfstools f2fs-tools sane gvfs gnu-netcat iftop nmap ntp ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip pwgen scrot xsel powertop smartmontools ethtool glances xterm --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64   
 clear
 echo ""   
 echo " Установка дополнительных базовых программ (пакетов) выполнена "
