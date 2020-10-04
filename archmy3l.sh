@@ -1720,6 +1720,7 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить Flameshot (создания скриншотов)?" 
 echo -e "${MAGENTA}:: ${BOLD}Flameshot - инструмент для создания и редактирования скриншотов в Linux. ${NC}"
@@ -1745,6 +1746,7 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить Redshift (оберегает Ваше зрение)?" 
 echo -e "${MAGENTA}:: ${BOLD}Redshift - регулирует цветовую температуру экрана в соответствии с окружающей обстановкой (временем суток). ${NC}"
@@ -1763,6 +1765,7 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка Redshift "
 sudo pacman -S redshift --noconfirm  
 echo ""   
