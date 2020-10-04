@@ -1867,28 +1867,22 @@ echo " Установка графического интерфейса для s
 elif [[ $prog_set == 1 ]]; then
  echo " Установка libgksu - библиотека авторизации gksu "
 ############ libgksu ##########
+cd /home/$username
 git clone https://aur.archlinux.org/libgksu.git
-cd libgksu
-#makepkg -fsri
-# makepkg -si
-makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
-# makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
-# rm -rf libgksu 
-rm -Rf libgksu
+chown -R $username:users /home/$username/libgksu
+chown -R $username:users /home/$username/libgksu/PKGBUILD 
+cd /home/$username/libgksu
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/libgksu
 echo " Установка gksu - Графический интерфейс для su "
 ############ gksu ##########
+cd /home/$username
 git clone https://aur.archlinux.org/gksu.git
-cd gksu
-#makepkg -fsri
-# makepkg -si
-makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
-# makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
-# rm -rf gksu  
-rm -Rf gksu
+chown -R $username:users /home/$username/gksu
+chown -R $username:users /home/$username/gksu/PKGBUILD 
+cd /home/$username/gksu
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/gksu
 clear
 echo ""
 echo " Графический интерфейс для su (gksu) успешно установлен! "
