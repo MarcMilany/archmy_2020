@@ -1924,7 +1924,7 @@ echo " Установка утилит (пакетов) выполнена "
 fi
 
 echo "" 
-echo -e "${BLUE}:: ${NC}Установить G ()?" 
+echo -e "${BLUE}:: ${NC}Установить GNOME Calculator (калькулятор)?" 
 echo -e "${MAGENTA}:: ${BOLD} ${NC}"
 echo "  " 
 echo "" 
@@ -1941,13 +1941,13 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
-  echo " Установка  (менеджер загрузок) "
-sudo pacman -S  --noconfirm  # 
+  echo " Установка  GNOME Calculator "
+sudo pacman -S gnome-calculator --noconfirm  # 
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
-
+GNOME Calculator , ранее известная как gcalctool , является программным обеспечение калькулятор интегрирован с настольной GNOME среды. Он запрограммирован в C и Val и часть приложений GNOME Key.
 
 clear
 echo ""
@@ -1955,7 +1955,7 @@ echo -e "${GREEN}==> ${BOLD}Установить рекомендованные 
 #echo -e "${BLUE}:: ${NC}Установить рекомендованные программы (пакеты)?"
 #echo 'Установить рекомендованные программы?'
 # Install the recommended programs
-echo " Список утилит (пакетов) для установки: - (gnome-system-monitor, openshot, frei0r-plugins, clonezilla, gnome-calculator, osmo, synapse, psensor, copyq, variety, grsync, numlockx, modem-manager-gui, rofi, gsmartcontrol, testdisk, lsof, dmidecode). " 
+echo " Список утилит (пакетов) для установки: - (gnome-system-monitor, openshot, frei0r-plugins, clonezilla, osmo, synapse, psensor, copyq, variety, grsync, numlockx, modem-manager-gui, rofi, gsmartcontrol, testdisk, lsof, dmidecode). " 
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -1976,7 +1976,7 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка рекомендованных утилит (пакетов) "
-sudo pacman -S gnome-system-monitor openshot frei0r-plugins clonezilla gnome-calculator osmo synapse psensor copyq variety grsync numlockx modem-manager-gui rofi gsmartcontrol testdisk lsof dmidecode --noconfirm  
+sudo pacman -S gnome-system-monitor openshot frei0r-plugins clonezilla osmo synapse psensor copyq variety grsync numlockx modem-manager-gui rofi gsmartcontrol testdisk lsof dmidecode --noconfirm  
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
