@@ -2596,6 +2596,7 @@ clear
 echo ""  
 echo " Установка Графического менеджера пакетов пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка Графического менеджера Pacman gui (pamac-all) "
 git clone https://aur.archlinux.org/pamac-all.git
 cd pamac-all
@@ -2610,6 +2611,7 @@ clear
 echo ""
 echo " Графический менеджер Pacman gui (pamac-all) успешно установлен! "
 elif [[ $prog_set == 2 ]]; then
+  echo ""  
   echo " Установка Графического менеджера Pacman gui (pamac-all-git) "
 git clone https://aur.archlinux.org/pamac-all-git.git
 cd pamac-all-git
