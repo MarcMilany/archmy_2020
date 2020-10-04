@@ -720,7 +720,7 @@ echo -e "${GREEN}==> ${NC}Установим поддержку Bluetooth?"
 #echo 'Установим поддержку Bluetooth?'
 # Install Bluetooth support?
 echo -e "${CYAN}=> ${BOLD}Установка поддержки Bluetooth и Sound support (звука) - будет очень актуальна, если Вы установили DE (среда рабочего стола) XFCE. ${NC}"
-echo " Список программ (пакетов) для установки: - (bluez, bluez-libs, bluez-cups, bluez-utils) " 
+echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (bluez, bluez-libs, bluez-cups, bluez-utils)."
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -738,15 +738,15 @@ do
     :
 done 
 if [[ $prog_set == 0 ]]; then  
-#echo ""  
+echo ""  
 echo " Установка поддержки Bluetooth пропущена "
 elif [[ $prog_set == 1 ]]; then
-#echo ""    
+  echo ""    
   echo " Установка пакетов поддержки Bluetooth "
 sudo pacman -S bluez bluez-libs bluez-cups bluez-utils --noconfirm
 #sudo pacman -S blueman --noconfirm  # blueman --диспетчер bluetooth устройств (полезно для i3)
 #sudo systemctl enable bluetooth.service 
-#echo ""   
+echo ""   
 echo " Установка пакетов поддержки Bluetooth выполнена "
 fi
 
