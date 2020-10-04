@@ -2393,11 +2393,13 @@ if [[ $prog_set == 0 ]]; then
 echo ""  
 echo " Установка Графического менеджера пакетов пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка Графического менеджера Pacman gui (pamac-aur) "
 yay -S pamac-aur --noconfirm
 echo ""
 echo " Графический менеджер Pamac-aur установлен! "
 elif [[ $prog_set == 2 ]]; then
+  echo ""  
   echo " Установка Графического менеджера Pacman gui (octopi) "
 yay -S octopi --noconfirm
 echo ""
