@@ -2058,6 +2058,7 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""   
   echo " Установка рекомендованных утилит (пакетов) "
 sudo pacman -S gnome-system-monitor openshot frei0r-plugins clonezilla osmo synapse psensor copyq variety grsync numlockx modem-manager-gui rofi gsmartcontrol testdisk lsof dmidecode --noconfirm  
 echo ""   
