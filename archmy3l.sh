@@ -2287,7 +2287,8 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then    
+if [[ $prog_set == 0 ]]; then 
+echo ""   
 echo " Установка Snap пропущена "
 elif [[ $prog_set == 1 ]]; then
 echo -e " Установка базовых программ и пакетов wget, curl, git "
