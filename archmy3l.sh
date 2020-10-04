@@ -2728,34 +2728,45 @@ fi
 
 clear
 echo ""
-echo -e "${GREEN}==> ${NC}Ставим Драйвера принтера (Поддержка печати) CUPS, HP"
-
-echo -e "${BLUE}:: ${NC}Будете ли Вы подключать Android или Iphone к ПК через USB?" 
+echo -e "${GREEN}==> ${NC}Будете ли Вы подключать Android или Iphone к ПК через USB?"
+#echo -e "${BLUE}:: ${NC}Будете ли Вы подключать Android или Iphone к ПК через USB?" 
 #echo 'Будете ли Вы подключать Android или Iphone к ПК через USB?'
 # Will you connect your Android or Iphone to your PC via USB?
-echo ' Установка поддержки устройств на Android или Iphone к ПК через USB '
+echo -e "${MAGENTA}=> ${NC}Установка поддержки для устройств на Android или Iphone к ПК через USB. "
 # Installing support for Android or Iphone devices to a PC via USB
-echo -e "${BLUE}:: ${NC}Установка производится в порядке перечисления" 
-#echo 'Установка производится в порядке перечисления'
-# Installation Is performed in the order listed
-echo -e "${GREEN}==> ${NC}Установить утилиты (пакеты) поддержки устройств?"
-#echo 'Установить утилиты (пакеты) поддержки устройств?'
-# To install the utilities (package) support devices?
+echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В любой ситуации выбор всегда остаётся за вами. "
+# Be careful! The installation process, after the option you selected, was registered fully automatic. In any situation, the choice is always yours.
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
 #echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
 # You can skip this step if you are not sure of the correct choice
-read -p " 1 - Android, 2 - Iphone, 3 - Оба Варианта, 0 - Пропустить: " prog_set
-if [[ $prog_set == 1 ]]; then
+echo "" 
+while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Android,     2 - Iphone,     3 - Оба Варианта (для устройств Android и Iphone)     
+
+    0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then    
+echo " Установка утилит (пакетов) поддержки для устройств пропущена. "
+elif [[ $prog_set == 1 ]]; then
+  echo " Установка утилит (пакетов) поддержки устройств на (базе) Android "
 sudo pacman -S gvfs-mtp --noconfirm
-echo " Установка поддержки устройств на Android завершена "
+echo " Установка поддержки устройств на Android завершена " 
 elif [[ $prog_set == 2 ]]; then
+  echo " Установка утилит (пакетов) для поддержки устройств Iphone "
 sudo pacman -S gvfs-afc --noconfirm
-echo " Установка поддержки устройств на Iphone завершена "
+echo " Установка поддержки устройств Iphone завершена " 
 elif [[ $prog_set == 3 ]]; then
+  echo " Установка утилит (пакетов) для поддержки устройств на (базе) Android и Iphone "  
 sudo pacman -S gvfs-afc gvfs-mtp --noconfirm
 echo " Установка поддержки устройств на Android и Iphone завершена "
-elif [[ $prog_set == 0 ]]; then
-  echo ' Установка утилит (пакетов) пропущена. '
 fi
 # -------------------------------------------------------
 # Пример:
@@ -3000,195 +3011,6 @@ echo -e "${BLUE}:: ${NC}Создать резервную копию (дубли
 #sudo cp /boot/grub/grub.cfg grub.cfg.backup
 sudo cp -vf /boot/grub/grub.cfg /boot/grub/grub.cfg.backup 
 
-###         "Дополнительные Настройки" (Additional settings for Xfce)
-# ============================================================================
-# Часы:
-#Europe/Moscow
-#%a, %d %b, %H:%M
-# ----------------------------------------------------------------------------
-# Conky Start Stop:
-#Conky Start Stop
-#Включить и выключить Conky
-#bash -c 'if [[ `pidof conky` ]]; then killall conky; else bash ~/.scripts/conky-startup.sh; fi'
-#Эмблемы: emblem-generic
-# ----------------------------------------------------------------------------
-# Клавиатура:
-#xfce4-terminal   Ctrl+Alt+T
-#xfce4-terminal --drop-down  F12
-#light-locker-command -l   Ctrl+Alt+L
-#xkill   Ctrl+Alt+X
-#xfce4-taskmanager  Ctrl+Alt+M 
-#xflock4   Ctrl+Alt+Delete
-# ---------------------------------------------------------------------------
-# Redshift:
-#Redshift
-#Инструмент регулирования цветовой температуры
-#sh -c "sleep 30 && redshift-gtk -l 54.5293:36.27542 -t 6400:4500 -b 1.0:0.8"
-#on login
-# ============================================================================
-# echo 'Добавить оскорбительное выражение после неверного ввода пароля в терминале'
-# Откройте на редактирование файл sudoers следующей командой в терминале:
-# sudo nano /etc/sudoers
-# Когда откроется файл sudoers на редактирование, переместитесь до строки:
-#   # Defaults env_keep += "QTDIR KDEDIR"
-# и ниже скопипастите следующую стоку:
-#     Defaults  badpass_message="Ты не администратор, придурок."
-#
-# Настраиваем sudo:
-# Редактируем файл sudoers с помощью команды visudo. По умолчанию будет попытка открыть vi, но у нас он даже не установлен. Поэтому укажем, что редактор у нас nano:
-#EDITOR=nano visudo
-# Находим строчку:
-# %wheel ALL=(ALL) ALL
-# И убираем % в начале строки. Сохраняем и выходим.
-# ---------------------------------------------------------
-#
-###################################################################
-##### <<<  sudo и %wheel ALL=(ALL) NOPASSWD: ALL   >>>        #####
-#### Кстати, рекомендую добавить запрет выполнения нескольких  ####
-#### команд -                                                  ####
-####                                                              #############
-#### ##Groups of commands.  Often used to group related commands together. ####
-#### Cmnd_Alias SHELLS = /bin/sh,/bin/csh,/usr/local/bin/tcsh     #############
-#### Cmnd_Alias SSH = /usr/bin/ssh                             ####       
-#### Cmnd_Alias SU = /bin/su                                   ####
-#### dreamer ALL = (ALL) NOPASSWD: ALL,!SU,SHELLS,!SSH         ####
-####                                                           #### 
-#### чтобы не было возможности стать рутом через $sudo su      ####
-#### (многи об этой фиче забывают)!                            #### 
-#####                                                         #####
-###################################################################
-# 
-# ============================================================================
-# Добавить (прописать) в /etc/fstab , в самый низ файла:
-# с отступом от последней записи (запись оставить закомментированной)
-#  #/swapfile1 swap swap defaults 0 0
-# ============================================================================
-# Пропишем тему для Color в pacman.conf" 
-# Write the theme for Color in pacman.conf
-# ILoveCandy >> /etc/pacman.conf
-# sudo pacman -Syy
-# Синхронизация и обновление пакетов (-yy принудительно обновить даже если обновленные)
-# ============================================================================
-# Прозрачность панели XFCE:
-# Выберите цвет панели /bn/ - #4072BF
-# Регулируйте прозрачность не панели, а
-# внешний вид → стиль → выбрать сплошной цвет → в выборе цвета задайте прозрачность (ползунок снизу)
-# ============================================================================
-# После этого нужно подредактировать хуки keymap.
-# Откройте файл /etc/mkinitcpio.conf:  
-#nano /etc/mkinitcpio.conf
-# Ищём строчку HOOKS и добавляем в конце 3 хука (внутри скобок):
-#HOOKS = (... consolefont keymap systemd)
-# ============================================================================
-#Основное
-#Имя:  Thunar Root
-#Описание:  Thunar Root
-#Открыть папку с привилегиями root
-#Команда:  pkexec thunar %f
-#Сочетание клавиш: 
-#Значёк:  folder-blue
-#Условия появления 
-#Шаблоны имени файла:  *.txt;*.doc;*
-#Каталоги  Текстовые файлы
-# ----------------------------------------------------------------------------
-# Дописать в файлик по адресу home/.config/Thunar/uca.xml
-# uca.xml :
-#<?xml encoding="UTF-8" version="1.0"?>
-#<actions>
-#<action>
-#    <icon>Terminal</icon>
-#    <name>Terminal</name>
-#    <unique-id>1367866030392833-1</unique-id>
-#    <command>exo-open --working-directory %f --launch TerminalEmulator</command>
-#    <description></description>
-#    <patterns>*</patterns>
-#    <directories/>
-#</action>
-#<action>
-#    <icon>stock_folder</icon>
-#    <name>Thunar Root</name>
-#    <unique-id>1367866030392883-2</unique-id>
-#    <command>pkexec thunar %f</command>
-#    <description>Thunar Root</description>
-#    <patterns>*</patterns>
-#    <directories/>
-#</action>
-#<action>
-#    <icon>system-search</icon>
-#    <name>Search</name>
-#    <unique-id>1367866030392913-3</unique-id>
-#    <command>catfish %f</command>
-#    <description>find files and folders</description>
-#    <patterns>*</patterns>
-#    <directories/>
-#</action>
-#</actions>
-#
-#  Или
-#<?xml encoding="UTF-8" version="1.0"?>
-#<actions>
-#<action>
-#    <icon>utilities-terminal</icon>
-#    <name>_Terminal</name>
-#    <unique-id>1476165034892557-17</unique-id>
-#    <command>exo-open --working-directory %f --launch TerminalEmulator</command>
-#    <description>Example for a custom action</description>
-#    <patterns>*</patterns>
-#    <startup-notify/>
-#    <directories/>
-#</action>
-#<action>
-#    <icon>folder_color_red</icon>
-#    <name>Root T_hunar</name>
-#    <unique-id>1476164980531587-13</unique-id>
-#    <command>pkexec thunar %f</command>
-#    <description></description>
-#    <patterns>*</patterns>
-#    <directories/>
-#</action>
-#<action>
-#    <icon>text-editor</icon>
-#    <name>Edit as Root</name>
-#    <unique-id>1476164983371929-14</unique-id>
-#    <command>pkexec xed %f</command>
-#    <description>Edit as root</description>
-#    <patterns>*</patterns>
-#    <other-files/>
-#    <text-files/>
-#</action>
-#</actions>
-#
-# И установить - catfish, xorg-xkill
-# ============================================================================
-
-#echo 'Запуск звуковой системы PulseAudio'
-# Starting the PulseAudio sound system
-#sudo start-pulseaudio-x11
-# Выполнить эту команду только после установки утилит 'Поддержка звука' и перезагрузки системы, если сервис 'Запуск системы PulseAudio (Запуск звуковой системы PulseAudio)'не включился, и не появился в автозапуске. Это можно посмотреть через, диспетчер настроек, в пункте меню 'Сеансы и автозапуск'.
-
-# ----------------------------------------------------------------------------
-
-# Проверка вводимых символов
-#cat /etc/arch-release
-#grep -V
-#echo 'aAsSdDfFgGhH'|egrep -q '^[a-z_-]+$'; echo $?
-
-# ============================================================================
-
-# Исправьте миниатюры в файловом менеджере
-# Fix Thumbnails in file manager
-#sudo pacman -S tumbler ffmpegthumbnailer poppler-glib libgsf libopenraw
-# Удаление папки .thumbnails
-#(Папка предназначена для хранения миниатюрных эскизов всех ранее просмотренных вами изображений)
-#sudo rm -rf ~/.thumbnails/
-# Переименовываем новый список:
-#sudo mv ~/.config/Thunar ~/.config/Thunar.bak
-# Обновим каталоги MIME, и update-mime-database 
-#sudo update-mime-database /usr/share/mime
-
-#Then logout and back in or Reboot. 
-
-# ============================================================================
 clear
 echo "" 
 echo -e "${YELLOW}==> Примечание: ${NC}Если! Вы сейчас устанавливали "AUR Helper"-'yay' вместе с ним установилась зависимость 'go' - (Основные инструменты компилятора для языка программирования Go), который весит 559,0 МБ. Так, что если вам не нужна зависимость 'go', для дальнейшей сборки пакетов в установленной системе СОВЕТУЮ удалить её. В случае, если "AUR"-'yay' НЕ БЫЛ установлен, или зависимость 'go' была удалена ранее, то пропустить этот шаг."
