@@ -1389,7 +1389,7 @@ do
     :
 done 
 if [[ $x_shell == 0 ]]; then 
-clear 
+#clear 
 echo ""  
 echo " Оболочка (shell) НЕ изменена, по умолчанию остаётся Bash! "
 elif [[ $x_shell == 1 ]]; then 
@@ -1417,7 +1417,7 @@ do
     :
 done 
 if [[ $t_shell == 0 ]]; then 
-#clear
+clear
 echo ""
 echo " Пользовательская оболочка (shell) НЕ изменена, по умолчанию остаётся BASH "
 elif [[ $t_shell == 1 ]]; then
