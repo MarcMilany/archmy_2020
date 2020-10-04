@@ -1488,11 +1488,13 @@ if [[ $prog_set == 0 ]]; then
 echo ""    
 echo " Установка пакета LibreOffice пропущена "
 elif [[ $prog_set == 1 ]]; then
+echo ""    
 sudo pacman -S libreoffice-still libreoffice-still-ru --noconfirm
 #clear
 echo ""    
 echo " Установка LibreOffice-still выполнена "
 elif [[ $prog_set == 2 ]]; then
+echo ""    
 sudo pacman -S libreoffice-fresh libreoffice-fresh-ru --noconfirm
 #clear
 echo ""    
