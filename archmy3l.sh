@@ -2304,7 +2304,7 @@ cd ..
 rm -Rf snapd
 clear
 echo " Установка Snapd выполнена "
-fi
+#fi
 ########## Запускаем поддержку Snap ###############
 echo ""
 echo -e "${BLUE}:: ${NC}Включить модуль systemd, который управляет основным сокетом мгновенной связи" 
@@ -2335,6 +2335,7 @@ echo -e "${BLUE}:: ${NC}Удалить установленный snap (hello-wo
 sudo snap remove hello-world
 echo ""
 echo " Snap теперь установлен и готов к работе! "
+fi
 sleep 03
 
 ######## Pacman gui ###############
