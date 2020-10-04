@@ -1235,7 +1235,7 @@ echo -e "${MAGENTA}
 # Installing utilities (packages) for managing email, news feeds, chat, and groups
 
 echo ""
-e "${GREEN}==> ${NC}Ставим Thunderbird - управления электронной почтой и новостными лентами"
+echo -e "${GREEN}==> ${NC}Ставим Thunderbird - управления электронной почтой и новостными лентами"
 #echo -e "${BLUE}:: ${NC}Управления электронной почтой, новостными лентами, чатом и группам" 
 #echo 'Управления электронной почтой, новостными лентами, чатом и группам'
 # Manage email, news feeds, chat, and groups
