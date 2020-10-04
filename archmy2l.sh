@@ -1811,29 +1811,25 @@ echo ""
 echo " Установка Графического менеджера пакетов пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo " Установка Графического менеджера Pacman gui (pamac-all) "
+cd /home/$username  
 git clone https://aur.archlinux.org/pamac-all.git
-cd pamac-all
-# makepkg -si
-makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
-# makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
-# rm -rf pamac-all
-rm -Rf pamac-all   # удаляем директорию сборки
+chown -R $username:users /home/$username/pamac-all   #-R, --recursive - рекурсивная обработка всех подкаталогов;
+chown -R $username:users /home/$username/pamac-all/PKGBUILD  #-R, --recursive - рекурсивная обработка всех подкаталогов;
+cd /home/$username/pamac-all
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/pamac-all   # удаляем директорию сборки
 clear 
 echo ""
 echo " Графический менеджер Pacman gui (pamac-all) успешно установлен! "
 elif [[ $prog_set == 2 ]]; then
   echo " Установка Графического менеджера Pacman gui (pamac-all-git) "
+cd /home/$username    
 git clone https://aur.archlinux.org/pamac-all-git.git
-cd pamac-all-git
-# makepkg -si
-makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
-# makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
-# rm -rf pamac-all
-rm -Rf pamac-all-git   # удаляем директорию сборки
+chown -R $username:users /home/$username/pamac-all-git   #-R, --recursive - рекурсивная обработка всех подкаталогов;
+chown -R $username:users /home/$username/pamac-all-git/PKGBUILD  #-R, --recursive - рекурсивная обработка всех подкаталогов;
+cd /home/$username/pamac-all-git
+sudo -u $username  makepkg -si --noconfirm  
+rm -Rf /home/$username/pamac-all-git   # удаляем директорию сборки
 clear
 echo ""
 echo " Графический менеджер Pacman gui (pamac-all-git) успешно установлен! "
