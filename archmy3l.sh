@@ -816,7 +816,8 @@ done
 if [[ $prog_set == 0 ]]; then 
 echo ""  
 echo " Установка Blueman пропущена "
-elif [[ $prog_set == 1 ]]; then  
+elif [[ $prog_set == 1 ]]; then 
+  echo ""
   echo " Установка Blueman (менеджер Bluetooth) "
 sudo pacman -S blueman --noconfirm  # blueman --диспетчер bluetooth устройств (полезно для i3)
 echo "" 
