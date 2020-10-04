@@ -2855,17 +2855,21 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then    
+if [[ $prog_set == 0 ]]; then
+echo ""    
 echo " Установка утилит (пакетов) поддержки для устройств пропущена. "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка утилит (пакетов) поддержки устройств на (базе) Android "
 sudo pacman -S gvfs-mtp --noconfirm
 echo " Установка поддержки устройств на (базе) Android завершена " 
 elif [[ $prog_set == 2 ]]; then
+  echo ""  
   echo " Установка утилит (пакетов) для поддержки устройств Iphone "
 sudo pacman -S gvfs-afc --noconfirm
 echo " Установка поддержки устройств Iphone завершена " 
 elif [[ $prog_set == 3 ]]; then
+  echo ""  
   echo " Установка утилит (пакетов) для поддержки устройств на (базе) Android и Iphone "  
 sudo pacman -S gvfs-afc gvfs-mtp --noconfirm
 echo " Установка поддержки устройств на Android и Iphone завершена "
