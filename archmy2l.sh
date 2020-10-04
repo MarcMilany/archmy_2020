@@ -1777,63 +1777,6 @@ echo ""
 echo " Графический менеджер Octopi успешно установлен! "
 fi 
 
-#####Pacman gui - (pamac-all)##########
-echo ""
-echo -e "${GREEN}==> ${NC}Установка Pacman gui (pamac-all), или Pacman gui (pamac-all-git) (AUR)(GTK)"
-#echo -e "${BLUE}:: ${NC}Установка Pacman gui (pamac-all), или Pacman gui (pamac-all-git) (AUR)(GTK)" 
-echo -e "${RED}==> Внимание! ${BOLD}Если Вы не знакомы с НОВЫМ Pacman gui (pamac-all), или (pamac-all-git), то СОВЕТУЮ зайдите на сайт загрузки 'Arch Linux' (https://aur.archlinux.org/packages/pamac-all/), (https://aur.archlinux.org/packages/pamac-all-git/), и изучите 'Конфликты и Зависимости'. ${NC}"
-echo " Давайте проанализируем действия, которые выполняются. "
-echo " 1 - Pacman gui (pamac-all) - Графический менеджер пакетов (интерфейс Gtk3 для libalpm), тогда укажите "1". "
-echo " Это НОВЫЙ Графический менеджер пакетов, впервые представлен '2020-08-25', и как говорится (всё в одном пакете - snap, flatpak, appindicator, и...) "
-echo " 2 - Pacman gui (pamac-all-git) - Графический менеджер пакетов (интерфейс Gtk3 для libalpm), укажите вариант "2". " 
-echo " Это НОВЫЙ Графический менеджер пакетов, впервые представлен '2020-08-25', и как говорится (всё в одном пакете - snap, flatpak, appindicator, и...) "
-echo " Pacman gui (pamac-all-git) в отличие от (pamac-all), имеет 'git' версию, и его популярность повыше. "
-echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В данной опции выбор всегда остаётся за вами. "
-# Be careful! The installation process, after the option you selected, was registered fully automatic. In this option, the choice is always yours. 
-echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
-#echo 'Действия выполняются в указанном порядке'
-# Actions are performed in the order listed
-echo "" 
-while 
-echo " Действия ввода, выполняется сразу после нажатия клавиши "
-    read -n1 -p "      
-    1 - Pacman gui - (pamac-all),     2 - Pacman gui - (pamac-all-git), 
-
-    0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
-    echo ''
-    [[ "$prog_set" =~ [^120] ]]
-do
-    :
-done 
-if [[ $prog_set == 0 ]]; then 
-clear 
-echo ""  
-echo " Установка Графического менеджера пакетов пропущена "
-elif [[ $prog_set == 1 ]]; then
-  echo " Установка Графического менеджера Pacman gui (pamac-all) "
-cd /home/$username  
-git clone https://aur.archlinux.org/pamac-all.git
-chown -R $username:users /home/$username/pamac-all   #-R, --recursive - рекурсивная обработка всех подкаталогов;
-chown -R $username:users /home/$username/pamac-all/PKGBUILD  #-R, --recursive - рекурсивная обработка всех подкаталогов;
-cd /home/$username/pamac-all
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/pamac-all   # удаляем директорию сборки
-clear 
-echo ""
-echo " Графический менеджер Pacman gui (pamac-all) успешно установлен! "
-elif [[ $prog_set == 2 ]]; then
-  echo " Установка Графического менеджера Pacman gui (pamac-all-git) "
-cd /home/$username    
-git clone https://aur.archlinux.org/pamac-all-git.git
-chown -R $username:users /home/$username/pamac-all-git   #-R, --recursive - рекурсивная обработка всех подкаталогов;
-chown -R $username:users /home/$username/pamac-all-git/PKGBUILD  #-R, --recursive - рекурсивная обработка всех подкаталогов;
-cd /home/$username/pamac-all-git
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/pamac-all-git   # удаляем директорию сборки
-clear
-echo ""
-echo " Графический менеджер Pacman gui (pamac-all-git) успешно установлен! "
-fi
 ######### Gksu ###############
 echo -e "${RED}
 ==> Внимание! ${BOLD}Если Вы установили Графический менеджер пакетов (octopi), либо планируете его установить, то СОВЕТУЮ пропустить установку Gksu. Так как в сценарии установки Pacman gui (octopi), уже прописана установка пакетов (gksu) и (libgksu). ${NC}"
