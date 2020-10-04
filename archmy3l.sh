@@ -1296,6 +1296,7 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилиты для управления электронной почтой и новостными лентами пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка утилиты (пакета) Thunderbird "
 sudo pacman -S thunderbird thunderbird-i18n-ru --noconfirm  # программа для чтения почты и новостей от mozilla.org
 echo ""   
@@ -1329,6 +1330,7 @@ if [[ $prog_set == 0 ]]; then
 echo ""   
 echo " Установка утилиты для управления чатом и группам пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка утилиты (пакета) Pidgin (Мессенджер) "
 sudo pacman -S pidgin pidgin-hotkeys --noconfirm  # клиент обмена мгновенными сообщениями
 echo ""   
