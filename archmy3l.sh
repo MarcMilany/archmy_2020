@@ -1435,7 +1435,8 @@ clear
 echo ""    
 echo " Установка BitTorrent-клиентов пропущена "
 elif [[ $prog_set == 1 ]]; then
-echo ""    
+  echo "" 
+  echo " Установка BitTorrent-клиента Transmission (GTK+) "   
 sudo pacman -S transmission-gtk transmission-cli --noconfirm  # графический интерфейс GTK 3, и демон, с CLI 
 #sudo pacman -S transmission-qt transmission-cli --noconfirm  # графический интерфейс Qt 5, и демон, с CLI 
 #sudo pacman -S transmission-remote-gtk transmission-cli --noconfirm  # графический интерфейс GTK 3 для демона, и демон, с CLI
@@ -1443,13 +1444,15 @@ clear
 echo ""    
 echo " Установка BitTorrent-клиента Transmission выполнена "
 elif [[ $prog_set == 2 ]]; then
-echo ""    
+  echo "" 
+  echo " Установка BitTorrent-клиента qBittorrent (Qt) "   
 sudo pacman -S qbittorrent --noconfirm
 clear
 echo ""    
 echo " Установка BitTorrent-клиента qBittorrent выполнена "
 elif [[ $prog_set == 3 ]]; then
-echo ""    
+  echo "" 
+  echo " Установка BitTorrent-клиента Deluge (GTK) "    
 sudo pacman -S deluge --noconfirm
 clear
 echo ""    
