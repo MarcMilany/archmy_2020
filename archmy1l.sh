@@ -185,8 +185,8 @@ echo -e "${BLUE}:: ${NC}Setting up the Russian language, changing the console fo
 # Настроим русский язык, изменим консольный шрифт на тот, который поддерживает кириллицу для удобства работы
 loadkeys ru
 # loadkeys us
-setfont cyr-sun16
-### setfont ter-v16b
+#setfont cyr-sun16
+setfont ter-v16b ### 
 #setfont ter-v20b  # Шрифт терминус и русская локаль # чтобы шрифт стал побольше
 ### setfont ter-v22b
 
