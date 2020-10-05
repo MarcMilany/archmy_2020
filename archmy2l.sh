@@ -1313,7 +1313,8 @@ do
     :
 done
 if [[ $i_network  == 1 ]]; then
- echo " Ставим сетевые утилиты Networkmanager "		
+echo ""
+echo " Ставим сетевые утилиты Networkmanager "		
 pacman -S networkmanager networkmanager-openvpn network-manager-applet ppp --noconfirm
 #pacman -Sy networkmanager networkmanager-openvpn network-manager-applet ppp --noconfirm
 echo ""
