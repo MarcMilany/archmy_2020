@@ -2578,6 +2578,7 @@ pwd    # покажет в какой директории мы находимс
 cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf libgksu 
 rm -Rf libgksu
+echo ""
 echo " Установка gksu - Графический интерфейс для su "
 ############ gksu ##########
 git clone https://aur.archlinux.org/gksu.git
