@@ -2027,7 +2027,7 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo ""  
-  echo " Установка (калькулятор) "
+  echo " Установка Galculator (калькулятор) (на основе GTK+)(версия GTK2) "
 sudo pacman -S galculator-gtk2 --noconfirm  # Научный калькулятор на основе GTK + (версия GTK2)
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
