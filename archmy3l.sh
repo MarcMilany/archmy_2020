@@ -2009,7 +2009,7 @@ fi
 
 clear
 echo "" 
-echo -e "${BLUE}:: ${NC}Установить Galculator (калькулятор)(GTK+)(GTK2)?" 
+echo -e "${BLUE}:: ${NC}Установить Galculator (калькулятор)(на основе GTK+)(версия GTK2)?" 
 echo -e "${MAGENTA}:: ${BOLD} ${NC}"
 echo " " 
 echo "" 
@@ -2028,7 +2028,7 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo ""  
   echo " Установка (калькулятор) "
-sudo pacman -S galculator-gtk2 --noconfirm  # 
+sudo pacman -S galculator-gtk2 --noconfirm  # Научный калькулятор на основе GTK + (версия GTK2)
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
