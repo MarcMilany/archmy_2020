@@ -3087,7 +3087,7 @@ elif [[ $prog_set == 1 ]]; then
 echo ""    
 # sudo pacman -Rs go
 #pacman -Rs go
-pacman --noconfirm -Rs go    # --noconfirm  --не спрашивать каких-либо подтверждений
+sudo pacman --noconfirm -Rs go    # --noconfirm  --не спрашивать каких-либо подтверждений
  echo "" 
  echo " Удаление зависимость 'go' выполнено "
 fi
