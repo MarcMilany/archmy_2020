@@ -992,7 +992,9 @@ echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
 # sudo pacman-key --init
 # sudo pacman-key --refresh-keys
 sudo pacman -Sy
+sleep 03
 
+clear
 echo ""
 echo -e "${GREEN}==> ${NC}Меняем корень и переходим в нашу недавно скачанную систему (chroot)" 
 echo -e "${MAGENTA}=> ${BOLD}Есть три варианта продолжения установки: ${NC}"
