@@ -1013,7 +1013,7 @@ echo ""
 echo " Установка просмотрщика процессов (системы) пропущена "
 elif [[ $i_htop == 1 ]]; then
   echo ""    
-echo " Установка утилиты (пакетов) "   
+  echo " Установка утилиты (пакетов) "   
 sudo pacman -S htop iotop --noconfirm
 #sudo pacman -S atop --noconfirm  # сбор статистики и наблюдение за системой в реальном времени
 clear
@@ -1377,25 +1377,29 @@ echo ""
 echo " Установка веб-браузера(ов) пропущена "
 elif [[ $prog_set == 1 ]]; then
 echo ""   
+echo " Установка веб-браузера Firefox (+ flashplugin) "
 sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin --noconfirm
 #sudo pacman -S firefox-developer-edition firefox-developer-edition-i18n-ru firefox-spell-ru flashplugin --noconfirm  # Версия для разработчиков
 clear
 echo ""    
 echo " Установка веб-браузера Firefox (+ flashplugin) выполнена "
-elif [[ $prog_set == 2 ]]; then
-echo ""     
+elif [[ $prog_set == 2 ]]; then    
+echo "" 
+echo " Установка веб-браузера Chromium (+ pepper-flash) "    
 sudo pacman -S chromium pepper-flash --noconfirm
 clear
 echo ""    
 echo " Установка веб-браузера Chromium (+ pepper-flash) выполнена "
 elif [[ $prog_set == 3 ]]; then
-echo ""     
+echo "" 
+echo " Установка веб-браузера Opera (+ pepper-flash) "    
 sudo pacman -S opera pepper-flash --noconfirm
 clear
 echo ""    
 echo " Установка веб-браузера Opera (+ pepper-flash) выполнена "
 elif [[ $prog_set == 4 ]]; then
-echo ""     
+echo "" 
+echo " Установка веб-браузеров Chromium Opera Firefox "    
 sudo pacman -S chromium opera pepper-flash firefox firefox-i18n-ru firefox-spell-ru flashplugin --noconfirm 
 clear
 echo ""    
