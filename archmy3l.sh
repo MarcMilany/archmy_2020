@@ -2009,6 +2009,33 @@ fi
 
 clear
 echo "" 
+echo -e "${BLUE}:: ${NC}Установить Galculator (калькулятор)(GTK+)(GTK2)?" 
+echo -e "${MAGENTA}:: ${BOLD} ${NC}"
+echo " " 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$prog_set" =~ [^10] ]]
+do
+    :
+done 
+if [[ $prog_set == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $prog_set == 1 ]]; then
+  echo ""  
+  echo " Установка (калькулятор) "
+sudo pacman -S  --noconfirm  # 
+
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
+
+clear
+echo "" 
 echo -e "${BLUE}:: ${NC}Установить GNOME Calculator (калькулятор)?" 
 echo -e "${MAGENTA}:: ${BOLD}GNOME Calculator - ранее известная как gcalctool(Calctool), является программным обеспечение калькулятор интегрирован с настольной GNOME среды. ${NC}"
 echo " Научный калькулятор - он запрограммирован в C и Val и часть приложений GNOME Key. " 
