@@ -2220,7 +2220,7 @@ done
 if [[ $prog_set == 0 ]]; then  
 echo ""  
 echo " Установка пропущена "
-elif [[ $prog_set== 1 ]]; then 
+elif [[ $prog_set == 1 ]]; then 
   echo ""  
   echo " Установка (openssh) "  
 sudo pacman -S openssh --noconfirm
