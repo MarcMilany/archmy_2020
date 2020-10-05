@@ -873,6 +873,7 @@ fi
 pacman -R konqueror --noconfirm  # Файловый менеджер и веб-браузер KDE
 clear
 elif [[ $x_de == 2 ]]; then
+echo ""    
 echo " Установка Xfce + Goodies for Xfce "     
 #pacman -S xfce4 xfce4-goodies
 pacman -S xfce4 xfce4-goodies --noconfirm
