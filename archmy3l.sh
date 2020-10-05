@@ -2566,6 +2566,21 @@ clear
 echo ""
 echo " Установка графического интерфейса для su (gksu) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""   
+  echo " Установка libgksu - библиотека авторизации gksu "    
+git clone https://aur.archlinux.org/libgksu.git
+cd libgksu
+#makepkg -fsri
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf libgksu 
+rm -Rf libgksu
+
+
+
  echo ""   
  echo " Установка libgksu - библиотека авторизации gksu "
 ############ libgksu ##########
