@@ -908,6 +908,7 @@ do
     :
 done
 if [[ $i_xfce  == 0 ]]; then
+echo ""    
 echo " Буду использовать DM (Display manager) "
 elif [[ $i_xfce  == 1 ]]; then
 # Поскольку реализация автозагрузки окружения реализована через startx, 
@@ -1540,6 +1541,7 @@ elif [[ $t_shell == 1 ]]; then
 chsh -s /bin/zsh
 chsh -s /bin/zsh $username
 clear
+echo ""
 echo " Важно! При первом запуске консоли (терминала) - нажмите "0" "
 echo " Пользовательская оболочка ИЗМЕНЕНА, с BASH на на ZSH "
 fi
