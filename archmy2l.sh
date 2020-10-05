@@ -1777,58 +1777,6 @@ echo ""
 echo " Графический менеджер Octopi успешно установлен! "
 fi 
 
-######### Gksu ###############
-echo -e "${RED}
-==> Внимание! ${BOLD}Если Вы установили Графический менеджер пакетов (octopi), либо планируете его установить, то СОВЕТУЮ пропустить установку Gksu. Так как в сценарии установки Pacman gui (octopi), уже прописана установка пакетов (gksu) и (libgksu). ${NC}"
-echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете пропустить установку "Gksu", пункт для установки будет продублирован в следующем скрипте (archmy3l). И Вы сможете установить "Gksu" уже из установленной системы."
- 
-echo ""
-echo -e "${GREEN}==> ${NC}Установить Gksu - Графический интерфейс для su"
-echo " Ставим пакет (gksu) - графический интерфейс для su, и пакет (libgksu) - библиотека авторизации gksu. "
-echo -e "${MAGENTA}:: ${BOLD}Для запуска графических приложений от имени суперпользователя существуют специальные утилиты. Они сохраняют все необходимые переменные окружения и полномочия. В KDE это команда kdesu, а в Gnome,Xfce,... - команда gksu (gksu nautilus). ${NC}"
-echo " Программа запросит пароль, уже в графическом окне, а потом откроется файловый менеджер. "
-echo " Теперь программы, требующие дополнительных привилегий в системе, не вызовут у вас проблем. "
-echo -e "${CYAN}:: ${NC}Установка Gksu (gksu), и (libgksu), проходит через сборку из исходников. То есть установка производиться с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/gksu/), (https://aur.archlinux.org/packages/libgksu/), собирается и устанавливается. "
-echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В данной опции выбор остаётся за вами. "
-echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-echo "" 
-while 
-echo " Действия ввода, выполняется сразу после нажатия клавиши "
-    read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
-    echo ''
-    [[ "$prog_set" =~ [^10] ]]
-do
-    :
-done 
-if [[ $prog_set == 0 ]]; then
-clear
-echo ""
-echo " Установка графического интерфейса для su (gksu) пропущена "
-elif [[ $prog_set == 1 ]]; then
- echo " Установка libgksu - библиотека авторизации gksu "
-############ libgksu ##########
-cd /home/$username
-git clone https://aur.archlinux.org/libgksu.git
-chown -R $username:users /home/$username/libgksu
-chown -R $username:users /home/$username/libgksu/PKGBUILD 
-cd /home/$username/libgksu
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/libgksu
-echo " Установка gksu - Графический интерфейс для su "
-############ gksu ##########
-cd /home/$username
-git clone https://aur.archlinux.org/gksu.git
-chown -R $username:users /home/$username/gksu
-chown -R $username:users /home/$username/gksu/PKGBUILD 
-cd /home/$username/gksu
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/gksu
-clear
-echo ""
-echo " Графический интерфейс для su (gksu) успешно установлен! "
-fi
-
 echo ""
 echo -e "${GREEN}==> ${NC}Создаём папки в директории пользователя (Downloads, Music, Pictures, Videos, Documents)."
 echo -e "${BLUE}:: ${NC}Создание полного набора локализованных пользовательских каталогов по умолчанию (Загрузки, Шаблоны, Общедоступные, Документы, Музыка, Изображения, Видео) в пределах "HOME" каталога."
