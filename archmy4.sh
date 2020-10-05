@@ -186,7 +186,7 @@ ttf-bitstream-vera freemind '
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S ttf-linux-libertine ttf-freefont ttf-bitstream-vera freemind --noconfirm
+sudo pacman -S ttf-linux-libertine ttf-freefont ttf-bitstream-vera ttf-droid freemind --noconfirm
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка дополнительных шрифтов пропущена.'
 fi
@@ -377,6 +377,10 @@ elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.' 
 fi
 
+
+# libreoffice-extension-writer2latex - Программа на Java и набор расширений LibreOffice для преобразования и работы с LaTeX в LibreOffice.
+# kleopatra - Диспетчер сертификатов и унифицированный графический интерфейс криптографии
+# inetutils - Сборник общих сетевых программ
 # hplip  - Драйверы для HP DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых LaserJet
 # galculator-gtk2 или galculator
 # gnome-calculator 
