@@ -2028,8 +2028,7 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo ""  
   echo " Установка (калькулятор) "
-sudo pacman -S  --noconfirm  # 
-
+sudo pacman -S galculator-gtk2 --noconfirm  # 
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
