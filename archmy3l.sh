@@ -2844,9 +2844,11 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then    
+if [[ $prog_set == 0 ]]; then  
+echo ""  
 echo " Установка поддержки Драйвера принтера (Поддержка печати) пропущена "
 elif [[ $prog_set == 1 ]]; then
+  echo ""  
   echo " Установка поддержки Драйвера принтера (Поддержка печати) CUPS "
 sudo pacman -S cups ghostscript cups-pdf --noconfirm   
 sudo pacman -S gsfonts gutenprint hplip --noconfirm   # python-imaging 
