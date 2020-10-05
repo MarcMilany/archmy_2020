@@ -2231,10 +2231,12 @@ clear
 echo "" 
 echo " Установка ZSH (shell) оболочки "
 sudo pacman -S zsh zsh-syntax-highlighting zsh-autosuggestions grml-zsh-config --noconfirm
-sudo pacman -S zsh-completions zsh-history-substring-search  --noconfirm  
+sudo pacman -S zsh-completions zsh-history-substring-search  --noconfirm 
+sudo su 
 echo 'source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh' >> /etc/zsh/zshrc
 echo 'source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> /etc/zsh/zshrc
 echo 'prompt adam2' >> /etc/zsh/zshrc
+exit
 clear
 echo ""
 #echo " Сменим командную оболочку пользователя с bash на zsh? "
