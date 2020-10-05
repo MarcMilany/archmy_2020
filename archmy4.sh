@@ -276,7 +276,7 @@ yay -S  --noconfirm
 
 echo 'Установка Java JDK средство разработки и среда для создания Java-приложений'
 # Installing Java JDK development tool and environment for creating Java applications
-sudo pacman -S --noconfirm
+sudo pacman -S jdk8-openjdk jre8-openjdk jre8-openjdk-headless --noconfirm
 
 echo 'Установка Java JDK или Java Development Kit AUR'
 # Installing Java JDK development tool and environment for creating Java applications AUR
@@ -372,11 +372,12 @@ galculator-gtk2'
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S galculator-gtk2 --noconfirm # notepadqq catdoc unrtf id3lib toxcore mlocate dosfstools
+sudo pacman -S galculator-gtk2 --noconfirm # notepadqq catdoc unrtf id3lib toxcore mlocate dosfstools jfsutils
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.' 
 fi
 
+# hplip  - Драйверы для HP DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых LaserJet
 # galculator-gtk2 или galculator
 # gnome-calculator 
 
