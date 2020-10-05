@@ -1493,13 +1493,15 @@ echo ""
 echo " Установка пакета LibreOffice пропущена "
 elif [[ $prog_set == 1 ]]; then
 echo ""    
+echo " Установка LibreOffice-still "
 sudo pacman -S libreoffice-still libreoffice-still-ru --noconfirm
 sudo pacman -S libreoffice-extension-writer2latex --noconfirm  # набор расширений LibreOffice для преобразования и работы с LaTeX в LibreOffice
 #clear
 echo ""    
 echo " Установка LibreOffice-still выполнена "
 elif [[ $prog_set == 2 ]]; then
-echo ""    
+echo "" 
+echo " Установка LibreOffice-fresh "   
 sudo pacman -S libreoffice-fresh libreoffice-fresh-ru --noconfirm
 #clear
 echo ""    
