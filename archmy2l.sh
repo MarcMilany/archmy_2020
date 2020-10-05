@@ -912,9 +912,11 @@ if [[ $i_xfce  == 0 ]]; then
 echo ""    
 echo " Буду использовать DM (Display manager) "
 elif [[ $i_xfce  == 1 ]]; then
+  echo ""    
+  echo " Поскольку реализация автозагрузки окружения реализована через startx - (иксы), то если Вы установили X.Org Server возможно пакет (xorg-xinit) - уже установлен "  
 # Поскольку реализация автозагрузки окружения реализована через startx, 
 # то у Вас должен быть установлен пакет: xorg-xinit    
-pacman -S xorg-xinit --noconfirm
+pacman -S xorg-xinit --noconfirm   # Программа инициализации X.Org
 # Если файл .xinitrc не существует, то копируем его из /etc/X11/xinit/xinitrc
 # в папку пользователя cp /etc/X11/xinit/xinitrc ~/.xinitrc
 cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc # копируем файл .xinitrc в каталог пользователя
