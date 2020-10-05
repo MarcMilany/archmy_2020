@@ -2196,79 +2196,8 @@ fi
 # Теоретический максимальный размер раздела FAT32 - 2 Тб, но Майкрософт начиная с WinXP не позволяет создать больше 32 Гб. exFAT, это модифицированная FAT32, которую можно «развернуть» на разделе более чем 32 Гб.
 # --------------------------------------------------------
 
-######## ZSH #######
-clear
-echo -e "${MAGENTA}
-  <<< Установка shell (командной оболочки) по умолчанию в Archlinux >>> ${NC}"
-# Installing the default shell in Archlinux
-echo ""
-echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете установить zsh (такой же, как и в установочном образе Archlinux) или оставить Bash по умолчанию, если пропустили это действие в предыдущем скрипте (при установке основной системы), или пропустить установку."
-
-echo ""
-echo -e "${GREEN}==> ${NC}Установка ZSH (bourne shell) командной оболочки"
-#echo -e "${BLUE}:: ${NC}Установка ZSH (SHELL) командной оболочки UNIX"
-#echo 'Установка ZSH (SHELL) командной оболочки UNIX'
-# Installing the ZSH (SHELL) UNIX command shell
-echo -e "${CYAN}:: ${NC}Z shell, zsh - является мощной, одной из современных командных оболочек, которая работает как в интерактивном режиме, так и в качестве интерпретатора языка сценариев (скриптовый интерпретатор)."
-echo " Он совместим с bash (не по умолчанию, только в режиме emulate sh), но имеет преимущества, такие как улучшенное завершение и подстановка. "
-echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В данной опции выбор всегда остаётся за вами. "
-echo -e "${MAGENTA}=> ${BOLD}Вот какая оболочка (shell) используется в данный момент: ${NC}"
-echo $SHELL
-echo "" 
-while
-echo " Действия ввода, выполняется сразу после нажатия клавиши "
-    read -n1 -p "      
-    1 - Да установить zsh,     0 - НЕТ - Пропустить установку (bash по умолчанию): " x_shell  # sends right after the keypress; # отправляет сразу после нажатия клавиши
-    echo ''
-    [[ "$x_shell" =~ [^10] ]]
-do
-    :
-done 
-if [[ $x_shell == 0 ]]; then 
-clear 
-echo ""  
-echo " Оболочка (shell) НЕ изменена, по умолчанию остаётся Bash! "
-elif [[ $x_shell == 1 ]]; then 
-clear
-echo "" 
-echo " Установка ZSH (shell) оболочки "
-sudo pacman -S zsh zsh-syntax-highlighting zsh-autosuggestions grml-zsh-config --noconfirm
-sudo pacman -S zsh-completions zsh-history-substring-search  --noconfirm 
-sudo su 
-echo 'source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh' >> /etc/zsh/zshrc
-echo 'source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> /etc/zsh/zshrc
-echo 'prompt adam2' >> /etc/zsh/zshrc
-exit
-clear
-echo ""
-#echo " Сменим командную оболочку пользователя с bash на zsh? "
-echo -e "${BLUE}:: ${NC}Сменим командную оболочку пользователя с Bash на ZSH ?"
-echo " Будьте внимательны! В данной опции выбор всегда остаётся за вами. "
-echo "" 
-while
-echo " Действия ввода, выполняется сразу после нажатия клавиши "
-    read -n1 -p "      
-    1 - Да сменить оболочку пользователя,     0 - НЕТ - Пока оставить (bash): " t_shell  # sends right after the keypress; # отправляет сразу после нажатия клавиши
-    echo ''
-    [[ "$t_shell" =~ [^10] ]]
-do
-    :
-done 
-if [[ $t_shell == 0 ]]; then 
-clear
-echo ""
-echo " Пользовательская оболочка (shell) НЕ изменена, по умолчанию остаётся BASH "
-elif [[ $t_shell == 1 ]]; then
-chsh -s /bin/zsh
-chsh -s /bin/zsh $username
-clear
-echo ""
-echo " Важно! При первом запуске консоли (терминала) - нажмите "0" "
-echo " Пользовательская оболочка ИЗМЕНЕНА, с BASH на на ZSH "
-fi
-fi 
-
 ##### SSH (client) ###
+clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установить ssh(server) на Arch Linux - для удаленного доступа?"
 #echo -e "${BLUE}:: ${NC}Установить ssh(server) на Arch Linux - для удаленного доступа?" 
@@ -2292,6 +2221,8 @@ if [[ $prog_set == 0 ]]; then
 echo ""  
 echo " Установка пропущена "
 elif [[ $prog_set== 1 ]]; then 
+  echo ""  
+  echo " Установка (openssh) "  
 sudo pacman -S openssh --noconfirm
 echo "" 
 echo " SSH (клиент) установлен "
