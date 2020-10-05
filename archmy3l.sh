@@ -2215,16 +2215,16 @@ echo ""
 while
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " t_ssh  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_ssh  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$t_ssh" =~ [^10] ]]
+    [[ "$prog_ssh" =~ [^10] ]]
 do
     :
 done 
-if [[ $t_ssh == 0 ]]; then  
+if [[ $prog_ssh == 0 ]]; then  
 echo ""  
 echo " Установка пропущена "
-elif [[ $t_ssh == 1 ]]; then 
+elif [[ $prog_ssh == 1 ]]; then 
   echo ""  
   echo " Установка (openssh) "  
 sudo pacman -S openssh --noconfirm
