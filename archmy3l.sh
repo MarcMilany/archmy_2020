@@ -2275,7 +2275,7 @@ echo " Установка приложение Flatpak выполнена "
 echo ""
 echo -e "${BLUE}:: ${NC}Установить приложение Discover (из проекта KDE) для управления вашими Flatpaks (флэтпаками)?"
 echo " Discover - Один из способов управления вашими Флэтпаками, есть ещё Gnome Software из проекта 'Gnome Project'. "
-echo " Gnome Software ПОДТЯГИВАЕТ МНОГО ЗАВИСИМОСТЕЙ!. "
+echo " Gnome Software - ПОДТЯГИВАЕТ МНОГО ЗАВИСИМОСТЕЙ! "
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. "
 # Be careful! The installation process was fully automatic.
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
