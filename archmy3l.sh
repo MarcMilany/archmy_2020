@@ -2128,16 +2128,16 @@ while
 #read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_battery  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^10] ]]
+    [[ "$prog_battery" =~ [^10] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then 
+if [[ $prog_battery == 0 ]]; then 
 echo ""   
 echo " Установка (пакетов) для управления питанием пропущена "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $prog_battery == 1 ]]; then
   echo ""  
   echo " Установка (пакетов) для управления питанием "
 sudo pacman -S tlp tlp-rdw --noconfirm 
