@@ -2271,6 +2271,7 @@ sudo pacman -S flatpak --noconfirm  # Среда изолированной пр
 sudo pacman -S elfutils patch --noconfirm  # Утилиты для обработки объектных файлов ELF и отладочной информации DWARF, и Утилита для применения патчей к оригинальным источникам
 echo -e "${GREEN}==> ${NC}Установить Flatpak ?"
 sudo pacman -S discover --noconfirm  # Графический интерфейс управления ресурсами KDE и Plasma
+### sudo pacman -S gnome-software  # Программные инструменты GNOME - ПОДТЯГИВАЕТ МНОГО ЗАВИСИМОСТЕЙ!
 echo ""
 echo " Установка Flatpak выполнена "
 fi
