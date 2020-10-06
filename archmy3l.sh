@@ -2272,16 +2272,12 @@ sudo pacman -S discover --noconfirm  # Графический интерфейс
 echo ""
 echo " Установка Flatpak выполнена "
 fi
-
-
-
-
-
-
-
-
-
-
+# -------------------------------------
+# Flatpak:
+# https://wiki.archlinux.org/index.php/Flatpak
+# Flatpak Manjaro:
+# https://wiki.manjaro.org/index.php?title=Flatpak
+# =====================================
 
 ###### SNAP ##############
 clear
