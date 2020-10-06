@@ -2862,26 +2862,26 @@ echo " Действия ввода, выполняется сразу после
     read -n1 -p "      
     1 - Android,     2 - Iphone,     3 - Оба Варианта (для устройств Android и Iphone)     
 
-    0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    0 - НЕТ - Пропустить установку: " i_telephone  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^10] ]]
+    [[ "$i_telephone" =~ [^10] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then
+if [[ $i_telephone == 0 ]]; then
 echo ""    
 echo " Установка утилит (пакетов) поддержки для устройств пропущена. "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $i_telephone == 1 ]]; then
   echo ""  
   echo " Установка утилит (пакетов) поддержки устройств на (базе) Android "
 sudo pacman -S gvfs-mtp --noconfirm
 echo " Установка поддержки устройств на (базе) Android завершена " 
-elif [[ $prog_set == 2 ]]; then
+elif [[ $i_telephone == 2 ]]; then
   echo ""  
   echo " Установка утилит (пакетов) для поддержки устройств Iphone "
 sudo pacman -S gvfs-afc --noconfirm
 echo " Установка поддержки устройств Iphone завершена " 
-elif [[ $prog_set == 3 ]]; then
+elif [[ $i_telephone == 3 ]]; then
   echo ""  
   echo " Установка утилит (пакетов) для поддержки устройств на (базе) Android и Iphone "  
 sudo pacman -S gvfs-afc gvfs-mtp --noconfirm
