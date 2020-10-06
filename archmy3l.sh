@@ -2269,11 +2269,38 @@ elif [[ $prog_sandbox == 1 ]]; then
   echo " Установка Flatpak (инструмента для управления приложениями и средами выполнения) "
 sudo pacman -S flatpak --noconfirm  # Среда изолированной программной среды и распространения приложений Linux (ранее xdg-app)
 sudo pacman -S elfutils patch --noconfirm  # Утилиты для обработки объектных файлов ELF и отладочной информации DWARF, и Утилита для применения патчей к оригинальным источникам
-echo -e "${GREEN}==> ${NC}Установить Flatpak ?"
+clear
+echo ""
+echo " Установка приложение Flatpak выполнена "
+echo ""
+echo -e "${BLUE}:: ${NC}Установить приложение Discover (из проекта KDE) для управления вашими Flatpaks (флэтпаками)?"
+echo " Discover - Один из способов управления вашими Флэтпаками, есть ещё Gnome Software из проекта 'Gnome Project'. "
+echo " Gnome Software ПОДТЯГИВАЕТ МНОГО ЗАВИСИМОСТЕЙ!. "
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. "
+# Be careful! The installation process was fully automatic.
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
+while 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_discover  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_discover" =~ [^10] ]]
+do
+    :
+done 
+if [[ $i_discover == 0 ]]; then 
+echo ""   
+echo " Установка приложение Discover пропущена "
+elif [[ $i_discover == 1 ]]; then
+  echo ""    
+  echo " Установка Discover (для управления вашими Flatpaks) "
 sudo pacman -S discover --noconfirm  # Графический интерфейс управления ресурсами KDE и Plasma
 ### sudo pacman -S gnome-software  # Программные инструменты GNOME - ПОДТЯГИВАЕТ МНОГО ЗАВИСИМОСТЕЙ!
 echo ""
-echo " Установка Flatpak выполнена "
+echo " Установка приложение Discover (из проекта KDE) выполнена "
+fi
 fi
 # -------------------------------------
 # Отобразить список всех плоских пакетов и сред выполнения, установленных в данный момент:
@@ -2339,6 +2366,7 @@ makepkg -si --skipinteg
 cd ..  
 rm -Rf snapd
 clear
+echo ""
 echo " Установка Snapd выполнена "
 #fi
 ########## Запускаем поддержку Snap ###############
