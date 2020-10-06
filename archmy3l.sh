@@ -415,16 +415,16 @@ echo " Действия ввода, выполняется сразу после
     read -n1 -p " 
     1 - Создание каталогов с помощью (xdg-user-dirs), 
 
-    0 - Пропустить создание каталогов: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    0 - Пропустить создание каталогов: " i_catalog  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^10] ]]
+    [[ "$i_catalog" =~ [^10] ]]
 do
     :
 done
-if [[ $prog_set == 0 ]]; then
+if [[ $i_catalog == 0 ]]; then
 echo ""  
 echo " Создание каталогов пропущено "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $i_catalog == 1 ]]; then
 echo ""  
 echo " Создание пользовательских каталогов по умолчанию "    
 sudo pacman -S xdg-user-dirs --noconfirm
