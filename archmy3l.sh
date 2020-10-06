@@ -2085,16 +2085,16 @@ echo ""
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_collection  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^10] ]]
+    [[ "$i_collection" =~ [^10] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then 
+if [[ $i_collection == 0 ]]; then 
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $i_collection == 1 ]]; then
   echo ""   
   echo " Установка рекомендованных утилит (пакетов) "
 sudo pacman -S gnome-system-monitor openshot frei0r-plugins clonezilla osmo synapse psensor copyq variety grsync numlockx modem-manager-gui rofi gsmartcontrol testdisk lsof dmidecode --noconfirm  
@@ -2253,16 +2253,16 @@ while
 #read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_sandbox  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_sandbox  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_sandbox" =~ [^10] ]]
+    [[ "$i_sandbox" =~ [^10] ]]
 do
     :
 done 
-if [[ $prog_sandbox == 0 ]]; then 
+if [[ $i_sandbox == 0 ]]; then 
 echo ""   
 echo " Установка инструмента Flatpak пропущена "
-elif [[ $prog_sandbox == 1 ]]; then
+elif [[ $i_sandbox == 1 ]]; then
   echo ""    
   echo " Установка Flatpak (инструмента для управления приложениями и средами выполнения) "
 sudo pacman -S flatpak --noconfirm  # Среда изолированной программной среды и распространения приложений Linux (ранее xdg-app)
