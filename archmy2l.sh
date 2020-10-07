@@ -625,18 +625,18 @@ echo ""
 while 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p  " 
-    1 - Вводим информация о пользователе,    0 - Пропустить этот шаг: " prog_set   # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Вводим информация о пользователе,    0 - Пропустить этот шаг: " i_finger   # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^10] ]]
+    [[ "$i_finger" =~ [^10] ]]
 do
     :
 done
-if [[ $prog_set == 1 ]]; then
+if [[ $i_finger == 1 ]]; then
   echo ""  
   echo " Информация о my username : (достаточно имени) "
 chfn $username
 #finger $username
-elif [[ $prog_set == 0 ]]; then
+elif [[ $i_finger == 0 ]]; then
   echo ""  
   echo ' Настройка пропущена. '
 fi 
