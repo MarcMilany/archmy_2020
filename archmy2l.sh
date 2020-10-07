@@ -1755,11 +1755,11 @@ sudo -u $username  makepkg -si --noconfirm
 rm -Rf /home/$username/octopi
 ############ gconf ##########
 cd /home/$username
-git clone https://aur.archlinux.org/gconf.git  # Устаревшая система базы данных конфигурации
+git clone https://aur.archlinux.org/gconf.git 
 chown -R $username:users /home/$username/gconf
 chown -R $username:users /home/$username/gconf/PKGBUILD 
-cd /home/$username/gconf
-sudo -u $username  makepkg -si --noconfirm  #--не спрашивать каких-либо подтверждений
+cd /home/$username/gconf  
+sudo -u $username  makepkg -si --noconfirm  
 rm -Rf /home/$username/gconf
 ############ libgksu ##########
 cd /home/$username
