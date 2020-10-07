@@ -985,6 +985,7 @@ echo -e "${BLUE}:: ${NC}Копируем резервного списка зе�
 cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup
 
 echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал /mnt/etc/pacman.d/mirrorlist"
+echo ""
 cat /mnt/etc/pacman.d/mirrorlist
 
 echo ""
