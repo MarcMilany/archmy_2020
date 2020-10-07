@@ -446,24 +446,28 @@ do
     :
 done
 if [[ $prog_cpu == 1 ]]; then
-  echo " Устанавливаем uCode для процессоров - AMD "
- pacman -S amd-ucode --noconfirm 
+echo ""
+echo " Устанавливаем uCode для процессоров - AMD "
+pacman -S amd-ucode --noconfirm 
   echo " Установлены обновления стабильности и безопасности для микрокода процессора - AMD "
   #grub-mkconfig -o /boot/grub/grub.cfg
 # echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). "       
 elif [[ $prog_cpu == 2 ]]; then
+  echo ""  
   echo " Устанавливаем uCode для процессоров - INTEL "
  pacman -S intel-ucode --noconfirm
   echo " Установлены обновления стабильности и безопасности для микрокода процессора - INTEL " 
   #grub-mkconfig -o /boot/grub/grub.cfg
 # echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). "    
 elif [[ $prog_cpu == 3 ]]; then
+  echo ""  
   echo " Устанавливаем uCode для процессоров - AMD и INTEL "
  pacman -S amd-ucode intel-ucode --noconfirm 
   echo " Установлены обновления стабильности и безопасности для микрокода процессоров - AMD и INTEL "  
   #grub-mkconfig -o /boot/grub/grub.cfg
 # echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). "  
 elif [[ $prog_cpu == 0 ]]; then
+  echo ""  
   echo 'Установка микрокода процессоров пропущена.'
 fi
 
