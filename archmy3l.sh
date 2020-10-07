@@ -344,9 +344,7 @@ sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 # Переименовываем новый список:
 #mv /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist
 #mv -f ~/mirrorlist /etc/pacman.d/mirrorlist
-# ========================================================
-echo ""  
-echo " Установка свежего списка зеркал от (2020-10-03) выполнено " 
+# ======================================================== 
 echo ""
 echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал для загрузки в mirrorlist"
 #echo 'Посмотреть список серверов-зеркал для загрузки в mirrorlist'
@@ -435,8 +433,6 @@ sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.pacnew
 #mv /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist
 #mv -f ~/mirrorlist /etc/pacman.d/mirrorlist
 # ====================================================
-echo ""  
-echo " Обновление зеркал с помощью (reflector) выполнено "
 echo ""
 echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал для загрузки в mirrorlist"
 #echo 'Посмотреть список серверов-зеркал для загрузки в mirrorlist'
