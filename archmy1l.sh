@@ -714,13 +714,13 @@ echo " Действия ввода, выполняется сразу после
     read -n1 -p "    
     1 - Base + Base-Devel + packages,   2 - Base + packages, 
 
-    3 - Base + Base-Devel,              4 - Base: " x_pacstrap  # sends right after the keypress; # отправляет сразу после нажатия клавиши 
+    3 - Base + Base-Devel,              4 - Base: " t_pacstrap  # sends right after the keypress; # отправляет сразу после нажатия клавиши 
     echo ''
-    [[ "$x_pacstrap" =~ [^1234] ]]
+    [[ "$t_pacstrap" =~ [^1234] ]]
 do
     :
 done
- if [[ $x_pacstrap == 1 ]]; then
+ if [[ $t_pacstrap == 1 ]]; then
   clear
   echo ""
   echo " Установка выбранного вами, групп "
@@ -732,7 +732,7 @@ done
 clear
   echo ""
   echo " Установка выбранного вами, групп (base + base-devel + packages) выполнена "
-elif [[ $x_pacstrap == 2 ]]; then
+elif [[ $t_pacstrap == 2 ]]; then
   clear
   echo ""
   echo " Установка выбранного вами, группы "
@@ -742,7 +742,7 @@ elif [[ $x_pacstrap == 2 ]]; then
 clear
   echo ""
   echo " Установка выбранного вами, групп (base + packages) выполнена "
-elif [[ $x_pacstrap == 3 ]]; then
+elif [[ $t_pacstrap == 3 ]]; then
   clear
   echo ""
   echo " Установка выбранных вами групп "
@@ -753,7 +753,7 @@ elif [[ $x_pacstrap == 3 ]]; then
 clear
   echo ""
   echo " Установка выбранного вами, групп (base + base-devel) выполнена "  
-elif [[ $x_pacstrap == 4 ]]; then
+elif [[ $t_pacstrap == 4 ]]; then
   clear
   echo ""
   echo " Установка выбранной вами группы "
