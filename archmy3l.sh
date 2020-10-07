@@ -2661,7 +2661,7 @@ echo " Установка графического интерфейса для s
 elif [[ $prog_set == 1 ]]; then
   echo ""   
   echo " Установка gconf - зависимость для libgksu "    
-git https://aur.archlinux.org/gconf.git  # Устаревшая система базы данных конфигурации
+git clone https://aur.archlinux.org/gconf.git  # Устаревшая система базы данных конфигурации
 cd gconf
 #makepkg -fsri
 # makepkg -si
@@ -2671,9 +2671,9 @@ pwd    # покажет в какой директории мы находимс
 cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf gconf 
 rm -Rf gconf
- echo ""   
- echo " Установка libgksu - библиотека авторизации gksu "
 ############ libgksu ##########
+echo ""   
+echo " Установка libgksu - библиотека авторизации gksu "
 git clone https://aur.archlinux.org/libgksu.git
 cd libgksu
 #makepkg -fsri
@@ -2684,9 +2684,9 @@ pwd    # покажет в какой директории мы находимс
 cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf libgksu 
 rm -Rf libgksu
+############ gksu ##########
 echo ""
 echo " Установка gksu - Графический интерфейс для su "
-############ gksu ##########
 git clone https://aur.archlinux.org/gksu.git
 cd gksu
 #makepkg -fsri
