@@ -1638,14 +1638,14 @@ echo " Действия ввода, выполняется сразу после
     read -n1 -p "      
     1 - Да установить,     0 - НЕТ - Пропустить установку: " in_conky  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$conky_set" =~ [^10] ]]
+    [[ "$in_conky" =~ [^10] ]]
 do
     :
 done 
-if [[ $conky_set == 0 ]]; then 
+if [[ $in_conky == 0 ]]; then 
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
-elif [[ $conky_set == 1 ]]; then
+elif [[ $in_conky == 1 ]]; then
   echo ""  
   echo " Установка утилит (пакетов) Conky и Conky-Manager "
 sudo pacman -S conky conky-manager --noconfirm 
