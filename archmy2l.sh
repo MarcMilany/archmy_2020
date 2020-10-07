@@ -248,21 +248,21 @@ echo " Действия ввода, выполняется сразу после
     read -n1 -p " 
     1 - UTC,    2 - Localtime, 
 
-    0 - Пропустить настройку: " h_clock  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    0 - Пропустить настройку: " hw_clock  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$h_clock" =~ [^120] ]]
+    [[ "$hw_clock" =~ [^120] ]]
 do
     :
 done
-if [[ $h_clock == 0 ]]; then
+if [[ $hw_clock == 0 ]]; then
 echo ""  
 echo " Настройка часов (времени) пропущена " 
-elif [[ $h_clock == 1 ]]; then
+elif [[ $hw_clock == 1 ]]; then
 hwclock --systohc --utc
   echo ""
   echo " Вы выбрали hwclock --systohc --utc "
   echo " UTC - часы дают универсальное время на нулевом часовом поясе " 
-elif [[ $h_clock == 2 ]]; then
+elif [[ $hw_clock == 2 ]]; then
 hwclock --systohc --local
   echo ""
   echo " Вы выбрали hwclock --systohc --localtime "
