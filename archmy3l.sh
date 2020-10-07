@@ -1042,28 +1042,28 @@ echo " Действия ввода, выполняется сразу после
     read -n1 -p "      
     1 - ScreenFetch,     2 - Neofetch,     3 - Archey3,     4 - ScreenFetch, Neofetch, Archey3,
 
-    0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    0 - Пропустить установку: " i_information  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^12340] ]]
+    [[ "$i_information" =~ [^12340] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then 
+if [[ $i_information == 0 ]]; then 
 echo ""    
 echo " Установка утилит (пакетов) для вывода информации о системе пропущена "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $i_information == 1 ]]; then
 echo ""    
 echo " Установка утилиты (пакета) ScreenFetch "  
 sudo pacman -S screenfetch --noconfirm 
-elif [[ $prog_set == 2 ]]; then
+elif [[ $i_information == 2 ]]; then
 echo ""    
 echo " Установка утилиты (пакета) Neofetch "     
 sudo pacman -S neofetch --noconfirm
-elif [[ $prog_set == 3 ]]; then
+elif [[ $i_information == 3 ]]; then
 echo ""    
 echo " Установка утилиты (пакета) Archey3 " 
 sudo pacman -S archey3 --noconfirm
-elif [[ $prog_set == 4 ]]; then
+elif [[ $i_information == 4 ]]; then
 echo ""    
 echo " Установка утилит (пакетов) ScreenFetch, Neofetch, Archey3 " 
 sudo pacman -S screenfetch neofetch archey3 --noconfirm 
