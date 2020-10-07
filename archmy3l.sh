@@ -3201,16 +3201,16 @@ echo ""
 while 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p " 
-    1 - Да удалить зависимость 'go',     0 - Нет пропустить этот шаг: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши     
+    1 - Да удалить зависимость 'go',     0 - Нет пропустить этот шаг: " rm_tool  # sends right after the keypress; # отправляет сразу после нажатия клавиши     
     echo ''
-    [[ "$prog_set" =~ [^10] ]]
+    [[ "$rm_tool" =~ [^10] ]]
 do
     :
 done
-if [[ $prog_set == 0 ]]; then
+if [[ $rm_tool == 0 ]]; then
   echo ""
 echo " Удаление зависимости 'go' пропущено "      
-elif [[ $prog_set == 1 ]]; then
+elif [[ $rm_tool == 1 ]]; then
 echo ""    
 # sudo pacman -Rs go
 #pacman -Rs go
