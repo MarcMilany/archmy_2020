@@ -598,21 +598,21 @@ echo " Действия ввода, выполняется сразу после
     read -n1 -p "      
     1 - Обновление через - AUR (Yay),     2 - Обновление через - AUR (Pikaur), 
 
-    0 - Пропустить обновление баз данных пакетов, и системы: " in_aur_update  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    0 - Пропустить обновление баз данных пакетов, и системы: " upd_aur  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$in_aur_update" =~ [^120] ]]
+    [[ "$upd_aur" =~ [^120] ]]
 do
     :
 done 
-if [[ $in_aur_update == 0 ]]; then
+if [[ $upd_aur == 0 ]]; then
 echo ""    
 echo " Обновление баз данных пакетов, и системы пропущено "
-elif [[ $in_aur_update == 1 ]]; then
+elif [[ $upd_aur == 1 ]]; then
 echo ""    
 echo " Обновление баз данных пакетов, и системы через - AUR (Yay) "
 yay -Syy
 yay -Syu
-elif [[ $in_aur_update == 2 ]]; then
+elif [[ $upd_aur == 2 ]]; then
 echo ""    
 echo " Обновление баз данных пакетов, и системы через - AUR (Pikaur) "
 pikaur -Syy
@@ -643,16 +643,16 @@ while
 #read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_firewall  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^10] ]]
+    [[ "$i_firewall" =~ [^10] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then 
+if [[ $i_firewall == 0 ]]; then 
 echo ""   
 echo " Установка Брандмауэра UFW пропущена "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $i_firewall == 1 ]]; then
   echo ""    
   echo " Установка UFW (Несложный Брандмауэр) "
 sudo pacman -S ufw gufw --noconfirm
