@@ -1555,6 +1555,7 @@ elif [[ $in_aur_help == 1 ]]; then
 pacman -Syu    
 #sudo pacman -Syu
 #sudo pacman -S git
+echo ""
 echo " Установка AUR Helper - (yay) "
 cd /home/$username
 git clone https://aur.archlinux.org/yay.git
@@ -1570,6 +1571,7 @@ elif [[ $in_aur_help == 2 ]]; then
 pacman -Syu    
 #sudo pacman -Syu
 #sudo pacman -S git
+echo ""
 echo " Установка AUR Helper - (pikaur) "    
 cd /home/$username
 git clone https://aur.archlinux.org/pikaur.git
@@ -1657,6 +1659,7 @@ clear
 echo ""  
 echo " Установка Графического менеджера пакетов пропущена "
 elif [[ $graphic_aur == 1 ]]; then
+  echo ""  
   echo " Установка Графического менеджера Pacman gui (pamac-aur) "
 ##### pamac-aur ######  
 cd /home/$username
@@ -1670,7 +1673,8 @@ clear
 echo ""
 echo " Графический менеджер Pamac-aur успешно установлен! "
 elif [[ $graphic_aur == 2 ]]; then
-echo " Установка Графического менеджера Octopi "    
+  echo ""  
+  echo " Установка Графического менеджера Octopi "    
 ##### alpm_octopi_utils ######    
 cd /home/$username
 git clone https://aur.archlinux.org/alpm_octopi_utils.git
@@ -1715,7 +1719,8 @@ clear
 echo ""
 echo " Графический менеджер Octopi успешно установлен! "
 elif [[ $graphic_aur == 3 ]]; then
-echo " Установка Графического менеджера Octopi - (pikaur) "    
+  echo ""  
+  echo " Установка Графического менеджера Octopi - (pikaur) "    
 ##### pikaur ######    
 cd /home/$username
 git clone https://aur.archlinux.org/pikaur.git
