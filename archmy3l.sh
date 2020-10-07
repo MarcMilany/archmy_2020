@@ -1365,17 +1365,17 @@ echo " Действия ввода, выполняется сразу после
     read -n1 -p "      
     1 - Firefox (+ flashplugin),     2 - Chromium (+ pepper-flash),     3 - Opera (+ pepper-flash),    
 
-    4 - Установить все веб-браузеры,     0 - Пропустить установку: " prog_browser  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    4 - Установить все веб-браузеры,     0 - Пропустить установку: " in_browser  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_browser" =~ [^12340] ]]
+    [[ "$in_browser" =~ [^12340] ]]
 do
     :
 done 
-if [[ $prog_browser == 0 ]]; then 
+if [[ $in_browser == 0 ]]; then 
 clear
 echo ""    
 echo " Установка веб-браузера(ов) пропущена "
-elif [[ $prog_browser == 1 ]]; then
+elif [[ $in_browser == 1 ]]; then
 echo ""   
 echo " Установка веб-браузера Firefox (+ flashplugin) "
 sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin --noconfirm
@@ -1383,21 +1383,21 @@ sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin --noconfirm
 clear
 echo ""    
 echo " Установка веб-браузера Firefox (+ flashplugin) выполнена "
-elif [[ $prog_browser == 2 ]]; then    
+elif [[ $in_browser == 2 ]]; then    
 echo "" 
 echo " Установка веб-браузера Chromium (+ pepper-flash) "    
 sudo pacman -S chromium pepper-flash --noconfirm
 clear
 echo ""    
 echo " Установка веб-браузера Chromium (+ pepper-flash) выполнена "
-elif [[ $prog_browser == 3 ]]; then
+elif [[ $in_browser == 3 ]]; then
 echo "" 
 echo " Установка веб-браузера Opera (+ pepper-flash) "    
 sudo pacman -S opera pepper-flash --noconfirm
 clear
 echo ""    
 echo " Установка веб-браузера Opera (+ pepper-flash) выполнена "
-elif [[ $prog_browser == 4 ]]; then
+elif [[ $in_browser == 4 ]]; then
 echo "" 
 echo " Установка веб-браузеров Chromium Opera Firefox "    
 sudo pacman -S chromium opera pepper-flash firefox firefox-i18n-ru firefox-spell-ru flashplugin --noconfirm 
@@ -1424,17 +1424,17 @@ echo " Действия ввода, выполняется сразу после
     read -n1 -p "      
     1 - Transmission (GTK+) или (Qt),     2 - qBittorrent (Qt),     3 - Deluge (GTK),    
 
-    0 - Пропустить установку: " prog_torrent  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    0 - Пропустить установку: " in_torrent  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^1230] ]]
+    [[ "$in_torrent" =~ [^1230] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then 
+if [[ $in_torrent == 0 ]]; then 
 clear
 echo ""    
 echo " Установка BitTorrent-клиентов пропущена "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $in_torrent == 1 ]]; then
   echo "" 
   echo " Установка BitTorrent-клиента Transmission (GTK+) "   
 sudo pacman -S transmission-gtk transmission-cli --noconfirm  # графический интерфейс GTK 3, и демон, с CLI 
@@ -1443,14 +1443,14 @@ sudo pacman -S transmission-gtk transmission-cli --noconfirm  # графичес
 clear
 echo ""    
 echo " Установка BitTorrent-клиента Transmission выполнена "
-elif [[ $prog_set == 2 ]]; then
+elif [[ $in_torrent == 2 ]]; then
   echo "" 
   echo " Установка BitTorrent-клиента qBittorrent (Qt) "   
 sudo pacman -S qbittorrent --noconfirm
 clear
 echo ""    
 echo " Установка BitTorrent-клиента qBittorrent выполнена "
-elif [[ $prog_set == 3 ]]; then
+elif [[ $in_torrent == 3 ]]; then
   echo "" 
   echo " Установка BitTorrent-клиента Deluge (GTK) "    
 sudo pacman -S deluge --noconfirm
@@ -1484,17 +1484,17 @@ echo " Действия ввода, выполняется сразу после
     read -n1 -p "      
     1 - LibreOffice-still,     2 - LibreOffice-fresh,    
 
-    0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    0 - Пропустить установку: " t_office  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^120] ]]
+    [[ "$t_office" =~ [^120] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then 
+if [[ $t_office == 0 ]]; then 
 #clear
 echo ""    
 echo " Установка пакета LibreOffice пропущена "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $t_office == 1 ]]; then
 echo ""    
 echo " Установка LibreOffice-still "
 sudo pacman -S libreoffice-still libreoffice-still-ru --noconfirm
@@ -1502,7 +1502,7 @@ sudo pacman -S libreoffice-extension-writer2latex --noconfirm  # набор ра
 #clear
 echo ""    
 echo " Установка LibreOffice-still выполнена "
-elif [[ $prog_set == 2 ]]; then
+elif [[ $t_office == 2 ]]; then
 echo "" 
 echo " Установка LibreOffice-fresh "   
 sudo pacman -S libreoffice-fresh libreoffice-fresh-ru --noconfirm
