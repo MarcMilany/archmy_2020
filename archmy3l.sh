@@ -370,18 +370,6 @@ sudo pacman -Sy
 #pacman -Syyu  - обновление баз плюс обновление пакетов
 #----------------------------------------------------------------
 elif [[ $up_zerkala == 2 ]]; then
-
-
-
-
-
-
-echo ""  
-echo " Обновление зеркал с помощью (reflector) выполнено " 
-fi
-
-# --------------------------------------
-
 echo ""
 echo -e "${BLUE}:: ${NC}Создание резервной копии файла /etc/pacman.d/mirrorlist"
 #echo 'Создадим резервную копию файла /etc/pacman.d/mirrorlist'
@@ -394,23 +382,19 @@ sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.old
 # Переименовываем новый список:
 #mv /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist
 #mv -f ~/mirrorlist /etc/pacman.d/mirrorlist
-
 # ===================================
-
 echo ""
 echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал для загрузки в mirrorlist"
 #echo 'Посмотреть список серверов-зеркал для загрузки в mirrorlist'
 # View the list of mirror servers to upload to mirrorlist
 cat /etc/pacman.d/mirrorlist
 sleep 01
-
+# ---------------------------------------------
 # Pacman Mirrorlist Generator
 # https://www.archlinux.org/mirrorlist/
 # Эта страница генерирует самый последний список зеркал, возможный для Arch Linux. Используемые здесь данные поступают непосредственно из внутренней базы данных зеркал разработчиков, используемой для отслеживания доступности и уровня зеркалирования. 
 # Есть два основных варианта: получить список зеркал с каждым доступным зеркалом или получить список зеркал, адаптированный к вашей географии.
-
 # ===========================================
-
 echo ""
 echo -e "${BLUE}:: ${NC}Загрузка свежего списка зеркал со страницы Mirror Status, и обновляем mirrorlist"
 #echo 'Загрузка свежего списка зеркал со страницы Mirror Status, и обновляем mirrorlist'
@@ -419,7 +403,8 @@ echo -e "${BLUE}:: ${NC}Загрузка свежего списка зерка�
 #reflector --help
 # Команда отфильтрует пять зеркал, отсортирует их по скорости и обновит файл mirrorlist:
 sudo pacman -Sy --noconfirm --noprogressbar --quiet reflector
-sudo reflector --verbose --country 'Russia' -l 7 -p https -p http -n 7 --save /etc/pacman.d/mirrorlist.pacnew --sort rate  
+sudo reflector --verbose --country 'Russia' -l 7 -p https -p http -n 7 --save /etc/pacman.d/mirrorlist --sort rate 
+#sudo reflector --verbose --country 'Russia' -l 7 -p https -p http -n 7 --save /etc/pacman.d/mirrorlist.pacnew --sort rate  
 #reflector --verbose --country 'Russia' -l 5 -p https -p http -n 5 --sort rate --save /etc/pacman.d/mirrorlist
 echo -e "${CYAN}:: ${NC}Уведомление о загрузке и обновлении свежего списка зеркал"
 # Собственные уведомления (notify):
@@ -434,67 +419,34 @@ notify-send "mirrorlist обновлен" -i gtk-info
 #Команда отфильтрует 12 зеркал russia, отсортирует по скорости и обновит файл mirrorlist
 #sudo reflector -c "Russia" -f 12 -l 12 --verbose --save /etc/pacman.d/mirrorlist
 
-#------------------------------------------------------------------------------
-
+#-------------------------------------------------
 # Reflector — скрипт, который автоматизирует процесс настройки зеркал, включающий в себя загрузку свежего списка зеркал со страницы Mirror Status.
 # https://www.linuxsecrets.com/archlinux-wiki/wiki.archlinux.org/index.php/Reflector_(%D0%A0%D1%2583%D1%2581%D1%2581%D0%BA%D0%B8%D0%B9).html
 # Эта страница сообщает о состоянии всех известных, общедоступных и активных зеркал Arch Linux:
 # https://www.archlinux.org/mirrors/status/
-
-# ============================================================================
-
+# ==============================================
 echo ""
-echo -e "${BLUE}:: ${NC}Удалим старый файл /etc/pacman.d/mirrorlist"
-#echo 'Удалим старый файл /etc/pacman.d/mirrorlist'
-# Delete the old file /etc/pacman.d/mirrorlist
-#rm -rf /etc/pacman.d/mirrorlist
-sudo rm -rf /etc/pacman.d/mirrorlist
-# Удаления старой резервной копии (если она есть, если нет, то пропустите этот шаг):
-#rm /etc/pacman.d/mirrorlist.old
-# Удалим mirrorlist из /mnt/etc/pacman.d/mirrorlist
-#rm /mnt/etc/pacman.d/mirrorlist 
-
-#echo -e "${BLUE}:: ${NC}Удалите файл /etc/pacman.d/mirrorlist"
-#echo 'Удалите файл /etc/pacman.d/mirrorlist'
-# Delete files /etc/pacman.d/mirrorlist
-#rm -rf /etc/pacman.d/mirrorlist
-
-# ============================================================================
-
-echo ""
-echo -e "${BLUE}:: ${NC}Переименуем новый список серверов-зеркал mirrorlist.pacnew в mirrorlist"
-#echo 'Переименуем новый список серверов-зеркал mirrorlist.pacnew в mirrorlist'
-# Rename the new list of mirror servers mirrorlist. pacnew to mirrorlist
-#mv /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist
-# Переименовываем новый список:
-#sudo mv /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist
-sudo mv /etc/pacman.d/mirrorlist.backup /etc/pacman.d/mirrorlist
-
-# ============================================================================
-
-echo ""
-echo -e "${BLUE}:: ${NC}Создание резервной копии файла /etc/pacman.d/mirrorlist"
+echo -e "${BLUE}:: ${NC}Создание резервной копии нового файла /etc/pacman.d/mirrorlist"
 #echo 'Создадим резервную копию файла /etc/pacman.d/mirrorlist'
 # Creating a backup copy of the file /etc/pacman.d/mirrorlist
 #sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 #sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.pacnew
 # Сохраняем старый список зеркал в качестве резервной копии:
 #sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.old
 # Переименовываем новый список:
 #mv /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist
 #mv -f ~/mirrorlist /etc/pacman.d/mirrorlist
-
-# ============================================================================
-
+# ====================================================
+echo ""  
+echo " Установка свежего списка зеркал от (2020-10-03) выполнено "
 echo ""
 echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал для загрузки в mirrorlist"
 #echo 'Посмотреть список серверов-зеркал для загрузки в mirrorlist'
 # View the list of mirror servers to upload to mirrorlist
 cat /etc/pacman.d/mirrorlist
 sleep 02
-# ============================================================================
-
+# ==============================================
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
 #echo 'Обновим базы данных пакетов'
@@ -502,13 +454,21 @@ echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
 #sudo pacman-key --init
 #sudo pacman-key --refresh-keys
 sudo pacman -Sy  
-
 #----------------------------------------------------------------
 # Знакомьтесь, pacman - лучший пакетный менеджер в мире линукса!
 #pacman -Syy   - обновление баз пакмэна(как apt-get update в дэбианоподбных)
 #pacman -Syyu  - обновление баз плюс обновление пакетов
 #----------------------------------------------------------------
 
+
+
+
+
+echo ""  
+echo " Обновление зеркал с помощью (reflector) выполнено " 
+fi
+
+# --------------------------------------
 ### Если возникли проблемы с обновлением, или установкой пакетов 
 ### Если ли вам нужен этот пункт в скрипте, то раскомментируйте ниже в меню все тройные решётки (###)
 
