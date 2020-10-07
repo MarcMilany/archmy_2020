@@ -484,10 +484,12 @@ do
     :
 done
 if [[ $dual_boot  == 1 ]]; then
+echo ""    
 echo " Устанавливаем программы (пакеты) для определения другой-(их) OS "		
 pacman -S os-prober mtools fuse --noconfirm  #grub-customizer
 echo " Программы (пакеты) установлены "  	
 elif [[ $dual_boot  == 0 ]]; then
+echo ""    
 echo " Установка программ (пакетов) пропущена. "
 fi
 
