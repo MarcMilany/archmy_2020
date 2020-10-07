@@ -1713,6 +1713,14 @@ chown -R $username:users /home/$username/alpm_octopi_utils/PKGBUILD
 cd /home/$username/alpm_octopi_utils
 sudo -u $username  makepkg -si --noconfirm  
 rm -Rf /home/$username/alpm_octopi_utils
+############ gconf ##########
+cd /home/$username
+git clone https://aur.archlinux.org/gconf.git  # Устаревшая система базы данных конфигурации
+chown -R $username:users /home/$username/gconf
+chown -R $username:users /home/$username/gconf/PKGBUILD 
+cd /home/$username/gconf
+sudo -u $username  makepkg -si --noconfirm  #--не спрашивать каких-либо подтверждений
+rm -Rf /home/$username/gconf
 ############ libgksu ##########
 cd /home/$username
 git clone https://aur.archlinux.org/libgksu.git
