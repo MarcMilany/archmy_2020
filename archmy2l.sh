@@ -1657,7 +1657,7 @@ fi
 sleep 01
 clear
 echo ""
-echo -e "${GREEN}==> ${NC}Установить графический менеджер пакетов для Archlinux?"
+echo -e "${GREEN}==> ${NC}Установить  менеджер пакетов для Archlinux?"
 echo -e "${BLUE}:: ${NC}Установка Pacman gui (pamac-aur), или Pacman gui (octopi) (AUR)(GTK)(QT)" 
 echo -e "${YELLOW}:: ${BOLD}Сейчас Вы можете пропустить установку "Графического менеджера пакетов", пункт для установки будет прописан в следующем скрипте (archmy3l). И Вы сможете установить уже из установленной системы. ${NC}"
 echo " Давайте проанализируем действия, которые выполняются. "
@@ -1680,17 +1680,17 @@ echo " Действия ввода, выполняется сразу после
 
     3 - Octopi - ранее НЕ БЫЛ УСТАНОВЛЕН AUR - (pikaur), 
 
-    0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    0 - Пропустить установку: " graphic_aur  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^1230] ]]
+    [[ "$graphic_aur" =~ [^1230] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then 
+if [[ $graphic_aur == 0 ]]; then 
 clear 
 echo ""  
 echo " Установка Графического менеджера пакетов пропущена "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $graphic_aur == 1 ]]; then
   echo " Установка Графического менеджера Pacman gui (pamac-aur) "
 ##### pamac-aur ######  
 cd /home/$username
@@ -1703,7 +1703,7 @@ rm -Rf /home/$username/pamac-aur
 clear
 echo ""
 echo " Графический менеджер Pamac-aur успешно установлен! "
-elif [[ $prog_set == 2 ]]; then
+elif [[ $graphic_aur == 2 ]]; then
 echo " Установка Графического менеджера Octopi "    
 ##### alpm_octopi_utils ######    
 cd /home/$username
@@ -1748,7 +1748,7 @@ rm -Rf /home/$username/octopi
 clear
 echo ""
 echo " Графический менеджер Octopi успешно установлен! "
-elif [[ $prog_set == 3 ]]; then
+elif [[ $graphic_aur == 3 ]]; then
 echo " Установка Графического менеджера Octopi - (pikaur) "    
 ##### pikaur ######    
 cd /home/$username
