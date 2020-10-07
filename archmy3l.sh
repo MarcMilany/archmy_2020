@@ -3085,16 +3085,16 @@ while
 #read -p " 1 - Да запускаем и добавляем, 0 - НЕТ - Пропустить действие: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да запускаем и добавляем,     0 - НЕТ - Пропустить действие: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да запускаем и добавляем,     0 - НЕТ - Пропустить действие: " set_cups  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^10] ]]
+    [[ "$set_cups" =~ [^10] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then
+if [[ $set_cups == 0 ]]; then
 echo ""    
 echo "  Запуск и добавление в автозапуск (cupsd.service) пропущено "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $set_cups == 1 ]]; then
   echo ""  
   echo " Запускаем Драйвера принтера CUPS (cupsd.service) "
 sudo systemctl start org.cups.cupsd.service  
