@@ -922,24 +922,24 @@ echo " Действия ввода, выполняется сразу после
     read -n1 -p "      
     1 - File Roller,     2 - Ark,     3 - Xarchiver (GTK+2), 
 
-    0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    0 - Пропустить установку: " gui_archiver  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^1230] ]]
+    [[ "$gui_archiver" =~ [^1230] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then 
+if [[ $gui_archiver == 0 ]]; then 
 echo ""   
 echo " Установка Менеджера архивов (графического интерфейса) пропущено "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $gui_archiver == 1 ]]; then
 echo ""    
 echo " Установка Менеджера архивов (file-roller) "
 sudo pacman -S file-roller --noconfirm  # легковесный архиватор ( для xfce-lxqt-lxde-gnome ) 
-elif [[ $prog_set == 2 ]]; then
+elif [[ $gui_archiver == 2 ]]; then
 echo ""    
 echo " Установка Менеджера архивов (ark) "
 sudo pacman -S ark --noconfirm  # архиватор для ( Plasma(kde)- так же можно использовать, и для другого de )
-elif [[ $prog_set == 3 ]]; then
+elif [[ $gui_archiver == 3 ]]; then
 echo ""    
 echo " Установка Менеджера архивов (xarchiver-gtk2) "    
 sudo pacman -S xarchiver-gtk2 --noconfirm  # легкий настольный независимый менеджер архивов  
