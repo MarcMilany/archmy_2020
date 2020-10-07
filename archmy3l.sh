@@ -2491,17 +2491,17 @@ echo " Действия ввода, выполняется сразу после
 
     3 - Octopi - ранее НЕ БЫЛ УСТАНОВЛЕН AUR - (pikaur), 
 
-    0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    0 - Пропустить установку: " graphic_aur  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^1230] ]]
+    [[ "$graphic_aur" =~ [^1230] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then 
+if [[ $graphic_aur == 0 ]]; then 
 clear 
 echo ""  
 echo " Установка Графического менеджера пакетов пропущена "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $graphic_aur == 1 ]]; then
   echo ""  
   echo " Установка Графического менеджера Pacman gui (pamac-aur) "
 ##### pamac-aur ######  
@@ -2517,7 +2517,7 @@ rm -Rf pamac-aur   # удаляем директорию сборки
 clear
 echo ""
 echo " Графический менеджер Pamac-aur успешно установлен! "
-elif [[ $prog_set == 2 ]]; then
+elif [[ $graphic_aur == 2 ]]; then
 echo ""    
 echo " Установка Графического менеджера Octopi "    
 ##### alpm_octopi_utils ######    
@@ -2574,7 +2574,7 @@ rm -Rf octopi
 clear
 echo ""
 echo " Графический менеджер Octopi успешно установлен! "
-elif [[ $prog_set == 3 ]]; then
+elif [[ $graphic_aur == 3 ]]; then
 echo ""    
 echo " Установка Графического менеджера Octopi - (pikaur) "    
 ##### pikaur ###### 
