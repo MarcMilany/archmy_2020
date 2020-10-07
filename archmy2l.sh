@@ -473,31 +473,31 @@ echo " Действия ввода, выполняется сразу после
 
     3 - Для процессоров AMD и INTEL, 
 
-    0 - Нет Пропустить этот шаг: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    0 - Нет Пропустить этот шаг: " prog_cpu  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^1230] ]]
+    [[ "$prog_cpu" =~ [^1230] ]]
 do
     :
 done
-if [[ $prog_set == 1 ]]; then
+if [[ $prog_cpu == 1 ]]; then
   echo " Устанавливаем uCode для процессоров - AMD "
  pacman -S amd-ucode --noconfirm 
   echo " Установлены обновления стабильности и безопасности для микрокода процессора - AMD "
   #grub-mkconfig -o /boot/grub/grub.cfg
 # echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). "       
-elif [[ $prog_set == 2 ]]; then
+elif [[ $prog_cpu == 2 ]]; then
   echo " Устанавливаем uCode для процессоров - INTEL "
  pacman -S intel-ucode --noconfirm
   echo " Установлены обновления стабильности и безопасности для микрокода процессора - INTEL " 
   #grub-mkconfig -o /boot/grub/grub.cfg
 # echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). "    
-elif [[ $prog_set == 3 ]]; then
+elif [[ $prog_cpu == 3 ]]; then
   echo " Устанавливаем uCode для процессоров - AMD и INTEL "
  pacman -S amd-ucode intel-ucode --noconfirm 
   echo " Установлены обновления стабильности и безопасности для микрокода процессоров - AMD и INTEL "  
   #grub-mkconfig -o /boot/grub/grub.cfg
 # echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). "  
-elif [[ $prog_set == 0 ]]; then
+elif [[ $prog_cpu == 0 ]]; then
   echo 'Установка микрокода процессоров пропущена.'
 fi
 
