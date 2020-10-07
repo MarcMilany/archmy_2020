@@ -2443,22 +2443,22 @@ echo " Действия ввода, выполняется сразу после
     read -n1 -p "      
     1 - Pacman gui - (pamac-aur),     2 - Pacman gui - (octopi),  
 
-    0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    0 - Пропустить установку: " yay_aur  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^120] ]]
+    [[ "$yay_aur" =~ [^120] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then  
+if [[ $yay_aur == 0 ]]; then  
 echo ""  
 echo " Установка Графического менеджера пакетов пропущена "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $yay_aur == 1 ]]; then
   echo ""  
   echo " Установка Графического менеджера Pacman gui (pamac-aur) "
 yay -S pamac-aur --noconfirm
 echo ""
 echo " Графический менеджер Pamac-aur установлен! "
-elif [[ $prog_set == 2 ]]; then
+elif [[ $yay_aur == 2 ]]; then
   echo ""  
   echo " Установка Графического менеджера Pacman gui (octopi) "
 yay -S octopi --noconfirm
