@@ -731,16 +731,16 @@ while
 #read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_bluetooth  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^10] ]]
+    [[ "$i_bluetooth" =~ [^10] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then  
+if [[ $i_bluetooth == 0 ]]; then  
 echo ""  
 echo " Установка поддержки Bluetooth пропущена "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $i_bluetooth == 1 ]]; then
   echo ""    
   echo " Установка пакетов поддержки Bluetooth "
 sudo pacman -S bluez bluez-libs bluez-cups bluez-utils --noconfirm
