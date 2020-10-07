@@ -2939,16 +2939,16 @@ while
 #read -p " 1 - Да включить UFW, 0 - НЕТ - Пропустить действие: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да включить UFW,     0 - НЕТ - Пропустить действие: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да включить UFW,     0 - НЕТ - Пропустить действие: " set_firewall  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^10] ]]
+    [[ "$set_firewall" =~ [^10] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then
+if [[ $set_firewall == 0 ]]; then
 echo ""    
 echo "  Запуск UFW (сетевой экран) пропущено "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $set_firewall == 1 ]]; then
   echo ""  
   echo " Запускаем UFW (сетевой экран) "
 sudo ufw enable
@@ -2970,16 +2970,16 @@ while
 #read -p " 1 - Да добавляем в автозагрузку UFW, 0 - НЕТ - Пропустить действие: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да добавляем в автозагрузку UFW,     0 - НЕТ - Пропустить действие: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да добавляем в автозагрузку UFW,     0 - НЕТ - Пропустить действие: " auto_firewall  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^10] ]]
+    [[ "$auto_firewall" =~ [^10] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then
+if [[ $auto_firewall == 0 ]]; then
 echo ""    
 echo " UFW (сетевой экран) не был добавлен в автозагрузку. "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $auto_firewall == 1 ]]; then
   echo ""  
   echo " Добавляем в автозагрузку UFW (сетевой экран) "
 sudo systemctl enable ufw
