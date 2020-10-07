@@ -3051,16 +3051,16 @@ while
 #read -p " 1 - Да добавляем, 0 - НЕТ - Пропустить действие: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да добавляем,     0 - НЕТ - Пропустить действие: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да добавляем,     0 - НЕТ - Пропустить действие: " auto_ssh  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^10] ]]
+    [[ "$auto_ssh" =~ [^10] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then
+if [[ $auto_ssh == 0 ]]; then
 echo ""    
 echo "  Сервис sshd не включен в автозагрузку, при необходиости это можно будет сделать. "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $auto_ssh == 1 ]]; then
   echo ""  
   echo " Добавляем в автозагрузку (sshd.service)"
 sudo systemctl enable sshd.service
