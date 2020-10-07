@@ -3139,16 +3139,16 @@ while
 #read -p " 1 - Да включить TLP (управления питанием), 0 - НЕТ - Пропустить действие: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да включить TLP (управления питанием),     0 - НЕТ - Пропустить действие: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да включить TLP (управления питанием),     0 - НЕТ - Пропустить действие: " set_tlp  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^10] ]]
+    [[ "$set_tlp" =~ [^10] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then
+if [[ $set_tlp == 0 ]]; then
 echo ""    
 echo "  Запуск TLP (управления питанием) пропущено "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $set_tlp == 1 ]]; then
   echo ""  
   echo " Запускаем сервис TLP (управления питанием) "
 # При использовании Мастера радиоустройств ( tlp-rdw ) необходимо использовать NetworkManager и включить NetworkManager-dispatcher.service 
