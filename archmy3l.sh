@@ -2026,16 +2026,16 @@ echo ""
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_galculator  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^10] ]]
+    [[ "$i_galculator" =~ [^10] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then 
+if [[ $i_galculator == 0 ]]; then 
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $i_galculator == 1 ]]; then
   echo ""  
   echo " Установка Galculator (калькулятор) (на основе GTK+)(версия GTK2) "
 sudo pacman -S galculator-gtk2 --noconfirm  # Научный калькулятор на основе GTK + (версия GTK2)
