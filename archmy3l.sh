@@ -966,17 +966,17 @@ while
 #read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " prog_set  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " in_soft  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^10] ]]
+    [[ "$in_soft" =~ [^10] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then 
+if [[ $in_soft == 0 ]]; then 
 clear
 echo ""   
 echo " Установка дополнительных базовых программ (пакетов) пропущена "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $in_soft == 1 ]]; then
   echo ""  
   echo " Установка дополнительных базовых программ (пакетов) "
 sudo pacman -S aspell-ru arch-install-scripts bash-completion cmake dosfstools f2fs-tools sane gvfs gnu-netcat iftop nmap ntp ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip pwgen scrot xsel powertop smartmontools ethtool glances xterm --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64   
