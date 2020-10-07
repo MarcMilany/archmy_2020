@@ -2609,6 +2609,17 @@ pwd    # покажет в какой директории мы находимс
 cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf octopi  
 rm -Rf octopi
+############ gconf ##########   
+git clone https://aur.archlinux.org/gconf.git  # Устаревшая система базы данных конфигурации
+cd gconf
+#makepkg -fsri
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf gconf 
+rm -Rf gconf
 ############ libgksu ##########
 git clone https://aur.archlinux.org/libgksu.git
 cd libgksu
