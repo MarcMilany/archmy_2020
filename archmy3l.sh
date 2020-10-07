@@ -252,7 +252,7 @@ do
 done
 if [[ $up_zerkala == 0 ]]; then
 echo ""  
-echo " Смена и обновление зеркал пропущено "
+echo " Смена (установка) и обновление зеркал пропущено "
 elif [[ $up_zerkala == 1 ]]; then
 echo ""
 echo -e "${BLUE}:: ${NC}Создание резервной копии файла /etc/pacman.d/mirrorlist"
