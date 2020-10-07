@@ -1320,16 +1320,16 @@ echo ""
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " prog_chat  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^10] ]]
+    [[ "$prog_chat" =~ [^10] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then 
+if [[ $prog_chat == 0 ]]; then 
 echo ""   
 echo " Установка утилиты для управления чатом и группам пропущена "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $prog_chat == 1 ]]; then
   echo ""  
   echo " Установка утилиты (пакета) Pidgin (Мессенджер) "
 sudo pacman -S pidgin pidgin-hotkeys --noconfirm  # клиент обмена мгновенными сообщениями
@@ -1365,17 +1365,17 @@ echo " Действия ввода, выполняется сразу после
     read -n1 -p "      
     1 - Firefox (+ flashplugin),     2 - Chromium (+ pepper-flash),     3 - Opera (+ pepper-flash),    
 
-    4 - Установить все веб-браузеры,     0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    4 - Установить все веб-браузеры,     0 - Пропустить установку: " prog_browser  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^12340] ]]
+    [[ "$prog_browser" =~ [^12340] ]]
 do
     :
 done 
-if [[ $prog_set == 0 ]]; then 
+if [[ $prog_browser == 0 ]]; then 
 clear
 echo ""    
 echo " Установка веб-браузера(ов) пропущена "
-elif [[ $prog_set == 1 ]]; then
+elif [[ $prog_browser == 1 ]]; then
 echo ""   
 echo " Установка веб-браузера Firefox (+ flashplugin) "
 sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin --noconfirm
@@ -1383,21 +1383,21 @@ sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin --noconfirm
 clear
 echo ""    
 echo " Установка веб-браузера Firefox (+ flashplugin) выполнена "
-elif [[ $prog_set == 2 ]]; then    
+elif [[ $prog_browser == 2 ]]; then    
 echo "" 
 echo " Установка веб-браузера Chromium (+ pepper-flash) "    
 sudo pacman -S chromium pepper-flash --noconfirm
 clear
 echo ""    
 echo " Установка веб-браузера Chromium (+ pepper-flash) выполнена "
-elif [[ $prog_set == 3 ]]; then
+elif [[ $prog_browser == 3 ]]; then
 echo "" 
 echo " Установка веб-браузера Opera (+ pepper-flash) "    
 sudo pacman -S opera pepper-flash --noconfirm
 clear
 echo ""    
 echo " Установка веб-браузера Opera (+ pepper-flash) выполнена "
-elif [[ $prog_set == 4 ]]; then
+elif [[ $prog_browser == 4 ]]; then
 echo "" 
 echo " Установка веб-браузеров Chromium Opera Firefox "    
 sudo pacman -S chromium opera pepper-flash firefox firefox-i18n-ru firefox-spell-ru flashplugin --noconfirm 
@@ -1424,7 +1424,7 @@ echo " Действия ввода, выполняется сразу после
     read -n1 -p "      
     1 - Transmission (GTK+) или (Qt),     2 - qBittorrent (Qt),     3 - Deluge (GTK),    
 
-    0 - Пропустить установку: " prog_set  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    0 - Пропустить установку: " prog_torrent  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
     [[ "$prog_set" =~ [^1230] ]]
 do
