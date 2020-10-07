@@ -511,10 +511,12 @@ do
     :
 done
 if [[ $i_wifi  == 1 ]]; then
+echo ""    
 echo " Устанавливаем программы (пакеты) для Wi-fi "		
 pacman -S dialog wpa_supplicant iw wireless_tools net-tools --noconfirm 
 echo " Программы (пакеты) для Wi-fi установлены "  	
 elif [[ $i_wifi  == 0 ]]; then
+echo ""    
 echo " Установка программ (пакетов) пропущена. "
 fi
 
