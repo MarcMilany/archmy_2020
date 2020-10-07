@@ -511,19 +511,19 @@ echo ""
 while
 echo " Действия ввода, выполняется сразу после нажатия клавиши " 
     read -n1 -p  " 
-    1 - Да установить,    0 - Нет пропустить: " prog_set   # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да установить,    0 - Нет пропустить: " dual_boot   # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$prog_set" =~ [^10] ]]
+    [[ "$dual_boot" =~ [^10] ]]
 do
     :
 done
-if [[ $prog_set  == 1 ]]; then
- echo " Устанавливаем программы (пакеты) для определения другой-(их) OS "		
+if [[ $dual_boot  == 1 ]]; then
+echo " Устанавливаем программы (пакеты) для определения другой-(их) OS "		
 pacman -S os-prober mtools fuse --noconfirm  #grub-customizer
- echo " Программы (пакеты) установлены "  	
- elif [[ $prog_set  == 0 ]]; then
+echo " Программы (пакеты) установлены "  	
+elif [[ $dual_boot  == 0 ]]; then
 echo " Установка программ (пакетов) пропущена. "
- fi
+fi
 
 echo ""
 echo -e "${BLUE}:: ${NC}Обновляем grub.cfg (Сгенерируем grub.cfg)"
@@ -545,12 +545,12 @@ do
     :
 done
 if [[ $i_wifi  == 1 ]]; then
- echo " Устанавливаем программы (пакеты) для Wi-fi "		
+echo " Устанавливаем программы (пакеты) для Wi-fi "		
 pacman -S dialog wpa_supplicant iw wireless_tools net-tools --noconfirm 
- echo " Программы (пакеты) для Wi-fi установлены "  	
- elif [[ $i_wifi  == 0 ]]; then
+echo " Программы (пакеты) для Wi-fi установлены "  	
+elif [[ $i_wifi  == 0 ]]; then
 echo " Установка программ (пакетов) пропущена. "
- fi
+fi
 
 ### Set User ######
 sleep 01
