@@ -334,11 +334,11 @@ echo 'Установить рекомендуемые программы?'
 # To install the recommended program?
 echo -e "${BLUE}
 'Список программ рекомендованных к установке:${GREEN}
-keepass2-plugin-tray-icon simplescreenrecorder'
+keepass2-plugin-tray-icon simplescreenrecorder desktop-file-utils'
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S keepass2-plugin-tray-icon simplescreenrecorder --noconfirm 
+sudo pacman -S keepass2-plugin-tray-icon simplescreenrecorder --noconfirm  # desktop-file-utils
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.'
 fi
