@@ -691,6 +691,8 @@ echo " Добавление Multilib репозитория пропущено "
 elif [[ $i_multilib  == 1 ]]; then
 #echo 'Color = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 sed -i 's/#Color/Color/' /etc/pacman.conf
+#sed -i '/#Color/ s/^#//' /etc/pacman.conf
+sed -i '/^Co/ aILoveCandy' /etc/pacman.conf
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 #echo '[multilib]' >> /etc/pacman.conf
 #echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
