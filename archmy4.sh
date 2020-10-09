@@ -311,7 +311,7 @@ yay -S  --noconfirm
 echo 'Установка Oracle VM VirtualBox'
 # Installing Oracle VM VirtualBox 
 sudo pacman -S virtualbox --noconfirm  # Мощная виртуализация x86 как для корпоративного, так и для домашнего использования
-sudo pacman -S virtualbox-host-modules-arch --noconfirm # для ядра linux - Модули ядра хоста Virtualbox для Arch Kernel
+#sudo pacman -S virtualbox-host-modules-arch --noconfirm # для ядра linux - Модули ядра хоста Virtualbox для Arch Kernel
 sudo pacman -S virtualbox-host-dkms --noconfirm # для других ядер - Источники модулей ядра VirtualBox Host
 sudo pacman -S linux-headers --noconfirm # Заголовки и скрипты для сборки модулей для ядра Linux
 sudo pacman -S  --noconfirm
