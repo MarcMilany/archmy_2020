@@ -318,6 +318,8 @@ sudo pacman -S  --noconfirm
 
 sudo modprobe vboxdrv  # Загрузка модулей
 # sudo modprobe -a vboxguest vboxsf vboxvideo
+echo "vboxdrv" > /etc/modules-load.d/virtualbox.conf
+     
 # sudo gpasswd -a имя_пользователя vboxusers
 sudo gpasswd -a $username vboxusers
 
