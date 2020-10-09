@@ -892,11 +892,11 @@ elif [[ $i_sound == 1 ]]; then
   echo " Установка пакетов поддержки Sound support (alsa, pulseaudio...) "
 sudo pacman -S alsa-utils alsa-plugins alsa-firmware alsa-lib alsa-utils --noconfirm 
 sudo pacman -S lib32-alsa-plugins --noconfirm  # Дополнительные плагины ALSA (32-бит)
-sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth pulseaudio-equalizer-ladspa --noconfirm  
-sudo pacman -S xfce4-pulseaudio-plugin --noconfirm 
+sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-bluetooth pulseaudio-equalizer-ladspa --noconfirm
 sudo pacman -S pulseaudio-zeroconf --noconfirm   # Поддержка Zeroconf для PulseAudio
-sudo pacman -S pasystray --noconfirm   # Системный трей PulseAudio (замена # padevchooser)
-#sudo pacman -Sy pulseaudio-bluetooth alsa-utils pulseaudio-equalizer-ladspa   --noconfirm
+sudo pacman -S pasystray --noconfirm   # Системный трей PulseAudio (замена # padevchooser)  
+sudo pacman -S xfce4-pulseaudio-plugin --noconfirm 
+#sudo pacman -Sy pavucontrol pulseaudio-bluetooth alsa-utils pulseaudio-equalizer-ladspa --noconfirm
 clear
 echo ""   
 echo " Установка пакетов Поддержки звука выполнена "
