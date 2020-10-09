@@ -2201,13 +2201,19 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+
+
+
+
+
+openshot
 clear
 echo ""
 echo -e "${GREEN}==> ${BOLD}Установить рекомендованные программы (пакеты)? ${NC}"
 #echo -e "${BLUE}:: ${NC}Установить рекомендованные программы (пакеты)?"
 #echo 'Установить рекомендованные программы?'
 # Install the recommended programs
-echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gnome-system-monitor, openshot, frei0r-plugins, clonezilla, osmo, synapse, psensor, copyq, variety, grsync, numlockx, modem-manager-gui, rofi, gsmartcontrol, testdisk, lsof, dmidecode, kleopatra)."
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gnome-system-monitor, frei0r-plugins, clonezilla, osmo, synapse, psensor, copyq, variety, grsync, numlockx, modem-manager-gui, rofi, gsmartcontrol, testdisk, lsof, dmidecode, kleopatra)."
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -2229,7 +2235,7 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_collection == 1 ]]; then
   echo ""   
   echo " Установка рекомендованных утилит (пакетов) "
-sudo pacman -S gnome-system-monitor openshot frei0r-plugins clonezilla osmo synapse psensor copyq variety grsync numlockx modem-manager-gui rofi gsmartcontrol testdisk lsof dmidecode kleopatra --noconfirm  
+sudo pacman -S gnome-system-monitor frei0r-plugins clonezilla osmo synapse psensor copyq variety grsync numlockx modem-manager-gui rofi gsmartcontrol testdisk lsof dmidecode kleopatra --noconfirm  
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
