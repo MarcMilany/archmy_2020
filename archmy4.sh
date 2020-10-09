@@ -194,12 +194,32 @@ fi
 echo ""
 echo -e "${BLUE}:: ${NC}Ставим шрифты"
 # Ставим шрифты:  https://www.archlinux.org/packages/
+pacman -S fontforge --noconfirm  # Редактор контурных и растровых шрифтов
+pacman -S gsfonts --noconfirm  # (URW) ++ Базовый набор шрифтов [Уровень 2]
+pacman -S ttf-croscore --noconfirm  # Основные шрифты Chrome OS, они метрически совместимы с MS, и хорошо смотрятся, содержат Arimo, Tinos, Cousine и тп.
+pacman -S ttf-ubuntu-font-family --noconfirm  # Семейство шрифтов Ubuntu - красивые, не вырвиглазные шрифты без засечек, использую в DE и текстовых документах.
+pacman -S ttf-font-awesome --noconfirm  # Культовый шрифт, разработанный для Bootstrap
+pacman -S ttf-carlito --noconfirm  # Шрифт Google Carlito - метрически совместим с MS Calibri
+pacman -S ttf-caladea --noconfirm  # Семейство шрифтов с засечками по метрике, совместимое с семейством шрифтов MS Cambria 
+pacman -S ttf-bitstream-vera --noconfirm  # Шрифты Bitstream Vera
+pacman -S ttf-droid --noconfirm  # Шрифты общего назначения, выпущенные Google как часть Android
+pacman -S ttf-linux-libertine --noconfirm  # Шрифты OpenType с засечками (Libertine) и Sans Serif (Biolinum) с большим охватом Unicode
+pacman -S gnu-free-fonts --noconfirm  # Бесплатное семейство масштабируемых контурных шрифтов
 
 pacman -S ttf-arphic-ukai --noconfirm  # Шрифт CJK Unicode в стиле Kaiti
 pacman -S ttf-arphic-uming --noconfirm  # CJK Unicode шрифт в стиле Ming
 
-#pacman -S opendesktop-fonts --noconfirm  # Китайские шрифты TrueType 
-pacman -S ttf-fireflysung ttf-sazanami --noconfirm  # Китайские иероглифы
+
+
+pacman -S  --noconfirm  #
+pacman -S  --noconfirm  #
+pacman -S  --noconfirm  #
+pacman -S  --noconfirm  #
+sudo pacman -S ttf-inconsolata --noconfirm  # Моноширинный шрифт для красивых списков кода и для терминала - шрифт для "коддинга", - Можно не ставить.
+
+pacman -S opendesktop-fonts --noconfirm  # Китайские шрифты TrueType 
+pacman -S ttf-fireflysung --noconfirm  # Китайские иероглифы: - ;
+pacman -S ttf-sazanami --noconfirm  # Японские шрифты
 pacman -S ttf-hanazono --noconfirm  # Бесплатный японский шрифт кандзи, который содержит около 78 685 символов (и 2 пробела), определенный в стандарте ISO / IEC 10646 / стандарте Unicode.
 
 
