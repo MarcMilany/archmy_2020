@@ -416,7 +416,7 @@ qemu osmo synapse variety kleopatra'
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S qemu --noconfirm # notepadqq catdoc unrtf id3lib toxcore mlocate dosfstools jfsutils
+sudo pacman -S qemu --noconfirm # flex notepadqq catdoc unrtf id3lib toxcore mlocate dosfstools jfsutils
 sudo pacman -S osmo synapse variety kleopatra --noconfirm 
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.' 
