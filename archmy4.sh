@@ -364,6 +364,18 @@ fi
 Powerpill (Русский)
 https://wiki.archlinux.org/index.php/Powerpill_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 
+Обновление системы
+Чтобы обновить систему (синхронизировать и обновить установленные пакеты) используйте powerpill и опцию -Syu - как вы делаете это с pacman:
+
+# powerpill -Syu
+Установка пакетов
+Чтобы установить пакет и его зависимости, просто используйте powerpill (вместо pacman) с опцией -S:
+
+# powerpill -S package
+Вы также можете установить несколько пакетов, как и при работе с pacman:
+
+# powerpill -S package1 package2 package3
+
 AUR :
 
 powerpill    # Обертка Pacman для более быстрой загрузки  https://aur.archlinux.org/packages/powerpill/
@@ -377,6 +389,13 @@ bauerbill   # Расширение Powerpill с поддержкой AUR и ABS.
 pacserve   # Легко делитесь пакетами Pacman между компьютерами. Замена для PkgD  https://aur.archlinux.org/packages/pacserve/
 https://bugs.mageia.org/show_bug.cgi?id=15425
 # ===========================================
+
+
+Иероглифы в русских названиях файлов в ZIP-архивах
+
+yaourt-S zip-natspec unzip-natspec libnatspec --noconfirm
+После установки они заменяют штатные команды zip и unzip , что позволяет использовать их не только в консоли, но и через ГУИшные программы, использующие zip и unzip в качестве бэкэнда для ZIP-архивов.
+
 
 echo 'Дополнительные пакеты для игр'
 # Additional packages for games
