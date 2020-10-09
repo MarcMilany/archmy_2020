@@ -363,7 +363,10 @@ fi
 
 echo 'Дополнительные пакеты для игр'
 # Additional packages for games
+# Необходимо раскомментировать репозиторий multilib в /etc/pacman.conf.
+# Steam:
 sudo pacman -S steam steam-native-runtime lutris lib32-gconf lib32-dbus-glib lib32-libnm-glib lib32-openal lib32-nss lib32-gtk2 lib32-sdl2 lib32-sdl2_image lib32-libcanberra --noconfirm
+#sudo pacman -S lib32-alsa-plugins lib32-curl --noconfirm
 
 echo 'Дополнительные пакеты для игр AUR'
 # Additional packages for games AUR
