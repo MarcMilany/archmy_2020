@@ -2958,7 +2958,8 @@ echo " Установка поддержки Драйвера принтера (
 elif [[ $prog_print == 1 ]]; then
   echo ""  
   echo " Установка поддержки Драйвера принтера (Поддержка печати) CUPS "
-sudo pacman -S cups ghostscript cups-pdf --noconfirm   
+sudo pacman -S cups cups-pdf cups-pk-helper --noconfirm 
+sudo pacman -S system-config-printer ghostscript --noconfirm  
 sudo pacman -S gsfonts gutenprint hplip --noconfirm   # python-imaging 
 fi
 # ---------------------------------------------------------------------
