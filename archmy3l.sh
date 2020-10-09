@@ -1673,7 +1673,7 @@ echo -e "${GREEN}==> ${BOLD}Установить рекомендованные 
 #echo -e "${BLUE}:: ${NC}Установить рекомендованные программы (пакеты)?"
 #echo 'Установить рекомендованные программы?'
 # Install the recommended programs
-echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gparted, grub-customizer, dconf-editor, conky, conky-manager, obs-studio, filezilla, telegram-desktop, flameshot, redshift, bleachbit, doublecmd-gtk2, keepass, veracrypt, nomacs, onboard, meld, uget, plank)." 
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gparted, grub-customizer, dconf-editor, conky, conky-manager, obs-studio, filezilla, telegram-desktop, flameshot, redshift, bleachbit, doublecmd-gtk2, keepass, veracrypt, nomacs, onboard, meld, uget, plank, openshot, , )." 
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -2151,6 +2151,32 @@ fi
 
 clear
 echo "" 
+echo -e "${BLUE}:: ${NC}Установить OpenShot (нелинейный видеоредактор)?" 
+echo -e "${MAGENTA}:: ${BOLD}OpenShot - это свободный нелинейный видеоредактор, отмеченный наградами с открытым исходным кодом. Он конечно уступает Davinci resolve, но, для того что бы сделать видеомонтаж например для ютуб, его вполне хватит. ${NC}"
+echo " OpenShot был разработан с помощью Python, GTK и MLT Framework. " 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_openshot  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_openshot" =~ [^10] ]]
+do
+    :
+done 
+if [[ $i_openshot == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $i_openshot == 1 ]]; then
+  echo ""  
+  echo " Установка OpenShot (нелинейный видеоредактор) "
+sudo pacman -S openshot --noconfirm  # Бесплатный видеоредактор
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
+
+clear
+echo "" 
 echo -e "${BLUE}:: ${NC}Установить Galculator (калькулятор)(на основе GTK+)(версия GTK2)?" 
 echo -e "${MAGENTA}:: ${BOLD}Galculator - научный калькулятор для Linux. Galculator имеет три режима работы: (простой, научный и paper mode, в котором вычисления можно проводить путем ввода выражения в текстовое окно). ${NC}"
 echo " Поддерживает десятичную, шестнадцатеричную, восьмеричную и двоичную системы счисления. Также поддерживаются разные угловые меры - градусы, радианы, грады. " 
@@ -2197,32 +2223,6 @@ elif [[ $i_calculator == 1 ]]; then
   echo ""  
   echo " Установка GNOME Calculator (калькулятор) "
 sudo pacman -S gnome-calculator --noconfirm  # Научный калькулятор GNOME
-echo ""   
-echo " Установка утилит (пакетов) выполнена "
-fi
-
-clear
-echo "" 
-echo -e "${BLUE}:: ${NC}Установить OpenShot (нелинейный видеоредактор)?" 
-echo -e "${MAGENTA}:: ${BOLD}OpenShot - это свободный нелинейный видеоредактор, отмеченный наградами с открытым исходным кодом. Он конечно уступает Davinci resolve, но, для того что бы сделать видеомонтаж например для ютуб, его вполне хватит. ${NC}"
-echo " OpenShot был разработан с помощью Python, GTK и MLT Framework. " 
-echo "" 
-while  
-echo " Действия ввода, выполняется сразу после нажатия клавиши "
-    read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_openshot  # sends right after the keypress; # отправляет сразу после нажатия клавиши
-    echo ''
-    [[ "$i_openshot" =~ [^10] ]]
-do
-    :
-done 
-if [[ $i_openshot == 0 ]]; then 
-echo ""   
-echo " Установка утилит (пакетов) пропущена "
-elif [[ $i_openshot == 1 ]]; then
-  echo ""  
-  echo " Установка OpenShot (нелинейный видеоредактор) "
-sudo pacman -S openshot --noconfirm  # Бесплатный видеоредактор
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
