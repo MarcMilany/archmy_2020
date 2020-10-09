@@ -1329,17 +1329,21 @@ fi
 
 echo ""
 echo -e "${BLUE}:: ${NC}Ставим шрифты"
-pacman -S ttf-liberation ttf-dejavu --noconfirm 
-pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-hanazono --noconfirm  
+# Ставим шрифты:  https://www.archlinux.org/packages/
+pacman -S ttf-dejavu --noconfirm  # Семейство шрифтов на основе Bitstream Vera Fonts с более широким набором символов
+pacman -S ttf-liberation --noconfirm  # Шрифты Red Hats Liberation
 pacman -S ttf-anonymous-pro --noconfirm  # Семейство из четырех шрифтов фиксированной ширины, разработанных специально с учетом кодирования
+pacman -S ttf-arphic-ukai --noconfirm  # Шрифт CJK Unicode в стиле Kaiti
+pacman -S ttf-arphic-uming --noconfirm  # CJK Unicode шрифт в стиле Ming
 pacman -S terminus-font --noconfirm  # Моноширинный растровый шрифт (для X11 и консоли)
-#pacman -S opendesktop-fonts --noconfirm  # Китайские шрифты TrueType
+#pacman -S opendesktop-fonts --noconfirm  # Китайские шрифты TrueType 
 pacman -S ttf-fireflysung ttf-sazanami --noconfirm  # Китайские иероглифы
+pacman -S ttf-hanazono --noconfirm  # Бесплатный японский шрифт кандзи, который содержит около 78 685 символов (и 2 пробела), определенный в стандарте ISO / IEC 10646 / стандарте Unicode.
 
 ### Install NTFS support "NTFS file support (Windows Drives)"
 echo ""
 echo -e "${BLUE}:: ${NC}Монтирование разделов NTFS и создание ссылок"
-pacman -S ntfs-3g --noconfirm
+pacman -S ntfs-3g --noconfirm  # Драйвер и утилиты файловой системы NTFS
 
 echo ""
 echo -e "${BLUE}:: ${NC}Установка базовых программ и пакетов"
