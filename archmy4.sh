@@ -317,6 +317,7 @@ sudo pacman -S linux-headers --noconfirm # Заголовки и скрипты 
 sudo pacman -S  --noconfirm
 
 sudo modprobe vboxdrv  # Загрузка модулей
+# sudo modprobe -a vboxguest vboxsf vboxvideo
 # sudo gpasswd -a имя_пользователя vboxusers
 sudo gpasswd -a $username vboxusers
 
