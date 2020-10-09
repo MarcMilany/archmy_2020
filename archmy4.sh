@@ -380,6 +380,7 @@ echo 'Офисные пакеты'
 sudo pacman -S libreoffice-still --noconfirm  # Филиал обслуживания LibreOffice
 sudo pacman -S libreoffice-still-ru --noconfirm  # Пакет русского языка для LibreOffice still
 sudo pacman -S libreoffice-extension-writer2latex --noconfirm  # набор расширений LibreOffice для преобразования и работы с LaTeX в LibreOffice
+# ИЛИ
 sudo pacman -S libreoffice-fresh --noconfirm  # Ветвь LibreOffice, содержащая новые функции и улучшения программы
 sudo pacman -S libreoffice-fresh-ru --noconfirm  # Пакет русского языка для LibreOffice Fresh
 sudo pacman -S --noconfirm  # 
