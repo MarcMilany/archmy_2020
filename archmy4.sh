@@ -191,6 +191,18 @@ elif [[ $prog_set == 0 ]]; then
   echo 'Установка дополнительных шрифтов пропущена.'
 fi
 
+echo ""
+echo -e "${BLUE}:: ${NC}Ставим шрифты"
+# Ставим шрифты:  https://www.archlinux.org/packages/
+
+pacman -S ttf-arphic-ukai --noconfirm  # Шрифт CJK Unicode в стиле Kaiti
+pacman -S ttf-arphic-uming --noconfirm  # CJK Unicode шрифт в стиле Ming
+
+#pacman -S opendesktop-fonts --noconfirm  # Китайские шрифты TrueType 
+pacman -S ttf-fireflysung ttf-sazanami --noconfirm  # Китайские иероглифы
+pacman -S ttf-hanazono --noconfirm  # Бесплатный японский шрифт кандзи, который содержит около 78 685 символов (и 2 пробела), определенный в стандарте ISO / IEC 10646 / стандарте Unicode.
+
+
 echo 'Обновим информацию о шрифтах'
 # Update information about fonts
 sudo fc-cache -f -v
@@ -422,6 +434,7 @@ elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.' 
 fi
 
+# freemind  - Ментальный картограф и в то же время простой в использовании иерархический редактор с упором на сворачивание
 # kleopatra - Диспетчер сертификатов и унифицированный графический интерфейс криптографии
 # inetutils - Сборник общих сетевых программ
 # hplip  - Драйверы для HP DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых LaserJet
