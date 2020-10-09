@@ -324,6 +324,11 @@ yay -S skypeforlinux-stable-bin skype-call-recorder vk-messenger viber pidgin-ex
 
 echo 'Сетевые утилиты, Tor, VPN, SSH, Samba и тд...'
 # Network utilities, Tor, VPN, SSH, Samba, etc...
+sudo pacman -S tor torsocks --noconfirm
+# Запуск, остановка сервиса tor:
+#sudo systemctl start tor
+#sudo systemctl stop tor
+
 sudo pacman -S --noconfirm
 
 echo 'Сетевые утилиты, Tor, VPN, SSH, Samba и тд... AUR'
