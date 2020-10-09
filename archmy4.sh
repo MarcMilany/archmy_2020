@@ -392,10 +392,15 @@ yay -S  --noconfirm
 yay -S wps-office --noconfirm  # Kingsoft Office (WPS Office) - офисный пакет для повышения производительности
 yay -S ttf-wps-fonts --noconfirm  # Если установлен WPS - Символьные шрифты требуются wps-office
 yay -S wps-office-mui-ru-ru --noconfirm  # Пакеты MUI для WPS Office
-yay -S  --noconfirm
+yay -S wps-office-extension-russian-dictionary --noconfirm  # Русский словарь для WPS Office
 # Openoffice
-yay -S  --noconfirm
-yay -S  --noconfirm
+yay -S openoffice --noconfirm  # Apache OpenOffice 
+yay -S openoffice-ru-bin --noconfirm  # Пакет русского языка для OpenOffice.org
+# Onlyoffice
+yay -S onlyoffice-bin --noconfirm  # Офисный пакет, сочетающий в себе редакторы текста, таблиц и презентаций
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
 
 echo 'Утилиты для работы с CD,DVD, создание ISO образов, запись на флеш-накопители'
 # Utilities for working with CD, DVD, creating ISO images, writing to flash drives
