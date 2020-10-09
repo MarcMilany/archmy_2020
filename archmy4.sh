@@ -280,7 +280,7 @@ if [[ $prog_set == 1 ]]; then
 yay -S radiotray --noconfirm 
 yay -S spotify --noconfirm
 yay -S vlc-tunein-radio --noconfirm
-yay -S vlc-pause-click-plugin --noconfirm
+yay -S vlc-pause-click-plugin --noconfirm  # Плагин для VLC, который приостанавливает / воспроизводит видео по щелчку мыши
 yay -S audiobook-git --noconfirm
 yay -S cozy-audiobooks --noconfirm
 yay -S m4baker-git --noconfirm
