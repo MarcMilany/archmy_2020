@@ -244,7 +244,7 @@ yay -S ttf-font-icons --noconfirm  # Неперекрывающееся соче
 yay -S ttf-droid-sans-mono-slashed-powerline-git --noconfirm  # Droid Sans Mono для Powerline (Slashed Zero) - шрифт с "треугольником" для powerline, использую в ZSH prompt
 yay -S ttf-dejavu-sans-mono-powerline-git --noconfirm  # DejaVu Sans Mono для Powerline
 yay -S ttf-material-icons-git --noconfirm  # Шрифт значка Google Material Design
-yay -S ttf-wps-fonts --noconfirm  # Если установлен WPS - Символьные шрифты требуются wps-office
+# yay -S ttf-wps-fonts --noconfirm  # Если установлен WPS - Символьные шрифты требуются wps-office
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
@@ -371,6 +371,30 @@ sudo pacman -S  --noconfirm
 
 echo 'Утилиты для проектирования, черчения и тд... AUR'
 # Utilities for designing, drawing, and so on... AUR
+yay -S  --noconfirm
+yay -S  --noconfirm
+yay -S  --noconfirm
+
+echo 'Офисные пакеты'
+# Online storage networks
+sudo pacman -S libreoffice-fresh --noconfirm  # Ветвь LibreOffice, содержащая новые функции и улучшения программы
+sudo pacman -S libreoffice-fresh-ru --noconfirm  # Пакет русского языка для LibreOffice Fresh
+sudo pacman -S --noconfirm  # 
+sudo pacman -S --noconfirm  # 
+sudo pacman -S --noconfirm  # 
+
+echo 'Офисные пакеты AUR'
+# Online storage networks AUR
+yay -S papirus-libreoffice-theme --noconfirm  # Тема Papirus для LibreOffice
+yay -S  --noconfirm
+yay -S  --noconfirm
+# Wps office
+yay -S wps-office --noconfirm  # Kingsoft Office (WPS Office) - офисный пакет для повышения производительности
+yay -S ttf-wps-fonts --noconfirm  # Если установлен WPS - Символьные шрифты требуются wps-office
+yay -S wps-office-mui-ru-ru --noconfirm  # Пакеты MUI для WPS Office
+yay -S  --noconfirm
+# Openoffice
+yay -S  --noconfirm
 yay -S  --noconfirm
 
 echo 'Утилиты для работы с CD,DVD, создание ISO образов, запись на флеш-накопители'
