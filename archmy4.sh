@@ -376,7 +376,10 @@ yay -S  --noconfirm
 yay -S  --noconfirm
 
 echo 'Офисные пакеты'
-# Online storage networks
+# Office suite
+sudo pacman -S libreoffice-still --noconfirm  # Филиал обслуживания LibreOffice
+sudo pacman -S libreoffice-still-ru --noconfirm  # Пакет русского языка для LibreOffice still
+sudo pacman -S libreoffice-extension-writer2latex --noconfirm  # набор расширений LibreOffice для преобразования и работы с LaTeX в LibreOffice
 sudo pacman -S libreoffice-fresh --noconfirm  # Ветвь LibreOffice, содержащая новые функции и улучшения программы
 sudo pacman -S libreoffice-fresh-ru --noconfirm  # Пакет русского языка для LibreOffice Fresh
 sudo pacman -S --noconfirm  # 
@@ -384,7 +387,7 @@ sudo pacman -S --noconfirm  #
 sudo pacman -S --noconfirm  # 
 
 echo 'Офисные пакеты AUR'
-# Online storage networks AUR
+# Office suite AUR
 yay -S papirus-libreoffice-theme --noconfirm  # Тема Papirus для LibreOffice
 yay -S  --noconfirm
 yay -S  --noconfirm
