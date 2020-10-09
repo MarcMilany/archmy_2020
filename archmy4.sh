@@ -186,7 +186,7 @@ ttf-bitstream-vera freemind '
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S ttf-linux-libertine ttf-freefont ttf-bitstream-vera ttf-droid freemind --noconfirm
+sudo pacman -S  --noconfirm
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка дополнительных шрифтов пропущена.'
 fi
@@ -194,34 +194,29 @@ fi
 echo ""
 echo -e "${BLUE}:: ${NC}Ставим шрифты"
 # Ставим шрифты:  https://www.archlinux.org/packages/
-pacman -S fontforge --noconfirm  # Редактор контурных и растровых шрифтов
-pacman -S gsfonts --noconfirm  # (URW) ++ Базовый набор шрифтов [Уровень 2]
-pacman -S ttf-croscore --noconfirm  # Основные шрифты Chrome OS, они метрически совместимы с MS, и хорошо смотрятся, содержат Arimo, Tinos, Cousine и тп.
-pacman -S ttf-ubuntu-font-family --noconfirm  # Семейство шрифтов Ubuntu - красивые, не вырвиглазные шрифты без засечек, использую в DE и текстовых документах.
-pacman -S ttf-font-awesome --noconfirm  # Культовый шрифт, разработанный для Bootstrap
-pacman -S ttf-carlito --noconfirm  # Шрифт Google Carlito - метрически совместим с MS Calibri
-pacman -S ttf-caladea --noconfirm  # Семейство шрифтов с засечками по метрике, совместимое с семейством шрифтов MS Cambria 
-pacman -S ttf-bitstream-vera --noconfirm  # Шрифты Bitstream Vera
-pacman -S ttf-droid --noconfirm  # Шрифты общего назначения, выпущенные Google как часть Android
-pacman -S ttf-linux-libertine --noconfirm  # Шрифты OpenType с засечками (Libertine) и Sans Serif (Biolinum) с большим охватом Unicode
-pacman -S gnu-free-fonts --noconfirm  # Бесплатное семейство масштабируемых контурных шрифтов
-
-pacman -S ttf-arphic-ukai --noconfirm  # Шрифт CJK Unicode в стиле Kaiti
-pacman -S ttf-arphic-uming --noconfirm  # CJK Unicode шрифт в стиле Ming
-
-
-
-pacman -S  --noconfirm  #
-pacman -S  --noconfirm  #
-pacman -S  --noconfirm  #
-pacman -S  --noconfirm  #
+sudo pacman -S fontforge --noconfirm  # Редактор контурных и растровых шрифтов
+sudo pacman -S gsfonts --noconfirm  # (URW) ++ Базовый набор шрифтов [Уровень 2]
+sudo pacman -S ttf-croscore --noconfirm  # Основные шрифты Chrome OS, они метрически совместимы с MS, и хорошо смотрятся, содержат Arimo, Tinos, Cousine и тп.
+sudo pacman -S ttf-ubuntu-font-family --noconfirm  # Семейство шрифтов Ubuntu - красивые, не вырвиглазные шрифты без засечек, использую в DE и текстовых документах.
+sudo pacman -S ttf-font-awesome --noconfirm  # Культовый шрифт, разработанный для Bootstrap
+sudo pacman -S ttf-carlito --noconfirm  # Шрифт Google Carlito - метрически совместим с MS Calibri
+sudo pacman -S ttf-caladea --noconfirm  # Семейство шрифтов с засечками по метрике, совместимое с семейством шрифтов MS Cambria 
+sudo pacman -S ttf-bitstream-vera --noconfirm  # Шрифты Bitstream Vera
+sudo pacman -S ttf-droid --noconfirm  # Шрифты общего назначения, выпущенные Google как часть Android
+sudo pacman -S ttf-linux-libertine --noconfirm  # Шрифты OpenType с засечками (Libertine) и Sans Serif (Biolinum) с большим охватом Unicode
+sudo pacman -S gnu-free-fonts --noconfirm  # Бесплатное семейство масштабируемых контурных шрифтов
+sudo pacman -S ttf-roboto-mono --noconfirm  # Моноширинное дополнение к семейству роботов Roboto
+sudo pacman -S ttf-nerd-fonts-symbols --noconfirm  # Большое количество дополнительных глифов из популярных `` культовых шрифтов '' (2048-em)
+sudo pacman -S ttf-ionicons --noconfirm  # Шрифт из мобильного фреймворка Ionic
+sudo pacman -S ttf-arphic-ukai --noconfirm  # Шрифт CJK Unicode в стиле Kaiti
+sudo pacman -S ttf-arphic-uming --noconfirm  # CJK Unicode шрифт в стиле Ming
 sudo pacman -S ttf-inconsolata --noconfirm  # Моноширинный шрифт для красивых списков кода и для терминала - шрифт для "коддинга", - Можно не ставить.
-
-pacman -S opendesktop-fonts --noconfirm  # Китайские шрифты TrueType 
-pacman -S ttf-fireflysung --noconfirm  # Китайские иероглифы: - ;
-pacman -S ttf-sazanami --noconfirm  # Японские шрифты
-pacman -S ttf-hanazono --noconfirm  # Бесплатный японский шрифт кандзи, который содержит около 78 685 символов (и 2 пробела), определенный в стандарте ISO / IEC 10646 / стандарте Unicode.
-
+# Китайские, Японские, Индийские шрифт
+sudo pacman -S opendesktop-fonts --noconfirm  # Китайские шрифты TrueType 
+sudo pacman -S ttf-fireflysung --noconfirm  # Китайские иероглифы: - ;
+sudo pacman -S ttf-sazanami --noconfirm  # Японские шрифты
+sudo pacman -S ttf-hanazono --noconfirm  # Бесплатный японский шрифт кандзи, который содержит около 78 685 символов (и 2 пробела), определенный в стандарте ISO / IEC 10646 / стандарте Unicode.
+sudo pacman -S ttf-indic-otf --noconfirm  # Коллекция индийских шрифтов Opentype
 
 echo 'Обновим информацию о шрифтах'
 # Update information about fonts
