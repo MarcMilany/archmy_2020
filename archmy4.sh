@@ -309,8 +309,32 @@ echo 'Установка программ для рисования и реда�
 yay -S  --noconfirm
 
 echo 'Установка Oracle VM VirtualBox'
-# Installing Oracle VM VirtualBox
+# Installing Oracle VM VirtualBox 
+sudo pacman -S virtualbox --noconfirm  # Мощная виртуализация x86 как для корпоративного, так и для домашнего использования
+sudo pacman -S virtualbox-host-modules-arch --noconfirm # для ядра linux - Модули ядра хоста Virtualbox для Arch Kernel
+sudo pacman -S virtualbox-host-dkms --noconfirm # для других ядер - Источники модулей ядра VirtualBox Host
+sudo pacman -S linux-headers --noconfirm # Заголовки и скрипты для сборки модулей для ядра Linux
 sudo pacman -S  --noconfirm
+
+sudo modprobe vboxdrv
+# sudo gpasswd -a имя_пользователя vboxusers
+sudo gpasswd -a $username vboxusers
+
+# Общая директория, на машине
+mkdir ~/vboxshare
+# Общая директория, на виртуалке
+#mkdir ~/vboxshare
+#sudo mount -t vboxsf -o rw,uid=1000,gid=1000 vboxshare vboxshare
+
+# Настройка гостевых дополнений на виртуалке.
+sudo pacman -S virtualbox-guest-utils --noconfirm # Утилиты пользовательского пространства VirtualBox Guest
+sudo pacman -S linux-headers --noconfirm # Заголовки и скрипты для сборки модулей для ядра Linux
+sudo pacman -S virtualbox-guest-dkms --noconfirm # Исходники модулей ядра VirtualBox Guest
+sudo pacman -S virtualbox-guest-iso --noconfirm # Официальный ISO-образ VirtualBox Guest Additions
+# -------------------------
+# Arch Wiki Virtualbox 
+# https://wiki.archlinux.org/index.php/VirtualBox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
+# ===============================
 
 echo 'Установка Oracle VM VirtualBox AUR'
 # Installing Oracle VM VirtualBox AUR
