@@ -428,6 +428,9 @@ echo 'Сетевые утилиты, Tor, VPN, SSH, Samba и тд...'
 # Network utilities, Tor, VPN, SSH, Samba, etc...
 sudo pacman -S tor torsocks --noconfirm
 sudo pacman -S proxychains-ng privoxy openvpn --noconfirm
+sudo pacman -S samba --noconfirm  # Файловый сервер SMB и сервер домена AD
+sudo pacman -S  --noconfirm  # 
+
 # Запуск, остановка сервиса tor:
 #sudo systemctl start tor
 #sudo systemctl stop tor
@@ -437,6 +440,7 @@ sudo pacman -S --noconfirm
 echo 'Сетевые утилиты, Tor, VPN, SSH, Samba и тд... AUR'
 # Network utilities, Tor, VPN, SSH, Samba, etc... AUR
 yay -S --noconfirm 
+yay -S system-config-samba --noconfirm  # Инструмент настройки Samba от Red Hat
 
 echo 'Установить рекомендуемые программы?'
 # To install the recommended program?
