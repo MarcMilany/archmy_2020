@@ -376,16 +376,15 @@ echo 'Установка Дополнительных программ'
 # Installing Additional programs
 echo -e "${BLUE}
 'Список Дополнительных программ к установке:${GREEN}
-galculator-gtk2' 
+qemu osmo synapse variety kleopatra' 
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S galculator-gtk2 --noconfirm # notepadqq catdoc unrtf id3lib toxcore mlocate dosfstools jfsutils
+sudo pacman -S qemu --noconfirm # notepadqq catdoc unrtf id3lib toxcore mlocate dosfstools jfsutils
+sudo pacman -S osmo synapse variety kleopatra --noconfirm 
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.' 
 fi
-
-
 
 # kleopatra - Диспетчер сертификатов и унифицированный графический интерфейс криптографии
 # inetutils - Сборник общих сетевых программ
