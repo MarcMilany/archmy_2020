@@ -361,6 +361,9 @@ elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.'
 fi
 # --------------------------------------
+Powerpill (Русский)
+https://wiki.archlinux.org/index.php/Powerpill_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
+
 AUR :
 
 powerpill    # Обертка Pacman для более быстрой загрузки  https://aur.archlinux.org/packages/powerpill/
