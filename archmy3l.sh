@@ -1631,7 +1631,8 @@ echo " Установка пакета LibreOffice пропущена "
 elif [[ $t_office == 1 ]]; then
 echo ""    
 echo " Установка LibreOffice-still "
-sudo pacman -S libreoffice-still libreoffice-still-ru --noconfirm
+sudo pacman -S libreoffice-still --noconfirm  # Филиал обслуживания LibreOffice
+sudo pacman -S libreoffice-still-ru --noconfirm  # Пакет русского языка для LibreOffice still
 sudo pacman -S libreoffice-extension-writer2latex --noconfirm  # набор расширений LibreOffice для преобразования и работы с LaTeX в LibreOffice
 #clear
 echo ""    
