@@ -893,12 +893,33 @@ elif [[ $i_sound == 1 ]]; then
 sudo pacman -S alsa-utils alsa-plugins alsa-firmware alsa-lib alsa-utils --noconfirm 
 sudo pacman -S lib32-alsa-plugins --noconfirm  # Дополнительные плагины ALSA (32-бит)
 sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-zeroconf pulseaudio-bluetooth pulseaudio-equalizer-ladspa --noconfirm  
-sudo pacman -S xfce4-pulseaudio-plugin --noconfirm  
+sudo pacman -S xfce4-pulseaudio-plugin --noconfirm 
+sudo pacman -S pulseaudio-zeroconf --noconfirm   # Поддержка Zeroconf для PulseAudio
+sudo pacman -S pasystray --noconfirm   # Системный трей PulseAudio (замена # padevchooser)
 #sudo pacman -Sy pulseaudio-bluetooth alsa-utils pulseaudio-equalizer-ladspa   --noconfirm
 clear
 echo ""   
 echo " Установка пакетов Поддержки звука выполнена "
 fi
+# -----------------------------------------------
+# Pulseaudio zeroconf звук по сети:
+# У меня есть сервер, к которому подключены колонки 5.1, и есть ноутбук, с которого нужно передавать звук на 5.1.
+# На обоих тачках стоит гента. Поставил pulseaudio и там и там.
+# На сервере дописал следующие строчки в конфиг:
+# load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1;192.168.0.0/24 auth-anonymous=1
+# load-module module-zeroconf-publish
+# load-module module-rtp-recv
+# На ноутбуке:
+# load-module module-zeroconf-discover
+# Теперь если я в файле /etc/pulse/client.conf укажу строчку
+# default-server = tcp:192.168.0.3:4713
+# То все работает замечательно!
+# Либо если я запущу mplayer следующей командой:
+# mplayer -ao pulse:192.168.0.3 -channels 6 Фильм.avi
+# То все так-же хорошо.
+# Но на днях я нашел программу pasystray (замена padevchooser). Она позволяет перенаправлять звук у каждой программы туда, куда надо (находя другие серверы по zeroconf). Учитывая, что это ноутбук, данный функционал я счел очень полезным, но с ним возникла проблема.
+# При смене sink на pulseaudio сервера, звук передается на сервер, но видео начинает тупить и зависает. Попытка поставить самую последнюю версию pulseaudio и на сервере и на ноутбуке ни к чему не привела.
+# =============================================
 
 echo ""
 echo -e "${GREEN}==> ${NC}Установить Blueman - диспетчер bluetooth устройств?"
