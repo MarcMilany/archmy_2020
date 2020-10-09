@@ -230,9 +230,24 @@ ttf-ms-fonts font-manager'
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-yay -S ttf-ms-fonts font-manager --noconfirm 
-yay -S font-manager --noconfirm 
+yay -S font-manager --noconfirm    
+yay -S ttf-ms-fonts --noconfirm  # Основные шрифты TTF от Microsoft
+yay -S ttf-ms-win8 --noconfirm  # По желанию: (содержит в себе ttf-ms-fonts, ttf-vista-fonts и ttf-win7-fonts, т.е. всё что надо включая Calibri и .т.п.)
 yay -S artwiz-fonts --noconfirm  # Для пакета LibreOffice
+yay -S ttf-clear-sans --noconfirm  # Универсальный шрифт OpenType для экрана, печати и Интернета
+yay -S ttf-monaco --noconfirm  # Моноширинный шрифт без засечек Monaco со специальными символами
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+
+
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка дополнительных шрифтов AUR пропущена.'
 fi
