@@ -236,18 +236,18 @@ yay -S ttf-ms-win8 --noconfirm  # По желанию: (содержит в се
 yay -S artwiz-fonts --noconfirm  # Для пакета LibreOffice
 yay -S ttf-clear-sans --noconfirm  # Универсальный шрифт OpenType для экрана, печати и Интернета
 yay -S ttf-monaco --noconfirm  # Моноширинный шрифт без засечек Monaco со специальными символами
+yay -S montserrat-font-ttf --noconfirm  # Геометрический шрифт с кириллицей и расширенной латиницей от Джульетты Улановской
+yay -S ttf-comfortaa --noconfirm  # Закругленный геометрический шрифт без засечек от Google, автор - Йохан Аакерлунд
+yay -S ttf-nerd-fonts-hack-complete-git --noconfirm  # Шрифт, разработанный для исходного кода. Исправлены иконки Nerd Fonts
+yay -S ttf-font-logos --noconfirm  # Значок шрифта с логотипами популярных дистрибутивов Linux
+yay -S ttf-font-icons --noconfirm  # Неперекрывающееся сочетание иконических шрифтов Ionicons и Awesome 
+yay -S ttf-droid-sans-mono-slashed-powerline-git --noconfirm  # Droid Sans Mono для Powerline (Slashed Zero) - шрифт с "треугольником" для powerline, использую в ZSH prompt
+yay -S ttf-dejavu-sans-mono-powerline-git --noconfirm  # DejaVu Sans Mono для Powerline
+yay -S ttf-material-icons-git --noconfirm  # Шрифт значка Google Material Design
+yay -S ttf-wps-fonts --noconfirm  # Если установлен WPS - Символьные шрифты требуются wps-office
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-
-
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка дополнительных шрифтов AUR пропущена.'
 fi
