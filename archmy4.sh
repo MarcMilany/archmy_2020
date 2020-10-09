@@ -360,6 +360,20 @@ yay -S gksu debtap caffeine-ng inxi xneur fsearch-git cherrytree timeshift mocic
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.'
 fi
+# --------------------------------------
+AUR :
+
+powerpill    # Обертка Pacman для более быстрой загрузки  https://aur.archlinux.org/packages/powerpill/
+Мне нужно было установить python3-memoizedb для его запуска, однако он не указан здесь как зависимость
+
+python3-memoizedb  # Универсальный мемоизатор поиска данных, который использует базу данных sqlite для кэширования данных  https://aur.archlinux.org/packages/python3-memoizedb/
+
+bauerbill   # Расширение Powerpill с поддержкой AUR и ABS.  https://aur.archlinux.org/packages/bauerbill/
+Не беспокойся. Просто использовал bb -Syu --aur --ignore bauerbillпока ждал пока починят. : P Большое спасибо за исправление!
+
+pacserve   # Легко делитесь пакетами Pacman между компьютерами. Замена для PkgD  https://aur.archlinux.org/packages/pacserve/
+https://bugs.mageia.org/show_bug.cgi?id=15425
+# ===========================================
 
 echo 'Дополнительные пакеты для игр'
 # Additional packages for games
