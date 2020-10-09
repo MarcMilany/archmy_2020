@@ -1330,10 +1330,11 @@ fi
 echo ""
 echo -e "${BLUE}:: ${NC}Ставим шрифты"
 pacman -S ttf-liberation ttf-dejavu --noconfirm 
-pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-hanazono --noconfirm  # opendesktop-fonts 
+pacman -S ttf-arphic-ukai ttf-arphic-uming ttf-hanazono --noconfirm  
 pacman -S ttf-anonymous-pro --noconfirm  # Семейство из четырех шрифтов фиксированной ширины, разработанных специально с учетом кодирования
 pacman -S terminus-font --noconfirm  # Моноширинный растровый шрифт (для X11 и консоли)
-pacman -S ttf-fireflysung ttf-sazanami --noconfirm  # -китайские иероглифы
+#pacman -S opendesktop-fonts --noconfirm  # Китайские шрифты TrueType
+pacman -S ttf-fireflysung ttf-sazanami --noconfirm  # Китайские иероглифы
 
 ### Install NTFS support "NTFS file support (Windows Drives)"
 echo ""
