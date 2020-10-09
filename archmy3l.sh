@@ -1236,7 +1236,7 @@ elif [[ $i_multimedia == 1 ]]; then
   echo ""   
   echo " Установка мультимедиа кодеков и утилит (пакетов) "
 sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore libdvdcss libdvdread libdvdnav dvd+rw-tools dvdauthor dvgrab cdrdao gst-libav gst-libav gpac --noconfirm 
-# Устанавливаем кодеки
+# Устанавливаем кодеки  https://gstreamer.freedesktop.org/
 sudo pacman -S gstreamer gstreamer-vaapi gst-libav gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly --noconfirm 
 clear
 echo ""   
