@@ -2201,12 +2201,32 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+clear
+echo "" 
+echo -e "${BLUE}:: ${NC}Установить OpenShot (нелинейный видеоредактор)?" 
+echo -e "${MAGENTA}:: ${BOLD}OpenShot - это свободный нелинейный видеоредактор, отмеченный наградами с открытым исходным кодом. Он конечно уступает Davinci resolve, но, для того что бы сделать видеомонтаж например для ютуб, его вполне хватит. ${NC}"
+echo " OpenShot был разработан с помощью Python, GTK и MLT Framework. " 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_openshot  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_openshot" =~ [^10] ]]
+do
+    :
+done 
+if [[ $i_openshot == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $i_openshot == 1 ]]; then
+  echo ""  
+  echo " Установка OpenShot (нелинейный видеоредактор) "
+sudo pacman -S openshot --noconfirm  # Бесплатный видеоредактор
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
 
-
-
-
-
-openshot
 clear
 echo ""
 echo -e "${GREEN}==> ${BOLD}Установить рекомендованные программы (пакеты)? ${NC}"
