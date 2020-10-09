@@ -316,7 +316,7 @@ sudo pacman -S virtualbox-host-dkms --noconfirm # для других ядер -
 sudo pacman -S linux-headers --noconfirm # Заголовки и скрипты для сборки модулей для ядра Linux
 sudo pacman -S  --noconfirm
 
-sudo modprobe vboxdrv
+sudo modprobe vboxdrv  # Загрузка модулей
 # sudo gpasswd -a имя_пользователя vboxusers
 sudo gpasswd -a $username vboxusers
 
