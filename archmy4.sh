@@ -341,13 +341,15 @@ sudo pacman -S virtualbox --noconfirm  # Мощная виртуализация
 sudo pacman -S virtualbox-host-dkms --noconfirm  # для других ядер - Источники модулей ядра VirtualBox Host
 sudo pacman -S linux-headers --noconfirm  # Заголовки и скрипты для сборки модулей для ядра Linux
 sudo pacman -S  --noconfirm
-
+# Затем загрузите драйвер Vbox с помощью этой команды:
 sudo modprobe vboxdrv  # Загрузка модулей
 # sudo modprobe -a vboxguest vboxsf vboxvideo
-echo "vboxdrv" > /etc/modules-load.d/virtualbox.conf
-     
+# Чтобы предоставить себе разрешения для доступа virtualbox к общим папкам и USB устройствам используйте эту команду:     
 # sudo gpasswd -a имя_пользователя vboxusers
+# sudo gpasswd -a $USER vboxusers
 sudo gpasswd -a $username vboxusers
+# Чтобы загрузить модуль VirtualBox во время загрузки, обратитесь к разделу Kernel_modules#Loading и создайте файл *.conf со строкой:
+echo "vboxdrv" > /etc/modules-load.d/virtualbox.conf
 
 # Общая директория, на машине
 mkdir ~/vboxshare
@@ -367,7 +369,11 @@ mkdir ~/vboxshare
 
 echo 'Установка Oracle VM VirtualBox AUR'
 # Installing Oracle VM VirtualBox AUR
-yay -S  --noconfirm
+yay -S virtualbox-ext-oracle --noconfirm  # Пакет расширений Oracle VM VirtualBox
+yay -S  --noconfirm  # 
+yay -S  --noconfirm  # 
+yay -S  --noconfirm  # 
+yay -S  --noconfirm  # 
 
 echo 'Установка Java JDK средство разработки и среда для создания Java-приложений'
 # Installing Java JDK development tool and environment for creating Java applications
