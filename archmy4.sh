@@ -947,3 +947,6 @@ makepkg -si
 package-query - Запрос ALPM и AUR  https://aur.archlinux.org/packages/package-query/
 https://github.com/archlinuxfr/package-query/
 #################################
+
+
+
