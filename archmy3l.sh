@@ -3424,7 +3424,10 @@ sudo rm -rf ~/archmy3
 ### Clean pacman cache (Очистить кэш pacman) ####
 echo ""
 echo -e "${BLUE}:: ${BOLD}Очистка кэша pacman ${NC}"
-
+#echo -e "${CYAN}=> ${NC}Удаление неиспользуемых зависимостей 'pacman -Qdtq'..."
+#pacman --noconfirm -Rcsn $(pacman -Qdtq) # --noconfirm (не спрашивать каких-либо подтверждений), -R --remove (Удалить пакет(ы) из системы), -c, --cascade (удалить пакеты и все пакеты, которые зависят от них), -s, --recursive (удалить ненужные зависимости), -n, --nosave (удалить конфигурационные файлы)
+# "(Clean orphan)" "pacman -Rns \$(pacman -Qqtd)"
+# pacman -Rns $(pacman -Qqtd)
 echo -e "${CYAN}=> ${NC}Очистка кэша неустановленных пакетов, и репозиториев..."
 pacman --noconfirm -Sc  # Очистка кэша неустановленных пакетов  # --noconfirm  -не спрашивать каких-либо подтверждений
 
