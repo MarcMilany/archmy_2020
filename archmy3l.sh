@@ -893,6 +893,11 @@ elif [[ $i_sound == 1 ]]; then
 sudo pacman -S alsa-utils alsa-plugins alsa-firmware alsa-lib alsa-utils --noconfirm 
 sudo pacman -S lib32-alsa-plugins --noconfirm  # Дополнительные плагины ALSA (32-бит)
 sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-bluetooth pulseaudio-equalizer-ladspa --noconfirm
+#sudo pacman -S pulseaudio --noconfirm  # Функциональный звуковой сервер общего назначения
+#sudo pacman -S pulseaudio-alsa --noconfirm  # Конфигурация ALSA для PulseAudio 
+#sudo pacman -S pavucontrol --noconfirm  # Регулятор громкости PulseAudio
+#sudo pacman -S pulseaudio-bluetooth --noconfirm  # Поддержка Bluetooth для PulseAudio
+#sudo pacman -S pulseaudio-equalizer-ladspa --noconfirm  # 15-полосный эквалайзер для PulseAudio
 sudo pacman -S pulseaudio-zeroconf --noconfirm  # Поддержка Zeroconf для PulseAudio
 sudo pacman -S pasystray --noconfirm  # Системный трей PulseAudio (замена # padevchooser)  
 sudo pacman -S xfce4-pulseaudio-plugin --noconfirm  # Плагин Pulseaudio для панели Xfce4 
