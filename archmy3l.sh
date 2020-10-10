@@ -3352,7 +3352,7 @@ elif [[ $set_tlp == 1 ]]; then
 sudo systemctl disable systemd-rfkill.service
 sudo systemctl mask systemd-rfkill.socket systemd-rfkill.service
 sudo systemctl enable tlp.service
-sudo systemctl enable tlp-sleep.service
+#sudo systemctl enable tlp-sleep.service
 # Далее необходимо настроить конфигурационный файл tlp:
 # sudo nano /etc/default/tlp
 # Вы должны настроить, какие параметры вы хотите использовать, а также какой регулятор, в режиме зарядки(AC) и работе от батареи(BAT).
@@ -3429,7 +3429,7 @@ echo -e "${BLUE}:: ${BOLD}Очистка кэша pacman ${NC}"
 # "(Clean orphan)" "pacman -Rns \$(pacman -Qqtd)"
 # pacman -Rns $(pacman -Qqtd)
 echo -e "${CYAN}=> ${NC}Очистка кэша неустановленных пакетов, и репозиториев..."
-pacman --noconfirm -Sc  # Очистка кэша неустановленных пакетов  # --noconfirm  -не спрашивать каких-либо подтверждений
+sudo pacman --noconfirm -Sc  # Очистка кэша неустановленных пакетов  # --noconfirm  -не спрашивать каких-либо подтверждений
 
 clear
 echo -e "${GREEN}
