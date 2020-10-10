@@ -1322,6 +1322,7 @@ do
     :
 done
 if [[ $x_dhcpcd == 1 ]]; then
+echo ""    
 systemctl enable dhcpcd   # для активации проводных соединений
 echo " Dhcpcd успешно добавлен в автозагрузку "  
 elif [[ $x_dhcpcd == 0 ]]; then
