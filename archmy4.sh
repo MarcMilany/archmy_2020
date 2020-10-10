@@ -264,6 +264,19 @@ echo -e "${BLUE}
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
+sudo pacman -S audacity --noconfirm  # 
+sudo pacman -S deadbeef --noconfirm  # 
+sudo pacman -S easytag --noconfirm  # 
+sudo pacman -S subdownloader --noconfirm  # 
+sudo pacman -S moc --noconfirm  # 
+sudo pacman -S mediainfo-gui --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  #     
 sudo pacman -S audacity deadbeef easytag subdownloader moc mediainfo-gui --noconfirm
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка Мультимедиа утилит пропущена.'
@@ -311,9 +324,9 @@ yay -S  --noconfirm
 echo 'Установка Oracle VM VirtualBox'
 # Installing Oracle VM VirtualBox 
 sudo pacman -S virtualbox --noconfirm  # Мощная виртуализация x86 как для корпоративного, так и для домашнего использования
-#sudo pacman -S virtualbox-host-modules-arch --noconfirm # для ядра linux - Модули ядра хоста Virtualbox для Arch Kernel
-sudo pacman -S virtualbox-host-dkms --noconfirm # для других ядер - Источники модулей ядра VirtualBox Host
-sudo pacman -S linux-headers --noconfirm # Заголовки и скрипты для сборки модулей для ядра Linux
+#sudo pacman -S virtualbox-host-modules-arch --noconfirm  # для ядра linux - Модули ядра хоста Virtualbox для Arch Kernel
+sudo pacman -S virtualbox-host-dkms --noconfirm  # для других ядер - Источники модулей ядра VirtualBox Host
+sudo pacman -S linux-headers --noconfirm  # Заголовки и скрипты для сборки модулей для ядра Linux
 sudo pacman -S  --noconfirm
 
 sudo modprobe vboxdrv  # Загрузка модулей
