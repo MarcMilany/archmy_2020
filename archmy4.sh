@@ -184,10 +184,23 @@ echo -e "${BLUE}
 'Список дополнительных шрифтов:${GREEN}
 ttf-bitstream-vera freemind '
 ${NC}"
-read -p "1 - Да, 0 - Нет: " prog_set
-if [[ $prog_set == 1 ]]; then
-sudo pacman -S  --noconfirm
-elif [[ $prog_set == 0 ]]; then
+read -p "1 - Да, 0 - Нет: " i_font
+if [[ $i_font == 1 ]]; then
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  #
+elif [[ $i_font == 0 ]]; then
   echo 'Установка дополнительных шрифтов пропущена.'
 fi
 
@@ -359,6 +372,9 @@ yay -S  --noconfirm
 echo 'Установка Java JDK средство разработки и среда для создания Java-приложений'
 # Installing Java JDK development tool and environment for creating Java applications
 sudo pacman -S jdk8-openjdk jre8-openjdk jre8-openjdk-headless --noconfirm
+sudo pacman -S --noconfirm  # 
+sudo pacman -S --noconfirm  # 
+sudo pacman -S --noconfirm  # 
 
 echo 'Установка Java JDK или Java Development Kit AUR'
 # Installing Java JDK development tool and environment for creating Java applications AUR
@@ -367,6 +383,9 @@ yay -S  --noconfirm
 echo 'Сетевые онлайн хранилища'
 # Online storage networks
 sudo pacman -S --noconfirm
+sudo pacman -S --noconfirm  # 
+sudo pacman -S --noconfirm  # 
+sudo pacman -S --noconfirm  # 
 
 echo 'Сетевые онлайн хранилища AUR'
 # Online storage networks AUR
@@ -375,14 +394,52 @@ yay -S megasync thunar-megasync yandex-disk yandex-disk-indicator dropbox --noco
 echo 'Утилиты для редактирования документов, PDF, DjVus, NFO, DIZ и XPS... , Читалки электронных книг, Словари, Таблицы'
 # Utilities for editing documents, PDF, Djvu, NFO, DIZ and XPS..., e-book Readers, Dictionaries, Tables
 sudo pacman -S  --noconfirm
+sudo pacman -S --noconfirm  # 
+sudo pacman -S --noconfirm  # 
+sudo pacman -S --noconfirm  # 
+sudo pacman -S --noconfirm  # 
+sudo pacman -S --noconfirm  # 
+sudo pacman -S --noconfirm  # 
+sudo pacman -S --noconfirm  # 
+sudo pacman -S --noconfirm  # 
+sudo pacman -S --noconfirm  # 
 
 echo 'Утилиты для редактирования документов, PDF, DjVus, NFO, DIZ и XPS... , Читалки электронных книг, Словари, Таблицы AUR'
 # Utilities for editing documents, PDF, Djvu, NFO, DIZ and XPS..., e-book Readers, Dictionaries, Tables AUR
 yay -S sublime-text-dev unoconv hunspell-ru  masterpdfeditor --noconfirm
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
 
 echo 'Утилиты для проектирования, черчения и тд...'
 # Utilities for designing, drawing, and so on...
-sudo pacman -S  --noconfirm
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
 
 echo 'Утилиты для проектирования, черчения и тд... AUR'
 # Utilities for designing, drawing, and so on... AUR
@@ -427,11 +484,46 @@ sudo pacman -S  --noconfirm
 
 echo 'Утилиты для работы с CD,DVD, создание ISO образов, запись на флеш-накопители AUR'
 # Utilities for working with CD, DVD, creating ISO images, writing to flash drives AUR
-yay -S woeusb-git mintstick unetbootin --noconfirm 
+yay -S woeusb-git mintstick unetbootin --noconfirm
+yay -S woeusb-git --noconfirm  #
+yay -S mintstick --noconfirm  #
+yay -S unetbootin --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
 
 echo 'Онлайн мессенжеры и Телефония, Управления чатом и группам'
 # Online messengers and Telephony, chat and group Management
-sudo pacman -S --noconfirm
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
 
 echo 'Онлайн мессенжеры и Телефония, Управления чатом и группам AUR'
 # Online messengers and Telephony, chat and group Management AUR
@@ -443,6 +535,12 @@ sudo pacman -S tor torsocks --noconfirm
 sudo pacman -S proxychains-ng privoxy openvpn --noconfirm
 sudo pacman -S samba --noconfirm  # Файловый сервер SMB и сервер домена AD
 sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
 
 # Запуск, остановка сервиса tor:
 #sudo systemctl start tor
@@ -454,6 +552,12 @@ echo 'Сетевые утилиты, Tor, VPN, SSH, Samba и тд... AUR'
 # Network utilities, Tor, VPN, SSH, Samba, etc... AUR
 yay -S --noconfirm 
 yay -S system-config-samba --noconfirm  # Инструмент настройки Samba от Red Hat
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
 
 echo 'Установить рекомендуемые программы?'
 # To install the recommended program?
@@ -464,6 +568,24 @@ ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
 sudo pacman -S keepass2-plugin-tray-icon simplescreenrecorder --noconfirm  # desktop-file-utils
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.'
 fi
@@ -477,6 +599,45 @@ ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
 yay -S gksu debtap caffeine-ng inxi xneur fsearch-git cherrytree timeshift mocicon multiload-ng-indicator-gtk xfce4-multiload-ng-plugin-gtk2 keepass2-plugin-tray-icon gconf-editor gconf-cleaner webtorrent-desktop xorg-xkill teamviewer corectrl qt4 xflux flameshot-git lib32-simplescreenrecorder mkinitcpio-openswap fetchmirrors --noconfirm
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.'
 fi
@@ -522,11 +683,37 @@ echo 'Дополнительные пакеты для игр'
 # Необходимо раскомментировать репозиторий multilib в /etc/pacman.conf.
 # Steam:
 sudo pacman -S steam steam-native-runtime lutris lib32-gconf lib32-dbus-glib lib32-libnm-glib lib32-openal lib32-nss lib32-gtk2 lib32-sdl2 lib32-sdl2_image lib32-libcanberra --noconfirm
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
 #sudo pacman -S lib32-alsa-plugins lib32-curl --noconfirm
 
 echo 'Дополнительные пакеты для игр AUR'
 # Additional packages for games AUR
 yay -S lib32-libudev0 --noconfirm
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
 
 echo 'Установка Дополнительных программ'
 # Installing Additional programs
@@ -538,6 +725,36 @@ read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
 sudo pacman -S qemu --noconfirm # flex notepadqq catdoc unrtf id3lib toxcore mlocate dosfstools jfsutils
 sudo pacman -S osmo synapse variety kleopatra --noconfirm 
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.' 
 fi
@@ -560,6 +777,30 @@ ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
 yay -S xfce4-calculator-plugin --noconfirm
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.'
 fi
