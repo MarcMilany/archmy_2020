@@ -1945,7 +1945,7 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done 
-if [[ $i_bleachbit== 0 ]]; then 
+if [[ $i_bleachbit == 0 ]]; then 
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_bleachbit == 1 ]]; then
