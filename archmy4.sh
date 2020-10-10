@@ -223,6 +223,7 @@ sudo pacman -S gsfonts --noconfirm  # (URW) ++ Базовый набор шри�
 sudo pacman -S ttf-croscore --noconfirm  # Основные шрифты Chrome OS, они метрически совместимы с MS, и хорошо смотрятся, содержат Arimo, Tinos, Cousine и тп.
 sudo pacman -S ttf-ubuntu-font-family --noconfirm  # Семейство шрифтов Ubuntu - красивые, не вырвиглазные шрифты без засечек, использую в DE и текстовых документах.
 sudo pacman -S ttf-font-awesome --noconfirm  # Культовый шрифт, разработанный для Bootstrap
+sudo pacman -S ttf-hack --noconfirm  # Ухоженный и оптически сбалансированный шрифт на основе Bitstream Vera Mono
 sudo pacman -S ttf-carlito --noconfirm  # Шрифт Google Carlito - метрически совместим с MS Calibri
 sudo pacman -S ttf-caladea --noconfirm  # Семейство шрифтов с засечками по метрике, совместимое с семейством шрифтов MS Cambria 
 sudo pacman -S ttf-bitstream-vera --noconfirm  # Шрифты Bitstream Vera
@@ -249,7 +250,7 @@ sudo pacman -S font-bh-ttf --noconfirm  # Шрифты X.org Luxi Truetype
 sudo pacman -S xorg-fonts-type1 --noconfirm  # Шрифты X.org Type1
 font-bitstream-speedo --noconfirm  # https://github.com/freedesktop/xorg-font-bitstream-speedo
 # ----------------------------------
-sudo pacman -S  --noconfirm  #
+
 sudo pacman -S  --noconfirm  #
 
 echo 'Обновим информацию о шрифтах'
