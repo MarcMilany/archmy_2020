@@ -170,6 +170,17 @@ sudo pacman -Sy
 #
 # Или:
 #sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys && sudo pacman -Sy
+
+Получение и обновление новых ключей аутентификации
+#Obtain and refresh new Authentication keys.
+
+sudo rm -r /etc/pacman.d/gnupg  
+sudo pacman-key --init  
+sudo pacman-key --populate archlinux
+sudo pacman-key --refresh-keys
+sudo pacman -S archlinux-keyring
+sudo pacman -S seahorse
+sudo pacman -Syyu
 # ============================================================================
 
 echo 'Создадим папку (downloads), и переходим в созданную папку'
@@ -816,6 +827,27 @@ elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.'
 fi
 
+
+###############################
+Исправьте миниатюры в файловом менеджере
+# Fix Thumbnails in file manager
+
+#sudo pacman -S tumbler ffmpegthumbnailer poppler-glib libgsf libopenraw --noconfirm
+sudo pacman -S tumbler --noconfirm  #  Сервис D-Bus для приложений, запрашивающих миниатюры
+sudo pacman -S ffmpegthumbnailer --noconfirm  # Легкий эскиз видеофайлов, который может использоваться файловыми менеджерами
+sudo pacman -S poppler-glib --noconfirm  # Наручники Poppler Glib
+sudo pacman -S libgsf --noconfirm  # Расширяемая библиотека абстракции ввода-вывода для работы со структурированными форматами файлов
+sudo pacman -S libopenraw --noconfirm  # Библиотека для декодирования файлов RAW
+#sudo pacman -S  --noconfirm  #
+
+sudo rm -rf ~/.thumbnails/
+mv ~/.config/Thunar ~/.config/Thunar.bak
+sudo update-mime-database /usr/share/mime
+
+Затем выйдите из системы и снова войдите в систему или перезагрузитесь.
+# Then logout and back in or Reboot. 
+#####################################
+
 echo 'Обновим информацию о шрифтах'
 # Update information about fonts
 sudo fc-cache -f -v
@@ -892,3 +924,26 @@ echo " Установка завершена для выхода введите 
 exit
 
 
+##############################
+Enable AUR support for Arch Linux
+Включите нашу поддержку Arch Linux
+Установите его непосредственно из исходного кода. ( рекомендуемый )
+Install Yourt Directly from source. ( recommended )
+
+Замените /user своим именем пользователя в приведенных ниже командах.
+Replace /user with your user name in the commands below.
+
+sudo pacman -S git
+
+sudo git clone https://aur.archlinux.org/package-query.git
+     cd package-query  
+
+sudo chown -R $(whoami) /home/alex/package-query    
+sudo chmod 775 /home/alex/package-query
+makepkg -si
+     cd ..
+     
+
+package-query - Запрос ALPM и AUR  https://aur.archlinux.org/packages/package-query/
+https://github.com/archlinuxfr/package-query/
+#################################
