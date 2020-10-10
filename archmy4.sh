@@ -235,12 +235,22 @@ sudo pacman -S ttf-ionicons --noconfirm  # Шрифт из мобильного 
 sudo pacman -S ttf-arphic-ukai --noconfirm  # Шрифт CJK Unicode в стиле Kaiti
 sudo pacman -S ttf-arphic-uming --noconfirm  # CJK Unicode шрифт в стиле Ming
 sudo pacman -S ttf-inconsolata --noconfirm  # Моноширинный шрифт для красивых списков кода и для терминала - шрифт для "коддинга", - Можно не ставить.
+sudo pacman -S sdl_ttf --noconfirm  # Библиотека, позволяющая использовать шрифты TrueType в ваших приложениях SDL
+sudo pacman -S ttf-bitstream-vera --noconfirm  # Шрифты Bitstream Vera.
 # Китайские, Японские, Индийские шрифт
 sudo pacman -S opendesktop-fonts --noconfirm  # Китайские шрифты TrueType 
 sudo pacman -S ttf-fireflysung --noconfirm  # Китайские иероглифы: - ;
 sudo pacman -S ttf-sazanami --noconfirm  # Японские шрифты
 sudo pacman -S ttf-hanazono --noconfirm  # Бесплатный японский шрифт кандзи, который содержит около 78 685 символов (и 2 пробела), определенный в стандарте ISO / IEC 10646 / стандарте Unicode.
 sudo pacman -S ttf-indic-otf --noconfirm  # Коллекция индийских шрифтов Opentype
+# ---------------------------------
+# Узнать стоя или нет? 
+sudo pacman -S font-bh-ttf --noconfirm  # Шрифты X.org Luxi Truetype 
+sudo pacman -S xorg-fonts-type1 --noconfirm  # Шрифты X.org Type1
+font-bitstream-speedo --noconfirm  # https://github.com/freedesktop/xorg-font-bitstream-speedo
+# ----------------------------------
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
 
 echo 'Обновим информацию о шрифтах'
 # Update information about fonts
@@ -262,6 +272,8 @@ yay -S ttf-clear-sans --noconfirm  # Универсальный шрифт OpenT
 yay -S ttf-monaco --noconfirm  # Моноширинный шрифт без засечек Monaco со специальными символами
 yay -S montserrat-font-ttf --noconfirm  # Геометрический шрифт с кириллицей и расширенной латиницей от Джульетты Улановской
 yay -S ttf-comfortaa --noconfirm  # Закругленный геометрический шрифт без засечек от Google, автор - Йохан Аакерлунд
+yay -S artwiz-fonts --noconfirm  # Это набор (улучшенных) шрифтов artwiz
+yay -S ttf-cheapskate --noconfirm  # Шрифты TTF от Дастина Норландера
 yay -S ttf-nerd-fonts-hack-complete-git --noconfirm  # Шрифт, разработанный для исходного кода. Исправлены иконки Nerd Fonts
 yay -S ttf-font-logos --noconfirm  # Значок шрифта с логотипами популярных дистрибутивов Linux
 yay -S ttf-font-icons --noconfirm  # Неперекрывающееся сочетание иконических шрифтов Ionicons и Awesome 
@@ -272,6 +284,17 @@ yay -S ttf-material-icons-git --noconfirm  # Шрифт значка Google Mate
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка дополнительных шрифтов AUR пропущена.'
 fi
