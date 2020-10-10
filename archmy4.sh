@@ -814,9 +814,10 @@ fi
 # ----------------------------------
  "freshplayerplugin" "(AUR) Recommended" - PPAPI-host Адаптер NPAPI-plugin
  "freshplayerplugin-git" "(AUR)" - PPAPI-host Адаптер NPAPI-plugin
+  "vivaldi" "(AUR) (GTK)" - Продвинутый браузер, созданный для опытных пользователей
+  sudo pacman -S pepper-flash --noconfirm  # Adobe Flash Player PPAPI
+  "vivaldi-ffmpeg-codecs" "(AUR) Non-free codecs" - дополнительная поддержка проприетарных кодеков для vivaldi
 
-
- 
 # ----------------------------------
 gptfdisk - Инструмент для создания разделов в текстовом режиме, который работает с дисками с таблицей разделов GUID (GPT)
 autofs - Средство автомонтирования на основе ядра для Linux
