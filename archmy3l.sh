@@ -308,6 +308,19 @@ notify-send "mirrorlist обновлен" -i gtk-info
 # https://www.archlinux.org/mirrors/status/
 # ==================================================
 echo ""
+echo -e "${BLUE}:: ${NC}Создание резервной копии нового файла /etc/pacman.d/mirrorlist"
+#echo 'Создадим резервную копию файла /etc/pacman.d/mirrorlist'
+# Creating a backup copy of the file /etc/pacman.d/mirrorlist
+#sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+#sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.pacnew
+# Сохраняем старый список зеркал в качестве резервной копии:
+#sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.old
+# Переименовываем новый список:
+#mv /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist
+#mv -f ~/mirrorlist /etc/pacman.d/mirrorlist
+# ====================================================
+echo ""
 echo -e "${BLUE}:: ${NC}Удалим старый файл /etc/pacman.d/mirrorlist"
 #echo 'Удалим старый файл /etc/pacman.d/mirrorlist'
 # Delete the old file /etc/pacman.d/mirrorlist
