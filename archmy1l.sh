@@ -794,7 +794,7 @@ done
   clear
   echo ""
  echo " Установка выбранного вами ядра (linux) "
- pacstrap /mnt linux linux-firmware # linux-headers
+ pacstrap /mnt linux linux-firmware linux-headers
  clear
  echo ""
 echo " Ядро (linux) операционной системы установленно "
@@ -804,7 +804,7 @@ elif [[ $x_pacstrap == 2 ]]; then
   clear
   echo ""
   echo " Установка выбранного вами ядра (linux-hardened) "
-  pacstrap /mnt linux-hardened linux-firmware 
+  pacstrap /mnt linux-hardened linux-firmware linux-hardened-headers
   clear
   echo ""
 echo " Ядро (linux-hardened) операционной системы установленно "
@@ -814,7 +814,7 @@ elif [[ $x_pacstrap == 3 ]]; then
   clear
   echo ""
   echo " Установка выбранного вами ядра (linux-lts) "
-  pacstrap /mnt linux-lts linux-firmware 
+  pacstrap /mnt linux-lts linux-firmware linux-lts-headers
   clear
   echo ""
 echo " Ядро (linux-lts) операционной системы установленно "
@@ -824,7 +824,7 @@ elif [[ $x_pacstrap == 4 ]]; then
   clear
   echo ""
   echo " Установка выбранного вами ядра (linux-zen) " 
-  pacstrap /mnt linux-zen linux-firmware 
+  pacstrap /mnt linux-zen linux-firmware linux-zen-headers
   clear
   echo ""
 echo " Ядро (linux-zen) операционной системы установленно "
