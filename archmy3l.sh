@@ -3154,6 +3154,7 @@ elif [[ $set_firewall == 1 ]]; then
 sudo ufw enable
 fi
 
+echo ""
 echo -e "${GREEN}==> ${NC}Добавляем в автозагрузку Firewall UFW (сетевой экран)?"
 #echo -e "{BLUE}:: ${NC}Добавляем в автозагрузку Firewall UFW (сетевой экран)?"
 #echo 'Добавляем в автозагрузку Firewall UFW (сетевой экран)?'
