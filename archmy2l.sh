@@ -1671,13 +1671,14 @@ echo " Установка Графического менеджера пакет
 elif [[ $graphic_aur == 1 ]]; then
   echo ""  
   echo " Установка Графического менеджера Pacman gui (pamac-aur) "
-##### pamac-aur ######  
+##### pamac-aur ###### 
 cd /home/$username
  git clone https://aur.archlinux.org/pamac-aur.git
 chown -R $username:users /home/$username/pamac-aur
 chown -R $username:users /home/$username/pamac-aur/PKGBUILD 
 cd /home/$username/pamac-aur
 sudo -u $username  makepkg -si --noconfirm  
+# makepkg --noconfirm --needed -sic 
 rm -Rf /home/$username/pamac-aur
 clear
 echo ""
