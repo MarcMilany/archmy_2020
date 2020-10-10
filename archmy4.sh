@@ -768,6 +768,8 @@ fi
 # galculator-gtk2 или galculator
 # gnome-calculator 
 # python2-imaging  - PIL. Предоставляет возможности обработки изображений для Python
+# bluez-utils-compat  - Утилиты для разработки и отладки стека протоколов Bluetooth. Включает устаревшие инструменты.
+
 
 echo 'Установка Дополнительных программ AUR'
 # Installing Additional programs AUR
