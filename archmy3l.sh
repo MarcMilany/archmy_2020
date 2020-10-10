@@ -3017,8 +3017,11 @@ elif [[ $prog_print == 1 ]]; then
   echo ""  
   echo " Установка поддержки Драйвера принтера (Поддержка печати) CUPS "
 sudo pacman -S cups cups-pdf cups-pk-helper --noconfirm 
-sudo pacman -S system-config-printer ghostscript --noconfirm  
-sudo pacman -S gsfonts gutenprint hplip --noconfirm   # python-imaging 
+sudo pacman -S system-config-printer ghostscript --noconfirm 
+sudo pacman -S libcups simple-scan --noconfirm 
+sudo pacman -S gsfonts gutenprint --noconfirm   # python-imaging
+# Драйверы для HP DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых LaserJet 
+sudo pacman -S hplip --noconfirm   # AUR - python-imaging   
 fi
 # ---------------------------------------------------------------------
 # List of applications:
