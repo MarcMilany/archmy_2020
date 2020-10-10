@@ -264,7 +264,7 @@ ttf-ms-fonts font-manager'
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-yay -S font-manager --noconfirm    
+yay -S font-manager --noconfirm  # Простое приложение для управления шрифтами для GTK + Desktop Environments   
 yay -S ttf-ms-fonts --noconfirm  # Основные шрифты TTF от Microsoft
 yay -S ttf-ms-win8 --noconfirm  # По желанию: (содержит в себе ttf-ms-fonts, ttf-vista-fonts и ttf-win7-fonts, т.е. всё что надо включая Calibri и .т.п.)
 yay -S artwiz-fonts --noconfirm  # Для пакета LibreOffice
