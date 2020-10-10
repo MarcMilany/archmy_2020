@@ -1545,7 +1545,7 @@ echo " Установка веб-браузера Opera (+ pepper-flash) вып�
 elif [[ $in_browser == 4 ]]; then
 echo "" 
 echo " Установка веб-браузеров Chromium Opera Firefox "    
-sudo pacman -S chromium opera pepper-flash firefox firefox-i18n-ru firefox-spell-ru flashplugin --noconfirm 
+sudo pacman -S chromium opera pepper-flash opera-ffmpeg-codecs firefox firefox-i18n-ru firefox-spell-ru flashplugin --noconfirm 
 clear
 echo ""    
 echo " Установка веб-браузеров выполнена "
