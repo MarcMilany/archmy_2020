@@ -1522,7 +1522,11 @@ echo " Установка веб-браузера(ов) пропущена "
 elif [[ $in_browser == 1 ]]; then
 echo ""   
 echo " Установка веб-браузера Firefox (+ flashplugin) "
-sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin --noconfirm
+#sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin --noconfirm
+sudo pacman -S firefox --noconfirm  # Автономный веб-браузер от mozilla.org
+sudo pacman -S firefox-i18n-ru --noconfirm  # Русский языковой пакет для Firefox
+sudo pacman -S firefox-spell-ru --noconfirm  # Русский словарь проверки орфографии для Firefox
+sudo pacman -S flashplugin --noconfirm  # Adobe Flash Player NPAPI
 #sudo pacman -S firefox-developer-edition firefox-developer-edition-i18n-ru firefox-spell-ru flashplugin --noconfirm  # Версия для разработчиков
 clear
 echo ""    
