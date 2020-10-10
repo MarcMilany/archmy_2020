@@ -767,6 +767,7 @@ fi
 # hplip  - Драйверы для HP DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых LaserJet
 # galculator-gtk2 или galculator
 # gnome-calculator 
+# python2-imaging  - PIL. Предоставляет возможности обработки изображений для Python
 
 echo 'Установка Дополнительных программ AUR'
 # Installing Additional programs AUR
