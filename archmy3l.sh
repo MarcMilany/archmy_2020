@@ -3270,9 +3270,11 @@ echo "  Запуск и добавление в автозапуск (cupsd.serv
 elif [[ $set_cups == 1 ]]; then
   echo ""  
   echo " Запускаем Драйвера принтера CUPS (cupsd.service) "
-sudo systemctl start org.cups.cupsd.service  
+sudo systemctl start org.cups.cupsd.service 
+#sudo systemctl start cups-browsed.service 
 echo " Добавляем в автозапуск Драйвера принтера CUPS (cupsd.service) " 
 sudo systemctl enable org.cups.cupsd.service 
+#sudo systemctl enable cups-browsed.service
 # Проверяем - переходим на страницу http://localhost:631:
 fi
 # --------------------- Важно! --------------------------------
