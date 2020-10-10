@@ -1538,6 +1538,7 @@ elif [[ $in_browser == 3 ]]; then
 echo "" 
 echo " Установка веб-браузера Opera (+ pepper-flash) "    
 sudo pacman -S opera pepper-flash --noconfirm
+sudo pacman -S opera-ffmpeg-codecs --noconfirm  # дополнительная поддержка проприетарных кодеков для оперы
 clear
 echo ""    
 echo " Установка веб-браузера Opera (+ pepper-flash) выполнена "
