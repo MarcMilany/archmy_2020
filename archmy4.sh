@@ -817,6 +817,9 @@ fi
   "vivaldi" "(AUR) (GTK)" - Продвинутый браузер, созданный для опытных пользователей
   sudo pacman -S pepper-flash --noconfirm  # Adobe Flash Player PPAPI
   "vivaldi-ffmpeg-codecs" "(AUR) Non-free codecs" - дополнительная поддержка проприетарных кодеков для vivaldi
+# ----------------------------------
+ ktorrent (QT) - Мощный клиент BitTorrent для KDE 
+ tixati (AUR) (GTK) - Tixati - это программа для однорангового обмена файлами, использующая популярный протокол BitTorrent
 
 # ----------------------------------
 gptfdisk - Инструмент для создания разделов в текстовом режиме, который работает с дисками с таблицей разделов GUID (GPT)
