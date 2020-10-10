@@ -3278,6 +3278,8 @@ sudo systemctl enable org.cups.cupsd.service
 # Проверяем - переходим на страницу http://localhost:631:
 fi
 # --------------------- Важно! --------------------------------
+# Чтобы исправить ошибки сервера CUPS:
+# sudo pacman -Rdd foomatic-db foomatic-db-nonfree
 # Добавляем группу:
 # sudo groupadd printadmin
 # Добавляем Пользователя в неё:
