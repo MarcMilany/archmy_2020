@@ -2605,6 +2605,7 @@ echo -e "${MAGENTA}
 # Installing the graphical package Manager for Archlinux (Pacman gui).
 echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете установить "Pacman gui", если пропустили это действие в предыдущем скрипте (при установке основной системы), или пропустите установку." 
 
+echo ""
 echo -e "${BLUE}=> ${NC}В скрипте представлены несколько вариантов установки графического менеджера пакетов Pacman gui (pamac-aur), и Pacman gui (octopi)." 
 
 echo -e "${CYAN}:: ${NC}1 - В первом варианте представлена установка Pacman gui (pamac-aur), и (octopi), если Вы ранее установили 'AUR Helper - (yay)'. То есть установка (pamac-aur), или (octopi) проходит через (yay -S #####)."
