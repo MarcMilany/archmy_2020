@@ -1888,7 +1888,14 @@ echo ""
 echo -e "${BLUE}:: ${BOLD}Очистка кэша pacman ${NC}"
 
 echo -e "${CYAN}=> ${NC}Очистка кэша неустановленных пакетов, и репозиториев..."
-pacman --noconfirm -Sc  # Очистка кэша неустановленных пакетов  # --noconfirm  -не спрашивать каких-либо подтверждений
+# Удаление неиспользуемых зависимостей
+UNUSED_DEPENDENCIES=$( _chroot "pacman -Qdtq" )
+if [[ ${UNUSED_DEPENDENCIES} ]]; then
+        _chroot "pacman --noconfirm -Rcsn ${UNUSED_DEPENDENCIES}"
+fi
+#pacman --noconfirm -Rcsn
+# Очистка кэша неустановленных пакетов
+pacman --noconfirm -Sc  # --noconfirm  -не спрашивать каких-либо подтверждений
 
 clear             
 echo -e "${GREEN}
