@@ -3449,8 +3449,8 @@ echo -e "${CYAN}=> ${NC}Удаление неиспользуемых завис
 # pacman -Rns $(pacman -Qqtd)
 sudo pacman -Rsn $(pacman -Qdtq) && rm -rf ~/.cache/thumbnails/* && rm -rf ~/.build/*
 #sudo pacman -Rsn $(pacman -Qdtq) 
-#rm -rf ~/.cache/thumbnails/*
-#rm -rf ~/.build/*
+#sudo rm -rf ~/.cache/thumbnails/*
+#sudo rm -rf ~/.build/*
 # fc-cache -vf
 #sudo pacman -Scc && sudo pacman -Rsn $(pacman -Qdtq) && rm -rf ~/.cache/thumbnails/* && rm -rf ~/.build/*
 
