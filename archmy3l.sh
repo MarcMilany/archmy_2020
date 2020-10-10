@@ -3208,8 +3208,9 @@ elif [[ $auto_bluetooth == 1 ]]; then
   echo ""
   echo " Запускаем (bluetooth.service) "
 # Загрузите универсальный драйвер bluetooth, если это еще не сделано:
-modprobe btusb  
-sudo systemctl start bluetooth.service    
+sudo modprobe btusb  
+sudo systemctl start bluetooth.service  
+#sudo systemctl start dbus  
 echo " Добавляем в автозагрузку (bluetooth.service) "
 sudo systemctl enable bluetooth.service 
 echo " Bluetooth успешно добавлен в автозагрузку " 
