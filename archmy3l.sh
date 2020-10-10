@@ -3071,7 +3071,7 @@ echo " Действия ввода, выполняется сразу после
 
     0 - НЕТ - Пропустить установку: " i_telephone  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$i_telephone" =~ [^10] ]]
+    [[ "$i_telephone" =~ [^1230] ]]
 do
     :
 done 
