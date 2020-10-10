@@ -1637,7 +1637,7 @@ echo -e "${GREEN}==> ${NC}Установим Офисный пакет - LibreOf
 #echo -e "${BLUE}:: ${NC}Установка Офиса (LibreOffice-still, или LibreOffice-fresh)" 
 #echo 'Установка Офиса (LibreOffice-still, или LibreOffice-fresh)'
 # Office installation (LibreOffice-still, or LibreOffice-fresh)
-echo -e "${MAGENTA}:: ${BOLD}Офисный пакет - FreeOffice будет представлен для установки в следующем скрипте, так как устанавливаются из 'AUR', или установите (freeoffice) сами. ${NC}"
+echo -e "${MAGENTA}:: ${BOLD}Офисные пакеты - FreeOffice, WPS Office, Apache OpenOffice - будут представлены для установки в следующем скрипте, так как устанавливаются из 'AUR', или установите (пакеты) сами. ${NC}"
 echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие варианты: ${NC}"
 echo " 1 - LibreOffice-still - это мощный, официально поддерживаемый офисный пакет, имеется стабильная ветвь обновлений, то выбирайте вариант - "1". "
 echo " 2 - LibreOffice-fresh - это офисный пакет, новые функции, улучшения программы появляются сначала здесь, часто обновляется, то выбирайте вариант - "2". "
