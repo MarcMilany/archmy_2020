@@ -1529,16 +1529,20 @@ echo ""
 echo " Установка веб-браузера Firefox (+ flashplugin) выполнена "
 elif [[ $in_browser == 2 ]]; then    
 echo "" 
-echo " Установка веб-браузера Chromium (+ pepper-flash) "    
-sudo pacman -S chromium pepper-flash --noconfirm
+echo " Установка веб-браузера Chromium (+ pepper-flash) " 
+#sudo pacman -S chromium pepper-flash --noconfirm   
+sudo pacman -S chromium --noconfirm  # Веб-браузер, созданный для скорости, простоты и безопасности
+sudo pacman -S pepper-flash --noconfirm  # Adobe Flash Player PPAPI
 clear
 echo ""    
 echo " Установка веб-браузера Chromium (+ pepper-flash) выполнена "
 elif [[ $in_browser == 3 ]]; then
 echo "" 
-echo " Установка веб-браузера Opera (+ pepper-flash) "    
-sudo pacman -S opera pepper-flash --noconfirm
+echo " Установка веб-браузера Opera (+ pepper-flash) "
+#sudo pacman -S opera opera-ffmpeg-codecs pepper-flash --noconfirm  
+sudo pacman -S opera --noconfirm  # Быстрый и безопасный веб-браузер
 sudo pacman -S opera-ffmpeg-codecs --noconfirm  # дополнительная поддержка проприетарных кодеков для оперы
+sudo pacman -S pepper-flash --noconfirm  # Adobe Flash Player PPAPI
 clear
 echo ""    
 echo " Установка веб-браузера Opera (+ pepper-flash) выполнена "
