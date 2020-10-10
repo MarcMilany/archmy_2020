@@ -1891,6 +1891,18 @@ echo ""
 echo -e "${BLUE}:: ${BOLD}Очистка кэша pacman ${NC}"
 echo -e "${CYAN}=> ${NC}Очистка кэша неустановленных пакетов, и репозиториев..."
 pacman --noconfirm -Sc  # --noconfirm (не спрашивать каких-либо подтверждений), -S --sync (Синхронизировать пакеты), -c, --cascade (удалить пакеты и все пакеты, которые зависят от них),
+pacman -Scc
+#pacman --noconfirm -Scc
+echo -e "${CYAN}=> ${NC}Удаление неиспользуемых зависимостей 'pacman -Qdtq'..."
+#pacman --noconfirm -Rcsn $(pacman -Qdtq) # --noconfirm (не спрашивать каких-либо подтверждений), -R --remove (Удалить пакет(ы) из системы), -c, --cascade (удалить пакеты и все пакеты, которые зависят от них), -s, --recursive (удалить ненужные зависимости), -n, --nosave (удалить конфигурационные файлы)
+# "(Clean orphan)" "pacman -Rns \$(pacman -Qqtd)"
+# pacman -Rns $(pacman -Qqtd)
+pacman -Rsn $(pacman -Qdtq) && rm -rf ~/.cache/thumbnails/* && rm -rf ~/.build/*
+#pacman -Rsn $(pacman -Qdtq) 
+#rm -rf ~/.cache/thumbnails/*
+#rm -rf ~/.build/*
+# fc-cache -vf
+#pacman -Scc && sudo pacman -Rsn $(pacman -Qdtq) && rm -rf ~/.cache/thumbnails/* && rm -rf ~/.build/*
 
 clear             
 echo -e "${GREEN}

@@ -374,7 +374,9 @@ echo 'Установка Oracle VM VirtualBox'
 sudo pacman -S virtualbox --noconfirm  # Мощная виртуализация x86 как для корпоративного, так и для домашнего использования
 #sudo pacman -S virtualbox-host-modules-arch --noconfirm  # для ядра linux - Модули ядра хоста Virtualbox для Arch Kernel
 sudo pacman -S virtualbox-host-dkms --noconfirm  # для других ядер - Источники модулей ядра VirtualBox Host
-sudo pacman -S linux-headers --noconfirm  # Заголовки и скрипты для сборки модулей для ядра Linux
+#sudo pacman -S linux-headers --noconfirm  # Заголовки и скрипты для сборки модулей для ядра Linux
+sudo pacman -S linux-lts-headers --noconfirm  # Заголовки и скрипты для сборки модулей для ядра Linux-LTC
+
 sudo pacman -S  --noconfirm
 # Затем загрузите драйвер Vbox с помощью этой команды:
 sudo modprobe vboxdrv  # Загрузка модулей
@@ -382,7 +384,8 @@ sudo modprobe vboxdrv  # Загрузка модулей
 # Чтобы предоставить себе разрешения для доступа virtualbox к общим папкам и USB устройствам используйте эту команду:     
 # sudo gpasswd -a имя_пользователя vboxusers
 # sudo gpasswd -a $USER vboxusers
-sudo gpasswd -a $username vboxusers
+#sudo gpasswd -a $username vboxusers
+sudo gpasswd -a alex vboxusers
 # Чтобы загрузить модуль VirtualBox во время загрузки, обратитесь к разделу Kernel_modules#Loading и создайте файл *.conf со строкой:
 echo "vboxdrv" > /etc/modules-load.d/virtualbox.conf
 # в расположении (in location)
