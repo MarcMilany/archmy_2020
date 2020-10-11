@@ -128,8 +128,7 @@ _exit_msg() {
 ${AUTHOR} ${RED}under ${LICENSE} ${GREEN}>>>${NC}"""
 }
 
-###################################################################
- 
+################################################################### 
 #####   Baner  #######
 #_arch_fast_install_banner
 set > old_vars.log
@@ -190,11 +189,9 @@ setfont ter-v16b ###
 ### setfont ter-v22b
 
 echo -e "${CYAN}==> ${NC}Добавим русскую локаль в систему установки"
-# Adding a Russian locale to the installation system
 sed -i 's/#ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale.gen
 
 echo -e "${BLUE}:: ${NC}Обновим текущую локаль системы"
-# Update the current system locale
 locale-gen  # Мы ввели locale-gen для генерации тех самых локалей.
 
 sleep 01
@@ -217,7 +214,6 @@ ping -c2 archlinux.org
 echo -e "${CYAN}==> ${NC}Если пинг идёт едем дальше ... :)"
 
 #################################################################
-
 ### Display banner (Дисплей баннер)
 _arch_fast_install_banner
 
@@ -340,7 +336,6 @@ lsblk -f
 
 echo ""
 echo -e "${BLUE}:: ${NC}Посмотрим структуру диска созданного установщиком"
-# Let's look at the disk structure created by the installer
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 read -p " => Укажите диск (sda/sdb например sda или sdb) : " cfd
 sgdisk -p /dev/$cfd  #sda sdb sdc sdd
@@ -398,11 +393,10 @@ elif [[ $cfdisk == 0 ]]; then
   echo ' Разметка пропущена. '      
 fi
 
-##### Ещё раз проверте правильность разбивки на разделы! #####
 clear 
 echo "" 
 echo -e "${BLUE}:: ${NC}Ваша разметка диска" 
-fdisk -l
+fdisk -l  # Ещё раз проверте правильность разбивки на разделы!
 lsblk -f
 #lsblk -lo 
 
@@ -421,7 +415,6 @@ read -p " Укажите ROOT раздел (sda/sdb 1.2.3.4 (sda5 наприме
 echo ""
 mkfs.ext4 /dev/$root -L root
 mount /dev/$root /mnt
-#mount -v /dev/$root /mnt    # -v или --verbose Выводить сообщение о каждой создаваемой директории
 echo ""
 ########## Boot  ########
 clear
@@ -446,9 +439,7 @@ if [[ $boots == 1 ]]; then
   read -p " Укажите BOOT раздел (sda/sdb 1.2.3.4 (sda7 например)): " bootd  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
   mkfs.ext2  /dev/$bootd -L boot
   mkdir /mnt/boot
-#  mkdir -v /mnt/boot
   mount /dev/$bootd /mnt/boot
-# mount -v /dev/$bootd /mnt/boot   # -v или --verbose Выводить сообщение о каждой создаваемой директории
 elif [[ $boots == 2 ]]; then
  echo " Форматирование и монтирование не требуется " 
 fi
@@ -472,8 +463,7 @@ if [[ $swap == 1 ]]; then
   echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "  
   read -p " Укажите swap раздел (sda/sdb 1.2.3.4 (sda7 например)): " swaps  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
   mkswap /dev/$swaps -L swap
-  swapon /dev/$swaps
-# swapon -v /dev/$swaps 
+  swapon /dev/$swaps 
 elif [[ $swap == 0 ]]; then
    echo ' Добавление Swap раздела пропущено. '   
 fi
@@ -720,10 +710,10 @@ do
     :
 done
  if [[ $t_pacstrap == 1 ]]; then
-  clear
-  echo ""
-  echo " Установка выбранного вами, групп "
-  pacstrap /mnt base base-devel nano vim dhcpcd netctl which inetutils  #wget 
+clear
+echo ""
+echo " Установка выбранного вами, групп "
+pacstrap /mnt base base-devel nano vim dhcpcd netctl which inetutils  #wget 
 #  pacstrap /mnt base            #--noconfirm --noprogressbar --quiet
 #  pacstrap /mnt base-devel      #--noconfirm
 #  pacstrap /mnt --needed base-devel
@@ -739,8 +729,8 @@ elif [[ $t_pacstrap == 2 ]]; then
 #  pacstrap /mnt base
 #  pacstrap /mnt nano vim dhcpcd netctl which inetutils #wget
 clear
-  echo ""
-  echo " Установка выбранного вами, групп (base + packages) выполнена "
+echo ""
+echo " Установка выбранного вами, групп (base + packages) выполнена "
 elif [[ $t_pacstrap == 3 ]]; then
   clear
   echo ""
@@ -750,16 +740,16 @@ elif [[ $t_pacstrap == 3 ]]; then
 #  pacstrap /mnt base-devel
 #  pacstrap /mnt --needed base-devel 
 clear
-  echo ""
-  echo " Установка выбранного вами, групп (base + base-devel) выполнена "  
+echo ""
+echo " Установка выбранного вами, групп (base + base-devel) выполнена "  
 elif [[ $t_pacstrap == 4 ]]; then
   clear
   echo ""
   echo " Установка выбранной вами группы "
   pacstrap /mnt base 
-  clear
-  echo ""
-  echo " Установка выбранной вами, группы (base) выполнена "
+clear
+echo ""
+echo " Установка выбранной вами, группы (base) выполнена "
 fi 
 
 ### Install Kernel ###
