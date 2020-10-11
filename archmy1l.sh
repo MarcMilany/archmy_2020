@@ -907,8 +907,8 @@ echo ""
 echo -e "${BLUE}:: ${NC}Просмотреть содержимое файла fstab"
 cat /mnt/etc/fstab
 #cat < /mnt/etc/fstab | grep -v "Static information"
-
-sleep 01   # или sleep 02
+sleep 02
+ 
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist"
