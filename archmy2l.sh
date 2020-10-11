@@ -1950,15 +1950,10 @@ echo ""
 echo " Удаление всех пакетов-сирот (неиспользуемых зависимостей) пропущено "      
 elif [[ $rm_orphans == 1 ]]; then
 echo ""     
-#pacman --noconfirm -Rcsn $(pacman -Qdtq)  # --noconfirm (не спрашивать каких-либо подтверждений), -R --remove (Удалить пакет(ы) из системы), -c, --cascade (удалить пакеты и все пакеты, которые зависят от них), -s, --recursive (удалить ненужные зависимости), -n, --nosave (удалить конфигурационные файлы)
-pacman -Rsn $(pacman -Qdtq) && rm -rf ~/.cache/thumbnails/* && rm -rf ~/.build/*
-#pacman -Rsn $(pacman -Qqtd)  # удаляет пакеты-сироты (которые не используются ни одной программой)
-#rm -rf ~/.cache/thumbnails/*  # удаляет миниатюры фото, которые накапливаются в системе
-#rm -rf ~/.build/*  # 
-# или эта команда:
-# pacman -Rsn $(pacman -Qdtq)
-### fc-cache -vf
-# pacman -Scc && sudo pacman -Rsn $(pacman -Qdtq) && rm -rf ~/.cache/thumbnails/* && rm -rf ~/.build/*
+#pacman -Rsn $(pacman -Qdtq) && rm -rf ~/.cache/thumbnails/* && rm -rf ~/.build/*
+pacman -Rsn $(pacman -Qqtd)  # удаляет пакеты-сироты (которые не используются ни одной программой)
+rm -rf ~/.cache/thumbnails/*  # удаляет миниатюры фото, которые накапливаются в системе
+rm -rf ~/.build/*  # 
 echo "" 
 echo " Удаление всех пакетов-сирот (неиспользуемых зависимостей) выполнено "
 fi
