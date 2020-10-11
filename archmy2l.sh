@@ -1930,7 +1930,7 @@ echo -e "${BLUE}:: ${NC}Посмотрим список всех пакетов-
 # echo 'Список всех пакетов-сирот'
 # List of all orphan packages
 echo ""
-sudo pacman -Qdt  # Посмотреть, какие пакеты не используются ничем в системе
+pacman -Qdt  # Посмотреть, какие пакеты не используются ничем в системе
 #sudo pacman -Qdtq  # Посмотреть, какие пакеты не используются ничем в системе(показать меньше информации для запроса и поиска)
 # -----------------------------------
 # -Q --query  # Запрос к базе данных
@@ -1961,15 +1961,15 @@ echo " Удаление всех пакетов-сирот (неиспользу
 elif [[ $rm_orphans == 1 ]]; then
 echo "" 
 #echo " Удаление всех пакетов-сирот (неиспользуемых зависимостей) "    
-#sudo pacman --noconfirm -Rcsn $(pacman -Qdtq)  # --noconfirm (не спрашивать каких-либо подтверждений), -R --remove (Удалить пакет(ы) из системы), -c, --cascade (удалить пакеты и все пакеты, которые зависят от них), -s, --recursive (удалить ненужные зависимости), -n, --nosave (удалить конфигурационные файлы)
-sudo pacman -Rsn $(pacman -Qdtq) && rm -rf ~/.cache/thumbnails/* && rm -rf ~/.build/*
-#sudo pacman -Rsn $(pacman -Qqtd)  # удаляет пакеты-сироты (которые не используются ни одной программой)
-#sudo rm -rf ~/.cache/thumbnails/*  # удаляет миниатюры фото, которые накапливаются в системе
-#sudo rm -rf ~/.build/*  # 
+#pacman --noconfirm -Rcsn $(pacman -Qdtq)  # --noconfirm (не спрашивать каких-либо подтверждений), -R --remove (Удалить пакет(ы) из системы), -c, --cascade (удалить пакеты и все пакеты, которые зависят от них), -s, --recursive (удалить ненужные зависимости), -n, --nosave (удалить конфигурационные файлы)
+pacman -Rsn $(pacman -Qdtq) && rm -rf ~/.cache/thumbnails/* && rm -rf ~/.build/*
+#pacman -Rsn $(pacman -Qqtd)  # удаляет пакеты-сироты (которые не используются ни одной программой)
+#rm -rf ~/.cache/thumbnails/*  # удаляет миниатюры фото, которые накапливаются в системе
+#rm -rf ~/.build/*  # 
 # или эта команда:
-# sudo pacman -Rsn $(pacman -Qdtq)
+# pacman -Rsn $(pacman -Qdtq)
 ### fc-cache -vf
-# sudo pacman -Scc && sudo pacman -Rsn $(pacman -Qdtq) && rm -rf ~/.cache/thumbnails/* && rm -rf ~/.build/*
+# pacman -Scc && sudo pacman -Rsn $(pacman -Qdtq) && rm -rf ~/.cache/thumbnails/* && rm -rf ~/.build/*
 echo "" 
 echo " Удаление всех пакетов-сирот (неиспользуемых зависимостей) выполнено "
 fi
