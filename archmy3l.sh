@@ -1667,6 +1667,9 @@ echo " Установка LibreOffice-still "
 sudo pacman -S libreoffice-still --noconfirm  # Филиал обслуживания LibreOffice
 sudo pacman -S libreoffice-still-ru --noconfirm  # Пакет русского языка для LibreOffice still
 sudo pacman -S libreoffice-extension-writer2latex --noconfirm  # набор расширений LibreOffice для преобразования и работы с LaTeX в LibreOffice
+sudo pacman -S hunspell --noconfirm  # Библиотека и программа для проверки орфографии и морфологического анализатора
+sudo pacman -S hyphen --noconfirm  # Библиотека для качественной расстановки переносов и выравнивания
+sudo pacman -S mythes --noconfirm  #libmythes  Простой тезаурус (Словарь понятий или терминов). В нем можно найти слова синонимы или антонимы к интересующему понятию (слову, термину).
 #clear
 echo ""    
 echo " Установка LibreOffice-still выполнена "
