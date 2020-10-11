@@ -3453,12 +3453,13 @@ clear
 echo ""
 echo -e "${BLUE}:: ${BOLD}Очистка кэша pacman ${NC}"
 echo -e "${CYAN}=> ${NC}Очистка кэша неустановленных пакетов (оставив последние версии оных), и репозиториев..."
+echo ""
 sudo pacman --noconfirm -Sc  # Очистка кэша неустановленных пакетов (оставив последние версии оных) # --noconfirm  -не спрашивать каких-либо подтверждений
 
 echo "" 
-echo -e "${CYAN}=> ${NC}Удалить кэш ВСЕХ установленных пакетов?"
+echo -e "${CYAN}=> ${NC}Удалить кэш ВСЕХ установленных пакетов ()?"
+echo " Процесс удаления кэша ВСЕХ установленных пакетов - НЕ был прописан полностью автоматическим, и было принято решение дать возможность пользователю сделать выбор. "
 echo -e "${YELLOW}==> ${NC} Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте..."
-echo " Посмотрим список всех пакетов-сирот "
 echo ""
 while 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
@@ -3470,7 +3471,7 @@ do
     :
 done
 if [[ $rm_cache == 0 ]]; then
-  echo ""
+echo ""
 echo " Удаление кэша ВСЕХ установленных пакетов пропущено "      
 elif [[ $rm_cache == 1 ]]; then
 echo ""    
@@ -3480,73 +3481,28 @@ sudo pacman -Scc  # Удалит кеш всех пакетов (можно ра
  echo " Удаление кэша ВСЕХ установленных пакетов выполнено "
 fi
 
-
-
-
-
-
 clear
 echo ""
-echo -e "${BLUE}:: ${NC}Посмотрим список всех пакетов-сирот"
-echo " Посмотрим список всех пакетов-сирот "
-
-echo 'Список всех пакетов-сирот'
+echo -e "${BLUE}:: ${NC}Посмотрим список всех пакетов-сирот (которые не используются ни одной программой)"
+#echo " Посмотрим список всех пакетов-сирот "
+# echo 'Список всех пакетов-сирот'
 # List of all orphan packages
-sudo pacman -Qdt 
+echo ""
+sudo pacman -Qdt  # Посмотреть, какие пакеты не используются ничем в системе
+#sudo pacman -Qdtq  # Посмотреть, какие пакеты не используются ничем в системе(показать меньше информации для запроса и поиска)
+# -----------------------------------
+# -Q --query  # Запрос к базе данных
+# -d, --deps  # список пакетов, установленных как зависимости
+# -t, --unrequired  # список пакетов не (опционально) требуемых
+# какими-либо пакетами (-tt для игнорирования optdepends)
+# -q, --quiet  # показать меньше информации для запроса и поиска
+# ------------------------------------
 
 sleep 5
-echo 'Удаление всех пакетов-сирот?'
-# Deleting all orphaned packages?
-read -p "1 - Да, 0 - Нет: " prog_set
-if [[ $prog_set == 1 ]]; then
-sudo pacman -Qdtq
-elif [[ $prog_set == 0 ]]; then
-  echo 'Удаление пакетов-сирот пропущено.'
-fi    
+  
 
-echo 'Очистка кэша неустановленных пакетов'
-# Clearing the cache of uninstalled packages
-read -p "1 - Да, 0 - Нет: " prog_set
-if [[ $prog_set == 1 ]]; then
-sudo pacman -Sc 
-elif [[ $prog_set == 0 ]]; then
-  echo 'Очистка кэша пропущена.'
-fi  
-
-echo 'Очистка кэша пакетов'
-# Clearing the package cache
-read -p "1 - Да, 0 - Нет: " prog_set
-if [[ $prog_set == 1 ]]; then
-sudo pacman -Scc 
-elif [[ $prog_set == 0 ]]; then
-  echo 'Очистка кэша пропущена.'
-fi 
-
-echo 'Список Установленного софта (пакетов)'
-#List of Installed software (packages)
-sudo pacman -Qqe
-
-
-sleep 5
-echo -e "${GREEN}
-  Установка софта (пакетов) завершена!
-${NC}"
-# Installation of software (packages) is complete!
-#echo 'Установка завершена!'
-# The installation is now complete!
-
-echo 'Желательно перезагрузить систему для применения изменений'
-# It is advisable to restart the system to apply the changes
-# ============================================================================
-time
-
-echo 'Удаление созданной папки (downloads), и скрипта установки программ (arch3my)'
-# Deleting the created folder (downloads) and the program installation script (arch3my)
-sudo rm -R ~/downloads/
-sudo rm -rf ~/arch4my
-
-echo " Установка завершена для выхода введите >> exit << "
-exit
+Удалить всех так называемых «сирот» можно командой
+sudo pacman -Rsn $(pacman -Qdtq) 
 
 
 
@@ -3565,18 +3521,34 @@ sudo pacman -Rsn $(pacman -Qdtq) && rm -rf ~/.cache/thumbnails/* && rm -rf ~/.bu
 # sudo pacman -Scc && sudo pacman -Rsn $(pacman -Qdtq) && rm -rf ~/.cache/thumbnails/* && rm -rf ~/.build/*
 
 
-Удаление не используюемых пакетов
-Посмотреть, какие пакеты не используются ничем в системе можно командой
-sudo pacman -Qdt
-
-Удалить всех так называемых «сирот» можно командой
-sudo pacman -Rsn $(pacman -Qdtq)
 
 
 
 
 
+echo 'Список Установленного софта (пакетов)'
+#List of Installed software (packages)
+sudo pacman -Qqe
 
+sleep 5
+echo -e "${GREEN}
+  Установка софта (пакетов) завершена!
+${NC}"
+# Installation of software (packages) is complete!
+#echo 'Установка завершена!'
+# The installation is now complete!
+
+echo 'Желательно перезагрузить систему для применения изменений'
+# It is advisable to restart the system to apply the changes
+# ============================================================================
+time
+
+
+echo " Установка завершена для выхода введите >> exit << "
+exit
+
+
+###########################################
 clear
 echo -e "${GREEN}
   <<< Поздравляем! Установка завершена. >>> ${NC}"
