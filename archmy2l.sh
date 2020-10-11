@@ -1270,8 +1270,7 @@ elif [[ $x_dhcpcd == 0 ]]; then
 fi
 
 echo ""
-echo -e "${BLUE}:: ${NC}Ставим шрифты"
-# Ставим шрифты:  https://www.archlinux.org/packages/
+echo -e "${BLUE}:: ${NC}Ставим шрифты"  # https://www.archlinux.org/packages/
 pacman -S ttf-dejavu --noconfirm  # Семейство шрифтов на основе Bitstream Vera Fonts с более широким набором символов
 pacman -S ttf-liberation --noconfirm  # Шрифты Red Hats Liberation
 pacman -S ttf-anonymous-pro --noconfirm  # Семейство из четырех шрифтов фиксированной ширины, разработанных специально с учетом кодирования
