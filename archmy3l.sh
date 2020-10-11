@@ -3411,6 +3411,19 @@ echo -e "${BLUE}:: ${NC}Создать резервную копию (дубли
 #sudo cp /etc/default/grub grub.backup
 sudo cp -vf /etc/default/grub /etc/default/grub.backup
 
+echo ""
+echo -e "${YELLOW}==> ${NC}Загрузим архив (ветку мастер MarcMilany/archmy_2020)"
+#echo 'Загрузим архив (ветку мастер MarcMilany/arch_2020)'
+# Upload the archive (branch master MarcMilany/arch_2020)
+#wget https://github.com/MarcMilany/arch_2020.git/archive/master.zip
+#wget github.com/MarcMilany/arch_2020.git/archive/arch_2020-master.zip
+#sudo mv -f ~/Downloads/master.zip
+#sudo mv -f ~/Downloads/arch_2020-master.zip
+#sudo tar -xzf master.zip -C ~/ 
+#sudo tar -xzf arch_2020-master.zip -C ~/
+#git clone https://github.com/MarcMilany/arch_2020.git
+git clone https://github.com/MarcMilany/archmy_2020.git
+
 clear
 echo -e "${CYAN}
   <<< Очистка кэша pacman, и Удаление неиспользуемых зависимостей . >>> 
@@ -3494,16 +3507,15 @@ sudo pacman -Qdt  # Посмотреть, какие пакеты не испо�
 # какими-либо пакетами (-tt для игнорирования optdepends)
 # -q, --quiet  # показать меньше информации для запроса и поиска
 # ------------------------------------
-
 sleep 5
   
-
+echo -e "${CYAN}=> ${NC}Удаление всех пакетов-сирот (неиспользуемых зависимостей) 'pacman -Qdtq'..."
 Удалить всех так называемых «сирот» можно командой
 sudo pacman -Rsn $(pacman -Qdtq) 
+sudo pacman -Rsn $(pacman -Qdtq) - удаляет пакеты-сироты (которые не используются ни одной программой)
 
 
-
-echo -e "${CYAN}=> ${NC}Просмотреть список пакетов сирот и Удаление неиспользуемых зависимостей 'pacman -Qdtq'..."
+echo -e "${CYAN}=> ${NC}Удаление всех пакетов-сирот (неиспользуемых зависимостей) 'pacman -Qdtq'..."
 #sudo pacman --noconfirm -Rcsn $(pacman -Qdtq) # --noconfirm (не спрашивать каких-либо подтверждений), -R --remove (Удалить пакет(ы) из системы), -c, --cascade (удалить пакеты и все пакеты, которые зависят от них), -s, --recursive (удалить ненужные зависимости), -n, --nosave (удалить конфигурационные файлы)
 
 
@@ -3586,17 +3598,6 @@ echo -e "${GREEN}
 # ♥ Either you go forward... or you go up your ass.
 # ============================================================================
 
-#echo -e "${YELLOW}==> ${NC}Загрузим архив (ветку мастер MarcMilany/arch_2020)"
-#echo 'Загрузим архив (ветку мастер MarcMilany/arch_2020)'
-# Upload the archive (branch master MarcMilany/arch_2020)
-#wget https://github.com/MarcMilany/arch_2020.git/archive/master.zip
-#wget github.com/MarcMilany/arch_2020.git/archive/arch_2020-master.zip
-#sudo mv -f ~/Downloads/master.zip
-#sudo mv -f ~/Downloads/arch_2020-master.zip
-#sudo tar -xzf master.zip -C ~/ 
-#sudo tar -xzf arch_2020-master.zip -C ~/
-#git clone https://github.com/MarcMilany/arch_2020.git
-git clone https://github.com/MarcMilany/archmy_2020.git
 
 echo -e "${BLUE}:: ${NC}Посмотрим дату и время без характеристик для проверки времени"
 #echo 'Посмотрим дату и время без характеристик для проверки времени'
