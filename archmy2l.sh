@@ -222,14 +222,10 @@ hwclock --systohc --local
   echo " Localtime - часы идут по времени локального часового пояса " 
 fi
 
-### Specified Time #############
 echo ""
 echo -e "${BLUE}:: ${NC}Посмотрим обновление времени (если настройка не была пропущена)"
 timedatectl show
-#timedatectl | grep Time
-#timedatectl set-timezone Europe/Moscow
 
-### Set Hosts ########
 echo ""
 echo -e "${BLUE}:: ${NC}Изменяем имя хоста"
 echo "127.0.0.1	localhost.(none)" > /etc/hosts
@@ -238,22 +234,18 @@ echo "::1	localhost ip6-localhost ip6-loopback" >> /etc/hosts
 echo "ff02::1 ip6-allnodes" >> /etc/hosts
 echo "ff02::2 ip6-allrouters" >> /etc/hosts
 
-### Set Locale #####
 echo -e "${BLUE}:: ${NC}Добавляем русскую локаль системы"
 echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen 
 
-### Set Locale #######
 echo -e "${BLUE}:: ${NC}Обновим текущую локаль системы"
 locale-gen  # Мы ввели locale-gen для генерации тех самых локалей.
 
-### Set Locale ###########
 sleep 02
 echo -e "${BLUE}:: ${NC}Указываем язык системы"
 echo 'LANG="ru_RU.UTF-8"' > /etc/locale.conf
 #echo 'LANG="en_US.UTF-8"' > /etc/locale.conf
 
-### Set Vconsole ##########
 echo -e "${BLUE}:: ${NC}Вписываем KEYMAP=ru FONT=cyr-sun16 FONT=ter-v16n FONT=ter-v16b"
 echo 'KEYMAP=ru' >> /etc/vconsole.conf
 echo '#LOCALE=ru_RU.UTF-8' >> /etc/vconsole.conf
@@ -296,8 +288,7 @@ if [[ $x_ram == 1 ]]; then
   clear
   echo ""
   echo " Создадим загрузочный RAM диск - для ядра (linux) "
-  mkinitcpio -p linux   # mkinitcpio -P linux
-# mkinitcpio -P   
+  mkinitcpio -p linux   # mkinitcpio -P linux  
 elif [[ $x_ram == 2 ]]; then
   clear
   echo ""
@@ -318,9 +309,6 @@ elif [[ $x_ram == 0 ]]; then
 fi
 #echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf
 
-
-### Set Root passwd ##########
-### Root Password ##########
 sleep 01
 clear
 echo ""
@@ -333,7 +321,6 @@ echo " => Введите Root Password (Пароль суперпользова�
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 passwd
 
-### GRUB BIOS ##################
 #clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установить (bootloader) загрузчик GRUB(legacy)?"
@@ -362,7 +349,6 @@ if [[ $i_grub == 1 ]]; then
 echo ""    
 pacman -Syy
 pacman -S grub --noconfirm  # Файлы и утилиты для установки GRUB2 содержатся в пакете grub
-#pacman -S grub --noconfirm --noprogressbar --quiet 
 uname -rm
 lsblk -f
 echo ""
@@ -375,14 +361,10 @@ echo ""
 #grub-install --recheck /dev/$x_cfd     # Если Вы получили сообщение об ошибке
 #grub-install --boot-directory=/mnt/boot /dev/$x_cfd  # установить файлы загрузчика в другой каталог
   echo " Загрузчик GRUB установлен на выбранный вами диск (раздел). " 
-#grub-mkconfig -o /boot/grub/grub.cfg
-# echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). "
 elif [[ $i_grub == 2 ]]; then
 echo ""    
 pacman -Syy
-# Файлы и утилиты для установки GRUB2 содержатся в пакете grub, и устанавливаются командой:
-pacman -S grub --noconfirm
-#pacman -S grub --noconfirm --noprogressbar --quiet
+pacman -S grub --noconfirm  # Файлы и утилиты для установки GRUB2 содержатся в пакете grub
 uname -rm
 lsblk -f
 echo ""
@@ -394,15 +376,12 @@ echo ""
 # Если нужно установить BIOS-версию загрузчика из-под системы, загруженной в режиме UEFI
  grub-install --target=i386-pc /dev/$x_cfd   #sda sdb sdc sdd
 #grub-install --target=i386-pc --recheck /dev/$x_cfd   # Если Вы получили сообщение об ошибке
-  echo " Загрузчик GRUB установлен на выбранный вами диск (раздел). " 
-#grub-mkconfig -o /boot/grub/grub.cfg
-# echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). " 
+  echo " Загрузчик GRUB установлен на выбранный вами диск (раздел). "  
 elif [[ $i_grub == 0 ]]; then
   echo ""  
   echo 'Операция пропущена.'
 fi
 
-### Install Microcode ###########
 #clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установить Микрокод для процессора INTEL_CPU, AMD_CPU?"
@@ -436,23 +415,17 @@ if [[ $prog_cpu == 1 ]]; then
 echo ""
 echo " Устанавливаем uCode для процессоров - AMD "
 pacman -S amd-ucode --noconfirm 
-  echo " Установлены обновления стабильности и безопасности для микрокода процессора - AMD "
-  #grub-mkconfig -o /boot/grub/grub.cfg
-# echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). "       
+echo " Установлены обновления стабильности и безопасности для микрокода процессора - AMD "      
 elif [[ $prog_cpu == 2 ]]; then
   echo ""  
   echo " Устанавливаем uCode для процессоров - INTEL "
- pacman -S intel-ucode --noconfirm
-  echo " Установлены обновления стабильности и безопасности для микрокода процессора - INTEL " 
-  #grub-mkconfig -o /boot/grub/grub.cfg
-# echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). "    
+pacman -S intel-ucode --noconfirm
+echo " Установлены обновления стабильности и безопасности для микрокода процессора - INTEL "    
 elif [[ $prog_cpu == 3 ]]; then
   echo ""  
   echo " Устанавливаем uCode для процессоров - AMD и INTEL "
- pacman -S amd-ucode intel-ucode --noconfirm 
-  echo " Установлены обновления стабильности и безопасности для микрокода процессоров - AMD и INTEL "  
-  #grub-mkconfig -o /boot/grub/grub.cfg
-# echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). "  
+pacman -S amd-ucode intel-ucode --noconfirm 
+echo " Установлены обновления стабильности и безопасности для микрокода процессоров - AMD и INTEL "   
 elif [[ $prog_cpu == 0 ]]; then
   echo ""  
   echo 'Установка микрокода процессоров пропущена.'
@@ -513,7 +486,6 @@ echo ""
 echo " Установка программ (пакетов) пропущена. "
 fi
 
-### Set User ######
 sleep 01
 clear
 echo ""
