@@ -848,18 +848,15 @@ elif [[ $x_fstab == 4 ]]; then
 echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. "
 fi 
 
-### Set Fstab ######
 echo ""
 echo -e "${BLUE}:: ${NC}Просмотреть содержимое файла fstab"
 cat /mnt/etc/fstab
-#cat < /mnt/etc/fstab | grep -v "Static information"
 sleep 02
  
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist"
 rm /mnt/etc/pacman.d/mirrorlist 
-#rm -rf /mnt/etc/pacman.d/mirrorlist
 
 echo ""
 echo -e "${GREEN}==> ${NC}Сменить зеркала для увеличения скорости загрузки пакетов?" 
