@@ -995,5 +995,25 @@ package-query - Запрос ALPM и AUR  https://aur.archlinux.org/packages/pac
 https://github.com/archlinuxfr/package-query/
 #################################
 
+echo -e "${BLUE}==> ${NC}Выйти из настроек, или перезапустить систему?"
+#echo "Выйти из настроек, или перезапустить систему?"
+# Exit settings, or restart the system?
+echo -e "${GREEN}==> ${NC}y+Enter - выйти, просто Enter - перезапуск"
+#echo "y+Enter - выйти, просто Enter - перезапуск"
+# y+Enter-exit, just Enter-restart
+read doing 
+case $doing in
+y)
+  exit
+ ;;
+*)
+sudo reboot -f
+esac #окончание оператора case.
+#
 
+#echo ""
+#echo -e "${BLUE}:: ${NC}Информацию о видеокарте"
+#lshw -c video
+# После нового входа в систему, вы можете проверить версию драйвера, на котором работает ваша видеокарта, следующей командой:
+#glxinfo | grep OpenGL
 
