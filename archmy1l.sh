@@ -925,8 +925,6 @@ cat /mnt/etc/pacman.d/mirrorlist
 
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
-# sudo pacman-key --init
-# sudo pacman-key --refresh-keys
 sudo pacman -Sy
 sleep 03
 
