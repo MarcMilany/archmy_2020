@@ -833,28 +833,18 @@ elif [[ $x_fstab == 2 ]]; then
   echo ""
   echo " Генерируем fstab выбранным вами методом "
   echo " LABEL - genfstab -L -p /mnt > /mnt/etc/fstab "
-#genfstab -pL /mnt > /mnt/etc/fstab
-#genfstab -L -p /mnt > /mnt/etc/fstab
-# echo " Просмотреть содержимое файла fstab "
-# cat /mnt/etc/fstab
 echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. "
 elif [[ $x_fstab == 3 ]]; then
   clear
   echo ""
   echo " Генерируем fstab выбранным вами методом "
   echo " PARTLABEL - genfstab -t PARTLABEL -p /mnt > /mnt/etc/fstab "
-#genfstab -t PARTLABEL -p /mnt > /mnt/etc/fstab
-# echo " Просмотреть содержимое файла fstab "
-# cat /mnt/etc/fstab
 echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. "   
 elif [[ $x_fstab == 4 ]]; then
   clear
   echo ""
   echo " Генерируем fstab выбранным вами методом "
   echo " PARTUUID - genfstab -t PARTUUID -p /mnt > /mnt/etc/fstab "
-#genfstab -t PARTUUID -p /mnt > /mnt/etc/fstab
-# echo " Просмотреть содержимое файла fstab "
-# cat /mnt/etc/fstab
 echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. "
 fi 
 
