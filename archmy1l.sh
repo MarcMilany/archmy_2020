@@ -701,14 +701,14 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done
- if [[ $t_pacstrap == 1 ]]; then
+if [[ $t_pacstrap == 1 ]]; then
 clear
 echo ""
 echo " Установка выбранного вами, групп "
 pacstrap /mnt base base-devel nano vim dhcpcd netctl which inetutils  #wget 
 clear
-  echo ""
-  echo " Установка выбранного вами, групп (base + base-devel + packages) выполнена "
+echo ""
+echo " Установка выбранного вами, групп (base + base-devel + packages) выполнена "
 elif [[ $t_pacstrap == 2 ]]; then
   clear
   echo ""
@@ -827,11 +827,6 @@ done
   echo " Генерируем fstab выбранным вами методом "
   echo " UUID - genfstab -U -p /mnt > /mnt/etc/fstab "
   genfstab -pU /mnt >> /mnt/etc/fstab
-#genfstab -U -p /mnt >> /mnt/etc/fstab
-#genfstab -U / mnt >> / mnt / etc / fstab
-# echo " Просмотреть содержимое файла fstab "
-# cat /mnt/etc/fstab
-#cat < /mnt/etc/fstab | grep -v "Static information"
 echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. " 
 elif [[ $x_fstab == 2 ]]; then
   clear
