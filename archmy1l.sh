@@ -773,9 +773,7 @@ elif [[ $x_pacstrap == 2 ]]; then
   pacstrap /mnt linux-hardened linux-firmware linux-hardened-headers #linux-hardened-docs
   clear
   echo ""
-echo " Ядро (linux-hardened) операционной системы установленно "
-# echo " Настройка системы, генерируем fstab "
-#  genfstab -pU /mnt >> /mnt/etc/fstab   
+echo " Ядро (linux-hardened) операционной системы установленно "   
 elif [[ $x_pacstrap == 3 ]]; then
   clear
   echo ""
@@ -783,9 +781,7 @@ elif [[ $x_pacstrap == 3 ]]; then
   pacstrap /mnt linux-lts linux-firmware linux-lts-headers #linux-lts-docs
   clear
   echo ""
-echo " Ядро (linux-lts) операционной системы установленно "
-# echo " Настройка системы, генерируем fstab "
-#  genfstab -pU /mnt >> /mnt/etc/fstab  
+echo " Ядро (linux-lts) операционной системы установленно " 
 elif [[ $x_pacstrap == 4 ]]; then
   clear
   echo ""
@@ -793,12 +789,9 @@ elif [[ $x_pacstrap == 4 ]]; then
   pacstrap /mnt linux-zen linux-firmware linux-zen-headers #linux-zen-docs
   clear
   echo ""
-echo " Ядро (linux-zen) операционной системы установленно "
-# echo " Настройка системы, генерируем fstab "
-#  genfstab -pU /mnt >> /mnt/etc/fstab  
+echo " Ядро (linux-zen) операционной системы установленно " 
 fi
 
-### Set Fstab generating #####
 echo ""
 echo -e "${GREEN}==> ${NC}Настройка системы, генерируем fstab" 
 echo -e "${MAGENTA}=> ${BOLD}Файл /etc/fstab используется для настройки параметров монтирования различных блочных устройств, разделов на диске и удаленных файловых систем. ${NC}"
