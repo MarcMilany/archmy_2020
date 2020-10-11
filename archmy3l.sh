@@ -228,8 +228,8 @@ sudo pacman -Syyu  --noconfirm
 #mv -f ~/mirrorlist /etc/pacman.d/mirrorlist
 #echo "Обновление баз данных пакетов..."
 #sudo pacman -Sy
-
 # =============================================
+
 clear
 echo -e "${MAGENTA}
   <<< Смена, обновление зеркал для увеличения скорости загрузки утилит (пакетов). >>> ${NC}"
