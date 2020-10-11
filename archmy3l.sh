@@ -3127,14 +3127,37 @@ echo -e "${GREEN}==> ${NC}Установить планировщик задан
 # Install the CRON task scheduler (cron) - RUN programs on a schedule ??
 echo -e "${MAGENTA}=> ${BOLD}Cron – это планировщик заданий на основе времени на Unix-подобных операционных системах. Cron даёт возможность пользователям настроить работы по расписанию (команды или шелл-скрипты) для периодичного запуска в определённое время или даты... ${NC}"
 echo " Обычно это используется для автоматизации обслуживания системы или администрирования. "
-echo -e "${}:: ${NC}"
-echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В данной опции выбор остаётся за вами. "
-# Be careful! The installation process, after the option you selected, was registered fully automatic. In this option, the choice is yours. 
+echo -e "${CYAN}:: ${NC}Имеется много реализаций cron, но ни одна из них не установлена по умолчанию: - (cronie, fcron, bcron, dcron, vixie-cron, scron-git), cronie и fcron доступны в стандартном репозитории, а остальные – в AUR."
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В данной опции выбор остаётся за вами. "
+# Be careful! The installation process was fully automatic. In this option, the choice is yours. 
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
 #echo 'Вы можете пропустить этот шаг, если не уверены в правильности выбора'
 # You can skip this step if you are not sure of the correct choice
 echo "" 
 while
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_cron  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_cron" =~ [^10] ]]
+do
+    :
+done 
+if [[ $i_cron == 0 ]]; then  
+echo ""  
+echo " Установка планировщика заданий CRON (cronie) пропущена "
+elif [[ $i_cron == 1 ]]; then
+  echo ""  
+  echo " Установка планировщика заданий CRON (cronie) "
+#sudo pacman -S cronie  # Демон, который запускает указанные программы в запланированное время и связанные инструменты
+sudo pacman -S cronie --noconfirm  
+echo ""  
+echo " Добавляем в автозагрузку планировщик заданий (cronie.service) "
+sudo systemctl enable cronie.service
+echo ""  
+echo " Планировщик заданий CRON (cronie) установлен и добавлен в автозагрузку "
+fi
+
 
 
 Иногда об этом забываешь и это не так удобно. Но все мы любим чистоту в системе, а потому лучшим вариантом будет — это правило cron.
@@ -3143,6 +3166,7 @@ while
 И так, устанавливаем наш помощник cron и добавляем юнит:
 
 sudo pacman -S cronie  # Демон, который запускает указанные программы в запланированное время и связанные инструменты
+sudo pacman -S cronie --noconfirm 
 sudo systemctl enable cronie.service
 
 Теперь осталось добавить само правило.
