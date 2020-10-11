@@ -1859,6 +1859,10 @@ sleep 3
 fi
 
 clear
+echo -e "${CYAN}
+  <<< Очистка кэша pacman, и Удаление всех пакетов-сирот (неиспользуемых зависимостей) . >>> 
+${NC}"
+# Clearing the pacman cache, and Removing unused dependencies.
 echo "" 
 echo -e "${YELLOW}==> Примечание: ${NC}Если! Вы сейчас устанавливали "AUR Helper"-'yay' вместе с ним установилась зависимость 'go' - (Основные инструменты компилятора для языка программирования Go), который весит 559,0 МБ. Так, что если вам не нужна зависимость 'go', для дальнейшей сборки пакетов в установленной системе СОВЕТУЮ удалить её. В случае, если "AUR"-'yay' НЕ БЫЛ установлен, то пропустить этот шаг."
 
@@ -1887,22 +1891,18 @@ pacman --noconfirm -Rs go    # --noconfirm  --не спрашивать каки
 fi
 
 ### Clean pacman cache (Очистить кэш pacman) ####
-echo ""
-echo -e "${BLUE}:: ${BOLD}Очистка кэша pacman ${NC}"
-echo -e "${CYAN}=> ${NC}Очистка кэша неустановленных пакетов, и репозиториев..."
-pacman --noconfirm -Sc  # --noconfirm (не спрашивать каких-либо подтверждений), -S --sync (Синхронизировать пакеты), -c, --cascade (удалить пакеты и все пакеты, которые зависят от них),
-pacman -Scc  # Очистка кэша пакетов - удалить вообще все файлы из кэша
-#pacman --noconfirm -Scc
-echo -e "${CYAN}=> ${NC}Удаление неиспользуемых зависимостей 'pacman -Qdtq'..."
-#pacman --noconfirm -Rcsn $(pacman -Qdtq) # --noconfirm (не спрашивать каких-либо подтверждений), -R --remove (Удалить пакет(ы) из системы), -c, --cascade (удалить пакеты и все пакеты, которые зависят от них), -s, --recursive (удалить ненужные зависимости), -n, --nosave (удалить конфигурационные файлы)
-# "(Clean orphan)" "pacman -Rns \$(pacman -Qqtd)"
-# pacman -Rns $(pacman -Qqtd)
-pacman -Rsn $(pacman -Qdtq) && rm -rf ~/.cache/thumbnails/* && rm -rf ~/.build/*
-#pacman -Rsn $(pacman -Qdtq) 
-#rm -rf ~/.cache/thumbnails/*
-#rm -rf ~/.build/*
-# fc-cache -vf
-#pacman -Scc && sudo pacman -Rsn $(pacman -Qdtq) && rm -rf ~/.cache/thumbnails/* && rm -rf ~/.build/*
+
+
+
+
+
+
+
+
+
+
+
+
 
 clear             
 echo -e "${GREEN}
