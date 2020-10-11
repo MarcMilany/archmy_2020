@@ -504,17 +504,13 @@ done
    read -p " Укажите HOME раздел (sda/sdb 1.2.3.4 (sda6 например)): " home  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
    mkfs.ext4 /dev/$home -L home
    mkdir /mnt/home
-#  mkdir -v /mnt/home
    mount /dev/$home /mnt/home
-#  mount -v /dev/$home /mnt/home # -v или --verbose Выводить сообщение о каждой создаваемой директории
    elif [[ $homeF == 0 ]]; then
  lsblk -f
  echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
  read -p " Укажите HOME раздел (sda/sdb 1.2.3.4 (sda6 например)): " homeV  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
- mkdir /mnt/home 
-#mkdir -v /mnt/home  
+ mkdir /mnt/home  
  mount /dev/$homeV /mnt/home
-#mount -v /dev/$homeV /mnt/home  # -v или --verbose Выводить сообщение о каждой создаваемой директории
 fi
 fi
 sleep 02
@@ -563,7 +559,6 @@ if [[ $diskC == 0 ]]; then
   mkdir /mnt/C 
   mount /dev/$diskCc /mnt/C
   fi
-
 ############### Disk D ##############
 echo ""
 echo -e "${BLUE}:: ${NC}Добавим раздел диск "D"(Data Disk) Windows?"
@@ -588,7 +583,6 @@ if [[ $diskD == 0 ]]; then
   mkdir /mnt/D 
   mount /dev/$diskDd /mnt/D
   fi
-
 ###### disk E ########
 echo ""
 echo -e "${BLUE}:: ${NC}Добавим раздел диск "E"(Work Disk) Windows?"
@@ -619,7 +613,6 @@ done
 echo ""
 echo -e "${BLUE}:: ${NC}Просмотреть подключённые диски с выводом информации о размере и свободном пространстве"
 df -h
-#df -hT
 
 echo ""
 echo -e "${BLUE}:: ${NC}Просмотреть все идентификаторы наших разделов"
@@ -633,7 +626,6 @@ sleep 02
 echo ""
 echo -e "${BLUE}:: ${NC}Посмотреть содержмое каталога /mnt."
 ls /mnt
-#ls -l /mnt
 
 echo ""
 echo -e "${BLUE}:: ${NC}Выбор серверов-зеркал для загрузки. Ставим зеркало от Яндекс"
@@ -682,9 +674,8 @@ cat /etc/pacman.d/mirrorlist
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
 sudo pacman -Sy 
 
-###### Install Base System  #############
 clear
-echo ""
+echo ""  
 echo -e "${GREEN}==> ${NC}Установка основных пакетов (base, base-devel) базовой системы"
 echo -e "${BLUE}:: ${NC}Arch Linux, Base devel (AUR only)"
 echo " Сценарий pacstrap устанавливает (base) базовую систему. Для сборки пакетов из AUR (Arch User Repository) также требуется группа base-devel. "
@@ -714,10 +705,6 @@ clear
 echo ""
 echo " Установка выбранного вами, групп "
 pacstrap /mnt base base-devel nano vim dhcpcd netctl which inetutils  #wget 
-#  pacstrap /mnt base            #--noconfirm --noprogressbar --quiet
-#  pacstrap /mnt base-devel      #--noconfirm
-#  pacstrap /mnt --needed base-devel
-#  pacstrap /mnt nano vim dhcpcd netctl which inetutils #wget
 clear
   echo ""
   echo " Установка выбранного вами, групп (base + base-devel + packages) выполнена "
@@ -726,8 +713,6 @@ elif [[ $t_pacstrap == 2 ]]; then
   echo ""
   echo " Установка выбранного вами, группы "
   pacstrap /mnt base nano vim dhcpcd netctl which inetutils #wget
-#  pacstrap /mnt base
-#  pacstrap /mnt nano vim dhcpcd netctl which inetutils #wget
 clear
 echo ""
 echo " Установка выбранного вами, групп (base + packages) выполнена "
@@ -735,10 +720,7 @@ elif [[ $t_pacstrap == 3 ]]; then
   clear
   echo ""
   echo " Установка выбранных вами групп "
-  pacstrap /mnt base base base-devel
-#  pacstrap /mnt base  
-#  pacstrap /mnt base-devel
-#  pacstrap /mnt --needed base-devel 
+  pacstrap /mnt base base base-devel 
 clear
 echo ""
 echo " Установка выбранного вами, групп (base + base-devel) выполнена "  
@@ -752,7 +734,6 @@ echo ""
 echo " Установка выбранной вами, группы (base) выполнена "
 fi 
 
-### Install Kernel ###
 echo ""
 echo -e "${GREEN}==> ${NC}Какое ядро (Kernel) Вы бы предпочли установить вместе с системой Arch Linux?"
 echo -e "${BLUE}:: ${NC}Kernel (optional), Firmware"
@@ -784,9 +765,7 @@ done
  pacstrap /mnt linux linux-firmware linux-headers #linux-docs
  clear
  echo ""
-echo " Ядро (linux) операционной системы установленно "
-# echo " Настройка системы, генерируем fstab "
-#  genfstab -pU /mnt >> /mnt/etc/fstab  
+echo " Ядро (linux) операционной системы установленно " 
 elif [[ $x_pacstrap == 2 ]]; then
   clear
   echo ""
