@@ -3526,34 +3526,20 @@ if [[ $rm_orphans == 0 ]]; then
 echo ""
 echo " Удаление всех пакетов-сирот (неиспользуемых зависимостей) пропущено "      
 elif [[ $rm_orphans == 1 ]]; then
-echo ""    
-
 echo "" 
-echo " Удаление всех пакетов-сирот (неиспользуемых зависимостей) выполнено "
-fi
-
-
-
-Удалить всех так называемых «сирот» можно командой
-sudo pacman -Rsn $(pacman -Qdtq) 
-sudo pacman -Rsn $(pacman -Qdtq) - удаляет пакеты-сироты (которые не используются ни одной программой)
-
-
-echo -e "${CYAN}=> ${NC}Удаление всех пакетов-сирот (неиспользуемых зависимостей) 'pacman -Qdtq'..."
-#sudo pacman --noconfirm -Rcsn $(pacman -Qdtq) # --noconfirm (не спрашивать каких-либо подтверждений), -R --remove (Удалить пакет(ы) из системы), -c, --cascade (удалить пакеты и все пакеты, которые зависят от них), -s, --recursive (удалить ненужные зависимости), -n, --nosave (удалить конфигурационные файлы)
-
-
-Просмотреть список пакетов сирот
+#echo " Удаление всех пакетов-сирот (неиспользуемых зависимостей) "    
+#sudo pacman --noconfirm -Rcsn $(pacman -Qdtq)  # --noconfirm (не спрашивать каких-либо подтверждений), -R --remove (Удалить пакет(ы) из системы), -c, --cascade (удалить пакеты и все пакеты, которые зависят от них), -s, --recursive (удалить ненужные зависимости), -n, --nosave (удалить конфигурационные файлы)
 sudo pacman -Rsn $(pacman -Qdtq) && rm -rf ~/.cache/thumbnails/* && rm -rf ~/.build/*
-#sudo pacman -Rsn $(pacman -Qqtd)
+#sudo pacman -Rsn $(pacman -Qqtd)  # удаляет пакеты-сироты (которые не используются ни одной программой)
 #sudo rm -rf ~/.cache/thumbnails/*  # удаляет миниатюры фото, которые накапливаются в системе
 #sudo rm -rf ~/.build/*  # 
 # или эта команда:
 # sudo pacman -Rsn $(pacman -Qdtq)
 ### fc-cache -vf
 # sudo pacman -Scc && sudo pacman -Rsn $(pacman -Qdtq) && rm -rf ~/.cache/thumbnails/* && rm -rf ~/.build/*
-
-
+echo "" 
+echo " Удаление всех пакетов-сирот (неиспользуемых зависимостей) выполнено "
+fi
 
 echo ""
 echo -e "${BLUE}:: ${NC}Удаление созданной папки (downloads), и скрипта установки программ (archmy3l)"
@@ -3563,11 +3549,43 @@ echo -e "${BLUE}:: ${NC}Удаление созданной папки (download
 sudo rm -R ~/downloads/
 sudo rm -rf ~/archmy3
 
-
-
-echo 'Список Установленного софта (пакетов)'
-#List of Installed software (packages)
+clear
+echo ""
+echo -e "${BLUE}:: ${NC}Посмотрим список Установленного софта (пакетов)"
+#echo " Посмотрим список Установленного софта (пакетов) "
+# echo 'Список Установленного софта (пакетов)'
+# List of Installed software (packages)
+echo -e "${YELLOW}==> ${NC} Будьте внимательны! Вы можете пропустить это действие..."
+echo ""
+while
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p " 
+    1 - Да вывести список,     0 - Нет пропустить этот шаг: " t_list  # sends right after the keypress; # отправляет сразу после нажатия клавиши     
+    echo ''
+    [[ "$t_list" =~ [^10] ]]
+do
+    :
+done
+if [[ $t_list == 0 ]]; then
+echo ""
+echo " Вывод списка установленного софта (пакетов) пропущен "      
+elif [[ $t_list == 1 ]]; then
+echo ""
+echo " Список установленного софта (пакетов) "
+echo ""
 sudo pacman -Qqe
+echo "" 
+fi
+# -----------------------------------
+# -Q --query  # Запрос к базе данных
+# -q, --quiet  # показать меньше информации для запроса и поиска
+# 
+# ------------------------------------
+
+
+
+
+
 
 sleep 5
 echo -e "${GREEN}
