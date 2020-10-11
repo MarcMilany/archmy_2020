@@ -889,30 +889,23 @@ done
   echo ""  
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
 pacman -S reflector --noconfirm
-#pacman -Sy --noconfirm --noprogressbar --quiet reflector
 reflector --verbose --country 'Russia' -l 7 -p https -p http -n 7 --save /etc/pacman.d/mirrorlist --sort rate  
-#reflector --verbose --country 'Russia' -l 7 -p https -p http -n 7 --sort rate --save /etc/pacman.d/mirrorlist
 elif [[ $zerkala == 2 ]]; then
   echo ""  
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
 pacman -S reflector --noconfirm
-#pacman -Sy --noconfirm --noprogressbar --quiet reflector
 reflector --verbose -l 50 -p http --sort rate --save /etc/pacman.d/mirrorlist
 reflector --verbose -l 15 --sort rate --save /etc/pacman.d/mirrorlist
 elif [[ $zerkala == 3 ]]; then
   echo ""  
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
-pacman -S reflector --noconfirm
-#pacman -Sy --noconfirm --noprogressbar --quiet reflector  
+pacman -S reflector --noconfirm 
 reflector --verbose --country Kazakhstan -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist  
-# reflector --verbose --country 'United States' -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
 elif [[ $zerkala == 4 ]]; then
   echo ""  
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
 pacman -S reflector --noconfirm
-#pacman -Sy --noconfirm --noprogressbar --quiet reflector  
 reflector -c "Russia" -c "Belarus" -c "Ukraine" -c "Poland" -f 20 -l 20 -p https -p http -n 20 --save /etc/pacman.d/mirrorlist --sort rate
-#reflector --verbose --country 'Russia' --country 'Belarus' --country 'Ukraine' --country 'Poland' -f 20 -l 20 -p https -p http -n 20 --save /etc/pacman.d/mirrorlist --sort rate
   elif [[ $zerkala == 0 ]]; then
    echo "" 
    echo ' Смена зеркал пропущена. '   
