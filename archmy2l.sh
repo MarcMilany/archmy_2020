@@ -1786,7 +1786,6 @@ echo ""
 echo " Просмотреть содержимое файла fstab "    
 echo ""    
 cat /etc/fstab
-#cat < /mnt/etc/fstab | grep -v "Static information"
 sleep 3
 fi
 
