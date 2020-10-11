@@ -566,7 +566,6 @@ if [[ $i_finger == 1 ]]; then
   echo ""  
   echo " Информация о my username : (достаточно имени) "
 chfn $username
-#finger $username
 elif [[ $i_finger == 0 ]]; then
   echo ""  
   echo ' Настройка пропущена. '
@@ -608,16 +607,12 @@ clear
 echo ""
 echo " Добавление настройки sudo пропущено"
 elif [[ $i_sudo  == 1 ]]; then
-#echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
-#cat /mnt/etc/sudoers
 clear
 echo ""
 echo " Sudo с запросом пароля выполнено "
 elif [[ $i_sudo  == 2 ]]; then
-#echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 sed -i 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
-#cat /mnt/etc/sudoers
 clear
 echo ""
 echo " Sudo nopassword (БЕЗ запроса пароля) добавлено  "
@@ -646,26 +641,19 @@ if [[ $i_multilib  == 0 ]]; then
 echo ""
 echo " Добавление Multilib репозитория пропущено "
 elif [[ $i_multilib  == 1 ]]; then
-#echo 'Color = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 sed -i 's/#Color/Color/' /etc/pacman.conf
 #sed -i '/#Color/ s/^#//' /etc/pacman.conf
 sed -i '/^Co/ aILoveCandy' /etc/pacman.conf
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
-#echo '[multilib]' >> /etc/pacman.conf
-#echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
-#pacman -Syy
-#clear
 echo ""
 echo " Multilib репозиторий добавлен (раскомментирован) "
 fi
 
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"  
-#pacman -Syy
 pacman -Sy   #--noconfirm --noprogressbar --quiet
 #pacman -Syy --noconfirm --noprogressbar --quiet
 
-#### X.Org Server #########
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Устанавливаем X.Org Server (иксы) и драйвера."
@@ -808,15 +796,12 @@ clear
 elif [[ $x_de == 2 ]]; then
 echo ""    
 echo " Установка Xfce + Goodies for Xfce "     
-#pacman -S xfce4 xfce4-goodies
 pacman -S xfce4 xfce4-goodies --noconfirm
-# pacman -S xfce4 xfce4-goodies pavucontrol --noconfirm
 #mv /usr/share/xsessions/xfce.desktop ~/
 clear
 echo ""
 echo " DE (среда рабочего стола) Xfce успешно установлено "  
 
-### Log in without DM (Display manager) 
 echo ""
 echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Display manager) менеджера входа в Xfce"
 echo -e "${MAGENTA}=> ${BOLD}Файл ~/.xinitrc представляет собой шелл-скрипт передаваемый xinit посредством команды startx. ${NC}"
@@ -847,9 +832,7 @@ echo " Буду использовать DM (Display manager) "
 elif [[ $i_xfce  == 1 ]]; then
   echo ""  
   echo " Действия по настройке автовхода без DM (Display manager) "  
-  echo " Поскольку реализация автозагрузки окружения реализована через startx - (иксы), то если Вы установили X.Org Server возможно пакет (xorg-xinit) - уже установлен "  
-# Поскольку реализация автозагрузки окружения реализована через startx, 
-# то у Вас должен быть установлен пакет: xorg-xinit    
+  echo " Поскольку реализация автозагрузки окружения реализована через startx - (иксы), то если Вы установили X.Org Server возможно пакет (xorg-xinit) - уже установлен "    
 pacman -S xorg-xinit --noconfirm   # Программа инициализации X.Org
 # Если файл .xinitrc не существует, то копируем его из /etc/X11/xinit/xinitrc
 # в папку пользователя cp /etc/X11/xinit/xinitrc ~/.xinitrc
@@ -1294,17 +1277,15 @@ pacman -S ttf-liberation --noconfirm  # Шрифты Red Hats Liberation
 pacman -S ttf-anonymous-pro --noconfirm  # Семейство из четырех шрифтов фиксированной ширины, разработанных специально с учетом кодирования
 pacman -S terminus-font --noconfirm  # Моноширинный растровый шрифт (для X11 и консоли)
 
-### Install NTFS support "NTFS file support (Windows Drives)"
 echo ""
-echo -e "${BLUE}:: ${NC}Монтирование разделов NTFS и создание ссылок"
-pacman -S ntfs-3g --noconfirm  # Драйвер и утилиты файловой системы NTFS
+echo -e "${BLUE}:: ${NC}Монтирование разделов NTFS и создание ссылок" 
+pacman -S ntfs-3g --noconfirm  # Драйвер и утилиты файловой системы NTFS; "NTFS file support (Windows Drives)"
 
 echo ""
 echo -e "${BLUE}:: ${NC}Установка базовых программ и пакетов"
 echo -e " Установка базовых программ (пакетов): wget, curl, git "
 pacman -S wget git --noconfirm  #curl  - пока присутствует в pkglist.x86_64
 
-### Creating sysctl #####
 echo ""
 echo -e "${GREEN}=> ${BOLD}Создадим конфигурационный файл для установки системных переменных /etc/sysctl.conf ${NC}"
 echo " Sysctl - это инструмент для проверки и изменения параметров ядра во время выполнения (пакет procps-ng в официальных репозиториях ). sysctl реализован в procfs , файловой системе виртуального процесса в /proc/. "
@@ -1382,7 +1363,6 @@ vm.swappiness=10
 
 EOF
 
-### Creating sysctl ######
 echo -e "${BLUE}:: ${NC}Перемещаем и переименовываем исходный файл /etc/sysctl.conf в /etc/sysctl.d/99-sysctl.conf"
 cp /etc/sysctl.conf  /etc/sysctl.conf.back  # Для начала сделаем его бэкап
 mv /etc/sysctl.conf /etc/sysctl.d/99-sysctl.conf   # Перемещаем и переименовываем исходный файл
@@ -1459,7 +1439,6 @@ echo 'source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlight
 echo 'prompt adam2' >> /etc/zsh/zshrc
 clear
 echo ""
-#echo " Сменим командную оболочку пользователя с bash на zsh? "
 echo -e "${BLUE}:: ${NC}Сменим командную оболочку пользователя с Bash на ZSH ?"
 echo " Будьте внимательны! В данной опции выбор всегда остаётся за вами. "
 echo "" 
@@ -1522,8 +1501,7 @@ echo ""
 echo " Установка AUR Helper пропущена "
 elif [[ $in_aur_help == 1 ]]; then
 pacman -Syu    
-#sudo pacman -Syu
-#sudo pacman -S git
+# pacman -S git
 echo ""
 echo " Установка AUR Helper - (yay) "
 cd /home/$username
@@ -1538,8 +1516,7 @@ echo ""
 echo " Установка AUR Helper (yay) завершена "
 elif [[ $in_aur_help == 2 ]]; then
 pacman -Syu    
-#sudo pacman -Syu
-#sudo pacman -S git
+# pacman -S git
 echo ""
 echo " Установка AUR Helper - (pikaur) "    
 cd /home/$username
@@ -1556,8 +1533,6 @@ fi
 
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим всю систему включая AUR пакеты" 
-#echo 'Обновим всю систему включая AUR пакеты'
-# Update the entire system including AUR packages
 echo -e "${YELLOW}==> Примечание: ${NC}Выберите вариант обновления баз данных пакетов, и системы, в зависимости от установленного вами AUR Helper (yay; pikaur), или пропустите обновления - (если AUR НЕ установлен)."
 echo -e "${CYAN}=> ${BOLD}В сценарии скрипта присутствуют следующие варианты: ${NC}"
 echo " 1 - Обновление баз данных пакетов, и системы через 'AUR'-'yay', то выбирайте вариант - "1". "
@@ -1819,7 +1794,7 @@ clear
 echo -e "${CYAN}
   <<< Очистка кэша pacman, и Удаление всех пакетов-сирот (неиспользуемых зависимостей) . >>> 
 ${NC}"
-# Clearing the pacman cache, and Removing unused dependencies.
+
 echo "" 
 echo -e "${YELLOW}==> Примечание: ${NC}Если! Вы сейчас устанавливали "AUR Helper"-'yay' вместе с ним установилась зависимость 'go' - (Основные инструменты компилятора для языка программирования Go), который весит 559,0 МБ. Так, что если вам не нужна зависимость 'go', для дальнейшей сборки пакетов в установленной системе СОВЕТУЮ удалить её. В случае, если "AUR"-'yay' НЕ БЫЛ установлен, то пропустить этот шаг."
 
@@ -1840,14 +1815,12 @@ if [[ $rm_tool == 0 ]]; then
 echo ""
 echo " Удаление зависимости 'go' пропущено "      
 elif [[ $rm_tool == 1 ]]; then
-# sudo pacman -Rs go
 #pacman -Rs go
 pacman --noconfirm -Rs go    # --noconfirm  --не спрашивать каких-либо подтверждений
  echo "" 
  echo " Удаление зависимость 'go' выполнено "
 fi
 
-### Clean pacman cache (Очистить кэш pacman) ####
 clear
 echo ""
 echo -e "${BLUE}:: ${BOLD}Очистка кэша pacman ${NC}"
