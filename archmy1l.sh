@@ -763,8 +763,6 @@ elif [[ $t_pacstrap == 4 ]]; then
 fi 
 
 ### Install Kernel ###
-#### Kernel (optional) - (Kernel (arbitrary) #####
-#clear
 echo ""
 echo -e "${GREEN}==> ${NC}Какое ядро (Kernel) Вы бы предпочли установить вместе с системой Arch Linux?"
 echo -e "${BLUE}:: ${NC}Kernel (optional), Firmware"
