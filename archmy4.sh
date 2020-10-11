@@ -387,7 +387,8 @@ sudo modprobe vboxdrv  # Загрузка модулей
 #sudo gpasswd -a $username vboxusers
 sudo gpasswd -a alex vboxusers
 # Чтобы загрузить модуль VirtualBox во время загрузки, обратитесь к разделу Kernel_modules#Loading и создайте файл *.conf со строкой:
-echo "vboxdrv" > /etc/modules-load.d/virtualbox.conf
+sed -i 'vboxdrv' /etc/modules-load.d/virtualbox.conf
+#echo "vboxdrv" > /etc/modules-load.d/virtualbox.conf
 # в расположении (in location)
 # /etc/modules-load.d/virtualbox.conf
 
