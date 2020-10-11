@@ -3404,6 +3404,13 @@ echo -e "${BLUE}:: ${NC}Создать резервную копию (дубли
 #sudo cp /boot/grub/grub.cfg grub.cfg.backup
 sudo cp -vf /boot/grub/grub.cfg /boot/grub/grub.cfg.backup 
 
+echo ""
+echo -e "${BLUE}:: ${NC}Создать резервную копию (дубликат) файла etc/default/grub"
+#echo 'Создать резервную копию (дубликат) файла etc/default/grub'
+# Create a backup (duplicate) of the etc/default/grub file
+#sudo cp /etc/default/grub grub.backup
+sudo cp -vf /etc/default/grub /etc/default/grub.backup
+
 clear
 echo "" 
 echo -e "${YELLOW}==> Примечание: ${NC}Если! Вы сейчас устанавливали "AUR Helper"-'yay' вместе с ним установилась зависимость 'go' - (Основные инструменты компилятора для языка программирования Go), который весит 559,0 МБ. Так, что если вам не нужна зависимость 'go', для дальнейшей сборки пакетов в установленной системе СОВЕТУЮ удалить её. В случае, если "AUR"-'yay' НЕ БЫЛ установлен, или зависимость 'go' была удалена ранее, то пропустить этот шаг."
@@ -3439,23 +3446,110 @@ echo ' Удаление созданной папки (downloads), и скрип
 sudo rm -R ~/downloads/
 sudo rm -rf ~/archmy3
 
+
+
+
+
+
+
+
+
+echo 'Обновим информацию о шрифтах'
+# Update information about fonts
+sudo fc-cache -f -v
+
+echo 'Список всех пакетов-сирот'
+# List of all orphan packages
+sudo pacman -Qdt 
+
+sleep 5
+echo 'Удаление всех пакетов-сирот?'
+# Deleting all orphaned packages?
+read -p "1 - Да, 0 - Нет: " prog_set
+if [[ $prog_set == 1 ]]; then
+sudo pacman -Qdtq
+elif [[ $prog_set == 0 ]]; then
+  echo 'Удаление пакетов-сирот пропущено.'
+fi    
+
+echo 'Очистка кэша неустановленных пакетов'
+# Clearing the cache of uninstalled packages
+read -p "1 - Да, 0 - Нет: " prog_set
+if [[ $prog_set == 1 ]]; then
+sudo pacman -Sc 
+elif [[ $prog_set == 0 ]]; then
+  echo 'Очистка кэша пропущена.'
+fi  
+
+echo 'Очистка кэша пакетов'
+# Clearing the package cache
+read -p "1 - Да, 0 - Нет: " prog_set
+if [[ $prog_set == 1 ]]; then
+sudo pacman -Scc 
+elif [[ $prog_set == 0 ]]; then
+  echo 'Очистка кэша пропущена.'
+fi 
+
+echo 'Список Установленного софта (пакетов)'
+#List of Installed software (packages)
+sudo pacman -Qqe
+
+
+sleep 5
+echo -e "${GREEN}
+  Установка софта (пакетов) завершена!
+${NC}"
+# Installation of software (packages) is complete!
+#echo 'Установка завершена!'
+# The installation is now complete!
+
+echo 'Желательно перезагрузить систему для применения изменений'
+# It is advisable to restart the system to apply the changes
+# ============================================================================
+time
+
+echo 'Удаление созданной папки (downloads), и скрипта установки программ (arch3my)'
+# Deleting the created folder (downloads) and the program installation script (arch3my)
+sudo rm -R ~/downloads/
+sudo rm -rf ~/arch4my
+
+echo " Установка завершена для выхода введите >> exit << "
+exit
+
+
 ### Clean pacman cache (Очистить кэш pacman) ####
 echo ""
 echo -e "${BLUE}:: ${BOLD}Очистка кэша pacman ${NC}"
 echo -e "${CYAN}=> ${NC}Очистка кэша неустановленных пакетов, и репозиториев..."
 sudo pacman --noconfirm -Sc  # Очистка кэша неустановленных пакетов  # --noconfirm  -не спрашивать каких-либо подтверждений
-sudo pacman -Scc
+sudo pacman -Scc  # 
 #sudo pacman --noconfirm -Scc
-echo -e "${CYAN}=> ${NC}Удаление неиспользуемых зависимостей 'pacman -Qdtq'..."
-#pacman --noconfirm -Rcsn $(pacman -Qdtq) # --noconfirm (не спрашивать каких-либо подтверждений), -R --remove (Удалить пакет(ы) из системы), -c, --cascade (удалить пакеты и все пакеты, которые зависят от них), -s, --recursive (удалить ненужные зависимости), -n, --nosave (удалить конфигурационные файлы)
-# "(Clean orphan)" "pacman -Rns \$(pacman -Qqtd)"
-# pacman -Rns $(pacman -Qqtd)
+echo -e "${CYAN}=> ${NC}Просмотреть список пакетов сирот и Удаление неиспользуемых зависимостей 'pacman -Qdtq'..."
+#sudo pacman --noconfirm -Rcsn $(pacman -Qdtq) # --noconfirm (не спрашивать каких-либо подтверждений), -R --remove (Удалить пакет(ы) из системы), -c, --cascade (удалить пакеты и все пакеты, которые зависят от них), -s, --recursive (удалить ненужные зависимости), -n, --nosave (удалить конфигурационные файлы)
+
+
+Просмотреть список пакетов сирот
 sudo pacman -Rsn $(pacman -Qdtq) && rm -rf ~/.cache/thumbnails/* && rm -rf ~/.build/*
-#sudo pacman -Rsn $(pacman -Qdtq) 
-#sudo rm -rf ~/.cache/thumbnails/*
-#sudo rm -rf ~/.build/*
-# fc-cache -vf
-#sudo pacman -Scc && sudo pacman -Rsn $(pacman -Qdtq) && rm -rf ~/.cache/thumbnails/* && rm -rf ~/.build/*
+#sudo pacman -Rsn $(pacman -Qqtd)
+#sudo rm -rf ~/.cache/thumbnails/*  # удаляет миниатюры фото, которые накапливаются в системе
+#sudo rm -rf ~/.build/*  # 
+# или эта команда:
+# sudo pacman -Rsn $(pacman -Qdtq)
+### fc-cache -vf
+# sudo pacman -Scc && sudo pacman -Rsn $(pacman -Qdtq) && rm -rf ~/.cache/thumbnails/* && rm -rf ~/.build/*
+
+
+Удаление не используюемых пакетов
+Посмотреть, какие пакеты не используются ничем в системе можно командой
+sudo pacman -Qdt
+
+Удалить всех так называемых «сирот» можно командой
+sudo pacman -Rsn $(pacman -Qdtq)
+
+
+
+
+
 
 clear
 echo -e "${GREEN}
