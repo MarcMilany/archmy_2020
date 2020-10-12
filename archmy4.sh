@@ -251,7 +251,7 @@ sudo pacman -S xorg-fonts-type1 --noconfirm  # Шрифты X.org Type1
 font-bitstream-speedo --noconfirm  # https://github.com/freedesktop/xorg-font-bitstream-speedo
 # ----------------------------------
 
-sudo pacman -S  --noconfirm  #
+sudo pacman -S cantarell-fonts --noconfirm  # Шрифт Humanist sans serif
 
 echo 'Обновим информацию о шрифтах'
 # Update information about fonts
@@ -806,6 +806,9 @@ elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.' 
 fi
 
+# engrampa  - Манипулятор архивов для MATE
+# engrampa-thunar-plugin  - AUR - Манипулятор архивов из MATE без зависимости от Caja (версия GTK3)
+# catfish  - Универсальный инструмент для поиска файлов
 # lksctp-tools  - Реализация протокола SCTP (http://lksctp.sourceforge.net/)
 # syslinux  - Коллекция загрузчиков, которые загружаются с файловых систем FAT, ext2 / 3/4 и btrfs, с компакт-дисков и через PXE
 # freemind  - Ментальный картограф и в то же время простой в использовании иерархический редактор с упором на сворачивание
