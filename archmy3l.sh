@@ -573,8 +573,11 @@ sudo ntpdate 0.ru.pool.ntp.org  # будем использовать NTP сер
 #sudo ntpdate 1.ru.pool.ntp.org  # Список общедоступных NTP серверов доступен на сайте http://ntp.org
 #sudo ntpdate 2.ru.pool.ntp.org  # Отредактируйте /etc/ntp.conf для добавления/удаления серверов (server)
 #sudo ntpdate 3.ru.pool.ntp.org  # После изменений конфигурационного файла вам надо перезапустить ntpd (sudo service ntp restart) - Просмотр статуса: (sudo ntpq -p)
-echo " Синхронизации с часами BIOS "
-sudo hwclock --systohc
+echo " Синхронизации с часами BIOS "  # Синхронизируем аппаратное время с системным
+echo " Устанавливаются аппаратные часы из системных часов. "
+sudo hwclock --systohc  # Эта команда предполагает, что аппаратные часы настроены в формате UTC. 
+# sudo hwclock --adjust  # Порой значение аппаратного времени может сбиваться - выровняем!
+
 echo ""
 echo " Установка NTP (Network Time Protocol) выполнена "
 echo " Время точное как на Спасской башне Московского Кремля! "
