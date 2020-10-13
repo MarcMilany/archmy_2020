@@ -383,9 +383,9 @@ sudo modprobe vboxdrv  # Загрузка модулей
 # sudo modprobe -a vboxguest vboxsf vboxvideo
 # Чтобы предоставить себе разрешения для доступа virtualbox к общим папкам и USB устройствам используйте эту команду:     
 # sudo gpasswd -a имя_пользователя vboxusers
-# sudo gpasswd -a $USER vboxusers
+sudo gpasswd -a $USER vboxusers
 #sudo gpasswd -a $username vboxusers
-sudo gpasswd -a alex vboxusers
+#sudo gpasswd -a alex vboxusers
 # Чтобы загрузить модуль VirtualBox во время загрузки, обратитесь к разделу Kernel_modules#Loading и создайте файл *.conf со строкой:
 sed -i 'vboxdrv' /etc/modules-load.d/virtualbox.conf
 #echo "vboxdrv" > /etc/modules-load.d/virtualbox.conf
@@ -581,13 +581,14 @@ echo 'Сетевые утилиты, Tor, VPN, SSH, Samba и тд...'
 sudo pacman -S tor torsocks --noconfirm
 sudo pacman -S proxychains-ng privoxy openvpn --noconfirm
 sudo pacman -S samba --noconfirm  # Файловый сервер SMB и сервер домена AD
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S networkmanager-openconnect --noconfirm  # Плагин NetworkManager VPN для OpenConnect
+sudo pacman -S networkmanager-pptp --noconfirm  # Плагин NetworkManager VPN для PPTP
+sudo pacman -S networkmanager-vpnc --noconfirm  # Плагин NetworkManager VPN для VPNC
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
+sudo pacman -S nfs-utils --noconfirm  # Программы поддержки для сетевых файловых систем
 
 # Запуск, остановка сервиса tor:
 #sudo systemctl start tor
