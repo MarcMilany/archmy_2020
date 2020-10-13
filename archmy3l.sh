@@ -179,58 +179,50 @@ echo ""
 echo " Установка и настройка пропущена "
 elif [[ $i_localtime  == 1 ]]; then
 echo ""
-echo " Установка NTP (Network Time Protocol)"
+echo " Установка NTP (Network Time Protocol) "
+sudo pacman -S ntp --noconfirm  # Эталонная реализация сетевого протокола времени
+echo ""
+echo " Установка времени по серверу NTP (Network Time Protocol)(ru.pool.ntp.org) "
+sudo ntpdate 0.ru.pool.ntp.org  # будем использовать NTP сервера из пула ru.pool.ntp.org
+#sudo ntpdate 1.ru.pool.ntp.org  # Список общедоступных NTP серверов доступен на сайте http://ntp.org
+#sudo ntpdate 2.ru.pool.ntp.org  # Отредактируйте /etc/ntp.conf для добавления/удаления серверов (server)
+#sudo ntpdate 3.ru.pool.ntp.org  # После изменений конфигурационного файла вам надо перезапустить ntpd (sudo service ntp restart) - Просмотр статуса: (sudo ntpq -p)
+echo " Синхронизации с часами bios "
+sudo hwclock --systohc
+echo ""
+echo " Установка NTP (Network Time Protocol) выполнена "
+echo " Время точное как на Спасской башне Московского Кремля! "
+date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'   # одновременно отображает дату и часовой пояс
+elif [[ $i_localtime  == 2 ]]; then
+echo ""
+echo " Установка OpenNTPD"
+sudo pacman -S openntpd --noconfirm  # Бесплатная и простая в использовании реализация протокола сетевого времени
+echo " Добавим в автозагрузку OpenNTPD (openntpd.service) "
+systemctl enable openntpd.service
+echo " Установка OpenNTPD и запуск (openntpd.service) выполнен "
+fi
 
 
+# -------------------------------------
+# Настройка синхронизации времени в домене с помощью групповых политик состоит из двух шагов:
+# 1) Создание GPO для контроллера домена с ролью PDC
+# 2) Создание GPO для клиентов (опционально)
+# https://zen.yandex.ru/media/winitpro.ru/ntp-sinhronizaciia-vremeni-v-domene-s-pomosciu-gruppovyh-politik-5b5042923e546700a8ccf633?utm_source=serp
+# ====================================
 
-
-
-
-
-
-
-
-
-
-В первую очередь выберите подходящий NTP сервер, который вы могли бы использовать. Список общедоступных NTP серверов доступен на сайте http://ntp.org. В нашем примере мы будем использовать NTP сервера из пула ru.pool.ntp.org:
-
-0.ru.pool.ntp.org
-1.ru.pool.ntp.org
-2.ru.pool.ntp.org
-3.ru.pool.ntp.org
-
-Настройка синхронизации времени в домене с помощью групповых политик состоит из двух шагов:
-
-1) Создание GPO для контроллера домена с ролью PDC
-2) Создание GPO для клиентов (опционально)
-https://zen.yandex.ru/media/winitpro.ru/ntp-sinhronizaciia-vremeni-v-domene-s-pomosciu-gruppovyh-politik-5b5042923e546700a8ccf633?utm_source=serp
-------------------------------
-С переходом Арча на systemd
-походу localtime не бачит.
-Настройки время постоянно
-сбиваются. Копать
-синхронизацию времени через
-интернет по ntp?
 
  
 
-Я просто при установке сделал так:
-pacman -S openntpd  # Бесплатная и простая в использовании реализация протокола сетевого времени
-systemctl enable openntpd.service
+
+
 --------------------------------------
 
 
-короч не читайте весь мой порыв постом выше.
-просто поставил пакет ntp  
-pacman -S ntp  # Эталонная реализация сетевого протокола времени
-выполнил
-sudo ntpdate 0.ru.pool.ntp.org
-и для синхронизации с часами bios
-sudo hwclock --systohc
+  
 
-ништяк как в Кремле!
 
-а сбивалось походу потому что винда стояла, убунту стояла и ваще все плохо было.
+
+
 #################################
 
 echo ""
