@@ -776,6 +776,7 @@ sudo pacman -S synapse --noconfirm  # Средство запуска семан
 sudo pacman -S variety --noconfirm  # Меняет обои с регулярным интервалом, используя указанные пользователем или автоматически загруженные изображения
 sudo pacman -S kleopatra --noconfirm  # Диспетчер сертификатов и унифицированный графический интерфейс криптографии
 sudo pacman -S catfish --noconfirm  # Универсальный инструмент для поиска файлов
+sudo pacman -S hexchat --noconfirm  # Популярный и простой в использовании графический IRC-клиент (чат)
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
@@ -800,29 +801,37 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
+sudo pacman -S freemind --noconfirm  #  Ментальный картограф и в то же время простой в использовании иерархический редактор с упором на сворачивание
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.' 
 fi
 
-flex notepadqq catdoc unrtf id3lib toxcore mlocate dosfstools jfsutils
+       
 
 
-# hexchat  - Популярный и простой в использовании графический IRC-клиент (чат)
-# engrampa  - Манипулятор архивов для MATE
-# engrampa-thunar-plugin  - AUR - Манипулятор архивов из MATE без зависимости от Caja (версия GTK3)
+# notepadqq  - Notepad ++ - как текстовый редактор для Linux
 
+# flex  - Инструмент для создания программ сканирования текста
 # lksctp-tools  - Реализация протокола SCTP (http://lksctp.sourceforge.net/)
 # syslinux  - Коллекция загрузчиков, которые загружаются с файловых систем FAT, ext2 / 3/4 и btrfs, с компакт-дисков и через PXE
-# freemind  - Ментальный картограф и в то же время простой в использовании иерархический редактор с упором на сворачивание
-
+# toxcore  - Безопасная, не требующая настройки серверная часть P2P для замены Skype
+# catdoc - Конвертер файлов Microsoft Word, Excel, PowerPoint и RTF в текст
 # inetutils - Сборник общих сетевых программ
 # hplip  - Драйверы для HP DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых LaserJet
-# galculator-gtk2 или galculator
-# gnome-calculator 
+# unrtf  - Программа командной строки, конвертирующая документы RTF в другие форматы
+# id3lib  - Библиотека для чтения, записи и управления тегами ID3v1 и ID3v2
+# mlocate  - Слияние реализации locate / updatedb
+# dosfstools  - Утилиты файловой системы DOS
+# jfsutils  - Утилиты файловой системы JFS
 # python2-imaging  - PIL. Предоставляет возможности обработки изображений для Python
 # bluez-utils-compat  - Утилиты для разработки и отладки стека протоколов Bluetooth. Включает устаревшие инструменты.
+
+# engrampa  - Манипулятор архивов для MATE
+# engrampa-thunar-plugin  - AUR - Манипулятор архивов из MATE без зависимости от Caja (версия GTK3)
+# galculator-gtk2 или galculator
+# gnome-calculator 
+
+
 # ----------------------------------
  "freshplayerplugin" "(AUR) Recommended" - PPAPI-host Адаптер NPAPI-plugin
  "freshplayerplugin-git" "(AUR)" - PPAPI-host Адаптер NPAPI-plugin
