@@ -528,6 +528,74 @@ fi
 
 clear
 echo -e "${MAGENTA}
+  <<< Синхронизации времени (Почему сбивается время на компьютере?). >>> ${NC}"
+
+echo ""
+echo -e "${GREEN}==> ${NC}Если у Вас Сбиваются настройки времени (или параллельно установлена Windows...)"
+#echo 'Если у Вас Сбиваются настройки времени (или параллельно установлена Windows...)
+# If you have Lost the time settings (or Windows is installed in parallel...)
+echo -e "${BLUE}:: ${BOLD}Посмотрим дату, время, и часовой пояс ... ${NC}"
+timedatectl | grep "Time zone"
+date
+date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'     # одновременно отображает дату и часовой пояс
+echo ""
+echo -e "${MAGENTA}:: ${NC}Для ИСПРАВЛЕНИЯ (синхронизации времени) предложено несколько вариантов (ntp и openntpd)."
+echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие варианты: ${NC}"
+echo " 1 - Установка NTP Servers (серверы точного времени) - пакет (ntp - Эталонная реализация сетевого протокола времени). Список общедоступных NTP серверов доступен на сайте http://ntp.org. "
+echo -e "${CYAN}:: ${NC}На сегодняшний день существует множество технологий синхронизации часов, из которых наиболее широкую популярность получила NTP. Что такое NTP? NTP (Network Time Protocol) - стандартизированный протокол, который работает поверх UDP и используется для синхронизации локальных часов с часами на сервере точного времени (на различных операционных системах)."  # NTP Servers (серверы точного времени) - https://www.ntp-servers.net/
+echo " 2 - Установка OpenNTPD - пакет (openntpd - Бесплатная и простая в использовании реализация протокола сетевого времени). По умолчанию OpenNTPd использует серверы pool.ntp.org (это огромный кластер серверов точного времени) и работает только как клиент."  # Introduction - https://www.ntppool.org/ru/ (https://www.8host.com/blog/ustanovka-i-nastrojka-openntpd-v-freebsd-10-2/)
+echo -e "${CYAN}:: ${NC}OpenNTPD - это свободная и простая в использовании реализация протокола NTP, первоначально разработанная в рамках проекта OpenBSD. OpenNTPd дает возможность синхронизировать локальные часы с удаленными серверами NTP."
+echo " Будьте внимательны! В данной опции выбор всегда остаётся за вами. "
+echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
+echo " Если Вы находитесь в России рекомендую выбрать вариант "1" "
+echo "" 
+while
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p " 
+    1 - Установка NTP (Network Time Protocol),     2 - Установка OpenNTPD 
+
+    0 - НЕТ - Пропустить установку: " i_localtime  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_localtime " =~ [^120] ]]
+do
+    :
+done
+if [[ $i_localtime  == 0 ]]; then
+echo ""  
+echo " Установка и настройка пропущена "
+elif [[ $i_localtime  == 1 ]]; then
+echo ""
+echo " Установка NTP (Network Time Protocol) "
+sudo pacman -S ntp --noconfirm  # Эталонная реализация сетевого протокола времени
+echo ""
+echo " Установка времени по серверу NTP (Network Time Protocol)(ru.pool.ntp.org) "
+sudo ntpdate 0.ru.pool.ntp.org  # будем использовать NTP сервера из пула ru.pool.ntp.org
+#sudo ntpdate 1.ru.pool.ntp.org  # Список общедоступных NTP серверов доступен на сайте http://ntp.org
+#sudo ntpdate 2.ru.pool.ntp.org  # Отредактируйте /etc/ntp.conf для добавления/удаления серверов (server)
+#sudo ntpdate 3.ru.pool.ntp.org  # После изменений конфигурационного файла вам надо перезапустить ntpd (sudo service ntp restart) - Просмотр статуса: (sudo ntpq -p)
+echo " Синхронизации с часами bios "
+sudo hwclock --systohc
+echo ""
+echo " Установка NTP (Network Time Protocol) выполнена "
+echo " Время точное как на Спасской башне Московского Кремля! "
+date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'   # одновременно отображает дату и часовой пояс
+elif [[ $i_localtime  == 2 ]]; then
+echo ""
+echo " Установка OpenNTPD"
+sudo pacman -S openntpd --noconfirm  # Бесплатная и простая в использовании реализация протокола сетевого времени
+echo " Добавим в автозагрузку OpenNTPD (openntpd.service) "
+systemctl enable openntpd.service
+echo " Установка OpenNTPD и запуск (openntpd.service) выполнен "
+fi
+# -------------------------------------
+# Настройка синхронизации времени в домене с помощью групповых политик состоит из двух шагов:
+# 1) Создание GPO для контроллера домена с ролью PDC
+# 2) Создание GPO для клиентов (опционально)
+# https://zen.yandex.ru/media/winitpro.ru/ntp-sinhronizaciia-vremeni-v-domene-s-pomosciu-gruppovyh-politik-5b5042923e546700a8ccf633?utm_source=serp
+# ====================================
+
+clear
+echo -e "${MAGENTA}
   <<< Создание полного набора локализованных пользовательских каталогов по умолчанию, в пределах "HOME" каталога. >>> ${NC}"
 echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете создать, если пропустили это действие в предыдущем скрипте (при установке основной системы), или пропустить установку." 
 
