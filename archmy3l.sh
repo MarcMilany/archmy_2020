@@ -560,10 +560,10 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done
-if [[ $i_localtime  == 0 ]]; then
+if [[ $i_localtime == 0 ]]; then
 echo ""  
 echo " Установка и настройка пропущена "
-elif [[ $i_localtime  == 1 ]]; then
+elif [[ $i_localtime == 1 ]]; then
 echo ""
 echo " Установка NTP (Network Time Protocol) "
 sudo pacman -S ntp --noconfirm  # Эталонная реализация сетевого протокола времени
@@ -579,7 +579,7 @@ echo ""
 echo " Установка NTP (Network Time Protocol) выполнена "
 echo " Время точное как на Спасской башне Московского Кремля! "
 date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'   # одновременно отображает дату и часовой пояс
-elif [[ $i_localtime  == 2 ]]; then
+elif [[ $i_localtime == 2 ]]; then
 echo ""
 echo " Установка OpenNTPD"
 sudo pacman -S openntpd --noconfirm  # Бесплатная и простая в использовании реализация протокола сетевого времени
