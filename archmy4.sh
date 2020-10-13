@@ -641,11 +641,11 @@ echo 'Установить рекомендуемые программы из AU
 # To install the recommended program? AUR
 echo -e "${BLUE}
 'Список программ рекомендованных к установке:${GREEN}
-gksu debtap menulibre caffeine-ng inxi xneur fsearch-git cherrytree timeshift mocicon multiload-ng-indicator-gtk xfce4-multiload-ng-plugin-gtk2 keepass2-plugin-tray-icon gconf-editor gconf-cleaner webtorrent-desktop xorg-xkill teamviewer corectrl lib32-simplescreenrecorder mkinitcpio-openswap fetchmirrors'
+gksu debtap menulibre caffeine-ng inxi xneur fsearch-git cherrytree timeshift mocicon multiload-ng-indicator-gtk xfce4-multiload-ng-plugin-gtk2 keepass2-plugin-tray-icon gconf-editor gconf-cleaner webtorrent-desktop teamviewer corectrl lib32-simplescreenrecorder mkinitcpio-openswap fetchmirrors'
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-yay -S gksu debtap menulibre caffeine-ng inxi xneur fsearch-git cherrytree timeshift mocicon multiload-ng-indicator-gtk xfce4-multiload-ng-plugin-gtk2 keepass2-plugin-tray-icon gconf-editor gconf-cleaner webtorrent-desktop xorg-xkill teamviewer corectrl qt4 xflux flameshot-git lib32-simplescreenrecorder mkinitcpio-openswap fetchmirrors --noconfirm
+yay -S gksu debtap menulibre caffeine-ng inxi xneur fsearch-git cherrytree timeshift mocicon multiload-ng-indicator-gtk xfce4-multiload-ng-plugin-gtk2 keepass2-plugin-tray-icon gconf-editor gconf-cleaner webtorrent-desktop teamviewer corectrl qt4 xflux flameshot-git lib32-simplescreenrecorder mkinitcpio-openswap fetchmirrors --noconfirm  # xorg-xkill
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
@@ -770,12 +770,12 @@ qemu osmo synapse variety kleopatra'
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S qemu --noconfirm # flex notepadqq catdoc unrtf id3lib toxcore mlocate dosfstools jfsutils
-sudo pacman -S osmo synapse variety kleopatra --noconfirm 
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
+sudo pacman -S qemu --noconfirm  # Универсальный компьютерный эмулятор и виртуализатор с открытым исходным кодом
+sudo pacman -S osmo --noconfirm  # Удобный персональный органайзер
+sudo pacman -S synapse --noconfirm  # Средство запуска семантических файлов
+sudo pacman -S variety --noconfirm  # Меняет обои с регулярным интервалом, используя указанные пользователем или автоматически загруженные изображения
+sudo pacman -S kleopatra --noconfirm  # Диспетчер сертификатов и унифицированный графический интерфейс криптографии
+sudo pacman -S catfish --noconfirm  # Универсальный инструмент для поиска файлов
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
@@ -806,13 +806,17 @@ elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.' 
 fi
 
+flex notepadqq catdoc unrtf id3lib toxcore mlocate dosfstools jfsutils
+
+
+# hexchat  - Популярный и простой в использовании графический IRC-клиент (чат)
 # engrampa  - Манипулятор архивов для MATE
 # engrampa-thunar-plugin  - AUR - Манипулятор архивов из MATE без зависимости от Caja (версия GTK3)
-# catfish  - Универсальный инструмент для поиска файлов
+
 # lksctp-tools  - Реализация протокола SCTP (http://lksctp.sourceforge.net/)
 # syslinux  - Коллекция загрузчиков, которые загружаются с файловых систем FAT, ext2 / 3/4 и btrfs, с компакт-дисков и через PXE
 # freemind  - Ментальный картограф и в то же время простой в использовании иерархический редактор с упором на сворачивание
-# kleopatra - Диспетчер сертификатов и унифицированный графический интерфейс криптографии
+
 # inetutils - Сборник общих сетевых программ
 # hplip  - Драйверы для HP DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых LaserJet
 # galculator-gtk2 или galculator
