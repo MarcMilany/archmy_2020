@@ -258,6 +258,7 @@ echo '#CONSOLEFONT="cyr-sun16' >> /etc/vconsole.conf
 echo 'CONSOLEMAP=' >> /etc/vconsole.conf
 echo '#TIMEZONE=Europe/Moscow' >> /etc/vconsole.conf
 echo '#HARDWARECLOCK=UTC' >> /etc/vconsole.conf
+echo '#HARDWARECLOCK=localtime' >> /etc/vconsole.conf
 echo '#USECOLOR=yes' >> /etc/vconsole.conf
 echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf
 
