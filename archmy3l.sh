@@ -3005,7 +3005,7 @@ elif [[ $videocard == 1 ]]; then
   echo " Установка Проприетарных драйверов для NVIDIA "
 sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils nvidia-settings --noconfirm 
 sudo pacman -S libvdpau lib32-libvdpau --noconfirm   # Библиотека Nvidia VDPAU
-# pacman -S xf86-video-nouveau --noconfirm  # - свободный Nvidia (Драйвер 3D-ускорения с открытым исходным кодом) - ВОЗМОЖНО уже установлен с (X.org)
+sudo pacman -S xf86-video-nouveau --noconfirm  # - свободный Nvidia (Драйвер 3D-ускорения с открытым исходным кодом) - ВОЗМОЖНО уже установлен с (X.org)
 # nvidia-xconfig     # сгенерировать конфиг nvidia-xconfig (для настройки xorg.conf)
 
 echo ""  
@@ -3013,10 +3013,8 @@ echo " Установка драйверов для видеокарт (nvidia) 
 elif [[ $videocard == 2 ]]; then
 echo ""    
 echo " Установка Свободных драйверов для AMD/(ATI) "
-sudo pacman -S lib32-mesa mesa-vdpau lib32-mesa-vdpau libva-mesa-driver lib32-libva-mesa-driver --noconfirm
-sudo pacman -S vulkan-radeon lib32-vulkan-radeon --noconfirm  # 
-sudo pacman -S lib32-mesa mesa-vdpau lib32-mesa-vdpau vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver --noconfirm
-
+sudo pacman -S lib32-mesa mesa-vdpau lib32-mesa-vdpau libva-mesa-driver lib32-libva-mesa-driver --noconfirm  # Драйверы Mesa
+sudo pacman -S vulkan-radeon lib32-vulkan-radeon --noconfirm  # Драйвер Radeon Vulkan mesa; Драйвер Radeon Vulkan mesa (32-разрядный)
 sudo pacman -S libvdpau-va-gl --noconfirm  # Драйвер VDPAU с бэкэндом OpenGL / VAAPI
 sudo pacman -S xf86-video-amdgpu --noconfirm  # Видеодрайвер X.org amdgpu
 sudo pacman -S xf86-video-ati --noconfirm  # Видеодрайвер X.org ati
@@ -3029,8 +3027,11 @@ echo " Установка драйверов для видеокарт (amd/ati)
 elif [[ $videocard == 3 ]]; then
 echo ""    
 echo " Установка Свободных драйверов для Intel "
-sudo pacman -S xf86-video-intel vdpauinfo libva-utils libva libvdpau libvdpau-va-gl lib32-libvdpau --noconfirm  # lib32-intel-dri
-pacman -S lib32-mesa vulkan-intel libva-intel-driver lib32-libva-intel-driver lib32-vulkan-intel --noconfirm
+sudo pacman -S vdpauinfo libva-utils libva libvdpau libvdpau-va-gl lib32-libvdpau --noconfirm  
+sudo pacman -S lib32-mesa vulkan-intel libva-intel-driver lib32-libva-intel-driver lib32-vulkan-intel --noconfirm
+sudo pacman -S xf86-video-intel --noconfirm  # X.org Intel i810 / i830 / i915 / 945G / G965 + видеодрайверы
+# xf86-video-intel - ВОЗМОЖНО уже установлен с (X.org)
+# lib32-intel-dri - не найден
 clear 
 echo "" 
 echo " Установка драйверов для видеокарт (intel) выполнена "
