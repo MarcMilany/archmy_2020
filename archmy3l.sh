@@ -3036,6 +3036,7 @@ clear
 echo "" 
 echo " Установка драйверов для видеокарт (intel) выполнена "
 elif [[ $videocard == 4 ]]; then
+  clear  
   echo ""  
   echo " Установка Проприетарных драйверов для NVIDIA "
 sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils nvidia-settings --noconfirm  # Драйверы NVIDIA для linux
@@ -3066,16 +3067,9 @@ sudo pacman -S libva-vdpau-driver --noconfirm  # Серверная часть V
 sudo pacman -S mesa-demos --noconfirm  # Демоверсии Mesa и инструменты, включая glxinfo + glxgears
 sudo pacman -S xf86-input-elographics --noconfirm  # Драйвер ввода X.org Elographics TouchScreen
 sudo pacman -S xorg-twm --noconfirm  # Вкладка Window Manager для системы X Window
-
-
-
-
-
-
-
-
-
-
+clear 
+echo "" 
+echo " Установка драйверов для видеокарт Intel, AMD/(ATI), NVIDIA и дополнительных инструментов выполнена "
 fi
 # -----------------------------------------
 #Если вы устанавливаете систему на виртуальную машину:
@@ -3089,64 +3083,6 @@ fi
 # Существуют также проприетарные драйверы, то есть разработаны самой Nvidia или AMD, но они часто не поддерживают новое ядро, или ещё какие-нибудь траблы.
 ###########################################
 
-echo -e "${MAGENTA}
-  <<< Установка Свободных и Проприетарных драйверов для видеокарт (nvidia, amd, intel). >>> ${NC}"
-# Install Proprietary drivers for video cards (nvidia, amd, intel), as well as printer drivers. 
-echo -e "${RED}==> Внимание! ${NC}Если у Вас система система Archlinux установлена на внешний накопитель, или USB(флешку), то желательно установить все предложенные (свободные и проприетарные) драйвера для видеокарт. Возможно! общий драйвер vesa (xf86-video-vesa), который поддерживает большое количество чипсетов (но не включает 2D или 3D ускорение)."
-
-echo ""
-echo -e "${GREEN}==> ${NC}Устанавливить видео драйверы для чипов Intel, AMD/(ATI), NVIDIA и дополнительные инструменты?"
-echo -e "${BLUE}:: ${NC}Сперва определим вашу видеокарту!"
-#echo "Сперва определим вашу видеокарту"
-# First, we will determine your video card!
-echo -e "${MAGENTA}=> ${BOLD}Вот данные по вашей видеокарте (даже, если Вы работаете на VM): ${NC}"
-#echo ""
-lspci | grep -e VGA -e 3D
-#lspci | grep -E "VGA|3D"   # узнаем производителя и название видеокарты
-lspci -nn | grep VGA
-#lspci | grep VGA        # узнаем ID шины 
-# После того как вы узнаете PCI-порт видеокарты, например 1с:00.0, можно получить о ней более подробную информацию:
-# sudo lspci -v -s 1с:00.0
-# Она покажет, какая видеокарта используется:
-#grep -Eiwo -m1 'nvidia|amd|ati|intel' /var/log/Xorg.0.log
-echo -e "${YELLOW}==> Примечание: ${NC}Для установки библиотек (некоторых) драйверов видеокарт, нужен репозиторий [multilib], надеюсь Вы добавили репозиторий "Multilib" (при установке основной системы)."
-echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие варианты: ${NC}"
-echo " 1 - NVIDIA - Если видео карта от Nvidia ставим драйвер (проприетарный по желанию), то выбирайте вариант - "1". "
-echo " 2 - AMD/(ATI) - Если видео карта от Amd ставим драйвер (свободный по желанию), то выбирайте вариант - "2"."
-echo " 3 - Intel - Если видео карта от Intel ставим драйвер (свободный по желанию), то выбирайте вариант - "3"."
-echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. В данной опции выбор остаётся за вами. "
-# Be careful! The installation process was fully automatic. In this option, the choice is yours.
-echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-# If you doubt your actions, think again... 
-echo "" 
-while 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-clear
 echo ""
 echo -e "${GREEN}==> ${NC}Ставим Драйвера принтера (Поддержка печати) CUPS, HP"
 #echo -e "${BLUE}:: ${NC}Ставим Драйвера принтера (Поддержка печати) CUPS, HP" 
