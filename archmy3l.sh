@@ -3037,6 +3037,15 @@ fi
 # xf86-video-intel - свободный Intel
 # xf86-video-nouveau - свободный Nvidia
 # Существуют также проприетарные драйверы, то есть разработаны самой Nvidia или AMD, но они часто не поддерживают новое ядро, или ещё какие-нибудь траблы.
+# -------------------------------
+# Доустановить Драйвера и утилиты ---
+# sudo pacman -S lib32-libva-vdpau-driver --noconfirm  # Серверная часть VDPAU для VA API (32-разрядная версия)  https://freedesktop.org/wiki/Software/vaapi/
+# sudo pacman -S lib32-mesa-demos --noconfirm  # Демонстрации и инструменты Mesa (32-разрядная версия)
+# sudo pacman -S libva-vdpau-driver --noconfirm  # Серверная часть VDPAU для VA API   https://freedesktop.org/wiki/Software/vaapi/
+# sudo pacman -S mesa-demos --noconfirm  # Демоверсии Mesa и инструменты, включая glxinfo + glxgears
+# sudo pacman -S xf86-input-elographics --noconfirm  # Драйвер ввода X.org Elographics TouchScreen
+# sudo pacman -S xorg-twm --noconfirm  # Вкладка Window Manager для системы X Window
+#
 ###########################################
 
 echo ""
