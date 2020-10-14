@@ -238,6 +238,8 @@ sudo pacman -S ttf-arphic-uming --noconfirm  # CJK Unicode шрифт в сти�
 sudo pacman -S ttf-inconsolata --noconfirm  # Моноширинный шрифт для красивых списков кода и для терминала - шрифт для "коддинга", - Можно не ставить.
 sudo pacman -S sdl_ttf --noconfirm  # Библиотека, позволяющая использовать шрифты TrueType в ваших приложениях SDL
 sudo pacman -S ttf-bitstream-vera --noconfirm  # Шрифты Bitstream Vera.
+sudo pacman -S font-bh-ttf --noconfirm  # Шрифты X.org Luxi Truetype 
+sudo pacman -S xorg-fonts-type1 --noconfirm  # Шрифты X.org Type1
 # Китайские, Японские, Индийские шрифт
 sudo pacman -S opendesktop-fonts --noconfirm  # Китайские шрифты TrueType 
 sudo pacman -S ttf-fireflysung --noconfirm  # Китайские иероглифы: - ;
@@ -246,8 +248,7 @@ sudo pacman -S ttf-hanazono --noconfirm  # Бесплатный японский
 sudo pacman -S ttf-indic-otf --noconfirm  # Коллекция индийских шрифтов Opentype
 # ---------------------------------
 # Узнать стоя или нет? 
-sudo pacman -S font-bh-ttf --noconfirm  # Шрифты X.org Luxi Truetype 
-sudo pacman -S xorg-fonts-type1 --noconfirm  # Шрифты X.org Type1
+
 font-bitstream-speedo --noconfirm  # https://github.com/freedesktop/xorg-font-bitstream-speedo
 # ----------------------------------
 
