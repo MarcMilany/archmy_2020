@@ -1192,7 +1192,7 @@ echo -e "${GREEN}==> ${NC}Установка дополнительных баз
 #echo -e "${BLUE}:: ${NC}Установка дополнительных базовых программ (пакетов)" 
 #echo 'Установка дополнительных базовых программ (пакетов)'
 # Installing additional basic programs (packages)
-echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (aspell-ru, arch-install-scripts, bash-completion, cmake, dosfstools, f2fs-tools, sane, gvfs, gnu-netcat, iftop, nmap, ncdu, hydra, isomd5sum, python-isomd5sum, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, pwgen, scrot, xsel, powertop, smartmontools, ethtool, glances, xterm, desktop-file-utils, gtop, lib32-curl, gpm, hddtemp, xorg-xkill)."
+echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (aspell-ru, arch-install-scripts, bash-completion, cmake, dosfstools, f2fs-tools, sane, gvfs, gnu-netcat, iftop, nmap, ncdu, hydra, isomd5sum, python-isomd5sum, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, pwgen, scrot, xsel, powertop, smartmontools, ethtool, glances, xterm, desktop-file-utils, gtop, lib32-curl, gpm, hddtemp, memtest86+, xorg-xkill)."
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -1216,7 +1216,7 @@ echo " Установка дополнительных базовых прогр
 elif [[ $in_soft == 1 ]]; then
   echo ""  
   echo " Установка дополнительных базовых программ (пакетов) "
-sudo pacman -S aspell-ru arch-install-scripts bash-completion cmake dosfstools f2fs-tools sane gvfs gnu-netcat iftop nmap ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip pwgen scrot xsel powertop smartmontools ethtool glances xterm desktop-file-utils gtop lib32-curl gpm hddtemp xorg-xkill --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64   
+sudo pacman -S aspell-ru arch-install-scripts bash-completion cmake dosfstools f2fs-tools sane gvfs gnu-netcat iftop nmap ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip pwgen scrot xsel powertop smartmontools ethtool glances xterm desktop-file-utils gtop lib32-curl gpm hddtemp memtest86+ xorg-xkill --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64   
 clear
 echo ""   
 echo " Установка дополнительных базовых программ (пакетов) выполнена "
@@ -1751,7 +1751,7 @@ sudo pacman -S libreoffice-still-ru --noconfirm  # Пакет русского �
 sudo pacman -S libreoffice-extension-writer2latex --noconfirm  # набор расширений LibreOffice для преобразования и работы с LaTeX в LibreOffice
 sudo pacman -S hunspell --noconfirm  # Библиотека и программа для проверки орфографии и морфологического анализатора
 sudo pacman -S hyphen --noconfirm  # Библиотека для качественной расстановки переносов и выравнивания
-sudo pacman -S mythes --noconfirm  #libmythes  Простой тезаурус (Словарь понятий или терминов). В нем можно найти слова синонимы или антонимы к интересующему понятию (слову, термину).
+sudo pacman -S mythes --noconfirm  # libmythes  Простой тезаурус (Словарь понятий или терминов). В нем можно найти слова синонимы или антонимы к интересующему понятию (слову, термину).
 #clear
 echo ""    
 echo " Установка LibreOffice-still выполнена "
