@@ -3214,8 +3214,8 @@ echo " Установка планировщика заданий CRON (cronie) 
 elif [[ $i_cron == 1 ]]; then
   echo ""  
   echo " Установка планировщика заданий CRON (cronie) "
-#sudo pacman -S cronie  # Демон, который запускает указанные программы в запланированное время и связанные инструменты
-sudo pacman -S cronie --noconfirm  
+#sudo pacman -S cronie  
+sudo pacman -S cronie --noconfirm  # Демон, который запускает указанные программы в запланированное время и связанные инструменты
 echo ""  
 echo " Добавляем в автозагрузку планировщик заданий (cronie.service) "
 sudo systemctl enable cronie.service
