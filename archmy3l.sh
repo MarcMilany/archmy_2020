@@ -2466,12 +2466,10 @@ echo " Установка поддержки системой exFAT пропущ
 elif [[ $in_fat == 1 ]]; then
   echo ""  
   echo " Установка поддержки системой exFAT в Linux "
-sudo pacman -S exfat-utils fuse-exfat --noconfirm  #exfatprogs
+sudo pacman -S exfat-utils fuse-exfat --noconfirm  # Утилиты для файловой системы exFAT; Утилиты для файловой системы exFAT
+sudo pacman -S exfatprogs --noconfirm  # Утилиты файловой системы exFAT файловой системы в пространстве пользователя драйвера ядра Linux файловой системы exFAT 
 fi
 # --------------------------------------------------------
-# exfat-utils - Утилиты для файловой системы exFAT  - Помечен как устаревший на 2020-04-09
-# fuse-exfat - Утилиты для файловой системы exFAT
-# exfatprogs - Утилиты файловой системы exFAT файловой системы в пространстве пользователя драйвера ядра Linux файловой системы exFAT
 # Форматирую флешку (жесткий диск) под ArchLinux:
 # mkfs.exfat /dev/sdc
 # В Linux все проходит нормально. Носитель открывается, файлы копируются.
