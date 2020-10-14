@@ -3003,11 +3003,11 @@ echo " Установка драйверов для видеокарт (nvidia, 
 elif [[ $videocard == 1 ]]; then
   echo ""  
   echo " Установка Проприетарных драйверов для NVIDIA "
-pacman -S nvidia nvidia-utils lib32-nvidia-utils nvidia-settings --noconfirm 
-#pacman -S libvdpau lib32-libvdpau --noconfirm   # Библиотека Nvidia VDPAU
-# pacman -S xf86-video-nouveau --noconfirm  # - свободный Nvidia (Драйвер 3D-ускорения с открытым исходным кодом)
+sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils nvidia-settings --noconfirm 
+sudo pacman -S libvdpau lib32-libvdpau --noconfirm   # Библиотека Nvidia VDPAU
+# pacman -S xf86-video-nouveau --noconfirm  # - свободный Nvidia (Драйвер 3D-ускорения с открытым исходным кодом) - ВОЗМОЖНО уже установлен с (X.org)
 # nvidia-xconfig     # сгенерировать конфиг nvidia-xconfig (для настройки xorg.conf)
-clear 
+
 echo ""  
 echo " Установка драйверов для видеокарт (nvidia) выполнена "
 elif [[ $videocard == 2 ]]; then
