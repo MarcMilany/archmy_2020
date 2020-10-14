@@ -2991,7 +2991,7 @@ echo " Действия ввода, выполняется сразу после
     read -n1 -p "      
     1 - драйвера для NVIDIA,     2 - драйвера для AMD/(ATI),     3 - драйвера для Intel,
 
-    4 - драйвера для Intel, AMD/(ATI), NVIDIA и дополнительные инструменты - (flash drive) 
+    4 - драйверов для Intel, AMD/(ATI), NVIDIA и дополнительные инструменты - (flash drive) 
 
     0 - Пропустить установку: " videocard  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
@@ -3045,7 +3045,7 @@ sudo pacman -S xf86-video-nouveau --noconfirm  # - свободный Nvidia (Д
 echo " Установка драйверов для видеокарт (nvidia) выполнена "
 echo ""    
 echo " Установка Свободных драйверов для AMD/(ATI) "
-sudo pacman -S lib32-mesa mesa-vdpau lib32-mesa-vdpau libva-mesa-driver lib32-libva-mesa-driver --noconfirm  # Драйверы Mesa
+sudo pacman -S mesa-vdpau lib32-mesa-vdpau libva-mesa-driver lib32-libva-mesa-driver --noconfirm  #lib32-mesa # Драйверы Mesa
 sudo pacman -S vulkan-radeon lib32-vulkan-radeon --noconfirm  # Драйвер Radeon Vulkan mesa; Драйвер Radeon Vulkan mesa (32-разрядный)
 sudo pacman -S libvdpau-va-gl --noconfirm  # Драйвер VDPAU с бэкэндом OpenGL / VAAPI
 sudo pacman -S xf86-video-amdgpu --noconfirm  # Видеодрайвер X.org amdgpu - ВОЗМОЖНО уже установлен с (X.org)
@@ -3054,11 +3054,18 @@ echo " Установка драйверов для видеокарт (amd/ati)
 echo ""    
 echo " Установка Свободных драйверов для Intel "
 sudo pacman -S vdpauinfo libva-utils libva libvdpau libvdpau-va-gl lib32-libvdpau --noconfirm  
-sudo pacman -S lib32-mesa vulkan-intel libva-intel-driver lib32-libva-intel-driver lib32-vulkan-intel --noconfirm
+sudo pacman -S vulkan-intel libva-intel-driver lib32-libva-intel-driver lib32-vulkan-intel --noconfirm #lib32-mesa
 sudo pacman -S xf86-video-intel --noconfirm  # X.org Intel i810 / i830 / i915 / 945G / G965 + видеодрайверы - ВОЗМОЖНО уже установлен с (X.org)
 echo " Установка драйверов для видеокарт (intel) выполнена "
-
-
+echo ""    
+echo " Установка дополнительных инструментов и драйверов "
+sudo pacman -S lib32-mesa --noconfirm   # Реализация спецификации OpenGL с открытым исходным кодом (32-разрядная версия)
+sudo pacman -S lib32-libva-vdpau-driver --noconfirm  # Серверная часть VDPAU для VA API (32-разрядная версия) https://freedesktop.org/wiki/Software/vaapi/ 
+sudo pacman -S lib32-mesa-demos --noconfirm  # Демонстрации и инструменты Mesa (32-разрядная версия)
+sudo pacman -S libva-vdpau-driver --noconfirm  # Серверная часть VDPAU для VA API   https://freedesktop.org/wiki/Software/vaapi/
+sudo pacman -S mesa-demos --noconfirm  # Демоверсии Mesa и инструменты, включая glxinfo + glxgears
+sudo pacman -S xf86-input-elographics --noconfirm  # Драйвер ввода X.org Elographics TouchScreen
+sudo pacman -S xorg-twm --noconfirm  # Вкладка Window Manager для системы X Window
 
 
 
@@ -3080,15 +3087,6 @@ fi
 # xf86-video-intel - свободный Intel
 # xf86-video-nouveau - свободный Nvidia
 # Существуют также проприетарные драйверы, то есть разработаны самой Nvidia или AMD, но они часто не поддерживают новое ядро, или ещё какие-нибудь траблы.
-# -------------------------------
-# Доустановить Драйвера и утилиты ---
-# sudo pacman -S lib32-libva-vdpau-driver --noconfirm  # Серверная часть VDPAU для VA API (32-разрядная версия)  https://freedesktop.org/wiki/Software/vaapi/
-# sudo pacman -S lib32-mesa-demos --noconfirm  # Демонстрации и инструменты Mesa (32-разрядная версия)
-# sudo pacman -S libva-vdpau-driver --noconfirm  # Серверная часть VDPAU для VA API   https://freedesktop.org/wiki/Software/vaapi/
-# sudo pacman -S mesa-demos --noconfirm  # Демоверсии Mesa и инструменты, включая glxinfo + glxgears
-# sudo pacman -S xf86-input-elographics --noconfirm  # Драйвер ввода X.org Elographics TouchScreen
-# sudo pacman -S xorg-twm --noconfirm  # Вкладка Window Manager для системы X Window
-#
 ###########################################
 
 echo -e "${MAGENTA}
