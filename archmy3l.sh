@@ -1903,7 +1903,7 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $in_conky == 1 ]]; then
   echo ""  
   echo " Установка утилит (пакетов) Conky и Conky-Manager "
-sudo pacman -S conky conky-manager --noconfirm 
+sudo pacman -S conky conky-manager --noconfirm  # Легкий системный монитор для X; Графический интерфейс для управления конфигурационными файлами Conky с возможностью просмотра и редактирования тем
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
