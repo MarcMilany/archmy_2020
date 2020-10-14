@@ -3013,8 +3013,16 @@ echo " Установка драйверов для видеокарт (nvidia) 
 elif [[ $videocard == 2 ]]; then
 echo ""    
 echo " Установка Свободных драйверов для AMD/(ATI) "
-pacman -S lib32-mesa xf86-video-amdgpu mesa-vdpau lib32-mesa-vdpau vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver --noconfirm
-#pacman -S xf86-video-ati lib32-ati-dri --noconfirm  # libvdpau-va-gl libva-xvba-driver
+sudo pacman -S lib32-mesa mesa-vdpau lib32-mesa-vdpau libva-mesa-driver lib32-libva-mesa-driver --noconfirm
+sudo pacman -S vulkan-radeon lib32-vulkan-radeon --noconfirm  # 
+sudo pacman -S lib32-mesa mesa-vdpau lib32-mesa-vdpau vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver --noconfirm
+
+sudo pacman -S libvdpau-va-gl --noconfirm  # Драйвер VDPAU с бэкэндом OpenGL / VAAPI
+sudo pacman -S xf86-video-amdgpu --noconfirm  # Видеодрайвер X.org amdgpu
+sudo pacman -S xf86-video-ati --noconfirm  # Видеодрайвер X.org ati
+# xf86-video-amdgpu - ВОЗМОЖНО уже установлен с (X.org)
+# xf86-video-ati - ВОЗМОЖНО уже установлен с (X.org)
+# libva-xvba-driver - не найден и lib32-ati-dri - не найден в репозитории
 clear 
 echo "" 
 echo " Установка драйверов для видеокарт (amd/ati) выполнена "
