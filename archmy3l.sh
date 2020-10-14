@@ -556,7 +556,7 @@ echo " Действия ввода, выполняется сразу после
 
     0 - НЕТ - Пропустить установку: " i_localtime  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$i_localtime " =~ [^120] ]]
+    [[ "$i_localtime" =~ [^120] ]]
 do
     :
 done
@@ -3659,7 +3659,7 @@ echo -e "${BLUE}:: ${NC}Удаление созданной папки (download
 #echo ' Удаление созданной папки (downloads), и скрипта установки программ (archmy3l) '
 # Deleting the created folder (downloads) and the program installation script (archmy3l)
 sudo rm -R ~/downloads/
-sudo rm -rf ~/archmy3
+sudo rm -rf ~/archmy3l
 
 clear
 echo ""
