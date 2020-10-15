@@ -948,7 +948,7 @@ echo " Установка поддержки Bluetooth пропущена "
 elif [[ $i_bluetooth == 1 ]]; then
   echo ""    
   echo " Установка пакетов поддержки Bluetooth "
-sudo pacman -S bluez bluez-libs bluez-cups bluez-utils --noconfirm
+sudo pacman -S bluez bluez-libs bluez-cups bluez-utils --noconfirm  # Демоны для стека протоколов Bluetooth; Устаревшие библиотеки для стека протоколов Bluetooth; Серверная часть CUPS для принтеров Bluetooth; Утилиты разработки и отладки для стека протоколов bluetooth.
 #sudo pacman -S bluez-hid2hci --noconfirm  # Перевести HID проксирование bluetooth HCI в режим HCI; 
 #sudo pacman -S bluez-plugins --noconfirm  # Плагины bluez (контроллер PS3 Sixaxis) 
 #sudo pacman -S blueman --noconfirm  # blueman --диспетчер bluetooth устройств (полезно для i3)
