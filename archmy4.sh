@@ -277,6 +277,7 @@ yay -S ttf-paratype --noconfirm  # Семейство шрифтов ParaType с
 yay -S ttf-comfortaa --noconfirm  # Закругленный геометрический шрифт без засечек от Google, автор - Йохан Аакерлунд
 yay -S artwiz-fonts --noconfirm  # Это набор (улучшенных) шрифтов artwiz
 yay -S ttf-cheapskate --noconfirm  # Шрифты TTF от Дастина Норландера
+yay -S ttf-symbola --noconfirm  # Шрифт для символьных блоков стандарта Unicode (TTF)
 yay -S ttf-nerd-fonts-hack-complete-git --noconfirm  # Шрифт, разработанный для исходного кода. Исправлены иконки Nerd Fonts
 yay -S ttf-font-logos --noconfirm  # Значок шрифта с логотипами популярных дистрибутивов Linux
 yay -S ttf-font-icons --noconfirm  # Неперекрывающееся сочетание иконических шрифтов Ionicons и Awesome 
@@ -285,7 +286,6 @@ yay -S ttf-dejavu-sans-mono-powerline-git --noconfirm  # DejaVu Sans Mono для
 yay -S ttf-material-icons-git --noconfirm  # Шрифт значка Google Material Design
 # yay -S ttf-wps-fonts --noconfirm  # Если установлен WPS - Символьные шрифты требуются wps-office
 
-yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
