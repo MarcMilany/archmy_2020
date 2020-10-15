@@ -862,7 +862,9 @@ fi
 ###########################
 VIM - текстового редактора vi
 
-sudo pacman -S vi vim vim-a vim-airline vim-airline-themes vim-align vim-bufexplorer vim-colorsamplerpack vim-ctrlp vim-doxygentoolkit vim-fugitive vim-guicolorscheme vim-indent-object vim-jad vim-jedi vim-jellybeans vim-latexsuite vim-minibufexpl vim-molokai vim-nerdcommenter vim-nerdtree vim-omnicppcomplete vim-pastie vim-project vim-rails vim-runtime vim-seti vim-supertab vim-surround vim-syntastic vim-tagbar vim-taglist vim-ultisnips vim-vcscommand vim-workspace --noconfirm 
+sudo pacman -S vi vim vim-a vim-airline vim-airline-themes vim-align vim-bufexplorer vim-colorsamplerpack vim-ctrlp vim-doxygentoolkit vim-fugitive vim-guicolorscheme vim-indent-object vim-jad vim-jedi vim-jellybeans vim-latexsuite vim-minibufexpl vim-molokai vim-nerdcommenter vim-nerdtree vim-omnicppcomplete vim-pastie vim-project vim-rails vim-runtime vim-seti vim-supertab vim-surround vim-syntastic vim-tagbar vim-ultisnips vim-workspace --noconfirm 
+
+yay -S vim-taglist vim-vcscommand --noconfirm  #
 
 vi 1:070224-4  # Оригинальный текстовый редактор ex / vi
 vim 8.2.1537-1  # Vi Improved, улучшенная версия текстового редактора vi с широкими возможностями настройки
@@ -890,15 +892,15 @@ vim-pastie 2.0-10
 vim-project 1.4.1-10
 vim-rails 5.4_25852-2
 vim-runtime 8.2.1537-1  # Vi Improved, улучшенная версия текстового редактора vi с широкими возможностями настройки (общая среда выполнения)
-vim-seti 1.0-4
-vim-supertab 2.1-4
-vim-surround 2.1-4
-vim-syntastic 3.10.0-1
-vim-tagbar 2.7-3
-vim-taglist 1:4.6-1
-vim-ultisnips 3.2-3
-vim-vcscommand 1.99.47-4
-vim-workspace 1.0b1-10
+vim-seti 1.0-4  # Цветовая схема на основе темы Сети Джесси Вида для редактора Atom
+vim-supertab 2.1-4  # Плагин Vim, который позволяет использовать клавишу табуляции для выполнения всех операций вставки
+vim-surround 2.1-4  # Предоставляет сопоставления для простого удаления, изменения и добавления парного окружения
+vim-syntastic 3.10.0-1  # Автоматическая проверка синтаксиса для Vim
+vim-tagbar 2.7-3  # Плагин для просмотра тегов текущего файла и получения обзора его структуры
+vim-taglist 1:4.6-1  AUR  # Плагин браузера с исходным кодом для vim# 
+vim-ultisnips 3.2-3  # Фрагменты для Vim в стиле TextMate
+vim-vcscommand 1.99.47-4  # Плагин интеграции системы контроля версий vim
+vim-workspace 1.0b1-10  # 
 
 
 ######################
