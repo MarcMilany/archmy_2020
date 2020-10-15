@@ -862,9 +862,9 @@ fi
 ###########################
 VIM - улучшенная версия текстового редактора vi
 
-sudo pacman -S vi vim vim-a vim-airline vim-airline-themes vim-align vim-bufexplorer vim-ctrlp vim-fugitive vim-indent-object vim-jad vim-jedi vim-latexsuite vim-molokai vim-nerdcommenter vim-nerdtree vim-pastie vim-rails vim-runtime vim-seti vim-supertab vim-surround vim-syntastic vim-tagbar vim-ultisnips --noconfirm 
+sudo pacman -S vi vim vim-a vim-airline vim-airline-themes vim-align vim-bufexplorer vim-ctrlp vim-fugitive vim-indent-object vim-jad vim-jedi vim-latexsuite vim-molokai vim-nerdcommenter vim-nerdtree vim-pastie vim-runtime vim-seti vim-supertab vim-surround vim-syntastic vim-tagbar vim-ultisnips --noconfirm 
 
-yay -S vim-colorsamplerpack vim-doxygentoolkit vim-guicolorscheme vim-jellybeans vim-minibufexpl vim-omnicppcomplete vim-project vim-taglist vim-vcscommand vim-workspace --noconfirm  #
+yay -S vim-colorsamplerpack vim-doxygentoolkit vim-guicolorscheme vim-jellybeans vim-minibufexpl vim-omnicppcomplete vim-project vim-rails vim-taglist vim-vcscommand vim-workspace --noconfirm  #
 
 vi 1:070224-4  # Оригинальный текстовый редактор ex / vi
 vim 8.2.1537-1  # Vi Improved, улучшенная версия текстового редактора vi с широкими возможностями настройки
@@ -890,7 +890,7 @@ vim-nerdtree 6.9.6-1  # Плагин Tree explorer для навигации п�
 vim-omnicppcomplete 0.4.1-10  AUR  # vim c ++ завершение omnifunc с базой данных ctags
 vim-pastie 2.0-10  # Плагин Vim, который позволяет читать и создавать вставки на http://pastie.org/
 vim-project 1.4.1-10  AUR  # Организовывать и перемещаться по проектам файлов (например, в проводнике ide / buffer)
-vim-rails 5.4_25852-2
+vim-rails 5.4_25852-2  AUR  # Плагин ViM для усовершенствованной разработки приложений Ruby on Rails
 vim-runtime 8.2.1537-1  # Vi Improved, улучшенная версия текстового редактора vi с широкими возможностями настройки (общая среда выполнения)
 vim-seti 1.0-4  # Цветовая схема на основе темы Сети Джесси Вида для редактора Atom
 vim-supertab 2.1-4  # Плагин Vim, который позволяет использовать клавишу табуляции для выполнения всех операций вставки
