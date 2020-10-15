@@ -408,7 +408,14 @@ mkdir ~/vboxshare
 # Arch Wiki Virtualbox 
 # https://wiki.archlinux.org/index.php/VirtualBox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 # ===============================
+virtualbox 6.1.12-4
+virtualbox-ext-oracle 6.1.13.140091-1
+virtualbox-ext-vnc 6.1.12-4
+virtualbox-guest-iso 6.1.12-1
+virtualbox-guest-utils 6.1.12-4
+virtualbox-host-modules-arch 6.1.12-14
 
+##############################
 echo 'Установка Oracle VM VirtualBox AUR'
 # Installing Oracle VM VirtualBox AUR
 yay -S virtualbox-ext-oracle --noconfirm  # Пакет расширений Oracle VM VirtualBox
@@ -847,7 +854,54 @@ fi
 # galculator-gtk2 или galculator
 # gnome-calculator 
 
+# cups-bjnp AUR  # Серверная часть CUPS для принтеров canon с использованием проприетарного протокола USB over IP BJNP
+# cups-xerox 2008.01.23-1  AUR   # Драйверы для различных принтеров Xerox
+# cups-xerox-phaser-3600 3.00.27+187-2  AUR   # Драйвер CUPS для серии Xerox Phaser 3600. Также поддерживает fc2218, pe120, pe220, Phaser 3117, 3200, 3250, 3250, 3300, 3435, 3600, 6110, WorkCentre 3210, 3220, 4118
+# cups-xerox-phaser-6500 1.0.0-2   AUR   # Драйвер CUPS для серии Xerox Phaser 6500 (N & DN)
+ 
+###########################
+VIM - текстового редактора vi
 
+sudo pacman -S vi vim vim-a vim-airline vim-airline-themes vim-align vim-bufexplorer vim-colorsamplerpack vim-ctrlp vim-doxygentoolkit vim-fugitive vim-guicolorscheme vim-indent-object vim-jad vim-jedi vim-jellybeans vim-latexsuite vim-minibufexpl vim-molokai vim-nerdcommenter vim-nerdtree vim-omnicppcomplete vim-pastie vim-project vim-rails vim-runtime vim-seti vim-supertab vim-surround vim-syntastic vim-tagbar vim-taglist vim-ultisnips vim-vcscommand vim-workspace --noconfirm 
+
+vi 1:070224-4  # Оригинальный текстовый редактор ex / vi
+vim 8.2.1537-1  # Vi Improved, улучшенная версия текстового редактора vi с широкими возможностями настройки
+vim-a 2.18-10  # Асинхронный Lint Engine (vim-ale или vim-ansible)
+vim-airline 0.11-1  # Строка состояния, написанная в Vimscript
+vim-airline-themes r1386.63b66df-1  # Темы для вим-авиакомпании
+vim-align 37.43-5  # Позволяет выравнивать строки с помощью регулярных выражений
+vim-bufexplorer 7.4.19-2  # Простой список буферов / переключатель для vim
+vim-colorsamplerpack 2012.10.28-6  # 
+vim-ctrlp 1.80-3
+vim-doxygentoolkit 0.2.13-5
+vim-fugitive 3.2-1
+vim-guicolorscheme 1.2-7
+vim-indent-object 1.1.2-7
+vim-jad 1.3_1329-4
+vim-jedi 0.10.0-3
+vim-jellybeans 1.7-1
+vim-latexsuite 1:1.10.0-3
+vim-minibufexpl 6.5.2-3
+vim-molokai 1.1-7
+vim-nerdcommenter 2.5.2-2
+vim-nerdtree 6.9.6-1
+vim-omnicppcomplete 0.4.1-10
+vim-pastie 2.0-10
+vim-project 1.4.1-10
+vim-rails 5.4_25852-2
+vim-runtime 8.2.1537-1  # Vi Improved, улучшенная версия текстового редактора vi с широкими возможностями настройки (общая среда выполнения)
+vim-seti 1.0-4
+vim-supertab 2.1-4
+vim-surround 2.1-4
+vim-syntastic 3.10.0-1
+vim-tagbar 2.7-3
+vim-taglist 1:4.6-1
+vim-ultisnips 3.2-3
+vim-vcscommand 1.99.47-4
+vim-workspace 1.0b1-10
+
+
+######################
 # ----------------------------------
  "freshplayerplugin" "(AUR) Recommended" - PPAPI-host Адаптер NPAPI-plugin
  "freshplayerplugin-git" "(AUR)" - PPAPI-host Адаптер NPAPI-plugin
