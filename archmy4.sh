@@ -841,7 +841,7 @@ fi
 # fuse3 - Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
 # fuseiso - Модуль FUSE для монтирования образов файловой системы ISO
 
-
+# AUR - # python-imaging ???
 # engrampa  - Манипулятор архивов для MATE
 # engrampa-thunar-plugin  - AUR - Манипулятор архивов из MATE без зависимости от Caja (версия GTK3)
 # galculator-gtk2 или galculator
