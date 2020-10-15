@@ -779,7 +779,7 @@ sudo pacman -S variety --noconfirm  # Меняет обои с регулярн�
 sudo pacman -S kleopatra --noconfirm  # Диспетчер сертификатов и унифицированный графический интерфейс криптографии
 sudo pacman -S catfish --noconfirm  # Универсальный инструмент для поиска файлов
 sudo pacman -S hexchat --noconfirm  # Популярный и простой в использовании графический IRC-клиент (чат)
-sudo pacman -S  --noconfirm  #
+sudo pacman -S mutt --noconfirm  # Небольшой, но очень мощный текстовый почтовый клиент
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
