@@ -862,9 +862,9 @@ fi
 ###########################
 VIM - улучшенная версия текстового редактора vi
 
-sudo pacman -S vi vim vim-a vim-airline vim-airline-themes vim-align vim-bufexplorer vim-ctrlp vim-fugitive vim-indent-object vim-jad vim-jedi vim-latexsuite vim-molokai vim-nerdcommenter vim-nerdtree vim-omnicppcomplete vim-pastie vim-project vim-rails vim-runtime vim-seti vim-supertab vim-surround vim-syntastic vim-tagbar vim-ultisnips --noconfirm 
+sudo pacman -S vi vim vim-a vim-airline vim-airline-themes vim-align vim-bufexplorer vim-ctrlp vim-fugitive vim-indent-object vim-jad vim-jedi vim-latexsuite vim-molokai vim-nerdcommenter vim-nerdtree vim-pastie vim-project vim-rails vim-runtime vim-seti vim-supertab vim-surround vim-syntastic vim-tagbar vim-ultisnips --noconfirm 
 
-yay -S vim-colorsamplerpack vim-doxygentoolkit vim-guicolorscheme vim-jellybeans vim-minibufexpl vim-taglist vim-vcscommand vim-workspace --noconfirm  #
+yay -S vim-colorsamplerpack vim-doxygentoolkit vim-guicolorscheme vim-jellybeans vim-minibufexpl vim-omnicppcomplete vim-taglist vim-vcscommand vim-workspace --noconfirm  #
 
 vi 1:070224-4  # Оригинальный текстовый редактор ex / vi
 vim 8.2.1537-1  # Vi Improved, улучшенная версия текстового редактора vi с широкими возможностями настройки
@@ -873,7 +873,7 @@ vim-airline 0.11-1  # Строка состояния, написанная в V
 vim-airline-themes r1386.63b66df-1  # Темы для вим-авиакомпании
 vim-align 37.43-5  # Позволяет выравнивать строки с помощью регулярных выражений
 vim-bufexplorer 7.4.19-2  # Простой список буферов / переключатель для vim
-vim-colorsamplerpack 2012.10.28-6  AUR  # Различные цветовые схемы для vim# 
+vim-colorsamplerpack 2012.10.28-6  AUR  # Различные цветовые схемы для vim 
 vim-ctrlp 1.80-3  # Поиск нечетких файлов, буферов, mru, тегов и т. Д
 vim-doxygentoolkit 0.2.13-5  AUR  # Этот скрипт упрощает документацию doxygen на C / C ++
 vim-fugitive 3.2-1  # Обертка Git такая классная, она должна быть незаконной
@@ -884,11 +884,11 @@ vim-jedi 0.10.0-3  # Плагин Vim для джедаев, отличное а
 vim-jellybeans 1.7-1   AUR  # Яркая, темная цветовая гамма, вдохновленная ir_black и сумерками
 vim-latexsuite 1:1.10.0-3  # Инструменты для просмотра, редактирования и компиляции документов LaTeX в Vim
 vim-minibufexpl 6.5.2-3  AUR  # Элегантный обозреватель буферов для vim
-vim-molokai 1.1-7
-vim-nerdcommenter 2.5.2-2
-vim-nerdtree 6.9.6-1
-vim-omnicppcomplete 0.4.1-10
-vim-pastie 2.0-10
+vim-molokai 1.1-7  # Порт цветовой схемы монокаи для TextMate
+vim-nerdcommenter 2.5.2-2  # Плагин, позволяющий легко комментировать код для многих типов файлов
+vim-nerdtree 6.9.6-1  # Плагин Tree explorer для навигации по файловой системе
+vim-omnicppcomplete 0.4.1-10  AUR  # vim c ++ завершение omnifunc с базой данных ctags
+vim-pastie 2.0-10  # Плагин Vim, который позволяет читать и создавать вставки на http://pastie.org/
 vim-project 1.4.1-10
 vim-rails 5.4_25852-2
 vim-runtime 8.2.1537-1  # Vi Improved, улучшенная версия текстового редактора vi с широкими возможностями настройки (общая среда выполнения)
