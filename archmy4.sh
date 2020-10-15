@@ -862,9 +862,9 @@ fi
 ###########################
 VIM - текстового редактора vi
 
-sudo pacman -S vi vim vim-a vim-airline vim-airline-themes vim-align vim-bufexplorer vim-colorsamplerpack vim-ctrlp vim-doxygentoolkit vim-fugitive vim-guicolorscheme vim-indent-object vim-jad vim-jedi vim-jellybeans vim-latexsuite vim-minibufexpl vim-molokai vim-nerdcommenter vim-nerdtree vim-omnicppcomplete vim-pastie vim-project vim-rails vim-runtime vim-seti vim-supertab vim-surround vim-syntastic vim-tagbar vim-ultisnips vim-workspace --noconfirm 
+sudo pacman -S vi vim vim-a vim-airline vim-airline-themes vim-align vim-bufexplorer vim-colorsamplerpack vim-ctrlp vim-doxygentoolkit vim-fugitive vim-guicolorscheme vim-indent-object vim-jad vim-jedi vim-jellybeans vim-latexsuite vim-minibufexpl vim-molokai vim-nerdcommenter vim-nerdtree vim-omnicppcomplete vim-pastie vim-project vim-rails vim-runtime vim-seti vim-supertab vim-surround vim-syntastic vim-tagbar vim-ultisnips --noconfirm 
 
-yay -S vim-taglist vim-vcscommand --noconfirm  #
+yay -S vim-taglist vim-vcscommand vim-workspace --noconfirm  #
 
 vi 1:070224-4  # Оригинальный текстовый редактор ex / vi
 vim 8.2.1537-1  # Vi Improved, улучшенная версия текстового редактора vi с широкими возможностями настройки
@@ -900,7 +900,7 @@ vim-tagbar 2.7-3  # Плагин для просмотра тегов текущ
 vim-taglist 1:4.6-1  AUR  # Плагин браузера с исходным кодом для vim# 
 vim-ultisnips 3.2-3  # Фрагменты для Vim в стиле TextMate
 vim-vcscommand 1.99.47-4  # Плагин интеграции системы контроля версий vim
-vim-workspace 1.0b1-10  # 
+vim-workspace 1.0b1-10  # Плагин vim workspace manager для управления группами файлов
 
 
 ######################
