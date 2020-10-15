@@ -3113,12 +3113,12 @@ echo " Установка поддержки Драйвера принтера (
 elif [[ $prog_print == 1 ]]; then
   echo ""  
   echo " Установка поддержки Драйвера принтера (Поддержка печати) CUPS "
-sudo pacman -S cups cups-pdf cups-pk-helper --noconfirm  # Система печати CUPS - пакет демона
-sudo pacman -S system-config-printer ghostscript --noconfirm 
-sudo pacman -S libcups simple-scan --noconfirm 
-sudo pacman -S gsfonts gutenprint --noconfirm   # python-imaging
+sudo pacman -S cups cups-filters cups-pdf cups-pk-helper --noconfirm  # Система печати CUPS - пакет демона; Фильтры OpenPrinting CUPS; PDF-принтер для чашек; Помощник, который заставляет system-config-printer использовать PolicyKit
+sudo pacman -S system-config-printer ghostscript --noconfirm  # Инструмент настройки принтера CUPS и апплет состояния; Интерпретатор для языка PostScript
+sudo pacman -S libcups simple-scan --noconfirm  # Система печати CUPS - клиентские библиотеки и заголовки; Простая утилита сканирования
+sudo pacman -S gsfonts gutenprint --noconfirm  # (URW) ++ Базовый набор шрифтов [Уровень 2]; Драйверы принтера высшего качества для систем POSIX ;  # python-imaging ???
 # Драйверы для HP DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых LaserJet 
-sudo pacman -S hplip --noconfirm   # AUR - python-imaging   
+sudo pacman -S hplip --noconfirm  # Драйверы для HP DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых LaserJet   # AUR - python-imaging   
 fi
 # ---------------------------------------------------------------------
 # List of applications:
