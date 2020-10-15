@@ -862,9 +862,9 @@ fi
 ###########################
 VIM - текстового редактора vi
 
-sudo pacman -S vi vim vim-a vim-airline vim-airline-themes vim-align vim-bufexplorer vim-colorsamplerpack vim-ctrlp vim-doxygentoolkit vim-fugitive vim-guicolorscheme vim-indent-object vim-jad vim-jedi vim-jellybeans vim-latexsuite vim-minibufexpl vim-molokai vim-nerdcommenter vim-nerdtree vim-omnicppcomplete vim-pastie vim-project vim-rails vim-runtime vim-seti vim-supertab vim-surround vim-syntastic vim-tagbar vim-ultisnips --noconfirm 
+sudo pacman -S vi vim vim-a vim-airline vim-airline-themes vim-align vim-bufexplorer vim-ctrlp vim-fugitive vim-indent-object vim-jad vim-jedi vim-latexsuite vim-minibufexpl vim-molokai vim-nerdcommenter vim-nerdtree vim-omnicppcomplete vim-pastie vim-project vim-rails vim-runtime vim-seti vim-supertab vim-surround vim-syntastic vim-tagbar vim-ultisnips --noconfirm 
 
-yay -S vim-taglist vim-vcscommand vim-workspace --noconfirm  #
+yay -S vim-colorsamplerpack vim-doxygentoolkit vim-guicolorscheme vim-jellybeans vim-taglist vim-vcscommand vim-workspace --noconfirm  #
 
 vi 1:070224-4  # Оригинальный текстовый редактор ex / vi
 vim 8.2.1537-1  # Vi Improved, улучшенная версия текстового редактора vi с широкими возможностями настройки
@@ -873,17 +873,17 @@ vim-airline 0.11-1  # Строка состояния, написанная в V
 vim-airline-themes r1386.63b66df-1  # Темы для вим-авиакомпании
 vim-align 37.43-5  # Позволяет выравнивать строки с помощью регулярных выражений
 vim-bufexplorer 7.4.19-2  # Простой список буферов / переключатель для vim
-vim-colorsamplerpack 2012.10.28-6  # 
-vim-ctrlp 1.80-3
-vim-doxygentoolkit 0.2.13-5
-vim-fugitive 3.2-1
-vim-guicolorscheme 1.2-7
-vim-indent-object 1.1.2-7
-vim-jad 1.3_1329-4
-vim-jedi 0.10.0-3
-vim-jellybeans 1.7-1
-vim-latexsuite 1:1.10.0-3
-vim-minibufexpl 6.5.2-3
+vim-colorsamplerpack 2012.10.28-6  AUR  # Различные цветовые схемы для vim# 
+vim-ctrlp 1.80-3  # Поиск нечетких файлов, буферов, mru, тегов и т. Д
+vim-doxygentoolkit 0.2.13-5  AUR  # Этот скрипт упрощает документацию doxygen на C / C ++
+vim-fugitive 3.2-1  # Обертка Git такая классная, она должна быть незаконной
+vim-guicolorscheme 1.2-7  AUR  # Автоматическое преобразование цветовых схем только для графического интерфейса в схемы цветовых терминалов 88/256
+vim-indent-object 1.1.2-7  # Текстовые объекты на основе уровней отступа
+vim-jad 1.3_1329-4  # Автоматическая декомпиляция файлов классов Java и отображение кода Java
+vim-jedi 0.10.0-3  # Плагин Vim для джедаев, отличное автозаполнение Python
+vim-jellybeans 1.7-1   AUR  # Яркая, темная цветовая гамма, вдохновленная ir_black и сумерками
+vim-latexsuite 1:1.10.0-3  # 
+vim-minibufexpl 6.5.2-3  # 
 vim-molokai 1.1-7
 vim-nerdcommenter 2.5.2-2
 vim-nerdtree 6.9.6-1
@@ -899,8 +899,8 @@ vim-syntastic 3.10.0-1  # Автоматическая проверка синт
 vim-tagbar 2.7-3  # Плагин для просмотра тегов текущего файла и получения обзора его структуры
 vim-taglist 1:4.6-1  AUR  # Плагин браузера с исходным кодом для vim# 
 vim-ultisnips 3.2-3  # Фрагменты для Vim в стиле TextMate
-vim-vcscommand 1.99.47-4  # Плагин интеграции системы контроля версий vim
-vim-workspace 1.0b1-10  # Плагин vim workspace manager для управления группами файлов
+vim-vcscommand 1.99.47-4  AUR  # Плагин интеграции системы контроля версий vim
+vim-workspace 1.0b1-10  AUR  # Плагин vim workspace manager для управления группами файлов
 
 
 ######################
