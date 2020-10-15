@@ -862,9 +862,9 @@ fi
 ###########################
 VIM - улучшенная версия текстового редактора vi
 
-sudo pacman -S vi vim vim-a vim-airline vim-airline-themes vim-align vim-bufexplorer vim-ctrlp vim-fugitive vim-indent-object vim-jad vim-jedi vim-latexsuite vim-minibufexpl vim-molokai vim-nerdcommenter vim-nerdtree vim-omnicppcomplete vim-pastie vim-project vim-rails vim-runtime vim-seti vim-supertab vim-surround vim-syntastic vim-tagbar vim-ultisnips --noconfirm 
+sudo pacman -S vi vim vim-a vim-airline vim-airline-themes vim-align vim-bufexplorer vim-ctrlp vim-fugitive vim-indent-object vim-jad vim-jedi vim-latexsuite vim-molokai vim-nerdcommenter vim-nerdtree vim-omnicppcomplete vim-pastie vim-project vim-rails vim-runtime vim-seti vim-supertab vim-surround vim-syntastic vim-tagbar vim-ultisnips --noconfirm 
 
-yay -S vim-colorsamplerpack vim-doxygentoolkit vim-guicolorscheme vim-jellybeans vim-taglist vim-vcscommand vim-workspace --noconfirm  #
+yay -S vim-colorsamplerpack vim-doxygentoolkit vim-guicolorscheme vim-jellybeans vim-minibufexpl vim-taglist vim-vcscommand vim-workspace --noconfirm  #
 
 vi 1:070224-4  # Оригинальный текстовый редактор ex / vi
 vim 8.2.1537-1  # Vi Improved, улучшенная версия текстового редактора vi с широкими возможностями настройки
@@ -882,8 +882,8 @@ vim-indent-object 1.1.2-7  # Текстовые объекты на основе
 vim-jad 1.3_1329-4  # Автоматическая декомпиляция файлов классов Java и отображение кода Java
 vim-jedi 0.10.0-3  # Плагин Vim для джедаев, отличное автозаполнение Python
 vim-jellybeans 1.7-1   AUR  # Яркая, темная цветовая гамма, вдохновленная ir_black и сумерками
-vim-latexsuite 1:1.10.0-3  # 
-vim-minibufexpl 6.5.2-3  # 
+vim-latexsuite 1:1.10.0-3  # Инструменты для просмотра, редактирования и компиляции документов LaTeX в Vim
+vim-minibufexpl 6.5.2-3  AUR  # Элегантный обозреватель буферов для vim
 vim-molokai 1.1-7
 vim-nerdcommenter 2.5.2-2
 vim-nerdtree 6.9.6-1
