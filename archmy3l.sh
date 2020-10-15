@@ -1001,7 +1001,6 @@ sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-bluetooth pulse
 sudo pacman -S pulseaudio-zeroconf --noconfirm  # Поддержка Zeroconf для PulseAudio
 #sudo pacman -S pulseaudio-lirc --noconfirm  # Поддержка IR (lirc) для PulseAudio
 #sudo pacman -S pulseaudio-jack --noconfirm  # Поддержка разъема для PulseAudio
-#yay -S pulseaudio-ctl --noconfirm  # Управляйте громкостью pulseaudio из оболочки или с помощью сочетаний клавиш
 #sudo pacman -S pasystray --noconfirm  # Системный трей PulseAudio (замена # padevchooser)  
 sudo pacman -S xfce4-pulseaudio-plugin --noconfirm  # Плагин Pulseaudio для панели Xfce4 
 #sudo pacman -Sy pavucontrol pulseaudio-bluetooth alsa-utils pulseaudio-equalizer-ladspa --noconfirm
