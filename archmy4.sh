@@ -351,7 +351,13 @@ yay -S mp3gain --noconfirm
 yay -S easymp3gain-gtk2 --noconfirm
 yay -S myrulib-git --noconfirm
 yay -S  --noconfirm
+yay -S  --noconfirm
+yay -S  --noconfirm
+yay -S  --noconfirm
+yay -S  --noconfirm
+#yay -S bluez-firmware --noconfirm  # Прошивки для чипов Bluetooth Broadcom BCM203x и STLC2300
 #yay -S pulseaudio-ctl --noconfirm  # Управляйте громкостью pulseaudio из оболочки или с помощью сочетаний клавиш
+
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка Мультимедиа утилит AUR пропущена.'
 fi
