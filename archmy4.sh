@@ -836,6 +836,7 @@ fi
 # libfm-gtk2  # Библиотека GTK + 2 для управления файлами
 # hardinfo  # Системная информация и инструмент тестирования
 # termite  # Простой терминал на базе VTE
+# terminus-font  # Моноширинный растровый шрифт (для X11 и консоли)
 # hblock  AUR  # Блокировщик рекламы, который создает файл hosts из автоматически загружаемых черных списков
 # grml-iso  AUR  # добавьте ISO-образ grml в меню загрузки grub2
 # ИЛИ grml-rescueboot  AUR  # grub2 скрипт для добавления ISO-образов grml в меню загрузки grub2
@@ -920,11 +921,11 @@ vim-workspace 1.0b1-10  AUR  # Плагин vim workspace manager для упр�
 
 
 ######################
-# ----------------------------------
- "freshplayerplugin" "(AUR) Recommended" - PPAPI-host Адаптер NPAPI-plugin
- "freshplayerplugin-git" "(AUR)" - PPAPI-host Адаптер NPAPI-plugin
-  "vivaldi" "(AUR) (GTK)" - Продвинутый браузер, созданный для опытных пользователей
-  "vivaldi-ffmpeg-codecs" "(AUR) Non-free codecs" - дополнительная поддержка проприетарных кодеков для vivaldi
+
+# "freshplayerplugin" "(AUR) Recommended" - PPAPI-host Адаптер NPAPI-plugin
+# "freshplayerplugin-git" "(AUR)" - PPAPI-host Адаптер NPAPI-plugin
+#  "vivaldi" "(AUR) (GTK)" - Продвинутый браузер, созданный для опытных пользователей
+#  "vivaldi-ffmpeg-codecs" "(AUR) Non-free codecs" - дополнительная поддержка проприетарных кодеков для vivaldi
 sudo pacman -S pepper-flash --noconfirm  # Adobe Flash Player PPAPI
 yay -S freshplayerplugin --noconfirm  # PPAPI-host Адаптер NPAPI-plugin (Recommended)
 yay -S freshplayerplugin-git --noconfirm  # PPAPI-host Адаптер NPAPI-plugin
@@ -935,8 +936,8 @@ yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 
 #################################
-ktorrent (QT) - Мощный клиент BitTorrent для KDE 
-tixati (AUR) (GTK) - Tixati - это программа для однорангового обмена файлами, использующая популярный протокол BitTorrent
+# ktorrent (QT) - Мощный клиент BitTorrent для KDE 
+# tixati (AUR) (GTK) - Tixati - это программа для однорангового обмена файлами, использующая популярный протокол BitTorrent
 
 sudo pacman -S ktorrent --noconfirm  # Мощный клиент BitTorrent для KDE
 yay -S ktorrent-git --noconfirm  # Мощный клиент BitTorrent. (Версия GIT)
