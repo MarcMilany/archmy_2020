@@ -924,18 +924,36 @@ vim-workspace 1.0b1-10  AUR  # Плагин vim workspace manager для упр�
  "freshplayerplugin" "(AUR) Recommended" - PPAPI-host Адаптер NPAPI-plugin
  "freshplayerplugin-git" "(AUR)" - PPAPI-host Адаптер NPAPI-plugin
   "vivaldi" "(AUR) (GTK)" - Продвинутый браузер, созданный для опытных пользователей
-  sudo pacman -S pepper-flash --noconfirm  # Adobe Flash Player PPAPI
   "vivaldi-ffmpeg-codecs" "(AUR) Non-free codecs" - дополнительная поддержка проприетарных кодеков для vivaldi
-# ----------------------------------
- ktorrent (QT) - Мощный клиент BitTorrent для KDE 
- tixati (AUR) (GTK) - Tixati - это программа для однорангового обмена файлами, использующая популярный протокол BitTorrent
- # ---------------------------------
+sudo pacman -S pepper-flash --noconfirm  # Adobe Flash Player PPAPI
+yay -S freshplayerplugin --noconfirm  # PPAPI-host Адаптер NPAPI-plugin (Recommended)
+yay -S freshplayerplugin-git --noconfirm  # PPAPI-host Адаптер NPAPI-plugin
+yay -S vivaldi --noconfirm  # Продвинутый браузер, созданный для опытных пользователей
+yay -S vivaldi-ffmpeg-codecs --noconfirm  # дополнительная поддержка проприетарных кодеков для vivaldi
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+
+#################################
+ktorrent (QT) - Мощный клиент BitTorrent для KDE 
+tixati (AUR) (GTK) - Tixati - это программа для однорангового обмена файлами, использующая популярный протокол BitTorrent
+
+sudo pacman -S ktorrent --noconfirm  # Мощный клиент BitTorrent для KDE
+yay -S ktorrent-git --noconfirm  # Мощный клиент BitTorrent. (Версия GIT)
+yay -S tixati --noconfirm  # Tixati - это программа для однорангового обмена файлами, использующая популярный протокол BitTorrent
+yay -S  --noconfirm  #
+
+
+ #############################
  echo " Установка мультимедиа кодеков и утилит (пакетов) "
 #options+=("gst-plugin-libde265" "(AUR)" off)
 #options+=("libde265" "(AUR)" off)
-# ----------------------------------
+yay -S gst-plugin-libde265 --noconfirm  # Плагин Libde265 (открытая реализация видеокодека h.265) для gstreamer
+yay -S libde265 --noconfirm  # ???
+yay -S libde265-git --noconfirm  # Открытая реализация видеокодека H.265 (версия git)
+yay -S lib32-libde265 --noconfirm  # Открытая реализация видеокодека h.265 (32-разрядная версия)
 
-# --------------------------------
+##################################
 
 echo 'Установка Дополнительных программ AUR'
 # Installing Additional programs AUR
@@ -1093,6 +1111,9 @@ makepkg -si
 
 package-query - Запрос ALPM и AUR  https://aur.archlinux.org/packages/package-query/
 https://github.com/archlinuxfr/package-query/
+
+package-query-git - Запрос ALPM и AUR # https://aur.archlinux.org/package-query-git.git
+https://aur.archlinux.org/packages/package-query-git/
 #################################
 
 echo -e "${BLUE}==> ${NC}Выйти из настроек, или перезапустить систему?"
