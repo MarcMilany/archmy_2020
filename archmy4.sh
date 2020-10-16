@@ -708,45 +708,51 @@ fi
 # --------------------------------------
 Powerpill (Русский)
 https://wiki.archlinux.org/index.php/Powerpill_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
+Обертка Pacman для более быстрой загрузки
+AUR :
+
+yay -S powerpill --noconfirm  # Обертка Pacman для более быстрой загрузки  https://aur.archlinux.org/packages/powerpill/
+# Мне нужно было установить python3-memoizedb для его запуска, однако он не указан здесь как зависимость
+yay -S python3-memoizedb --noconfirm # Универсальный мемоизатор поиска данных, который использует базу данных sqlite для кэширования данных  https://aur.archlinux.org/packages/python3-memoizedb/
+yay -S bauerbill --noconfirm  # # Расширение Powerpill с поддержкой AUR и ABS.  https://aur.archlinux.org/packages/bauerbill/
+Не беспокойся. Просто использовал bb -Syu --aur --ignore bauerbill пока ждал пока починят. : P Большое спасибо за исправление!
+yay -S pacserve --noconfirm  # # Легко делитесь пакетами Pacman между компьютерами. Замена для PkgD  https://aur.archlinux.org/packages/pacserve/   
+https://bugs.mageia.org/show_bug.cgi?id=15425
 
 Обновление системы
 Чтобы обновить систему (синхронизировать и обновить установленные пакеты) используйте powerpill и опцию -Syu - как вы делаете это с pacman:
 
-# powerpill -Syu
+powerpill -Syu
+
 Установка пакетов
 Чтобы установить пакет и его зависимости, просто используйте powerpill (вместо pacman) с опцией -S:
 
-# powerpill -S package
+powerpill -S package
+
 Вы также можете установить несколько пакетов, как и при работе с pacman:
 
-# powerpill -S package1 package2 package3
+powerpill -S package1 package2 package3
 
-AUR :
-
-powerpill    # Обертка Pacman для более быстрой загрузки  https://aur.archlinux.org/packages/powerpill/
-Мне нужно было установить python3-memoizedb для его запуска, однако он не указан здесь как зависимость
-
-python3-memoizedb  # Универсальный мемоизатор поиска данных, который использует базу данных sqlite для кэширования данных  https://aur.archlinux.org/packages/python3-memoizedb/
-
-bauerbill   # Расширение Powerpill с поддержкой AUR и ABS.  https://aur.archlinux.org/packages/bauerbill/
-Не беспокойся. Просто использовал bb -Syu --aur --ignore bauerbillпока ждал пока починят. : P Большое спасибо за исправление!
-
-pacserve   # Легко делитесь пакетами Pacman между компьютерами. Замена для PkgD  https://aur.archlinux.org/packages/pacserve/
-https://bugs.mageia.org/show_bug.cgi?id=15425
+yay -S  --noconfirm  #
 # ===========================================
 
-
+############################
 Иероглифы в русских названиях файлов в ZIP-архивах
 
-yaourt-S zip-natspec unzip-natspec libnatspec --noconfirm
-После установки они заменяют штатные команды zip и unzip , что позволяет использовать их не только в консоли, но и через ГУИшные программы, использующие zip и unzip в качестве бэкэнда для ZIP-архивов.
+yay -S zip-natspec --noconfirm  # Создает PKZIP-совместимые файлы .zip для нелатинских имен файлов с использованием патча libnatspec от AltLinux
+yay -S unzip-natspec --noconfirm  # Распаковывает .zip-архивы с нелатинскими именами файлов, используя патч libnatspec от AltLinux
+yay -S libnatspec --noconfirm  # Набор функций для запроса различных кодировок и локалей для хост-системы и для другой системы 
+# yay -S p7zip-natspec --noconfirm  # Файловый архиватор командной строки с высокой степенью сжатия, основанный на патче libnatspec из ubuntu zip-i18n PPA (https://launchpad.net/~frol/+archive/zip-i18n)
+yay -S zip-natspec unzip-natspec libnatspec --noconfirm  #
 
+После установки они заменяют штатные команды zip и unzip , что позволяет использовать их не только в консоли, но и через ГУИшные программы, использующие zip и unzip в качестве бэкэнда для ZIP-архивов.
+########################
 
 echo 'Дополнительные пакеты для игр'
 # Additional packages for games
 # Необходимо раскомментировать репозиторий multilib в /etc/pacman.conf.
 # Steam:
-sudo pacman -S steam steam-native-runtime lutris lib32-gconf lib32-dbus-glib lib32-libnm-glib lib32-openal lib32-nss lib32-gtk2 lib32-sdl2 lib32-sdl2_image lib32-libcanberra --noconfirm
+sudo pacman -S steam steam-native-runtime lutris lib32-dbus-glib lib32-libnm-glib lib32-openal lib32-nss lib32-gtk2 lib32-sdl2 lib32-sdl2_image lib32-libcanberra --noconfirm   конфигурации
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
@@ -769,8 +775,8 @@ sudo pacman -S  --noconfirm  #
 
 echo 'Дополнительные пакеты для игр AUR'
 # Additional packages for games AUR
-yay -S lib32-libudev0 --noconfirm
-yay -S  --noconfirm  #
+yay -S lib32-libudev0 --noconfirm  # ( lib32-libudev0-shim-nosystemd ) Библиотека совместимости libudev.so.0 для систем с более новыми версиями udev (32 бит)
+yay -S lib32-gconf --noconfirm  # Устаревшая система базы данных
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
@@ -876,7 +882,9 @@ yay -S vim-colorsamplerpack vim-doxygentoolkit vim-guicolorscheme vim-jellybeans
 
 vi 1:070224-4  # Оригинальный текстовый редактор ex / vi
 vim 8.2.1537-1  # Vi Improved, улучшенная версия текстового редактора vi с широкими возможностями настройки
-vim-a 2.18-10  # Асинхронный Lint Engine (vim-ale или vim-ansible)
+vim-a 2.18-10  # Асинхронный Lint Engine (vim-ale или vim-ansible)?
+vim-ale  # Асинхронный Lint Engine
+vim-ansible  # Плагин vim для подсветки синтаксиса распространенных типов файлов Ansible
 vim-airline 0.11-1  # Строка состояния, написанная в Vimscript
 vim-airline-themes r1386.63b66df-1  # Темы для вим-авиакомпании
 vim-align 37.43-5  # Позволяет выравнивать строки с помощью регулярных выражений
