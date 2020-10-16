@@ -993,7 +993,8 @@ elif [[ $i_sound == 1 ]]; then
   echo " Установка пакетов поддержки Sound support (alsa, pulseaudio...) "
 sudo pacman -S alsa-utils alsa-plugins alsa-firmware alsa-lib --noconfirm  # Расширенная звуковая архитектура Linux - Утилиты; Дополнительные плагины ALSA; Бинарные файлы прошивки для программ загрузки в alsa-tools и загрузчик прошивок hotplug; Альтернативная реализация поддержки звука Linux
 sudo pacman -S lib32-alsa-plugins --noconfirm  # Дополнительные плагины ALSA (32-бит)
-sudo pacman -S alsa-oss alsa-tools --noconfirm  # Библиотека совместимости OSS; Расширенные инструменты для определенных звуковых карт
+sudo pacman -S alsa-oss lib32-alsa-oss --noconfirm  # Библиотека совместимости OSS; Библиотека совместимости OSS (32 бит)
+#sudo pacman -S alsa-tools --noconfirm  # Расширенные инструменты для определенных звуковых карт
 sudo pacman -S alsa-topology-conf alsa-ucm-conf --noconfirm  # Файлы конфигурации топологии ALSA; Конфигурация (и топологии) ALSA Use Case Manager
 sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-bluetooth pulseaudio-equalizer-ladspa --noconfirm
 #sudo pacman -S pulseaudio --noconfirm  # Функциональный звуковой сервер общего назначения
