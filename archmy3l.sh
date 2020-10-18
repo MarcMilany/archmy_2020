@@ -3587,7 +3587,7 @@ sudo pacman -S libopenraw --noconfirm  # Библиотека для декод�
 ############ gstreamer0.10 ##########
 #echo "" 
 #echo " Установим мультимедийный фреймворк GStreamer из AUR "
-#yay -S gstreamer0.10 --noconfirm  # Мультимедийный фреймворк GStreamer
+#yay -S gstreamer0.10 --noconfirm  # Мультимедийный фреймворк GStreamer (Если установлен yay - эта команда)
 git clone https://aur.archlinux.org/gstreamer0.10.git 
 cd gstreamer0.10
 #makepkg -fsri
