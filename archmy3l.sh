@@ -3592,7 +3592,7 @@ sudo rm -rf ~/.thumbnails/  # удаляет миниатюры фото, кот
 #sudo rm -rf ~/.cache/thumbnails/*
 echo " Создадим backup папки /.config/Thunar "
 mv ~/.config/Thunar ~/.config/Thunar.bak
-echo " Резервное копирование каталога /usr/share/mime, на всякий случай "
+echo " Выполним резервное копирование каталога /usr/share/mime, на всякий случай "
 cp -R /usr/share/mime /usr/share/mime_back
 #echo " Удалить все файлы .xml на /usr/share/mime, затем запустим команду обновления "
 #find  /usr/share/mime -name *.xml -exec rm -rfv {} + 
