@@ -1028,10 +1028,20 @@ sudo pacman -S ffmpegthumbnailer --noconfirm  # Легкий эскиз виде
 sudo pacman -S poppler-glib --noconfirm  # Наручники Poppler Glib
 sudo pacman -S libgsf --noconfirm  # Расширяемая библиотека абстракции ввода-вывода для работы со структурированными форматами файлов
 sudo pacman -S libopenraw --noconfirm  # Библиотека для декодирования файлов RAW
+############ gstreamer0.10 ##########
 echo "" 
 echo " Установим мультимедийный фреймворк GStreamer из AUR "
 #yay -S gstreamer0.10 --noconfirm  # Мультимедийный фреймворк GStreamer
-
+git clone https://aur.archlinux.org/gstreamer0.10.git 
+cd gstreamer0.10
+#makepkg -fsri
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf libgksu 
+rm -Rf gstreamer0.10
 
 
 
