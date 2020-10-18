@@ -3553,13 +3553,13 @@ git clone https://github.com/MarcMilany/archmy_2020.git
 
 clear
 echo ""
-echo -e "${BLUE}:: ${NC}Исправьте миниатюры в файловом менеджере?"
+echo -e "${BLUE}:: ${NC}Исправим отображение миниатюр в файловом менеджере Thunar?"
 # Fix Thumbnails in file manager
 echo -e "${GREEN}==> ${NC}"
 # Enable TLP (power management)
 echo -e "${YELLOW}:: ${BOLD} "
 echo -e "${CYAN}:: ${NC}!"
-echo -e "${MAGENTA}=> ${NC}Так же Вам необходимо будет настроить конфигурационный файл tlp - под свои параметры." 
+echo -e " Возможно! Потребуется доустановить дополнительные пакеты, и надо включить показ миниатюр в настройках Thunar'а (или, может, в настройках Xfce). " 
 echo " Будьте внимательны! В любой ситуации выбор всегда остаётся за вами. "
 # Be careful! In any situation, the choice is always yours.
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
