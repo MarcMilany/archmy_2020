@@ -3552,26 +3552,42 @@ echo -e "${YELLOW}==> ${NC}Загрузим архив (ветку мастер 
 git clone https://github.com/MarcMilany/archmy_2020.git
 
 clear
-
-
-
-
-
-Исправьте миниатюры в файловом менеджере
-###############################
-Исправьте миниатюры в файловом менеджере
+echo ""
+echo -e "${BLUE}:: ${NC}Исправьте миниатюры в файловом менеджере?"
 # Fix Thumbnails in file manager
+echo -e "${GREEN}==> ${NC}"
+# Enable TLP (power management)
+echo -e "${YELLOW}:: ${BOLD} "
+echo -e "${CYAN}:: ${NC}!"
+echo -e "${MAGENTA}=> ${NC}Так же Вам необходимо будет настроить конфигурационный файл tlp - под свои параметры." 
+echo " Будьте внимательны! В любой ситуации выбор всегда остаётся за вами. "
+# Be careful! In any situation, the choice is always yours.
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
 echo "" 
-echo " Установка необходимого софта (пакетов) в систему "
+while 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да исправьте миниатюры в файловом менеджере,     0 - НЕТ - Пропустить действие: " set_fix  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$set_fix" =~ [^10] ]]
+do
+    :
+done 
+if [[ $set_fix == 0 ]]; then
+echo ""    
+echo "  Запуск TLP (управления питанием) пропущено "
+elif [[ $set_fix == 1 ]]; then
+  echo "" 
+  echo " Установка необходимого софта (пакетов) в систему "
 #sudo pacman -S tumbler ffmpegthumbnailer poppler-glib libgsf libopenraw --noconfirm
 sudo pacman -S tumbler --noconfirm  #  Сервис D-Bus для приложений, запрашивающих миниатюры
 sudo pacman -S ffmpegthumbnailer --noconfirm  # Легкий эскиз видеофайлов, который может использоваться файловыми менеджерами
 sudo pacman -S poppler-glib --noconfirm  # Наручники Poppler Glib
 sudo pacman -S libgsf --noconfirm  # Расширяемая библиотека абстракции ввода-вывода для работы со структурированными форматами файлов
 sudo pacman -S libopenraw --noconfirm  # Библиотека для декодирования файлов RAW
-#sudo pacman -S  --noconfirm  #
 echo "" 
-echo " Удалим миниатюры фото, которые накапливаются в системе "
+echo " Удалим миниатюры фото, которые накапились в системе "
 sudo rm -rf ~/.thumbnails/  # удаляет миниатюры фото, которые накапливаются в системе
 #sudo rm -rf ~/.cache/thumbnails/*
 echo " Создадим backup папки /.config/Thunar "
@@ -3579,20 +3595,13 @@ mv ~/.config/Thunar ~/.config/Thunar.bak
 echo " Обновление общего кэша информации mime в соответствии с системой "
 sudo update-mime-database /usr/share/mime
 echo " Желательно ПОСЛЕ этих действий выйдите из системы и снова войдите в систему, или перезагрузитесь "
+fi
 # ---------------------------------
-# update-mime-database - это программа, которая отвечает за обновление общего кэша информации mime в соответствии с системой, описанной в спецификации Shared MIME-Info Database от X Desktop Group
+# update-mime-database  # программа для построения кэша Shared MIME-Info базы данных
+# Это программа, которая отвечает за обновление общего кэша информации mime в соответствии с системой, описанной в спецификации Shared MIME-Info Database от X Desktop Group
 #/usr/share/mime  # файл конфигурации MIME-типов
+# https://www.opennet.ru/man.shtml?topic=update-mime-database&category=1&russian=2
 # ==================================
-# Then logout and back in or Reboot. 
-#####################################
-
-
-
-
-
-
-
-
 
 clear
 echo -e "${CYAN}
