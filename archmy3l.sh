@@ -3584,6 +3584,7 @@ sudo pacman -S ffmpegthumbnailer --noconfirm  # Легкий эскиз виде
 sudo pacman -S poppler-glib --noconfirm  # Наручники Poppler Glib
 sudo pacman -S libgsf --noconfirm  # Расширяемая библиотека абстракции ввода-вывода для работы со структурированными форматами файлов
 sudo pacman -S libopenraw --noconfirm  # Библиотека для декодирования файлов RAW
+#yay -S gstreamer0.10 --noconfirm  # Мультимедийный фреймворк GStreamer
 echo "" 
 echo " Удалим миниатюры фото, которые накапились в системе "
 sudo rm -rf ~/.thumbnails/  # удаляет миниатюры фото, которые накапливаются в системе
