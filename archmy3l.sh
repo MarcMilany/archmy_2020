@@ -3576,7 +3576,7 @@ do
 done 
 if [[ $set_fix == 0 ]]; then
 echo ""    
-echo "  Запуск TLP (управления питанием) пропущено "
+echo " Действие исправления миниатюр в файловом менеджере пропущено "
 elif [[ $set_fix == 1 ]]; then
   echo "" 
   echo " Установка необходимого софта (пакетов) в систему "
@@ -3592,6 +3592,10 @@ sudo rm -rf ~/.thumbnails/  # удаляет миниатюры фото, кот
 #sudo rm -rf ~/.cache/thumbnails/*
 echo " Создадим backup папки /.config/Thunar "
 mv ~/.config/Thunar ~/.config/Thunar.bak
+echo " Резервное копирование каталога /usr/share/mime, на всякий случай "
+cp -R /usr/share/mime /usr/share/mime_back
+#echo " Удалить все файлы .xml на /usr/share/mime, затем запустим команду обновления "
+#find  /usr/share/mime -name *.xml -exec rm -rfv {} + 
 echo " Обновление общего кэша информации mime в соответствии с системой "
 sudo update-mime-database /usr/share/mime
 echo " Желательно ПОСЛЕ этих действий выйдите из системы и снова войдите в систему, или перезагрузитесь "
