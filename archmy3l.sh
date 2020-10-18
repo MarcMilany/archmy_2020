@@ -3601,6 +3601,7 @@ sudo update-mime-database /usr/share/mime
 echo " Желательно ПОСЛЕ этих действий выйдите из системы и снова войдите в систему, или перезагрузитесь "  # Then logout and back in or Reboot
 echo " Но, мы просто перезапустим файловый менеджер Thunar "
 thunar -q
+# Затем, выставить в настройках Thunar галочку, предписывающую показывать миниатюры, если это возможно!
 # Почистить cache:
 # /home/user/.thumbnails
 # /home/user/.cache/Thunar
