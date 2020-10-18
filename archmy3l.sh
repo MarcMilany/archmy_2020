@@ -3245,10 +3245,6 @@ fi
 # Для отображения списка задач текущего пользователя:
 # crontab -l
 # ===========================================
-Исправьте миниатюры в файловом менеджере
-
-
-
 
 clear
 echo -e "${CYAN}
@@ -3554,6 +3550,49 @@ echo -e "${YELLOW}==> ${NC}Загрузим архив (ветку мастер 
 #sudo tar -xzf arch_2020-master.zip -C ~/
 #git clone https://github.com/MarcMilany/arch_2020.git
 git clone https://github.com/MarcMilany/archmy_2020.git
+
+clear
+
+
+
+
+
+Исправьте миниатюры в файловом менеджере
+###############################
+Исправьте миниатюры в файловом менеджере
+# Fix Thumbnails in file manager
+echo "" 
+echo " Установка необходимого софта (пакетов) в систему "
+#sudo pacman -S tumbler ffmpegthumbnailer poppler-glib libgsf libopenraw --noconfirm
+sudo pacman -S tumbler --noconfirm  #  Сервис D-Bus для приложений, запрашивающих миниатюры
+sudo pacman -S ffmpegthumbnailer --noconfirm  # Легкий эскиз видеофайлов, который может использоваться файловыми менеджерами
+sudo pacman -S poppler-glib --noconfirm  # Наручники Poppler Glib
+sudo pacman -S libgsf --noconfirm  # Расширяемая библиотека абстракции ввода-вывода для работы со структурированными форматами файлов
+sudo pacman -S libopenraw --noconfirm  # Библиотека для декодирования файлов RAW
+#sudo pacman -S  --noconfirm  #
+echo "" 
+echo " Удалим миниатюры фото, которые накапливаются в системе "
+sudo rm -rf ~/.thumbnails/  # удаляет миниатюры фото, которые накапливаются в системе
+#sudo rm -rf ~/.cache/thumbnails/*
+echo " Создадим backup папки /.config/Thunar "
+mv ~/.config/Thunar ~/.config/Thunar.bak
+echo " Обновление общего кэша информации mime в соответствии с системой "
+sudo update-mime-database /usr/share/mime
+echo " Желательно ПОСЛЕ этих действий выйдите из системы и снова войдите в систему, или перезагрузитесь "
+# ---------------------------------
+# update-mime-database - это программа, которая отвечает за обновление общего кэша информации mime в соответствии с системой, описанной в спецификации Shared MIME-Info Database от X Desktop Group
+#/usr/share/mime  # файл конфигурации MIME-типов
+# ==================================
+# Then logout and back in or Reboot. 
+#####################################
+
+
+
+
+
+
+
+
 
 clear
 echo -e "${CYAN}
