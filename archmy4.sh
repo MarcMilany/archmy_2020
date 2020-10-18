@@ -1074,6 +1074,12 @@ fi
 # https://www.opennet.ru/man.shtml?topic=update-mime-database&category=1&russian=2
 # ==================================
 
+########################################
+
+xfce4-places-plugin   AUR  # Плагин меню Places для панели Xfce
+https://aur.archlinux.org/packages/xfce4-places-plugin/
+https://aur.archlinux.org/xfce4-places-plugin.git
+
 #####################################
 
 echo 'Обновим информацию о шрифтах'
