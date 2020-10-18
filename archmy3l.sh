@@ -2560,7 +2560,7 @@ clear
 echo ""
 echo " Установка приложение Flatpak выполнена "
 echo ""
-echo -e "${BLUE}:: ${NC}Установить приложение Discover (из проекта KDE) для управления вашими Flatpaks (флэтпаками)?"
+echo -e "${BLUE}:: ${NC}Установить приложение для управления вашими Flatpaks (флэтпаками)?"
 echo " Discover - Один из способов управления вашими Флэтпаками, есть ещё Gnome Software из проекта 'Gnome Project'. "
 echo " Gnome Software - ПОДТЯГИВАЕТ МНОГО ЗАВИСИМОСТЕЙ! "
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. "
@@ -2571,22 +2571,29 @@ echo ""
 while 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_discover  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Установить Discover (из проекта KDE),     2 - Установить Gnome Software (из Gnome Project),      
+
+    0 - НЕТ - Пропустить установку: " i_discover  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$i_discover" =~ [^10] ]]
+    [[ "$i_discover" =~ [^120] ]]
 do
     :
 done 
 if [[ $i_discover == 0 ]]; then 
 echo ""   
-echo " Установка приложение Discover пропущена "
+echo " Установка приложения для управления вашими Flatpaks пропущена "
 elif [[ $i_discover == 1 ]]; then
   echo ""    
   echo " Установка Discover (для управления вашими Flatpaks) "
 sudo pacman -S discover --noconfirm  # Графический интерфейс управления ресурсами KDE и Plasma
-### sudo pacman -S gnome-software  # Программные инструменты GNOME - ПОДТЯГИВАЕТ МНОГО ЗАВИСИМОСТЕЙ!
 echo ""
 echo " Установка приложение Discover (из проекта KDE) выполнена "
+elif [[ $i_discover == 2 ]]; then
+  echo ""    
+  echo " Установка Gnome Software (для управления вашими Flatpaks) "
+sudo pacman -S gnome-software --noconfirm  # Программные инструменты GNOME - ПОДТЯГИВАЕТ МНОГО ЗАВИСИМОСТЕЙ!
+echo ""
+echo " Установка приложение Gnome Software (из Gnome Project) выполнена "
 fi
 fi
 # -------------------------------------
@@ -2644,7 +2651,7 @@ echo ""
 echo " Установка Snap пропущена "
 elif [[ $i_snap == 1 ]]; then
 echo ""    
-echo -e " Установка базовых программ и пакетов wget, curl, git "
+#echo -e " Установка базовых программ и пакетов wget, curl, git "
 #sudo pacman -S --noconfirm --needed wget curl git 
 echo " Установка поддержки Snap "
 git clone https://aur.archlinux.org/snapd.git
