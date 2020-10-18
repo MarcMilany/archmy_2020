@@ -995,23 +995,70 @@ fi
 
 
 ###############################
-Исправьте миниатюры в файловом менеджере
+clear
+echo ""
+echo -e "${BLUE}:: ${NC}Исправим отображение миниатюр в файловом менеджере Thunar?"
 # Fix Thumbnails in file manager
-
+echo -e "${MAGENTA}=> ${BOLD}Thunar - обычно автоматически создает миниатюрные изображения всех изображений в просматриваемой директории. Но бывает, что в Arch Linux - Thunar иногда не показывает некоторые миниатюры. Все файлы изображений получают один и тот же общий значок изображения. ${NC}"
+echo -e "${YELLOW}:: Файловый менеджер thunar идет по умолчанию в графической оболочке xfce. Сам по себе thunar не содержит в себе лишних функций, которые могут запутать не опытного пользователя. Да и не всем нужен излишний функционал. Кастомизируется thunar очень легко, по этому у вас не должно возникнуть с этим проблем."
+echo -e "${CYAN}:: ${NC}Нам - Потребуется доустановить дополнительные пакеты, и возможно надо включить показ миниатюр в настройках Thunar'а (или, может, в настройках Xfce)."
+echo " Будьте внимательны! В любой ситуации выбор всегда остаётся за вами. "
+# Be careful! In any situation, the choice is always yours.
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
+while 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да исправьте миниатюры в файловом менеджере,     0 - НЕТ - Пропустить действие: " set_fix  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$set_fix" =~ [^10] ]]
+do
+    :
+done 
+if [[ $set_fix == 0 ]]; then
+echo ""    
+echo " Действие исправления миниатюр в файловом менеджере пропущено "
+elif [[ $set_fix == 1 ]]; then
+  echo "" 
+  echo " Установка необходимого софта (пакетов) в систему "
 #sudo pacman -S tumbler ffmpegthumbnailer poppler-glib libgsf libopenraw --noconfirm
 sudo pacman -S tumbler --noconfirm  #  Сервис D-Bus для приложений, запрашивающих миниатюры
 sudo pacman -S ffmpegthumbnailer --noconfirm  # Легкий эскиз видеофайлов, который может использоваться файловыми менеджерами
 sudo pacman -S poppler-glib --noconfirm  # Наручники Poppler Glib
 sudo pacman -S libgsf --noconfirm  # Расширяемая библиотека абстракции ввода-вывода для работы со структурированными форматами файлов
 sudo pacman -S libopenraw --noconfirm  # Библиотека для декодирования файлов RAW
-#sudo pacman -S  --noconfirm  #
-
-sudo rm -rf ~/.thumbnails/
+#yay -S gstreamer0.10 --noconfirm  # Мультимедийный фреймворк GStreamer
+echo "" 
+echo " Удалим миниатюры фото, которые накапились в системе "
+killall thunar  # завершим работу менеджера thunar 
+sudo rm -rf ~/.thumbnails/  # удаляет миниатюры фото, которые накапливаются в системе
+#sudo rm -rf ~/.cache/thumbnails/*
+echo " Создадим backup папки /.config/Thunar "
 mv ~/.config/Thunar ~/.config/Thunar.bak
+echo " Выполним резервное копирование каталога /usr/share/mime, на всякий случай "
+#sudo cp -R /usr/share/mime /usr/share/mime_back
+cp -R /usr/share/mime /usr/share/mime_back
+#echo " Удалить все файлы .xml на /usr/share/mime, затем запустим команду обновления "
+#find  /usr/share/mime -name *.xml -exec rm -rfv {} + 
+echo " Обновление общего кэша информации mime в соответствии с системой "
 sudo update-mime-database /usr/share/mime
+echo " Желательно ПОСЛЕ этих действий выйдите из системы и снова войдите в систему, или перезагрузитесь "  # Then logout and back in or Reboot
+echo " Но, мы просто перезапустим файловый менеджер Thunar "
+thunar -q
+# Затем, выставить в настройках Thunar галочку, предписывающую показывать миниатюры, если это возможно!
+# Почистить cache:
+# /home/user/.thumbnails
+# /home/user/.cache/Thunar
+fi
+# ---------------------------------
+# update-mime-database  # программа для построения кэша Shared MIME-Info базы данных
+# Это программа, которая отвечает за обновление общего кэша информации mime в соответствии с системой, описанной в спецификации Shared MIME-Info Database от X Desktop Group
+#/usr/share/mime  # файл конфигурации MIME-типов
+# https://wiki.archlinux.org/index.php/Thunar_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
+# https://www.opennet.ru/man.shtml?topic=update-mime-database&category=1&russian=2
+# ==================================
 
-Затем выйдите из системы и снова войдите в систему или перезагрузитесь.
-# Then logout and back in or Reboot. 
 #####################################
 
 echo 'Обновим информацию о шрифтах'
