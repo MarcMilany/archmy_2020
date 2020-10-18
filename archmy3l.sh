@@ -3598,7 +3598,12 @@ cp -R /usr/share/mime /usr/share/mime_back
 #find  /usr/share/mime -name *.xml -exec rm -rfv {} + 
 echo " Обновление общего кэша информации mime в соответствии с системой "
 sudo update-mime-database /usr/share/mime
-echo " Желательно ПОСЛЕ этих действий выйдите из системы и снова войдите в систему, или перезагрузитесь "
+echo " Желательно ПОСЛЕ этих действий выйдите из системы и снова войдите в систему, или перезагрузитесь "  # Then logout and back in or Reboot
+echo " Но, мы просто перезапустим файловый менеджер Thunar "
+thunar -q
+# Почистить cache:
+# /home/user/.thumbnails
+# /home/user/.cache/Thunar
 fi
 # ---------------------------------
 # update-mime-database  # программа для построения кэша Shared MIME-Info базы данных
