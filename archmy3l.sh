@@ -3678,7 +3678,7 @@ echo " Выполним резервное копирование каталог
 sudo cp -R /usr/share/mime /usr/share/mime_back
 #cp -R /usr/share/mime /usr/share/mime_back
 #echo " Удалить все файлы .xml на /usr/share/mime, затем запустим команду обновления "
-#find  /usr/share/mime -name *.xml -exec rm -rfv {} + 
+#find  /usr/share/mime -name *.xml -exec rm -rfv {} +  # 
 echo " Обновление общего кэша информации mime в соответствии с системой "
 sudo update-mime-database /usr/share/mime
 echo " Желательно ПОСЛЕ этих действий выйдите из системы и снова войдите в систему, или перезагрузитесь "  # Then logout and back in or Reboot
@@ -3725,7 +3725,7 @@ fi
 ### xdg-mime default org.gnome.Nautilus.desktop inode/directory
 # или thunar
 # xdg-mime default thunar.desktop inode/directory
-
+# https://wiki.archlinux.org/index.php/Default_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 # -----------------------------
 # Расширяем контекстное меню thunar:
 # Добавляем дополнительные пункты для создания файлов.
