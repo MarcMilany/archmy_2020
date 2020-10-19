@@ -2559,12 +2559,14 @@ elif [[ $i_sandbox == 1 ]]; then
   echo " Установка Flatpak (инструмента для управления приложениями и средами выполнения) "
 sudo pacman -S flatpak --noconfirm  # Среда изолированной программной среды и распространения приложений Linux (ранее xdg-app)
 sudo pacman -S elfutils patch --noconfirm  # Утилиты для обработки объектных файлов ELF и отладочной информации DWARF, и Утилита для применения патчей к оригинальным источникам
+flatpak update  # Обновление flatpak
 clear
 echo ""
 echo " Установка приложение Flatpak выполнена "
 echo ""
 echo -e "${BLUE}:: ${NC}Установить приложение для управления вашими Flatpaks (флэтпаками)?"
 echo " Discover - Один из способов управления вашими Флэтпаками, есть ещё Gnome Software из проекта 'Gnome Project'. "
+echo " Меннеджер пакетов Gnome Software, хорошо использовать в связке с flatpak. "
 echo " Gnome Software - ПОДТЯГИВАЕТ МНОГО ЗАВИСИМОСТЕЙ! "
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. "
 # Be careful! The installation process was fully automatic.
@@ -2595,6 +2597,7 @@ elif [[ $i_discover == 2 ]]; then
   echo ""    
   echo " Установка Gnome Software (для управления вашими Flatpaks) "
 sudo pacman -S gnome-software --noconfirm  # Программные инструменты GNOME - ПОДТЯГИВАЕТ МНОГО ЗАВИСИМОСТЕЙ!
+sudo pacman -S gnome-software-packagekit-plugin --noconfirm  # Плагин поддержки PackageKit для программного обеспечения GNOME 
 echo ""
 echo " Установка приложение Gnome Software (из Gnome Project) выполнена "
 fi
@@ -2621,7 +2624,45 @@ fi
 # https://wiki.archlinux.org/index.php/Flatpak
 # Flatpak Manjaro:
 # https://wiki.manjaro.org/index.php?title=Flatpak
-# =====================================
+# --------------------------------------
+# Основной репозиторий flatpak flathub.org/apps.
+# Добавление репозитория на примере flathub:
+# flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+# Удаление репозитория на примере flathub:
+#flatpak remote-delete flathub
+# Обновление flatpak:
+# flatpak update
+# Поиск:
+# flatpak search libreoffice
+# Список пакетов в репозитории flathub:
+# flatpak remote-ls flathub
+# Установка пакета в домашнюю дерикторию.
+# flatpak install flathub com.valvesoftware.Steam
+# Запуск:
+# flatpak run com.valvesoftware.Steam
+# Список установленых пакетов:
+# flatpak list
+# Обновление пакета:
+# flatpak update com.valvesoftware.Steam
+# Обновление пакетов:
+# flatpak update
+# Удаление пакета:
+# flatpak uninstall com.valvesoftware.Steam
+# После удаления приложения могут оставаться неиспользуемые рантаймы, очистим и их.
+# flatpak uninstall --unused
+# Дополнительный репозиторий Winepak (игры, WoT и др.).
+# https://winepak.org.
+# https://github.com/winepak/applications.
+# ------------------------------
+# Показанные инструкции могут не работать:
+# flatpak remote-add flathub https://flathub.org/repo/flathub.flatpakrepo
+# flatpak --user install flathub org.gnome.Recipes
+# если выдает ошибку "удаленный flathub не найден"
+# вместо этого вам нужно либо установить пульт с --user, либо установить приложение flatpak без --user
+#Просто:
+# flatpak install flathub org.gnome.Recipes
+# запустите flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepoв терминале, и все должно работать, что позволит вам установить fltpaks из flathub
+# =============================
 
 ###### SNAP ##############
 clear
