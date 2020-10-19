@@ -3644,7 +3644,6 @@ fi
 # Проверяем дефолтные настройки:
 # xdg-mime query default inode/directory
 # Переопределяем:
-
 # xdg-mime default org.gnome.Nautilus.desktop inode/directory
 # или thunar
 # xdg-mime default thunar.desktop inode/directory
