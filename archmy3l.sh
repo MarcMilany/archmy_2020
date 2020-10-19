@@ -515,7 +515,7 @@ echo " Выполним резервное копирование каталог
 sudo cp -R /root/.gnupg /root/.gnupg_back        
 echo " Удалим директорию (/etc/pacman.d/gnupg) "
 sudo rm -R /root/.gnupg
-echo " Создаётся генерация мастер-ключа (брелка) pacman "
+echo " Создаётся генерация мастер-ключа (брелка) pacman "  # gpg –refresh-keys
 sudo pacman-key --init  #
 echo " Далее идёт поиск ключей... "
 sudo pacman-key --populate archlinux  #
