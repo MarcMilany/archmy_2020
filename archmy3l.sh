@@ -3636,6 +3636,20 @@ fi
 # update-mime-database  # программа для построения кэша Shared MIME-Info базы данных
 # Это программа, которая отвечает за обновление общего кэша информации mime в соответствии с системой, описанной в спецификации Shared MIME-Info Database от X Desktop Group
 #/usr/share/mime  # файл конфигурации MIME-типов
+# ----------------------------
+# Ассоциации файлов
+# Это нужно, если у вас открывается файл, или каталог не в той программе. Например, директория в музыкальном проигрывателе.
+# Распознаем файл:
+# xdg-mime query filetype wallpaper.jpg
+# Проверяем дефолтные настройки:
+# xdg-mime query default inode/directory
+# Переопределяем:
+
+# xdg-mime default org.gnome.Nautilus.desktop inode/directory
+# или thunar
+# xdg-mime default thunar.desktop inode/directory
+# Еще пример:
+# xdg-mime default vlc.desktop video/mp4
 # https://wiki.archlinux.org/index.php/Thunar_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 # https://www.opennet.ru/man.shtml?topic=update-mime-database&category=1&russian=2
 # ==================================
