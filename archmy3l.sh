@@ -3649,6 +3649,12 @@ fi
 # xdg-mime default thunar.desktop inode/directory
 # Еще пример:
 # xdg-mime default vlc.desktop video/mp4
+# -----------------------------
+# Расширяем контекстное меню thunar:
+# Добавляем дополнительные пункты для создания файлов.
+# XDG_TEMPLATES_DIR=$(xdg-user-dir TEMPLATES)
+# cd "$XDG_TEMPLATES_DIR"
+# touch 'New Text File.txt' && touch 'New Word File.doc' && touch 'New Excel Spreadsheet.xls'
 # https://wiki.archlinux.org/index.php/Thunar_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 # https://www.opennet.ru/man.shtml?topic=update-mime-database&category=1&russian=2
 # ==================================
