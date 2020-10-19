@@ -487,9 +487,9 @@ clear
 echo ""
 echo -e "${YELLOW}==> ${NC}Обновить и добавить новые ключи?"
 echo " Данный этап поможет вам избежать проблем с ключами Pacmаn, если Вы используете не свежий образ ArchLinux для установки! "
+echo -e "${RED}==> ${BOLD}Примечание: - Иногда при запуске обновления ключей по hkp возникает ошибка, не переживайте просто при установке gnupg в линукс в дефолтном конфиге указан следующий сервер: (keyserver hkp://keys.gnupg.net). GnuPG - оснащен универсальной системой управления ключами, а также модулями доступа для всех типов открытых ключей. GnuPG, также известный как GPG, это инструмент командной строки с возможностью легкой интеграции с другими приложениями. Доступен богатый выбор пользовательских приложений и библиотек. ${NC}"
+echo -e "${RED}==> ${BOLD}Примечание: - Однако, в ходе чтения различных руководств в интернете было выяснено, что подобный способ обновления и передачи ключей не самый лучший, т.к. эта информация передается открытым способом. И тот, кто наблюдает за траффиком, видит данные обновляемых при gpg -refresh-keys ключей. И поэтому рекомендуется использовать hkps сервера - (keyserver hkps://hkps.pool.sks-keyservers.net)! ${NC}"
 echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, можно пропустить запуск обновления ключей. "
-echo -e "${RED}==> ${BOLD}Примечание: - Иногда при запуске обновления ключей возникает ошибка, не переживайте просто перезапустите работу скрипта (sh -название скрипта-)${NC}"
-echo -e "${RED}==> ${BOLD}Примечание: - Лучше ПРОПУСТИТЕ этот пункт!"
 echo ""
 while
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
@@ -505,13 +505,20 @@ echo ""
 echo " Обновление ключей пропущено " 
 elif [[ $x_key == 1 ]]; then
 ###  clear
-#echo " Создаётся генерация мастер-ключа (брелка) pacman, введите пароль (не отображается)... "
+echo " Выполним резервное копирование каталога (/etc/pacman.d/gnupg), на всякий случай "
+# Файлы конфигурации по умолчанию: ~/.gnupg/gpg.conf и ~/.gnupg/dirmngr.conf.
+sudo cp -R /etc/pacman.d/gnupg /etc/pacman.d/gnupg_back
 # Я тебе советовал перед созданием нового брелка удалить директории (но /root/.gnupg не удалена)
-# rm -R /etc/pacman.d/gnupg
-# rm -R /root/.gnupg
-#sudo pacman-key --init  #
-#echo " Далее идёт поиск ключей... "
-#sudo pacman-key --populate archlinux  #
+echo " Удалим директорию (/etc/pacman.d/gnupg) "
+sudo rm -R /etc/pacman.d/gnupg
+echo " Выполним резервное копирование каталога (/root/.gnupg), на всякий случай "
+sudo cp -R /root/.gnupg /root/.gnupg_back        
+#echo " Удалим директорию (/etc/pacman.d/gnupg) "
+#sudo rm -R /root/.gnupg
+echo " Создаётся генерация мастер-ключа (брелка) pacman, введите пароль (не отображается)... "
+sudo pacman-key --init  #
+echo " Далее идёт поиск ключей... "
+sudo pacman-key --populate archlinux  #
 echo ""
 echo " Обновление ключей... "  
 sudo pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
@@ -519,8 +526,8 @@ echo "Обновление баз данных пакетов..."
 ###  sudo pacman -Sy
 sudo pacman -Syy   
 fi
-###sleep 1
-
+sleep 1
+# ----------------------------------
 # Или:
 #sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys && sudo pacman -Sy
 # Если возникли проблемы с обновлением, или установкой пакетов выполните данные рекомендации.
@@ -540,6 +547,11 @@ fi
 # wwwhttps://sks-keyservers.net/sks-keyservers.netCA.pem
 # Вопросы относительно передачи ключей по hkps
 # https://www.pgpru.com/%D4%EE%F0%F3%EC/%D0%E0%E1%EE%F2%E0%D1GnuPG/%C2%EE%EF%F0%EE%F1%FB%CE%F2%ED%EE%F1%E8%F2%E5%EB%FC%ED%EE%CF%E5%F0%E5%E4%E0%F7%E8%CA%EB%FE%F7%E5%E9%CF%EEHkps
+# GnuPG (Русский)
+# https://wiki.archlinux.org/index.php/GnuPG_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
+# OpenPGP
+# https://www.openpgp.org/about/
+# https://tools.ietf.org/html/rfc4880
 # ----------------------------
 # Ошибки про archlinux-keyring
 # Если вы получаете ошибки, связанные с ключами (например, ключ A634567E8t6574 не может быть найден удаленно) при попытке обновить вашу систему, вы должны выполнить следующие четыре команды от имени пользователя root:
