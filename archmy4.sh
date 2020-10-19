@@ -325,20 +325,21 @@ echo -e "${BLUE}
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S audacity --noconfirm  # 
-sudo pacman -S deadbeef --noconfirm  # 
-sudo pacman -S easytag --noconfirm  # 
-sudo pacman -S subdownloader --noconfirm  # 
-sudo pacman -S moc --noconfirm  # 
-sudo pacman -S mediainfo-gui --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S audacity --noconfirm  # Программа, позволяющая манипулировать сигналами цифрового звука
+sudo pacman -S deadbeef --noconfirm  # Аудиоплеер GTK + для GNU / Linux
+sudo pacman -S easytag --noconfirm  # Простое приложение для просмотра и редактирования тегов в аудиофайлах
+sudo pacman -S subdownloader --noconfirm  # Автоматическая загрузка / выгрузка субтитров с использованием быстрого хеширования
+sudo pacman -S moc --noconfirm  # Консольный аудиоплеер ncurses, разработанный, чтобы быть мощным и простым в использовании
+sudo pacman -S mediainfo --noconfirm  # Предоставляет техническую и теговую информацию о видео или аудио файле (интерфейс командной строки)
+sudo pacman -S mediainfo-gui --noconfirm  # Предоставляет техническую и теговую информацию о видео или аудио файле (интерфейс GUI)
+
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  #     
-sudo pacman -S audacity deadbeef easytag subdownloader moc mediainfo-gui --noconfirm
+sudo pacman -S audacity deadbeef easytag subdownloader moc mediainfo mediainfo-gui --noconfirm
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка Мультимедиа утилит пропущена.'
 fi
