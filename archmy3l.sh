@@ -2666,8 +2666,7 @@ fi
 # remote-add --user
 # sudo flatpak удаленно удалить flathub
 # sudo flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-#
-#
+# https://www.flathub.org/home
 # =============================
 
 ###### SNAP ##############
