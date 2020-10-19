@@ -513,8 +513,8 @@ echo " Удалим директорию (/etc/pacman.d/gnupg) "
 sudo rm -R /etc/pacman.d/gnupg
 echo " Выполним резервное копирование каталога (/root/.gnupg), на всякий случай "
 sudo cp -R /root/.gnupg /root/.gnupg_back        
-#echo " Удалим директорию (/etc/pacman.d/gnupg) "
-#sudo rm -R /root/.gnupg
+echo " Удалим директорию (/etc/pacman.d/gnupg) "
+sudo rm -R /root/.gnupg
 echo " Создаётся генерация мастер-ключа (брелка) pacman, введите пароль (не отображается)... "
 sudo pacman-key --init  #
 echo " Далее идёт поиск ключей... "
@@ -524,7 +524,7 @@ echo " Обновление ключей... "
 sudo pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
 echo "Обновление баз данных пакетов..."
 ###  sudo pacman -Sy
-sudo pacman -Syy   
+sudo pacman -Syy  # обновление баз пакмэна (pacman) 
 fi
 sleep 1
 # ----------------------------------
