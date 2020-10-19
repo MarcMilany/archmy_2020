@@ -3640,11 +3640,11 @@ fi
 # Ассоциации файлов
 # Это нужно, если у вас открывается файл, или каталог не в той программе. Например, директория в музыкальном проигрывателе.
 # Распознаем файл:
-# xdg-mime query filetype wallpaper.jpg
+### xdg-mime query filetype wallpaper.jpg
 # Проверяем дефолтные настройки:
 # xdg-mime query default inode/directory
 # Переопределяем:
-# xdg-mime default org.gnome.Nautilus.desktop inode/directory
+### xdg-mime default org.gnome.Nautilus.desktop inode/directory
 # или thunar
 # xdg-mime default thunar.desktop inode/directory
 # Еще пример:
