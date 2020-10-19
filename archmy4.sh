@@ -1218,4 +1218,16 @@ esac #окончание оператора case.
 #lshw -c video
 # После нового входа в систему, вы можете проверить версию драйвера, на котором работает ваша видеокарта, следующей командой:
 #glxinfo | grep OpenGL
+Parental Control: Family Friendly Filter
+by Media Partners
+https://addons.mozilla.org/en-US/firefox/addon/family-friendly-filter/?src=search
 
+Резюмирую:
+1. Для контроля времени доступа и общего времени сидения за компом удобно использовать пакет timekpr-next-git из aur.
+2. Для убирания рекламных баннеров в mozilla addons.mozilla.org/en-US/firefox/addon/adblock-plus/ (Adblock Plus by Adblock Plus)
+3. addons.mozilla.org/en-US/firefox/addon/family-friendly-filter/?src=search (Parental Control: Family Friendly Filterby Media Partners) позволяет защитить ребенка от случайных переходов на сайты для взрослых (при этом прямой поиск в строке яндекса ни каких ограничений не имеет (это для любителей «свободы» ратующих за демонстрацию порно своим детям @Gambit_VKM и @dimonmmk ) и addons.mozilla.org/en-US/firefox/addon/blocksite/?src=search (BlockSite) позволяет ограничить не только доступ к сайтам, но и время нахождения в интернете, защищен паролем от несанкционированных изменений) (что бы вообще защитить firefox от изменения настроек и удаления расширений можно использовать addons.mozilla.org/ru/firefox/addon/public-fox/
+4. настройка dns.yandex.ru/ тоже не дает защиты от прямого поиска и просмотра во вкладке видео поиска Яндекс.
+5. отличный результат показала настройка duckduckgo.com/settings на все запросы 18+ выдает поиск максимум 16+ ближе к 14+
+6. Нативного решения ограничения доступа к установленным приложениям (решения от pantheon из Community и aur switchboard-plug-parental-controls не работают в xfce (наверное многим «технарям» это очевидно). Здесь пока могут помочь только настройки групп доступа через chmod, что приведет к желаемому результату. Другого решения я не нашел
+
+В общем [решено].
