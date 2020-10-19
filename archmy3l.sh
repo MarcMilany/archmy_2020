@@ -3699,6 +3699,10 @@ echo " Расширяем контекстное меню Thunar (Добавля
 XDG_TEMPLATES_DIR=$(xdg-user-dir TEMPLATES)
 cd "$XDG_TEMPLATES_DIR"
 touch 'New Text File.txt' && touch 'New Word File.doc' && touch 'New Excel Spreadsheet.xls'
+touch 'New HTML File.html' && touch 'New XML File.xml' && touch 'New PHP Source File.php'
+touch 'New File Block Diagram.odg' && touch 'New Casscading Style Sheet.css' && touch 'New Java Source File.java'
+touch 'New ODB DataBase.odb' && touch 'New ODT File.odt' && touch 'New Table ODS.ods' && touch 'New File Excel.et'
+touch 'New File DPS Presentation.dps' && touch 'New File ODP Presentation.odp' && touch 'New File PowerPoint Presentation.ppt' 
 pwd    # покажет в какой директории мы находимся
 cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 fi
