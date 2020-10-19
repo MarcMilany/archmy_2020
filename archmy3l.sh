@@ -3411,6 +3411,9 @@ elif [[ $auto_ssh == 1 ]]; then
   echo ""  
   echo " Добавляем в автозагрузку (sshd.service)"
 sudo systemctl enable sshd.service
+# На сервере запустить и включить сервис в автостарт
+# sudo systemctl start sshd
+# sudo systemctl enable sshd
 echo " Сервис sshd успешно добавлен в автозагрузку " 
 fi
 
