@@ -2559,7 +2559,12 @@ elif [[ $i_sandbox == 1 ]]; then
   echo " Установка Flatpak (инструмента для управления приложениями и средами выполнения) "
 sudo pacman -S flatpak --noconfirm  # Среда изолированной программной среды и распространения приложений Linux (ранее xdg-app)
 sudo pacman -S elfutils patch --noconfirm  # Утилиты для обработки объектных файлов ELF и отладочной информации DWARF, и Утилита для применения патчей к оригинальным источникам
-flatpak update  # Обновление flatpak
+#echo ""   
+#echo " Добавление репозитория flathub "
+#flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+# Удаление репозитория на примере flathub:
+# flatpak remote-delete flathub
+# flatpak update  # Обновление flatpak
 clear
 echo ""
 echo " Установка приложение Flatpak выполнена "
