@@ -3668,8 +3668,8 @@ rm -Rf gstreamer0.10
 #######################
 echo "" 
 echo " Удалим миниатюры фото, которые накапились в системе "
-thunar -q  # запустим менеджер thunar
-killall thunar  # завершим работу менеджера thunar 
+### thunar -q  # запустим менеджер thunar
+### killall thunar  # завершим работу менеджера thunar 
 sudo rm -rf ~/.thumbnails/  # удаляет миниатюры фото, которые накапливаются в системе
 #sudo rm -rf ~/.cache/thumbnails/*
 echo " Создадим backup папки /.config/Thunar "
@@ -3684,6 +3684,11 @@ sudo update-mime-database /usr/share/mime
 echo " Желательно ПОСЛЕ этих действий выйдите из системы и снова войдите в систему, или перезагрузитесь "  # Then logout and back in or Reboot
 echo " Но, мы просто перезапустим файловый менеджер Thunar "
 thunar -q # запустим менеджер thunar
+echo " Проверяем дефолтные настройки "
+# Проверяем дефолтные настройки:
+# xdg-mime query default inode/directory
+
+
 # Затем, выставить в настройках Thunar галочку, предписывающую показывать миниатюры, если это возможно!
 # Почистить cache:
 # /home/user/.thumbnails
@@ -3697,15 +3702,30 @@ fi
 # Ассоциации файлов
 # Это нужно, если у вас открывается файл, или каталог не в той программе. Например, директория в музыкальном проигрывателе.
 # Распознаем файл:
-### xdg-mime query filetype wallpaper.jpg
+### xdg-mime query filetype wallpaper.jpg  # определение типа MIME файла
+### xdg-mime query filetype photo.jpeg  # определение типа MIME файла
+# Определение приложения по умолчанию для типа MIME:
+### xdg-mime query default image/jpeg
+# Изменение приложения по умолчанию для типа MIME
+### xdg-mime default feh.desktop image/jpeg
+# Открытие файла со своим стандартным приложением:
+### xdg-open photo.jpeg
+# Ярлык для открытия всех веб типов MIME с помощью одного приложения
+### xdg-settings set default-web-browser firefox.desktop
+# Ярлык для установки приложения по умолчанию для схемы URL
+### xdg-settings set default-url-scheme-handler irc xchat.desktop
+# Еще пример:
+### xdg-mime default vlc.desktop video/mp4
+# Нестандартная ассоциация:
+# Приложения могут игнорировать или частично реализовывать стандарт XDG. Проверьте использование устаревших файлов, таких как ~/.local/share/applications/mimeapps.list и ~/.local/share/applications/defaults.list. Если вы пытаетесь открыть файл из другого приложения (например, веб-браузера или файлового менеджера), проверьте, имеет ли это приложение собственный способ выбора приложений по умолчанию.
+# ----------------------------------
 # Проверяем дефолтные настройки:
 # xdg-mime query default inode/directory
 # Переопределяем:
 ### xdg-mime default org.gnome.Nautilus.desktop inode/directory
 # или thunar
 # xdg-mime default thunar.desktop inode/directory
-# Еще пример:
-# xdg-mime default vlc.desktop video/mp4
+
 # -----------------------------
 # Расширяем контекстное меню thunar:
 # Добавляем дополнительные пункты для создания файлов.
