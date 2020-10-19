@@ -514,7 +514,7 @@ elif [[ $x_key == 1 ]]; then
 #sudo pacman-key --populate archlinux  #
 echo ""
 echo " Обновление ключей... "  
-sudo pacman-key --refresh-keys --keyserver keys.gnupg.net
+sudo pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
 echo "Обновление баз данных пакетов..."
 ###  sudo pacman -Sy
 sudo pacman -Syy   
@@ -528,6 +528,18 @@ fi
 # Если ошибка с содержанием hkps.pool.sks-keyservers.net, не может достучаться до сервера ключей выполните команды ниже. Указываем другой сервер ключей.
 # sudo pacman-key --init && sudo pacman-key --populate
 # sudo pacman-key --refresh-keys --keyserver keys.gnupg.net && sudo pacman -Syy
+# --------------------------------
+# Вопросы относительно передачи ключей по hkps
+# При установке gnupg в линукс в дефолтном конфиге указан следующий сервер:
+# keyserver hkp://keys.gnupg.net
+# Однако, в ходе чтения различных руководств в интернете было выяснено, что подобный способ обновления и передачи ключей не самый лучший, т.к. эта информация передается открытым способом. И тот, кто наблюдает за траффиком, видит данные обновляемых при gpg —refresh-keys ключей. И поэтому рекомендуется использовать hkps сервера.
+# А именно предлагается сделать следующие изменения в конфиге gnupg:
+# keyserver hkps://hkps.pool.sks-keyservers.net
+# keyserver-options ca-cert-file=/path/to/CA/sks-keyservers.netCA.pem
+# где sks-keyservers.netCA.pem – есть сертификат, загружаемый с
+# wwwhttps://sks-keyservers.net/sks-keyservers.netCA.pem
+# Вопросы относительно передачи ключей по hkps
+# https://www.pgpru.com/%D4%EE%F0%F3%EC/%D0%E0%E1%EE%F2%E0%D1GnuPG/%C2%EE%EF%F0%EE%F1%FB%CE%F2%ED%EE%F1%E8%F2%E5%EB%FC%ED%EE%CF%E5%F0%E5%E4%E0%F7%E8%CA%EB%FE%F7%E5%E9%CF%EEHkps
 # ----------------------------
 # Ошибки про archlinux-keyring
 # Если вы получаете ошибки, связанные с ключами (например, ключ A634567E8t6574 не может быть найден удаленно) при попытке обновить вашу систему, вы должны выполнить следующие четыре команды от имени пользователя root:
