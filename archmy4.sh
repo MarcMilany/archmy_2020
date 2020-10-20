@@ -1125,10 +1125,14 @@ networkmanager-l2tp  AUR  # Поддержка L2TP для NetworkManager
 https://aur.archlinux.org/packages/networkmanager-l2tp/
 https://aur.archlinux.org/networkmanager-l2tp.git
 
+
 Лаунчер: rofi (Alt + d)
 Переключатель окон, средство запуска приложений и замена dmenu
 https://www.archlinux.org/packages/community/x86_64/rofi/
 
+
+ranger - # Простой файловый менеджер в стиле vim
+https://www.archlinux.org/packages/community/any/ranger/
 ncmpcpp - # Практически точный клон ncmpc с некоторыми новыми функциями
 https://www.archlinux.org/packages/community/x86_64/ncmpcpp/
 w3m - # Текстовый веб-браузер, а также пейджер
