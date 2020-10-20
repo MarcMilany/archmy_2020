@@ -1072,6 +1072,30 @@ cd multilockscreen-git
 less PKGBUILD
 makepkg -si
 
+Требования
+
+i3lock-color  AUR  # Улучшенный блокировщик экрана на основе XCB и PAM с поддержкой цветовой конфигурации
+https://aur.archlinux.org/packages/i3lock-color/
+https://aur.archlinux.org/i3lock-color.git
+ИЛИ 
+i3lock-color-git  AUR  # Улучшенный блокировщик экрана на основе XCB и PAM с поддержкой цветовой конфигурации
+https://aur.archlinux.org/packages/i3lock-color-git/
+https://aur.archlinux.org/i3lock-color-git.git 
+
+imagemagick - # Программа просмотра / обработки изображений
+https://www.archlinux.org/packages/extra/x86_64/imagemagick/
+
+xrandr - Показать информацию
+https://aur.archlinux.org/packages/?O=0&SeB=nd&K=xrandr&outdated=&SB=n&SO=a&PP=50&do_Search=Go
+
+xdpyinfo - отображение информации и поддержка HiDPI
+https://www.archlinux.org/packages/extra/x86_64/xorg-xdpyinfo/
+
+feh - # Быстрый и легкий просмотрщик изображений на основе imlib2
+https://www.archlinux.org/packages/extra/x86_64/feh/
+
+
+
 hblock  AUR  # Блокировщик рекламы, который создает файл hosts из автоматически загружаемых черных списков
 https://aur.archlinux.org/packages/hblock/
 https://aur.archlinux.org/hblock.git
