@@ -1074,15 +1074,11 @@ https://www.archlinux.org/packages/extra/x86_64/feh/
 ranger - # Простой файловый менеджер в стиле vim
 https://www.archlinux.org/packages/community/any/ranger/
 toxcore  - # Безопасная, не требующая настройки серверная часть P2P для замены Skype
-
+https://www.archlinux.org/packages/community/x86_64/toxcore/
 catdoc - # Конвертер файлов Microsoft Word, Excel, PowerPoint и RTF в текст
-
+https://www.archlinux.org/packages/community/x86_64/catdoc/
 inetutils - # Сборник общих сетевых программ
-
-
-
-
-
+https://www.archlinux.org/packages/core/x86_64/inetutils/
 
 ncmpcpp - # Практически точный клон ncmpc с некоторыми новыми функциями
 https://www.archlinux.org/packages/community/x86_64/ncmpcpp/
@@ -1114,9 +1110,7 @@ https://www.archlinux.org/packages/extra/x86_64/python-lxml/
      
 Дополнительно
 
-arc-gtk-theme  # Плоская тема с прозрачными элементами для GTK 3, GTK 2 и Gnome-Shell
-libfm-gtk2  # Библиотека GTK + 2 для управления файлами
-hardinfo  # Системная информация и инструмент тестирования
+
 
 # 
 # grml-iso  AUR  # добавьте ISO-образ grml в меню загрузки grub2
