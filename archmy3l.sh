@@ -511,14 +511,16 @@ sudo cp -R /etc/pacman.d/gnupg /etc/pacman.d/gnupg_back
 # Я тебе советовал перед созданием нового брелка удалить директории (но /root/.gnupg не удалена)
 echo " Удалим директорию (/etc/pacman.d/gnupg) "
 sudo rm -R /etc/pacman.d/gnupg
+# sudo rm -r /etc/pacman.d/gnupg
+# sudo mv /usr/lib/gnupg/scdaemon{,_}  # если демон смарт-карт зависает (это можно обойти с помощью этой команды)
 echo " Выполним резервное копирование каталога (/root/.gnupg), на всякий случай "
 sudo cp -R /root/.gnupg /root/.gnupg_back        
-echo " Удалим директорию (/etc/pacman.d/gnupg) "
-sudo rm -R /root/.gnupg
+#echo " Удалим директорию (/etc/pacman.d/gnupg) "
+#sudo rm -R /root/.gnupg
 echo " Создаётся генерация мастер-ключа (брелка) pacman "  # gpg –refresh-keys
-sudo pacman-key --init  #
+sudo pacman-key --init  # генерация мастер-ключа (брелка) pacman
 echo " Далее идёт поиск ключей... "
-sudo pacman-key --populate archlinux  #
+sudo pacman-key --populate archlinux  # поиск ключей
 echo ""
 echo " Обновление ключей... "  
 sudo pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
@@ -527,6 +529,14 @@ echo "Обновление баз данных пакетов..."
 sudo pacman -Syy  # обновление баз пакмэна (pacman) 
 fi
 sleep 1
+
+
+
+sudo pacman -S archlinux-keyring
+sudo pacman -S seahorse  # Приложение GNOME для управления ключами PGP (управления паролями и ключами шифрования)
+sudo pacman -Syyu
+
+
 # ----------------------------------
 # Или:
 #sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys && sudo pacman -Sy
