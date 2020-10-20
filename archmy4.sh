@@ -1085,16 +1085,19 @@ https://aur.archlinux.org/i3lock-color-git.git
 imagemagick - # Программа просмотра / обработки изображений
 https://www.archlinux.org/packages/extra/x86_64/imagemagick/
 
-xrandr - Показать информацию
+xrandr - Показать информацию 
 https://aur.archlinux.org/packages/?O=0&SeB=nd&K=xrandr&outdated=&SB=n&SO=a&PP=50&do_Search=Go
+libxrandr 1.5.2-3 # Библиотека расширения X11 RandR
+https://www.archlinux.org/packages/extra/x86_64/libxrandr/
 
 xdpyinfo - отображение информации и поддержка HiDPI
+xorg-xdpyinfo - # Утилита отображения информации для X
 https://www.archlinux.org/packages/extra/x86_64/xorg-xdpyinfo/
 
 feh - # Быстрый и легкий просмотрщик изображений на основе imlib2
 https://www.archlinux.org/packages/extra/x86_64/feh/
 
-
+----------------------------------------
 
 hblock  AUR  # Блокировщик рекламы, который создает файл hosts из автоматически загружаемых черных списков
 https://aur.archlinux.org/packages/hblock/
