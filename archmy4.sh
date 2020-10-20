@@ -1141,6 +1141,8 @@ youtube-viewer - # Утилита командной строки для про�
 https://www.archlinux.org/packages/community/any/youtube-viewer/
 hidapi - # Простая библиотека для связи с устройствами USB и Bluetooth HID
 https://www.archlinux.org/packages/community/x86_64/hidapi/
+
+
 #####################################
 
 echo 'Обновим информацию о шрифтах'
