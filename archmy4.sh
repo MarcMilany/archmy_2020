@@ -1129,11 +1129,16 @@ lightdm-slick-greeter  AUR  # Красивое приветствие LightDM
 https://aur.archlinux.org/packages/lightdm-slick-greeter/
 https://aur.archlinux.org/lightdm-slick-greeter.git
 
+
+-----------------------------
+
 Лаунчер: rofi (Alt + d)
 Переключатель окон, средство запуска приложений и замена dmenu
 https://www.archlinux.org/packages/community/x86_64/rofi/
 
+Композитный менеджер: compton (По умолчанию отключен).
 
+------------------------------
 ranger - # Простой файловый менеджер в стиле vim
 https://www.archlinux.org/packages/community/any/ranger/
 ncmpcpp - # Практически точный клон ncmpc с некоторыми новыми функциями
