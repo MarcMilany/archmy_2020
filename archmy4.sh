@@ -1231,7 +1231,7 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 
-sudo pacman -S python python-appdirs python-cairo python-chardet python-dbus python-dbus-common    --noconfirm  # python +
+sudo pacman -S python python-appdirs python-cairo python-chardet python-dbus python-dbus-common python-ewmh python-gobject  --noconfirm  # python +
 
 sudo pacman -S python --noconfirm  # Новое поколение языка сценариев высокого уровня Python
 sudo pacman -S python-appdirs --noconfirm  # Небольшой модуль Python для определения соответствующих директорий для конкретной платформы, например «директории пользовательских данных».
@@ -1239,8 +1239,8 @@ sudo pacman -S python-cairo --noconfirm  # Привязки Python для гра
 sudo pacman -S python-chardet --noconfirm  # Модуль Python3 для автоматического определения кодировки символов
 sudo pacman -S python-dbus --noconfirm  # Привязки Python для DBUS
 sudo pacman -S python-dbus-common --noconfirm  # Общие файлы dbus-python, общие для python-dbus и python2-dbus
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S python-ewmh --noconfirm  # Реализация Python подсказок Extended Window Manager на основе Xlib
+sudo pacman -S python-gobject --noconfirm  # Привязки Python для GLib / GObject / GIO / GTK +
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -1277,10 +1277,11 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 ----------------------------------
-python-gobject 3.36.1-1
+
 python-idna 2.10-1
 python-isodate 0.6.0-5
-python-lxml 4.5.2-1
+python-lxml # Связывание Python3 для библиотек libxml2 и libxslt (-S python-lxml --force # принудительная установка)
+python-mutagen - # (mutagen) Средство чтения и записи тегов метаданных аудио (библиотека Python)
 python-ordered-set 4.0.2-1
 python-packaging 20.4-1
 python-pexpect 4.8.0-1
@@ -1300,20 +1301,6 @@ python-six 1.15.0-1
 python-urllib3 1.25.10-1
 python-websocket-client 0.57.0-1
 
-
-
-
-
-
-
-python-ewmh - # Реализация Python подсказок Extended Window Manager на основе Xlib
-https://www.archlinux.org/packages/community/any/python-ewmh/
-
-python-lxml - # Связывание Python3 для библиотек libxml2 и libxslt (-S python-lxml --force # принудительная установка)
-https://www.archlinux.org/packages/extra/x86_64/python-lxml/
-
-python-mutagen - # (mutagen) Средство чтения и записи тегов метаданных аудио (библиотека Python)
-https://www.archlinux.org/packages/community/any/python-mutagen/
 ------------------------------------------
 
 libfm-gtk2 - # Библиотека GTK + 2 для управления файлами
