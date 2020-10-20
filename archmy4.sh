@@ -841,50 +841,7 @@ elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.' 
 fi
 
-       
 
-# Дополнительно
-# arc-gtk-theme  # Плоская тема с прозрачными элементами для GTK 3, GTK 2 и Gnome-Shell
-# libfm-gtk2  # Библиотека GTK + 2 для управления файлами
-# hardinfo  # Системная информация и инструмент тестирования
-# termite  # Простой терминал на базе VTE
-# terminus-font  # Моноширинный растровый шрифт (для X11 и консоли)
-# hblock  AUR  # Блокировщик рекламы, который создает файл hosts из автоматически загружаемых черных списков
-# grml-iso  AUR  # добавьте ISO-образ grml в меню загрузки grub2
-# ИЛИ grml-rescueboot  AUR  # grub2 скрипт для добавления ISO-образов grml в меню загрузки grub2
-# feh  # Быстрый и легкий просмотрщик изображений на основе imlib2
-# notepadqq  - Notepad ++ - как текстовый редактор для Linux
-
-# flex  - Инструмент для создания программ сканирования текста
-# lksctp-tools  - Реализация протокола SCTP (http://lksctp.sourceforge.net/)
-# syslinux  - Коллекция загрузчиков, которые загружаются с файловых систем FAT, ext2 / 3/4 и btrfs, с компакт-дисков и через PXE
-# toxcore  - Безопасная, не требующая настройки серверная часть P2P для замены Skype
-# catdoc - Конвертер файлов Microsoft Word, Excel, PowerPoint и RTF в текст
-# inetutils - Сборник общих сетевых программ
-# hplip  - Драйверы для HP DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых LaserJet
-# unrtf  - Программа командной строки, конвертирующая документы RTF в другие форматы
-# id3lib  - Библиотека для чтения, записи и управления тегами ID3v1 и ID3v2
-# mlocate  - Слияние реализации locate / updatedb
-# dosfstools  - Утилиты файловой системы DOS
-# jfsutils  - Утилиты файловой системы JFS
-# python2-imaging  - PIL. Предоставляет возможности обработки изображений для Python
-# bluez-utils-compat  - Утилиты для разработки и отладки стека протоколов Bluetooth. Включает устаревшие инструменты.
-# gptfdisk - Инструмент для создания разделов в текстовом режиме, который работает с дисками с таблицей разделов GUID (GPT)
-# autofs - Средство автомонтирования на основе ядра для Linux
-# fuse2 - Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
-# fuse3 - Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
-# fuseiso - Модуль FUSE для монтирования образов файловой системы ISO
-
-# AUR - # python-imaging ???
-# engrampa  - Манипулятор архивов для MATE
-# engrampa-thunar-plugin  - AUR - Манипулятор архивов из MATE без зависимости от Caja (версия GTK3)
-# galculator-gtk2 или galculator
-# gnome-calculator 
-
-# cups-bjnp AUR  # Серверная часть CUPS для принтеров canon с использованием проприетарного протокола USB over IP BJNP
-# cups-xerox 2008.01.23-1  AUR   # Драйверы для различных принтеров Xerox
-# cups-xerox-phaser-3600 3.00.27+187-2  AUR   # Драйвер CUPS для серии Xerox Phaser 3600. Также поддерживает fc2218, pe120, pe220, Phaser 3117, 3200, 3250, 3250, 3300, 3435, 3600, 6110, WorkCentre 3210, 3220, 4118
-# cups-xerox-phaser-6500 1.0.0-2   AUR   # Драйвер CUPS для серии Xerox Phaser 6500 (N & DN)
  
 ###########################
 VIM - улучшенная версия текстового редактора vi
@@ -1052,7 +1009,9 @@ lightdm-slick-greeter  AUR  # Красивое приветствие LightDM
 https://aur.archlinux.org/packages/lightdm-slick-greeter/
 https://aur.archlinux.org/lightdm-slick-greeter.git
 
-
+python2-imaging  AUR  # PIL. Предоставляет возможности обработки изображений для Python
+https://aur.archlinux.org/packages/python2-imaging/
+https://aur.archlinux.org/python2-imaging.git  
 -----------------------------
 
 Лаунчер: rofi (Alt + d)
@@ -1086,9 +1045,50 @@ python-ewmh - # Реализация Python подсказок Extended Window M
 https://www.archlinux.org/packages/community/any/python-ewmh/
 python-lxml - # Связывание Python3 для библиотек libxml2 и libxslt (-S python-lxml --force # принудительная установка)
 https://www.archlinux.org/packages/extra/x86_64/python-lxml/
+     
+Дополнительно
 
+arc-gtk-theme  # Плоская тема с прозрачными элементами для GTK 3, GTK 2 и Gnome-Shell
+# libfm-gtk2  # Библиотека GTK + 2 для управления файлами
+hardinfo  # Системная информация и инструмент тестирования
+# termite  # Простой терминал на базе VTE
+# terminus-font  # Моноширинный растровый шрифт (для X11 и консоли)
+# hblock  AUR  # Блокировщик рекламы, который создает файл hosts из автоматически загружаемых черных списков
+# grml-iso  AUR  # добавьте ISO-образ grml в меню загрузки grub2
+# ИЛИ grml-rescueboot  AUR  # grub2 скрипт для добавления ISO-образов grml в меню загрузки grub2
+# feh  # Быстрый и легкий просмотрщик изображений на основе imlib2
+# notepadqq  - Notepad ++ - как текстовый редактор для Linux
 
+# flex  - Инструмент для создания программ сканирования текста
+# lksctp-tools  - Реализация протокола SCTP (http://lksctp.sourceforge.net/)
+# syslinux  - Коллекция загрузчиков, которые загружаются с файловых систем FAT, ext2 / 3/4 и btrfs, с компакт-дисков и через PXE
+# toxcore  - Безопасная, не требующая настройки серверная часть P2P для замены Skype
+# catdoc - Конвертер файлов Microsoft Word, Excel, PowerPoint и RTF в текст
+# inetutils - Сборник общих сетевых программ
+# hplip  - Драйверы для HP DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых LaserJet
+# unrtf  - Программа командной строки, конвертирующая документы RTF в другие форматы
+# id3lib  - Библиотека для чтения, записи и управления тегами ID3v1 и ID3v2
+# mlocate  - Слияние реализации locate / updatedb
+# dosfstools  - Утилиты файловой системы DOS
+# jfsutils  - Утилиты файловой системы JFS
+# 
+# bluez-utils-compat  - Утилиты для разработки и отладки стека протоколов Bluetooth. Включает устаревшие инструменты.
+# gptfdisk - Инструмент для создания разделов в текстовом режиме, который работает с дисками с таблицей разделов GUID (GPT)
+# autofs - Средство автомонтирования на основе ядра для Linux
+# fuse2 - Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
+# fuse3 - Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
+# fuseiso - Модуль FUSE для монтирования образов файловой системы ISO
 
+# AUR - # python-imaging ???
+# engrampa  - Манипулятор архивов для MATE
+# engrampa-thunar-plugin  - AUR - Манипулятор архивов из MATE без зависимости от Caja (версия GTK3)
+# galculator-gtk2 или galculator
+# gnome-calculator 
+
+# cups-bjnp AUR  # Серверная часть CUPS для принтеров canon с использованием проприетарного протокола USB over IP BJNP
+# cups-xerox 2008.01.23-1  AUR   # Драйверы для различных принтеров Xerox
+# cups-xerox-phaser-3600 3.00.27+187-2  AUR   # Драйвер CUPS для серии Xerox Phaser 3600. Также поддерживает fc2218, pe120, pe220, Phaser 3117, 3200, 3250, 3250, 3300, 3435, 3600, 6110, WorkCentre 3210, 3220, 4118
+# cups-xerox-phaser-6500 1.0.0-2   AUR   # Драйвер CUPS для серии Xerox Phaser 6500 (N & DN)
 
 
 
