@@ -1067,12 +1067,23 @@ https://www.archlinux.org/packages/extra/x86_64/fuse3/
 fuseiso - # Модуль FUSE для монтирования образов файловой системы ISO
 https://www.archlinux.org/packages/community/x86_64/fuseiso/
 
-notepadqq  - # Notepad ++ - как текстовый редактор для Linux
+notepadqq - # Notepad ++ - как текстовый редактор для Linux
 https://www.archlinux.org/packages/community/x86_64/notepadqq/
 feh - # Быстрый и легкий просмотрщик изображений на основе imlib2
 https://www.archlinux.org/packages/extra/x86_64/feh/
 ranger - # Простой файловый менеджер в стиле vim
 https://www.archlinux.org/packages/community/any/ranger/
+toxcore  - # Безопасная, не требующая настройки серверная часть P2P для замены Skype
+
+catdoc - # Конвертер файлов Microsoft Word, Excel, PowerPoint и RTF в текст
+
+inetutils - # Сборник общих сетевых программ
+
+
+
+
+
+
 ncmpcpp - # Практически точный клон ncmpc с некоторыми новыми функциями
 https://www.archlinux.org/packages/community/x86_64/ncmpcpp/
 w3m - # Текстовый веб-браузер, а также пейджер
@@ -1089,8 +1100,13 @@ djvulibre - # Пакет для создания, управления и про
 https://www.archlinux.org/packages/extra/x86_64/djvulibre/
 media-player-info - # Файлы данных, описывающие возможности медиаплеера для систем post-HAL
 https://www.archlinux.org/packages/extra/any/media-player-info/
-ccache  - # Кэш компилятора, который ускоряет перекомпиляцию за счет кеширования предыдущих компиляций
+ccache - # Кэш компилятора, который ускоряет перекомпиляцию за счет кеширования предыдущих компиляций
 https://www.archlinux.org/packages/community/x86_64/ccache/
+flex - # Инструмент для создания программ сканирования текста
+https://www.archlinux.org/packages/core/x86_64/flex/
+lksctp-tools - # Реализация протокола SCTP (http://lksctp.sourceforge.net/)
+https://www.archlinux.org/packages/community/x86_64/lksctp-tools/
+
 python-ewmh - # Реализация Python подсказок Extended Window Manager на основе Xlib
 https://www.archlinux.org/packages/community/any/python-ewmh/
 python-lxml - # Связывание Python3 для библиотек libxml2 и libxslt (-S python-lxml --force # принудительная установка)
@@ -1107,13 +1123,6 @@ hardinfo  # Системная информация и инструмент те
 # ИЛИ grml-rescueboot  AUR  # grub2 скрипт для добавления ISO-образов grml в меню загрузки grub2
 # 
 # 
-
-# flex  - Инструмент для создания программ сканирования текста
-# lksctp-tools  - Реализация протокола SCTP (http://lksctp.sourceforge.net/)
-
-# toxcore  - Безопасная, не требующая настройки серверная часть P2P для замены Skype
-# catdoc - Конвертер файлов Microsoft Word, Excel, PowerPoint и RTF в текст
-# inetutils - Сборник общих сетевых программ
 
 unrtf  - Программа командной строки, конвертирующая документы RTF в другие форматы
 id3lib  - Библиотека для чтения, записи и управления тегами ID3v1 и ID3v2
