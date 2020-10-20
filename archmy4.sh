@@ -1157,7 +1157,22 @@ djvulibre - # Пакет для создания, управления и про
 https://www.archlinux.org/packages/extra/x86_64/djvulibre/
 media-player-info - # Файлы данных, описывающие возможности медиаплеера для систем post-HAL
 https://www.archlinux.org/packages/extra/any/media-player-info/
+
+
+
+
+-------------------------------------
+Смена оболочки
+Для смены оболочки на ZSH введите в терминале следующее: chsh -s /bin/zsh.
+
+Для смены оболочки на BASH введите в терминале следующее: chsh -s /bin/bash.
+
 #####################################
+
+
+
+
+
 
 echo 'Обновим информацию о шрифтах'
 # Update information about fonts
