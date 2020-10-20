@@ -1106,7 +1106,10 @@ ncmpcpp - # Практически точный клон ncmpc с некотор
 https://www.archlinux.org/packages/community/x86_64/ncmpcpp/
 w3m - # Текстовый веб-браузер, а также пейджер
 https://www.archlinux.org/packages/extra/x86_64/w3m/
-
+mpd - # Гибкое, мощное серверное приложение для воспроизведения музыки
+https://www.archlinux.org/packages/extra/x86_64/mpd/
+mpc - # Минималистичный интерфейс командной строки для MPD
+https://www.archlinux.org/packages/extra/x86_64/mpc/
 
 
 
