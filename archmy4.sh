@@ -1084,6 +1084,14 @@ https://www.archlinux.org/packages/extra/any/media-player-info/
 
 
 
+
+
+
+
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+
+
 -------------------------------------
 Смена оболочки
 Для смены оболочки на ZSH введите в терминале следующее: chsh -s /bin/zsh.
