@@ -1172,79 +1172,70 @@ https://aur.archlinux.org/breeze-default-cursor-theme.git
 
 ---------------------------------------
 
+sudo pacman -S termite termite-terminfo --noconfirm  
+sudo pacman -S systemd systemd-libs systemd-resolvconf systemd-sysvcompat --noconfirm
+sudo pacman -S syslinux  --noconfirm  
+sudo pacman -S  --noconfirm  
+sudo pacman -S  --noconfirm  
+sudo pacman -S  --noconfirm  # 
+
+
+sudo pacman -S termite --noconfirm  #  Простой терминал на базе VTE
+sudo pacman -S termite-terminfo --noconfirm  # Terminfo для Termite, простого терминала на базе VTE
+
+sudo pacman -S systemd --noconfirm  # Системный и сервисный менеджер
+sudo pacman -S systemd-libs --noconfirm  # Клиентские библиотеки systemd
+sudo pacman -S systemd-resolvconf --noconfirm  # Замена systemd resolvconf (для использования с systemd-resolved)
+sudo pacman -S systemd-sysvcompat --noconfirm  # sysvinit compat для systemd
+
+sudo pacman -S syslinux --noconfirm  # Коллекция загрузчиков, которые загружаются с файловых систем FAT, ext2 / 3/4 и btrfs, с компакт-дисков и через PXE
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 
 
 
 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-
-termite - # Простой терминал на базе VTE
-https://www.archlinux.org/packages/community/x86_64/termite/
-termite-terminfo - # Terminfo для Termite, простого терминала на базе VTE
-https://www.archlinux.org/packages/community/x86_64/termite-terminfo/
-
-systemd - # системный и сервисный менеджер
-https://www.archlinux.org/packages/core/x86_64/systemd/
-
-systemd-libs - # клиентские библиотеки systemd
-https://www.archlinux.org/packages/core/x86_64/systemd-libs/
-
-systemd-resolvconf - # замена systemd resolvconf (для использования с systemd-resolved)
-https://www.archlinux.org/packages/core/x86_64/systemd-resolvconf/
-
-systemd-sysvcompat - # sysvinit compat для systemd
-https://www.archlinux.org/packages/core/x86_64/systemd-sysvcompat/
-
-syslinux  - # Коллекция загрузчиков, которые загружаются с файловых систем FAT, ext2 / 3/4 и btrfs, с компакт-дисков и через PXE
+syslinux  - # 
 https://www.archlinux.org/packages/core/x86_64/syslinux/
 
 ------------------------------------------
@@ -1362,6 +1353,36 @@ fwbuilder - Community - Объектно-ориентированный граф
 https://www.archlinux.org/packages/community/x86_64/fwbuilder/
      
 Дополнительно
+
+python # Новое поколение языка сценариев высокого уровня Python
+python-appdirs 1.4.4-1
+python-cairo 1.19.1-1
+python-chardet 3.0.4-5
+python-dbus 1.2.16-1
+python-dbus-common 1.2.16-1
+python-gobject 3.36.1-1
+python-idna 2.10-1
+python-isodate 0.6.0-5
+python-lxml 4.5.2-1
+python-ordered-set 4.0.2-1
+python-packaging 20.4-1
+python-pexpect 4.8.0-1
+python-ply 3.11-5
+python-ptyprocess 0.6.0-4
+python-pycountry 20.7.3-1
+python-pycryptodome 3.9.8-2
+python-pyparsing 2.4.7-1
+python-pyqt5 5.15.1-2
+python-pyqt5-sip 12.8.1-1
+python-pysocks 1.7.1-1
+python-pyxdg 0.26-6
+python-requests 2.24.0-1
+python-setuptools 1:50.3.0-1
+python-sip 4.19.24-2
+python-six 1.15.0-1
+python-urllib3 1.25.10-1
+python-websocket-client 0.57.0-1
+
 
 # AUR - # python-imaging ???
 # engrampa  - Манипулятор архивов для MATE
