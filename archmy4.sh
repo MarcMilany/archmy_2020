@@ -1110,7 +1110,8 @@ mpd - # Гибкое, мощное серверное приложение дл�
 https://www.archlinux.org/packages/extra/x86_64/mpd/
 mpc - # Минималистичный интерфейс командной строки для MPD
 https://www.archlinux.org/packages/extra/x86_64/mpc/
-
+youtube-viewer - # Утилита командной строки для просмотра видео на YouTube
+https://www.archlinux.org/packages/community/any/youtube-viewer/
 
 
 #####################################
