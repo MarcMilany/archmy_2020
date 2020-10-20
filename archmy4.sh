@@ -170,7 +170,7 @@ sudo pacman -Sy
 #
 # Или:
 #sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys && sudo pacman -Sy
-
+###################################
 Получение и обновление новых ключей аутентификации
 #Obtain and refresh new Authentication keys.
 
@@ -179,7 +179,7 @@ sudo pacman-key --init
 sudo pacman-key --populate archlinux
 sudo pacman-key --refresh-keys
 sudo pacman -S archlinux-keyring
-sudo pacman -S seahorse
+sudo pacman -S seahorse  # Приложение GNOME для управления ключами PGP (управления паролями и ключами шифрования)
 sudo pacman -Syyu
 # ============================================================================
 
