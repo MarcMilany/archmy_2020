@@ -639,11 +639,11 @@ echo 'Установить рекомендуемые программы?'
 # To install the recommended program?
 echo -e "${BLUE}
 'Список программ рекомендованных к установке:${GREEN}
-keepass2-plugin-tray-icon simplescreenrecorder desktop-file-utils'
+simplescreenrecorder desktop-file-utils'
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S keepass2-plugin-tray-icon simplescreenrecorder --noconfirm  # desktop-file-utils
+sudo pacman -S simplescreenrecorder --noconfirm  # desktop-file-utils
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
@@ -689,7 +689,7 @@ yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
-yay -S  --noconfirm  #
+yay -S keepass2-plugin-tray-icon --noconfirm  # Функциональная иконка в трее для KeePass2 (https://aur.archlinux.org/keepass2-plugin-tray-icon.git)
 yay -S gtk3-mushrooms --noconfirm  # GTK3 исправлен для классических настольных компьютеров, таких как XFCE или MATE. См. README
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
@@ -852,7 +852,7 @@ yay -S vim-colorsamplerpack vim-doxygentoolkit vim-guicolorscheme vim-jellybeans
 
 vi 1:070224-4  # Оригинальный текстовый редактор ex / vi
 vim 8.2.1537-1  # Vi Improved, улучшенная версия текстового редактора vi с широкими возможностями настройки
-vim-a 2.18-10  # Асинхронный Lint Engine (vim-ale или vim-ansible)?
+# vim-a 2.18-10  # Асинхронный Lint Engine (vim-ale или vim-ansible)?
 vim-ale  # Асинхронный Lint Engine
 vim-ansible  # Плагин vim для подсветки синтаксиса распространенных типов файлов Ansible
 vim-airline 0.11-1  # Строка состояния, написанная в Vimscript
@@ -1039,6 +1039,12 @@ https://www.archlinux.org/packages/community/x86_64/rofi/
 Композитный менеджер: compton (По умолчанию отключен).
 
 ------------------------------
+arc-gtk-theme - # Плоская тема с прозрачными элементами для GTK 3, GTK 2 и Gnome-Shell
+https://www.archlinux.org/packages/community/any/arc-gtk-theme/
+
+
+
+---------------------------------------
 
 termite - # Простой терминал на базе VTE
 https://www.archlinux.org/packages/community/x86_64/termite/
@@ -1055,6 +1061,14 @@ systemd-sysvcompat - # sysvinit compat для systemd
 https://www.archlinux.org/packages/core/x86_64/systemd-sysvcompat/
 syslinux  - # Коллекция загрузчиков, которые загружаются с файловых систем FAT, ext2 / 3/4 и btrfs, с компакт-дисков и через PXE
 https://www.archlinux.org/packages/core/x86_64/syslinux/
+
+
+
+libfm-gtk2 - # Библиотека GTK + 2 для управления файлами
+hardinfo - # Системная информация и инструмент тестирования
+
+
+
 
 gptfdisk - # Инструмент для создания разделов в текстовом режиме, который работает с дисками с таблицей разделов GUID (GPT) 
 https://www.archlinux.org/packages/extra/x86_64/gptfdisk/
@@ -1094,8 +1108,14 @@ hidapi - # Простая библиотека для связи с устрой
 https://www.archlinux.org/packages/community/x86_64/hidapi/
 djvulibre - # Пакет для создания, управления и просмотра документов DjVu ('дежавю')
 https://www.archlinux.org/packages/extra/x86_64/djvulibre/
+calibre - # Community - Приложение для управления электронными книгами
+https://www.archlinux.org/packages/community/x86_64/calibre/
+
 media-player-info - # Файлы данных, описывающие возможности медиаплеера для систем post-HAL
 https://www.archlinux.org/packages/extra/any/media-player-info/
+id3lib - # Библиотека для чтения, записи и управления тегами ID3v1 и ID3v2
+https://www.archlinux.org/packages/extra/x86_64/id3lib/
+
 ccache - # Кэш компилятора, который ускоряет перекомпиляцию за счет кеширования предыдущих компиляций
 https://www.archlinux.org/packages/community/x86_64/ccache/
 flex - # Инструмент для создания программ сканирования текста
@@ -1119,7 +1139,7 @@ https://www.archlinux.org/packages/extra/x86_64/python-lxml/
 # 
 
 unrtf  - Программа командной строки, конвертирующая документы RTF в другие форматы
-id3lib  - Библиотека для чтения, записи и управления тегами ID3v1 и ID3v2
+
 mlocate  - Слияние реализации locate / updatedb
 dosfstools  - Утилиты файловой системы DOS
 jfsutils  - Утилиты файловой системы JFS
@@ -1335,8 +1355,8 @@ djvulibre - Английский словарь для aspell Пакет для 
 id3lib - Extra  - Библиотека для чтения, записи и управления тегами ID3v1 и ID3v2
 python-mutagen (mutagen)- Community - Средство чтения и записи тегов метаданных аудио (библиотека Python)
 aspell-en - Extra  - Английский словарь для aspell
-calibre - Community - Приложение для управления электронными книгами
-ttf-freefont  (gnu-free-fonts) - Extra  -  Бесплатное семейство масштабируемых контурных шрифтов 
-ttf-linux-libertine  - Extra - Шрифты OpenType с засечками (Libertine) и Sans Serif (Biolinum) с большим охватом Unicode
+
+
+
 python2-pychm     ---- больше не доступен  https://pkgs.org/download/python2   python2-2.7.18-2-x86_64.pkg.tar.zst
 
