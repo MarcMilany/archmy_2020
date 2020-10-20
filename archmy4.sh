@@ -1177,7 +1177,6 @@ sudo pacman -S systemd systemd-libs systemd-resolvconf systemd-sysvcompat --noco
 sudo pacman -S syslinux  --noconfirm  
 sudo pacman -S  --noconfirm  
 sudo pacman -S  --noconfirm  
-sudo pacman -S  --noconfirm  # 
 
 
 sudo pacman -S termite --noconfirm  #  Простой терминал на базе VTE
@@ -1189,7 +1188,7 @@ sudo pacman -S systemd-resolvconf --noconfirm  # Замена systemd resolvconf
 sudo pacman -S systemd-sysvcompat --noconfirm  # sysvinit compat для systemd
 
 sudo pacman -S syslinux --noconfirm  # Коллекция загрузчиков, которые загружаются с файловых систем FAT, ext2 / 3/4 и btrfs, с компакт-дисков и через PXE
-sudo pacman -S  --noconfirm  # 
+
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -1232,12 +1231,93 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 
+sudo pacman -S python python-appdirs python-cairo python-chardet      --noconfirm  # python +
+
+sudo pacman -S python --noconfirm  # Новое поколение языка сценариев высокого уровня Python
+sudo pacman -S python-appdirs --noconfirm  # Небольшой модуль Python для определения соответствующих директорий для конкретной платформы, например «директории пользовательских данных».
+sudo pacman -S python-cairo --noconfirm  # Привязки Python для графической библиотеки cairo
+sudo pacman -S python-chardet --noconfirm  # Модуль Python3 для автоматического определения кодировки символов
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+
+
+ 3.0.4-5
+python-dbus 1.2.16-1
+python-dbus-common 1.2.16-1
+python-gobject 3.36.1-1
+python-idna 2.10-1
+python-isodate 0.6.0-5
+python-lxml 4.5.2-1
+python-ordered-set 4.0.2-1
+python-packaging 20.4-1
+python-pexpect 4.8.0-1
+python-ply 3.11-5
+python-ptyprocess 0.6.0-4
+python-pycountry 20.7.3-1
+python-pycryptodome 3.9.8-2
+python-pyparsing 2.4.7-1
+python-pyqt5 5.15.1-2
+python-pyqt5-sip 12.8.1-1
+python-pysocks 1.7.1-1
+python-pyxdg 0.26-6
+python-requests 2.24.0-1
+python-setuptools 1:50.3.0-1
+python-sip 4.19.24-2
+python-six 1.15.0-1
+python-urllib3 1.25.10-1
+python-websocket-client 0.57.0-1
 
 
 
-syslinux  - # 
-https://www.archlinux.org/packages/core/x86_64/syslinux/
 
+
+
+
+python-ewmh - # Реализация Python подсказок Extended Window Manager на основе Xlib
+https://www.archlinux.org/packages/community/any/python-ewmh/
+
+python-lxml - # Связывание Python3 для библиотек libxml2 и libxslt (-S python-lxml --force # принудительная установка)
+https://www.archlinux.org/packages/extra/x86_64/python-lxml/
+
+python-mutagen - # (mutagen) Средство чтения и записи тегов метаданных аудио (библиотека Python)
+https://www.archlinux.org/packages/community/any/python-mutagen/
 ------------------------------------------
 
 libfm-gtk2 - # Библиотека GTK + 2 для управления файлами
@@ -1328,16 +1408,6 @@ https://www.archlinux.org/packages/core/x86_64/flex/
 lksctp-tools - # Реализация протокола SCTP (http://lksctp.sourceforge.net/)
 https://www.archlinux.org/packages/community/x86_64/lksctp-tools/
 
-
-python-ewmh - # Реализация Python подсказок Extended Window Manager на основе Xlib
-https://www.archlinux.org/packages/community/any/python-ewmh/
-
-python-lxml - # Связывание Python3 для библиотек libxml2 и libxslt (-S python-lxml --force # принудительная установка)
-https://www.archlinux.org/packages/extra/x86_64/python-lxml/
-
-python-mutagen - # (mutagen) Средство чтения и записи тегов метаданных аудио (библиотека Python)
-https://www.archlinux.org/packages/community/any/python-mutagen/
-
 mlocate - # Слияние реализации locate / updatedb
 https://www.archlinux.org/packages/core/x86_64/mlocate/
 
@@ -1353,35 +1423,6 @@ fwbuilder - Community - Объектно-ориентированный граф
 https://www.archlinux.org/packages/community/x86_64/fwbuilder/
      
 Дополнительно
-
-python # Новое поколение языка сценариев высокого уровня Python
-python-appdirs 1.4.4-1
-python-cairo 1.19.1-1
-python-chardet 3.0.4-5
-python-dbus 1.2.16-1
-python-dbus-common 1.2.16-1
-python-gobject 3.36.1-1
-python-idna 2.10-1
-python-isodate 0.6.0-5
-python-lxml 4.5.2-1
-python-ordered-set 4.0.2-1
-python-packaging 20.4-1
-python-pexpect 4.8.0-1
-python-ply 3.11-5
-python-ptyprocess 0.6.0-4
-python-pycountry 20.7.3-1
-python-pycryptodome 3.9.8-2
-python-pyparsing 2.4.7-1
-python-pyqt5 5.15.1-2
-python-pyqt5-sip 12.8.1-1
-python-pysocks 1.7.1-1
-python-pyxdg 0.26-6
-python-requests 2.24.0-1
-python-setuptools 1:50.3.0-1
-python-sip 4.19.24-2
-python-six 1.15.0-1
-python-urllib3 1.25.10-1
-python-websocket-client 0.57.0-1
 
 
 # AUR - # python-imaging ???
