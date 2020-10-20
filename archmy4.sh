@@ -1098,6 +1098,9 @@ https://aur.archlinux.org/packages/skippy-xd-git/
 https://github.com/dreamcat4/skippy-xd
 Многозадачный вид: skippy-xd (Super + Tab)
 
+Лаунчер: rofi (Alt + d)
+Переключатель окон, средство запуска приложений и замена dmenu
+https://www.archlinux.org/packages/community/x86_64/rofi/
 #####################################
 
 echo 'Обновим информацию о шрифтах'
