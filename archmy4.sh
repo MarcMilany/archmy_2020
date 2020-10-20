@@ -1125,8 +1125,6 @@ networkmanager-l2tp  AUR  # Поддержка L2TP для NetworkManager
 https://aur.archlinux.org/packages/networkmanager-l2tp/
 https://aur.archlinux.org/networkmanager-l2tp.git
 
-
-
 Лаунчер: rofi (Alt + d)
 Переключатель окон, средство запуска приложений и замена dmenu
 https://www.archlinux.org/packages/community/x86_64/rofi/
@@ -1141,8 +1139,8 @@ mpc - # Минималистичный интерфейс командной с�
 https://www.archlinux.org/packages/extra/x86_64/mpc/
 youtube-viewer - # Утилита командной строки для просмотра видео на YouTube
 https://www.archlinux.org/packages/community/any/youtube-viewer/
-
-
+hidapi - # Простая библиотека для связи с устройствами USB и Bluetooth HID
+https://www.archlinux.org/packages/community/x86_64/hidapi/
 #####################################
 
 echo 'Обновим информацию о шрифтах'
