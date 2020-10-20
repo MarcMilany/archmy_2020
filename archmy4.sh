@@ -1231,7 +1231,7 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 
-sudo pacman -S python python-appdirs python-cairo python-chardet python-dbus python-dbus-common python-ewmh python-gobject  --noconfirm  # python +
+sudo pacman -S python python-appdirs python-cairo python-chardet python-dbus python-dbus-common python-ewmh python-gobject python-idna python-isodate python-lxml python-mutagen           --noconfirm  # python +
 
 sudo pacman -S python --noconfirm  # Новое поколение языка сценариев высокого уровня Python
 sudo pacman -S python-appdirs --noconfirm  # Небольшой модуль Python для определения соответствующих директорий для конкретной платформы, например «директории пользовательских данных».
@@ -1241,10 +1241,10 @@ sudo pacman -S python-dbus --noconfirm  # Привязки Python для DBUS
 sudo pacman -S python-dbus-common --noconfirm  # Общие файлы dbus-python, общие для python-dbus и python2-dbus
 sudo pacman -S python-ewmh --noconfirm  # Реализация Python подсказок Extended Window Manager на основе Xlib
 sudo pacman -S python-gobject --noconfirm  # Привязки Python для GLib / GObject / GIO / GTK +
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S python-idna --noconfirm  # Интернационализированные доменные имена в приложениях (IDNA)
+sudo pacman -S python-isodate --noconfirm  # Синтаксический анализатор даты / времени / продолжительности и форматирование ISO 8601
+sudo pacman -S python-lxml --noconfirm  # Связывание Python3 для библиотек libxml2 и libxslt (-S python-lxml --force # принудительная установка)
+sudo pacman -S python-mutagen --noconfirm  # (mutagen) Средство чтения и записи тегов метаданных аудио (библиотека Python)
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -1278,9 +1278,6 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 ----------------------------------
 
-python-idna 2.10-1
-python-isodate 0.6.0-5
-python-lxml # Связывание Python3 для библиотек libxml2 и libxslt (-S python-lxml --force # принудительная установка)
 python-mutagen - # (mutagen) Средство чтения и записи тегов метаданных аудио (библиотека Python)
 python-ordered-set 4.0.2-1
 python-packaging 20.4-1
