@@ -618,9 +618,9 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S nfs-utils --noconfirm  # Программы поддержки для сетевых файловых систем
 
-# Запуск, остановка сервиса tor:
-#sudo systemctl start tor
-#sudo systemctl stop tor
+ Запуск, остановка сервиса tor:
+sudo systemctl start tor
+sudo systemctl stop tor
 
 sudo pacman -S --noconfirm
 
@@ -1086,6 +1086,10 @@ python-ewmh - # Реализация Python подсказок Extended Window M
 https://www.archlinux.org/packages/community/any/python-ewmh/
 python-lxml - # Связывание Python3 для библиотек libxml2 и libxslt (-S python-lxml --force # принудительная установка)
 https://www.archlinux.org/packages/extra/x86_64/python-lxml/
+
+
+
+
 
 
 sudo pacman -S  --noconfirm  # 
