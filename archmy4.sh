@@ -1012,6 +1012,17 @@ https://aur.archlinux.org/lightdm-slick-greeter.git
 python2-imaging  AUR  # PIL. Предоставляет возможности обработки изображений для Python
 https://aur.archlinux.org/packages/python2-imaging/
 https://aur.archlinux.org/python2-imaging.git  
+
+bluez-utils-compat  AUR  # Утилиты для разработки и отладки стека протоколов Bluetooth. Включает устаревшие инструменты.
+https://aur.archlinux.org/packages/bluez-utils-compat/
+https://aur.archlinux.org/bluez-utils-compat.git 
+
+
+
+
+
+
+
 -----------------------------
 
 Лаунчер: rofi (Alt + d)
@@ -1072,7 +1083,7 @@ hardinfo  # Системная информация и инструмент те
 # dosfstools  - Утилиты файловой системы DOS
 # jfsutils  - Утилиты файловой системы JFS
 # 
-# bluez-utils-compat  - Утилиты для разработки и отладки стека протоколов Bluetooth. Включает устаревшие инструменты.
+
 # gptfdisk - Инструмент для создания разделов в текстовом режиме, который работает с дисками с таблицей разделов GUID (GPT)
 # autofs - Средство автомонтирования на основе ядра для Linux
 # fuse2 - Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
