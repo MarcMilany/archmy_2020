@@ -1116,6 +1116,11 @@ cd multilockscreen-git
 less PKGBUILD
 makepkg -si
 
+
+xfce4-docklike-plugin-git  AUR  # Современная минималистичная панель задач в стиле док-станции для XFCE
+https://aur.archlinux.org/packages/xfce4-docklike-plugin-git/
+https://aur.archlinux.org/xfce4-docklike-plugin-git.git
+
 Лаунчер: rofi (Alt + d)
 Переключатель окон, средство запуска приложений и замена dmenu
 https://www.archlinux.org/packages/community/x86_64/rofi/
