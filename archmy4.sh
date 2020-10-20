@@ -1121,6 +1121,12 @@ xfce4-docklike-plugin-git  AUR  # Современная минималисти�
 https://aur.archlinux.org/packages/xfce4-docklike-plugin-git/
 https://aur.archlinux.org/xfce4-docklike-plugin-git.git
 
+networkmanager-l2tp  AUR  # Поддержка L2TP для NetworkManager
+https://aur.archlinux.org/packages/networkmanager-l2tp/
+https://aur.archlinux.org/networkmanager-l2tp.git
+
+
+
 Лаунчер: rofi (Alt + d)
 Переключатель окон, средство запуска приложений и замена dmenu
 https://www.archlinux.org/packages/community/x86_64/rofi/
