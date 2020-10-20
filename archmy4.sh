@@ -1101,6 +1101,15 @@ https://github.com/dreamcat4/skippy-xd
 Лаунчер: rofi (Alt + d)
 Переключатель окон, средство запуска приложений и замена dmenu
 https://www.archlinux.org/packages/community/x86_64/rofi/
+
+ncmpcpp - # Практически точный клон ncmpc с некоторыми новыми функциями
+https://www.archlinux.org/packages/community/x86_64/ncmpcpp/
+w3m - # Текстовый веб-браузер, а также пейджер
+https://www.archlinux.org/packages/extra/x86_64/w3m/
+
+
+
+
 #####################################
 
 echo 'Обновим информацию о шрифтах'
