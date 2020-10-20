@@ -1064,6 +1064,35 @@ https://www.archlinux.org/packages/community/any/papirus-icon-theme/
 capitaine-cursors - # Тема x-cursor, вдохновленная macOS и основанная на KDE Breeze
 https://www.archlinux.org/packages/community/any/capitaine-cursors/
 
+echo ' Установка тем AUR '
+yay -S osx-arc-shadow papirus-maia-icon-theme-git breeze-default-cursor-theme --noconfirm
+
+osx-arc-shadow  AUR  # ???
+https://aur.archlinux.org/packages/?O=0&SeB=nd&K=osx-arc&outdated=&SB=n&SO=a&PP=50&do_Search=Go
+
+osx-arc-white-git  AUR  # OSX-Arc-White Theme для Cinnamon, GNOME, Unity, Xfce и GTK +
+https://aur.archlinux.org/packages/osx-arc-white-git/
+https://aur.archlinux.org/osx-arc-white-git.git 
+osx-arc-plus  AUR  # Тема OSX-Arc-Plus для GTK 3.x 
+https://aur.archlinux.org/packages/osx-arc-plus/
+https://aur.archlinux.org/osx-arc-plus.git
+osx-arc-white  AUR  # OSX-Arc-Белая тема для GTK 3.x
+https://aur.archlinux.org/packages/osx-arc-white/
+https://aur.archlinux.org/osx-arc-white.git 
+osx-arc-aurorae-theme  AUR  # Тема Aurorae, разработанная для дополнения тем gtk OSX-Arc @ LinxGem33
+https://aur.archlinux.org/packages/osx-arc-aurorae-theme/
+https://aur.archlinux.org/osx-arc-aurorae-theme.git 
+osx-arc-aurorae-theme-git  AUR  # Тема Aurorae, разработанная для дополнения тем gtk OSX-Arc @ LinxGem33
+https://aur.archlinux.org/packages/osx-arc-aurorae-theme-git/
+https://aur.archlinux.org/osx-arc-aurorae-theme-git.git
+
+papirus-maia-icon-theme-git  AUR  # Вариант Manjaro темы значков Papirus (версия git)
+https://aur.archlinux.org/packages/papirus-maia-icon-theme-git/
+https://aur.archlinux.org/papirus-maia-icon-theme-git.git 
+
+breeze-default-cursor-theme  AUR  # Тема курсора по умолчанию Breeze.
+https://aur.archlinux.org/packages/breeze-default-cursor-theme/
+https://aur.archlinux.org/breeze-default-cursor-theme.git
 
 ---------------------------------------
 
