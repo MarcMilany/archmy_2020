@@ -1155,6 +1155,8 @@ hidapi - # Простая библиотека для связи с устрой
 https://www.archlinux.org/packages/community/x86_64/hidapi/
 djvulibre - # Пакет для создания, управления и просмотра документов DjVu ('дежавю')
 https://www.archlinux.org/packages/extra/x86_64/djvulibre/
+media-player-info - # Файлы данных, описывающие возможности медиаплеера для систем post-HAL
+https://www.archlinux.org/packages/extra/any/media-player-info/
 #####################################
 
 echo 'Обновим информацию о шрифтах'
