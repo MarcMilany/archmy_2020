@@ -1080,8 +1080,8 @@ djvulibre - # Пакет для создания, управления и про
 https://www.archlinux.org/packages/extra/x86_64/djvulibre/
 media-player-info - # Файлы данных, описывающие возможности медиаплеера для систем post-HAL
 https://www.archlinux.org/packages/extra/any/media-player-info/
-
-
+ccache  - # Кэш компилятора, который ускоряет перекомпиляцию за счет кеширования предыдущих компиляций
+https://www.archlinux.org/packages/community/x86_64/ccache/
 
 
 
