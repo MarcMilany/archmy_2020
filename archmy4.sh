@@ -1258,9 +1258,12 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 
-sudo pacman -S python python-appdirs python-cairo python-chardet python-dbus python-dbus-common python-ewmh python-gobject python-idna python-isodate python-lxml python-mutagen python-ordered-set python-packaging python-pexpect python-ply python-ptyprocess python-pycountry python-pycryptodome python-pyparsing python-pyqt5 python-pyqt5-sip python-pysocks python-pyxdg python-requests python-setuptools python-sip python-six python-urllib3 python-websocket-client --noconfirm  # python +
+sudo pacman -S python python-anytree python-appdirs python-cairo python-chardet python-dbus python-dbus-common python-ewmh python-gobject python-idna python-isodate python-lxml python-mutagen python-ordered-set python-packaging python-pexpect python-ply python-ptyprocess python-pycountry python-pycryptodome python-pyparsing python-pyqt5 python-pyqt5-sip python-pysocks python-pyxdg python-requests python-setuptools python-sip python-six python-urllib3 python-websocket-client --noconfirm  # python +
 
 sudo pacman -S python --noconfirm  # Новое поколение языка сценариев высокого уровня Python
+sudo pacman -S python-anytree --noconfirm  # Мощная и легкая древовидная структура данных Python
+
+
 sudo pacman -S python-appdirs --noconfirm  # Небольшой модуль Python для определения соответствующих директорий для конкретной платформы, например «директории пользовательских данных».
 sudo pacman -S python-cairo --noconfirm  # Привязки Python для графической библиотеки cairo
 sudo pacman -S python-chardet --noconfirm  # Модуль Python3 для автоматического определения кодировки символов
@@ -1302,11 +1305,268 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
+
 ----------------------------------
 
 
+python-arrow 0.16.0-1
+python-asn1crypto 1.4.0-1
+python-atspi 2.36.0-1
+python-attrs 20.1.0-1
+python-base58 2.0.1-1
+python-basiciw 0.2.2-1
+python-bcrypt 3.2.0-1
+python-beaker 1.11.0-4
+python-bencode.py 3.0.1-1
+python-bitcoinlib 0.11.0-1
+python-cachecontrol 0.12.6-1
+python-cairo 1.19.1-1
+python-cffi 1.14.2-1
+python-chardet 3.0.4-5
+python-coincurve 13.0.0-1
+python-colorama 0.4.3-1
+python-colour 0.1.5-6
+python-configobj 5.0.6-7
+python-contextlib2 0.6.0.post1-1
+python-cryptography 3.1-1
+python-cssselect 1.1.0-4
+python-d2to1 0.2.12.post1-7
+python-dateutil 2.8.1-3
+python-dbus 1.2.16-1
+python-dbus-common 1.2.16-1
+python-defusedxml 0.6.0-4
+python-distlib 0.3.1-1
+python-distro 1.5.0-1
+python-distutils-extra 2.39-5
+python-docopt 0.6.2-7
+python-entrypoints 0.3-3
+python-eyed3 1:0.8-5
+python-gevent 20.6.2-1
+python-gevent-websocket 0.10.1-4
+python-gobject 3.36.1-1
+python-greenlet 0.4.16-1
+python-html5lib 1.1-1
+python-idna 2.10-1
+python-jedi 0.17.2-1
+python-jeepney 0.4.3-1
+python-jinja 2.11.2-1
+python-keyring 21.4.0-1
+python-libarchive-c 2.9-1
+python-lxml 4.5.2-1
+python-lxml-docs 4.5.2-1
+python-magic 5.39-1
+python-mako 1.1.3-1
+python-markdown 3.2.2-1
+python-markupsafe 1.1.1-4
+python-maxminddb 2.0.2-1
+python-merkletools 1.0.3-3
+python-msgpack 1.0.0-1
+python-mutagen 1.45.1-1
+python-nose 1.3.7-7
+python-numpy 1.19.1-1
+python-olefile 0.46-2
+python-ordered-set 4.0.2-1
+python-packaging 20.4-1
+python-paramiko 2.7.2-1
+python-parso 1:0.7.1-1
+python-patiencediff 0.2.0-1
+python-pbr 5.5.0-1
+python-pep517 0.8.2-1
+python-pexpect 4.8.0-1
+python-pillow 7.2.0-1
+python-pip 20.1.1-1
+python-ply 3.11-5
+python-powerline 2.8.1-1
+python-progress 1.5-3
+python-psutil 5.7.2-1
+python-ptyprocess 0.6.0-4
+python-pyasn1 0.4.8-2
+python-pyasn1-modules 0.2.8-1
+python-pycparser 2.20-1
+python-pycups 2.0.1-1
+python-pycurl 7.43.0.6-1
+python-pyelftools 0.26-1
+python-pyelliptic 2.0.1-2
+python-pyfiglet 0.8.post0-3
+python-pygments 2.6.1-3
+python-pyicu 2.5-1
+python-pynacl 1.4.0-1
+python-pyopenssl 19.1.0-2
+python-pyparsing 2.4.7-1
+python-pyphen 0.9.5-3
+python-pyqt4 4.12.3-4
+python-pyqt5 5.15.0-3
+python-pyqt5-sip 12.8.1-1
+python-pyquery 1.4.1-3
+python-pysmbc 1.0.20-1
+python-pysocks 1.7.1-1
+python-pysol_cards 0.10.1-1
+python-pyudev 0.22-3
+python-pywapi 0.3.8-7
+python-pyxdg 0.26-6
+python-random2 1.0.1-4
+python-requests 2.24.0-1
+python-requests-cache 0.5.2-1
+python-resolvelib 0.4.0-1
+python-retrying 1.3.3-7
+python-rsa 4.6-1
+python-scipy 1.5.2-1
+python-secretstorage 3.1.2-1
+python-setproctitle 1.1.10-5
+python-setuptools 1:49.6.0-1
+python-shiboken2 5.15.0-2
+python-sip 4.19.24-1
+python-sip-pyqt4 4.19.22-1
+python-six 1.15.0-1
+python-sqlalchemy 1.3.19-1
+python-tlsh 3.17.0-2
+python-toml 0.10.1-1
+python-twitter 1.18.0-2
+python-ujson 3.1.0-1
+python-unidecode 1.1.1-4
+python-urllib3 1.25.10-1
+python-webencodings 0.5.1-4
+python-websocket-client 0.57.0-1
+python-websockets 8.1-1
+python-yaml 5.3.1-2
+python-zope-event 4.4-3
+python-zope-interface 5.1.0-1
+python2 2.7.18-1
+python2-appdirs 1.4.4-1
+python2-apsw 3.33.0-1
+python2-asn1crypto 1.4.0-1
+python2-backports 1.0-3
+python2-backports.functools_lru_cache 1.6.1-2
+python2-beautifulsoup4 4.9.1-1
+python2-cachecontrol 0.12.6-1
+python2-cairo 1.18.2-4
+python2-cffi 1.14.2-1
+python2-chardet 3.0.4-5
+python2-colorama 0.4.3-1
+python2-configparser 4.0.2-2
+python2-contextlib2 0.6.0.post1-1
+python2-cryptography 3.1-1
+python2-css-parser 1.0.4-3
+python2-cssselect 1.1.0-4
+python2-cycler 0.10.0-6
+python2-dateutil 2.8.1-3
+python2-dbus 1.2.16-1
+python2-distlib 0.3.1-1
+python2-distro 1.5.0-1
+python2-dnspython 1.16.0-3
+python2-enum34 1.1.9-1
+python2-feedparser 5.2.1-6
+python2-fuse 1.0.0-2
+python2-gevent 20.6.2-1
+python2-gobject 3.36.1-1
+python2-gobject2 2.28.7-5
+python2-greenlet 0.4.16-1
+python2-html2text 2019.8.11-4
+python2-html5-parser 0.4.9-2
+python2-html5lib 1.1-1
+python2-httplib2 0.18.1-1
+python2-idna 2.10-1
+python2-importlib-metadata 1.6.1-1
+python2-ipaddress 1.0.23-2
+python2-kiwisolver 1.1.0-4
+python2-lxml 4.5.2-1
+python2-markdown 3.1.1-5
+python2-matplotlib 2.2.5-2
+python2-mechanize 1:0.4.5-1
+python2-msgpack 0.6.2-4
+python2-netifaces 0.10.9-3
+python2-nose 1.3.7-7
+python2-numpy 1.16.6-1
+python2-oauth2 1.9.0-1
+python2-olefile 0.46-2
+python2-opengl 3.1.5-1
+python2-ordered-set 3.1.1-3
+python2-packaging 20.4-1
+python2-pathlib2 2.3.5-1
+python2-pep517 0.8.2-1
+python2-pillow 6.2.1-2
+python2-pip 20.1.1-1
+python2-ply 3.11-5
+python2-progress 1.5-3
+python2-psutil 5.7.2-1
+python2-pyasn1 0.4.8-2
+python2-pybluez 0.22-4
+python2-pychm 0.8.6-1
+python2-pycparser 2.20-1
+python2-pycups 1.9.74-1
+python2-pygments 2.5.2-2
+python2-pyopenssl 19.1.0-2
+python2-pyparsing 2.4.7-1
+python2-pyphen 0.9.4-1
+python2-pyqt4 4.12.3-4
+python2-pyqt5 5.15.0-3
+python2-pyqtwebengine 5.15.0-2
+python2-regex 2020.7.14-1
+python2-requests 2.24.0-1
+python2-resolvelib 0.4.0-1
+python2-retrying 1.3.3-7
+python2-rfc6555 0.0.0-2
+python2-scandir 1.10.0-3
+python2-selectors2 2.0.1-4
+python2-setuptools 2:44.1.1-1
+python2-simplejson 3.17.2-1
+python2-sip-pyqt4 4.19.22-1
+python2-sip-pyqt5 4.19.24-1
+python2-six 1.15.0-1
+python2-soupsieve 1.9.6-2
+python2-toml 0.10.1-1
+python2-unrardll 0.1.4-2
+python2-uritemplate 3.0.1-1
+python2-urllib3 1.25.10-1
+python2-webencodings 0.5.1-4
+python2-zipp 1:1.1.1-1
+python2-zope-event 4.4-3
+python2-zope-interface 5.1.0-1
+python3-memoizedb 2017.3.30-4
+python3-xcgf 2017.3-4
+python3-xcpf 2019.11-2
+pythonqt 3.2-6
 
+python-beautifulsoup4 4.9.1-1
+python-cairo 1.19.1-1
+python-chardet 3.0.4-5
+python-colorama 0.4.3-1
+python-configobj 5.0.6-7
+python-dbus 1.2.16-1
+python-dbus-common 1.2.16-1
+python-docopt 0.6.2-7
+python-future 0.18.2-3
+python-gobject 3.36.1-1
+python-httplib2 0.18.1-1
+python-idna 2.10-1
+python-keyutils 0.6-4
+
+python-numpy 1.19.1-1
+python-ordered-set 4.0.2-1
+python-packaging 20.4-1
+python-pexpect 4.8.0-1
+python-pillow 7.2.0-1
+python-ply 3.11-5
+python-psutil 5.7.2-1
+python-ptyprocess 0.6.0-4
+python-pycups 2.0.1-1
+python-pycurl 7.43.0.6-1
+python-pyparsing 2.4.7-1
+python-pyparted 3.11.6-1
+python-pywal 3.3.0-2
+python-pyxdg 0.26-6
+python-requests 2.24.0-1
+python-setproctitle 1.1.10-5
+python-setuptools 1:49.6.0-1
+python-six 1.15.0-1
+python-soupsieve 2.0.1-1
+python-termcolor 1.1.0-8
+python-urllib3 1.25.10-1
+python-xapp 2.0.0-1
+python-yaml 5.3.1-2
+python2 2.7.18-1
+python2-dbus 1.2.16-1
+python2-pyxdg 0.26-6
 ------------------------------------------
 
 libfm-gtk2 - # Библиотека GTK + 2 для управления файлами
