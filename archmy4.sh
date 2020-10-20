@@ -1258,13 +1258,12 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 
-sudo pacman -S python python-anytree python-appdirs python-cairo python-chardet python-dbus python-dbus-common python-ewmh python-gobject python-idna python-isodate python-lxml python-mutagen python-ordered-set python-packaging python-pexpect python-ply python-ptyprocess python-pycountry python-pycryptodome python-pyparsing python-pyqt5 python-pyqt5-sip python-pysocks python-pyxdg python-requests python-setuptools python-sip python-six python-urllib3 python-websocket-client --noconfirm  # python +
+sudo pacman -S python python-anytree python-appdirs python-arrow python-cairo python-chardet python-dbus python-dbus-common python-ewmh python-gobject python-idna python-isodate python-lxml python-mutagen python-ordered-set python-packaging python-pexpect python-ply python-ptyprocess python-pycountry python-pycryptodome python-pyparsing python-pyqt5 python-pyqt5-sip python-pysocks python-pyxdg python-requests python-setuptools python-sip python-six python-urllib3 python-websocket-client --noconfirm  # python +
 
 sudo pacman -S python --noconfirm  # Новое поколение языка сценариев высокого уровня Python
 sudo pacman -S python-anytree --noconfirm  # Мощная и легкая древовидная структура данных Python
-
-
 sudo pacman -S python-appdirs --noconfirm  # Небольшой модуль Python для определения соответствующих директорий для конкретной платформы, например «директории пользовательских данных».
+sudo pacman -S python-arrow --noconfirm  # Лучшие даты и время для Python
 sudo pacman -S python-cairo --noconfirm  # Привязки Python для графической библиотеки cairo
 sudo pacman -S python-chardet --noconfirm  # Модуль Python3 для автоматического определения кодировки символов
 sudo pacman -S python-dbus --noconfirm  # Привязки Python для DBUS
@@ -1305,12 +1304,22 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
 
 ----------------------------------
 
 
-python-arrow 0.16.0-1
-python-asn1crypto 1.4.0-1
+
+python-asn1crypto 
 python-atspi 2.36.0-1
 python-attrs 20.1.0-1
 python-base58 2.0.1-1
@@ -1320,7 +1329,7 @@ python-beaker 1.11.0-4
 python-bencode.py 3.0.1-1
 python-bitcoinlib 0.11.0-1
 python-cachecontrol 0.12.6-1
-python-cairo 1.19.1-1
+
 python-cffi 1.14.2-1
 python-chardet 3.0.4-5
 python-coincurve 13.0.0-1
@@ -1393,6 +1402,7 @@ python-pyicu 2.5-1
 python-pynacl 1.4.0-1
 python-pyopenssl 19.1.0-2
 python-pyparsing 2.4.7-1
+python-pyparted 3.11.6-1
 python-pyphen 0.9.5-3
 python-pyqt4 4.12.3-4
 python-pyqt5 5.15.0-3
@@ -1402,6 +1412,7 @@ python-pysmbc 1.0.20-1
 python-pysocks 1.7.1-1
 python-pysol_cards 0.10.1-1
 python-pyudev 0.22-3
+python-pywal 3.3.0-2
 python-pywapi 0.3.8-7
 python-pyxdg 0.26-6
 python-random2 1.0.1-4
@@ -1418,7 +1429,9 @@ python-shiboken2 5.15.0-2
 python-sip 4.19.24-1
 python-sip-pyqt4 4.19.22-1
 python-six 1.15.0-1
+python-soupsieve 2.0.1-1
 python-sqlalchemy 1.3.19-1
+python-termcolor 1.1.0-8
 python-tlsh 3.17.0-2
 python-toml 0.10.1-1
 python-twitter 1.18.0-2
@@ -1540,32 +1553,10 @@ python-gobject 3.36.1-1
 python-httplib2 0.18.1-1
 python-idna 2.10-1
 python-keyutils 0.6-4
-
-python-numpy 1.19.1-1
-python-ordered-set 4.0.2-1
-python-packaging 20.4-1
-python-pexpect 4.8.0-1
-python-pillow 7.2.0-1
-python-ply 3.11-5
-python-psutil 5.7.2-1
-python-ptyprocess 0.6.0-4
-python-pycups 2.0.1-1
-python-pycurl 7.43.0.6-1
-python-pyparsing 2.4.7-1
-python-pyparted 3.11.6-1
-python-pywal 3.3.0-2
-python-pyxdg 0.26-6
-python-requests 2.24.0-1
-python-setproctitle 1.1.10-5
-python-setuptools 1:49.6.0-1
-python-six 1.15.0-1
-python-soupsieve 2.0.1-1
-python-termcolor 1.1.0-8
-python-urllib3 1.25.10-1
 python-xapp 2.0.0-1
 python-yaml 5.3.1-2
+
 python2 2.7.18-1
-python2-dbus 1.2.16-1
 python2-pyxdg 0.26-6
 ------------------------------------------
 
