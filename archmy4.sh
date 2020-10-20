@@ -1141,8 +1141,8 @@ youtube-viewer - # Утилита командной строки для про�
 https://www.archlinux.org/packages/community/any/youtube-viewer/
 hidapi - # Простая библиотека для связи с устройствами USB и Bluetooth HID
 https://www.archlinux.org/packages/community/x86_64/hidapi/
-
-
+djvulibre - # Пакет для создания, управления и просмотра документов DjVu ('дежавю')
+https://www.archlinux.org/packages/extra/x86_64/djvulibre/
 #####################################
 
 echo 'Обновим информацию о шрифтах'
