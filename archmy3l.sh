@@ -3688,7 +3688,6 @@ sudo pacman -S poppler-glib --noconfirm  # Наручники Poppler Glib
 sudo pacman -S libgsf --noconfirm  # Расширяемая библиотека абстракции ввода-вывода для работы со структурированными форматами файлов
 sudo pacman -S libopenraw --noconfirm  # Библиотека для декодирования файлов RAW
 sudo pacman -S shared-mime-info --noconfirm  # Общая информация MIME на Freedesktop.org
-
 sudo pacman -S raw-thumbnailer --noconfirm  # Легкий и быстрый инструмент для создания необработанных изображений raw, который необходим для отображения миниатюр raw.
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
