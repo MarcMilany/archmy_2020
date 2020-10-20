@@ -1025,9 +1025,13 @@ https://aur.archlinux.org/packages/bluez-utils-compat/
 https://aur.archlinux.org/bluez-utils-compat.git 
 
 
+grml-iso  AUR  # добавьте ISO-образ grml в меню загрузки grub2
+https://aur.archlinux.org/packages/grml-iso/
+https://aur.archlinux.org/grml-iso.git 
 
-
-
+ИЛИ grml-rescueboot  AUR  # grub2 скрипт для добавления ISO-образов grml в меню загрузки grub2
+https://aur.archlinux.org/packages/grml-rescueboot/
+https://aur.archlinux.org/grml-rescueboot.git 
 
 
 -----------------------------
@@ -1038,13 +1042,85 @@ https://www.archlinux.org/packages/community/x86_64/rofi/
 
 Композитный менеджер: compton (По умолчанию отключен).
 
-------------------------------
+ -############ ОФОРМЛЕНИЕ ###########
+
 arc-gtk-theme - # Плоская тема с прозрачными элементами для GTK 3, GTK 2 и Gnome-Shell
 https://www.archlinux.org/packages/community/any/arc-gtk-theme/
 
+arc-icon-theme - # Тема значка дуги. Только официальные релизы
+https://www.archlinux.org/packages/community/any/arc-icon-theme/
+
+arc-firefox-theme  AUR  # Официальная тема Arc Firefox
+https://aur.archlinux.org/packages/arc-firefox-theme/  # Голоса: 18
+https://aur.archlinux.org/arc-firefox-theme.git
+
+arc-firefox-theme-git  AUR  # Тема Arc Firefox
+https://aur.archlinux.org/packages/arc-firefox-theme-git/  # Голоса: 32
+https://aur.archlinux.org/arc-firefox-theme-git.git
+
+papirus-icon-theme - # Тема значка папируса
+https://www.archlinux.org/packages/community/any/papirus-icon-theme/
+
+capitaine-cursors - # Тема x-cursor, вдохновленная macOS и основанная на KDE Breeze
+https://www.archlinux.org/packages/community/any/capitaine-cursors/
 
 
 ---------------------------------------
+
+sudo pacman -S  --noconfirm  # 
+
+
+
+
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
 
 termite - # Простой терминал на базе VTE
 https://www.archlinux.org/packages/community/x86_64/termite/
@@ -1053,97 +1129,134 @@ https://www.archlinux.org/packages/community/x86_64/termite-terminfo/
 
 systemd - # системный и сервисный менеджер
 https://www.archlinux.org/packages/core/x86_64/systemd/
+
 systemd-libs - # клиентские библиотеки systemd
 https://www.archlinux.org/packages/core/x86_64/systemd-libs/
+
 systemd-resolvconf - # замена systemd resolvconf (для использования с systemd-resolved)
 https://www.archlinux.org/packages/core/x86_64/systemd-resolvconf/
+
 systemd-sysvcompat - # sysvinit compat для systemd
 https://www.archlinux.org/packages/core/x86_64/systemd-sysvcompat/
+
 syslinux  - # Коллекция загрузчиков, которые загружаются с файловых систем FAT, ext2 / 3/4 и btrfs, с компакт-дисков и через PXE
 https://www.archlinux.org/packages/core/x86_64/syslinux/
 
-
+------------------------------------------
 
 libfm-gtk2 - # Библиотека GTK + 2 для управления файлами
+https://www.archlinux.org/packages/community/x86_64/libfm-gtk2/
+
 hardinfo - # Системная информация и инструмент тестирования
-
-
-
+https://www.archlinux.org/packages/community/x86_64/hardinfo/
 
 gptfdisk - # Инструмент для создания разделов в текстовом режиме, который работает с дисками с таблицей разделов GUID (GPT) 
 https://www.archlinux.org/packages/extra/x86_64/gptfdisk/
+
 autofs - # Средство автомонтирования на основе ядра для Linux
 https://www.archlinux.org/packages/community/x86_64/autofs/
+
 fuse2 - # Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
 https://www.archlinux.org/packages/extra/x86_64/fuse2/
+
 fuse3 - # Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
 https://www.archlinux.org/packages/extra/x86_64/fuse3/
+
 fuseiso - # Модуль FUSE для монтирования образов файловой системы ISO
 https://www.archlinux.org/packages/community/x86_64/fuseiso/
 
+
 notepadqq - # Notepad ++ - как текстовый редактор для Linux
 https://www.archlinux.org/packages/community/x86_64/notepadqq/
+
 feh - # Быстрый и легкий просмотрщик изображений на основе imlib2
 https://www.archlinux.org/packages/extra/x86_64/feh/
+
 ranger - # Простой файловый менеджер в стиле vim
 https://www.archlinux.org/packages/community/any/ranger/
+
 toxcore  - # Безопасная, не требующая настройки серверная часть P2P для замены Skype
 https://www.archlinux.org/packages/community/x86_64/toxcore/
+
 catdoc - # Конвертер файлов Microsoft Word, Excel, PowerPoint и RTF в текст
 https://www.archlinux.org/packages/community/x86_64/catdoc/
+
+unrtf - # Программа командной строки, конвертирующая документы RTF в другие форматы
+https://www.archlinux.org/packages/community/x86_64/unrtf/
+
 inetutils - # Сборник общих сетевых программ
 https://www.archlinux.org/packages/core/x86_64/inetutils/
 
 ncmpcpp - # Практически точный клон ncmpc с некоторыми новыми функциями
 https://www.archlinux.org/packages/community/x86_64/ncmpcpp/
+
 w3m - # Текстовый веб-браузер, а также пейджер
 https://www.archlinux.org/packages/extra/x86_64/w3m/
+
 mpd - # Гибкое, мощное серверное приложение для воспроизведения музыки
 https://www.archlinux.org/packages/extra/x86_64/mpd/
+
 mpc - # Минималистичный интерфейс командной строки для MPD
 https://www.archlinux.org/packages/extra/x86_64/mpc/
+
 youtube-viewer - # Утилита командной строки для просмотра видео на YouTube
 https://www.archlinux.org/packages/community/any/youtube-viewer/
+
 hidapi - # Простая библиотека для связи с устройствами USB и Bluetooth HID
 https://www.archlinux.org/packages/community/x86_64/hidapi/
+
 djvulibre - # Пакет для создания, управления и просмотра документов DjVu ('дежавю')
 https://www.archlinux.org/packages/extra/x86_64/djvulibre/
+
+aspell-en - # Английский словарь для aspell
+https://www.archlinux.org/packages/extra/x86_64/aspell-en/
+
 calibre - # Community - Приложение для управления электронными книгами
 https://www.archlinux.org/packages/community/x86_64/calibre/
 
+
+
+
 media-player-info - # Файлы данных, описывающие возможности медиаплеера для систем post-HAL
 https://www.archlinux.org/packages/extra/any/media-player-info/
+
 id3lib - # Библиотека для чтения, записи и управления тегами ID3v1 и ID3v2
 https://www.archlinux.org/packages/extra/x86_64/id3lib/
 
 ccache - # Кэш компилятора, который ускоряет перекомпиляцию за счет кеширования предыдущих компиляций
 https://www.archlinux.org/packages/community/x86_64/ccache/
+
 flex - # Инструмент для создания программ сканирования текста
 https://www.archlinux.org/packages/core/x86_64/flex/
+
 lksctp-tools - # Реализация протокола SCTP (http://lksctp.sourceforge.net/)
 https://www.archlinux.org/packages/community/x86_64/lksctp-tools/
 
+
 python-ewmh - # Реализация Python подсказок Extended Window Manager на основе Xlib
 https://www.archlinux.org/packages/community/any/python-ewmh/
+
 python-lxml - # Связывание Python3 для библиотек libxml2 и libxslt (-S python-lxml --force # принудительная установка)
 https://www.archlinux.org/packages/extra/x86_64/python-lxml/
+
+python-mutagen - # (mutagen) Средство чтения и записи тегов метаданных аудио (библиотека Python)
+https://www.archlinux.org/packages/community/any/python-mutagen/
+
+mlocate - # Слияние реализации locate / updatedb
+https://www.archlinux.org/packages/core/x86_64/mlocate/
+
+dosfstools - # Утилиты файловой системы DOS
+https://www.archlinux.org/packages/core/x86_64/dosfstools/
+
+jfsutils - # Утилиты файловой системы JFS
+https://www.archlinux.org/packages/core/x86_64/jfsutils/
+
+
+
+fwbuilder - Community - Объектно-ориентированный графический интерфейс и набор компиляторов для различных платформ межсетевых экранов
+https://www.archlinux.org/packages/community/x86_64/fwbuilder/
      
 Дополнительно
-
-
-
-# 
-# grml-iso  AUR  # добавьте ISO-образ grml в меню загрузки grub2
-# ИЛИ grml-rescueboot  AUR  # grub2 скрипт для добавления ISO-образов grml в меню загрузки grub2
-# 
-# 
-
-unrtf  - Программа командной строки, конвертирующая документы RTF в другие форматы
-
-mlocate  - Слияние реализации locate / updatedb
-dosfstools  - Утилиты файловой системы DOS
-jfsutils  - Утилиты файловой системы JFS
-
 
 # AUR - # python-imaging ???
 # engrampa  - Манипулятор архивов для MATE
@@ -1156,13 +1269,25 @@ jfsutils  - Утилиты файловой системы JFS
 # cups-xerox-phaser-3600 3.00.27+187-2  AUR   # Драйвер CUPS для серии Xerox Phaser 3600. Также поддерживает fc2218, pe120, pe220, Phaser 3117, 3200, 3250, 3250, 3300, 3435, 3600, 6110, WorkCentre 3210, 3220, 4118
 # cups-xerox-phaser-6500 1.0.0-2   AUR   # Драйвер CUPS для серии Xerox Phaser 6500 (N & DN)
 
+###################  #################
 
+pacman -S eog eog-plugins chromium toxcore qmmp gimp xfburn pinta recoll gnome-screenshot evince mlocate antiword catdoc unrtf djvulibre id3lib mutagen python2-pychm aspell-en git calibre ttf-freefont ttf-linux-libertine --noconfirm
 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
+eog  - Staging  - Eye of Gnome: программа для просмотра и каталогизации изображений.
+eog-plugins  - Extra  - Плагины для Eye of Gnome
 
-fwbuilder - Community - Объектно-ориентированный графический интерфейс и набор компиляторов для различных платформ межсетевых экранов
-https://www.archlinux.org/packages/community/x86_64/fwbuilder/
+qmmp  - Community - Аудиоплеер на Qt5
+gimp - Extra  - Программа обработки изображений GNU
+xfburn - Extra  - Простой инструмент для записи CD / DVD на основе библиотек libburnia
+pinta - Community - Программа для рисования / редактирования по образцу Paint.NET. Его цель - предоставить упрощенную альтернативу GIMP для обычных пользователей
+recolla - Community - Инструмент полнотекстового поиска на базе Xapian backend
+recoll
+gnome-screenshot - Extra  - Сфотографируйте свой экран
+evince - Extra  - Программа просмотра документов (PDF, Postscript, djvu, tiff, dvi, XPS, поддержка SyncTex с gedit, комиксы (cbr, cbz, cb7 и cbt))
+
+antiword - Community - Бесплатная программа для чтения MS Word для Linux и RISC OS
+
+python2-pychm     ---- больше не доступен  https://pkgs.org/download/python2   python2-2.7.18-2-x86_64.pkg.tar.zst
 -------------------------------------
 Смена оболочки
 Для смены оболочки на ZSH введите в терминале следующее: chsh -s /bin/zsh.
@@ -1331,32 +1456,5 @@ pacman -Qqe > ~/pkglist.txt
 
 pacman -Qqm > ~/aurlist.txt
 
-################### УСТАНОВИТЬ #################
 
-pacman -S eog eog-plugins chromium toxcore qmmp gimp xfburn pinta recoll gnome-screenshot evince mlocate antiword catdoc unrtf djvulibre id3lib mutagen python2-pychm aspell-en git calibre ttf-freefont ttf-linux-libertine --noconfirm
-
-eog  - Staging  - Eye of Gnome: программа для просмотра и каталогизации изображений.
-eog-plugins  - Extra  - Плагины для Eye of Gnome
-chromium - Extra  -  Веб-браузер, созданный для скорости, простоты и безопасности
-toxcore - Community - Безопасная, не требующая настройки серверная часть P2P для замены Skype
-qmmp  - Community - Аудиоплеер на Qt5
-gimp - Extra  - Программа обработки изображений GNU
-xfburn - Extra  - Простой инструмент для записи CD / DVD на основе библиотек libburnia
-pinta - Community - Программа для рисования / редактирования по образцу Paint.NET. Его цель - предоставить упрощенную альтернативу GIMP для обычных пользователей
-recolla - Community - Инструмент полнотекстового поиска на базе Xapian backend
-recoll
-gnome-screenshot - Extra  - Сфотографируйте свой экран
-evince - Extra  - Программа просмотра документов (PDF, Postscript, djvu, tiff, dvi, XPS, поддержка SyncTex с gedit, комиксы (cbr, cbz, cb7 и cbt))
-mlocate - Core - Слияние реализации locate / updatedb
-antiword - Community - Бесплатная программа для чтения MS Word для Linux и RISC OS
-catdoc - Community  - Конвертер файлов Microsoft Word, Excel, PowerPoint и RTF в текст
-unrtf - Community  - Программа командной строки, конвертирующая документы RTF в другие форматы
-djvulibre - Английский словарь для aspell Пакет для создания, управления и просмотра документов DjVu ('дежавю')
-id3lib - Extra  - Библиотека для чтения, записи и управления тегами ID3v1 и ID3v2
-python-mutagen (mutagen)- Community - Средство чтения и записи тегов метаданных аудио (библиотека Python)
-aspell-en - Extra  - Английский словарь для aspell
-
-
-
-python2-pychm     ---- больше не доступен  https://pkgs.org/download/python2   python2-2.7.18-2-x86_64.pkg.tar.zst
 
