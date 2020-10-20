@@ -3688,6 +3688,11 @@ sudo pacman -S poppler-glib --noconfirm  # Наручники Poppler Glib
 sudo pacman -S libgsf --noconfirm  # Расширяемая библиотека абстракции ввода-вывода для работы со структурированными форматами файлов
 sudo pacman -S libopenraw --noconfirm  # Библиотека для декодирования файлов RAW
 sudo pacman -S shared-mime-info --noconfirm  # Общая информация MIME на Freedesktop.org
+
+sudo pacman -S raw-thumbnailer --noconfirm  # Легкий и быстрый инструмент для создания необработанных изображений raw, который необходим для отображения миниатюр raw.
+sudo pacman -S libgsf --noconfirm  # GNOME Structured File Library - это библиотека для чтения и записи структурированных форматов файлов. Установите её, если вам нужна поддержка миниатюр odf.
+sudo pacman -S  --noconfirm  # 
+
 ############ gstreamer0.10 ##########
 echo "" 
 echo " Установим мультимедийный фреймворк GStreamer из AUR "
