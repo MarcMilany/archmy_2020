@@ -1231,7 +1231,7 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 
-sudo pacman -S python python-appdirs python-cairo python-chardet python-dbus python-dbus-common python-ewmh python-gobject python-idna python-isodate python-lxml python-mutagen python-ordered-set python-packaging python-pexpect python-ply       --noconfirm  # python +
+sudo pacman -S python python-appdirs python-cairo python-chardet python-dbus python-dbus-common python-ewmh python-gobject python-idna python-isodate python-lxml python-mutagen python-ordered-set python-packaging python-pexpect python-ply python-ptyprocess python-pycountry python-pycryptodome python-pyparsing python-pyqt5 python-pyqt5-sip        --noconfirm  # python +
 
 sudo pacman -S python --noconfirm  # Новое поколение языка сценариев высокого уровня Python
 sudo pacman -S python-appdirs --noconfirm  # Небольшой модуль Python для определения соответствующих директорий для конкретной платформы, например «директории пользовательских данных».
@@ -1249,12 +1249,12 @@ sudo pacman -S python-ordered-set --noconfirm  # MutableSet, который за
 sudo pacman -S python-packaging --noconfirm  # Основные утилиты для пакетов Python
 sudo pacman -S python-pexpect --noconfirm  # Для управления и автоматизации приложений
 sudo pacman -S python-ply --noconfirm  # Реализация инструментов парсинга lex и yacc
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S python-ptyprocess --noconfirm  # Запустить подпроцесс в псевдотерминале
+sudo pacman -S python-pycountry --noconfirm  # Определения страны, подразделения, языка, валюты и алфавита ИСО и их переводы
+sudo pacman -S python-pycryptodome --noconfirm  # Коллекция криптографических алгоритмов и протоколов, реализованных для использования из Python 3
+sudo pacman -S python-pyparsing --noconfirm  # Модуль общего синтаксического анализа для Python
+sudo pacman -S python-pyqt5 --noconfirm  # Набор привязок Python для инструментария Qt5
+sudo pacman -S python-pyqt5-sip --noconfirm  # Поддержка модуля sip для PyQt5
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -1278,12 +1278,6 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 ----------------------------------
 
-python-ptyprocess 0.6.0-4
-python-pycountry 20.7.3-1
-python-pycryptodome 3.9.8-2
-python-pyparsing 2.4.7-1
-python-pyqt5 5.15.1-2
-python-pyqt5-sip 12.8.1-1
 python-pysocks 1.7.1-1
 python-pyxdg 0.26-6
 python-requests 2.24.0-1
