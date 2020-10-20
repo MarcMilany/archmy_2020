@@ -1167,11 +1167,16 @@ https://www.archlinux.org/packages/extra/any/media-player-info/
 
 Для смены оболочки на BASH введите в терминале следующее: chsh -s /bin/bash.
 
+echo ""
+echo " Пользовательская оболочка (shell) НЕ изменена, по умолчанию остаётся BASH "
+elif [[ $t_shell == 1 ]]; then
+chsh -s /bin/zsh
+chsh -s /bin/zsh $username
+clear
+echo ""
+echo " Важно! При первом запуске консоли (терминала) - нажмите "0" "
+echo " Пользовательская оболочка ИЗМЕНЕНА (сразу будет), с BASH на на ZSH "
 #####################################
-
-
-
-
 
 
 echo 'Обновим информацию о шрифтах'
