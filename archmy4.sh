@@ -1092,6 +1092,9 @@ xfce4-places-plugin   AUR  # Плагин меню Places для панели Xf
 https://aur.archlinux.org/packages/xfce4-places-plugin/
 https://aur.archlinux.org/xfce4-places-plugin.git
 
+oh-my-zsh-git  AUR  # Платформа сообщества для управления вашей конфигурацией zsh. Включает 180+ дополнительных плагинов и более 120 тем, чтобы оживить ваше утро, а также инструмент автоматического обновления, чтобы вы могли легко быть в курсе последних обновлений от сообщества
+https://aur.archlinux.org/packages/oh-my-zsh-git/
+https://aur.archlinux.org/oh-my-zsh-git.git
 
 skippy-xd-git  AUR  # Полноэкранный переключатель задач для X11, похожий на Apple Expose
 https://aur.archlinux.org/packages/skippy-xd-git/
