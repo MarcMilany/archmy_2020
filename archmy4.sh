@@ -1125,6 +1125,9 @@ networkmanager-l2tp  AUR  # Поддержка L2TP для NetworkManager
 https://aur.archlinux.org/packages/networkmanager-l2tp/
 https://aur.archlinux.org/networkmanager-l2tp.git
 
+lightdm-slick-greeter  AUR  # Красивое приветствие LightDM
+https://aur.archlinux.org/packages/lightdm-slick-greeter/
+https://aur.archlinux.org/lightdm-slick-greeter.git
 
 Лаунчер: rofi (Alt + d)
 Переключатель окон, средство запуска приложений и замена dmenu
