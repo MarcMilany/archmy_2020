@@ -1084,8 +1084,8 @@ ccache  - # Кэш компилятора, который ускоряет пе�
 https://www.archlinux.org/packages/community/x86_64/ccache/
 python-ewmh - # Реализация Python подсказок Extended Window Manager на основе Xlib
 https://www.archlinux.org/packages/community/any/python-ewmh/
-
-
+python-lxml - # Связывание Python3 для библиотек libxml2 и libxslt (-S python-lxml --force # принудительная установка)
+https://www.archlinux.org/packages/extra/x86_64/python-lxml/
 
 
 sudo pacman -S  --noconfirm  # 
