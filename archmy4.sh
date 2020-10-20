@@ -1096,6 +1096,7 @@ https://aur.archlinux.org/xfce4-places-plugin.git
 skippy-xd-git  AUR  # Полноэкранный переключатель задач для X11, похожий на Apple Expose
 https://aur.archlinux.org/packages/skippy-xd-git/
 https://github.com/dreamcat4/skippy-xd
+Многозадачный вид: skippy-xd (Super + Tab)
 
 #####################################
 
