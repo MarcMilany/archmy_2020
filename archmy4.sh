@@ -1231,7 +1231,7 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 
-sudo pacman -S python python-appdirs python-cairo python-chardet python-dbus python-dbus-common python-ewmh python-gobject python-idna python-isodate python-lxml python-mutagen python-ordered-set python-packaging python-pexpect python-ply python-ptyprocess python-pycountry python-pycryptodome python-pyparsing python-pyqt5 python-pyqt5-sip        --noconfirm  # python +
+sudo pacman -S python python-appdirs python-cairo python-chardet python-dbus python-dbus-common python-ewmh python-gobject python-idna python-isodate python-lxml python-mutagen python-ordered-set python-packaging python-pexpect python-ply python-ptyprocess python-pycountry python-pycryptodome python-pyparsing python-pyqt5 python-pyqt5-sip python-pysocks python-pyxdg python-requests python-setuptools python-sip python-six python-urllib3 python-websocket-client --noconfirm  # python +
 
 sudo pacman -S python --noconfirm  # Новое поколение языка сценариев высокого уровня Python
 sudo pacman -S python-appdirs --noconfirm  # Небольшой модуль Python для определения соответствующих директорий для конкретной платформы, например «директории пользовательских данных».
@@ -1255,14 +1255,14 @@ sudo pacman -S python-pycryptodome --noconfirm  # Коллекция крипт�
 sudo pacman -S python-pyparsing --noconfirm  # Модуль общего синтаксического анализа для Python
 sudo pacman -S python-pyqt5 --noconfirm  # Набор привязок Python для инструментария Qt5
 sudo pacman -S python-pyqt5-sip --noconfirm  # Поддержка модуля sip для PyQt5
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S python-pysocks --noconfirm  # SOCKS4, SOCKS5 или HTTP-прокси (вилка Anorov PySocks заменяет socksipy)
+sudo pacman -S python-pyxdg --noconfirm  # Библиотека Python для доступа к стандартам freedesktop.org
+sudo pacman -S python-requests --noconfirm  # Python HTTP для людей
+sudo pacman -S python-setuptools --noconfirm  # Легко загружайте, собирайте, устанавливайте, обновляйте и удаляйте пакеты Python
+sudo pacman -S python-sip --noconfirm  # Привязки Python SIP4 для библиотек C и C ++
+sudo pacman -S python-six --noconfirm  # Утилиты совместимости с Python 2 и 3
+sudo pacman -S python-urllib3 --noconfirm  # Библиотека HTTP с потокобезопасным пулом соединений и поддержкой публикации файлов
+sudo pacman -S python-websocket-client --noconfirm  # Клиентская библиотека WebSocket для Python
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -1278,14 +1278,7 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 ----------------------------------
 
-python-pysocks 1.7.1-1
-python-pyxdg 0.26-6
-python-requests 2.24.0-1
-python-setuptools 1:50.3.0-1
-python-sip 4.19.24-2
-python-six 1.15.0-1
-python-urllib3 1.25.10-1
-python-websocket-client 0.57.0-1
+
 
 ------------------------------------------
 
