@@ -848,7 +848,83 @@ VIM - улучшенная версия текстового редактора 
 
 sudo pacman -S vi vim vim-ansible vim-ale vim-airline vim-airline-themes vim-align vim-bufexplorer vim-ctrlp vim-fugitive vim-indent-object vim-jad vim-jedi vim-latexsuite vim-molokai vim-nerdcommenter vim-nerdtree vim-pastie vim-runtime vim-seti vim-supertab vim-surround vim-syntastic vim-tagbar vim-ultisnips --noconfirm 
 
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+
 yay -S vim-colorsamplerpack vim-doxygentoolkit vim-guicolorscheme vim-jellybeans vim-minibufexpl vim-omnicppcomplete vim-project vim-rails vim-taglist vim-vcscommand vim-workspace --noconfirm  #
+
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+
 
 vi 1:070224-4  # Оригинальный текстовый редактор ex / vi
 vim 8.2.1537-1  # Vi Improved, улучшенная версия текстового редактора vi с широкими возможностями настройки
