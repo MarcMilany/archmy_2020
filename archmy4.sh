@@ -996,6 +996,13 @@ cd multilockscreen-git
 less PKGBUILD
 makepkg -si
 
+hblock  AUR  # Блокировщик рекламы, который создает файл hosts из автоматически загружаемых черных списков
+https://aur.archlinux.org/packages/hblock/
+https://aur.archlinux.org/hblock.git
+
+firefox-extension-leechblock  AUR  # LeechBlock - это простой бесплатный инструмент для повышения производительности, предназначенный для блокировки тех сайтов, которые тратят время впустую, которые могут высосать жизнь из вашего рабочего дня.
+https://aur.archlinux.org/packages/firefox-extension-leechblock/
+https://aur.archlinux.org/firefox-extension-leechblock.git
 
 xfce4-docklike-plugin-git  AUR  # Современная минималистичная панель задач в стиле док-станции для XFCE
 https://aur.archlinux.org/packages/xfce4-docklike-plugin-git/
@@ -1032,6 +1039,14 @@ https://www.archlinux.org/packages/community/x86_64/rofi/
 Композитный менеджер: compton (По умолчанию отключен).
 
 ------------------------------
+
+termite - # Простой терминал на базе VTE
+https://www.archlinux.org/packages/community/x86_64/termite/
+terminus-font - # Моноширинный растровый шрифт (для X11 и консоли)
+https://www.archlinux.org/packages/community/any/terminus-font/
+
+
+
 ranger - # Простой файловый менеджер в стиле vim
 https://www.archlinux.org/packages/community/any/ranger/
 ncmpcpp - # Практически точный клон ncmpc с некоторыми новыми функциями
@@ -1060,11 +1075,10 @@ https://www.archlinux.org/packages/extra/x86_64/python-lxml/
 Дополнительно
 
 arc-gtk-theme  # Плоская тема с прозрачными элементами для GTK 3, GTK 2 и Gnome-Shell
-# libfm-gtk2  # Библиотека GTK + 2 для управления файлами
+libfm-gtk2  # Библиотека GTK + 2 для управления файлами
 hardinfo  # Системная информация и инструмент тестирования
-# termite  # Простой терминал на базе VTE
-# terminus-font  # Моноширинный растровый шрифт (для X11 и консоли)
-# hblock  AUR  # Блокировщик рекламы, который создает файл hosts из автоматически загружаемых черных списков
+
+# 
 # grml-iso  AUR  # добавьте ISO-образ grml в меню загрузки grub2
 # ИЛИ grml-rescueboot  AUR  # grub2 скрипт для добавления ISO-образов grml в меню загрузки grub2
 # feh  # Быстрый и легкий просмотрщик изображений на основе imlib2
