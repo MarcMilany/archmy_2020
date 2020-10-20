@@ -1317,18 +1317,48 @@ sudo pacman -S  --noconfirm  #
 
 ----------------------------------
 
+python-asn1crypto # Библиотека Python ASN.1 с упором на производительность и pythonic API
+python-atspi # Привязки Python для D-Bus AT-SPI
+python-attrs # Атрибуты без шаблона
+python-bcrypt # Современное хеширование паролей для вашего программного обеспечения и ваших серверов
+python-beaker # Кэширование и сеансы промежуточного программного обеспечения WSGI для использования с веб-приложениями и автономными скриптами и приложениями Python
+python-beautifulsoup4 # Синтаксический анализатор HTML / XML на Python, предназначенный для быстрых проектов, таких как очистка экрана
+python-cachecontrol # httplib2 кеширование запросов
+
+python-colorama # Python API для кроссплатформенного цветного текста терминала
+python-configobj # Простое, но мощное средство чтения и записи конфигурационных файлов для Python
+python-docopt # Пифонический парсер аргументов, который заставит вас улыбнуться
+python-future # Чистая поддержка одного источника для Python 3 и 2
+python-gobject # Привязки Python для GLib / GObject / GIO / GTK +
+python-httplib2 # Обширная клиентская библиотека HTTP, поддерживающая множество функций
 
 
-python-asn1crypto 
-python-atspi 2.36.0-1
-python-attrs 20.1.0-1
-python-base58 2.0.1-1
-python-basiciw 0.2.2-1
-python-bcrypt 3.2.0-1
-python-beaker 1.11.0-4
-python-bencode.py 3.0.1-1
-python-bitcoinlib 0.11.0-1
-python-cachecontrol 0.12.6-1
+
+
+----------------------------
+python-base58   AUR  # Биткойн-совместимая реализация Base58 и Base58Check
+https://aur.archlinux.org/packages/python-base58/
+https://aur.archlinux.org/python-base58.git 
+
+python-bitcoinlib # Библиотека Python3, обеспечивающая простой интерфейс для структур данных и протокола Биткойн
+https://www.archlinux.org/packages/community/any/python-bitcoinlib/
+
+--------------------------------------
+
+
+python-basiciw    AUR  # Получение информации, такой как ESSID или качество сигнала, с беспроводных карт (модуль Python)
+https://aur.archlinux.org/packages/python-basiciw/
+https://aur.archlinux.org/python-basiciw.git 
+
+python-bencode.py    AUR  # Простой парсер бенкода (для Python 2, Python 3 и PyPy)
+https://aur.archlinux.org/packages/python-bencode.py/
+https://aur.archlinux.org/python-bencode.py.git 
+
+pythonqt    AUR  # Динамическая привязка Python для приложений Qt
+https://aur.archlinux.org/packages/pythonqt/
+https://aur.archlinux.org/pythonqt.git 
+
+-------------------------------------------
 
 python-cffi 1.14.2-1
 python-chardet 3.0.4-5
@@ -1341,8 +1371,6 @@ python-cryptography 3.1-1
 python-cssselect 1.1.0-4
 python-d2to1 0.2.12.post1-7
 python-dateutil 2.8.1-3
-python-dbus 1.2.16-1
-python-dbus-common 1.2.16-1
 python-defusedxml 0.6.0-4
 python-distlib 0.3.1-1
 python-distro 1.5.0-1
@@ -1359,7 +1387,8 @@ python-idna 2.10-1
 python-jedi 0.17.2-1
 python-jeepney 0.4.3-1
 python-jinja 2.11.2-1
-python-keyring 21.4.0-1
+python-keyring # Безопасное хранение и доступ к вашим паролям
+python-keyutils # Набор привязок python для keyutils
 python-libarchive-c 2.9-1
 python-lxml 4.5.2-1
 python-lxml-docs 4.5.2-1
@@ -1444,6 +1473,10 @@ python-websockets 8.1-1
 python-yaml 5.3.1-2
 python-zope-event 4.4-3
 python-zope-interface 5.1.0-1
+python-xapp 2.0.0-1
+
+-------------------------------------------
+
 python2 2.7.18-1
 python2-appdirs 1.4.4-1
 python2-apsw 3.33.0-1
@@ -1538,23 +1571,7 @@ python2-zope-interface 5.1.0-1
 python3-memoizedb 2017.3.30-4
 python3-xcgf 2017.3-4
 python3-xcpf 2019.11-2
-pythonqt 3.2-6
 
-python-beautifulsoup4 4.9.1-1
-python-cairo 1.19.1-1
-python-chardet 3.0.4-5
-python-colorama 0.4.3-1
-python-configobj 5.0.6-7
-python-dbus 1.2.16-1
-python-dbus-common 1.2.16-1
-python-docopt 0.6.2-7
-python-future 0.18.2-3
-python-gobject 3.36.1-1
-python-httplib2 0.18.1-1
-python-idna 2.10-1
-python-keyutils 0.6-4
-python-xapp 2.0.0-1
-python-yaml 5.3.1-2
 
 python2 2.7.18-1
 python2-pyxdg 0.26-6
