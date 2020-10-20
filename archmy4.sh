@@ -1231,12 +1231,14 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 
-sudo pacman -S python python-appdirs python-cairo python-chardet      --noconfirm  # python +
+sudo pacman -S python python-appdirs python-cairo python-chardet python-dbus python-dbus-common    --noconfirm  # python +
 
 sudo pacman -S python --noconfirm  # Новое поколение языка сценариев высокого уровня Python
 sudo pacman -S python-appdirs --noconfirm  # Небольшой модуль Python для определения соответствующих директорий для конкретной платформы, например «директории пользовательских данных».
 sudo pacman -S python-cairo --noconfirm  # Привязки Python для графической библиотеки cairo
 sudo pacman -S python-chardet --noconfirm  # Модуль Python3 для автоматического определения кодировки символов
+sudo pacman -S python-dbus --noconfirm  # Привязки Python для DBUS
+sudo pacman -S python-dbus-common --noconfirm  # Общие файлы dbus-python, общие для python-dbus и python2-dbus
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -1274,13 +1276,7 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-
-
- 3.0.4-5
-python-dbus 1.2.16-1
-python-dbus-common 1.2.16-1
+----------------------------------
 python-gobject 3.36.1-1
 python-idna 2.10-1
 python-isodate 0.6.0-5
