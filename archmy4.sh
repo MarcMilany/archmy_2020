@@ -1101,6 +1101,21 @@ https://aur.archlinux.org/packages/skippy-xd-git/
 https://github.com/dreamcat4/skippy-xd
 Многозадачный вид: skippy-xd (Super + Tab)
 
+multilockscreen-git  AUR  # Простой скрипт блокировки для i3lock-color
+https://aur.archlinux.org/packages/multilockscreen-git/
+https://aur.archlinux.org/multilockscreen-git.git
+https://github.com/jeffmhubbard/multilockscreen
+Install
+Manual Installation
+git clone https://github.com/jeffmhubbard/multilockscreen
+cd multilockscreen
+sudo install -Dm 755 multilockscreen /usr/local/bin/multilockscreen
+Arch Linux (AUR)
+git clone https://aur.archlinux.org/multilockscreen-git.git
+cd multilockscreen-git
+less PKGBUILD
+makepkg -si
+
 Лаунчер: rofi (Alt + d)
 Переключатель окон, средство запуска приложений и замена dmenu
 https://www.archlinux.org/packages/community/x86_64/rofi/
