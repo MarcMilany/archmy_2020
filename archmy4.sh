@@ -1082,8 +1082,8 @@ media-player-info - # Файлы данных, описывающие возмо
 https://www.archlinux.org/packages/extra/any/media-player-info/
 ccache  - # Кэш компилятора, который ускоряет перекомпиляцию за счет кеширования предыдущих компиляций
 https://www.archlinux.org/packages/community/x86_64/ccache/
-
-
+python-ewmh - # Реализация Python подсказок Extended Window Manager на основе Xlib
+https://www.archlinux.org/packages/community/any/python-ewmh/
 
 
 
@@ -1091,7 +1091,8 @@ https://www.archlinux.org/packages/community/x86_64/ccache/
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 
-
+fwbuilder - Community - Объектно-ориентированный графический интерфейс и набор компиляторов для различных платформ межсетевых экранов
+https://www.archlinux.org/packages/community/x86_64/fwbuilder/
 -------------------------------------
 Смена оболочки
 Для смены оболочки на ZSH введите в терминале следующее: chsh -s /bin/zsh.
