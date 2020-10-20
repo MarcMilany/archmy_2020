@@ -1231,7 +1231,7 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 
-sudo pacman -S python python-appdirs python-cairo python-chardet python-dbus python-dbus-common python-ewmh python-gobject python-idna python-isodate python-lxml python-mutagen           --noconfirm  # python +
+sudo pacman -S python python-appdirs python-cairo python-chardet python-dbus python-dbus-common python-ewmh python-gobject python-idna python-isodate python-lxml python-mutagen python-ordered-set python-packaging python-pexpect python-ply       --noconfirm  # python +
 
 sudo pacman -S python --noconfirm  # Новое поколение языка сценариев высокого уровня Python
 sudo pacman -S python-appdirs --noconfirm  # Небольшой модуль Python для определения соответствующих директорий для конкретной платформы, например «директории пользовательских данных».
@@ -1245,10 +1245,10 @@ sudo pacman -S python-idna --noconfirm  # Интернационализиров
 sudo pacman -S python-isodate --noconfirm  # Синтаксический анализатор даты / времени / продолжительности и форматирование ISO 8601
 sudo pacman -S python-lxml --noconfirm  # Связывание Python3 для библиотек libxml2 и libxslt (-S python-lxml --force # принудительная установка)
 sudo pacman -S python-mutagen --noconfirm  # (mutagen) Средство чтения и записи тегов метаданных аудио (библиотека Python)
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S python-ordered-set --noconfirm  # MutableSet, который запоминает свой порядок, так что каждая запись имеет индекс
+sudo pacman -S python-packaging --noconfirm  # Основные утилиты для пакетов Python
+sudo pacman -S python-pexpect --noconfirm  # Для управления и автоматизации приложений
+sudo pacman -S python-ply --noconfirm  # Реализация инструментов парсинга lex и yacc
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -1278,11 +1278,6 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 ----------------------------------
 
-python-mutagen - # (mutagen) Средство чтения и записи тегов метаданных аудио (библиотека Python)
-python-ordered-set 4.0.2-1
-python-packaging 20.4-1
-python-pexpect 4.8.0-1
-python-ply 3.11-5
 python-ptyprocess 0.6.0-4
 python-pycountry 20.7.3-1
 python-pycryptodome 3.9.8-2
