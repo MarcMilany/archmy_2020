@@ -531,12 +531,12 @@ fi
 sleep 1
 
 
-
+update your package signing keys (обновление пакета ключей подписи)
 sudo pacman -S archlinux-keyring
 sudo pacman -S seahorse  # Приложение GNOME для управления ключами PGP (управления паролями и ключами шифрования)
 sudo pacman -Syyu
 
-
+sudo pacman -Sy archlinux-keyring
 # ----------------------------------
 # Или:
 #sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys && sudo pacman -Sy
