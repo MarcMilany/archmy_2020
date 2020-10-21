@@ -1385,16 +1385,14 @@ python-gevent-websocket 0.10.1-4
 python-gobject 3.36.1-1
 python-greenlet 0.4.16-1
 python-html5lib 1.1-1
-python-idna 2.10-1
 python-jedi 0.17.2-1
 python-jeepney 0.4.3-1
 python-jinja 2.11.2-1
 python-keyring # Безопасное хранение и доступ к вашим паролям
 python-keyutils # Набор привязок python для keyutils
-python-libarchive-c 2.9-1
-python-lxml 4.5.2-1
-python-lxml-docs 4.5.2-1
-python-magic 5.39-1
+python-libarchive-c # Интерфейс Python для libarchive
+python-lxml-docs # Связывание Python для библиотек libxml2 и libxslt (документы)
+python-magic # Привязки Python к волшебной библиотеке
 python-mako 1.1.3-1
 python-markdown 3.2.2-1
 python-markupsafe 1.1.1-4
@@ -1470,7 +1468,6 @@ python-ujson 3.1.0-1
 python-unidecode 1.1.1-4
 python-urllib3 1.25.10-1
 python-webencodings 0.5.1-4
-python-websocket-client 0.57.0-1
 python-websockets 8.1-1
 python-yaml 5.3.1-2
 python-zope-event 4.4-3
