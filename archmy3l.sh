@@ -525,7 +525,7 @@ echo ""
 echo " Обновление ключей... "  
 sudo pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
 echo ""
-echo "Обновление баз данных пакетов..."
+echo "Обновим базы данных пакетов..."
 ###  sudo pacman -Sy
 sudo pacman -Syy  # обновление баз пакмэна (pacman) 
 # sudo pacman -Syyu  # Обновим вашу систему (базу данных пакетов)
