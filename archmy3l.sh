@@ -524,8 +524,8 @@ sudo pacman-key --populate archlinux  # поиск ключей
 echo ""
 echo " Обновление ключей... "  
 sudo pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
-sudo pacman -S archlinux-keyring  # (обновление пакета ключей подписи)
-# sudo pacman -Sy archlinux-keyring
+###  sudo pacman -S archlinux-keyring  # (обновление пакета ключей подписи)
+### sudo pacman -Sy archlinux-keyring
 echo "Обновление баз данных пакетов..."
 ###  sudo pacman -Sy
 sudo pacman -Syy  # обновление баз пакмэна (pacman) 
@@ -534,6 +534,7 @@ sudo pacman -Syy  # обновление баз пакмэна (pacman)
 echo ""
 echo " Установка Приложение GNOME для управления ключами PGP " 
 sudo pacman -S seahorse  # Приложение GNOME для управления ключами PGP (управления паролями и ключами шифрования)
+fi
 fi
 sleep 1
 # ----------------------------------
