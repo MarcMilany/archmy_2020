@@ -285,7 +285,7 @@ echo ""
 echo " Обновление ключей... "  
 sudo pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
 echo ""
-echo "Обновление баз данных пакетов..."
+echo "Обновим базы данных пакетов..."
 ###  sudo pacman -Sy
 sudo pacman -Syy  # обновление баз пакмэна (pacman) 
 # sudo pacman -Syyu  # Обновим вашу систему (базу данных пакетов)
@@ -299,6 +299,7 @@ sleep 1
 #echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
 #pacman -Sy --noconfirm
 
+clear
 echo ""
 echo -e "${BLUE}:: ${NC}Dmidecode. Получаем информацию о железе"
 echo " DMI (Desktop Management Interface) - интерфейс (API), позволяющий программному обеспечению собирать данные о характеристиках компьютера. "
