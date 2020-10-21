@@ -851,18 +851,21 @@ if [[ $prog_set == 1 ]]; then
   echo " Устанавливаем uCode для процессоров - AMD "
  pacman -S amd-ucode --noconfirm 
   echo " Установлены обновления стабильности и безопасности для микрокода процессора - AMD "
+  echo " После завершения установки пакета программного обеспечения нужно перезагрузить компьютер "
   #grub-mkconfig -o /boot/grub/grub.cfg
 # echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). "       
 elif [[ $prog_set == 2 ]]; then
   echo " Устанавливаем uCode для процессоров - INTEL "
  pacman -S intel-ucode --noconfirm
   echo " Установлены обновления стабильности и безопасности для микрокода процессора - INTEL " 
+  echo " После завершения установки пакета программного обеспечения нужно перезагрузить компьютер "
   #grub-mkconfig -o /boot/grub/grub.cfg
 # echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). "    
 elif [[ $prog_set == 3 ]]; then
   echo " Устанавливаем uCode для процессоров - AMD и INTEL "
  pacman -S amd-ucode intel-ucode --noconfirm 
-  echo " Установлены обновления стабильности и безопасности для микрокода процессоров - AMD и INTEL "  
+  echo " Установлены обновления стабильности и безопасности для микрокода процессоров - AMD и INTEL "
+  echo " После завершения установки пакета программного обеспечения нужно перезагрузить компьютер "  
   #grub-mkconfig -o /boot/grub/grub.cfg
 # echo " Обновлён (сгенерирован) grub.cfg (/boot/grub/grub.cfg). "  
 elif [[ $prog_set == 0 ]]; then
