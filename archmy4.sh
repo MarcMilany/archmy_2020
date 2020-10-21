@@ -183,7 +183,7 @@ sudo pacman -S archlinux-keyring
 ### sudo pacman -Sy archlinux-keyring
 sudo pacman -S seahorse  # Приложение GNOME для управления ключами PGP (управления паролями и ключами шифрования)
 sudo pacman -Syyu
-# ============================================================================
+# =========================================
 
 echo 'Создадим папку (downloads), и переходим в созданную папку'
 # Create a folder (downloads), and go to the created folder
