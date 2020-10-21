@@ -1208,6 +1208,48 @@ sudo pacman -S syslinux  --noconfirm
 sudo pacman -S  --noconfirm  
 sudo pacman -S  --noconfirm  
 
+----------------------------------------
+if [[ $i_cpu == 0 ]]; then
+clear
+echo " Добавление ucode пропущено "
+elif [[ $i_cpu  == 1 ]]; then
+clear
+pacman -S amd-ucode --noconfirm
+echo  'initrd /amd-ucode.img ' >> /boot/loader/entries/arch.conf
+elif [[ $i_cpu  == 2 ]]; then
+clear
+pacman -S intel-ucode  --noconfirm
+echo ' initrd /intel-ucode.img ' >> /boot/loader/entries/arch.conf
+fi
+echo "initrd  /initramfs-linux.img" >> /boot/loader/entries/arch.conf
+clear
+lsblk -f
+echo ""
+echo " Укажите тот радел который будет после перезагрузки, то есть например "
+
+echo " при установке с флешки ваш hdd может быть sdb, а после перезагрузки sda "
+
+echo " выше видно что sdbX например примонтирован в /mnt, а после перезагрузки systemd будет искать корень на sdaX "
+
+echo " если указать не правильный раздел система не загрузится "
+
+echo " если у вас один hdd/ssd тогда это будет sda 99%"
+echo ""
+read -p "Укажите ROOT(корневой) раздел для загрузчика (Не пyтать с Boot!!!) (пример  sda6,sdb3 или nvme0n1p2 ): " root
+Proot=$(blkid -s PARTUUID /dev/$root | grep -oP '(?<=PARTUUID=").+?(?=")')
+echo options root=PARTUUID=$Proot rw >> /boot/loader/entries/arch.conf
+#
+cd /home/$username 
+git clone https://aur.archlinux.org/systemd-boot-pacman-hook.git  # Перехватчик Pacman для обновления systemd-boot после обновления systemd
+chown -R $username:users /home/$username/systemd-boot-pacman-hook  # https://aur.archlinux.org/packages/systemd-boot-pacman-hook/ 
+chown -R $username:users /home/$username/systemd-boot-pacman-hook/PKGBUILD 
+cd /home/$username/systemd-boot-pacman-hook   
+sudo -u $username makepkg -si --noconfirm  
+rm -Rf /home/$username/systemd-boot-pacman-hook
+cd /home/$username 
+
+---------------------------------------------------
+
 
 sudo pacman -S termite --noconfirm  #  Простой терминал на базе VTE
 sudo pacman -S termite-terminfo --noconfirm  # Terminfo для Termite, простого терминала на базе VTE
