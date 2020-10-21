@@ -1364,6 +1364,15 @@ python-mako # Сверхбыстрый язык шаблонов, который
 
 
 
+
+
+
+python-webencodings # Это Python-реализация стандарта кодирования WHATWG
+python-websockets # Реализация протокола WebSocket на Python (RFC 6455)
+python-xapp # Библиотека Python Xapp
+python-yaml # Привязки Python для YAML с использованием быстрой библиотеки libYAML
+python-zope-event # Предоставляет простую систему событий
+python-zope-interface # Интерфейсы Zope для Python 3.x
 ----------------------------
 python-base58   AUR  # Биткойн-совместимая реализация Base58 и Base58Check
 https://aur.archlinux.org/packages/python-base58/
@@ -1466,13 +1475,8 @@ python-toml 0.10.1-1
 python-twitter 1.18.0-2
 python-ujson 3.1.0-1
 python-unidecode 1.1.1-4
-python-urllib3 1.25.10-1
-python-webencodings 0.5.1-4
-python-websockets # Реализация протокола WebSocket на Python (RFC 6455)
-python-yaml 5.3.1-2
-python-zope-event 4.4-3
-python-zope-interface 5.1.0-1
-python-xapp 2.0.0-1
+
+
 
 -------------------------------------------
 
