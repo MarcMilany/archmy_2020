@@ -358,7 +358,7 @@ echo ""
 # Если вы используете LVM для вашего /boot, вы можете установить GRUB на нескольких физических дисках.
  echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
  read -p " => Укажите диск куда установить GRUB (sda/sdb например sda или sdb) : " x_cfd  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
- grub-install /dev/$x_cfd   #sda sdb sdc sdd
+ grub-install /dev/$x_cfd  # Записываем загрузчик в MBR (Master Boot Record) нашего внутреннего накопителя (sda; sdb; sdc; sdd)
 #grub-install --recheck /dev/$x_cfd     # Если Вы получили сообщение об ошибке
 #grub-install --boot-directory=/mnt/boot /dev/$x_cfd  # установить файлы загрузчика в другой каталог
   echo " Загрузчик GRUB установлен на выбранный вами диск (раздел). " 
@@ -375,7 +375,7 @@ echo ""
  echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
  read -p " => Укажите диск куда установить GRUB (sda/sdb например sda или sdb) : " x_cfd # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 # Если нужно установить BIOS-версию загрузчика из-под системы, загруженной в режиме UEFI
- grub-install --target=i386-pc /dev/$x_cfd   #sda sdb sdc sdd
+ grub-install --target=i386-pc /dev/$x_cfd  # Записываем загрузчик в MBR (Master Boot Record) нашего внутреннего накопителя (sda; sdb; sdc; sdd)
 #grub-install --target=i386-pc --recheck /dev/$x_cfd   # Если Вы получили сообщение об ошибке
   echo " Загрузчик GRUB установлен на выбранный вами диск (раздел). "  
 elif [[ $i_grub == 0 ]]; then
