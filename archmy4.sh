@@ -230,6 +230,7 @@ sudo pacman -S ttf-bitstream-vera --noconfirm  # Шрифты Bitstream Vera
 sudo pacman -S ttf-droid --noconfirm  # Шрифты общего назначения, выпущенные Google как часть Android
 sudo pacman -S ttf-linux-libertine --noconfirm  # Шрифты OpenType с засечками (Libertine) и Sans Serif (Biolinum) с большим охватом Unicode
 sudo pacman -S gnu-free-fonts --noconfirm  # Бесплатное семейство масштабируемых контурных шрифтов
+sudo pacman -S powerline-fonts --noconfirm  # Исправленные шрифты для powerline
 sudo pacman -S ttf-roboto-mono --noconfirm  # Моноширинное дополнение к семейству роботов Roboto
 sudo pacman -S ttf-nerd-fonts-symbols --noconfirm  # Большое количество дополнительных глифов из популярных `` культовых шрифтов '' (2048-em)
 sudo pacman -S ttf-ionicons --noconfirm  # Шрифт из мобильного фреймворка Ionic
