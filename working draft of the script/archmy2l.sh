@@ -555,11 +555,13 @@ echo '#FONT=ter-v16b' >> /etc/vconsole.conf
 echo '#FONT=ter-u16b' >> /etc/vconsole.conf
 echo 'FONT_MAP=' >> /etc/vconsole.conf
 echo '#CONSOLEFONT="cyr-sun16' >> /etc/vconsole.conf
-echo 'CONSOLEMAP' >> /etc/vconsole.conf
+echo 'CONSOLEMAP=' >> /etc/vconsole.conf
 echo '#TIMEZONE=Europe/Moscow' >> /etc/vconsole.conf
 echo '#HARDWARECLOCK=UTC' >> /etc/vconsole.conf
+echo '#HARDWARECLOCK=localtime' >> /etc/vconsole.conf
 echo '#USECOLOR=yes' >> /etc/vconsole.conf
 echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf
+#echo -e "KEYMAP=ru\nFONT=cyr-sun16\nFONT_MAP=\CONSOLEMAP=" > /etc/vconsole.conf
 
 #-----------------------------------------------------------
 #echo 'Вписываем KEYMAP=ru FONT=ter-v16n'
