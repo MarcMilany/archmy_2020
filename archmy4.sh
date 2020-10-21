@@ -1452,7 +1452,7 @@ https://aur.archlinux.org/python-coincurve.git
 
 -------------------------------------------
 
-python-markdown 3.2.2-1
+python-markdown # Реализация Python Markdown Джона Грубера
 python-markupsafe 1.1.1-4
 python-maxminddb 2.0.2-1
 python-merkletools 1.0.3-3
