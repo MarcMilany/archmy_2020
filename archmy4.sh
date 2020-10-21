@@ -178,7 +178,7 @@ sudo rm -r /etc/pacman.d/gnupg
 sudo pacman-key --init  
 sudo pacman-key --populate archlinux
 sudo pacman-key --refresh-keys
-sudo pacman -S archlinux-keyring
+#sudo pacman -S archlinux-keyring
 ###  sudo pacman -S archlinux-keyring  # (обновление пакета ключей подписи)
 ### sudo pacman -Sy archlinux-keyring
 sudo pacman -S seahorse  # Приложение GNOME для управления ключами PGP (управления паролями и ключами шифрования)
