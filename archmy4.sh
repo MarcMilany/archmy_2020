@@ -1336,10 +1336,19 @@ python-cssselect # Библиотека Python3, которая анализир
 python-d2to1 # Библиотека Python, которая позволяет использовать файлы setup.cfg, подобные distutils2, для метаданных пакета с помощью скрипта distribute / setuptools setup.py
 python-dateutil # Предоставляет мощные расширения для стандартного модуля datetime
 python-defusedxml # Защита от XML-бомбы для модулей Python stdlib
+python-distlib # Низкоуровневые компоненты distutils2 / упаковка
+python-distro # API информации о платформе ОС Linux
+python-distutils-extra # Улучшения в системе сборки Python
 python-docopt # Пифонический парсер аргументов, который заставит вас улыбнуться
+python-entrypoints # Обнаружение и загрузка точек входа из установленных пакетов
+python-eyed3 # Модуль Python и программа для обработки информации о файлах mp3
 python-future # Чистая поддержка одного источника для Python 3 и 2
+python-gevent # Сетевая библиотека Python, которая использует greenlet и libev для простого и масштабируемого параллелизма
+python-gevent-websocket # Библиотека WebSocket для сетевой библиотеки gevent
 python-gobject # Привязки Python для GLib / GObject / GIO / GTK +
 python-httplib2 # Обширная клиентская библиотека HTTP, поддерживающая множество функций
+
+
 
 
 
@@ -1374,14 +1383,6 @@ https://aur.archlinux.org/python-coincurve.git
 
 -------------------------------------------
 
-python-distlib 0.3.1-1
-python-distro 1.5.0-1
-python-distutils-extra 2.39-5
-python-docopt 0.6.2-7
-python-entrypoints 0.3-3
-python-eyed3 1:0.8-5
-python-gevent 20.6.2-1
-python-gevent-websocket 0.10.1-4
 python-gobject 3.36.1-1
 python-greenlet 0.4.16-1
 python-html5lib 1.1-1
@@ -1393,7 +1394,7 @@ python-keyutils # Набор привязок python для keyutils
 python-libarchive-c # Интерфейс Python для libarchive
 python-lxml-docs # Связывание Python для библиотек libxml2 и libxslt (документы)
 python-magic # Привязки Python к волшебной библиотеке
-python-mako 1.1.3-1
+python-mako # Сверхбыстрый язык шаблонов, который заимствует лучшие идеи из существующих языков шаблонов
 python-markdown 3.2.2-1
 python-markupsafe 1.1.1-4
 python-maxminddb 2.0.2-1
@@ -1468,7 +1469,7 @@ python-ujson 3.1.0-1
 python-unidecode 1.1.1-4
 python-urllib3 1.25.10-1
 python-webencodings 0.5.1-4
-python-websockets 8.1-1
+python-websockets # Реализация протокола WebSocket на Python (RFC 6455)
 python-yaml 5.3.1-2
 python-zope-event 4.4-3
 python-zope-interface 5.1.0-1
