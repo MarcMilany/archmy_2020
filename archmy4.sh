@@ -286,6 +286,7 @@ yay -S ttf-clear-sans --noconfirm  # Универсальный шрифт OpenT
 yay -S ttf-monaco --noconfirm  # Моноширинный шрифт без засечек Monaco со специальными символами
 yay -S montserrat-font-ttf --noconfirm  # Геометрический шрифт с кириллицей и расширенной латиницей от Джульетты Улановской
 yay -S ttf-paratype --noconfirm  # Семейство шрифтов ParaType с расширенными наборами символов кириллицы и латиницы
+yay -S powerline-fonts-git --noconfirm  # Исправленные шрифты для пользователей Powerline
 yay -S ttf-comfortaa --noconfirm  # Закругленный геометрический шрифт без засечек от Google, автор - Йохан Аакерлунд
 yay -S artwiz-fonts --noconfirm  # Это набор (улучшенных) шрифтов artwiz
 yay -S ttf-cheapskate --noconfirm  # Шрифты TTF от Дастина Норландера
@@ -298,7 +299,6 @@ yay -S ttf-dejavu-sans-mono-powerline-git --noconfirm  # DejaVu Sans Mono для
 yay -S ttf-material-icons-git --noconfirm  # Шрифт значка Google Material Design
 # yay -S ttf-wps-fonts --noconfirm  # Если установлен WPS - Символьные шрифты требуются wps-office
 
-yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
