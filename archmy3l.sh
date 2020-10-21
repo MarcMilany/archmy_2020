@@ -524,16 +524,44 @@ sudo pacman-key --populate archlinux  # поиск ключей
 echo ""
 echo " Обновление ключей... "  
 sudo pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
-###  sudo pacman -S archlinux-keyring  # (обновление пакета ключей подписи)
-### sudo pacman -Sy archlinux-keyring
+echo ""
 echo "Обновление баз данных пакетов..."
 ###  sudo pacman -Sy
 sudo pacman -Syy  # обновление баз пакмэна (pacman) 
 # sudo pacman -Syyu  # Обновим вашу систему (базу данных пакетов)
 # sudo pacman -Syyu  --noconfirm  
+clear
 echo ""
-echo " Установка Приложение GNOME для управления ключами PGP " 
-sudo pacman -S seahorse  # Приложение GNOME для управления ключами PGP (управления паролями и ключами шифрования)
+echo " Обновление и добавление новых ключей выполнено "
+echo ""
+echo -e "${BLUE}:: ${NC}Установить приложение Seahorse для управления вашими паролями и ключами шифрования?"
+echo -e "${CYAN}=> ${BOLD}Seahorse - специализированное Vala / GTK / Gnome (GCR/GCK) графическое приложение для создания и централизованного хранения ключей шифрования и паролей. ${NC}"
+echo " Основным назначением Seahorse является предоставление простого в использовании инструмента для управления ключами шифрования и паролями, а также операций шифрования. Приложение является графическим интерфейсом (GUI) к консольным утилитам GnuPG (GPG) и SSH (Secure Shell). "
+echo " GPG / GnuPG (GNU Privacy Guard) - консольная утилита для шифрования информации и создания электронных цифровых подписей с помощью различных алгоритмов (RSA, DSA, AES и др...). "
+echo " Утилита создана как свободная альтернатива проприетарному PGP (Pretty Good Privacy) и полностью совместима с стандартом IETF OpenPGP (может взаимодействовать с PGP и другими OpenPGP-совместимыми системами). "
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. "
+# Be careful! The installation process was fully automatic.
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
+while 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Установить Seahorse,     0 - НЕТ - Пропустить установку: " i_seahorse  # sends right after the keypress; # отправляет сразу после нажатия клавиши    
+    echo ''
+    [[ "$i_seahorse" =~ [^10] ]]
+do
+    :
+done 
+if [[ $i_seahorse == 0 ]]; then 
+echo ""   
+echo " Установка приложения для управления паролями и ключами шифрования пропущена "
+elif [[ $i_seahorse == 1 ]]; then
+  echo ""    
+  echo " Установка приложение Seahorse для управления ключами PGP "
+sudo pacman -S seahorse --noconfirm  # Приложение GNOME для управления ключами PGP (управления паролями и ключами шифрования)
+echo ""
+echo " Установка Приложение GNOME для управления ключами PGP "
 fi
 fi
 sleep 1
