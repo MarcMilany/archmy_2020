@@ -531,7 +531,8 @@ done
 echo ""
 echo " Обновление ключей пропущено " 
 elif [[ $x_key == 1 ]]; then
-###  clear
+clear
+echo ""
 echo " Выполним резервное копирование каталога (/etc/pacman.d/gnupg), на всякий случай "
 # Файлы конфигурации по умолчанию: ~/.gnupg/gpg.conf и ~/.gnupg/dirmngr.conf.
 sudo cp -R /etc/pacman.d/gnupg /etc/pacman.d/gnupg_back
