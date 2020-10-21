@@ -561,6 +561,7 @@ echo '#HARDWARECLOCK=UTC' >> /etc/vconsole.conf
 echo '#HARDWARECLOCK=localtime' >> /etc/vconsole.conf
 echo '#USECOLOR=yes' >> /etc/vconsole.conf
 echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf
+#echo 'COMPRESSION="xz"' >> /etc/mkinitcpio.conf
 #echo -e "KEYMAP=ru\nFONT=cyr-sun16\nFONT_MAP=\CONSOLEMAP=" > /etc/vconsole.conf
 
 #-----------------------------------------------------------
