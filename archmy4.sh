@@ -1346,7 +1346,18 @@ python-future # Чистая поддержка одного источника 
 python-gevent # Сетевая библиотека Python, которая использует greenlet и libev для простого и масштабируемого параллелизма
 python-gevent-websocket # Библиотека WebSocket для сетевой библиотеки gevent
 python-gobject # Привязки Python для GLib / GObject / GIO / GTK +
+python-greenlet # Легкое параллельное программирование в процессе
+python-html5lib # Парсер / токенизатор HTML Python на основе спецификации WHATWG HTML5
 python-httplib2 # Обширная клиентская библиотека HTTP, поддерживающая множество функций
+python-jedi # Отличное автозаполнение для Python
+python-jeepney # Низкоуровневая оболочка протокола Python DBus на чистом уровне
+python-jinja # Простой питонический язык шаблонов, написанный на Python
+python-keyring # Безопасное хранение и доступ к вашим паролям
+python-keyutils # Набор привязок python для keyutils
+python-libarchive-c # Интерфейс Python для libarchive
+python-lxml-docs # Связывание Python для библиотек libxml2 и libxslt (документы)
+python-magic # Привязки Python к волшебной библиотеке
+python-mako # Сверхбыстрый язык шаблонов, который заимствует лучшие идеи из существующих языков шаблонов
 
 
 
@@ -1383,18 +1394,6 @@ https://aur.archlinux.org/python-coincurve.git
 
 -------------------------------------------
 
-python-gobject 3.36.1-1
-python-greenlet 0.4.16-1
-python-html5lib 1.1-1
-python-jedi 0.17.2-1
-python-jeepney 0.4.3-1
-python-jinja 2.11.2-1
-python-keyring # Безопасное хранение и доступ к вашим паролям
-python-keyutils # Набор привязок python для keyutils
-python-libarchive-c # Интерфейс Python для libarchive
-python-lxml-docs # Связывание Python для библиотек libxml2 и libxslt (документы)
-python-magic # Привязки Python к волшебной библиотеке
-python-mako # Сверхбыстрый язык шаблонов, который заимствует лучшие идеи из существующих языков шаблонов
 python-markdown 3.2.2-1
 python-markupsafe 1.1.1-4
 python-maxminddb 2.0.2-1
