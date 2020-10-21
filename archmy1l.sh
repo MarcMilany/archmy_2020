@@ -352,7 +352,7 @@ echo ""
 echo -e "${BLUE}:: ${NC}Посмотрим структуру диска созданного установщиком"
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
 read -p " => Укажите диск (sda/sdb например sda или sdb) : " cfd
-sgdisk -p /dev/$cfd  #sda sdb sdc sdd
+sgdisk -p /dev/$cfd  #sda; sdb; sdc; sdd
 
 echo ""
 echo -e "${RED}==> ${NC}Удалить (стереть) таблицу разделов на выбранном диске (sdX)?"
@@ -369,7 +369,7 @@ done
 if [[ $sgdisk == 1 ]]; then
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "    
 read -p " => Укажите диск (sda/sdb например sda или sdb) : " cfd
-sgdisk --zap-all /dev/$cfd   #sda sdb sdc sdd
+sgdisk --zap-all /dev/$cfd   #sda; sdb; sdc; sdd
   echo " Создание новых записей GPT в памяти. "
   echo " Структуры данных GPT уничтожены! Теперь вы можете разбить диск на разделы с помощью fdisk или других утилит. " 
 elif [[ $sgdisk == 0 ]]; then
