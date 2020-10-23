@@ -3770,7 +3770,9 @@ cd ..   # поднимаемся на уровень выше (выходим и
 # rm -rf libgksu 
 rm -Rf gstreamer0.10
 #######################
-echo "" 
+echo ""
+echo " Создадим backup папки /.thumbnails (на всякий случай) "
+mv ~/.thumbnails ~/.thumbnails.bak 
 echo " Удалим миниатюры фото, которые накапились в системе "
 ### thunar -q  # запустим менеджер thunar
 ### killall thunar  # завершим работу менеджера thunar 
@@ -3986,7 +3988,7 @@ sudo rm -rf ~/archmy3l
 
 clear
 echo ""
-echo -e "${BLUE}:: ${NC}Посмотрим список Установленного софта (пакетов)"
+echo -e "${BLUE}:: ${NC}Посмотрим, сохраним список Установленного софта (пакетов)"
 #echo " Посмотрим список Установленного софта (пакетов) "
 # echo 'Список Установленного софта (пакетов)'
 # List of Installed software (packages)
