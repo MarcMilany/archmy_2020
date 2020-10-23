@@ -4021,8 +4021,8 @@ echo ""
 echo -e "${BLUE}:: ${NC}Сохранить список Установленного софта (пакетов)?"
 #echo " Сохранить список Установленного софта (пакетов)? "
 # Save a list of Installed software (packages)?
-echo -e "${CYAN}=> ${NC}  ..."
-echo " Список пакетов  "
+echo -e "${CYAN}=> ${NC}В домашней директории пользователя бут создана папка (pkglist), в которой будет созданы и сохранены списки установленного софта (пакетов)..."
+echo " Список пакетов будет создан как в подробном, так и в кратком виде (подробно: pkglist_full.txt; .pkglist.txt; кратко: pkglist.txt; aurlist.txt) "
 echo -e "${YELLOW}==> ${NC} Будьте внимательны! Вы можете пропустить это действие..."
 echo ""
 while
@@ -4039,35 +4039,15 @@ echo ""
 echo " Сохранение списка установленного софта (пакетов) пропущено "      
 elif [[ $set_pkglist == 1 ]]; then
 echo ""
-echo " Список установленного софта (пакетов) "
+echo " Создадим папку (pkglist) в домашней директории "
 mkdir ~/pkglist
-sudo pacman -Qqe  #
-
-
-
-Список установленных пакетов в системе. Подробно.
-
-LANG=C pacman -Sl | awk '/\[installed\]$/ {print $1 "/" $2 "-" $3}' > ~/pkglist_full.txt
-
-LANG=C pacman -Sl | awk '/\[installed\]$/ {print $2}' > ~/.pkglist.txt
-Кратко.
-
-pacman -Qqe > ~/pkglist.txt
-
-pacman -Qqm > ~/aurlist.txt
-
-
-
-
-
-
-elif [[ $t_list == 1 ]]; then
-echo ""
-echo " Список установленного софта (пакетов) "
-echo ""
-
-
-
+echo " Сохранение списка установленного софта (пакетов). Подробно "
+LANG=C pacman -Sl | awk '/\[installed\]$/ {print $1 "/" $2 "-" $3}' > ~/pkglist/pkglist_full.txt
+LANG=C pacman -Sl | awk '/\[installed\]$/ {print $2}' > ~/pkglist/.pkglist.txt
+echo " Сохранение списка установленного софта (пакетов). Кратко "
+sudo pacman -Qqe > ~/pkglist/pkglist.txt
+sudo pacman -Qqm > ~/pkglist/aurlist.txt
+echo " Сохранение списка установленного софта (пакетов) выполнено "
 fi
 fi
 ###########################################
