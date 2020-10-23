@@ -290,7 +290,7 @@ if [[ $x_ram == 1 ]]; then
   clear
   echo ""
   echo " Создадим загрузочный RAM диск - для ядра (linux) "
-  mkinitcpio -p linux   # mkinitcpio -P linux  
+  mkinitcpio -p linux   # mkinitcpio -P linux  - при ошибке! 
 elif [[ $x_ram == 2 ]]; then
   clear
   echo ""
