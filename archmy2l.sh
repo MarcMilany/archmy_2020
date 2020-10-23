@@ -289,26 +289,33 @@ if [[ $x_ram == 1 ]]; then
   clear
   echo ""
   echo " Создадим загрузочный RAM диск - для ядра (linux) "
-  mkinitcpio -p linux   # mkinitcpio -P linux  
+  mkinitcpio -p linux   # mkinitcpio -P linux 
+  echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf 
+# echo 'COMPRESSION="xz"' >> /etc/mkinitcpio.conf  
 elif [[ $x_ram == 2 ]]; then
   clear
   echo ""
   echo " Создадим загрузочный RAM диск - для ядра (linux-hardened) "
-  mkinitcpio -p linux-hardened   
+  mkinitcpio -p linux-hardened
+  echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf  
+# echo 'COMPRESSION="xz"' >> /etc/mkinitcpio.conf  
 elif [[ $x_ram == 3 ]]; then
   clear
   echo ""
   echo " Создадим загрузочный RAM диск - для ядра (linux-lts) "
-  mkinitcpio -p linux-lts  
+  mkinitcpio -p linux-lts 
+  echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf 
+# echo 'COMPRESSION="xz"' >> /etc/mkinitcpio.conf  
 elif [[ $x_ram == 4 ]]; then
   clear
   echo ""
   echo " Создадим загрузочный RAM диск - для ядра (linux-zen) " 
-  mkinitcpio -p linux-zen 
+  mkinitcpio -p linux-zen
+  echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf 
+# echo 'COMPRESSION="xz"' >> /etc/mkinitcpio.conf  
 elif [[ $x_ram == 0 ]]; then
   echo " Создание загрузочного RAM диска пропущено " 
 fi
-#echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf
 
 sleep 01
 clear
