@@ -3772,14 +3772,16 @@ rm -Rf gstreamer0.10
 #######################
 echo ""
 echo " Создадим backup папки /.thumbnails (на всякий случай) "
-mv ~/.thumbnails ~/.thumbnails.bak 
+sudo mv ~/.thumbnails ~/.thumbnails.bak
+# mv ~/.thumbnails ~/.thumbnails.bak 
 echo " Удалим миниатюры фото, которые накапились в системе "
 ### thunar -q  # запустим менеджер thunar
 ### killall thunar  # завершим работу менеджера thunar 
 sudo rm -rf ~/.thumbnails/  # удаляет миниатюры фото, которые накапливаются в системе
 #sudo rm -rf ~/.cache/thumbnails/*
 echo " Создадим backup папки /.config/Thunar "
-mv ~/.config/Thunar ~/.config/Thunar.bak
+sudo mv ~/.config/Thunar ~/.config/Thunar.bak
+# mv ~/.config/Thunar ~/.config/Thunar.bak
 echo " Выполним резервное копирование каталога /usr/share/mime, на всякий случай "
 sudo cp -R /usr/share/mime /usr/share/mime_back
 #cp -R /usr/share/mime /usr/share/mime_back
