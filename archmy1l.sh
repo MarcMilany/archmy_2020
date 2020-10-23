@@ -904,7 +904,7 @@ done
   echo " Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist "
 rm /mnt/etc/pacman.d/mirrorlist 
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
-pacman -S reflector --noconfirm
+pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman
 reflector --verbose --country 'Russia' -l 7 -p https -p http -n 7 --save /etc/pacman.d/mirrorlist --sort rate
   echo "" 
   echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
@@ -916,7 +916,7 @@ elif [[ $zerkala == 2 ]]; then
   echo " Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist "
 rm /mnt/etc/pacman.d/mirrorlist    
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
-pacman -S reflector --noconfirm
+pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman
 reflector --verbose -l 50 -p http --sort rate --save /etc/pacman.d/mirrorlist
 reflector --verbose -l 15 --sort rate --save /etc/pacman.d/mirrorlist
   echo "" 
@@ -929,7 +929,7 @@ elif [[ $zerkala == 3 ]]; then
   echo " Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist "
 rm /mnt/etc/pacman.d/mirrorlist    
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
-pacman -S reflector --noconfirm 
+pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman 
 reflector --verbose --country Kazakhstan -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist 
   echo "" 
   echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
@@ -941,7 +941,7 @@ elif [[ $zerkala == 4 ]]; then
   echo " Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist "
 rm /mnt/etc/pacman.d/mirrorlist     
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
-pacman -S reflector --noconfirm
+pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman
 reflector -c "Russia" -c "Belarus" -c "Ukraine" -c "Poland" -f 20 -l 20 -p https -p http -n 20 --save /etc/pacman.d/mirrorlist --sort rate
   echo "" 
   echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
@@ -953,7 +953,7 @@ cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup
    echo ' Смена зеркал пропущена. '   
 fi
 
-clear
+#clear
 #echo ""
 #echo -e "${BLUE}:: ${NC}Копируем созданный список зеркал (mirrorlist) в /mnt"
 #cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
@@ -961,6 +961,7 @@ clear
 #echo -e "${BLUE}:: ${NC}Копируем резервного списка зеркал (mirrorlist.backup) в /mnt"
 #cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup
 
+clear
 echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал /mnt/etc/pacman.d/mirrorlist"
 echo ""
 cat /mnt/etc/pacman.d/mirrorlist
