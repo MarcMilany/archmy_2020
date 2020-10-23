@@ -4040,12 +4040,21 @@ echo " Сохранение списка установленного софта
 elif [[ $set_pkglist == 1 ]]; then
 echo ""
 echo " Список установленного софта (пакетов) "
-echo ""
+mkdir ~/pkglist
 sudo pacman -Qqe  #
 
 
 
+Список установленных пакетов в системе. Подробно.
 
+LANG=C pacman -Sl | awk '/\[installed\]$/ {print $1 "/" $2 "-" $3}' > ~/pkglist_full.txt
+
+LANG=C pacman -Sl | awk '/\[installed\]$/ {print $2}' > ~/.pkglist.txt
+Кратко.
+
+pacman -Qqe > ~/pkglist.txt
+
+pacman -Qqm > ~/aurlist.txt
 
 
 
@@ -4059,7 +4068,7 @@ echo ""
 
 
 
-
+fi
 fi
 ###########################################
 clear
