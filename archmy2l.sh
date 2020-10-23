@@ -260,6 +260,8 @@ echo '#TIMEZONE=Europe/Moscow' >> /etc/vconsole.conf
 echo '#HARDWARECLOCK=UTC' >> /etc/vconsole.conf
 echo '#HARDWARECLOCK=localtime' >> /etc/vconsole.conf
 echo '#USECOLOR=yes' >> /etc/vconsole.conf
+echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf 
+# echo 'COMPRESSION="xz"' >> /etc/mkinitcpio.conf
 
 #clear
 echo ""
@@ -288,30 +290,22 @@ if [[ $x_ram == 1 ]]; then
   clear
   echo ""
   echo " Создадим загрузочный RAM диск - для ядра (linux) "
-  mkinitcpio -p linux   # mkinitcpio -P linux 
-  echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf 
-# echo 'COMPRESSION="xz"' >> /etc/mkinitcpio.conf  
+  mkinitcpio -p linux   # mkinitcpio -P linux  
 elif [[ $x_ram == 2 ]]; then
   clear
   echo ""
   echo " Создадим загрузочный RAM диск - для ядра (linux-hardened) "
-  mkinitcpio -p linux-hardened
-  echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf  
-# echo 'COMPRESSION="xz"' >> /etc/mkinitcpio.conf  
+  mkinitcpio -p linux-hardened  
 elif [[ $x_ram == 3 ]]; then
   clear
   echo ""
   echo " Создадим загрузочный RAM диск - для ядра (linux-lts) "
-  mkinitcpio -p linux-lts 
-  echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf 
-# echo 'COMPRESSION="xz"' >> /etc/mkinitcpio.conf  
+  mkinitcpio -p linux-lts   
 elif [[ $x_ram == 4 ]]; then
   clear
   echo ""
   echo " Создадим загрузочный RAM диск - для ядра (linux-zen) " 
-  mkinitcpio -p linux-zen
-  echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf 
-# echo 'COMPRESSION="xz"' >> /etc/mkinitcpio.conf  
+  mkinitcpio -p linux-zen  
 elif [[ $x_ram == 0 ]]; then
   echo " Создание загрузочного RAM диска пропущено " 
 fi
