@@ -867,10 +867,10 @@ echo -e "${BLUE}:: ${NC}Просмотреть содержимое файла f
 cat /mnt/etc/fstab
 sleep 02
  
-clear
-echo ""
-echo -e "${BLUE}:: ${NC}Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist"
-rm /mnt/etc/pacman.d/mirrorlist 
+#clear
+#echo ""
+#echo -e "${BLUE}:: ${NC}Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist"
+#rm /mnt/etc/pacman.d/mirrorlist 
 
 echo ""
 echo -e "${GREEN}==> ${NC}Сменить зеркала для увеличения скорости загрузки пакетов?" 
@@ -900,38 +900,66 @@ do
     :
 done 
  if [[ $zerkala == 1 ]]; then
-  echo ""  
+  echo "" 
+  echo " Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist "
+rm /mnt/etc/pacman.d/mirrorlist 
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
 pacman -S reflector --noconfirm
-reflector --verbose --country 'Russia' -l 7 -p https -p http -n 7 --save /etc/pacman.d/mirrorlist --sort rate  
+reflector --verbose --country 'Russia' -l 7 -p https -p http -n 7 --save /etc/pacman.d/mirrorlist --sort rate
+  echo "" 
+  echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
+cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
+  echo " Копируем резервного списка зеркал (mirrorlist.backup) в /mnt "
+cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup   
 elif [[ $zerkala == 2 ]]; then
-  echo ""  
+  echo "" 
+  echo " Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist "
+rm /mnt/etc/pacman.d/mirrorlist    
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
 pacman -S reflector --noconfirm
 reflector --verbose -l 50 -p http --sort rate --save /etc/pacman.d/mirrorlist
 reflector --verbose -l 15 --sort rate --save /etc/pacman.d/mirrorlist
+  echo "" 
+  echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
+cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
+  echo " Копируем резервного списка зеркал (mirrorlist.backup) в /mnt "
+cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup
 elif [[ $zerkala == 3 ]]; then
-  echo ""  
+  echo "" 
+  echo " Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist "
+rm /mnt/etc/pacman.d/mirrorlist    
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
 pacman -S reflector --noconfirm 
-reflector --verbose --country Kazakhstan -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist  
+reflector --verbose --country Kazakhstan -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist 
+  echo "" 
+  echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
+cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
+  echo " Копируем резервного списка зеркал (mirrorlist.backup) в /mnt "
+cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup 
 elif [[ $zerkala == 4 ]]; then
-  echo ""  
+  echo ""
+  echo " Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist "
+rm /mnt/etc/pacman.d/mirrorlist     
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
 pacman -S reflector --noconfirm
 reflector -c "Russia" -c "Belarus" -c "Ukraine" -c "Poland" -f 20 -l 20 -p https -p http -n 20 --save /etc/pacman.d/mirrorlist --sort rate
+  echo "" 
+  echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
+cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
+  echo " Копируем резервного списка зеркал (mirrorlist.backup) в /mnt "
+cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup
   elif [[ $zerkala == 0 ]]; then
    echo "" 
    echo ' Смена зеркал пропущена. '   
 fi
 
 clear
-echo ""
-echo -e "${BLUE}:: ${NC}Копируем созданный список зеркал (mirrorlist) в /mnt"
-cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
+#echo ""
+#echo -e "${BLUE}:: ${NC}Копируем созданный список зеркал (mirrorlist) в /mnt"
+#cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
 
-echo -e "${BLUE}:: ${NC}Копируем резервного списка зеркал (mirrorlist.backup) в /mnt"
-cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup
+#echo -e "${BLUE}:: ${NC}Копируем резервного списка зеркал (mirrorlist.backup) в /mnt"
+#cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup
 
 echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал /mnt/etc/pacman.d/mirrorlist"
 echo ""
