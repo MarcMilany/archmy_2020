@@ -278,18 +278,18 @@ elif [[ $x_key == 1 ]]; then
   clear
 echo ""
 echo " Создаётся генерация мастер-ключа (брелка) pacman "  # gpg –refresh-keys
-sudo pacman-key --init  # генерация мастер-ключа (брелка) pacman
+pacman-key --init  # генерация мастер-ключа (брелка) pacman
 echo " Далее идёт поиск ключей... "
-sudo pacman-key --populate archlinux  # поиск ключей
+pacman-key --populate archlinux  # поиск ключей
 echo ""
 echo " Обновление ключей... "  
-sudo pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
+pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
 echo ""
 echo "Обновим базы данных пакетов..."
 ###  sudo pacman -Sy
-sudo pacman -Syy  # обновление баз пакмэна (pacman) 
-# sudo pacman -Syyu  # Обновим вашу систему (базу данных пакетов)
-# sudo pacman -Syyu  --noconfirm
+pacman -Syy  # обновление баз пакмэна (pacman) 
+# pacman -Syyu  # Обновим вашу систему (базу данных пакетов)
+# pacman -Syyu  --noconfirm
 echo ""
 echo " Обновление и добавление новых ключей выполнено "
 fi
