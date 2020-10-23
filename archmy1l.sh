@@ -1001,7 +1001,7 @@ if [[ $int == 1 ]]; then
  echo " Первый этап установки Arch'a закончен " 
  echo 'Установка продолжится в ARCH-LINUX chroot' 
 echo ""   
-# pacman -S curl --noconfirm --noprogressbar
+# pacman -S curl --noconfirm --noprogressbar  # Утилита и библиотека для поиска URL
 #arch-chroot /mnt sh -c "$(curl -fsSL https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh)"
 arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"
 echo " ############################################### "
@@ -1012,7 +1012,7 @@ umount -a
 reboot
   elif [[ $int == 2 ]]; then
   echo ""
-  pacman -S wget --noconfirm --noprogressbar 
+  pacman -S wget --noconfirm --noprogressbar  # Сетевая утилита для извлечения файлов из Интернета
   wget -P /mnt https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh
   chmod +x /mnt/archmy2l.sh 
   echo ""
@@ -1032,7 +1032,7 @@ umount -a
 reboot 
 elif [[ $int == 3 ]]; then
 echo ""
- #pacman -S curl --noconfirm --noprogressbar
+ #pacman -S curl --noconfirm --noprogressbar  # Утилита и библиотека для поиска URL
   curl -LO https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh
   mv archmy2l.sh /mnt
   chmod +x /mnt/archmy2l.sh
