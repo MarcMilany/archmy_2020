@@ -986,9 +986,9 @@ echo ""
 while 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p  " 
-    1 - Stable Internet traffic (dhcpcd),  
+    1 - Stable Internet traffic (dhcpcd, wifi),  
 
-    2 - Not Stable Internet traffic (wifi), 
+    2 - Not Stable Internet traffic (dhcpcd, wifi), 
 
     3 - Alternative Option (dhcpcd, wifi): " int # sends right after the keypress; # отправляет сразу после нажатия клавиши 
     echo ''
