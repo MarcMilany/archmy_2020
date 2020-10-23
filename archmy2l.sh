@@ -934,6 +934,9 @@ done
 if [[ $i_deepin  == 0 ]]; then
 echo " Буду использовать DM (Display manager) "
 elif [[ $i_deepin  == 1 ]]; then
+  echo ""  
+  echo " Действия по настройке автовхода без DM (Display manager) "  
+  echo " Поскольку реализация автозагрузки окружения реализована через startx - (иксы), то если Вы установили X.Org Server возможно пакет (xorg-xinit) - уже установлен "    
 pacman -S xorg-xinit --noconfirm
 cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
 chown $username:users /home/$username/.xinitrc
@@ -979,6 +982,9 @@ done
 if [[ $i_mate  == 0 ]]; then
 echo " Буду использовать DM (Display manager) "
 elif [[ $i_mate  == 1 ]]; then
+  echo ""  
+  echo " Действия по настройке автовхода без DM (Display manager) "  
+  echo " Поскольку реализация автозагрузки окружения реализована через startx - (иксы), то если Вы установили X.Org Server возможно пакет (xorg-xinit) - уже установлен "    
 pacman -S xorg-xinit --noconfirm
 cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
 chown $username:users /home/$username/.xinitrc
