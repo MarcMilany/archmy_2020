@@ -273,7 +273,10 @@ do
 done
  if [[ $x_key == 0 ]]; then
 echo ""
-echo " Обновление ключей пропущено " 
+echo " Обновление ключей пропущено "
+echo ""
+echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
+pacman -Sy --noconfirm 
 elif [[ $x_key == 1 ]]; then
   clear
 echo ""
