@@ -921,7 +921,7 @@ do
 done
 if [[ $prog_set  == 1 ]]; then
  echo " Устанавливаем программы (пакеты) для определения другой-(их) OS "		
-pacman -S os-prober mtools fuse --noconfirm  #grub-customizer
+pacman -S os-prober mtools fuse --noconfirm  #grub-customizer  # Утилита для обнаружения других ОС на наборе дисков; Сборник утилит для доступа к дискам MS-DOS; 
  echo " Программы (пакеты) установлены "  	
  elif [[ $prog_set  == 0 ]]; then
 echo " Установка программ (пакетов) пропущена. "
