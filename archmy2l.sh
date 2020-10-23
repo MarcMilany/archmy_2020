@@ -837,7 +837,10 @@ do
 done
 if [[ $i_gnome  == 0 ]]; then
 echo " Буду использовать DM (Display manager) "
-elif [[ $i_gnome  == 1 ]]; then  
+elif [[ $i_gnome  == 1 ]]; then 
+  echo ""  
+  echo " Действия по настройке автовхода без DM (Display manager) "  
+  echo " Поскольку реализация автозагрузки окружения реализована через startx - (иксы), то если Вы установили X.Org Server возможно пакет (xorg-xinit) - уже установлен " 
 pacman -S xorg-xinit --noconfirm
 cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc # копируем файл .xinitrc в каталог пользователя
 chown $username:users /home/$username/.xinitrc  # даем доступ пользователю к файлу
@@ -883,6 +886,9 @@ done
 if [[ $i_lxde  == 0 ]]; then
 echo " Буду использовать DM (Display manager) "
 elif [[ $i_lxde  == 1 ]]; then
+  echo ""  
+  echo " Действия по настройке автовхода без DM (Display manager) "  
+  echo " Поскольку реализация автозагрузки окружения реализована через startx - (иксы), то если Вы установили X.Org Server возможно пакет (xorg-xinit) - уже установлен "    
 pacman -S xorg-xinit --noconfirm
 cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
 chown $username:users /home/$username/.xinitrc
