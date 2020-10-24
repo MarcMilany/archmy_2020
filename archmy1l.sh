@@ -17,8 +17,7 @@ ARCHMY1_LANG="russian"  # Installer default language (Язык установк�
 
 script_path=$(readlink -f ${0%/*})
 
-umask 0022 # Определение окончательных прав доступа
-# Для суперпользователя (root) umask по умолчанию равна 0022
+umask 0022 # Определение окончательных прав доступа - Для суперпользователя (root) umask по умолчанию равна 0022
 
 ##################################################################
 ##### <<<Arch Linux Fast Install LegasyBIOS (arch2020)>>>    #####
@@ -161,8 +160,7 @@ ${NC}
 Вы используйте его на свой страх и риск, или изменяйте под свои личные нужды."
 }
 
-# Команды по установке :
-# archiso login: root (automatic login)
+# Команды по установке : archiso login: root (automatic login)
 
 echo -e "${RED}=> ${NC}Acceptable limit for the list of arguments..."
 # Допустимый лимит (предел) списка аргументов...'
@@ -175,8 +173,8 @@ umask
 
 echo -e "${BLUE}:: ${NC}Install the Terminus font"
 # Установим шрифт Terminus
-pacman -Sy terminus-font --noconfirm
-#pacman -Syy terminus-font
+pacman -Sy terminus-font --noconfirm  # Моноширинный растровый шрифт (для X11 и консоли)
+#pacman -Syy terminus-font  # Моноширинный растровый шрифт (для X11 и консоли)
 
 echo ""
 echo -e "${BLUE}:: ${NC}Setting up the Russian language, changing the console font to one that supports Cyrillic for ease of use" 
