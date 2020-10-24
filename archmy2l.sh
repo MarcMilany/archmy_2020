@@ -262,7 +262,7 @@ echo '#HARDWARECLOCK=UTC' >> /etc/vconsole.conf
 echo '#HARDWARECLOCK=localtime' >> /etc/vconsole.conf
 echo '#USECOLOR=yes' >> /etc/vconsole.conf
 echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf 
-# echo 'COMPRESSION="xz"' >> /etc/mkinitcpio.conf
+#echo 'COMPRESSION="xz"' >> /etc/mkinitcpio.conf
 
 #clear
 echo ""
@@ -310,8 +310,8 @@ elif [[ $x_ram == 4 ]]; then
 elif [[ $x_ram == 0 ]]; then
   echo " Создание загрузочного RAM диска пропущено " 
 fi
-
 sleep 01
+
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Создаём root пароль (Root Password)"
