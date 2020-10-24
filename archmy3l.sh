@@ -3772,8 +3772,8 @@ rm -Rf gstreamer0.10
 #######################
 echo ""
 echo " Создадим backup папки /.thumbnails (на всякий случай) "
-sudo mv ~/.thumbnails ~/.thumbnails.bak
-# mv ~/.thumbnails ~/.thumbnails.bak 
+sudo mv ~/.cache/.thumbnails ~/.cache/.thumbnails.bak
+# mv ~/.cache/.thumbnails ~/.cache/.thumbnails.bak 
 echo " Удалим миниатюры фото, которые накапились в системе "
 ### thunar -q  # запустим менеджер thunar
 ### killall thunar  # завершим работу менеджера thunar 
