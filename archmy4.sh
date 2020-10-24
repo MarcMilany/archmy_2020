@@ -1703,6 +1703,9 @@ https://www.archlinux.org/packages/extra/any/mobile-broadband-provider-info/
 gptfdisk - # Инструмент для создания разделов в текстовом режиме, который работает с дисками с таблицей разделов GUID (GPT) 
 https://www.archlinux.org/packages/extra/x86_64/gptfdisk/
 
+alacarte - # Редактор меню для gnome
+https://www.archlinux.org/packages/extra/any/alacarte/
+
 autofs - # Средство автомонтирования на основе ядра для Linux
 https://www.archlinux.org/packages/community/x86_64/autofs/
 
