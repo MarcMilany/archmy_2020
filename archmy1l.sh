@@ -217,7 +217,7 @@ echo -e "${CYAN}==> ${NC}Если пинг идёт едем дальше ... :)
 ### Display banner (Дисплей баннер)
 _arch_fast_install_banner
 
-sleep 03
+sleep 02
 echo ""
 ### Installing ArchLinux 
 echo -e "${GREEN}==> ${NC}Вы готовы приступить к установке Arch Linux? "
@@ -297,10 +297,6 @@ echo ""
 echo " Обновление и добавление новых ключей выполнено "
 fi
 sleep 1
-
-#echo ""
-#echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
-#pacman -Sy --noconfirm
 
 clear
 echo ""
@@ -869,11 +865,6 @@ echo ""
 echo -e "${BLUE}:: ${NC}Просмотреть содержимое файла fstab"
 cat /mnt/etc/fstab
 sleep 02
- 
-#clear
-#echo ""
-#echo -e "${BLUE}:: ${NC}Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist"
-#rm /mnt/etc/pacman.d/mirrorlist 
 
 clear
 echo ""
@@ -957,15 +948,8 @@ cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup
    echo ' Смена зеркал пропущена. '   
 fi
 
-#clear
-#echo ""
-#echo -e "${BLUE}:: ${NC}Копируем созданный список зеркал (mirrorlist) в /mnt"
-#cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
-
-#echo -e "${BLUE}:: ${NC}Копируем резервного списка зеркал (mirrorlist.backup) в /mnt"
-#cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup
-
 clear
+echo ""
 echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал /mnt/etc/pacman.d/mirrorlist"
 echo ""
 cat /mnt/etc/pacman.d/mirrorlist
