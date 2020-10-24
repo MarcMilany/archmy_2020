@@ -161,7 +161,6 @@ ${NC}
 }
 
 # Команды по установке : archiso login: root (automatic login)
-
 echo -e "${RED}=> ${NC}Acceptable limit for the list of arguments..."
 # Допустимый лимит (предел) списка аргументов...'
 getconf ARG_MAX
