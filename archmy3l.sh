@@ -1244,6 +1244,7 @@ sudo pacman -S lha unace lrzip sharutils arj cabextract --noconfirm # Беспл
 sudo pacman -S uudeview --noconfirm  # UUDeview помогает передавать и получать двоичные файлы с помощью почты или групп новостей. Включает файлы библиотеки - (мощный декодер бинарных файлов) http://www.fpx.de/fp/Software/UUDeview/
 sudo pacman -S snappy --noconfirm  # Библиотека быстрого сжатия и распаковки (на порядок быстрее других) https://github.com/google/snappy
 sudo pacman -S minizip --noconfirm  # Mini zip и unzip на основе zlib
+sudo pacman -S quazip --noconfirm  # Оболочка C ++ для пакета C ZIP / UNZIP Жиля Воллана
 echo "" 
 echo " Установка дополнительных утилит (пакетов) для работы с архивами выполнена "
 fi
