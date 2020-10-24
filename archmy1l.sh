@@ -217,7 +217,7 @@ echo -e "${CYAN}==> ${NC}Если пинг идёт едем дальше ... :)
 ### Display banner (Дисплей баннер)
 _arch_fast_install_banner
 
-sleep 02
+sleep 01
 echo ""
 ### Installing ArchLinux 
 echo -e "${GREEN}==> ${NC}Вы готовы приступить к установке Arch Linux? "
