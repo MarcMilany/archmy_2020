@@ -1694,8 +1694,9 @@ https://www.archlinux.org/packages/community/x86_64/libfm-gtk2/
 hardinfo - # Системная информация и инструмент тестирования
 https://www.archlinux.org/packages/community/x86_64/hardinfo/
 
-mjpegtools - # Набор инструментов, которые могут выполнять запись и воспроизведение видео, простое редактирование с вырезанием и вставкой и сжатие MPEG аудио и видео
+mjpegtools - # Набор инструментов, которые могут выполнять запись и воспроизведение видео, простое редактирование с вырезанием и вставкой и сжатие MPEG аудио и видео 
 https://www.archlinux.org/packages/extra/x86_64/mjpegtools/
+https://www.tux.in.ua/articles/443
 
 mobile-broadband-provider-info - # Демон сетевого управления (информация о провайдере мобильного широкополосного доступа)
 https://www.archlinux.org/packages/extra/any/mobile-broadband-provider-info/
