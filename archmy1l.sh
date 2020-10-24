@@ -166,8 +166,7 @@ echo -e "${RED}=> ${NC}Acceptable limit for the list of arguments..."
 getconf ARG_MAX
 
 echo -e "${BLUE}:: ${NC}The determination of the final access rights"
-# Определение окончательных прав доступа
-# Для суперпользователя (root) umask по умолчанию равна 0022
+# Определение окончательных прав доступа - Для суперпользователя (root) umask по умолчанию равна 0022
 umask     
 
 echo -e "${BLUE}:: ${NC}Install the Terminus font"
@@ -213,11 +212,10 @@ echo -e "${CYAN}==> ${NC}Если пинг идёт едем дальше ... :)
 #################################################################
 ### Display banner (Дисплей баннер)
 _arch_fast_install_banner
-
 sleep 01
+
 echo ""
-### Installing ArchLinux 
-echo -e "${GREEN}==> ${NC}Вы готовы приступить к установке Arch Linux? "
+echo -e "${GREEN}==> ${NC}Вы готовы приступить к установке Arch Linux? "  # (Installing ArchLinux) 
 while
 echo " Действия ввода, выполняется сразу после нажатия клавиши " 
     read -n1 -p " 
@@ -251,7 +249,6 @@ timedatectl status
 echo -e "${BLUE}:: ${NC}Посмотрим дату и время без характеристик для проверки времени"
 date
 
-#clear
 echo ""
 echo -e "${YELLOW}==> ${NC}Обновить и добавить новые ключи?"
 echo " Данный этап поможет вам избежать проблем с ключами Pacmаn, если Вы используете не свежий образ ArchLinux для установки! "
