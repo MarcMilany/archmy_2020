@@ -1045,6 +1045,8 @@ fi
 ###############################
 Модульная утилита для создания образов initramfs
 
+sudo pacman -S mkinitcpio mkinitcpio-archiso mkinitcpio-busybox mkinitcpio-nfs-utils --noconfirm 
+
 sudo pacman -S mkinitcpio --noconfirm # Модульная утилита для создания образов initramfs
 sudo pacman -S mkinitcpio-archiso --noconfirm # Хуки и скрипты mkinitcpio для archiso
 sudo pacman -S mkinitcpio-busybox --noconfirm # Базовые инструменты initramfs
@@ -1052,18 +1054,9 @@ sudo pacman -S mkinitcpio-nfs-utils --noconfirm # Инструменты ipconfi
 sudo pacman -S  --noconfirm # 
 sudo pacman -S  --noconfirm #
 sudo pacman -S  --noconfirm # 
-sudo pacman -S mkinitcpio mkinitcpio-archiso mkinitcpio-busybox mkinitcpio-nfs-utils    --noconfirm #
-
- 
 
 
-
-
-
-
-
-
-yay -S  --noconfirm  #
+yay -S mkinitcpio-openswap --noconfirm  # mkinitcpio, чтобы открыть своп во время загрузки
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
