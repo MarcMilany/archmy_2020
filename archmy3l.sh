@@ -3772,8 +3772,8 @@ rm -Rf gstreamer0.10
 #######################
 echo ""
 echo " Создадим backup папки /.thumbnails (на всякий случай) "
-sudo mv ~/.cache/.thumbnails ~/.cache/.thumbnails.bak
-# mv ~/.cache/.thumbnails ~/.cache/.thumbnails.bak 
+mv ~/.cache/thumbnails ~/.cache/thumbnails.bak
+# cp -R ~/.cache/thumbnails ~/.cache/thumbnails.bak 
 echo " Удалим миниатюры фото, которые накапились в системе "
 ### thunar -q  # запустим менеджер thunar
 ### killall thunar  # завершим работу менеджера thunar 
@@ -3910,6 +3910,7 @@ elif [[ $prog_cpu == 2 ]]; then
   echo ""  
   echo " Устанавливаем uCode для процессоров - INTEL "
 sudo pacman -S intel-ucode --noconfirm  # Образ обновления микрокода для процессоров INTEL
+sudo pacman -S iucode-tool --noconfirm  # Инструмент для управления пакетами микрокода Intel® IA-32 / X86-64
 echo " Установлены обновления стабильности и безопасности для микрокода процессора - INTEL "
 echo " После завершения установки пакета программного обеспечения нужно перезагрузить компьютер " 
 echo ""
