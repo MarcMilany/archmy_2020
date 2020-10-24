@@ -301,7 +301,7 @@ yay -S ttf-dejavu-sans-mono-powerline-git --noconfirm  # DejaVu Sans Mono для
 yay -S ttf-material-icons-git --noconfirm  # Шрифт значка Google Material Design
 # yay -S ttf-wps-fonts --noconfirm  # Если установлен WPS - Символьные шрифты требуются wps-office
 
-yay -S  --noconfirm  #
+yay -S nerd-fonts-hack --noconfirm  # Патченный взлом шрифтов из библиотеки nerd-fonts (https://aur.archlinux.org/packages/nerd-fonts-hack/)
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
@@ -1693,6 +1693,12 @@ https://www.archlinux.org/packages/community/x86_64/libfm-gtk2/
 
 hardinfo - # Системная информация и инструмент тестирования
 https://www.archlinux.org/packages/community/x86_64/hardinfo/
+
+mjpegtools - # Набор инструментов, которые могут выполнять запись и воспроизведение видео, простое редактирование с вырезанием и вставкой и сжатие MPEG аудио и видео
+https://www.archlinux.org/packages/extra/x86_64/mjpegtools/
+
+mobile-broadband-provider-info - # Демон сетевого управления (информация о провайдере мобильного широкополосного доступа)
+https://www.archlinux.org/packages/extra/any/mobile-broadband-provider-info/
 
 gptfdisk - # Инструмент для создания разделов в текстовом режиме, который работает с дисками с таблицей разделов GUID (GPT) 
 https://www.archlinux.org/packages/extra/x86_64/gptfdisk/
