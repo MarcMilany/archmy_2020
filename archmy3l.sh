@@ -1243,6 +1243,7 @@ elif [[ $prog_zip == 1 ]]; then
 sudo pacman -S lha unace lrzip sharutils arj cabextract --noconfirm # Бесплатная программа для архивирования LZH / LHA; Инструмент для извлечения проприетарного формата архива ace; Многопоточное сжатие с помощью rzip / lzma, lzo и zpaq; Делает так называемые архивы оболочки из множества файлов; Бесплатный и портативный клон архиватора ARJ; Программа для извлечения файлов Microsoft CAB (.CAB).
 sudo pacman -S uudeview --noconfirm  # UUDeview помогает передавать и получать двоичные файлы с помощью почты или групп новостей. Включает файлы библиотеки - (мощный декодер бинарных файлов) http://www.fpx.de/fp/Software/UUDeview/
 sudo pacman -S snappy --noconfirm  # Библиотека быстрого сжатия и распаковки (на порядок быстрее других) https://github.com/google/snappy
+sudo pacman -S minizip --noconfirm  # Mini zip и unzip на основе zlib
 echo "" 
 echo " Установка дополнительных утилит (пакетов) для работы с архивами выполнена "
 fi
