@@ -172,7 +172,6 @@ echo ""
 echo -e "${BLUE}:: ${NC}Смотрим состояние wifi подключения"
 # Looking at the status of the wifi connection
 nmcli radio wifi
-
 # -------------------------------------------
 # Посмотреть список доступных сетей wifi:
 # nmcli device wifi list
@@ -184,6 +183,18 @@ nmcli radio wifi
 # nmcli device wifi connect "TP-Link" password 12345678 name "TP-Link Wifi"
 # Если всё прошло хорошо, то вы получите уже привычное сообщение про создание подключения с именем TP-Link Wifi и это имя в дальнейшем можно использовать для редактирования этого подключения и управления им, как описано выше.
 # ------------------------------------------------
+echo ""
+echo -e "${YELLOW}=> ${NC}Загрузим архив (ветку мастер MarcMilany/archmy_2020)"
+#echo 'Загрузим архив (ветку мастер MarcMilany/arch_2020)'
+# Upload the archive (branch master MarcMilany/arch_2020)
+#wget https://github.com/MarcMilany/arch_2020.git/archive/master.zip
+#wget github.com/MarcMilany/arch_2020.git/archive/arch_2020-master.zip
+#sudo mv -f ~/Downloads/master.zip
+#sudo mv -f ~/Downloads/arch_2020-master.zip
+#sudo tar -xzf master.zip -C ~/ 
+#sudo tar -xzf arch_2020-master.zip -C ~/
+#git clone https://github.com/MarcMilany/arch_2020.git
+git clone https://github.com/MarcMilany/archmy_2020.git
 
 echo ""
 echo -e "${BLUE}:: ${NC}Посмотрим данные о нашем соединение с помощью IPinfo..." 
@@ -3709,19 +3720,6 @@ echo -e "${BLUE}:: ${NC}Создать резервную копию (дубли
 #sudo cp /etc/default/grub grub.backup
 sudo cp -vf /etc/default/grub /etc/default/grub.backup
 
-echo ""
-echo -e "${YELLOW}==> ${NC}Загрузим архив (ветку мастер MarcMilany/archmy_2020)"
-#echo 'Загрузим архив (ветку мастер MarcMilany/arch_2020)'
-# Upload the archive (branch master MarcMilany/arch_2020)
-#wget https://github.com/MarcMilany/arch_2020.git/archive/master.zip
-#wget github.com/MarcMilany/arch_2020.git/archive/arch_2020-master.zip
-#sudo mv -f ~/Downloads/master.zip
-#sudo mv -f ~/Downloads/arch_2020-master.zip
-#sudo tar -xzf master.zip -C ~/ 
-#sudo tar -xzf arch_2020-master.zip -C ~/
-#git clone https://github.com/MarcMilany/arch_2020.git
-git clone https://github.com/MarcMilany/archmy_2020.git
-
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Исправим отображение миниатюр в файловом менеджере Thunar?"
@@ -3779,7 +3777,7 @@ mv ~/.cache/thumbnails ~/.cache/thumbnails.bak
 echo " Удалим миниатюры фото, которые накапились в системе "
 ### thunar -q  # запустим менеджер thunar
 ### killall thunar  # завершим работу менеджера thunar 
-sudo rm -rf ~/.thumbnails/  # удаляет миниатюры фото, которые накапливаются в системе
+sudo rm -rf ~/.cache/thumbnails/  # удаляет миниатюры фото, которые накапливаются в системе
 #sudo rm -rf ~/.cache/thumbnails/*
 echo " Создадим backup папки /.config/Thunar "
 sudo mv ~/.config/Thunar ~/.config/Thunar.bak
@@ -3868,6 +3866,8 @@ fi
 # База данных MIME
 # Система поддерживает базу данных распознанных типов MIME: Общая база данных MIME. База данных построена из файлов XML, установленных пакетами в /usr/share/mime/packages, используя инструменты из shared-mime-info.
 # Файлы в /usr/share/mime/ не должны редактироваться напрямую, однако их можно сохранить в отдельную базу данных для каждого пользователя в ~/.local/share/mime/.
+# Default applications (Русский)
+# https://wiki.archlinux.org/index.php/Default_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 # ----------------------------------
 
 clear
