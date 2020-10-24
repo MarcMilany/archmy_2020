@@ -403,8 +403,8 @@ echo -e "${BLUE}:: ${NC}Ваша разметка диска"
 fdisk -l  # Ещё раз проверте правильность разбивки на разделы!
 lsblk -f
 #lsblk -lo 
+sleep 03
 
-sleep 02
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Форматирование разделов диска"
