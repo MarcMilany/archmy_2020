@@ -1187,6 +1187,9 @@ https://www.archlinux.org/packages/community/any/papirus-icon-theme/
 capitaine-cursors - # Тема x-cursor, вдохновленная macOS и основанная на KDE Breeze
 https://www.archlinux.org/packages/community/any/capitaine-cursors/
 
+hicolor-icon-theme - # Freedesktop.org Hicolor тема значков
+https://www.archlinux.org/packages/extra/any/hicolor-icon-theme/
+
 echo ' Установка тем AUR '
 yay -S osx-arc-shadow papirus-maia-icon-theme-git breeze-default-cursor-theme --noconfirm
 
