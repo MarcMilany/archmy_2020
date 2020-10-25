@@ -1707,6 +1707,9 @@ https://www.archlinux.org/packages/extra/x86_64/gptfdisk/
 alacarte - # Редактор меню для gnome
 https://www.archlinux.org/packages/extra/any/alacarte/
 
+groff - # Система форматирования текста GNU troff
+https://www.archlinux.org/packages/core/x86_64/groff/
+
 autofs - # Средство автомонтирования на основе ядра для Linux
 https://www.archlinux.org/packages/community/x86_64/autofs/
 
