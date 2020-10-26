@@ -1109,6 +1109,7 @@ sudo pacman -S lib32-alsa-plugins --noconfirm  # Дополнительные п
 sudo pacman -S alsa-oss lib32-alsa-oss --noconfirm  # Библиотека совместимости OSS; Библиотека совместимости OSS (32 бит)
 #sudo pacman -S alsa-tools --noconfirm  # Расширенные инструменты для определенных звуковых карт
 sudo pacman -S alsa-topology-conf alsa-ucm-conf --noconfirm  # Файлы конфигурации топологии ALSA; Конфигурация (и топологии) ALSA Use Case Manager
+sudo pacman -S alsa-card-profiles --noconfirm  # Профили карт ALSA, общие для PulseAudio
 sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-bluetooth pulseaudio-equalizer-ladspa --noconfirm
 #sudo pacman -S pulseaudio --noconfirm  # Функциональный звуковой сервер общего назначения
 #sudo pacman -S pulseaudio-alsa --noconfirm  # Конфигурация ALSA для PulseAudio 
