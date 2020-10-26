@@ -2007,5 +2007,754 @@ pacman -Qqe > ~/pkglist.txt
 
 pacman -Qqm > ~/aurlist.txt
 
+============================
+Soft AUR ===================
+============================
+
+radiotray  -  # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
+https://aur.archlinux.org/packages/radiotray/
+https://aur.archlinux.org/radiotray.git 
+
+radiotray-ng  -  # Интернет-радио плеер для Linux
+https://aur.archlinux.org/packages/radiotray-ng/
+https://aur.archlinux.org/radiotray-ng.git
+https://github.com/ebruck/radiotray-ng
+
+-------------------------------------------
+
+spotify  -  # Запатентованный сервис потоковой передачи музыки
+https://aur.archlinux.org/packages/spotify/
+https://aur.archlinux.org/spotify.git 
+https://linuxhint.com/install-spotify-arch-linux/
+https://wiki.archlinux.org/index.php/Spotify  - Spotify
+
+--------------------------------------------
+
+vlc-tunein-radio  -  # Скрипт TuneIn Radio LUA для VLC 2.x
+https://aur.archlinux.org/packages/vlc-tunein-radio/
+https://aur.archlinux.org/vlc-tunein-radio.git 
+https://github.com/diegofn/TuneIn-Radio-VLC
+
+---------------------------------------------
+
+vlc-pause-click-plugin  -  # Плагин для VLC, который приостанавливает / воспроизводит видео при щелчке мышью
+https://aur.archlinux.org/packages/vlc-pause-click-plugin/
+https://aur.archlinux.org/vlc-pause-click-plugin.git 
+https://github.com/nurupo/vlc-pause-click-plugin
+
+---------------------------------------------
+
+audiobook-git  -  # Простая программа для чтения аудиокниг. Написано на QT / QML и C ++ 
+https://aur.archlinux.org/packages/audiobook-git/
+https://aur.archlinux.org/audiobook-git.git 
+https://github.com/bit-shift-io/audiobook
+
+----------------------------------------------
+
+cozy-audiobooks  -  # Современный проигрыватель аудиокниг для Linux с использованием GTK + 3
+https://aur.archlinux.org/packages/cozy-audiobooks/
+https://aur.archlinux.org/cozy-audiobooks.git
+https://github.com/geigi/cozy
+
+cosy-audiobooks-git  -  # Современный проигрыватель аудиокниг для Linux и macOS с использованием GTK + 3
+https://aur.archlinux.org/packages/cozy-audiobooks-git/
+https://aur.archlinux.org/cozy-audiobooks-git.git
+https://cozy.geigi.de
+
+------------------------------------------------
+
+m4baker-git  -  # Создавайте полнофункциональные m4b-аудиокниги
+https://aur.archlinux.org/packages/m4baker-git/
+https://aur.archlinux.org/m4baker-git.git
+https://github.com/crabmanX/m4baker
+
+------------------------------------------------
+
+mp3gain  -  # Нормализатор mp3 без потерь со статистическим анализом
+https://aur.archlinux.org/packages/mp3gain/
+https://aur.archlinux.org/mp3gain.git 
+https://sourceforge.net/projects/mp3gain/
+
+------------------------------------------------
+
+easymp3gain-gtk2  -  # Графический интерфейс пользователя (GUI) GTK2 для MP3Gain, VorbisGain и AACGain
+https://aur.archlinux.org/packages/easymp3gain-gtk2/
+https://aur.archlinux.org/easymp3gain-gtk2.git
+http://easymp3gain.sourceforge.net/
+
+------------------------------------------------
+
+myrulib-git  -  # Домашняя библиотека с поддержкой сайта lib.rus.ec
+https://aur.archlinux.org/packages/myrulib-git/
+https://aur.archlinux.org/myrulib-git.git 
+http://www.lintest.ru/wiki/MyRuLib
+
+===============================================
+
+virtualbox-ext-oracle  -  # Пакет расширений Oracle VM VirtualBox
+https://aur.archlinux.org/packages/virtualbox-ext-oracle/
+https://aur.archlinux.org/virtualbox-ext-oracle.git 
+https://www.virtualbox.org/
+
+-----------------------------------------------
+
+papirus-libreoffice-theme  -  # Тема Papirus для LibreOffice
+https://aur.archlinux.org/packages/papirus-libreoffice-theme/
+https://aur.archlinux.org/papirus-libreoffice-theme.git
+https://github.com/PapirusDevelopmentTeam/papirus-libreoffice-theme
+
+papirus-libreoffice-theme-git  -  # Тема Papirus для LibreOffice
+https://aur.archlinux.org/packages/papirus-libreoffice-theme-git/
+https://aur.archlinux.org/papirus-libreoffice-theme-git.git
+https://github.com/PapirusDevelopmentTeam/papirus-libreoffice-theme
+
+-----------------------------------------------
+
+wps-office  -  # Kingsoft Office (WPS Office) - офисный пакет для повышения производительности
+https://aur.archlinux.org/packages/wps-office/
+https://aur.archlinux.org/wps-office.git 
+http://wps-community.org/
+
+ttf-wps-fonts  -  # Если установлен WPS - Символьные шрифты требуются wps-office
+https://aur.archlinux.org/packages/ttf-wps-fonts/
+https://aur.archlinux.org/ttf-wps-fonts.git 
+https://github.com/IamDH4/ttf-wps-fonts
+
+wps-office-mui-ru-ru  -  # Пакеты MUI для WPS Office
+https://vk.com/topic-24135048_40468416
+https://gist.github.com/LEONARDO-DANIEL/be37de41060ea16f98c684702bbefd22
+
+
+wps-office-fonts  -  # Пакет wps-office-fonts содержит китайские шрифты Founder
+https://aur.archlinux.org/packages/wps-office-fonts/
+https://aur.archlinux.org/wps-office-fonts.git
+http://wps-community.org/
+
+wps-office-extension-russian-dictionary  -  # Русский словарь для WPS Office
+https://aur.archlinux.org/packages/wps-office-extension-russian-dictionary
+https://aur.archlinux.org/wps-office-extension-russian-dictionary.git
+https://github.com/wps-community/wps_community_website/tree/master/root/download/dicts
+
+------------------------------------------
+
+openoffice  -  # Apache OpenOffice 
+https://aur.archlinux.org/packages/openoffice/
+https://aur.archlinux.org/openoffice.git 
+http://www.openoffice.org
+
+openoffice-ru-bin  -  # Пакет русского языка для OpenOffice.org
+https://aur.archlinux.org/packages/openoffice-ru-bin/
+https://aur.archlinux.org/openoffice-ru-bin.git 
+http://www.openoffice.org/
+
+-----------------------------------------
+
+onlyoffice-bin  -  # Офисный пакет, сочетающий в себе редакторы текста, таблиц и презентаций
+https://aur.archlinux.org/packages/onlyoffice-bin/
+https://aur.archlinux.org/onlyoffice-bin.git 
+https://www.onlyoffice.com/
+
+-----------------------------------------
+
+skypeforlinux-stable-bin  -  # Skype для Linux - стабильная / окончательная версия
+https://aur.archlinux.org/packages/skypeforlinux-stable-bin/
+https://aur.archlinux.org/skypeforlinux-stable-bin.git 
+http://www.skype.com
+
+skype-call-recorder  -  # Записывайте звонки Skype в файлы MP3, Ogg Vorbis или WAV  (Skype-Call-Recorder)
+https://aur.archlinux.org/packages/skype-call-recorder/
+https://aur.archlinux.org/skype-call-recorder.git 
+http://atdot.ch/scr/
+
+-----------------------------------------
+
+vk-messenger  -  # VK Messenger для Linux
+https://aur.archlinux.org/packages/vk-messenger/
+https://aur.archlinux.org/vk-messenger.git 
+https://vk.com/messenger
+
+-----------------------------------------
+
+viber  -  # Проприетарное кроссплатформенное программное обеспечение для обмена мгновенными сообщениями и VoIP
+https://aur.archlinux.org/packages/viber/
+https://aur.archlinux.org/viber.git 
+https://www.viber.com
+
+-----------------------------------------
+
+pidgin-extprefs  -  # Плагин добавляет дополнительные настройки для pidgin
+https://aur.archlinux.org/packages/pidgin-extprefs/
+https://aur.archlinux.org/pidgin-extprefs.git 
+http://gaim-extprefs.sourceforge.net/
+
+------------------------------------------
+
+system-config-samba  -  # Инструмент настройки Samba от Red Hat
+https://aur.archlinux.org/packages/system-config-samba/
+https://aur.archlinux.org/system-config-samba.git 
+http://fedoraproject.org/wiki/SystemConfig/samba
+
+------------------------------------------
+
+gksu  -  # Графический интерфейс для su
+https://aur.archlinux.org/packages/gksu/
+https://aur.archlinux.org/gksu.git 
+http://www.nongnu.org/gksu/index.html
+
+libgksu  -  # библиотека авторизации gksu
+https://aur.archlinux.org/packages/libgksu/
+https://aur.archlinux.org/libgksu.git 
+http://www.nongnu.org/gksu/index.html
+
+gconf  -  # Устаревшая система базы данных конфигурации
+https://aur.archlinux.org/packages/gconf/
+https://aur.archlinux.org/gconf.git
+https://projects-old.gnome.org/gconf/
+
+----------------------------------------
+
+debtap  - ------
+debugap  -  # Сценарий для преобразования пакетов .deb в пакеты Arch Linux, ориентированный на точность. Не используйте его для преобразования пакетов, которые уже существуют в официальных репозиториях или могут быть собраны из AUR!
+https://aur.archlinux.org/packages/debtap/
+https://aur.archlinux.org/debtap.git  
+https://github.com/helixarch/debtap
+
+----------------------------------------
+
+menulibre  -  # Продвинутый редактор меню, который предоставляет современные функции в чистом, простом в использовании интерфейсе
+https://aur.archlinux.org/packages/menulibre/
+https://aur.archlinux.org/menulibre.git 
+https://github.com/bluesabre/menulibre
+Menulibre
+
+-----------------------------------------
+
+caffeine-ng  -  # Приложение строки состояния способно временно блокировать заставку и спящий режим
+https://aur.archlinux.org/packages/caffeine-ng/
+https://aur.archlinux.org/caffeine-ng.git
+https://github.com/caffeine-ng/caffeine-ng
+
+caffeine-ng-git  -  # Приложение строки состояния способно временно блокировать заставку и спящий режим
+https://aur.archlinux.org/packages/caffeine-ng-git/
+https://aur.archlinux.org/caffeine-ng-git.git 
+https://github.com/caffeine-ng/caffeine-ng
+
+-------------------------------------------
+
+inxi  -  # Полнофункциональный инструмент системной информации CLI
+https://aur.archlinux.org/packages/inxi/
+https://aur.archlinux.org/inxi.git 
+https://github.com/smxi/inxi
+
+inxi-git  -  # Полнофункциональный инструмент системной информации CLI
+https://aur.archlinux.org/packages/inxi-git/
+https://aur.archlinux.org/inxi-git.git
+https://github.com/smxi/inxi
+
+-------------------------------------------
+
+xneur  -  # X Neural Switcher определяет язык ввода и при необходимости корректирует раскладку клавиатуры
+https://aur.archlinux.org/packages/xneur/
+https://aur.archlinux.org/xneur.git
+http://www.xneur.ru
+
+gxneur  -  # Интерфейс GTK для XNeur
+https://aur.archlinux.org/packages/gxneur/
+https://aur.archlinux.org/gxneur.git 
+http://www.xneur.ru
+
+------------------------------------------
+
+fsearch-git  -  # Утилита быстрого поиска файлов. Версия Git
+https://aur.archlinux.org/packages/fsearch-git/
+https://aur.archlinux.org/fsearch-git.git
+https://cboxdoerfer.github.io/fsearch
+
+-----------------------------------------
+
+cherrytree  -  # Приложение для создания иерархических заметок
+https://aur.archlinux.org/packages/cherrytree/
+https://aur.archlinux.org/cherrytree.git
+https://www.giuspen.com/cherrytree/
+
+cherrytree-bin  -  # Двоичная версия Cherrytree
+https://aur.archlinux.org/packages/cherrytree-bin/
+https://aur.archlinux.org/cherrytree-bin.git
+https://www.giuspen.com/cherrytree/
+
+cherrytree  -  # Приложение для создания иерархических заметок, версия git
+https://aur.archlinux.org/packages/cherrytree-git/
+https://aur.archlinux.org/cherrytree-git.git 
+https://github.com/giuspen/cherrytree
+
+----------------------------------------
+
+timeshift  -  # Утилита восстановления системы для Linux
+https://aur.archlinux.org/packages/timeshift/
+https://aur.archlinux.org/timeshift.git 
+https://github.com/teejee2008/timeshift
+
+timeshift-autosnap  -  # Скрипт автоматического создания снимков Timeshift, который запускается перед обновлением пакета с помощью перехвата Pacman
+https://aur.archlinux.org/packages/timeshift-autosnap/
+https://aur.archlinux.org/timeshift-autosnap.git 
+https://gitlab.com/gobonja/timeshift-autosnap
+
+autoupgrade  -  # Автоматический снимок с последующим обновлением системы. (В случае сбоя системы запустите `sudo timeshift --restore` и удалите этот пакет, пока проблема не будет решена.)
+https://aur.archlinux.org/packages/autoupgrade/
+https://aur.archlinux.org/autoupgrade.git 
+https://github.com/star2000/autoupgrade
+
+---------------------------------------
+
+mocicon  -  # Апплет панели GTK, позволяющий управлять MOC (Music On Console)
+https://aur.archlinux.org/packages/mocicon/
+https://aur.archlinux.org/mocicon.git 
+http://mocicon.sourceforge.net
+
+---------------------------------------
+
+multiload-ng-indicator-gtk    -  --------
+multiload-ng-indicator-gtk2  -  # Современный графический системный монитор, плагин AppIndicator
+https://aur.archlinux.org/packages/multiload-ng-indicator-gtk2/
+https://aur.archlinux.org/multiload-ng-indicator-gtk2.git
+https://udda.github.io/multiload-ng/
+
+multiload-ng-indicator-gtk3  -  # Современный графический системный монитор, плагин AppIndicator
+https://aur.archlinux.org/packages/multiload-ng-indicator-gtk3/
+https://aur.archlinux.org/multiload-ng-indicator-gtk3.git
+https://udda.github.io/multiload-ng/
+
+---------------------------------------
+
+xfce4-multiload-ng-plugin-gtk2  -  # Современный графический системный монитор, плагин панели XFCE4
+https://aur.archlinux.org/packages/xfce4-multiload-ng-plugin-gtk2/
+https://aur.archlinux.org/xfce4-multiload-ng-plugin-gtk2.git 
+https://udda.github.io/multiload-ng/
+
+--------------------------------------
+
+keepass2-plugin-tray-icon  -  # Функциональная иконка в трее для KeePass2
+https://aur.archlinux.org/packages/keepass2-plugin-tray-icon/
+https://aur.archlinux.org/keepass2-plugin-tray-icon.git 
+https://github.com/dlech/Keebuntu
+
+---------------------------------------
+
+gconf-editor  -  # Графический редактор реестра gconf
+https://aur.archlinux.org/packages/gconf-editor/
+https://aur.archlinux.org/gconf-editor.git
+https://www.gnome.org
+
+----------------------------------------
+
+gconf-cleaner  -  # Инструмент очистки для GConf
+https://aur.archlinux.org/packages/gconf-cleaner/
+https://aur.archlinux.org/gconf-cleaner.git 
+http://code.google.com/p/gconf-cleaner
+
+----------------------------------------
+
+webtorrent-desktop  -  # Потоковый торрент-клиент
+https://aur.archlinux.org/packages/webtorrent-desktop/
+https://aur.archlinux.org/webtorrent-desktop.git 
+https://webtorrent.io/desktop
+
+webtorrent-desktop-bin  -  # Потоковый торрент-клиент
+https://aur.archlinux.org/packages/webtorrent-desktop-bin/
+https://aur.archlinux.org/webtorrent-desktop-bin.git
+https://webtorrent.io/desktop
+
+--------------------------------------
+
+teamviewer  -  # Универсальное программное обеспечение для удаленной поддержки и онлайн-встреч
+https://aur.archlinux.org/packages/teamviewer/
+https://aur.archlinux.org/teamviewer.git 
+http://www.teamviewer.com
+
+--------------------------------------
+
+corectrl  -  # Основное приложение управления
+https://aur.archlinux.org/packages/corectrl/
+https://aur.archlinux.org/corectrl.git 
+https://gitlab.com/corectrl/corectrl
+https://gitlab.com/corectrl/corectrl/-/archive/v1.1.1/corectrl-v1.1.1.tar.bz2
+
+corectrl-git  -  # Приложение для легкого управления оборудованием с помощью профилей приложений
+https://aur.archlinux.org/packages/corectrl-git/
+https://aur.archlinux.org/corectrl-git.git
+https://gitlab.com/corectrl/corectrl
+
+--------------------------------------
+
+qt4  -  # Кросс-платформенное приложение и UI-фреймворк
+https://aur.archlinux.org/packages/qt4/
+https://aur.archlinux.org/qt4.git
+https://www.qt.io
+https://wiki.archlinux.org/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
+Бинарная версия последней версии (4.8.7-32) с подписью PGP доступна здесь:
+https://ftp.desolve.ru/ftp/viktor/binpkg/qt4/
+
+--------------------------------------
+
+xflux  -  # (f.lux для X) Адаптивно изменяет цветовую температуру монитора, чтобы снизить нагрузку на глаза (версия для командной строки)
+https://aur.archlinux.org/packages/xflux/
+https://aur.archlinux.org/xflux.git
+https://justgetflux.com/
+
+xflux-gui-git  -  # Лучшее освещение для Linux. Графический интерфейс с открытым исходным кодом для xflux
+https://aur.archlinux.org/packages/xflux-gui-git/
+https://aur.archlinux.org/xflux-gui-git.git
+https://justgetflux.com/linux.html
+
+---------------------------------------
+
+flameshot-git  -  # Мощное, но простое в использовании программное обеспечение для создания снимков экрана
+https://aur.archlinux.org/packages/flameshot-git/
+https://aur.archlinux.org/flameshot-git.git 
+https://github.com/flameshot-org/flameshot
+
+-----------------------------------------
+
+lib32-simplescreenrecorder  -  # Записывайте 32-разрядные приложения OpenGL с помощью SimpleScreenRecorder. (Версия Git)
+https://aur.archlinux.org/packages/lib32-simplescreenrecorder-git/
+https://aur.archlinux.org/lib32-simplescreenrecorder-git.git
+https://www.maartenbaert.be/simplescreenrecorder/
+
+-------------------------------------
+
+mkinitcpio-openswap  -  # mkinitcpio, чтобы открыть своп во время загрузки
+https://aur.archlinux.org/packages/mkinitcpio-openswap/
+https://aur.archlinux.org/mkinitcpio-openswap.git 
+https://aur.archlinux.org/packages/mkinitcpio-openswap/
+
+--------------------------------------
+
+fetchmirrors  -  # Получите новый зеркальный список pacman и оцените лучшее
+https://aur.archlinux.org/packages/fetchmirrors/
+https://aur.archlinux.org/fetchmirrors.git 
+https://github.com/deadhead420/fetchmirrors
+
+-------------------------------------
+
+gtk3-mushrooms  -  # GTK3 исправлен для классических настольных компьютеров, таких как XFCE или MATE. См. README
+https://aur.archlinux.org/packages/gtk3-mushrooms/
+https://aur.archlinux.org/gtk3-mushrooms.git
+https://github.com/krumelmonster/gtk3-mushrooms
+
+-------------------------------------
+
+lib32-libudev0  -  # 
+# ( lib32-libudev0-shim-nosystemd )  -  # Библиотека совместимости libudev.so.0 для систем с более новыми версиями udev (32 бит)
+https://aur.archlinux.org/packages/lib32-libudev0-shim-nosystemd/
+https://aur.archlinux.org/lib32-libudev0-shim-nosystemd.git
+https://github.com/archlinux/libudev0-shim
+
+------------------------------------
+
+xfce4-calculator-plugin  -  # Плагин калькулятора для панели Xfce4
+https://aur.archlinux.org/packages/xfce4-calculator-plugin/
+https://aur.archlinux.org/xfce4-calculator-plugin.git 
+http://goodies.xfce.org/projects/panel-plugins/xfce4-calculator-plugin
+
+---------------------------------------
+
+xfce4-places-plugin  -  # Плагин меню Places для панели Xfce
+https://aur.archlinux.org/packages/xfce4-places-plugin/
+https://aur.archlinux.org/xfce4-places-plugin.git
+http://goodies.xfce.org/projects/panel-plugins/xfce4-places-plugin
+
+-------------------------------------
+
+oh-my-zsh-git  -  # Платформа сообщества для управления вашей конфигурацией zsh. Включает 180+ дополнительных плагинов и более 120 тем, чтобы оживить ваше утро, а также инструмент автоматического обновления, чтобы вы могли легко быть в курсе последних обновлений от сообщества
+https://aur.archlinux.org/packages/oh-my-zsh-git/
+https://aur.archlinux.org/oh-my-zsh-git.git
+https://github.com/ohmyzsh/ohmyzsh
+
+--------------------------------------
+
+
+
+
+
+
+
+=====================================
+
+vim-colorsamplerpack  -  # Различные цветовые схемы для vim
+https://aur.archlinux.org/packages/vim-colorsamplerpack/
+https://aur.archlinux.org/vim-colorsamplerpack.git
+http://www.vim.org/scripts/script.php?script_id=625
+
+vim-doxygentoolkit  -  # Этот скрипт упрощает документацию doxygen на C / C ++
+https://aur.archlinux.org/packages/vim-doxygentoolkit/
+https://aur.archlinux.org/vim-doxygentoolkit.git 
+http://www.vim.org/scripts/script.php?script_id=987
+
+
+vim-guicolorscheme  -  # Автоматическое преобразование цветовых схем только для графического интерфейса в схемы цветовых терминалов 88/256
+https://aur.archlinux.org/packages/vim-guicolorscheme/
+https://aur.archlinux.org/vim-guicolorscheme.git
+http://www.vim.org/scripts/script.php?script_id=1809
+
+vim-jellybeans  -  # Яркая, темная цветовая гамма, вдохновленная ir_black и сумерками
+https://aur.archlinux.org/packages/vim-jellybeans/
+https://aur.archlinux.org/vim-jellybeans.git
+https://github.com/nanotech/jellybeans.vim
+https://aur.archlinux.org/packages/vim-jellybeans-git/
+https://aur.archlinux.org/vim-jellybeans-git.git
+https://github.com/nanotech/jellybeans.vim
+
+vim-minibufexpl  -  # Элегантный обозреватель буферов для vim
+https://aur.archlinux.org/packages/vim-minibufexpl/
+https://aur.archlinux.org/vim-minibufexpl.git 
+http://fholgado.com/minibufexpl
+
+vim-omnicppcomplete  -  # vim c ++ завершение omnifunc с базой данных ctags
+https://aur.archlinux.org/packages/vim-omnicppcomplete/
+https://aur.archlinux.org/vim-omnicppcomplete.git 
+http://www.vim.org/scripts/script.php?script_id=1520
+
+vim-project  -  # Организовывать и перемещаться по проектам файлов (например, в проводнике ide / buffer)
+https://aur.archlinux.org/packages/vim-project/
+https://aur.archlinux.org/vim-project.git
+http://www.vim.org/scripts/script.php?script_id=69
+
+vim-rails  -  # Плагин ViM для усовершенствованной разработки приложений Ruby on Rails
+https://aur.archlinux.org/packages/vim-rails/
+https://aur.archlinux.org/vim-rails.git 
+http://www.vim.org/scripts/script.php?script_id=1567
+
+vim-taglist  -  # Плагин браузера с исходным кодом для vim
+https://aur.archlinux.org/packages/vim-taglist/
+https://aur.archlinux.org/vim-taglist.git 
+http://vim-taglist.sourceforge.net
+
+vim-vcscommand  -  # Плагин интеграции системы контроля версий vim
+https://aur.archlinux.org/packages/vim-vcscommand/
+https://aur.archlinux.org/vim-vcscommand.git
+http://www.vim.org/scripts/script.php?script_id=90
+
+vim-workspace  -  # Плагин vim workspace manager для управления группами файлов
+https://aur.archlinux.org/packages/vim-workspace/
+https://aur.archlinux.org/vim-workspace.git 
+http://www.vim.org/scripts/script.php?script_id=1410
+
+
+======================================
+
+zip-natspec  -  # Создает PKZIP-совместимые файлы .zip для нелатинских имен файлов с использованием патча libnatspec от AltLinux
+https://aur.archlinux.org/packages/zip-natspec/
+https://aur.archlinux.org/zip-natspec.git 
+http://www.info-zip.org/pub/infozip/Zip.html
+Последнее обновление: 2017-05-24 16:27
+
+unzip-natspec  -  # Распаковывает архивы .zip с нелатинскими именами файлов, используя патч libnatspec от AltLinux
+https://aur.archlinux.org/packages/unzip-natspec/
+https://aur.archlinux.org/unzip-natspec.git 
+http://www.info-zip.org/
+Последнее обновление: 2015-11-04 15:12
+
+#p7zip-natspec  -  # Файловый архиватор командной строки с высокой степенью сжатия, основанный на патче libnatspec из ubuntu zip-i18n PPA (https://launchpad.net/~frol/+archive/zip-i18n)
+https://aur.archlinux.org/packages/p7zip-natspec/
+https://aur.archlinux.org/p7zip-natspec.git
+http://p7zip.sourceforge.net/
+Последнее обновление: 2020-06-30 21:13
+
+libnatspec  -  # Набор функций для запроса различных кодировок и локалей для хост-системы и для другой системы
+https://aur.archlinux.org/packages/libnatspec/
+https://aur.archlinux.org/libnatspec.git 
+http://sourceforge.net/projects/natspec/
+Последнее обновление: 2015-10-15 17:48
+
+====================================
+
+freshplayerplugin  -  # PPAPI-host Адаптер NPAPI-plugin (Recommended)
+https://aur.archlinux.org/packages/freshplayerplugin/
+https://aur.archlinux.org/freshplayerplugin.git 
+https://github.com/i-rinat/freshplayerplugin
+
+freshplayerplugin-git  -  # PPAPI-host Адаптер NPAPI-plugin
+https://aur.archlinux.org/packages/freshplayerplugin-git/
+https://aur.archlinux.org/freshplayerplugin-git.git 
+https://github.com/i-rinat/freshplayerplugin
+
+vivaldi  -  # Продвинутый браузер, созданный для опытных пользователей
+https://aur.archlinux.org/packages/vivaldi/
+https://aur.archlinux.org/vivaldi.git
+https://vivaldi.com
+
+vivaldi-ffmpeg-codecs  -  # Дополнительная поддержка проприетарных кодеков для vivaldi
+https://aur.archlinux.org/packages/vivaldi-ffmpeg-codecs/
+https://aur.archlinux.org/vivaldi-ffmpeg-codecs.git 
+https://ffmpeg.org/
+
+-------------------------------------
+
+ktorrent-git  -  # Мощный клиент BitTorrent. (Версия GIT)
+https://aur.archlinux.org/packages/ktorrent-git/
+https://aur.archlinux.org/ktorrent-git.git 
+https://kde.org/applications/en/internet/org.kde.ktorrent
+
+libktorrent-git  -  # Реализация протокола BitTorrent. (Версия GIT)
+https://aur.archlinux.org/packages/libktorrent-git/
+https://aur.archlinux.org/libktorrent-git.git 
+https://projects.kde.org/projects/extragear/network/libktorrent
+
+mktorrent-git  -  # Простая утилита командной строки для создания файлов метаинфо BitTorrent
+https://aur.archlinux.org/packages/mktorrent-git/
+https://aur.archlinux.org/mktorrent-git.git
+https://github.com/Rudde/mktorrent
+
+rutorrent-git  -  # Веб-интерфейс для rTorrent на PHP, напоминающий uTorrent
+https://aur.archlinux.org/packages/rutorrent-git/
+https://aur.archlinux.org/rutorrent-git.git 
+https://github.com/Novik/ruTorrent
+
+
+tixati  -  # Tixati - это программа для однорангового обмена файлами, использующая популярный протокол BitTorrent
+https://aur.archlinux.org/packages/tixati/
+https://aur.archlinux.org/tixati.git 
+http://www.tixati.com/
+
+-------------------------------------
+
+gst-plugin-libde265  -  # Плагин Libde265 (открытая реализация видеокодека h.265) для gstreamer
+https://aur.archlinux.org/packages/gst-plugin-libde265/
+https://aur.archlinux.org/gst-plugin-libde265.git 
+https://github.com/strukturag/gstreamer-libde265
+
+# libde265  -  #  ???
+libde265-git  -  # Открытая реализация видеокодека H.265 (версия git)
+https://aur.archlinux.org/packages/libde265-git/
+https://aur.archlinux.org/libde265-git.git
+https://github.com/strukturag/libde265/
+
+lib32-libde265 --noconfirm  # Открытая реализация видеокодека h.265 (32-разрядная версия)
+https://aur.archlinux.org/packages/lib32-libde265/
+https://aur.archlinux.org/lib32-libde265.git 
+https://github.com/strukturag/libde265
+
+---------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
