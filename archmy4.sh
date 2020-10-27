@@ -2841,9 +2841,9 @@ echo ""
 echo " Установка alien-pkg-convert пропущена "
 elif [[ $i_alien == 1 ]]; then
   echo ""
-  echo " Установка alien-pkg-convert (для преобразования пакетов .deb) "
+  echo " Установка alien-pkg-convert "
 ##### alien-pkg-convert ###### 
-# yay -S alien_package_converter --noconfirm  # Сценарий для преобразования пакетов .deb в пакеты Arch Linux, ориентированный на точность. Не используйте его для преобразования пакетов, которые уже существуют в официальных репозиториях или могут быть собраны из AUR!
+# yay -S alien_package_converter --noconfirm  # Программа, которая конвертирует файлы между форматами rpm, dpkg, stampede slp и slackware tgz...
 git clone https://aur.archlinux.org/alien_package_converter.git  
 cd alien_package_converter
 # makepkg -si
