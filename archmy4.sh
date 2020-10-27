@@ -2971,7 +2971,7 @@ sudo yaourt -S dpkg
 sudo dpkg -i package_name.deb
 
 
-
+https://debian-handbook.info/browse/ru-RU/stable/sect.manipulating-packages-with-dpkg.html
 
 
 
