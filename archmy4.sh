@@ -2892,20 +2892,20 @@ echo " Действия ввода, выполняется сразу после
     read -n1 -p " 
     1 - Установить Dpkg (community),     2 - Установить Dpkg-git - из AUR,     
 
-    0 - НЕТ - Пропустить действие: " i_deb  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    0 - НЕТ - Пропустить действие: " t_deb  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$i_deb" =~ [^10] ]]
+    [[ "$t_deb" =~ [^10] ]]
 do
     :
 done
-if [[ $i_deb == 0 ]]; then
+if [[ $t_deb == 0 ]]; then
 echo ""  
 echo " Установка утилит (пакетов) пропущена "
-elif [[ $i_deb == 1 ]]; then
+elif [[ $t_deb == 1 ]]; then
   echo ""
   echo " Установка пакета Dpkg (community) "
 sudo pacman -S dpkg --noconfirm  # Инструменты диспетчера пакетов Debian (Последнее обновление: 2020-10-13)
-elif [[ $i_deb == 2 ]]; then
+elif [[ $t_deb == 2 ]]; then
   echo ""
   echo " Установка Dpkg-git - из AUR "
 ##### dpkg-git ###### 
