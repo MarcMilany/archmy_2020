@@ -2908,10 +2908,10 @@ sudo pacman -S dpkg --noconfirm  # Инструменты диспетчера �
 elif [[ $i_deb == 2 ]]; then
   echo ""
   echo " Установка Dpkg-git - из AUR "
-##### alien-pkg-convert ###### 
-# yay -S alien_package_converter --noconfirm  # Программа, которая конвертирует файлы между форматами rpm, dpkg, stampede slp и slackware tgz...
+##### dpkg-git ###### 
+# yay -S dpkg-git --noconfirm  # Система управления пакетами Debian (Последнее обновление: 2019-01-30)
 git clone https://aur.archlinux.org/dpkg-git.git  
-cd dpkg-git  # Система управления пакетами Debian (Последнее обновление: 2019-01-30)
+cd dpkg-git  
 # makepkg -si
 makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
