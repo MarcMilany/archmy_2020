@@ -2637,7 +2637,73 @@ https://github.com/strukturag/libde265
 ---------------------------------------
 
 
+AUR 
 
+yay -S artwiz-fonts --noconfirm
+ -> Невозможно найти все требуемые пакеты:
+  xorg-font-utils (требуется пакету: artwiz-fonts)
+yay -S artwiz-fonts --noconfirm  6,89s user 0,45s system 106% cpu 6,912 total
+
+
+предупреждение: ttf-clear-sans-1.00-3 не устарел -- переустанавливается
+разрешение зависимостей...
+yay -S powerline-fonts-git --noconfirm
+:: Проверка конфликтов...
+:: Проверка внутренних конфликтов...
+ -> 
+Обнаружены конфликты пакетов:
+ -> Установка powerline-fonts-git приведёт к удалению: powerline-fonts, ttf-hack
+конфликты пакетов не могут быть разрешены опцией noconfirm, прерывание
+yay -S powerline-fonts-git --noconfirm  7,06s user 0,47s system 111% cpu 6,734 total
+yay -S artwiz-fonts --noconfirm
+ -> Невозможно найти все требуемые пакеты:
+  xorg-font-utils (требуется пакету: artwiz-fonts)
+yay -S artwiz-fonts --noconfirm  7,08s user 0,53s system 106% cpu 7,127 total
+
+yay -S ttf-droid-sans-mono-slashed-powerline-git --noconfirm 
+ -> Невозможно найти все требуемые пакеты:
+  xorg-font-utils (требуется пакету: ttf-droid-sans-mono-slashed-powerline-git)
+yay -S ttf-droid-sans-mono-slashed-powerline-git --noconfirm  7,23s user 0,40s system 100% cpu 7,563 total
+
+yay -S ttf-dejavu-sans-mono-powerline-git --noconfirm 
+ -> Невозможно найти все требуемые пакеты:
+  xorg-font-utils (требуется пакету: ttf-dejavu-sans-mono-powerline-git)
+yay -S ttf-dejavu-sans-mono-powerline-git --noconfirm  7,24s user 0,38s system 101% cpu 7,525 total
+
+==> ОШИБКА: Ошибка при создании рабочей копии репозитория 'material-design-icons' (git)
+    Прерывание...
+ошибка сборки: ttf-material-icons-git
+yay -S ttf-material-icons-git --noconfirm  34,57s user 9,60s system 81% cpu 53,960 total
+
+yay -S nerd-fonts-hack --noconfirm 
+:: Проверка конфликтов...
+:: Проверка внутренних конфликтов...
+[Aur:1]  nerd-fonts-hack-2.1.0-3
+
+ошибка клонирования nerd-fonts-hack: 
+yay -S nerd-fonts-hack --noconfirm  
+
+##########################################
+есть в системе
+
+
+mobile-broadband-provider-info - # Демон сетевого управления (информация о провайдере мобильного широкополосного доступа)
+https://www.archlinux.org/packages/extra/any/mobile-broadband-provider-info/
+
+gptfdisk - # Инструмент для создания разделов в текстовом режиме, который работает с дисками с таблицей разделов GUID (GPT) 
+https://www.archlinux.org/packages/extra/x86_64/gptfdisk/
+
+groff - # Система форматирования текста GNU troff
+https://www.archlinux.org/packages/core/x86_64/groff/
+
+fuse2 - # Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
+https://www.archlinux.org/packages/extra/x86_64/fuse2/
+
+fuse3 - # Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
+https://www.archlinux.org/packages/extra/x86_64/fuse3/
+
+inetutils - # Сборник общих сетевых программ
+https://www.archlinux.org/packages/core/x86_64/inetutils/
 
 
 
