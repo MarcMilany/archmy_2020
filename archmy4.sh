@@ -2837,9 +2837,9 @@ while
 
 
 
-
-
-
+https://aur.archlinux.org/packages/alien_package_converter/
+https://sourceforge.net/projects/alien-pkg-convert/
+https://github.com/mildred/alien
 Детали пакета: alien_package_converter 8.95-5
 
 Git Clone URL:  https://aur.archlinux.org/alien_package_converter.git (только для чтения, нажмите, чтобы скопировать)
