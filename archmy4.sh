@@ -2905,6 +2905,7 @@ elif [[ $t_deb == 1 ]]; then
   echo ""
   echo " Установка пакета Dpkg (community) "
 sudo pacman -S dpkg --noconfirm  # Инструменты диспетчера пакетов Debian (Последнее обновление: 2020-10-13)
+echo " Установка пакета dpkg выполнена "
 elif [[ $t_deb == 2 ]]; then
   echo ""
   echo " Установка Dpkg-git - из AUR "
