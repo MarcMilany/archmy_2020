@@ -2875,7 +2875,7 @@ fi
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установить утилиту (пакет) dpkg или (пакет) dpkg-git - из AUR ?"
-# Install the Alien utility (alien-pkg-convert)?
+# Install the dpkg utility (package) or dpkg-git (package) from AUR ?
 echo -e "${MAGENTA}=> ${BOLD}Dpkg - это инструменты (команда) для обработки пакетов Debian в системе. Если у вас есть .deb-пакеты, именно dpkg позволяет устанавливать или анализировать их содержимое. (https://www.archlinux.org/packages/community/x86_64/dpkg/) ${NC}"
 echo -e "${CYAN}:: ${NC}Имейте в виду, что иногда dpkg по той или иной причине не может установить пакет и возвращает ошибку; если пользователь даёт указание проигнорировать эту ошибку, будет выдано лишь предупреждение; для этого существуют различные опции..." 
 echo -e "${MAGENTA}=> ${BOLD}Dpkg-git - это инструменты (команда) предоставляет функции для обработки архитектур Debian, подстановочных знаков и отображения триплетов GNU и обратно. Если у вас есть .deb-пакеты, именно dpkg позволяет устанавливать или анализировать их содержимое. (https://aur.archlinux.org/packages/dpkg-git/) ${NC}"
