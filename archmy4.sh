@@ -2814,17 +2814,12 @@ fi
 
 
 
-
-В: Каковы минимальные требования для запуска этого скрипта?
-О: Вам необходимо установить следующие зависимости: bash, binutils (предоставляет утилиту ar для извлечения пакета пакета .deb и readelf), pkgfile и fakeroot. Вы должны хотя бы один раз (желательно недавно) запустить "debugap -u", чтобы создать / обновить pkgfile и базу данных debugap (вы делаете это с привилегиями root).
-
-
+clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установить утилиту Alien (alien-pkg-convert)?"
 # Install the Alien utility (alien-pkg-convert)?
-echo -e "${MAGENTA}=> ${BOLD}Debtap - Alien - это программа, конвертирующая файлы в форматы rpm, dpkg, stampede slp и slackware tgz. Если вы хотите использовать пакет из другого дистрибутива, чем тот, который вы установили в своей системе, вы можете использовать alien, чтобы преобразовать его в предпочтительный формат пакета и потом установить. (https://joeyh.name/code/alien/) ${NC}"
-echo -e "${CYAN}:: ${NC}Он работает аналогично с alien (который конвертирует пакеты .deb в пакеты .rpm и наоборот), но, в отличие от alien, он ориентирован на точность преобразования, пытаясь перевести имена пакетов Debian / Ubuntu в правильные пакеты Arch Linuxи, и сохранить их в полях зависимостей метаданных .PKGINFO в окончательном пакете..."
-
+echo -e "${MAGENTA}=> ${BOLD}Alien - это программа, конвертирующая файлы в форматы rpm, dpkg, stampede slp и slackware tgz. Если вы хотите использовать пакет из другого дистрибутива, чем тот, который вы установили в своей системе, вы можете использовать alien, чтобы преобразовать его в предпочтительный формат пакета и потом установить. (https://joeyh.name/code/alien/) ${NC}"
+echo -e "${CYAN}:: ${NC}Имейте в виду, что если эти последние типы преобразований выполнены, сгенерированные пакеты могут иметь неверную информацию о зависимости...." 
 echo -e "${CYAN}:: ${NC}Установка alien-pkg-convert проходит через сборку из исходников. То есть установка производиться с помощью git clone (https://aur.archlinux.org/alien_package_converter.git), PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/alien_package_converter/), собирается и устанавливается."
 echo -e "${YELLOW}=> Важно: ${NC}Перед установкой (преобразованных) пакетов - ВЫПОЛНИТЕ резервное копирование пользовательских данных /пространства (разделов системы)-(возможность повреждения вашей системы)!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
@@ -2833,22 +2828,54 @@ echo " Если Вы сомневаетесь в своих действиях, 
 # If you doubt your actions, think again... 
 echo ""
 while
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p " 
+    1 - Да установить,     0 - НЕТ - Пропустить действие: " i_alien  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_alien" =~ [^10] ]]
+do
+    :
+done
+if [[ $i_alien == 0 ]]; then
+echo ""  
+echo " Установка alien-pkg-convert пропущена "
+elif [[ $i_alien == 1 ]]; then
+  echo ""
+  echo " Установка alien-pkg-convert (для преобразования пакетов .deb) "
+##### alien-pkg-convert ###### 
+# yay -S alien_package_converter --noconfirm  # Сценарий для преобразования пакетов .deb в пакеты Arch Linux, ориентированный на точность. Не используйте его для преобразования пакетов, которые уже существуют в официальных репозиториях или могут быть собраны из AUR!
+git clone https://aur.archlinux.org/alien_package_converter.git  
+cd alien_package_converter
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf alien_package_converter
+rm -Rf alien_package_converter   # удаляем директорию сборки
+echo ""
+echo " Сборка и установка alien-pkg-convert выполнена "
+echo " Желательно перезагрузить систему для применения изменений "
+fi
+# ------------------------------------
+# Последнее обновление: 2020-08-06 00:03
+# https://aur.archlinux.org/packages/alien_package_converter/
+# https://aur.archlinux.org/alien_package_converter.git
+# https://sourceforge.net/projects/alien-pkg-convert/
+# https://github.com/mildred/alien
+# ------------------------------------
 
 
-
-
-https://aur.archlinux.org/packages/alien_package_converter/
-https://sourceforge.net/projects/alien-pkg-convert/
-https://github.com/mildred/alien
 Детали пакета: alien_package_converter 8.95-5
 
-Git Clone URL:  https://aur.archlinux.org/alien_package_converter.git (только для чтения, нажмите, чтобы скопировать)
+Git Clone URL:   (только для чтения, нажмите, чтобы скопировать)
 База пакета:  alien_package_converter
 Последнее обновление: 2020-08-06 00:03
 
 
 
-
+В: Каковы минимальные требования для запуска этого скрипта?
+О: Вам необходимо установить следующие зависимости: bash, binutils (предоставляет утилиту ar для извлечения пакета пакета .deb и readelf), pkgfile и fakeroot. Вы должны хотя бы один раз (желательно недавно) запустить "debugap -u", чтобы создать / обновить pkgfile и базу данных debugap (вы делаете это с привилегиями root).
 
 
 
