@@ -3007,22 +3007,6 @@ sudo pacman -S  --noconfirm  #
 #sudo pacman -S raw-thumbnailer --noconfirm  # Легкий и быстрый инструмент для создания необработанных изображений raw, который необходим для отображения миниатюр raw.
 #sudo pacman -S perl-file-mimeinfo --noconfirm  # Определить тип файла, включая mimeopen и mimetype
 
-sudo pacman -S audacity --noconfirm  # Программа, позволяющая манипулировать сигналами цифрового звука
-sudo pacman -S cmus --noconfirm  # Многофункциональный музыкальный проигрыватель на базе ncurses
-# sudo pacman -S ffmpegthumbnailer --noconfirm  # Легкий эскиз видеофайлов, который может использоваться файловыми менеджерами
-sudo pacman -S moc --noconfirm  # Консольный аудиоплеер ncurses, разработанный, чтобы быть мощным и простым в использовании
-sudo pacman -S peek --noconfirm  # Простой экранный рекордер с простым в использовании интерфейсом
-sudo pacman -S vorbisgain --noconfirm  # Утилита, которая вычисляет значения ReplayGain для файлов Ogg Vorbis
-sudo pacman -S you-get --noconfirm  # Загрузчик видео с YouTube / Youku / Niconico, написанный на Python 3
-sudo pacman -S youtube-viewer --noconfirm  # Утилита командной строки для просмотра видео на YouTube
-
-
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  #
-
 
 sudo pacman -S catfish --noconfirm  # Универсальный инструмент для поиска файлов
 sudo pacman -S gnome-chess --noconfirm  # Сыграйте в классическую настольную игру в шахматы для двух игроков
