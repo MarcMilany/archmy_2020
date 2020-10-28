@@ -3031,7 +3031,7 @@ sudo pacman -S hexchat --noconfirm  # Популярный и простой в 
 sudo pacman -S pacmanlogviewer --noconfirm  # Проверьте файлы журнала pacman
 sudo pacman -S rmlint --noconfirm  # Инструмент для удаления дубликатов и прочего ворса, намного быстрее, чем fdupes
 sudo pacman -S rmlint-shredder --noconfirm  # Графический пользовательский интерфейс для rmlint
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S signal-desktop --noconfirm  # Signal Private Messenger для Linux (Отправляйте высококачественные групповые, текстовые, голосовые, видео, документальные и графические сообщения в любую точку мира без платы за SMS или MMS)
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
