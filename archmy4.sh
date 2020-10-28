@@ -488,11 +488,10 @@ sudo pacman -S --noconfirm  #
 
 echo 'Утилиты для редактирования документов, PDF, DjVus, NFO, DIZ и XPS... , Читалки электронных книг, Словари, Таблицы AUR'
 # Utilities for editing documents, PDF, Djvu, NFO, DIZ and XPS..., e-book Readers, Dictionaries, Tables AUR
-yay -S sublime-text-dev unoconv hunspell-ru  masterpdfeditor --noconfirm
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
+yay -S sublime-text-dev unoconv hunspell-ru masterpdfeditor --noconfirm
+yay -S sublime-text-dev --noconfirm  # Сложный текстовый редактор для кода, html и прозы - dev build
+yay -S hunspell-ru --noconfirm  #
+yay -S masterpdfeditor --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
@@ -566,8 +565,8 @@ sudo pacman -S woeusb --noconfirm  # Программа Linux для созда�
 
 echo 'Утилиты для работы с CD,DVD, создание ISO образов, запись на флеш-накопители AUR'
 # Utilities for working with CD, DVD, creating ISO images, writing to flash drives AUR
-yay -S woeusb-git mintstick unetbootin --noconfirm 
-yay -S woeusb-git --noconfirm  #
+yay -S mintstick unetbootin --noconfirm 
+# yay -S woeusb-git --noconfirm  #
 yay -S mintstick --noconfirm  # Графический интерфейс для записи файлов .img или .iso на USB-накопитель. Он также может их форматировать
 yay -S unetbootin --noconfirm  # Создание загрузочных USB-накопителей Live
 yay -S  --noconfirm  #
