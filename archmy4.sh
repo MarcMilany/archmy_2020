@@ -637,7 +637,7 @@ yay -S  --noconfirm  #
 echo 'Онлайн мессенжеры и Телефония, Управления чатом и группам'
 # Online messengers and Telephony, chat and group Management
 sudo pacman -S signal-desktop --noconfirm  # Signal Private Messenger для Linux (Отправляйте высококачественные групповые, текстовые, голосовые, видео, документальные и графические сообщения в любую точку мира без платы за SMS или MMS)
-sudo pacman -S  --noconfirm  #
+sudo pacman -S toxcore --noconfirm  # Безопасная, не требующая настройки серверная часть P2P для замены Skype
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
@@ -1708,104 +1708,7 @@ python2 2.7.18-1
 python2-pyxdg 0.26-6
 ------------------------------------------
 
-libfm-gtk2 - # Библиотека GTK + 2 для управления файлами
-https://www.archlinux.org/packages/community/x86_64/libfm-gtk2/
 
-mjpegtools - # Набор инструментов, которые могут выполнять запись и воспроизведение видео, простое редактирование с вырезанием и вставкой и сжатие MPEG аудио и видео 
-https://www.archlinux.org/packages/extra/x86_64/mjpegtools/
-https://www.tux.in.ua/articles/443
-
-gptfdisk - # Инструмент для создания разделов в текстовом режиме, который работает с дисками с таблицей разделов GUID (GPT) 
-https://www.archlinux.org/packages/extra/x86_64/gptfdisk/
-
-alacarte - # Редактор меню для gnome
-https://www.archlinux.org/packages/extra/any/alacarte/
-
-groff - # Система форматирования текста GNU troff
-https://www.archlinux.org/packages/core/x86_64/groff/
-
-
-fuse2 - # Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
-https://www.archlinux.org/packages/extra/x86_64/fuse2/
-
-fuse3 - # Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
-https://www.archlinux.org/packages/extra/x86_64/fuse3/
-
-fuseiso - # Модуль FUSE для монтирования образов файловой системы ISO
-https://www.archlinux.org/packages/community/x86_64/fuseiso/
-
-
-notepadqq - # Notepad ++ - как текстовый редактор для Linux
-https://www.archlinux.org/packages/community/x86_64/notepadqq/
-
-feh - # Быстрый и легкий просмотрщик изображений на основе imlib2
-https://www.archlinux.org/packages/extra/x86_64/feh/
-
-
-
-toxcore  - # Безопасная, не требующая настройки серверная часть P2P для замены Skype
-https://www.archlinux.org/packages/community/x86_64/toxcore/
-
-catdoc - # Конвертер файлов Microsoft Word, Excel, PowerPoint и RTF в текст
-https://www.archlinux.org/packages/community/x86_64/catdoc/
-
-unrtf - # Программа командной строки, конвертирующая документы RTF в другие форматы
-https://www.archlinux.org/packages/community/x86_64/unrtf/
-
-inetutils - # Сборник общих сетевых программ
-https://www.archlinux.org/packages/core/x86_64/inetutils/
-
-ncmpcpp - # Практически точный клон ncmpc с некоторыми новыми функциями
-https://www.archlinux.org/packages/community/x86_64/ncmpcpp/
-
-w3m - # Текстовый веб-браузер, а также пейджер
-https://www.archlinux.org/packages/extra/x86_64/w3m/
-
-mpd - # Гибкое, мощное серверное приложение для воспроизведения музыки
-https://www.archlinux.org/packages/extra/x86_64/mpd/
-
-mpc - # Минималистичный интерфейс командной строки для MPD
-https://www.archlinux.org/packages/extra/x86_64/mpc/
-
-youtube-viewer - # Утилита командной строки для просмотра видео на YouTube
-https://www.archlinux.org/packages/community/any/youtube-viewer/
-
-hidapi - # Простая библиотека для связи с устройствами USB и Bluetooth HID
-https://www.archlinux.org/packages/community/x86_64/hidapi/
-
-djvulibre - # Пакет для создания, управления и просмотра документов DjVu ('дежавю')
-https://www.archlinux.org/packages/extra/x86_64/djvulibre/
-
-aspell-en - # Английский словарь для aspell
-https://www.archlinux.org/packages/extra/x86_64/aspell-en/
-
-calibre - # Community - Приложение для управления электронными книгами
-https://www.archlinux.org/packages/community/x86_64/calibre/
-
-
-media-player-info - # Файлы данных, описывающие возможности медиаплеера для систем post-HAL
-https://www.archlinux.org/packages/extra/any/media-player-info/
-
-id3lib - # Библиотека для чтения, записи и управления тегами ID3v1 и ID3v2
-https://www.archlinux.org/packages/extra/x86_64/id3lib/
-
-ccache - # Кэш компилятора, который ускоряет перекомпиляцию за счет кеширования предыдущих компиляций
-https://www.archlinux.org/packages/community/x86_64/ccache/
-
-flex - # Инструмент для создания программ сканирования текста
-https://www.archlinux.org/packages/core/x86_64/flex/
-
-lksctp-tools - # Реализация протокола SCTP (http://lksctp.sourceforge.net/)
-https://www.archlinux.org/packages/community/x86_64/lksctp-tools/
-
-mlocate - # Слияние реализации locate / updatedb
-https://www.archlinux.org/packages/core/x86_64/mlocate/
-
-
-
-fwbuilder - Community - Объектно-ориентированный графический интерфейс и набор компиляторов для различных платформ межсетевых экранов
-https://www.archlinux.org/packages/community/x86_64/fwbuilder/
-     
 Дополнительно
 
 
@@ -3048,7 +2951,94 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 
 
+libfm-gtk2 - # Библиотека GTK + 2 для управления файлами
+https://www.archlinux.org/packages/community/x86_64/libfm-gtk2/
 
+mjpegtools - # Набор инструментов, которые могут выполнять запись и воспроизведение видео, простое редактирование с вырезанием и вставкой и сжатие MPEG аудио и видео 
+https://www.archlinux.org/packages/extra/x86_64/mjpegtools/
+https://www.tux.in.ua/articles/443
+
+gptfdisk - # Инструмент для создания разделов в текстовом режиме, который работает с дисками с таблицей разделов GUID (GPT) 
+https://www.archlinux.org/packages/extra/x86_64/gptfdisk/
+
+alacarte - # Редактор меню для gnome
+https://www.archlinux.org/packages/extra/any/alacarte/
+
+groff - # Система форматирования текста GNU troff
+https://www.archlinux.org/packages/core/x86_64/groff/
+
+
+fuse2 - # Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
+https://www.archlinux.org/packages/extra/x86_64/fuse2/
+
+fuse3 - # Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
+https://www.archlinux.org/packages/extra/x86_64/fuse3/
+
+fuseiso - # Модуль FUSE для монтирования образов файловой системы ISO
+https://www.archlinux.org/packages/community/x86_64/fuseiso/
+
+
+notepadqq - # Notepad ++ - как текстовый редактор для Linux
+https://www.archlinux.org/packages/community/x86_64/notepadqq/
+
+feh - # Быстрый и легкий просмотрщик изображений на основе imlib2
+https://www.archlinux.org/packages/extra/x86_64/feh/
+
+
+catdoc - # Конвертер файлов Microsoft Word, Excel, PowerPoint и RTF в текст
+https://www.archlinux.org/packages/community/x86_64/catdoc/
+
+unrtf - # Программа командной строки, конвертирующая документы RTF в другие форматы
+https://www.archlinux.org/packages/community/x86_64/unrtf/
+
+
+ncmpcpp - # Практически точный клон ncmpc с некоторыми новыми функциями
+https://www.archlinux.org/packages/community/x86_64/ncmpcpp/
+
+w3m - # Текстовый веб-браузер, а также пейджер
+https://www.archlinux.org/packages/extra/x86_64/w3m/
+
+mpd - # Гибкое, мощное серверное приложение для воспроизведения музыки
+https://www.archlinux.org/packages/extra/x86_64/mpd/
+
+mpc - # Минималистичный интерфейс командной строки для MPD
+https://www.archlinux.org/packages/extra/x86_64/mpc/
+
+hidapi - # Простая библиотека для связи с устройствами USB и Bluetooth HID
+https://www.archlinux.org/packages/community/x86_64/hidapi/
+
+djvulibre - # Пакет для создания, управления и просмотра документов DjVu ('дежавю')
+https://www.archlinux.org/packages/extra/x86_64/djvulibre/
+
+aspell-en - # Английский словарь для aspell
+https://www.archlinux.org/packages/extra/x86_64/aspell-en/
+
+calibre - # Community - Приложение для управления электронными книгами
+https://www.archlinux.org/packages/community/x86_64/calibre/
+
+
+media-player-info - # Файлы данных, описывающие возможности медиаплеера для систем post-HAL
+https://www.archlinux.org/packages/extra/any/media-player-info/
+
+id3lib - # Библиотека для чтения, записи и управления тегами ID3v1 и ID3v2
+https://www.archlinux.org/packages/extra/x86_64/id3lib/
+
+ccache - # Кэш компилятора, который ускоряет перекомпиляцию за счет кеширования предыдущих компиляций
+https://www.archlinux.org/packages/community/x86_64/ccache/
+
+flex - # Инструмент для создания программ сканирования текста
+https://www.archlinux.org/packages/core/x86_64/flex/
+
+lksctp-tools - # Реализация протокола SCTP (http://lksctp.sourceforge.net/)
+https://www.archlinux.org/packages/community/x86_64/lksctp-tools/
+
+
+
+
+
+fwbuilder - Community - Объектно-ориентированный графический интерфейс и набор компиляторов для различных платформ межсетевых экранов
+https://www.archlinux.org/packages/community/x86_64/fwbuilder/
+     
 
 
 
