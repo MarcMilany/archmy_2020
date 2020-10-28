@@ -3012,7 +3012,7 @@ sudo pacman -S cmus --noconfirm  # Многофункциональный муз
 # sudo pacman -S ffmpegthumbnailer --noconfirm  # Легкий эскиз видеофайлов, который может использоваться файловыми менеджерами
 sudo pacman -S moc --noconfirm  # Консольный аудиоплеер ncurses, разработанный, чтобы быть мощным и простым в использовании
 sudo pacman -S peek --noconfirm  # Простой экранный рекордер с простым в использовании интерфейсом
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S vorbisgain --noconfirm  # Утилита, которая вычисляет значения ReplayGain для файлов Ogg Vorbis
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  #
 
