@@ -2940,7 +2940,7 @@ fi
 
 +++++++++++++========================+++++++++++++++++
 
-sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter cpupower crda dhclient dnsmasq efibootmgr fortune-mod fsarchiver gnome-nettool haveged hyphen-en lib32-flex logrotate lsb-release man-db man-pages mlocate mtpfs nss-mdns patchutils pciutils php poppler-data qt5-translations reiserfsprogs        --noconfirm   
+sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter cpupower crda dhclient dnsmasq efibootmgr fortune-mod fsarchiver gnome-nettool haveged hyphen-en lib32-flex logrotate lsb-release man-db man-pages mlocate mtpfs nss-mdns patchutils pciutils php poppler-data qt5-translations reiserfsprogs ruby s-nail        --noconfirm   
 
 
 sudo pacman -S accountsservice --noconfirm  # Интерфейс D-Bus для запроса учетных записей пользователей и управления ими
@@ -2974,7 +2974,8 @@ sudo pacman -S php --noconfirm  # Язык сценариев общего на�
 sudo pacman -S poppler-data --noconfirm  # Кодирование данных для библиотеки рендеринга PDF Poppler
 sudo pacman -S qt5-translations --noconfirm  # росс-платформенное приложение и UI-фреймворк (переводы)
 sudo pacman -S reiserfsprogs --noconfirm  # Утилиты Reiserfs
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S ruby --noconfirm  # Объектно-ориентированный язык для быстрого и простого программирования
+sudo pacman -S s-nail --noconfirm  # Среда для отправки и получения почты
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -3030,7 +3031,6 @@ sudo pacman -S hexchat --noconfirm  # Популярный и простой в 
 sudo pacman -S pacmanlogviewer --noconfirm  # Проверьте файлы журнала pacman
 sudo pacman -S rmlint --noconfirm  # Инструмент для удаления дубликатов и прочего ворса, намного быстрее, чем fdupes
 sudo pacman -S rmlint-shredder --noconfirm  # Графический пользовательский интерфейс для rmlint
-sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
