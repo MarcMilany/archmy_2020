@@ -2932,7 +2932,7 @@ fi
 
 +++++++++++++========================+++++++++++++++++
 
-sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter catfish  --noconfirm  # 
+sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter catfish     --noconfirm  # 
 
 
 
