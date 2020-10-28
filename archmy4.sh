@@ -1713,8 +1713,6 @@ https://www.archlinux.org/packages/extra/any/alacarte/
 groff - # Система форматирования текста GNU troff
 https://www.archlinux.org/packages/core/x86_64/groff/
 
-autofs - # Средство автомонтирования на основе ядра для Linux
-https://www.archlinux.org/packages/community/x86_64/autofs/
 
 fuse2 - # Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
 https://www.archlinux.org/packages/extra/x86_64/fuse2/
@@ -1732,8 +1730,7 @@ https://www.archlinux.org/packages/community/x86_64/notepadqq/
 feh - # Быстрый и легкий просмотрщик изображений на основе imlib2
 https://www.archlinux.org/packages/extra/x86_64/feh/
 
-ranger - # Простой файловый менеджер в стиле vim
-https://www.archlinux.org/packages/community/any/ranger/
+
 
 toxcore  - # Безопасная, не требующая настройки серверная часть P2P для замены Skype
 https://www.archlinux.org/packages/community/x86_64/toxcore/
