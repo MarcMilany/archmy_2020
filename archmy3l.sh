@@ -3384,6 +3384,7 @@ sudo pacman -S system-config-printer ghostscript --noconfirm  # Инструме
 sudo pacman -S libcups simple-scan --noconfirm  # Система печати CUPS - клиентские библиотеки и заголовки; Простая утилита сканирования
 sudo pacman -S gsfonts gutenprint --noconfirm  # (URW) ++ Базовый набор шрифтов [Уровень 2]; Драйверы принтера высшего качества для систем POSIX ;  # python-imaging ???
 # Драйверы для HP DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых LaserJet 
+sudo pacman -S splix --noconfirm  # Драйверы CUPS для принтеров SPL (Samsung Printer Language)
 sudo pacman -S hplip --noconfirm  # Драйверы для HP DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых LaserJet   
 fi
 # ---------------------------------------------------------------------
