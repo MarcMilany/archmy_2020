@@ -562,14 +562,14 @@ yay -S  --noconfirm  #
 
 echo 'Утилиты для работы с CD,DVD, создание ISO образов, запись на флеш-накопители'
 # Utilities for working with CD, DVD, creating ISO images, writing to flash drives
-sudo pacman -S  --noconfirm
+sudo pacman -S woeusb --noconfirm  # Программа Linux для создания установщика USB-накопителя Windows с DVD-диска Windows или образа
 
 echo 'Утилиты для работы с CD,DVD, создание ISO образов, запись на флеш-накопители AUR'
 # Utilities for working with CD, DVD, creating ISO images, writing to flash drives AUR
-yay -S woeusb-git mintstick unetbootin --noconfirm
+yay -S woeusb-git mintstick unetbootin --noconfirm 
 yay -S woeusb-git --noconfirm  #
-yay -S mintstick --noconfirm  #
-yay -S unetbootin --noconfirm  #
+yay -S mintstick --noconfirm  # Графический интерфейс для записи файлов .img или .iso на USB-накопитель. Он также может их форматировать
+yay -S unetbootin --noconfirm  # Создание загрузочных USB-накопителей Live
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
@@ -3043,7 +3043,7 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S gimp --noconfirm  # Программа обработки изображений GNU
 sudo pacman -S gimp-help-en --noconfirm  # Английские файлы справки для GIMP
 sudo pacman -S gimp-help-ru --noconfirm  # Русские файлы справки для GIMP
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S viewnior --noconfirm  # Простая, быстрая и элегантная программа просмотра изображений
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -3071,7 +3071,15 @@ sudo pacman -S gnome-icon-theme --noconfirm  # Тема значков GNOME
 sudo pacman -S xcursor-simpleandsoft --noconfirm  # Простая и мягкая тема курсора X
 sudo pacman -S xcursor-vanilla-dmz-aa --noconfirm  # Тема курсора Vanilla DMZ AA
 sudo pacman -S  --noconfirm  # 
-
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
 
 
 
