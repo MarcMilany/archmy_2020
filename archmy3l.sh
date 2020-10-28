@@ -1379,9 +1379,9 @@ sudo pacman -S glances --noconfirm  # Инструмент мониторинг�
 sudo pacman -S xterm --noconfirm  # Эмулятор терминала X
 sudo pacman -S desktop-file-utils --noconfirm  # Утилиты командной строки для работы с записями рабочего стола
 sudo pacman -S gtop --noconfirm  # Панель мониторинга системы для терминала
-sudo pacman -S lib32-curl --noconfirm  # 
-sudo pacman -S gpm --noconfirm  #
-sudo pacman -S hddtemp --noconfirm  # 
+sudo pacman -S lib32-curl --noconfirm  # Утилита и библиотека для поиска URL (32-разрядная версия)
+sudo pacman -S gpm --noconfirm  # Сервер мыши для консоли и xterm
+sudo pacman -S hddtemp --noconfirm  # Показывает температуру вашего жесткого диска, читая информацию SMART
 sudo pacman -S memtest86+ --noconfirm  # Усовершенствованный инструмент диагностики памяти
 sudo pacman -S xorg-xkill --noconfirm  # Убить клиента его X-ресурсом
 sudo pacman -S syslinux --noconfirm  # Коллекция загрузчиков, которые загружаются с файловых систем FAT, ext2 / 3/4 и btrfs, с компакт-дисков и через PXE
