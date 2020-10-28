@@ -1353,6 +1353,7 @@ sudo pacman -S cmake --noconfirm  # Кросс-платформенная сис
 sudo pacman -S autofs --noconfirm  # Средство автомонтирования на основе ядра для Linux
 sudo pacman -S dosfstools --noconfirm  # Утилиты файловой системы DOS
 sudo pacman -S f2fs-tools --noconfirm  # Инструменты для файловой системы, дружественной к Flash (F2FS)
+sudo pacman -S jfsutils --noconfirm  # Утилиты файловой системы JFS
 sudo pacman -S sane --noconfirm  # Доступ к сканеру теперь простой
 sudo pacman -S ncdu --noconfirm  # Анализатор использования диска с интерфейсом ncurses
 sudo pacman -S gvfs --noconfirm  # Реализация виртуальной файловой системы для GIO
@@ -1386,7 +1387,7 @@ sudo pacman -S hddtemp --noconfirm  # Показывает температур�
 sudo pacman -S memtest86+ --noconfirm  # Усовершенствованный инструмент диагностики памяти
 sudo pacman -S xorg-xkill --noconfirm  # Убить клиента его X-ресурсом
 sudo pacman -S syslinux --noconfirm  # Коллекция загрузчиков, которые загружаются с файловых систем FAT, ext2 / 3/4 и btrfs, с компакт-дисков и через PXE
-sudo pacman -S jfsutils --noconfirm  # Утилиты файловой системы JFS
+
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
