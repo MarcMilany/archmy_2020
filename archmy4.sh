@@ -3054,10 +3054,8 @@ sudo pacman -S  --noconfirm  #
 
 
 sudo pacman -S engrampa --noconfirm  # Манипулятор архивов для MATE
-sudo pacman -S firefox-i18n-en-us --noconfirm  # Английский (США) языковой пакет для Firefox
 sudo pacman -S galculator-gtk2 --noconfirm  # Научный калькулятор на основе GTK + (версия GTK2)
 sudo pacman -S gnome-calculator --noconfirm  # Научный калькулятор GNOME
-sudo pacman -S thunderbird-i18n-en-us --noconfirm  # Английский (США) языковой пакет для Thunderbird
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
