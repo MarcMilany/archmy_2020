@@ -1224,7 +1224,7 @@ https://aur.archlinux.org/breeze-default-cursor-theme.git
 
 sudo pacman -S termite termite-terminfo --noconfirm  
 sudo pacman -S systemd systemd-libs systemd-resolvconf systemd-sysvcompat --noconfirm
-sudo pacman -S syslinux  --noconfirm  
+sudo pacman -S  --noconfirm  
 sudo pacman -S  --noconfirm  
 sudo pacman -S  --noconfirm  
 
@@ -1279,7 +1279,7 @@ sudo pacman -S systemd-libs --noconfirm  # Клиентские библиоте
 sudo pacman -S systemd-resolvconf --noconfirm  # Замена systemd resolvconf (для использования с systemd-resolved)
 sudo pacman -S systemd-sysvcompat --noconfirm  # sysvinit compat для systemd
 
-sudo pacman -S syslinux --noconfirm  # Коллекция загрузчиков, которые загружаются с файловых систем FAT, ext2 / 3/4 и btrfs, с компакт-дисков и через PXE
+
 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
