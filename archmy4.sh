@@ -397,10 +397,38 @@ yay -S  --noconfirm
 echo 'Установка программ для рисования и редактирования изображений'
 # Installing software for drawing and editing images
 sudo pacman -S gimp --noconfirm
+sudo pacman -S gimp --noconfirm  # Программа обработки изображений GNU
+sudo pacman -S gimp-help-en --noconfirm  # Английские файлы справки для GIMP
+sudo pacman -S gimp-help-ru --noconfirm  # Русские файлы справки для GIMP
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+
 
 echo 'Установка программ для рисования и редактирования изображений AUR'
 # Installing software for drawing and editing images AUR
 yay -S  --noconfirm
+yay -S  --noconfirm  # 
+yay -S  --noconfirm  # 
+yay -S  --noconfirm  # 
+yay -S  --noconfirm  # 
+yay -S  --noconfirm  # 
+
+echo 'Установка программ для просмотра изображений'
+sudo pacman -S viewnior --noconfirm  # Простая, быстрая и элегантная программа просмотра изображений
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+
+echo 'Установка программ для просмотра изображений AUR'
+yay -S  --noconfirm
+yay -S  --noconfirm  # 
+yay -S  --noconfirm  # 
+yay -S  --noconfirm  # 
+yay -S  --noconfirm  # 
+yay -S  --noconfirm  #
+yay -S  --noconfirm  # 
 
 echo 'Установка Oracle VM VirtualBox'
 # Installing Oracle VM VirtualBox 
@@ -3033,18 +3061,6 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 
-
-sudo pacman -S gimp --noconfirm  # Программа обработки изображений GNU
-sudo pacman -S gimp-help-en --noconfirm  # Английские файлы справки для GIMP
-sudo pacman -S gimp-help-ru --noconfirm  # Русские файлы справки для GIMP
-sudo pacman -S viewnior --noconfirm  # Простая, быстрая и элегантная программа просмотра изображений
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
 
 
 sudo pacman -S engrampa --noconfirm  # Манипулятор архивов для MATE
