@@ -3068,8 +3068,8 @@ sudo pacman -S  --noconfirm  #
 
 
 sudo pacman -S gnome-icon-theme --noconfirm  # Тема значков GNOME
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S xcursor-simpleandsoft --noconfirm  # Простая и мягкая тема курсора X
+sudo pacman -S xcursor-vanilla-dmz-aa --noconfirm  # Тема курсора Vanilla DMZ AA
 sudo pacman -S  --noconfirm  # 
 
 
