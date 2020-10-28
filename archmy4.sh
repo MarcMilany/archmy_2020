@@ -335,13 +335,22 @@ sudo pacman -S subdownloader --noconfirm  # Автоматическая заг�
 sudo pacman -S moc --noconfirm  # Консольный аудиоплеер ncurses, разработанный, чтобы быть мощным и простым в использовании
 sudo pacman -S mediainfo --noconfirm  # Предоставляет техническую и теговую информацию о видео или аудио файле (интерфейс командной строки)
 sudo pacman -S mediainfo-gui --noconfirm  # Предоставляет техническую и теговую информацию о видео или аудио файле (интерфейс GUI)
-
+sudo pacman -S cmus --noconfirm  # Многофункциональный музыкальный проигрыватель на базе ncurses
+# sudo pacman -S ffmpegthumbnailer --noconfirm  # Легкий эскиз видеофайлов, который может использоваться файловыми менеджерами
+sudo pacman -S vorbisgain --noconfirm  # Утилита, которая вычисляет значения ReplayGain для файлов Ogg Vorbis
+sudo pacman -S you-get --noconfirm  # Загрузчик видео с YouTube / Youku / Niconico, написанный на Python 3
+sudo pacman -S youtube-viewer --noconfirm  # Утилита командной строки для просмотра видео на YouTube
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  #     
+sudo pacman -S  --noconfirm  #  
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  #   
 sudo pacman -S audacity deadbeef easytag subdownloader moc mediainfo mediainfo-gui --noconfirm
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка Мультимедиа утилит пропущена.'
@@ -659,11 +668,12 @@ echo 'Установить рекомендуемые программы?'
 # To install the recommended program?
 echo -e "${BLUE}
 'Список программ рекомендованных к установке:${GREEN}
-simplescreenrecorder '
+simplescreenrecorder peek '
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
 sudo pacman -S simplescreenrecorder --noconfirm  # Многофункциональный экранный рекордер, поддерживающий X11 и OpenGL
+sudo pacman -S peek --noconfirm  # Простой экранный рекордер с простым в использовании интерфейсом
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
