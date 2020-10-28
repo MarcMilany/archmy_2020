@@ -630,10 +630,10 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S samba --noconfirm  # Файловый сервер SMB и сервер домена AD
+sudo pacman -S smb4k --noconfirm  # Программа KDE, просматривающая общие ресурсы samba
 sudo pacman -S networkmanager-openconnect --noconfirm  # Плагин NetworkManager VPN для OpenConnect
 sudo pacman -S networkmanager-pptp --noconfirm  # Плагин NetworkManager VPN для PPTP
 sudo pacman -S networkmanager-vpnc --noconfirm  # Плагин NetworkManager VPN для VPNC
-sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
@@ -660,11 +660,11 @@ echo 'Установить рекомендуемые программы?'
 # To install the recommended program?
 echo -e "${BLUE}
 'Список программ рекомендованных к установке:${GREEN}
-simplescreenrecorder desktop-file-utils'
+simplescreenrecorder '
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S simplescreenrecorder --noconfirm  # desktop-file-utils
+sudo pacman -S simplescreenrecorder --noconfirm  # Многофункциональный экранный рекордер, поддерживающий X11 и OpenGL
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
