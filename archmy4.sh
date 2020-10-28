@@ -613,7 +613,21 @@ yay -S skypeforlinux-stable-bin skype-call-recorder vk-messenger viber pidgin-ex
 echo 'Сетевые утилиты, Tor, VPN, SSH, Samba и тд...'
 # Network utilities, Tor, VPN, SSH, Samba, etc...
 sudo pacman -S tor torsocks --noconfirm
+sudo pacman -S tor --noconfirm  # Анонимизирующая оверлейная сеть
+sudo pacman -S torsocks --noconfirm  # Оболочка для безопасной торификации приложений
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
 sudo pacman -S proxychains-ng privoxy openvpn --noconfirm
+sudo pacman -S privoxy --noconfirm  # Веб-прокси с расширенными возможностями фильтрации
+sudo pacman -S proxychains-ng --noconfirm  # Предварительный загрузчик ловушки, который позволяет перенаправлять TCP-трафик существующих динамически связанных программ через один или несколько SOCKS или HTTP-прокси
+sudo pacman -S openvpn --noconfirm  # Простой в использовании, надежный и настраиваемый VPN (виртуальная частная сеть)
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
 sudo pacman -S samba --noconfirm  # Файловый сервер SMB и сервер домена AD
 sudo pacman -S networkmanager-openconnect --noconfirm  # Плагин NetworkManager VPN для OpenConnect
 sudo pacman -S networkmanager-pptp --noconfirm  # Плагин NetworkManager VPN для PPTP
