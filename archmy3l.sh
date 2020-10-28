@@ -1936,6 +1936,7 @@ sudo pacman -S libreoffice-extension-writer2latex --noconfirm  # набор ра
 sudo pacman -S hunspell --noconfirm  # Библиотека и программа для проверки орфографии и морфологического анализатора
 sudo pacman -S hyphen --noconfirm  # Библиотека для качественной расстановки переносов и выравнивания
 sudo pacman -S mythes --noconfirm  # libmythes  Простой тезаурус (Словарь понятий или терминов). В нем можно найти слова синонимы или антонимы к интересующему понятию (слову, термину).
+sudo pacman -S unoconv --noconfirm  # Конвертер документов на основе Libreoffice
 #clear
 echo ""    
 echo " Установка LibreOffice-still выполнена "
