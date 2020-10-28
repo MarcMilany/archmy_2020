@@ -1323,9 +1323,6 @@ cd /home/$username
 ---------------------------------------------------
 
 
-sudo pacman -S termite --noconfirm  #  Простой терминал на базе VTE
-sudo pacman -S termite-terminfo --noconfirm  # Terminfo для Termite, простого терминала на базе VTE
-
 sudo pacman -S systemd --noconfirm  # Системный и сервисный менеджер
 sudo pacman -S systemd-libs --noconfirm  # Клиентские библиотеки systemd
 sudo pacman -S systemd-resolvconf --noconfirm  # Замена systemd resolvconf (для использования с systemd-resolved)
@@ -3012,7 +3009,7 @@ sudo pacman -S qt5-translations --noconfirm  # росс-платформенно
 sudo pacman -S reiserfsprogs --noconfirm  # Утилиты Reiserfs
 sudo pacman -S ruby --noconfirm  # Объектно-ориентированный язык для быстрого и простого программирования
 sudo pacman -S s-nail --noconfirm  # Среда для отправки и получения почты
-sudo pacman -S termite --noconfirm  # Термит-terminfo
+sudo pacman -S termite --noconfirm  #  Простой терминал на базе VTE
 sudo pacman -S termite-terminfo --noconfirm  # Terminfo для Termite, простого терминала на базе VTE
 sudo pacman -S yelp --noconfirm  # Получите помощь с GNOME
 sudo pacman -S  --noconfirm  # 
