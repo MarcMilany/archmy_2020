@@ -2932,7 +2932,7 @@ fi
 
 +++++++++++++========================+++++++++++++++++
 
-sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter catfish     --noconfirm  # 
+sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter catfish cpupower     --noconfirm  # 
 
 
 
@@ -2944,7 +2944,7 @@ sudo pacman -S android-udev --noconfirm  # Правила Udev для подкл
 sudo pacman -S aspell-en --noconfirm  # Английский словарь для aspell
 sudo pacman -S b43-fwcutter --noconfirm  # Экстрактор прошивки для модуля ядра b43 (драйвер)
 sudo pacman -S catfish --noconfirm  # Универсальный инструмент для поиска файлов
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S cpupower --noconfirm  # Инструмент ядра Linux для проверки и настройки функций вашего процессора, связанных с энергосбережением
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
