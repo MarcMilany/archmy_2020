@@ -2932,16 +2932,18 @@ fi
 
 +++++++++++++========================+++++++++++++++++
 
-sudo pacman -S accountsservice acpi acpid android-tools  --noconfirm  # 
+sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter catfish  --noconfirm  # 
 
-
-sudo pacman -S  --noconfirm  # 
 
 
 sudo pacman -S accountsservice --noconfirm  # Интерфейс D-Bus для запроса учетных записей пользователей и управления ими
 sudo pacman -S acpi --noconfirm  # Клиент для показаний батареи, мощности и температуры
 sudo pacman -S acpid --noconfirm  # Демон для доставки событий управления питанием ACPI с поддержкой netlink
 sudo pacman -S android-tools --noconfirm  # Инструменты платформы Android
+sudo pacman -S android-udev --noconfirm  # Правила Udev для подключения устройств Android к вашему Linux-серверу
+sudo pacman -S aspell-en --noconfirm  # Английский словарь для aspell
+sudo pacman -S b43-fwcutter --noconfirm  # Экстрактор прошивки для модуля ядра b43 (драйвер)
+sudo pacman -S catfish --noconfirm  # Универсальный инструмент для поиска файлов
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -2969,10 +2971,8 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
+
+sudo pacman -S audacity --noconfirm  # Программа, позволяющая манипулировать сигналами цифрового звука
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
