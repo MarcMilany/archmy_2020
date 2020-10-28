@@ -1793,10 +1793,6 @@ mlocate - # Слияние реализации locate / updatedb
 https://www.archlinux.org/packages/core/x86_64/mlocate/
 
 
-jfsutils - # 
-https://www.archlinux.org/packages/core/x86_64/jfsutils/
-
-
 
 fwbuilder - Community - Объектно-ориентированный графический интерфейс и набор компиляторов для различных платформ межсетевых экранов
 https://www.archlinux.org/packages/community/x86_64/fwbuilder/
