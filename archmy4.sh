@@ -2932,7 +2932,7 @@ fi
 
 +++++++++++++========================+++++++++++++++++
 
-sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter catfish cpupower crda dhclient dnsmasq efibootmgr fortune-mod fsarchiver           --noconfirm   
+sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter catfish cpupower crda dhclient dnsmasq efibootmgr fortune-mod fsarchiver gnome-chess          --noconfirm   
 
 
 
@@ -2951,7 +2951,7 @@ sudo pacman -S dnsmasq --noconfirm  # Легкий, простой в настр
 sudo pacman -S efibootmgr --noconfirm  # Приложение пользовательского пространства Linux для изменения диспетчера загрузки EFI
 sudo pacman -S fortune-mod --noconfirm  # Программа Fortune Cookie от BSD games
 sudo pacman -S fsarchiver --noconfirm  # Безопасный и гибкий инструмент для резервного копирования и развертывания файловой системы
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S gnome-chess --noconfirm  # Сыграйте в классическую настольную игру в шахматы для двух игроков
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -2982,9 +2982,11 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
+
+
+sudo pacman -S gimp --noconfirm  # Программа обработки изображений GNU
+sudo pacman -S gimp-help-en --noconfirm  # Английские файлы справки для GIMP
+sudo pacman -S gimp-help-ru --noconfirm  # Русские файлы справки для GIMP
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -2998,7 +3000,7 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S engrampa --noconfirm  # Манипулятор архивов для MATE
 sudo pacman -S firefox-i18n-en-us --noconfirm  # Английский (США) языковой пакет для Firefox
 sudo pacman -S galculator-gtk2 --noconfirm  # Научный калькулятор на основе GTK + (версия GTK2)
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S gnome-calculator --noconfirm  # Научный калькулятор GNOME
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
