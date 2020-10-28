@@ -1344,7 +1344,7 @@ echo " Установка дополнительных базовых прогр
 elif [[ $in_soft == 1 ]]; then
   echo ""  
   echo " Установка дополнительных базовых программ (пакетов) "
-sudo pacman -S aspell-ru arch-install-scripts bash-completion cmake autofs btrfs-progs dosfstools f2fs-tools sane gvfs gvfs-gphoto2 gvfs-nfs gvfs-smb gnu-netcat iftop nmap ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip python pwgen scrot xsel powertop smartmontools syslinux ethtool glances xterm desktop-file-utils gtop lib32-curl gpm hddtemp memtest86+ jfsutils xorg-xkill --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64 
+# sudo pacman -S aspell-ru arch-install-scripts bash-completion cmake autofs btrfs-progs dosfstools f2fs-tools sane gvfs gvfs-gphoto2 gvfs-nfs gvfs-smb gnu-netcat iftop nmap ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip python pwgen scrot xsel powertop smartmontools syslinux ethtool glances xterm desktop-file-utils gtop lib32-curl gpm hddtemp memtest86+ jfsutils xorg-xkill --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64 
 sudo pacman -S arch-install-scripts --noconfirm  # Сценарии для помощи в установке Arch Linux
 sudo pacman -S aspell-ru --noconfirm  # Русский словарь для aspell  
 sudo pacman -S bash-completion --noconfirm  # Программируемое завершение для оболочки bash
