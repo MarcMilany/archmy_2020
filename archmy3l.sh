@@ -1361,11 +1361,11 @@ sudo pacman -S nmap --noconfirm  # Утилита для обнаружения 
 sudo pacman -S hydra --noconfirm  # Очень быстрый взломщик входа в сеть, который поддерживает множество различных сервисов
 sudo pacman -S isomd5sum --noconfirm  # Утилиты для работы с md5sum, имплантированными в ISO-образы
 sudo pacman -S python-isomd5sum --noconfirm  # Привязки Python3 для isomd5sum
-sudo pacman -S translate-shell --noconfirm  # 
-sudo pacman -S mc --noconfirm  #
-sudo pacman -S pv --noconfirm  #
-sudo pacman -S sox --noconfirm  #
-sudo pacman -S youtube-dl --noconfirm  #
+sudo pacman -S translate-shell --noconfirm  # Интерфейс командной строки и интерактивная оболочка для Google Translate
+sudo pacman -S mc --noconfirm  # Файловый менеджер, эмулирующий Norton Commander
+sudo pacman -S pv --noconfirm  # Инструмент на основе терминала для мониторинга прохождения данных по конвейеру
+sudo pacman -S sox --noconfirm  # Швейцарский армейский нож инструментов обработки звука
+sudo pacman -S youtube-dl --noconfirm  # Программа командной строки для загрузки видео с YouTube.com и еще нескольких сайтов
 sudo pacman -S speedtest-cli --noconfirm  #
 sudo pacman -S python-pip --noconfirm  #
 sudo pacman -S pwgen --noconfirm  #
