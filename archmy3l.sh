@@ -2510,8 +2510,8 @@ elif [[ $i_collection == 1 ]]; then
   echo ""   
   echo " Установка рекомендованных утилит (пакетов) "
 sudo pacman -S gnome-system-monitor gnome-disk-utility gnome-multi-writer frei0r-plugins clonezilla psensor copyq rsync grsync numlockx modem-manager-gui rofi gsmartcontrol ranger testdisk lsof dmidecode --noconfirm 
-sudo pacman -S gnome-system-monitor --noconfirm  #
-sudo pacman -S gnome-disk-utility --noconfirm  #
+sudo pacman -S gnome-system-monitor --noconfirm  # Просмотр текущих процессов и мониторинг состояния системы
+sudo pacman -S gnome-disk-utility --noconfirm  # тилита управления дисками для GNOME
 sudo pacman -S gnome-multi-writer --noconfirm  #
 sudo pacman -S frei0r-plugins --noconfirm  #
 sudo pacman -S clonezilla --noconfirm  #
