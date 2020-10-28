@@ -1319,7 +1319,7 @@ echo -e "${GREEN}==> ${NC}Установка дополнительных баз
 #echo -e "${BLUE}:: ${NC}Установка дополнительных базовых программ (пакетов)" 
 #echo 'Установка дополнительных базовых программ (пакетов)'
 # Installing additional basic programs (packages)
-echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (aspell-ru, arch-install-scripts, bash-completion, cmake, autofs, dosfstools, f2fs-tools, sane, gvfs, gnu-netcat, iftop, nmap, ncdu, hydra, isomd5sum, python-isomd5sum, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, python, pwgen, scrot, xsel, powertop, smartmontools, ethtool, glances, xterm, desktop-file-utils, gtop, lib32-curl, gpm, hddtemp, memtest86+, xorg-xkill)."
+echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (aspell-ru, arch-install-scripts, bash-completion, cmake, autofs, dosfstools, f2fs-tools, sane, gvfs, gnu-netcat, iftop, nmap, ncdu, hydra, isomd5sum, python-isomd5sum, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, python, pwgen, scrot, xsel, powertop, smartmontools, ethtool, glances, xterm, desktop-file-utils, gtop, lib32-curl, gpm, hddtemp, memtest86+, jfsutils, xorg-xkill)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -1344,7 +1344,7 @@ echo " Установка дополнительных базовых прогр
 elif [[ $in_soft == 1 ]]; then
   echo ""  
   echo " Установка дополнительных базовых программ (пакетов) "
-sudo pacman -S aspell-ru arch-install-scripts bash-completion cmake autofs dosfstools f2fs-tools sane gvfs gnu-netcat iftop nmap ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip python pwgen scrot xsel powertop smartmontools ethtool glances xterm desktop-file-utils gtop lib32-curl gpm hddtemp memtest86+ xorg-xkill --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64 
+sudo pacman -S aspell-ru arch-install-scripts bash-completion cmake autofs dosfstools f2fs-tools sane gvfs gnu-netcat iftop nmap ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip python pwgen scrot xsel powertop smartmontools ethtool glances xterm desktop-file-utils gtop lib32-curl gpm hddtemp memtest86+ jfsutils xorg-xkill --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64 
 
 sudo pacman -S arch-install-scripts --noconfirm  # Сценарии для помощи в установке Arch Linux
 sudo pacman -S aspell-ru --noconfirm  # Русский словарь для aspell  
@@ -1387,7 +1387,7 @@ sudo pacman -S memtest86+ --noconfirm  # Усовершенствованный 
 sudo pacman -S xorg-xkill --noconfirm  # Убить клиента его X-ресурсом
 sudo pacman -S syslinux --noconfirm  # Коллекция загрузчиков, которые загружаются с файловых систем FAT, ext2 / 3/4 и btrfs, с компакт-дисков и через PXE
 
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S jfsutils --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
