@@ -2487,6 +2487,7 @@ echo -e "${GREEN}==> ${BOLD}Установить рекомендованные 
 #echo 'Установить рекомендованные программы?'
 # Install the recommended programs
 echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gnome-system-monitor, gnome-disk-utility, gnome-multi-writer, frei0r-plugins, clonezilla, psensor, copyq, rsync, grsync, numlockx, modem-manager-gui, ranger, rofi, gsmartcontrol, testdisk, lsof, dmidecode)."
+echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -2508,7 +2509,29 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_collection == 1 ]]; then
   echo ""   
   echo " Установка рекомендованных утилит (пакетов) "
-sudo pacman -S gnome-system-monitor gnome-disk-utility gnome-multi-writer frei0r-plugins clonezilla psensor copyq rsync grsync numlockx modem-manager-gui rofi gsmartcontrol ranger testdisk lsof dmidecode --noconfirm  
+sudo pacman -S gnome-system-monitor gnome-disk-utility gnome-multi-writer frei0r-plugins clonezilla psensor copyq rsync grsync numlockx modem-manager-gui rofi gsmartcontrol ranger testdisk lsof dmidecode --noconfirm 
+sudo pacman -S gnome-system-monitor --noconfirm  #
+sudo pacman -S gnome-disk-utility --noconfirm  #
+sudo pacman -S gnome-multi-writer --noconfirm  #
+sudo pacman -S frei0r-plugins --noconfirm  #
+sudo pacman -S clonezilla --noconfirm  #
+sudo pacman -S psensor --noconfirm  #
+sudo pacman -S copyq --noconfirm  #
+sudo pacman -S rsync --noconfirm  #
+sudo pacman -S grsync --noconfirm  #
+sudo pacman -S numlockx --noconfirm  #
+sudo pacman -S modem-manager-gui --noconfirm  #
+sudo pacman -S rofi --noconfirm  #
+sudo pacman -S gsmartcontrol --noconfirm  #
+sudo pacman -S ranger --noconfirm  #
+sudo pacman -S testdisk --noconfirm  #
+sudo pacman -S lsof --noconfirm  #
+sudo pacman -S dmidecode --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
