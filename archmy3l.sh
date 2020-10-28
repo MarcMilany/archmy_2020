@@ -1717,6 +1717,7 @@ elif [[ $prog_mail == 1 ]]; then
   echo ""  
   echo " Установка утилиты (пакета) Thunderbird "
 sudo pacman -S thunderbird thunderbird-i18n-ru --noconfirm  # программа для чтения почты и новостей от mozilla.org
+#sudo pacman -S thunderbird-i18n-en-us --noconfirm  # Английский (США) языковой пакет для Thunderbird
 echo ""   
 echo " Установка утилиты (пакета) Thunderbird выполнена "
 fi
