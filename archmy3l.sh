@@ -1369,21 +1369,21 @@ sudo pacman -S sox --noconfirm  # Швейцарский армейский но
 sudo pacman -S youtube-dl --noconfirm  # Программа командной строки для загрузки видео с YouTube.com и еще нескольких сайтов
 sudo pacman -S speedtest-cli --noconfirm  # Интерфейс командной строки для тестирования пропускной способности интернета с помощью speedtest.net
 sudo pacman -S python-pip --noconfirm  # Рекомендуемый PyPA инструмент для установки пакетов Python
-sudo pacman -S pwgen --noconfirm  #
-sudo pacman -S scrot --noconfirm  #
-sudo pacman -S xsel --noconfirm  #
-sudo pacman -S powertop --noconfirm  #
-sudo pacman -S smartmontools --noconfirm  #
-sudo pacman -S ethtool --noconfirm  #
+sudo pacman -S pwgen --noconfirm  # Генератор паролей для создания легко запоминающихся паролей
+sudo pacman -S scrot --noconfirm  # Простая утилита для создания снимков экрана из командной строки для X
+sudo pacman -S xsel --noconfirm  # XSel - это программа командной строки для получения и установки содержимого выделения X
+sudo pacman -S powertop --noconfirm  # Инструмент для диагностики проблем с энергопотреблением и управлением питанием
+sudo pacman -S smartmontools --noconfirm  # Управление и мониторинг жестких дисков ATA и SCSI с поддержкой SMAR
+sudo pacman -S ethtool --noconfirm  # 
 sudo pacman -S glances --noconfirm  #
 sudo pacman -S xterm --noconfirm  #
 sudo pacman -S desktop-file-utils --noconfirm  #
 sudo pacman -S gtop --noconfirm  #
 sudo pacman -S lib32-curl --noconfirm  #
 sudo pacman -S gpm --noconfirm  #
-sudo pacman -S hddtemp --noconfirm  #
-sudo pacman -S memtest86+ --noconfirm  #
-sudo pacman -S xorg-xkill --noconfirm  #  
+sudo pacman -S hddtemp --noconfirm  # 
+sudo pacman -S memtest86+ --noconfirm  # Усовершенствованный инструмент диагностики памяти
+sudo pacman -S xorg-xkill --noconfirm  # Убить клиента его X-ресурсом
 sudo pacman -S syslinux --noconfirm  # Коллекция загрузчиков, которые загружаются с файловых систем FAT, ext2 / 3/4 и btrfs, с компакт-дисков и через PXE
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
