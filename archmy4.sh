@@ -636,6 +636,7 @@ yay -S  --noconfirm  #
 
 echo 'Онлайн мессенжеры и Телефония, Управления чатом и группам'
 # Online messengers and Telephony, chat and group Management
+sudo pacman -S signal-desktop --noconfirm  # Signal Private Messenger для Linux (Отправляйте высококачественные групповые, текстовые, голосовые, видео, документальные и графические сообщения в любую точку мира без платы за SMS или MMS)
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
@@ -864,13 +865,17 @@ ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
 sudo pacman -S catfish --noconfirm  # Универсальный инструмент для поиска файлов
+sudo pacman -S gnome-chess --noconfirm  # Сыграйте в классическую настольную игру в шахматы для двух игроков
+sudo pacman -S hardinfo --noconfirm  # Системная информация и инструмент тестирования
+sudo pacman -S hexchat --noconfirm  # Популярный и простой в использовании графический IRC-клиент (чат)
+sudo pacman -S kleopatra --noconfirm  # Диспетчер сертификатов и унифицированный графический интерфейс криптографии
+sudo pacman -S mutt --noconfirm  # Небольшой, но очень мощный текстовый почтовый клиент
 sudo pacman -S osmo --noconfirm  # Удобный персональный органайзер
+sudo pacman -S pacmanlogviewer --noconfirm  # Проверьте файлы журнала pacman
+sudo pacman -S rmlint --noconfirm  # Инструмент для удаления дубликатов и прочего ворса, намного быстрее, чем fdupes
+sudo pacman -S rmlint-shredder --noconfirm  # Графический пользовательский интерфейс для rmlint
 sudo pacman -S synapse --noconfirm  # Средство запуска семантических файлов
 sudo pacman -S variety --noconfirm  # Меняет обои с регулярным интервалом, используя указанные пользователем или автоматически загруженные изображения
-sudo pacman -S kleopatra --noconfirm  # Диспетчер сертификатов и унифицированный графический интерфейс криптографии
-
-sudo pacman -S hexchat --noconfirm  # Популярный и простой в использовании графический IRC-клиент (чат)
-sudo pacman -S mutt --noconfirm  # Небольшой, но очень мощный текстовый почтовый клиент
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
@@ -900,7 +905,6 @@ elif [[ $prog_set == 0 ]]; then
 fi
 
 
- 
 ###########################
 
 
@@ -951,74 +955,38 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 
-yay -S vim-colorsamplerpack vim-doxygentoolkit vim-guicolorscheme vim-jellybeans vim-minibufexpl vim-omnicppcomplete vim-project vim-rails vim-taglist vim-vcscommand vim-workspace --noconfirm  #
-
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
 
 
-vi 1:070224-4  # Оригинальный текстовый редактор ex / vi
-vim 8.2.1537-1  # Vi Improved, улучшенная версия текстового редактора vi с широкими возможностями настройки
-# vim-a 2.18-10  # Асинхронный Lint Engine (vim-ale или vim-ansible)?
-vim-ale  # Асинхронный Lint Engine
-vim-ansible  # Плагин vim для подсветки синтаксиса распространенных типов файлов Ansible
-vim-airline 0.11-1  # Строка состояния, написанная в Vimscript
-vim-airline-themes r1386.63b66df-1  # Темы для вим-авиакомпании
-vim-align 37.43-5  # Позволяет выравнивать строки с помощью регулярных выражений
-vim-bufexplorer 7.4.19-2  # Простой список буферов / переключатель для vim
-vim-colorsamplerpack 2012.10.28-6  AUR  # Различные цветовые схемы для vim 
-vim-ctrlp 1.80-3  # Поиск нечетких файлов, буферов, mru, тегов и т. Д
-vim-doxygentoolkit 0.2.13-5  AUR  # Этот скрипт упрощает документацию doxygen на C / C ++
-vim-fugitive 3.2-1  # Обертка Git такая классная, она должна быть незаконной
-vim-guicolorscheme 1.2-7  AUR  # Автоматическое преобразование цветовых схем только для графического интерфейса в схемы цветовых терминалов 88/256
-vim-indent-object 1.1.2-7  # Текстовые объекты на основе уровней отступа
-vim-jad 1.3_1329-4  # Автоматическая декомпиляция файлов классов Java и отображение кода Java
-vim-jedi 0.10.0-3  # Плагин Vim для джедаев, отличное автозаполнение Python
-vim-jellybeans 1.7-1   AUR  # Яркая, темная цветовая гамма, вдохновленная ir_black и сумерками
-vim-latexsuite 1:1.10.0-3  # Инструменты для просмотра, редактирования и компиляции документов LaTeX в Vim
-vim-minibufexpl 6.5.2-3  AUR  # Элегантный обозреватель буферов для vim
-vim-molokai 1.1-7  # Порт цветовой схемы монокаи для TextMate
-vim-nerdcommenter 2.5.2-2  # Плагин, позволяющий легко комментировать код для многих типов файлов
-vim-nerdtree 6.9.6-1  # Плагин Tree explorer для навигации по файловой системе
-vim-omnicppcomplete 0.4.1-10  AUR  # vim c ++ завершение omnifunc с базой данных ctags
-vim-pastie 2.0-10  # Плагин Vim, который позволяет читать и создавать вставки на http://pastie.org/
-vim-project 1.4.1-10  AUR  # Организовывать и перемещаться по проектам файлов (например, в проводнике ide / buffer)
-vim-rails 5.4_25852-2  AUR  # Плагин ViM для усовершенствованной разработки приложений Ruby on Rails
-vim-runtime 8.2.1537-1  # Vi Improved, улучшенная версия текстового редактора vi с широкими возможностями настройки (общая среда выполнения)
-vim-seti 1.0-4  # Цветовая схема на основе темы Сети Джесси Вида для редактора Atom
-vim-supertab 2.1-4  # Плагин Vim, который позволяет использовать клавишу табуляции для выполнения всех операций вставки
-vim-surround 2.1-4  # Предоставляет сопоставления для простого удаления, изменения и добавления парного окружения
-vim-syntastic 3.10.0-1  # Автоматическая проверка синтаксиса для Vim
-vim-tagbar 2.7-3  # Плагин для просмотра тегов текущего файла и получения обзора его структуры
-vim-taglist 1:4.6-1  AUR  # Плагин браузера с исходным кодом для vim# 
-vim-ultisnips 3.2-3  # Фрагменты для Vim в стиле TextMate
-vim-vcscommand 1.99.47-4  AUR  # Плагин интеграции системы контроля версий vim
-vim-workspace 1.0b1-10  AUR  # Плагин vim workspace manager для управления группами файлов
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+
+
+
 
 
 ######################
@@ -3042,14 +3010,7 @@ sudo pacman -S  --noconfirm  #
 #sudo pacman -S perl-file-mimeinfo --noconfirm  # Определить тип файла, включая mimeopen и mimetype
 
 
-sudo pacman -S catfish --noconfirm  # Универсальный инструмент для поиска файлов
-sudo pacman -S gnome-chess --noconfirm  # Сыграйте в классическую настольную игру в шахматы для двух игроков
-sudo pacman -S hardinfo --noconfirm  # Системная информация и инструмент тестирования
-sudo pacman -S hexchat --noconfirm  # Популярный и простой в использовании графический IRC-клиент (чат)
-sudo pacman -S pacmanlogviewer --noconfirm  # Проверьте файлы журнала pacman
-sudo pacman -S rmlint --noconfirm  # Инструмент для удаления дубликатов и прочего ворса, намного быстрее, чем fdupes
-sudo pacman -S rmlint-shredder --noconfirm  # Графический пользовательский интерфейс для rmlint
-sudo pacman -S signal-desktop --noconfirm  # Signal Private Messenger для Linux (Отправляйте высококачественные групповые, текстовые, голосовые, видео, документальные и графические сообщения в любую точку мира без платы за SMS или MMS)
+
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
