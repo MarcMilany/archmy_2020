@@ -450,9 +450,12 @@ yay -S  --noconfirm  #
 echo 'Установка Java JDK средство разработки и среда для создания Java-приложений'
 # Installing Java JDK development tool and environment for creating Java applications
 sudo pacman -S jdk8-openjdk jre8-openjdk jre8-openjdk-headless --noconfirm
-sudo pacman -S --noconfirm  # 
-sudo pacman -S --noconfirm  # 
-sudo pacman -S --noconfirm  # 
+sudo pacman -S jdk8-openjdk --noconfirm  # Комплект разработчика OpenJDK Java 8
+sudo pacman -S jre8-openjdk --noconfirm  # Полная среда выполнения OpenJDK Java 8
+sudo pacman -S jre8-openjdk-headless --noconfirm  # 
+sudo pacman -S  --noconfirm  # OpenJDK Java 8 автономная среда выполнения
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
 
 echo 'Установка Java JDK или Java Development Kit AUR'
 # Installing Java JDK development tool and environment for creating Java applications AUR
@@ -2966,7 +2969,7 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 # sudo pacman -S libgsf --noconfirm  # Расширяемая библиотека абстракции ввода-вывода для работы со структурированными форматами файлов
-
+# sudo pacman -S libopenraw --noconfirm  # Библиотека для декодирования файлов RAW
 
 sudo pacman -S audacity --noconfirm  # Программа, позволяющая манипулировать сигналами цифрового звука
 sudo pacman -S cmus --noconfirm  # Многофункциональный музыкальный проигрыватель на базе ncurses
