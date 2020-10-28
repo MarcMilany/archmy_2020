@@ -2512,21 +2512,21 @@ elif [[ $i_collection == 1 ]]; then
 sudo pacman -S gnome-system-monitor gnome-disk-utility gnome-multi-writer frei0r-plugins clonezilla psensor copyq rsync grsync numlockx modem-manager-gui rofi gsmartcontrol ranger testdisk lsof dmidecode --noconfirm 
 sudo pacman -S gnome-system-monitor --noconfirm  # Просмотр текущих процессов и мониторинг состояния системы
 sudo pacman -S gnome-disk-utility --noconfirm  # тилита управления дисками для GNOME
-sudo pacman -S gnome-multi-writer --noconfirm  #
-sudo pacman -S frei0r-plugins --noconfirm  #
-sudo pacman -S clonezilla --noconfirm  #
-sudo pacman -S psensor --noconfirm  #
-sudo pacman -S copyq --noconfirm  #
-sudo pacman -S rsync --noconfirm  #
-sudo pacman -S grsync --noconfirm  #
-sudo pacman -S numlockx --noconfirm  #
-sudo pacman -S modem-manager-gui --noconfirm  #
-sudo pacman -S rofi --noconfirm  #
-sudo pacman -S gsmartcontrol --noconfirm  #
-sudo pacman -S ranger --noconfirm  #
-sudo pacman -S testdisk --noconfirm  #
-sudo pacman -S lsof --noconfirm  #
-sudo pacman -S dmidecode --noconfirm  #
+sudo pacman -S gnome-multi-writer --noconfirm  # Записать файл ISO на несколько USB-устройств одновременно
+sudo pacman -S frei0r-plugins --noconfirm  # Минималистичный плагин API для видеоэффектов
+sudo pacman -S clonezilla --noconfirm  # Раздел ncurses и программа для создания образов / клонирования дисков
+sudo pacman -S psensor --noconfirm  # Графический аппаратный монитор температуры для Linux
+sudo pacman -S copyq --noconfirm  # Менеджер буфера обмена с возможностью поиска и редактирования истории
+sudo pacman -S rsync --noconfirm  # Быстрый и универсальный инструмент для копирования удаленных и локальных файлов
+sudo pacman -S grsync --noconfirm  # GTK + GUI для rsync для синхронизации папок, файлов и создания резервных копий
+sudo pacman -S numlockx --noconfirm  # 
+sudo pacman -S modem-manager-gui --noconfirm  # 
+sudo pacman -S rofi --noconfirm  # 
+sudo pacman -S gsmartcontrol --noconfirm  # 
+sudo pacman -S ranger --noconfirm  # 
+sudo pacman -S testdisk --noconfirm  # 
+sudo pacman -S lsof --noconfirm  # 
+sudo pacman -S dmidecode --noconfirm  # 
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  #
