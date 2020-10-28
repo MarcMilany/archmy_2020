@@ -1138,6 +1138,7 @@ elif [[ $i_dm == 1 ]]; then
   echo ""  
   echo " Установка LightDM (менеджера входа) "
 pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm
+pacman -S light-locker --noconfirm  # Простой шкафчик сессий для LightDM
 echo " Установка DM (менеджера входа) завершена "
 echo ""
 echo " Подключаем автозагрузку менеджера входа "
