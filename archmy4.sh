@@ -2935,7 +2935,6 @@ fi
 sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter catfish cpupower crda dhclient dnsmasq efibootmgr fortune-mod fsarchiver gnome-chess          --noconfirm   
 
 
-
 sudo pacman -S accountsservice --noconfirm  # Интерфейс D-Bus для запроса учетных записей пользователей и управления ими
 sudo pacman -S acpi --noconfirm  # Клиент для показаний батареи, мощности и температуры
 sudo pacman -S acpid --noconfirm  # Демон для доставки событий управления питанием ACPI с поддержкой netlink
@@ -3011,6 +3010,9 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
+
+
+sudo pacman -S gnome-icon-theme --noconfirm  # Тема значков GNOME
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
