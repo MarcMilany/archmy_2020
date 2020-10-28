@@ -808,12 +808,12 @@ echo -e "${BLUE}
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-
+sudo pacman -S catfish --noconfirm  # Универсальный инструмент для поиска файлов
 sudo pacman -S osmo --noconfirm  # Удобный персональный органайзер
 sudo pacman -S synapse --noconfirm  # Средство запуска семантических файлов
 sudo pacman -S variety --noconfirm  # Меняет обои с регулярным интервалом, используя указанные пользователем или автоматически загруженные изображения
 sudo pacman -S kleopatra --noconfirm  # Диспетчер сертификатов и унифицированный графический интерфейс криптографии
-sudo pacman -S catfish --noconfirm  # Универсальный инструмент для поиска файлов
+
 sudo pacman -S hexchat --noconfirm  # Популярный и простой в использовании графический IRC-клиент (чат)
 sudo pacman -S mutt --noconfirm  # Небольшой, но очень мощный текстовый почтовый клиент
 sudo pacman -S  --noconfirm  #
