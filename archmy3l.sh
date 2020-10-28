@@ -1359,9 +1359,9 @@ sudo pacman -S gnu-netcat --noconfirm  # GNU переписывает netcat, п
 sudo pacman -S iftop --noconfirm  # Отображение использования полосы пропускания на интерфейсе
 sudo pacman -S nmap --noconfirm  # Утилита для обнаружения сети и аудита безопасности
 sudo pacman -S hydra --noconfirm  # Очень быстрый взломщик входа в сеть, который поддерживает множество различных сервисов
-sudo pacman -S isomd5sum --noconfirm  #
-sudo pacman -S python-isomd5sum --noconfirm  #
-sudo pacman -S translate-shell --noconfirm  #
+sudo pacman -S isomd5sum --noconfirm  # Утилиты для работы с md5sum, имплантированными в ISO-образы
+sudo pacman -S python-isomd5sum --noconfirm  # Привязки Python3 для isomd5sum
+sudo pacman -S translate-shell --noconfirm  # 
 sudo pacman -S mc --noconfirm  #
 sudo pacman -S pv --noconfirm  #
 sudo pacman -S sox --noconfirm  #
