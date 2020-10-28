@@ -2932,7 +2932,7 @@ fi
 
 +++++++++++++========================+++++++++++++++++
 
-sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter catfish cpupower crda dhclient dnsmasq efibootmgr fortune-mod fsarchiver gnome-chess gnome-nettool haveged        --noconfirm   
+sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter cpupower crda dhclient dnsmasq efibootmgr fortune-mod fsarchiver gnome-nettool haveged        --noconfirm   
 
 
 sudo pacman -S accountsservice --noconfirm  # Интерфейс D-Bus для запроса учетных записей пользователей и управления ими
@@ -2942,7 +2942,6 @@ sudo pacman -S android-tools --noconfirm  # Инструменты платфо�
 sudo pacman -S android-udev --noconfirm  # Правила Udev для подключения устройств Android к вашему Linux-серверу
 sudo pacman -S aspell-en --noconfirm  # Английский словарь для aspell
 sudo pacman -S b43-fwcutter --noconfirm  # Экстрактор прошивки для модуля ядра b43 (драйвер)
-sudo pacman -S catfish --noconfirm  # Универсальный инструмент для поиска файлов
 sudo pacman -S cpupower --noconfirm  # Инструмент ядра Linux для проверки и настройки функций вашего процессора, связанных с энергосбережением
 sudo pacman -S crda --noconfirm  # Агент центрального регулирующего домена для беспроводных сетей
 sudo pacman -S dhclient --noconfirm  # Автономный DHCP-клиент из пакета dhcp
@@ -2950,7 +2949,6 @@ sudo pacman -S dnsmasq --noconfirm  # Легкий, простой в настр
 sudo pacman -S efibootmgr --noconfirm  # Приложение пользовательского пространства Linux для изменения диспетчера загрузки EFI
 sudo pacman -S fortune-mod --noconfirm  # Программа Fortune Cookie от BSD games
 sudo pacman -S fsarchiver --noconfirm  # Безопасный и гибкий инструмент для резервного копирования и развертывания файловой системы
-sudo pacman -S gnome-chess --noconfirm  # Сыграйте в классическую настольную игру в шахматы для двух игроков
 sudo pacman -S gnome-nettool --noconfirm  # Графический интерфейс для различных сетевых инструментов
 sudo pacman -S haveged --noconfirm  # Демон сбора энтропии с использованием таймингов процессора
 sudo pacman -S  --noconfirm  # 
@@ -2972,6 +2970,15 @@ sudo pacman -S audacity --noconfirm  # Программа, позволяюща�
 sudo pacman -S cmus --noconfirm  # Многофункциональный музыкальный проигрыватель на базе ncurses
 # sudo pacman -S ffmpegthumbnailer --noconfirm  # Легкий эскиз видеофайлов, который может использоваться файловыми менеджерами
 sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  #
+
+sudo pacman -S catfish --noconfirm  # Универсальный инструмент для поиска файлов
+sudo pacman -S gnome-chess --noconfirm  # Сыграйте в классическую настольную игру в шахматы для двух игроков
+sudo pacman -S hexchat --noconfirm  # Популярный и простой в использовании графический IRC-клиент (чат)
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
