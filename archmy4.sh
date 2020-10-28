@@ -1697,15 +1697,9 @@ python2-pyxdg 0.26-6
 libfm-gtk2 - # Библиотека GTK + 2 для управления файлами
 https://www.archlinux.org/packages/community/x86_64/libfm-gtk2/
 
-hardinfo - # Системная информация и инструмент тестирования
-https://www.archlinux.org/packages/community/x86_64/hardinfo/
-
 mjpegtools - # Набор инструментов, которые могут выполнять запись и воспроизведение видео, простое редактирование с вырезанием и вставкой и сжатие MPEG аудио и видео 
 https://www.archlinux.org/packages/extra/x86_64/mjpegtools/
 https://www.tux.in.ua/articles/443
-
-mobile-broadband-provider-info - # Демон сетевого управления (информация о провайдере мобильного широкополосного доступа)
-https://www.archlinux.org/packages/extra/any/mobile-broadband-provider-info/
 
 gptfdisk - # Инструмент для создания разделов в текстовом режиме, который работает с дисками с таблицей разделов GUID (GPT) 
 https://www.archlinux.org/packages/extra/x86_64/gptfdisk/
@@ -2935,7 +2929,7 @@ fi
 
 +++++++++++++========================+++++++++++++++++
 
-sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter cpupower crda dhclient dnsmasq efibootmgr fortune-mod fsarchiver gnome-nettool haveged hyphen-en lib32-flex logrotate lsb-release man-db man-pages        --noconfirm   
+sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter cpupower crda dhclient dnsmasq efibootmgr fortune-mod fsarchiver gnome-nettool haveged hyphen-en lib32-flex logrotate lsb-release man-db man-pages mlocate        --noconfirm   
 
 
 sudo pacman -S accountsservice --noconfirm  # Интерфейс D-Bus для запроса учетных записей пользователей и управления ими
@@ -2960,7 +2954,7 @@ sudo pacman -S logrotate --noconfirm  # Автоматическая ротац�
 sudo pacman -S lsb-release --noconfirm  # Программа запроса версии LSB
 sudo pacman -S man-db --noconfirm  # Утилита для чтения страниц руководства
 sudo pacman -S man-pages --noconfirm  # Страницы руководства Linux
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S mlocate --noconfirm  # Слияние реализации locate / updatedb
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -3000,7 +2994,12 @@ sudo pacman -S  --noconfirm  #
 
 sudo pacman -S catfish --noconfirm  # Универсальный инструмент для поиска файлов
 sudo pacman -S gnome-chess --noconfirm  # Сыграйте в классическую настольную игру в шахматы для двух игроков
+sudo pacman -S hardinfo --noconfirm  # Системная информация и инструмент тестирования
 sudo pacman -S hexchat --noconfirm  # Популярный и простой в использовании графический IRC-клиент (чат)
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
+sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
