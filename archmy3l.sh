@@ -4040,6 +4040,7 @@ sudo pacman -S libgsf --noconfirm  # Расширяемая библиотека
 sudo pacman -S libopenraw --noconfirm  # Библиотека для декодирования файлов RAW
 sudo pacman -S shared-mime-info --noconfirm  # Общая информация MIME на Freedesktop.org
 sudo pacman -S raw-thumbnailer --noconfirm  # Легкий и быстрый инструмент для создания необработанных изображений raw, который необходим для отображения миниатюр raw.
+sudo pacman -S perl-file-mimeinfo --noconfirm  # Определить тип файла, включая mimeopen и mimetype
 ############ gstreamer0.10 ##########
 echo "" 
 echo " Установим мультимедийный фреймворк GStreamer из AUR "
