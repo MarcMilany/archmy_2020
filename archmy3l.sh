@@ -1384,7 +1384,7 @@ sudo pacman -S gpm --noconfirm  #
 sudo pacman -S hddtemp --noconfirm  #
 sudo pacman -S memtest86+ --noconfirm  #
 sudo pacman -S xorg-xkill --noconfirm  #  
-
+sudo pacman -S syslinux --noconfirm  # Коллекция загрузчиков, которые загружаются с файловых систем FAT, ext2 / 3/4 и btrfs, с компакт-дисков и через PXE
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
