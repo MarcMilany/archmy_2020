@@ -1344,7 +1344,45 @@ echo " Установка дополнительных базовых прогр
 elif [[ $in_soft == 1 ]]; then
   echo ""  
   echo " Установка дополнительных базовых программ (пакетов) "
-sudo pacman -S aspell-ru arch-install-scripts bash-completion cmake dosfstools f2fs-tools sane gvfs gnu-netcat iftop nmap ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip pwgen scrot xsel powertop smartmontools ethtool glances xterm desktop-file-utils gtop lib32-curl gpm hddtemp memtest86+ xorg-xkill --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64   
+sudo pacman -S aspell-ru arch-install-scripts bash-completion cmake dosfstools f2fs-tools sane gvfs gnu-netcat iftop nmap ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip pwgen scrot xsel powertop smartmontools ethtool glances xterm desktop-file-utils gtop lib32-curl gpm hddtemp memtest86+ xorg-xkill --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64 
+
+sudo pacman -S arch-install-scripts --noconfirm  # Сценарии для помощи в установке Arch Linux
+sudo pacman -S aspell-ru --noconfirm  # Русский словарь для aspell  
+sudo pacman -S bash-completion --noconfirm  # Программируемое завершение для оболочки bash
+sudo pacman -S cmake --noconfirm  # Кросс-платформенная система сборки с открытым исходным кодом
+sudo pacman -S dosfstools --noconfirm  # Утилиты файловой системы DOS
+sudo pacman -S f2fs-tools --noconfirm  # Инструменты для файловой системы, дружественной к Flash (F2FS)
+sudo pacman -S sane --noconfirm  # Доступ к сканеру теперь простой
+sudo pacman -S ncdu --noconfirm  # Анализатор использования диска с интерфейсом ncurses
+sudo pacman -S gvfs --noconfirm  # Реализация виртуальной файловой системы для GIO
+sudo pacman -S gnu-netcat --noconfirm  # GNU переписывает netcat, приложение для создания сетевых трубопроводов
+sudo pacman -S iftop --noconfirm  # Отображение использования полосы пропускания на интерфейсе
+sudo pacman -S nmap --noconfirm  # Утилита для обнаружения сети и аудита безопасности
+sudo pacman -S hydra --noconfirm  # Очень быстрый взломщик входа в сеть, который поддерживает множество различных сервисов
+sudo pacman -S isomd5sum --noconfirm  #
+sudo pacman -S python-isomd5sum --noconfirm  #
+sudo pacman -S translate-shell --noconfirm  #
+sudo pacman -S mc --noconfirm  #
+sudo pacman -S pv --noconfirm  #
+sudo pacman -S sox --noconfirm  #
+sudo pacman -S youtube-dl --noconfirm  #
+sudo pacman -S speedtest-cli --noconfirm  #
+sudo pacman -S python-pip --noconfirm  #
+sudo pacman -S pwgen --noconfirm  #
+sudo pacman -S scrot --noconfirm  #
+sudo pacman -S xsel --noconfirm  #
+sudo pacman -S powertop --noconfirm  #
+sudo pacman -S smartmontools --noconfirm  #
+sudo pacman -S ethtool --noconfirm  #
+sudo pacman -S glances --noconfirm  #
+sudo pacman -S xterm --noconfirm  #
+sudo pacman -S desktop-file-utils --noconfirm  #
+sudo pacman -S gtop --noconfirm  #
+sudo pacman -S lib32-curl --noconfirm  #
+sudo pacman -S gpm --noconfirm  #
+sudo pacman -S hddtemp --noconfirm  #
+sudo pacman -S memtest86+ --noconfirm  #
+sudo pacman -S xorg-xkill --noconfirm  #  
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
