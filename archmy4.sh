@@ -2942,14 +2942,6 @@ fi
 
 
 
-В: Каковы минимальные требования для запуска этого скрипта?
-О: Вам необходимо установить следующие зависимости: bash, binutils (предоставляет утилиту ar для извлечения пакета пакета .deb и readelf), pkgfile и fakeroot. 
-binutils  -  # Набор программ для сборки и управления двоичными и объектными файлами
-https://www.archlinux.org/packages/core/x86_64/binutils/
-https://www.gnu.org/software/binutils/
-
-
-
 
 
 
