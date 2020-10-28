@@ -474,7 +474,8 @@ yay -S megasync thunar-megasync yandex-disk yandex-disk-indicator dropbox --noco
 
 echo 'Утилиты для редактирования документов, PDF, DjVus, NFO, DIZ и XPS... , Читалки электронных книг, Словари, Таблицы'
 # Utilities for editing documents, PDF, Djvu, NFO, DIZ and XPS..., e-book Readers, Dictionaries, Tables
-sudo pacman -S  --noconfirm
+sudo pacman -S qpdfview --noconfirm  # Просмотрщик PDF с вкладками, использующий библиотеку poppler
+sudo pacman -S python-reportlab --noconfirm  # Проверенное надежное решение для создания PDF-файлов
 sudo pacman -S --noconfirm  # 
 sudo pacman -S --noconfirm  # 
 sudo pacman -S --noconfirm  # 
@@ -864,9 +865,7 @@ fi
 
  
 ###########################
-VIM - улучшенная версия текстового редактора vi
 
-sudo pacman -S vi vim vim-ansible vim-ale vim-airline vim-airline-themes vim-align vim-bufexplorer vim-ctrlp vim-fugitive vim-indent-object vim-jad vim-jedi vim-latexsuite vim-molokai vim-nerdcommenter vim-nerdtree vim-pastie vim-runtime vim-seti vim-supertab vim-surround vim-syntastic vim-tagbar vim-ultisnips --noconfirm 
 
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
@@ -1782,8 +1781,6 @@ https://www.archlinux.org/packages/extra/x86_64/aspell-en/
 calibre - # Community - Приложение для управления электронными книгами
 https://www.archlinux.org/packages/community/x86_64/calibre/
 
-python-reportlab - # Проверенное надежное решение для создания PDF-файлов  +
-https://www.archlinux.org/packages/community/x86_64/python-reportlab/
 
 media-player-info - # Файлы данных, описывающие возможности медиаплеера для систем post-HAL
 https://www.archlinux.org/packages/extra/any/media-player-info/
@@ -2943,7 +2940,7 @@ fi
 
 +++++++++++++========================+++++++++++++++++
 
-sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter cpupower crda dhclient dnsmasq efibootmgr fortune-mod fsarchiver gnome-nettool haveged hyphen-en lib32-flex logrotate lsb-release man-db man-pages mlocate mtpfs nss-mdns patchutils pciutils php poppler-data       --noconfirm   
+sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter cpupower crda dhclient dnsmasq efibootmgr fortune-mod fsarchiver gnome-nettool haveged hyphen-en lib32-flex logrotate lsb-release man-db man-pages mlocate mtpfs nss-mdns patchutils pciutils php poppler-data qt5-translations reiserfsprogs rmlint-shredder       --noconfirm   
 
 
 sudo pacman -S accountsservice --noconfirm  # Интерфейс D-Bus для запроса учетных записей пользователей и управления ими
@@ -2975,10 +2972,8 @@ sudo pacman -S patchutils --noconfirm  # Небольшая коллекция �
 sudo pacman -S pciutils --noconfirm  # Библиотека и инструменты доступа к пространству конфигурации шины PCI
 sudo pacman -S php --noconfirm  # Язык сценариев общего назначения, особенно подходящий для веб-разработки
 sudo pacman -S poppler-data --noconfirm  # Кодирование данных для библиотеки рендеринга PDF Poppler
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S qt5-translations --noconfirm  # росс-платформенное приложение и UI-фреймворк (переводы)
+sudo pacman -S reiserfsprogs --noconfirm  # Утилиты Reiserfs
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -3011,7 +3006,8 @@ sudo pacman -S gnome-chess --noconfirm  # Сыграйте в классичес
 sudo pacman -S hardinfo --noconfirm  # Системная информация и инструмент тестирования
 sudo pacman -S hexchat --noconfirm  # Популярный и простой в использовании графический IRC-клиент (чат)
 sudo pacman -S pacmanlogviewer --noconfirm  # Проверьте файлы журнала pacman
-sudo pacman -S qpdfview --noconfirm  # Просмотрщик PDF с вкладками, использующий библиотеку poppler
+sudo pacman -S rmlint --noconfirm  # Инструмент для удаления дубликатов и прочего ворса, намного быстрее, чем fdupes
+sudo pacman -S rmlint-shredder --noconfirm  # Графический пользовательский интерфейс для rmlint
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
