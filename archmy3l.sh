@@ -1319,7 +1319,7 @@ echo -e "${GREEN}==> ${NC}Установка дополнительных баз
 #echo -e "${BLUE}:: ${NC}Установка дополнительных базовых программ (пакетов)" 
 #echo 'Установка дополнительных базовых программ (пакетов)'
 # Installing additional basic programs (packages)
-echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (aspell-ru, arch-install-scripts, bash-completion, cmake, autofs, btrfs-progs, dosfstools, f2fs-tools, sane, gvfs, gnu-netcat, iftop, nmap, ncdu, hydra, isomd5sum, python-isomd5sum, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, python, pwgen, scrot, xsel, powertop, smartmontools, syslinux, ethtool, glances, xterm, desktop-file-utils, gtop, lib32-curl, gpm, hddtemp, memtest86+, jfsutils, xorg-xkill)."
+echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (aspell-ru, arch-install-scripts, bash-completion, cmake, autofs, btrfs-progs, dosfstools, f2fs-tools, sane, gvfs, gvfs-gphoto2, gvfs-nfs, gvfs-smb, gnu-netcat, iftop, nmap, ncdu, hydra, isomd5sum, python-isomd5sum, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, python, pwgen, scrot, xsel, powertop, smartmontools, syslinux, ethtool, glances, xterm, desktop-file-utils, gtop, lib32-curl, gpm, hddtemp, memtest86+, jfsutils, xorg-xkill)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -1344,7 +1344,7 @@ echo " Установка дополнительных базовых прогр
 elif [[ $in_soft == 1 ]]; then
   echo ""  
   echo " Установка дополнительных базовых программ (пакетов) "
-# sudo pacman -S aspell-ru arch-install-scripts bash-completion cmake autofs btrfs-progs dosfstools f2fs-tools sane gvfs gnu-netcat iftop nmap ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip python pwgen scrot xsel powertop smartmontools syslinux ethtool glances xterm desktop-file-utils gtop lib32-curl gpm hddtemp memtest86+ jfsutils xorg-xkill --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64 
+sudo pacman -S aspell-ru arch-install-scripts bash-completion cmake autofs btrfs-progs dosfstools f2fs-tools sane gvfs gvfs-gphoto2 gvfs-nfs gvfs-smb gnu-netcat iftop nmap ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip python pwgen scrot xsel powertop smartmontools syslinux ethtool glances xterm desktop-file-utils gtop lib32-curl gpm hddtemp memtest86+ jfsutils xorg-xkill --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64 
 sudo pacman -S arch-install-scripts --noconfirm  # Сценарии для помощи в установке Arch Linux
 sudo pacman -S aspell-ru --noconfirm  # Русский словарь для aspell  
 sudo pacman -S bash-completion --noconfirm  # Программируемое завершение для оболочки bash
@@ -1357,6 +1357,9 @@ sudo pacman -S jfsutils --noconfirm  # Утилиты файловой сист�
 sudo pacman -S sane --noconfirm  # Доступ к сканеру теперь простой
 sudo pacman -S ncdu --noconfirm  # Анализатор использования диска с интерфейсом ncurses
 sudo pacman -S gvfs --noconfirm  # Реализация виртуальной файловой системы для GIO
+sudo pacman -S gvfs-gphoto2 --noconfirm  # Реализация виртуальной файловой системы для GIO (бэкэнд gphoto2; камера PTP, медиаплеер MTP)
+sudo pacman -S gvfs-nfs --noconfirm  # Реализация виртуальной файловой системы для GIO (серверная часть NFS)
+sudo pacman -S gvfs-smb --noconfirm  # Реализация виртуальной файловой системы для GIO (серверная часть SMB / CIFS; клиент Windows)
 sudo pacman -S gnu-netcat --noconfirm  # GNU переписывает netcat, приложение для создания сетевых трубопроводов
 sudo pacman -S iftop --noconfirm  # Отображение использования полосы пропускания на интерфейсе
 sudo pacman -S nmap --noconfirm  # Утилита для обнаружения сети и аудита безопасности

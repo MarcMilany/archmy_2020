@@ -2932,7 +2932,7 @@ fi
 
 +++++++++++++========================+++++++++++++++++
 
-sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter catfish cpupower crda dhclient dnsmasq efibootmgr fortune-mod fsarchiver gnome-chess gnome-nettool gvfs-gphoto2         --noconfirm   
+sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter catfish cpupower crda dhclient dnsmasq efibootmgr fortune-mod fsarchiver gnome-chess gnome-nettool gvfs-gphoto2 gvfs-nfs gvfs-smb        --noconfirm   
 
 
 sudo pacman -S accountsservice --noconfirm  # Интерфейс D-Bus для запроса учетных записей пользователей и управления ими
@@ -2953,8 +2953,8 @@ sudo pacman -S fsarchiver --noconfirm  # Безопасный и гибкий и
 sudo pacman -S gnome-chess --noconfirm  # Сыграйте в классическую настольную игру в шахматы для двух игроков
 sudo pacman -S gnome-nettool --noconfirm  # Графический интерфейс для различных сетевых инструментов
 sudo pacman -S gvfs-gphoto2 --noconfirm  # Реализация виртуальной файловой системы для GIO (бэкэнд gphoto2; камера PTP, медиаплеер MTP)
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S gvfs-nfs --noconfirm  # Реализация виртуальной файловой системы для GIO (серверная часть NFS)
+sudo pacman -S gvfs-smb --noconfirm  # Реализация виртуальной файловой системы для GIO (серверная часть SMB / CIFS; клиент Windows)
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
