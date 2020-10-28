@@ -1792,10 +1792,8 @@ https://www.archlinux.org/packages/community/x86_64/lksctp-tools/
 mlocate - # Слияние реализации locate / updatedb
 https://www.archlinux.org/packages/core/x86_64/mlocate/
 
-dosfstools - # Утилиты файловой системы DOS
-https://www.archlinux.org/packages/core/x86_64/dosfstools/
 
-jfsutils - # Утилиты файловой системы JFS
+jfsutils - # 
 https://www.archlinux.org/packages/core/x86_64/jfsutils/
 
 
