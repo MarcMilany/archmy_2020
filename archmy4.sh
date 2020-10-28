@@ -1274,8 +1274,7 @@ https://aur.archlinux.org/packages/breeze-default-cursor-theme/
 https://aur.archlinux.org/breeze-default-cursor-theme.git
 
 ---------------------------------------
-
-sudo pacman -S termite termite-terminfo --noconfirm  
+ 
 sudo pacman -S systemd systemd-libs systemd-resolvconf systemd-sysvcompat --noconfirm
 sudo pacman -S  --noconfirm  
 sudo pacman -S  --noconfirm  
@@ -2977,8 +2976,7 @@ fi
 
 +++++++++++++========================+++++++++++++++++
 
-sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter cpupower crda dhclient dnsmasq efibootmgr fortune-mod fsarchiver gnome-nettool haveged hyphen-en lib32-flex logrotate lsb-release man-db man-pages mlocate mtpfs nss-mdns patchutils pciutils php poppler-data qt5-translations reiserfsprogs ruby s-nail yelp --noconfirm   
-
+sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter cpupower crda dhclient dnsmasq efibootmgr fortune-mod fsarchiver gnome-nettool haveged hyphen-en lib32-flex logrotate lsb-release man-db man-pages mlocate mtpfs nss-mdns patchutils pciutils php poppler-data qt5-translations reiserfsprogs ruby s-nail termite termite-terminfo yelp --noconfirm   
 
 sudo pacman -S accountsservice --noconfirm  # Интерфейс D-Bus для запроса учетных записей пользователей и управления ими
 sudo pacman -S acpi --noconfirm  # Клиент для показаний батареи, мощности и температуры
@@ -3014,8 +3012,9 @@ sudo pacman -S qt5-translations --noconfirm  # росс-платформенно
 sudo pacman -S reiserfsprogs --noconfirm  # Утилиты Reiserfs
 sudo pacman -S ruby --noconfirm  # Объектно-ориентированный язык для быстрого и простого программирования
 sudo pacman -S s-nail --noconfirm  # Среда для отправки и получения почты
+sudo pacman -S termite --noconfirm  # Термит-terminfo
+sudo pacman -S termite-terminfo --noconfirm  # Terminfo для Termite, простого терминала на базе VTE
 sudo pacman -S yelp --noconfirm  # Получите помощь с GNOME
-sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
