@@ -2607,7 +2607,7 @@ elif [[ $i_collection == 1 ]]; then
   echo " Установка рекомендованных утилит (пакетов) "
 # sudo pacman -S gnome-system-monitor gnome-disk-utility gnome-multi-writer frei0r-plugins clonezilla psensor copyq rsync grsync numlockx modem-manager-gui rofi gsmartcontrol ranger testdisk lsof dmidecode qemu --noconfirm 
 sudo pacman -S gnome-system-monitor --noconfirm  # Просмотр текущих процессов и мониторинг состояния системы
-sudo pacman -S gnome-disk-utility --noconfirm  # тилита управления дисками для GNOME
+sudo pacman -S gnome-disk-utility --noconfirm  # Утилита управления дисками для GNOME
 sudo pacman -S gnome-multi-writer --noconfirm  # Записать файл ISO на несколько USB-устройств одновременно
 sudo pacman -S frei0r-plugins --noconfirm  # Минималистичный плагин API для видеоэффектов
 sudo pacman -S clonezilla --noconfirm  # Раздел ncurses и программа для создания образов / клонирования дисков
@@ -2624,11 +2624,11 @@ sudo pacman -S testdisk --noconfirm  # Проверяет и восстанав�
 sudo pacman -S lsof --noconfirm  # Перечисляет открытые файлы для запуска процессов Unix
 sudo pacman -S dmidecode --noconfirm  # Утилиты, относящиеся к таблице интерфейса управления рабочим столом
 sudo pacman -S qemu --noconfirm  # Универсальный компьютерный эмулятор и виртуализатор с открытым исходным кодом
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
+# sudo pacman -S  --noconfirm  # 
+# sudo pacman -S  --noconfirm  # 
+# sudo pacman -S  --noconfirm  #
+# sudo pacman -S  --noconfirm  #
+# sudo pacman -S  --noconfirm  #
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
