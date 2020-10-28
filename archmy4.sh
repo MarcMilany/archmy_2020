@@ -490,8 +490,8 @@ echo 'Утилиты для редактирования документов, P
 # Utilities for editing documents, PDF, Djvu, NFO, DIZ and XPS..., e-book Readers, Dictionaries, Tables AUR
 yay -S sublime-text-dev unoconv hunspell-ru masterpdfeditor --noconfirm
 yay -S sublime-text-dev --noconfirm  # Сложный текстовый редактор для кода, html и прозы - dev build
-yay -S hunspell-ru --noconfirm  #
-yay -S masterpdfeditor --noconfirm  #
+yay -S hunspell-ru --noconfirm  # Русский словарь hunspell
+yay -S masterpdfeditor --noconfirm  # Комплексное решение для просмотра, создания и редактирования файлов PDF
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
