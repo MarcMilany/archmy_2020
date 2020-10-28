@@ -2939,7 +2939,7 @@ fi
 
 +++++++++++++========================+++++++++++++++++
 
-sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter cpupower crda dhclient dnsmasq efibootmgr fortune-mod fsarchiver gnome-nettool haveged hyphen-en lib32-flex logrotate lsb-release man-db man-pages mlocate mtpfs nss-mdns patchutils pciutils php poppler-data qt5-translations reiserfsprogs ruby s-nail        --noconfirm   
+sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter cpupower crda dhclient dnsmasq efibootmgr fortune-mod fsarchiver gnome-nettool haveged hyphen-en lib32-flex logrotate lsb-release man-db man-pages mlocate mtpfs nss-mdns patchutils pciutils php poppler-data qt5-translations reiserfsprogs ruby s-nail yelp --noconfirm   
 
 
 sudo pacman -S accountsservice --noconfirm  # Интерфейс D-Bus для запроса учетных записей пользователей и управления ими
@@ -2975,7 +2975,7 @@ sudo pacman -S qt5-translations --noconfirm  # росс-платформенно
 sudo pacman -S reiserfsprogs --noconfirm  # Утилиты Reiserfs
 sudo pacman -S ruby --noconfirm  # Объектно-ориентированный язык для быстрого и простого программирования
 sudo pacman -S s-nail --noconfirm  # Среда для отправки и получения почты
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S yelp --noconfirm  # Получите помощь с GNOME
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -3012,8 +3012,8 @@ sudo pacman -S cmus --noconfirm  # Многофункциональный муз
 sudo pacman -S moc --noconfirm  # Консольный аудиоплеер ncurses, разработанный, чтобы быть мощным и простым в использовании
 sudo pacman -S peek --noconfirm  # Простой экранный рекордер с простым в использовании интерфейсом
 sudo pacman -S vorbisgain --noconfirm  # Утилита, которая вычисляет значения ReplayGain для файлов Ogg Vorbis
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  #
+sudo pacman -S you-get --noconfirm  # Загрузчик видео с YouTube / Youku / Niconico, написанный на Python 3
+sudo pacman -S youtube-viewer --noconfirm  # Утилита командной строки для просмотра видео на YouTube
 
 sudo pacman -S light-locker --noconfirm  # Простой шкафчик сессий для LightDM
 sudo pacman -S  --noconfirm  # 
