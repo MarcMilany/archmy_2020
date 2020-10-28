@@ -804,11 +804,11 @@ echo 'Установка Дополнительных программ'
 # Installing Additional programs
 echo -e "${BLUE}
 'Список Дополнительных программ к установке:${GREEN}
-qemu osmo synapse variety kleopatra' 
+ osmo synapse variety kleopatra' 
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-sudo pacman -S qemu --noconfirm  # Универсальный компьютерный эмулятор и виртуализатор с открытым исходным кодом
+
 sudo pacman -S osmo --noconfirm  # Удобный персональный органайзер
 sudo pacman -S synapse --noconfirm  # Средство запуска семантических файлов
 sudo pacman -S variety --noconfirm  # Меняет обои с регулярным интервалом, используя указанные пользователем или автоматически загруженные изображения
