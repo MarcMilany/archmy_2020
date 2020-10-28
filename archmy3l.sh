@@ -1374,12 +1374,12 @@ sudo pacman -S scrot --noconfirm  # Простая утилита для соз�
 sudo pacman -S xsel --noconfirm  # XSel - это программа командной строки для получения и установки содержимого выделения X
 sudo pacman -S powertop --noconfirm  # Инструмент для диагностики проблем с энергопотреблением и управлением питанием
 sudo pacman -S smartmontools --noconfirm  # Управление и мониторинг жестких дисков ATA и SCSI с поддержкой SMAR
-sudo pacman -S ethtool --noconfirm  # 
-sudo pacman -S glances --noconfirm  #
-sudo pacman -S xterm --noconfirm  #
-sudo pacman -S desktop-file-utils --noconfirm  #
-sudo pacman -S gtop --noconfirm  #
-sudo pacman -S lib32-curl --noconfirm  #
+sudo pacman -S ethtool --noconfirm  # Утилита для управления сетевыми драйверами и оборудованием
+sudo pacman -S glances --noconfirm  # Инструмент мониторинга на основе CLI на основе curses
+sudo pacman -S xterm --noconfirm  # Эмулятор терминала X
+sudo pacman -S desktop-file-utils --noconfirm  # Утилиты командной строки для работы с записями рабочего стола
+sudo pacman -S gtop --noconfirm  # Панель мониторинга системы для терминала
+sudo pacman -S lib32-curl --noconfirm  # 
 sudo pacman -S gpm --noconfirm  #
 sudo pacman -S hddtemp --noconfirm  # 
 sudo pacman -S memtest86+ --noconfirm  # Усовершенствованный инструмент диагностики памяти
