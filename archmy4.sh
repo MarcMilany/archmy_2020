@@ -2961,6 +2961,7 @@ sudo pacman -S haveged --noconfirm  # Демон сбора энтропии с 
 sudo pacman -S hyphen-en --noconfirm  # Правила расстановки переносов в английском
 sudo pacman -S lib32-flex --noconfirm  # Инструмент для создания программ сканирования текста
 sudo pacman -S logrotate --noconfirm  # Автоматическая ротация системных журналов
+# sudo pacman -S light-locker --noconfirm  # Простой шкафчик сессий для LightDM
 sudo pacman -S lsb-release --noconfirm  # Программа запроса версии LSB
 sudo pacman -S man-db --noconfirm  # Утилита для чтения страниц руководства
 sudo pacman -S man-pages --noconfirm  # Страницы руководства Linux
@@ -3015,7 +3016,7 @@ sudo pacman -S vorbisgain --noconfirm  # Утилита, которая вычи
 sudo pacman -S you-get --noconfirm  # Загрузчик видео с YouTube / Youku / Niconico, написанный на Python 3
 sudo pacman -S youtube-viewer --noconfirm  # Утилита командной строки для просмотра видео на YouTube
 
-sudo pacman -S light-locker --noconfirm  # Простой шкафчик сессий для LightDM
+
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
