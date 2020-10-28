@@ -2519,8 +2519,8 @@ sudo pacman -S psensor --noconfirm  # Графический аппаратны�
 sudo pacman -S copyq --noconfirm  # Менеджер буфера обмена с возможностью поиска и редактирования истории
 sudo pacman -S rsync --noconfirm  # Быстрый и универсальный инструмент для копирования удаленных и локальных файлов
 sudo pacman -S grsync --noconfirm  # GTK + GUI для rsync для синхронизации папок, файлов и создания резервных копий
-sudo pacman -S numlockx --noconfirm  # 
-sudo pacman -S modem-manager-gui --noconfirm  # 
+sudo pacman -S numlockx --noconfirm  # Включает клавишу numlock в X11
+sudo pacman -S modem-manager-gui --noconfirm  # Интерфейс для демона ModemManager, способного управлять определенными функциями модема
 sudo pacman -S rofi --noconfirm  # 
 sudo pacman -S gsmartcontrol --noconfirm  # 
 sudo pacman -S ranger --noconfirm  # 
