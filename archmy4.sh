@@ -2935,7 +2935,7 @@ fi
 
 +++++++++++++========================+++++++++++++++++
 
-sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter cpupower crda dhclient dnsmasq efibootmgr fortune-mod fsarchiver gnome-nettool haveged hyphen-en lib32-flex         --noconfirm   
+sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en b43-fwcutter cpupower crda dhclient dnsmasq efibootmgr fortune-mod fsarchiver gnome-nettool haveged hyphen-en lib32-flex logrotate lsb-release man-db man-pages        --noconfirm   
 
 
 sudo pacman -S accountsservice --noconfirm  # Интерфейс D-Bus для запроса учетных записей пользователей и управления ими
@@ -2956,10 +2956,10 @@ sudo pacman -S gnome-nettool --noconfirm  # Графический интерф�
 sudo pacman -S haveged --noconfirm  # Демон сбора энтропии с использованием таймингов процессора
 sudo pacman -S hyphen-en --noconfirm  # Правила расстановки переносов в английском
 sudo pacman -S lib32-flex --noconfirm  # Инструмент для создания программ сканирования текста
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S logrotate --noconfirm  # Автоматическая ротация системных журналов
+sudo pacman -S lsb-release --noconfirm  # Программа запроса версии LSB
+sudo pacman -S man-db --noconfirm  # Утилита для чтения страниц руководства
+sudo pacman -S man-pages --noconfirm  # Страницы руководства Linux
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
