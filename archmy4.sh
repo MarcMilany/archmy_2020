@@ -1551,7 +1551,7 @@ python-patiencediff 0.2.0-1
 python-pbr 5.5.0-1
 python-pep517 0.8.2-1
 python-pexpect 4.8.0-1
-python-pillow 7.2.0-1
+python-pillow 7.2.0-1  +  # Вилка Python Imaging Library (PIL)
 python-pip 20.1.1-1
 python-ply 3.11-5
 python-powerline 2.8.1-1
@@ -1782,8 +1782,8 @@ https://www.archlinux.org/packages/extra/x86_64/aspell-en/
 calibre - # Community - Приложение для управления электронными книгами
 https://www.archlinux.org/packages/community/x86_64/calibre/
 
-
-
+python-reportlab - # Проверенное надежное решение для создания PDF-файлов  +
+https://www.archlinux.org/packages/community/x86_64/python-reportlab/
 
 media-player-info - # Файлы данных, описывающие возможности медиаплеера для систем post-HAL
 https://www.archlinux.org/packages/extra/any/media-player-info/
@@ -3011,7 +3011,7 @@ sudo pacman -S gnome-chess --noconfirm  # Сыграйте в классичес
 sudo pacman -S hardinfo --noconfirm  # Системная информация и инструмент тестирования
 sudo pacman -S hexchat --noconfirm  # Популярный и простой в использовании графический IRC-клиент (чат)
 sudo pacman -S pacmanlogviewer --noconfirm  # Проверьте файлы журнала pacman
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S qpdfview --noconfirm  # Просмотрщик PDF с вкладками, использующий библиотеку poppler
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
