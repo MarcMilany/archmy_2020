@@ -2524,7 +2524,7 @@ sudo pacman -S modem-manager-gui --noconfirm  # Интерфейс для дем
 sudo pacman -S rofi --noconfirm  # Переключатель окон, средство запуска приложений и замена dmenu
 sudo pacman -S gsmartcontrol --noconfirm  # Графический пользовательский интерфейс для инструмента проверки состояния жесткого диска smartctl
 sudo pacman -S ranger --noconfirm  # Простой файловый менеджер в стиле vim
-sudo pacman -S testdisk --noconfirm  # 
+sudo pacman -S testdisk --noconfirm  # Проверяет и восстанавливает разделы + PhotoRec, инструмент восстановления на основе сигнатур
 sudo pacman -S lsof --noconfirm  # 
 sudo pacman -S dmidecode --noconfirm  # 
 sudo pacman -S  --noconfirm  #
