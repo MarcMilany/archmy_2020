@@ -2974,7 +2974,7 @@ sudo pacman -S  --noconfirm  #
 
 sudo pacman -S audacity --noconfirm  # Программа, позволяющая манипулировать сигналами цифрового звука
 sudo pacman -S cmus --noconfirm  # Многофункциональный музыкальный проигрыватель на базе ncurses
-sudo pacman -S ffmpegthumbnailer --noconfirm  # Легкий эскиз видеофайлов, который может использоваться файловыми менеджерами
+# sudo pacman -S ffmpegthumbnailer --noconfirm  # Легкий эскиз видеофайлов, который может использоваться файловыми менеджерами
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -2988,7 +2988,7 @@ sudo pacman -S  --noconfirm  #
 
 
 sudo pacman -S engrampa --noconfirm  # Манипулятор архивов для MATE
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S firefox-i18n-en-us --noconfirm  # Английский (США) языковой пакет для Firefox
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
