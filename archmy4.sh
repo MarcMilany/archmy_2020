@@ -2862,6 +2862,7 @@ sudo pacman -S fsarchiver --noconfirm  # Безопасный и гибкий и
 sudo pacman -S gnome-nettool --noconfirm  # Графический интерфейс для различных сетевых инструментов
 sudo pacman -S haveged --noconfirm  # Демон сбора энтропии с использованием таймингов процессора
 sudo pacman -S hyphen-en --noconfirm  # Правила расстановки переносов в английском
+# sudo pacman -S inetutils --noconfirm  # Сборник общих сетевых программ   # присутствует
 sudo pacman -S lib32-flex --noconfirm  # Инструмент для создания программ сканирования текста
 sudo pacman -S libfm-gtk2 --noconfirm  # Библиотека GTK + 2 для управления файлами
 sudo pacman -S logrotate --noconfirm  # Автоматическая ротация системных журналов
@@ -2900,7 +2901,7 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
-sudo pacman -S inetutils --noconfirm  # Сборник общих сетевых программ
+
 
 # sudo pacman -S tumbler ffmpegthumbnailer poppler-glib libgsf libopenraw --noconfirm
 #sudo pacman -S tumbler --noconfirm  #  Сервис D-Bus для приложений, запрашивающих миниатюры
