@@ -340,7 +340,7 @@ sudo pacman -S cmus --noconfirm  # Многофункциональный муз
 sudo pacman -S vorbisgain --noconfirm  # Утилита, которая вычисляет значения ReplayGain для файлов Ogg Vorbis
 sudo pacman -S you-get --noconfirm  # Загрузчик видео с YouTube / Youku / Niconico, написанный на Python 3
 sudo pacman -S youtube-viewer --noconfirm  # Утилита командной строки для просмотра видео на YouTube
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S qmmp --noconfirm  # Аудиоплеер на Qt5
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -400,7 +400,7 @@ sudo pacman -S gimp --noconfirm
 sudo pacman -S gimp --noconfirm  # Программа обработки изображений GNU
 sudo pacman -S gimp-help-en --noconfirm  # Английские файлы справки для GIMP
 sudo pacman -S gimp-help-ru --noconfirm  # Русские файлы справки для GIMP
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S pinta --noconfirm  # Программа для рисования / редактирования по образцу Paint.NET. Его цель - предоставить упрощенную альтернативу GIMP для обычных пользователей
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 
@@ -416,10 +416,10 @@ yay -S  --noconfirm  #
 
 echo 'Установка программ для просмотра изображений'
 sudo pacman -S viewnior --noconfirm  # Простая, быстрая и элегантная программа просмотра изображений
+sudo pacman -S feh --noconfirm  # Быстрый и легкий просмотрщик изображений на основе imlib2
 sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S eog --noconfirm  # Eye of Gnome: программа для просмотра и каталогизации изображений
+sudo pacman -S eog-plugins --noconfirm  # Плагины для Eye of Gnome
 
 echo 'Установка программ для просмотра изображений AUR'
 yay -S  --noconfirm
@@ -513,8 +513,8 @@ echo 'Утилиты для редактирования документов, P
 # Utilities for editing documents, PDF, Djvu, NFO, DIZ and XPS..., e-book Readers, Dictionaries, Tables
 sudo pacman -S qpdfview --noconfirm  # Просмотрщик PDF с вкладками, использующий библиотеку poppler
 sudo pacman -S python-reportlab --noconfirm  # Проверенное надежное решение для создания PDF-файлов
-sudo pacman -S --noconfirm  # 
-sudo pacman -S --noconfirm  # 
+sudo pacman -S evince --noconfirm  # Программа просмотра документов (PDF, Postscript, djvu, tiff, dvi, XPS, поддержка SyncTex с gedit, комиксы (cbr, cbz, cb7 и cbt))
+sudo pacman -S antiword --noconfirm  # Community - Бесплатная программа для чтения MS Word для Linux и RISC OS
 sudo pacman -S --noconfirm  # 
 sudo pacman -S --noconfirm  # 
 sudo pacman -S --noconfirm  # 
@@ -599,6 +599,9 @@ yay -S  --noconfirm  #
 echo 'Утилиты для работы с CD,DVD, создание ISO образов, запись на флеш-накопители'
 # Utilities for working with CD, DVD, creating ISO images, writing to flash drives
 sudo pacman -S woeusb --noconfirm  # Программа Linux для создания установщика USB-накопителя Windows с DVD-диска Windows или образа
+sudo pacman -S xfburn --noconfirm  # Простой инструмент для записи CD / DVD на основе библиотек libburnia
+sudo pacman -S --noconfirm  # 
+sudo pacman -S --noconfirm  # 
 
 echo 'Утилиты для работы с CD,DVD, создание ISO образов, запись на флеш-накопители AUR'
 # Utilities for working with CD, DVD, creating ISO images, writing to flash drives AUR
@@ -703,7 +706,7 @@ read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
 sudo pacman -S simplescreenrecorder --noconfirm  # Многофункциональный экранный рекордер, поддерживающий X11 и OpenGL
 sudo pacman -S peek --noconfirm  # Простой экранный рекордер с простым в использовании интерфейсом
-sudo pacman -S  --noconfirm  #
+sudo pacman -S gnome-screenshot --noconfirm  # Сфотографируйте свой экран
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
@@ -876,7 +879,7 @@ sudo pacman -S rmlint --noconfirm  # Инструмент для удалени�
 sudo pacman -S rmlint-shredder --noconfirm  # Графический пользовательский интерфейс для rmlint
 sudo pacman -S synapse --noconfirm  # Средство запуска семантических файлов
 sudo pacman -S variety --noconfirm  # Меняет обои с регулярным интервалом, используя указанные пользователем или автоматически загруженные изображения
-sudo pacman -S  --noconfirm  #
+sudo pacman -S recolla --noconfirm  # Инструмент полнотекстового поиска на базе Xapian backend (recoll)
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
@@ -1725,23 +1728,7 @@ python2-pyxdg 0.26-6
 
 ###################  #################
 
-pacman -S eog eog-plugins chromium toxcore qmmp gimp xfburn pinta recoll gnome-screenshot evince mlocate antiword catdoc unrtf djvulibre id3lib mutagen python2-pychm aspell-en git calibre ttf-freefont ttf-linux-libertine --noconfirm
 
-eog  - Staging  - Eye of Gnome: программа для просмотра и каталогизации изображений.
-eog-plugins  - Extra  - Плагины для Eye of Gnome
-
-qmmp  - Community - Аудиоплеер на Qt5
-gimp - Extra  - Программа обработки изображений GNU
-xfburn - Extra  - Простой инструмент для записи CD / DVD на основе библиотек libburnia
-pinta - Community - Программа для рисования / редактирования по образцу Paint.NET. Его цель - предоставить упрощенную альтернативу GIMP для обычных пользователей
-recolla - Community - Инструмент полнотекстового поиска на базе Xapian backend
-recoll
-gnome-screenshot - Extra  - Сфотографируйте свой экран
-evince - Extra  - Программа просмотра документов (PDF, Postscript, djvu, tiff, dvi, XPS, поддержка SyncTex с gedit, комиксы (cbr, cbz, cb7 и cbt))
-
-antiword - Community - Бесплатная программа для чтения MS Word для Linux и RISC OS
-
-python2-pychm     ---- больше не доступен  https://pkgs.org/download/python2   python2-2.7.18-2-x86_64.pkg.tar.zst
 -------------------------------------
 Смена оболочки
 Для смены оболочки на ZSH введите в терминале следующее: chsh -s /bin/zsh.
