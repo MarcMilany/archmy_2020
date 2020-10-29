@@ -2950,29 +2950,28 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 
-
 libfm-gtk2 - # Библиотека GTK + 2 для управления файлами
 https://www.archlinux.org/packages/community/x86_64/libfm-gtk2/
 
 mjpegtools - # Набор инструментов, которые могут выполнять запись и воспроизведение видео, простое редактирование с вырезанием и вставкой и сжатие MPEG аудио и видео 
 https://www.archlinux.org/packages/extra/x86_64/mjpegtools/
-https://www.tux.in.ua/articles/443
+https://www.tux.in.ua/articles/443   # присутствует
 
 gptfdisk - # Инструмент для создания разделов в текстовом режиме, который работает с дисками с таблицей разделов GUID (GPT) 
-https://www.archlinux.org/packages/extra/x86_64/gptfdisk/
+https://www.archlinux.org/packages/extra/x86_64/gptfdisk/   # присутствует
 
 alacarte - # Редактор меню для gnome
 https://www.archlinux.org/packages/extra/any/alacarte/
 
 groff - # Система форматирования текста GNU troff
-https://www.archlinux.org/packages/core/x86_64/groff/
+https://www.archlinux.org/packages/core/x86_64/groff/   # присутствует
 
 
 fuse2 - # Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
-https://www.archlinux.org/packages/extra/x86_64/fuse2/
+https://www.archlinux.org/packages/extra/x86_64/fuse2/   # присутствует
 
 fuse3 - # Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
-https://www.archlinux.org/packages/extra/x86_64/fuse3/
+https://www.archlinux.org/packages/extra/x86_64/fuse3/   # присутствует
 
 fuseiso - # Модуль FUSE для монтирования образов файловой системы ISO
 https://www.archlinux.org/packages/community/x86_64/fuseiso/
@@ -3005,7 +3004,7 @@ mpc - # Минималистичный интерфейс командной с�
 https://www.archlinux.org/packages/extra/x86_64/mpc/
 
 hidapi - # Простая библиотека для связи с устройствами USB и Bluetooth HID
-https://www.archlinux.org/packages/community/x86_64/hidapi/
+https://www.archlinux.org/packages/community/x86_64/hidapi/   # присутствует
 
 djvulibre - # Пакет для создания, управления и просмотра документов DjVu ('дежавю')
 https://www.archlinux.org/packages/extra/x86_64/djvulibre/
@@ -3021,17 +3020,16 @@ media-player-info - # Файлы данных, описывающие возмо
 https://www.archlinux.org/packages/extra/any/media-player-info/
 
 id3lib - # Библиотека для чтения, записи и управления тегами ID3v1 и ID3v2
-https://www.archlinux.org/packages/extra/x86_64/id3lib/
+https://www.archlinux.org/packages/extra/x86_64/id3lib/   # присутствует
 
 ccache - # Кэш компилятора, который ускоряет перекомпиляцию за счет кеширования предыдущих компиляций
 https://www.archlinux.org/packages/community/x86_64/ccache/
 
 flex - # Инструмент для создания программ сканирования текста
-https://www.archlinux.org/packages/core/x86_64/flex/
+https://www.archlinux.org/packages/core/x86_64/flex/   # присутствует
 
 lksctp-tools - # Реализация протокола SCTP (http://lksctp.sourceforge.net/)
 https://www.archlinux.org/packages/community/x86_64/lksctp-tools/
-
 
 
 
