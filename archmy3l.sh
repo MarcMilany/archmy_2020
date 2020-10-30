@@ -1319,7 +1319,7 @@ echo -e "${GREEN}==> ${NC}Установка дополнительных баз
 #echo -e "${BLUE}:: ${NC}Установка дополнительных базовых программ (пакетов)" 
 #echo 'Установка дополнительных базовых программ (пакетов)'
 # Installing additional basic programs (packages)
-echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (accountsservice, acpi, acpid, android-tools, android-udev, arch-install-scripts, aspell-en, aspell-ru, b43-fwcutter, bash-completion, cmake, cpupower, crda, autofs, btrfs-progs, dhclient, dnsmasq, dosfstools, efibootmgr, f2fs-tools, fortune-mod, fsarchiver, sane, gnome-nettool, gvfs, gvfs-gphoto2, gvfs-nfs, gvfs-smb, gnu-netcat, haveged, hyphen-en, iftop, nmap, ncdu, hydra, isomd5sum, python-isomd5sum, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, lib32-flex, libfm-gtk2, logrotate, man-db, man-pages, mlocate, mtpfs, python, pwgen, nss-mdns, scrot, xsel, powertop, smartmontools, syslinux, ethtool, glances, xterm, desktop-file-utils, gtop, lib32-curl, gpm, hddtemp, memtest86+, jfsutils, udiskie, usb_modeswitch, xorg-xkill, xorg-twm)."
+echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (accountsservice, acpi, acpid, android-tools, android-udev, arch-install-scripts, aspell-en, aspell-ru, b43-fwcutter, bash-completion, cmake, cpupower, crda, autofs, btrfs-progs, dhclient, dnsmasq, dosfstools, efibootmgr, f2fs-tools, fortune-mod, fsarchiver, sane, gnome-nettool, gvfs, gvfs-gphoto2, gvfs-nfs, gvfs-smb, gnu-netcat, haveged, hyphen-en, iftop, nmap, ncdu, hydra, isomd5sum, python-isomd5sum, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, lib32-flex, libfm-gtk2, logrotate, man-db, man-pages, mlocate, mtpfs, patchutils, pciutils, php, poppler-data, qt5-translations, python, pwgen, nss-mdns, scrot, xsel, powertop, reiserfsprogs, ruby, s-nail, smartmontools, syslinux, ethtool, glances, xterm, desktop-file-utils, gtop, lib32-curl, gpm, hddtemp, memtest86+, jfsutils, udiskie, usb_modeswitch, xorg-xkill, xorg-twm, yelp)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -1344,17 +1344,13 @@ echo " Установка дополнительных базовых прогр
 elif [[ $in_soft == 1 ]]; then
   echo ""  
   echo " Установка дополнительных базовых программ (пакетов) "
- sudo pacman -S accountsservice acpi acpid android-tools android-udev arch-install-scripts aspell-en aspell-ru autofs b43-fwcutter bash-completion btrfs-progs cmake cpupower crda dhclient dnsmasq dosfstools efibootmgr f2fs-tools fortune-mod fsarchiver sane gnome-nettool gvfs gvfs-gphoto2 gvfs-nfs gvfs-smb gnu-netcat haveged hyphen-en iftop nmap ncdu hydra isomd5sum python-isomd5sum lib32-flex libfm-gtk2 logrotate translate-shell mc pv sox youtube-dl speedtest-cli python-pip python nss-mdns man-db man-pages mlocate mtpfs pwgen scrot xsel powertop smartmontools syslinux ethtool glances xterm desktop-file-utils gtop lib32-curl gpm hddtemp memtest86+ jfsutils udiskie usb_modeswitch xorg-xkill xorg-twm --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64 
+ sudo pacman -S accountsservice acpi acpid android-tools android-udev arch-install-scripts aspell-en aspell-ru autofs b43-fwcutter bash-completion btrfs-progs cmake cpupower crda dhclient dnsmasq dosfstools efibootmgr f2fs-tools fortune-mod fsarchiver sane gnome-nettool gvfs gvfs-gphoto2 gvfs-nfs gvfs-smb gnu-netcat haveged hyphen-en iftop nmap ncdu hydra isomd5sum python-isomd5sum lib32-flex libfm-gtk2 logrotate translate-shell mc pv sox youtube-dl speedtest-cli python-pip python nss-mdns man-db man-pages mlocate mtpfs pwgen patchutils pciutils php poppler-data qt5-translations scrot xsel powertop smartmontools syslinux ethtool glances xterm desktop-file-utils reiserfsprogs ruby s-nail gtop lib32-curl gpm hddtemp memtest86+ jfsutils udiskie usb_modeswitch xorg-xkill xorg-twm yelp --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64 
 
   
 
-sudo pacman -S patchutils pciutils php poppler-data qt5-translations reiserfsprogs ruby s-nail termite termite-terminfo yelp --noconfirm  
+sudo pacman -S  termite termite-terminfo  --noconfirm  
 
 
-
-sudo pacman -S reiserfsprogs --noconfirm  # Утилиты Reiserfs
-sudo pacman -S ruby --noconfirm  # Объектно-ориентированный язык для быстрого и простого программирования
-sudo pacman -S s-nail --noconfirm  # Среда для отправки и получения почты
 sudo pacman -S termite --noconfirm  #  Простой терминал на базе VTE
 sudo pacman -S termite-terminfo --noconfirm  # Terminfo для Termite, простого терминала на базе VTE
 
@@ -1414,31 +1410,30 @@ sudo pacman -S mlocate --noconfirm  # Слияние реализации locate
 sudo pacman -S mtpfs --noconfirm  # Файловая система FUSE, поддерживающая чтение и запись с любого устройства MTP
 sudo pacman -S ncdu --noconfirm  # Анализатор использования диска с интерфейсом ncurses
 sudo pacman -S nss-mdns --noconfirm  # Плагин glibc, обеспечивающий разрешение имени хоста через mDNS
-
-
 sudo pacman -S patchutils --noconfirm  # Небольшая коллекция программ, работающих с файлами патчей
 sudo pacman -S pciutils --noconfirm  # Библиотека и инструменты доступа к пространству конфигурации шины PCI
 sudo pacman -S php --noconfirm  # Язык сценариев общего назначения, особенно подходящий для веб-разработки
 sudo pacman -S poppler-data --noconfirm  # Кодирование данных для библиотеки рендеринга PDF Poppler
-
-sudo pacman -S python-isomd5sum --noconfirm  # Привязки Python3 для isomd5sum
-sudo pacman -S python --noconfirm  # Новое поколение языка сценариев высокого уровня Python
-sudo pacman -S pv --noconfirm  # Инструмент на основе терминала для мониторинга прохождения данных по конвейеру
-
-sudo pacman -S python-pip --noconfirm  # Рекомендуемый PyPA инструмент для установки пакетов Python
-sudo pacman -S pwgen --noconfirm  # Генератор паролей для создания легко запоминающихся паролей
 sudo pacman -S powertop --noconfirm  # Инструмент для диагностики проблем с энергопотреблением и управлением питанием
-
-
+sudo pacman -S pv --noconfirm  # Инструмент на основе терминала для мониторинга прохождения данных по конвейеру
+sudo pacman -S pwgen --noconfirm  # Генератор паролей для создания легко запоминающихся паролей
+sudo pacman -S python --noconfirm  # Новое поколение языка сценариев высокого уровня Python
+sudo pacman -S python-isomd5sum --noconfirm  # Привязки Python3 для isomd5sum
+sudo pacman -S python-pip --noconfirm  # Рекомендуемый PyPA инструмент для установки пакетов Python
 sudo pacman -S qt5-translations --noconfirm  # кросс-платформенное приложение и UI-фреймворк (переводы)
-
-
+sudo pacman -S reiserfsprogs --noconfirm  # Утилиты Reiserfs
+sudo pacman -S ruby --noconfirm  # Объектно-ориентированный язык для быстрого и простого программирования
+sudo pacman -S s-nail --noconfirm  # Среда для отправки и получения почты
 sudo pacman -S sane --noconfirm  # Доступ к сканеру теперь простой
 sudo pacman -S scrot --noconfirm  # Простая утилита для создания снимков экрана из командной строки для X
 sudo pacman -S sox --noconfirm  # Швейцарский армейский нож инструментов обработки звука
 sudo pacman -S smartmontools --noconfirm  # Управление и мониторинг жестких дисков ATA и SCSI с поддержкой SMAR
 sudo pacman -S speedtest-cli --noconfirm  # Интерфейс командной строки для тестирования пропускной способности интернета с помощью speedtest.net
 sudo pacman -S syslinux --noconfirm  # Коллекция загрузчиков, которые загружаются с файловых систем FAT, ext2 / 3/4 и btrfs, с компакт-дисков и через PXE
+
+
+
+
 
 sudo pacman -S translate-shell --noconfirm  # Интерфейс командной строки и интерактивная оболочка для Google Translate
 sudo pacman -S youtube-dl --noconfirm  # Программа командной строки для загрузки видео с YouTube.com и еще нескольких сайтов
