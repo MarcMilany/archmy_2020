@@ -2911,8 +2911,7 @@ https://www.archlinux.org/packages/extra/x86_64/fuse3/   # присутству�
 notepadqq - # Notepad ++ - как текстовый редактор для Linux
 https://www.archlinux.org/packages/community/x86_64/notepadqq/
 
-feh - # Быстрый и легкий просмотрщик изображений на основе imlib2
-https://www.archlinux.org/packages/extra/x86_64/feh/
+
 
 
 catdoc - # Конвертер файлов Microsoft Word, Excel, PowerPoint и RTF в текст
