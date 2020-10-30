@@ -1319,7 +1319,7 @@ echo -e "${GREEN}==> ${NC}Установка дополнительных баз
 #echo -e "${BLUE}:: ${NC}Установка дополнительных базовых программ (пакетов)" 
 #echo 'Установка дополнительных базовых программ (пакетов)'
 # Installing additional basic programs (packages)
-echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (accountsservice, acpi, acpid, android-tools, android-udev, aspell-en, aspell-ru, arch-install-scripts, bash-completion, cmake, autofs, btrfs-progs, dosfstools, f2fs-tools, sane, gvfs, gvfs-gphoto2, gvfs-nfs, gvfs-smb, gnu-netcat, iftop, nmap, ncdu, hydra, isomd5sum, python-isomd5sum, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, python, pwgen, scrot, xsel, powertop, smartmontools, syslinux, ethtool, glances, xterm, desktop-file-utils, gtop, lib32-curl, gpm, hddtemp, memtest86+, jfsutils, udiskie, usb_modeswitch, xorg-xkill, xorg-twm)."
+echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (accountsservice, acpi, acpid, android-tools, android-udev, arch-install-scripts, aspell-en, aspell-ru, bash-completion, cmake, autofs, btrfs-progs, dosfstools, f2fs-tools, sane, gvfs, gvfs-gphoto2, gvfs-nfs, gvfs-smb, gnu-netcat, iftop, nmap, ncdu, hydra, isomd5sum, python-isomd5sum, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, python, pwgen, scrot, xsel, powertop, smartmontools, syslinux, ethtool, glances, xterm, desktop-file-utils, gtop, lib32-curl, gpm, hddtemp, memtest86+, jfsutils, udiskie, usb_modeswitch, xorg-xkill, xorg-twm)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -1344,14 +1344,17 @@ echo " Установка дополнительных базовых прогр
 elif [[ $in_soft == 1 ]]; then
   echo ""  
   echo " Установка дополнительных базовых программ (пакетов) "
- sudo pacman -S accountsservice acpi acpid android-tools android-udev aspell-en aspell-ru arch-install-scripts bash-completion cmake autofs btrfs-progs dosfstools f2fs-tools sane gvfs gvfs-gphoto2 gvfs-nfs gvfs-smb gnu-netcat iftop nmap ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip python pwgen scrot xsel powertop smartmontools syslinux ethtool glances xterm desktop-file-utils gtop lib32-curl gpm hddtemp memtest86+ jfsutils udiskie usb_modeswitch xorg-xkill xorg-twm --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64 
+ sudo pacman -S accountsservice acpi acpid android-tools android-udev arch-install-scripts aspell-en aspell-ru bash-completion cmake autofs btrfs-progs dosfstools f2fs-tools sane gvfs gvfs-gphoto2 gvfs-nfs gvfs-smb gnu-netcat iftop nmap ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip python pwgen scrot xsel powertop smartmontools syslinux ethtool glances xterm desktop-file-utils gtop lib32-curl gpm hddtemp memtest86+ jfsutils udiskie usb_modeswitch xorg-xkill xorg-twm --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64 
 
 
 
 sudo pacman -S accountsservice --noconfirm  # Интерфейс D-Bus для запроса учетных записей пользователей и управления ими
 sudo pacman -S acpi --noconfirm  # Клиент для показаний батареи, мощности и температуры
 sudo pacman -S acpid --noconfirm  # Демон для доставки событий управления питанием ACPI с поддержкой netlink
+sudo pacman -S android-tools --noconfirm  # Инструменты платформы Android
+sudo pacman -S android-udev --noconfirm  # Правила Udev для подключения устройств Android к вашему Linux-серверу
 sudo pacman -S arch-install-scripts --noconfirm  # Сценарии для помощи в установке Arch Linux
+sudo pacman -S aspell-en --noconfirm  # Английский словарь для aspell
 sudo pacman -S aspell-ru --noconfirm  # Русский словарь для aspell  
 sudo pacman -S bash-completion --noconfirm  # Программируемое завершение для оболочки bash
 sudo pacman -S cmake --noconfirm  # Кросс-платформенная система сборки с открытым исходным кодом
