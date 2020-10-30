@@ -1348,6 +1348,9 @@ elif [[ $in_soft == 1 ]]; then
 
   
 
+sudo pacman -S gnome-nettool --noconfirm  # Графический интерфейс для различных сетевых инструментов
+
+fortune-mod fsarchiver gnome-nettool
 
 
 sudo pacman -S accountsservice --noconfirm  # Интерфейс D-Bus для запроса учетных записей пользователей и управления ими
@@ -1370,6 +1373,8 @@ sudo pacman -S dnsmasq --noconfirm  # Легкий, простой в настр
 sudo pacman -S dosfstools --noconfirm  # Утилиты файловой системы DOS
 sudo pacman -S efibootmgr --noconfirm  # Приложение пользовательского пространства Linux для изменения диспетчера загрузки EFI
 sudo pacman -S f2fs-tools --noconfirm  # Инструменты для файловой системы, дружественной к Flash (F2FS)
+sudo pacman -S fortune-mod --noconfirm  # Программа Fortune Cookie от BSD games
+sudo pacman -S fsarchiver --noconfirm  # Безопасный и гибкий инструмент для резервного копирования и развертывания файловой системы
 sudo pacman -S jfsutils --noconfirm  # Утилиты файловой системы JFS
 sudo pacman -S sane --noconfirm  # Доступ к сканеру теперь простой
 sudo pacman -S ncdu --noconfirm  # Анализатор использования диска с интерфейсом ncurses
