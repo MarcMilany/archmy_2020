@@ -1348,7 +1348,7 @@ elif [[ $in_soft == 1 ]]; then
 
   
 
-
+man-db man-pages mlocate mtpfs
 
  
 

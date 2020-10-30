@@ -2830,21 +2830,15 @@ fi
 
 +++++++++++++========================+++++++++++++++++
 
-sudo pacman -S     haveged hyphen-en lib32-flex libfm-gtk2 logrotate man-db man-pages mlocate mtpfs nss-mdns patchutils pciutils php poppler-data qt5-translations reiserfsprogs ruby s-nail termite termite-terminfo yelp --noconfirm  
+sudo pacman -S       man-db man-pages mlocate mtpfs nss-mdns patchutils pciutils php poppler-data qt5-translations reiserfsprogs ruby s-nail termite termite-terminfo yelp --noconfirm  
 
 
 
 
 
 
-sudo pacman -S haveged --noconfirm  # Демон сбора энтропии с использованием таймингов процессора
-sudo pacman -S hyphen-en --noconfirm  # Правила расстановки переносов в английском
-# sudo pacman -S inetutils --noconfirm  # Сборник общих сетевых программ   # присутствует
-sudo pacman -S lib32-flex --noconfirm  # Инструмент для создания программ сканирования текста
-sudo pacman -S libfm-gtk2 --noconfirm  # Библиотека GTK + 2 для управления файлами
-sudo pacman -S logrotate --noconfirm  # Автоматическая ротация системных журналов
-# sudo pacman -S light-locker --noconfirm  # Простой шкафчик сессий для LightDM   # присутствует
-# sudo pacman -S lsb-release --noconfirm  # Программа запроса версии LSB   # присутствует
+
+
 sudo pacman -S man-db --noconfirm  # Утилита для чтения страниц руководства
 sudo pacman -S man-pages --noconfirm  # Страницы руководства Linux
 sudo pacman -S mlocate --noconfirm  # Слияние реализации locate / updatedb
