@@ -1344,12 +1344,7 @@ echo " Установка дополнительных базовых прогр
 elif [[ $in_soft == 1 ]]; then
   echo ""  
   echo " Установка дополнительных базовых программ (пакетов) "
- sudo pacman -S accountsservice acpi acpid android-tools android-udev arch-install-scripts aspell-en aspell-ru autofs b43-fwcutter bash-completion btrfs-progs cmake cpupower crda dhclient dnsmasq dosfstools efibootmgr f2fs-tools fortune-mod fsarchiver sane gnome-nettool gvfs gvfs-gphoto2 gvfs-nfs gvfs-smb gnu-netcat haveged hyphen-en iftop nmap ncdu hydra isomd5sum python-isomd5sum lib32-flex libfm-gtk2 logrotate translate-shell mc pv sox youtube-dl speedtest-cli python-pip python nss-mdns man-db man-pages mlocate mtpfs pwgen patchutils pciutils php poppler-data qt5-translations scrot xsel powertop smartmontools syslinux ethtool glances termite termite-terminfo xterm desktop-file-utils reiserfsprogs ruby s-nail gtop lib32-curl gpm hddtemp memtest86+ jfsutils udiskie usb_modeswitch xorg-xkill xorg-twm yelp --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64 
-
-  
-
-sudo pacman -S    --noconfirm  
-
+sudo pacman -S accountsservice acpi acpid android-tools android-udev arch-install-scripts aspell-en aspell-ru autofs b43-fwcutter bash-completion btrfs-progs cmake cpupower crda dhclient dnsmasq dosfstools efibootmgr f2fs-tools fortune-mod fsarchiver sane gnome-nettool gvfs gvfs-gphoto2 gvfs-nfs gvfs-smb gnu-netcat haveged hyphen-en iftop nmap ncdu hydra isomd5sum python-isomd5sum lib32-flex libfm-gtk2 logrotate translate-shell mc pv sox youtube-dl speedtest-cli python-pip nss-mdns man-db man-pages mlocate mtpfs pwgen patchutils pciutils php poppler-data qt5-translations scrot xsel powertop smartmontools syslinux ethtool glances termite termite-terminfo xterm desktop-file-utils reiserfsprogs ruby s-nail gtop lib32-curl gpm hddtemp memtest86+ jfsutils udiskie usb_modeswitch xorg-xkill xorg-twm yelp --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64 
 
 sudo pacman -S accountsservice --noconfirm  # Интерфейс D-Bus для запроса учетных записей пользователей и управления ими
 sudo pacman -S acpi --noconfirm  # Клиент для показаний батареи, мощности и температуры
