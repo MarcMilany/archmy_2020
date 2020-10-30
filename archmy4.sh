@@ -2847,20 +2847,6 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 
 
-
-
-# sudo pacman -S tumbler ffmpegthumbnailer poppler-glib libgsf libopenraw shared-mime-info raw-thumbnailer perl-file-mimeinfo --noconfirm 
-#sudo pacman -S tumbler --noconfirm  #  Сервис D-Bus для приложений, запрашивающих миниатюры
-#sudo pacman -S ffmpegthumbnailer --noconfirm  # Легкий эскиз видеофайлов, который может использоваться файловыми менеджерами
-#sudo pacman -S poppler-glib --noconfirm  # Наручники Poppler Glib
-#sudo pacman -S libgsf --noconfirm  # Расширяемая библиотека абстракции ввода-вывода для работы со структурированными форматами файлов
-#sudo pacman -S libopenraw --noconfirm  # Библиотека для декодирования файлов RAW
-#sudo pacman -S shared-mime-info --noconfirm  # Общая информация MIME на Freedesktop.org
-#sudo pacman -S raw-thumbnailer --noconfirm  # Легкий и быстрый инструмент для создания необработанных изображений raw, который необходим для отображения миниатюр raw.
-#sudo pacman -S perl-file-mimeinfo --noconfirm  # Определить тип файла, включая mimeopen и mimetype
-
-
-
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -2968,8 +2954,6 @@ https://www.archlinux.org/packages/community/x86_64/hidapi/   # присутст
 djvulibre - # Пакет для создания, управления и просмотра документов DjVu ('дежавю')
 https://www.archlinux.org/packages/extra/x86_64/djvulibre/
 
-aspell-en - # Английский словарь для aspell
-https://www.archlinux.org/packages/extra/x86_64/aspell-en/
 
 calibre - # Community - Приложение для управления электронными книгами
 https://www.archlinux.org/packages/community/x86_64/calibre/
