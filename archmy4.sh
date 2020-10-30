@@ -2830,7 +2830,7 @@ fi
 
 +++++++++++++========================+++++++++++++++++
 
-sudo pacman -S       man-db man-pages mlocate mtpfs nss-mdns patchutils pciutils php poppler-data qt5-translations reiserfsprogs ruby s-nail termite termite-terminfo yelp --noconfirm  
+sudo pacman -S        nss-mdns patchutils pciutils php poppler-data qt5-translations reiserfsprogs ruby s-nail termite termite-terminfo yelp --noconfirm  
 
 
 
@@ -2839,10 +2839,7 @@ sudo pacman -S       man-db man-pages mlocate mtpfs nss-mdns patchutils pciutils
 
 
 
-sudo pacman -S man-db --noconfirm  # Утилита для чтения страниц руководства
-sudo pacman -S man-pages --noconfirm  # Страницы руководства Linux
-sudo pacman -S mlocate --noconfirm  # Слияние реализации locate / updatedb
-sudo pacman -S mtpfs --noconfirm  # Файловая система FUSE, поддерживающая чтение и запись с любого устройства MTP
+
 sudo pacman -S nss-mdns --noconfirm  # Плагин glibc, обеспечивающий разрешение имени хоста через mDNS
 sudo pacman -S patchutils --noconfirm  # Небольшая коллекция программ, работающих с файлами патчей
 sudo pacman -S pciutils --noconfirm  # Библиотека и инструменты доступа к пространству конфигурации шины PCI
