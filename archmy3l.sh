@@ -1401,7 +1401,10 @@ sudo pacman -S logrotate --noconfirm  # Автоматическая ротац�
 # sudo pacman -S lsb-release --noconfirm  # Программа запроса версии LSB   # присутствует
 
 
-
+sudo pacman -S man-db --noconfirm  # Утилита для чтения страниц руководства
+sudo pacman -S man-pages --noconfirm  # Страницы руководства Linux
+sudo pacman -S mlocate --noconfirm  # Слияние реализации locate / updatedb
+sudo pacman -S mtpfs --noconfirm  # Файловая система FUSE, поддерживающая чтение и запись с любого устройства MTP
 
 
 
