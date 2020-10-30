@@ -2830,7 +2830,7 @@ fi
 
 +++++++++++++========================+++++++++++++++++
 
-sudo pacman -S    dhclient dnsmasq efibootmgr fortune-mod fsarchiver gnome-nettool haveged hyphen-en lib32-flex libfm-gtk2 logrotate man-db man-pages mlocate mtpfs nss-mdns patchutils pciutils php poppler-data qt5-translations reiserfsprogs ruby s-nail termite termite-terminfo yelp --noconfirm  
+sudo pacman -S    fortune-mod fsarchiver gnome-nettool haveged hyphen-en lib32-flex libfm-gtk2 logrotate man-db man-pages mlocate mtpfs nss-mdns patchutils pciutils php poppler-data qt5-translations reiserfsprogs ruby s-nail termite termite-terminfo yelp --noconfirm  
 
 
 
