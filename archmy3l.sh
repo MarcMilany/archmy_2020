@@ -1358,6 +1358,7 @@ sudo pacman -S autofs --noconfirm  # Средство автомонтирова
 sudo pacman -S b43-fwcutter --noconfirm  # Экстрактор прошивки для модуля ядра b43 (драйвер) 
 sudo pacman -S bash-completion --noconfirm  # Программируемое завершение для оболочки bash
 sudo pacman -S btrfs-progs --noconfirm  # Утилиты файловой системы btrfs
+sudo pacman -S ccache --noconfirm  # Кэш компилятора, который ускоряет перекомпиляцию за счет кеширования предыдущих компиляций
 sudo pacman -S cmake --noconfirm  # Кросс-платформенная система сборки с открытым исходным кодом
 sudo pacman -S cpupower --noconfirm  # Инструмент ядра Linux для проверки и настройки функций вашего процессора, связанных с энергосбережением
 sudo pacman -S crda --noconfirm  # Агент центрального регулирующего домена для беспроводных сетей
