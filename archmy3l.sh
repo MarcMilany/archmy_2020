@@ -1319,7 +1319,7 @@ echo -e "${GREEN}==> ${NC}Установка дополнительных баз
 #echo -e "${BLUE}:: ${NC}Установка дополнительных базовых программ (пакетов)" 
 #echo 'Установка дополнительных базовых программ (пакетов)'
 # Installing additional basic programs (packages)
-echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (accountsservice, acpi, acpid, android-tools, android-udev, arch-install-scripts, aspell-en, aspell-ru, b43-fwcutter, bash-completion, cmake, cpupower, crda, autofs, btrfs-progs, dhclient, dnsmasq, dosfstools, efibootmgr, f2fs-tools, fortune-mod, fsarchiver, sane, gnome-nettool, gvfs, gvfs-gphoto2, gvfs-nfs, gvfs-smb, gnu-netcat, haveged, hyphen-en, iftop, nmap, ncdu, hydra, isomd5sum, python-isomd5sum, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, lib32-flex, libfm-gtk2, logrotate, man-db, man-pages, mlocate, mtpfs, python, pwgen, scrot, xsel, powertop, smartmontools, syslinux, ethtool, glances, xterm, desktop-file-utils, gtop, lib32-curl, gpm, hddtemp, memtest86+, jfsutils, udiskie, usb_modeswitch, xorg-xkill, xorg-twm)."
+echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (accountsservice, acpi, acpid, android-tools, android-udev, arch-install-scripts, aspell-en, aspell-ru, b43-fwcutter, bash-completion, cmake, cpupower, crda, autofs, btrfs-progs, dhclient, dnsmasq, dosfstools, efibootmgr, f2fs-tools, fortune-mod, fsarchiver, sane, gnome-nettool, gvfs, gvfs-gphoto2, gvfs-nfs, gvfs-smb, gnu-netcat, haveged, hyphen-en, iftop, nmap, ncdu, hydra, isomd5sum, python-isomd5sum, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, lib32-flex, libfm-gtk2, logrotate, man-db, man-pages, mlocate, mtpfs, python, pwgen, nss-mdns, scrot, xsel, powertop, smartmontools, syslinux, ethtool, glances, xterm, desktop-file-utils, gtop, lib32-curl, gpm, hddtemp, memtest86+, jfsutils, udiskie, usb_modeswitch, xorg-xkill, xorg-twm)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -1344,13 +1344,13 @@ echo " Установка дополнительных базовых прогр
 elif [[ $in_soft == 1 ]]; then
   echo ""  
   echo " Установка дополнительных базовых программ (пакетов) "
- sudo pacman -S accountsservice acpi acpid android-tools android-udev arch-install-scripts aspell-en aspell-ru autofs b43-fwcutter bash-completion btrfs-progs cmake cpupower crda dhclient dnsmasq dosfstools efibootmgr f2fs-tools fortune-mod fsarchiver sane gnome-nettool gvfs gvfs-gphoto2 gvfs-nfs gvfs-smb gnu-netcat haveged hyphen-en iftop nmap ncdu hydra isomd5sum python-isomd5sum lib32-flex libfm-gtk2 logrotate translate-shell mc pv sox youtube-dl speedtest-cli python-pip python man-db man-pages mlocate mtpfs pwgen scrot xsel powertop smartmontools syslinux ethtool glances xterm desktop-file-utils gtop lib32-curl gpm hddtemp memtest86+ jfsutils udiskie usb_modeswitch xorg-xkill xorg-twm --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64 
+ sudo pacman -S accountsservice acpi acpid android-tools android-udev arch-install-scripts aspell-en aspell-ru autofs b43-fwcutter bash-completion btrfs-progs cmake cpupower crda dhclient dnsmasq dosfstools efibootmgr f2fs-tools fortune-mod fsarchiver sane gnome-nettool gvfs gvfs-gphoto2 gvfs-nfs gvfs-smb gnu-netcat haveged hyphen-en iftop nmap ncdu hydra isomd5sum python-isomd5sum lib32-flex libfm-gtk2 logrotate translate-shell mc pv sox youtube-dl speedtest-cli python-pip python nss-mdns man-db man-pages mlocate mtpfs pwgen scrot xsel powertop smartmontools syslinux ethtool glances xterm desktop-file-utils gtop lib32-curl gpm hddtemp memtest86+ jfsutils udiskie usb_modeswitch xorg-xkill xorg-twm --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64 
 
   
 
-sudo pacman -S        nss-mdns patchutils pciutils php poppler-data qt5-translations reiserfsprogs ruby s-nail termite termite-terminfo yelp --noconfirm  
+sudo pacman -S patchutils pciutils php poppler-data qt5-translations reiserfsprogs ruby s-nail termite termite-terminfo yelp --noconfirm  
 
-sudo pacman -S nss-mdns --noconfirm  # Плагин glibc, обеспечивающий разрешение имени хоста через mDNS
+
 sudo pacman -S patchutils --noconfirm  # Небольшая коллекция программ, работающих с файлами патчей
 sudo pacman -S pciutils --noconfirm  # Библиотека и инструменты доступа к пространству конфигурации шины PCI
 sudo pacman -S php --noconfirm  # Язык сценариев общего назначения, особенно подходящий для веб-разработки
@@ -1418,10 +1418,8 @@ sudo pacman -S mc --noconfirm  # Файловый менеджер, эмулир
 sudo pacman -S memtest86+ --noconfirm  # Усовершенствованный инструмент диагностики памяти
 sudo pacman -S mlocate --noconfirm  # Слияние реализации locate / updatedb
 sudo pacman -S mtpfs --noconfirm  # Файловая система FUSE, поддерживающая чтение и запись с любого устройства MTP
-
-
 sudo pacman -S ncdu --noconfirm  # Анализатор использования диска с интерфейсом ncurses
-
+sudo pacman -S nss-mdns --noconfirm  # Плагин glibc, обеспечивающий разрешение имени хоста через mDNS
 
 
 
