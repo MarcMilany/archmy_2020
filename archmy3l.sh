@@ -1351,7 +1351,7 @@ elif [[ $in_soft == 1 ]]; then
 sudo pacman -S patchutils pciutils php poppler-data qt5-translations reiserfsprogs ruby s-nail termite termite-terminfo yelp --noconfirm  
 
 
-sudo pacman -S qt5-translations --noconfirm  # кросс-платформенное приложение и UI-фреймворк (переводы)
+
 sudo pacman -S reiserfsprogs --noconfirm  # Утилиты Reiserfs
 sudo pacman -S ruby --noconfirm  # Объектно-ориентированный язык для быстрого и простого программирования
 sudo pacman -S s-nail --noconfirm  # Среда для отправки и получения почты
@@ -1430,7 +1430,7 @@ sudo pacman -S pwgen --noconfirm  # Генератор паролей для с�
 sudo pacman -S powertop --noconfirm  # Инструмент для диагностики проблем с энергопотреблением и управлением питанием
 
 
-
+sudo pacman -S qt5-translations --noconfirm  # кросс-платформенное приложение и UI-фреймворк (переводы)
 
 
 sudo pacman -S sane --noconfirm  # Доступ к сканеру теперь простой
