@@ -2595,7 +2595,7 @@ echo -e "${GREEN}==> ${BOLD}Установить рекомендованные 
 #echo -e "${BLUE}:: ${NC}Установить рекомендованные программы (пакеты)?"
 #echo 'Установить рекомендованные программы?'
 # Install the recommended programs
-echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gnome-system-monitor, gnome-disk-utility, gnome-multi-writer, frei0r-plugins, clonezilla, cryptsetup, psensor, copyq, rsync, grsync, numlockx, modem-manager-gui, ranger, rofi, gsmartcontrol, testdisk, lsof, dmidecode, qemu)."
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gnome-system-monitor, gnome-disk-utility, gnome-multi-writer, frei0r-plugins, clonezilla, psensor, copyq, rsync, grsync, numlockx, modem-manager-gui, ranger, rofi, gsmartcontrol, testdisk, lsof, dmidecode, qemu)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -2618,13 +2618,12 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_collection == 1 ]]; then
   echo ""   
   echo " Установка рекомендованных утилит (пакетов) "
-# sudo pacman -S gnome-system-monitor gnome-disk-utility gnome-multi-writer frei0r-plugins clonezilla cryptsetup psensor copyq rsync grsync numlockx modem-manager-gui rofi gsmartcontrol ranger testdisk lsof dmidecode qemu --noconfirm 
+# sudo pacman -S gnome-system-monitor gnome-disk-utility gnome-multi-writer frei0r-plugins clonezilla psensor copyq rsync grsync numlockx modem-manager-gui rofi gsmartcontrol ranger testdisk lsof dmidecode qemu --noconfirm  
 sudo pacman -S gnome-system-monitor --noconfirm  # Просмотр текущих процессов и мониторинг состояния системы
 sudo pacman -S gnome-disk-utility --noconfirm  # Утилита управления дисками для GNOME
 sudo pacman -S gnome-multi-writer --noconfirm  # Записать файл ISO на несколько USB-устройств одновременно
 sudo pacman -S frei0r-plugins --noconfirm  # Минималистичный плагин API для видеоэффектов
 sudo pacman -S clonezilla --noconfirm  # Раздел ncurses и программа для создания образов / клонирования дисков
-sudo pacman -S cryptsetup --noconfirm  # Инструмент настройки пользовательского пространства для прозрачного шифрования блочных устройств с помощью dm-crypt
 sudo pacman -S psensor --noconfirm  # Графический аппаратный монитор температуры для Linux
 sudo pacman -S copyq --noconfirm  # Менеджер буфера обмена с возможностью поиска и редактирования истории
 sudo pacman -S rsync --noconfirm  # Быстрый и универсальный инструмент для копирования удаленных и локальных файлов
