@@ -4061,6 +4061,10 @@ fi
 # --------------------------------
 
 clear
+echo -e "${MAGENTA}
+<<< Установка дополнительного программного обеспечения для исправления отображения миниатюр в файловом менеджере системы Archlinux >>> ${NC}"
+# Installing additional software to fix thumbnail display in the Archlinux file Manager
+
 echo ""
 echo -e "${BLUE}:: ${NC}Исправим отображение миниатюр в файловом менеджере Thunar?"
 # Fix Thumbnails in file manager
