@@ -1400,6 +1400,7 @@ sudo pacman -S memtest86+ --noconfirm  # Усовершенствованный 
 sudo pacman -S mlocate --noconfirm  # Слияние реализации locate / updatedb
 sudo pacman -S mtpfs --noconfirm  # Файловая система FUSE, поддерживающая чтение и запись с любого устройства MTP
 sudo pacman -S ncdu --noconfirm  # Анализатор использования диска с интерфейсом ncurses
+sudo pacman -S nfs-utils --noconfirm  # Программы поддержки для сетевых файловых систем
 sudo pacman -S nss-mdns --noconfirm  # Плагин glibc, обеспечивающий разрешение имени хоста через mDNS
 sudo pacman -S patchutils --noconfirm  # Небольшая коллекция программ, работающих с файлами патчей
 sudo pacman -S pciutils --noconfirm  # Библиотека и инструменты доступа к пространству конфигурации шины PCI
