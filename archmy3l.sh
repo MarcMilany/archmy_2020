@@ -2596,7 +2596,7 @@ echo -e "${GREEN}==> ${BOLD}Установить рекомендованные 
 #echo -e "${BLUE}:: ${NC}Установить рекомендованные программы (пакеты)?"
 #echo 'Установить рекомендованные программы?'
 # Install the recommended programs
-echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gnome-system-monitor, gnome-disk-utility, gnome-multi-writer, frei0r-plugins, fuseiso, clonezilla, psensor, copyq, rsync, grsync, numlockx, modem-manager-gui, ranger, rofi, gsmartcontrol, testdisk, dmidecode, qemu)."
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gnome-system-monitor, gnome-disk-utility, gnome-multi-writer, frei0r-plugins, fuseiso, clonezilla, psensor, copyq, rsync, grsync, numlockx, modem-manager-gui, ranger, rofi, gsmartcontrol, testdisk, dmidecode, qemu, w3m)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -2619,7 +2619,7 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_collection == 1 ]]; then
   echo ""   
   echo " Установка рекомендованных утилит (пакетов) "
-# sudo pacman -S gnome-system-monitor gnome-disk-utility gnome-multi-writer frei0r-plugins clonezilla psensor copyq rsync grsync numlockx modem-manager-gui rofi gsmartcontrol ranger testdisk lsof dmidecode qemu --noconfirm  
+# sudo pacman -S gnome-system-monitor gnome-disk-utility gnome-multi-writer frei0r-plugins clonezilla psensor copyq rsync grsync numlockx modem-manager-gui rofi gsmartcontrol ranger testdisk lsof dmidecode qemu w3m --noconfirm  
 sudo pacman -S gnome-system-monitor --noconfirm  # Просмотр текущих процессов и мониторинг состояния системы
 sudo pacman -S gnome-disk-utility --noconfirm  # Утилита управления дисками для GNOME
 sudo pacman -S gnome-multi-writer --noconfirm  # Записать файл ISO на несколько USB-устройств одновременно
@@ -2638,6 +2638,7 @@ sudo pacman -S ranger --noconfirm  # Простой файловый менед�
 sudo pacman -S testdisk --noconfirm  # Проверяет и восстанавливает разделы + PhotoRec, инструмент восстановления на основе сигнатур
 sudo pacman -S dmidecode --noconfirm  # Утилиты, относящиеся к таблице интерфейса управления рабочим столом
 sudo pacman -S qemu --noconfirm  # Универсальный компьютерный эмулятор и виртуализатор с открытым исходным кодом
+sudo pacman -S w3m --noconfirm  # Текстовый веб-браузер, а также пейджер
 # sudo pacman -S  --noconfirm  # 
 # sudo pacman -S  --noconfirm  #
 # sudo pacman -S  --noconfirm  #
