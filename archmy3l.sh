@@ -1345,18 +1345,21 @@ elif [[ $in_soft == 1 ]]; then
   echo ""  
   echo " Установка дополнительных базовых программ (пакетов) "
 # sudo pacman -S aspell-ru arch-install-scripts bash-completion cmake autofs btrfs-progs dosfstools f2fs-tools sane gvfs gvfs-gphoto2 gvfs-nfs gvfs-smb gnu-netcat iftop nmap ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip python pwgen scrot xsel powertop smartmontools syslinux ethtool glances xterm desktop-file-utils gtop lib32-curl gpm hddtemp memtest86+ jfsutils udiskie usb_modeswitch xorg-xkill xorg-twm --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64 
-sudo pacman -S arch-install-scripts --noconfirm  # Сценарии для помощи в установке Arch Linux
-sudo pacman -S aspell-ru --noconfirm  # Русский словарь для aspell  
-sudo pacman -S bash-completion --noconfirm  # Программируемое завершение для оболочки bash
-sudo pacman -S cmake --noconfirm  # Кросс-платформенная система сборки с открытым исходным кодом
+
+sudo pacman -S aspell-ru arch-install-scripts bash-completion cmake dosfstools f2fs-tools sane gvfs gnu-netcat htop iftop iotop nmap ntfs-3g ntp ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv reflector sox youtube-dl speedtest-cli python-pip pwgen scrot xsel --noconfirm  #git  #curl  - пока присутствует в pkglist.x86_64
+
+#sudo pacman -S arch-install-scripts --noconfirm  # Сценарии для помощи в установке Arch Linux
+#sudo pacman -S aspell-ru --noconfirm  # Русский словарь для aspell  
+#sudo pacman -S bash-completion --noconfirm  # Программируемое завершение для оболочки bash
+#sudo pacman -S cmake --noconfirm  # Кросс-платформенная система сборки с открытым исходным кодом
 sudo pacman -S autofs --noconfirm  # Средство автомонтирования на основе ядра для Linux
 sudo pacman -S btrfs-progs --noconfirm  # Утилиты файловой системы btrfs
-sudo pacman -S dosfstools --noconfirm  # Утилиты файловой системы DOS
-sudo pacman -S f2fs-tools --noconfirm  # Инструменты для файловой системы, дружественной к Flash (F2FS)
+#sudo pacman -S dosfstools --noconfirm  # Утилиты файловой системы DOS
+#sudo pacman -S f2fs-tools --noconfirm  # Инструменты для файловой системы, дружественной к Flash (F2FS)
 sudo pacman -S jfsutils --noconfirm  # Утилиты файловой системы JFS
-sudo pacman -S sane --noconfirm  # Доступ к сканеру теперь простой
+#sudo pacman -S sane --noconfirm  # Доступ к сканеру теперь простой
 sudo pacman -S ncdu --noconfirm  # Анализатор использования диска с интерфейсом ncurses
-sudo pacman -S gvfs --noconfirm  # Реализация виртуальной файловой системы для GIO
+#sudo pacman -S gvfs --noconfirm  # Реализация виртуальной файловой системы для GIO
 sudo pacman -S gvfs-gphoto2 --noconfirm  # Реализация виртуальной файловой системы для GIO (бэкэнд gphoto2; камера PTP, медиаплеер MTP)
 sudo pacman -S gvfs-nfs --noconfirm  # Реализация виртуальной файловой системы для GIO (серверная часть NFS)
 sudo pacman -S gvfs-smb --noconfirm  # Реализация виртуальной файловой системы для GIO (серверная часть SMB / CIFS; клиент Windows)
