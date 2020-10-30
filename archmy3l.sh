@@ -1403,11 +1403,11 @@ sudo pacman -S lib32-curl --noconfirm  # Утилита и библиотека 
 sudo pacman -S gpm --noconfirm  # Сервер мыши для консоли и xterm
 sudo pacman -S hddtemp --noconfirm  # Показывает температуру вашего жесткого диска, читая информацию SMART
 sudo pacman -S memtest86+ --noconfirm  # Усовершенствованный инструмент диагностики памяти
-sudo pacman -S xorg-xkill --noconfirm  # Убить клиента его X-ресурсом
 sudo pacman -S syslinux --noconfirm  # Коллекция загрузчиков, которые загружаются с файловых систем FAT, ext2 / 3/4 и btrfs, с компакт-дисков и через PXE
 sudo pacman -S udiskie --noconfirm  # Автоматическое монтирование съемных дисков с использованием udisks
 sudo pacman -S usb_modeswitch --noconfirm  # Активация переключаемых USB-устройств в Linux
 sudo pacman -S xorg-twm --noconfirm  # Вкладка Window Manager для системы X Window
+sudo pacman -S xorg-xkill --noconfirm  # Убить клиента его X-ресурсом
 # sudo pacman -S  --noconfirm  # 
 # sudo pacman -S  --noconfirm  # 
 # sudo pacman -S  --noconfirm  # 
