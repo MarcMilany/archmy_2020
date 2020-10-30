@@ -345,7 +345,7 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S ncmpcpp --noconfirm  # Практически точный клон ncmpc с некоторыми новыми функциями
 sudo pacman -S mpc --noconfirm  # Минималистичный интерфейс командной строки для MPD
 sudo pacman -S mpd --noconfirm  # Гибкое, мощное серверное приложение для воспроизведения музыки
-sudo pacman -S  --noconfirm  #  
+sudo pacman -S mjpegtools --noconfirm  # Набор инструментов, которые могут выполнять запись и воспроизведение видео, простое редактирование с вырезанием и вставкой и сжатие MPEG аудио и видео 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -355,7 +355,7 @@ sudo pacman -S audacity deadbeef easytag subdownloader moc mediainfo mediainfo-g
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка Мультимедиа утилит пропущена.'
 fi
- 
+
 echo 'Установка Мультимедиа утилит AUR'
 # Installing Multimedia utilities AUR
 echo -e "${BLUE}
@@ -2830,11 +2830,9 @@ fi
 
 +++++++++++++========================+++++++++++++++++
 
+ 
 
 
-sudo pacman -S lksctp-tools --noconfirm  # Реализация протокола SCTP (http://lksctp.sourceforge.net/)
-sudo pacman -S fuse3 --noconfirm  # Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
-sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -2889,9 +2887,6 @@ sudo pacman -S  --noconfirm  #
 
 
 
-mjpegtools - # Набор инструментов, которые могут выполнять запись и воспроизведение видео, простое редактирование с вырезанием и вставкой и сжатие MPEG аудио и видео 
-https://www.archlinux.org/packages/extra/x86_64/mjpegtools/
-https://www.tux.in.ua/articles/443   # присутствует
 
 gptfdisk - # Инструмент для создания разделов в текстовом режиме, который работает с дисками с таблицей разделов GUID (GPT) 
 https://www.archlinux.org/packages/extra/x86_64/gptfdisk/   # присутствует -
@@ -2935,8 +2930,7 @@ https://www.archlinux.org/packages/extra/any/media-player-info/
 id3lib - # Библиотека для чтения, записи и управления тегами ID3v1 и ID3v2
 https://www.archlinux.org/packages/extra/x86_64/id3lib/   # присутствует  -
 
-ccache - # Кэш компилятора, который ускоряет перекомпиляцию за счет кеширования предыдущих компиляций
-https://www.archlinux.org/packages/community/x86_64/ccache/
+
 
 
 
