@@ -2900,6 +2900,88 @@ yay -S  --noconfirm  #
 ########################################
 
 
+clear
+echo -e "${MAGENTA}
+  <<< Установка дополнительного программного обеспечения (пакетов) в Archlinux >>> ${NC}"
+# Installing additional software (packages) in Archlinux
+
+echo ""
+echo -e "${GREEN}==> ${BOLD}Установить дополнительные рекомендованные программы (пакеты)? ${NC}"
+#echo -e "${BLUE}:: ${NC}Установить дополнительные рекомендованные программы (пакеты)?"
+#echo 'Установить дополнительные рекомендованные программы (пакеты)?'
+# Install additional recommended programs (packages)?
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - ()."
+echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo -e "${YELLOW}==> ${NC}Установка будет производится сразу всех утилит (пакетов) - (без выбора)" 
+echo "" 
+while
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " t_package  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$t_package" =~ [^10] ]]
+do
+    :
+done 
+if [[ $t_package == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $t_package == 1 ]]; then
+  echo ""  
+  echo " Установка дополнительного программного обеспечения (пакетов) "
+#sudo pacman -S  --noconfirm  
+
+
+
+
+
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
+
+
+##############################
+
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+sudo pacman -S  --noconfirm  #
+
+##############################
+
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+
+#############################
 
 
 
