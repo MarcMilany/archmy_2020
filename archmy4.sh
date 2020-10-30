@@ -1067,26 +1067,7 @@ fi
 
 
 ###############################
-Модульная утилита для создания образов initramfs
 
-sudo pacman -S mkinitcpio mkinitcpio-archiso mkinitcpio-busybox mkinitcpio-nfs-utils --noconfirm 
-
-sudo pacman -S mkinitcpio --noconfirm # Модульная утилита для создания образов initramfs
-sudo pacman -S mkinitcpio-archiso --noconfirm # Хуки и скрипты mkinitcpio для archiso
-sudo pacman -S mkinitcpio-busybox --noconfirm # Базовые инструменты initramfs
-sudo pacman -S mkinitcpio-nfs-utils --noconfirm # Инструменты ipconfig и nfsmount для поддержки корня NFS в mkinitcpio
-sudo pacman -S  --noconfirm # 
-sudo pacman -S  --noconfirm #
-sudo pacman -S  --noconfirm # 
-
-
-yay -S mkinitcpio-openswap --noconfirm  # mkinitcpio, чтобы открыть своп во время загрузки
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-########################################
 
 xfce4-places-plugin   AUR  # Плагин меню Places для панели Xfce
 https://aur.archlinux.org/packages/xfce4-places-plugin/
@@ -2898,7 +2879,26 @@ alias w3m='w3m адрес-сайта.ru'
 fwbuilder - Community - Объектно-ориентированный графический интерфейс и набор компиляторов для различных платформ межсетевых экранов
 https://www.archlinux.org/packages/community/x86_64/fwbuilder/
      
+Модульная утилита для создания образов initramfs
 
+sudo pacman -S mkinitcpio mkinitcpio-archiso mkinitcpio-busybox mkinitcpio-nfs-utils --noconfirm 
+
+sudo pacman -S mkinitcpio --noconfirm # Модульная утилита для создания образов initramfs
+sudo pacman -S mkinitcpio-archiso --noconfirm # Хуки и скрипты mkinitcpio для archiso
+sudo pacman -S mkinitcpio-busybox --noconfirm # Базовые инструменты initramfs
+sudo pacman -S mkinitcpio-nfs-utils --noconfirm # Инструменты ipconfig и nfsmount для поддержки корня NFS в mkinitcpio
+sudo pacman -S  --noconfirm # 
+sudo pacman -S  --noconfirm #
+sudo pacman -S  --noconfirm # 
+
+
+yay -S mkinitcpio-openswap --noconfirm  # mkinitcpio, чтобы открыть своп во время загрузки
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+########################################
 
 
 
