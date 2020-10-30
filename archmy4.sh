@@ -599,7 +599,7 @@ yay -S  --noconfirm  #
 echo 'Утилиты для работы с CD,DVD, создание ISO образов, запись на флеш-накопители'
 # Utilities for working with CD, DVD, creating ISO images, writing to flash drives
 sudo pacman -S woeusb --noconfirm  # Программа Linux для создания установщика USB-накопителя Windows с DVD-диска Windows или образа
-sudo pacman -S xfburn --noconfirm  # Простой инструмент для записи CD / DVD на основе библиотек libburnia
+sudo pacman -S xfburn --noconfirm  # Простой инструмент для записи CD / DVD на основе библиотек libburnia 
 sudo pacman -S --noconfirm  # 
 sudo pacman -S --noconfirm  # 
 
@@ -677,7 +677,7 @@ sudo pacman -S networkmanager-vpnc --noconfirm  # Плагин NetworkManager VP
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
-sudo pacman -S nfs-utils --noconfirm  # Программы поддержки для сетевых файловых систем
+
 
  Запуск, остановка сервиса tor:
 sudo systemctl start tor
