@@ -1440,6 +1440,16 @@ sudo pacman -S youtube-dl --noconfirm  # Программа командной �
 # sudo pacman -S  --noconfirm  # 
 # sudo pacman -S  --noconfirm  # 
 # sudo pacman -S  --noconfirm  # 
+### Исправим отображение миниатюр в файловом менеджере ###
+# sudo pacman -S tumbler ffmpegthumbnailer poppler-glib libgsf libopenraw shared-mime-info raw-thumbnailer perl-file-mimeinfo --noconfirm 
+#sudo pacman -S tumbler --noconfirm  #  Сервис D-Bus для приложений, запрашивающих миниатюры
+#sudo pacman -S ffmpegthumbnailer --noconfirm  # Легкий эскиз видеофайлов, который может использоваться файловыми менеджерами
+#sudo pacman -S poppler-glib --noconfirm  # Наручники Poppler Glib
+#sudo pacman -S libgsf --noconfirm  # Расширяемая библиотека абстракции ввода-вывода для работы со структурированными форматами файлов
+#sudo pacman -S libopenraw --noconfirm  # Библиотека для декодирования файлов RAW
+#sudo pacman -S shared-mime-info --noconfirm  # Общая информация MIME на Freedesktop.org
+#sudo pacman -S raw-thumbnailer --noconfirm  # Легкий и быстрый инструмент для создания необработанных изображений raw, который необходим для отображения миниатюр raw.
+#sudo pacman -S perl-file-mimeinfo --noconfirm  # Определить тип файла, включая mimeopen и mimetype
 clear
 echo ""   
 echo " Установка дополнительных базовых программ (пакетов) выполнена "
