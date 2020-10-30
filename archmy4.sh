@@ -2899,10 +2899,8 @@ https://www.archlinux.org/packages/extra/x86_64/fuse3/   # присутству�
 
 
 catdoc - # Конвертер файлов Microsoft Word, Excel, PowerPoint и RTF в текст
-https://www.archlinux.org/packages/community/x86_64/catdoc/
-
 unrtf - # Программа командной строки, конвертирующая документы RTF в другие форматы
-https://www.archlinux.org/packages/community/x86_64/unrtf/
+
 
 
 ncmpcpp - # Практически точный клон ncmpc с некоторыми новыми функциями
@@ -2949,12 +2947,6 @@ https://www.archlinux.org/packages/extra/x86_64/id3lib/   # присутству
 
 ccache - # Кэш компилятора, который ускоряет перекомпиляцию за счет кеширования предыдущих компиляций
 https://www.archlinux.org/packages/community/x86_64/ccache/
-
-flex - # Инструмент для создания программ сканирования текста
-https://www.archlinux.org/packages/core/x86_64/flex/   # присутствует изначально
-
-lksctp-tools - # Реализация протокола SCTP (http://lksctp.sourceforge.net/)
-https://www.archlinux.org/packages/community/x86_64/lksctp-tools/
 
 
 
