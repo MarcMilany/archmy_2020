@@ -1397,6 +1397,12 @@ sudo pacman -S lib32-curl --noconfirm  # Утилита и библиотека 
 
 
 
+sudo pacman -S lib32-flex --noconfirm  # Инструмент для создания программ сканирования текста
+sudo pacman -S libfm-gtk2 --noconfirm  # Библиотека GTK + 2 для управления файлами
+# sudo pacman -S light-locker --noconfirm  # Простой шкафчик сессий для LightDM   # присутствует
+sudo pacman -S logrotate --noconfirm  # Автоматическая ротация системных журналов
+# sudo pacman -S lsb-release --noconfirm  # Программа запроса версии LSB   # присутствует
+
 
 
 sudo pacman -S mc --noconfirm  # Файловый менеджер, эмулирующий Norton Commander
