@@ -1319,7 +1319,7 @@ echo -e "${GREEN}==> ${NC}Установка дополнительных баз
 #echo -e "${BLUE}:: ${NC}Установка дополнительных базовых программ (пакетов)" 
 #echo 'Установка дополнительных базовых программ (пакетов)'
 # Installing additional basic programs (packages)
-echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (accountsservice, acpi, acpid, android-tools, android-udev, arch-install-scripts, aspell-en, aspell-ru, b43-fwcutter, bash-completion, cmake, cpupower, crda, autofs, btrfs-progs, dhclient, dnsmasq, dosfstools, efibootmgr, f2fs-tools, fortune-mod, fsarchiver, sane, gvfs, gvfs-gphoto2, gvfs-nfs, gvfs-smb, gnu-netcat, iftop, nmap, ncdu, hydra, isomd5sum, python-isomd5sum, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, python, pwgen, scrot, xsel, powertop, smartmontools, syslinux, ethtool, glances, xterm, desktop-file-utils, gtop, lib32-curl, gpm, hddtemp, memtest86+, jfsutils, udiskie, usb_modeswitch, xorg-xkill, xorg-twm)."
+echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (accountsservice, acpi, acpid, android-tools, android-udev, arch-install-scripts, aspell-en, aspell-ru, b43-fwcutter, bash-completion, cmake, cpupower, crda, autofs, btrfs-progs, dhclient, dnsmasq, dosfstools, efibootmgr, f2fs-tools, fortune-mod, fsarchiver, sane, gnome-nettool, gvfs, gvfs-gphoto2, gvfs-nfs, gvfs-smb, gnu-netcat, iftop, nmap, ncdu, hydra, isomd5sum, python-isomd5sum, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, python, pwgen, scrot, xsel, powertop, smartmontools, syslinux, ethtool, glances, xterm, desktop-file-utils, gtop, lib32-curl, gpm, hddtemp, memtest86+, jfsutils, udiskie, usb_modeswitch, xorg-xkill, xorg-twm)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -1344,14 +1344,13 @@ echo " Установка дополнительных базовых прогр
 elif [[ $in_soft == 1 ]]; then
   echo ""  
   echo " Установка дополнительных базовых программ (пакетов) "
- sudo pacman -S accountsservice acpi acpid android-tools android-udev arch-install-scripts aspell-en aspell-ru autofs b43-fwcutter bash-completion btrfs-progs cmake cpupower crda dhclient dnsmasq dosfstools efibootmgr f2fs-tools fortune-mod fsarchiver sane gvfs gvfs-gphoto2 gvfs-nfs gvfs-smb gnu-netcat iftop nmap ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip python pwgen scrot xsel powertop smartmontools syslinux ethtool glances xterm desktop-file-utils gtop lib32-curl gpm hddtemp memtest86+ jfsutils udiskie usb_modeswitch xorg-xkill xorg-twm --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64 
+ sudo pacman -S accountsservice acpi acpid android-tools android-udev arch-install-scripts aspell-en aspell-ru autofs b43-fwcutter bash-completion btrfs-progs cmake cpupower crda dhclient dnsmasq dosfstools efibootmgr f2fs-tools fortune-mod fsarchiver sane gnome-nettool gvfs gvfs-gphoto2 gvfs-nfs gvfs-smb gnu-netcat iftop nmap ncdu hydra isomd5sum python-isomd5sum translate-shell mc pv sox youtube-dl speedtest-cli python-pip python pwgen scrot xsel powertop smartmontools syslinux ethtool glances xterm desktop-file-utils gtop lib32-curl gpm hddtemp memtest86+ jfsutils udiskie usb_modeswitch xorg-xkill xorg-twm --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64 
 
   
 
-sudo pacman -S gnome-nettool --noconfirm  # Графический интерфейс для различных сетевых инструментов
 
- gnome-nettool
 
+ 
 
 sudo pacman -S accountsservice --noconfirm  # Интерфейс D-Bus для запроса учетных записей пользователей и управления ими
 sudo pacman -S acpi --noconfirm  # Клиент для показаний батареи, мощности и температуры
@@ -1368,24 +1367,38 @@ sudo pacman -S btrfs-progs --noconfirm  # Утилиты файловой сис
 sudo pacman -S cmake --noconfirm  # Кросс-платформенная система сборки с открытым исходным кодом
 sudo pacman -S cpupower --noconfirm  # Инструмент ядра Linux для проверки и настройки функций вашего процессора, связанных с энергосбережением
 sudo pacman -S crda --noconfirm  # Агент центрального регулирующего домена для беспроводных сетей
+sudo pacman -S desktop-file-utils --noconfirm  # Утилиты командной строки для работы с записями рабочего стола
 sudo pacman -S dhclient --noconfirm  # Автономный DHCP-клиент из пакета dhcp
 sudo pacman -S dnsmasq --noconfirm  # Легкий, простой в настройке сервер пересылки DNS и DHCP-сервер
 sudo pacman -S dosfstools --noconfirm  # Утилиты файловой системы DOS
 sudo pacman -S efibootmgr --noconfirm  # Приложение пользовательского пространства Linux для изменения диспетчера загрузки EFI
+sudo pacman -S ethtool --noconfirm  # Утилита для управления сетевыми драйверами и оборудованием
 sudo pacman -S f2fs-tools --noconfirm  # Инструменты для файловой системы, дружественной к Flash (F2FS)
 sudo pacman -S fortune-mod --noconfirm  # Программа Fortune Cookie от BSD games
 sudo pacman -S fsarchiver --noconfirm  # Безопасный и гибкий инструмент для резервного копирования и развертывания файловой системы
-sudo pacman -S jfsutils --noconfirm  # Утилиты файловой системы JFS
-sudo pacman -S sane --noconfirm  # Доступ к сканеру теперь простой
-sudo pacman -S ncdu --noconfirm  # Анализатор использования диска с интерфейсом ncurses
+sudo pacman -S glances --noconfirm  # Инструмент мониторинга на основе CLI на основе curses
+sudo pacman -S gnome-nettool --noconfirm  # Графический интерфейс для различных сетевых инструментов
+sudo pacman -S gnu-netcat --noconfirm  # GNU переписывает netcat, приложение для создания сетевых трубопроводов
+sudo pacman -S gpm --noconfirm  # Сервер мыши для консоли и xterm
+sudo pacman -S gtop --noconfirm  # Панель мониторинга системы для терминала
 sudo pacman -S gvfs --noconfirm  # Реализация виртуальной файловой системы для GIO
 sudo pacman -S gvfs-gphoto2 --noconfirm  # Реализация виртуальной файловой системы для GIO (бэкэнд gphoto2; камера PTP, медиаплеер MTP)
 sudo pacman -S gvfs-nfs --noconfirm  # Реализация виртуальной файловой системы для GIO (серверная часть NFS)
 sudo pacman -S gvfs-smb --noconfirm  # Реализация виртуальной файловой системы для GIO (серверная часть SMB / CIFS; клиент Windows)
-sudo pacman -S gnu-netcat --noconfirm  # GNU переписывает netcat, приложение для создания сетевых трубопроводов
-sudo pacman -S iftop --noconfirm  # Отображение использования полосы пропускания на интерфейсе
 sudo pacman -S hydra --noconfirm  # Очень быстрый взломщик входа в сеть, который поддерживает множество различных сервисов
+sudo pacman -S hddtemp --noconfirm  # Показывает температуру вашего жесткого диска, читая информацию SMART
+
+
+
+sudo pacman -S iftop --noconfirm  # Отображение использования полосы пропускания на интерфейсе
+
 sudo pacman -S isomd5sum --noconfirm  # Утилиты для работы с md5sum, имплантированными в ISO-образы
+sudo pacman -S jfsutils --noconfirm  # Утилиты файловой системы JFS
+sudo pacman -S sane --noconfirm  # Доступ к сканеру теперь простой
+sudo pacman -S ncdu --noconfirm  # Анализатор использования диска с интерфейсом ncurses
+
+
+
 sudo pacman -S python-isomd5sum --noconfirm  # Привязки Python3 для isomd5sum
 sudo pacman -S python --noconfirm  # Новое поколение языка сценариев высокого уровня Python
 sudo pacman -S translate-shell --noconfirm  # Интерфейс командной строки и интерактивная оболочка для Google Translate
@@ -1400,20 +1413,22 @@ sudo pacman -S scrot --noconfirm  # Простая утилита для соз�
 sudo pacman -S xsel --noconfirm  # XSel - это программа командной строки для получения и установки содержимого выделения X
 sudo pacman -S powertop --noconfirm  # Инструмент для диагностики проблем с энергопотреблением и управлением питанием
 sudo pacman -S smartmontools --noconfirm  # Управление и мониторинг жестких дисков ATA и SCSI с поддержкой SMAR
-sudo pacman -S ethtool --noconfirm  # Утилита для управления сетевыми драйверами и оборудованием
-sudo pacman -S glances --noconfirm  # Инструмент мониторинга на основе CLI на основе curses
-sudo pacman -S xterm --noconfirm  # Эмулятор терминала X
-sudo pacman -S desktop-file-utils --noconfirm  # Утилиты командной строки для работы с записями рабочего стола
-sudo pacman -S gtop --noconfirm  # Панель мониторинга системы для терминала
+
+
+
+
+
 sudo pacman -S lib32-curl --noconfirm  # Утилита и библиотека для поиска URL (32-разрядная версия)
-sudo pacman -S gpm --noconfirm  # Сервер мыши для консоли и xterm
-sudo pacman -S hddtemp --noconfirm  # Показывает температуру вашего жесткого диска, читая информацию SMART
+
+
 sudo pacman -S memtest86+ --noconfirm  # Усовершенствованный инструмент диагностики памяти
 sudo pacman -S syslinux --noconfirm  # Коллекция загрузчиков, которые загружаются с файловых систем FAT, ext2 / 3/4 и btrfs, с компакт-дисков и через PXE
 sudo pacman -S udiskie --noconfirm  # Автоматическое монтирование съемных дисков с использованием udisks
 sudo pacman -S usb_modeswitch --noconfirm  # Активация переключаемых USB-устройств в Linux
+sudo pacman -S xterm --noconfirm  # Эмулятор терминала X
 sudo pacman -S xorg-twm --noconfirm  # Вкладка Window Manager для системы X Window
 sudo pacman -S xorg-xkill --noconfirm  # Убить клиента его X-ресурсом
+sudo pacman -S yelp --noconfirm  # Получите помощь с GNOME
 # sudo pacman -S  --noconfirm  # 
 # sudo pacman -S  --noconfirm  # 
 # sudo pacman -S  --noconfirm  # 
