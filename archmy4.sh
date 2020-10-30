@@ -2830,12 +2830,6 @@ fi
 
 +++++++++++++========================+++++++++++++++++
 
- 
-
-
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -2884,17 +2878,6 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
-
-
-hidapi - # Простая библиотека для связи с устройствами USB и Bluetooth HID
-https://www.archlinux.org/packages/community/x86_64/hidapi/   # присутствует
-
-id3lib - # Библиотека для чтения, записи и управления тегами ID3v1 и ID3v2
-https://www.archlinux.org/packages/extra/x86_64/id3lib/   # присутствует  -
-
-gptfdisk - # Инструмент для создания разделов в текстовом режиме, который работает с дисками с таблицей разделов GUID (GPT) 
-https://www.archlinux.org/packages/extra/x86_64/gptfdisk/   # присутствует -
-
 
 w3m - # Текстовый веб-браузер, а также пейджер
 https://www.archlinux.org/packages/extra/x86_64/w3m/
