@@ -2946,19 +2946,19 @@ https://www.archlinux.org/packages/extra/x86_64/mjpegtools/
 https://www.tux.in.ua/articles/443   # присутствует
 
 gptfdisk - # Инструмент для создания разделов в текстовом режиме, который работает с дисками с таблицей разделов GUID (GPT) 
-https://www.archlinux.org/packages/extra/x86_64/gptfdisk/   # присутствует
+https://www.archlinux.org/packages/extra/x86_64/gptfdisk/   # присутствует -
 
 
 
 groff - # Система форматирования текста GNU troff
-https://www.archlinux.org/packages/core/x86_64/groff/   # присутствует
+https://www.archlinux.org/packages/core/x86_64/groff/   # присутствует изначально
 
 
 fuse2 - # Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
-https://www.archlinux.org/packages/extra/x86_64/fuse2/   # присутствует
+https://www.archlinux.org/packages/extra/x86_64/fuse2/   # присутствует изначально
 
 fuse3 - # Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
-https://www.archlinux.org/packages/extra/x86_64/fuse3/   # присутствует
+https://www.archlinux.org/packages/extra/x86_64/fuse3/   # присутствует -
 
 fuseiso - # Модуль FUSE для монтирования образов файловой системы ISO
 https://www.archlinux.org/packages/community/x86_64/fuseiso/
@@ -3020,13 +3020,13 @@ media-player-info - # Файлы данных, описывающие возмо
 https://www.archlinux.org/packages/extra/any/media-player-info/
 
 id3lib - # Библиотека для чтения, записи и управления тегами ID3v1 и ID3v2
-https://www.archlinux.org/packages/extra/x86_64/id3lib/   # присутствует
+https://www.archlinux.org/packages/extra/x86_64/id3lib/   # присутствует  -
 
 ccache - # Кэш компилятора, который ускоряет перекомпиляцию за счет кеширования предыдущих компиляций
 https://www.archlinux.org/packages/community/x86_64/ccache/
 
 flex - # Инструмент для создания программ сканирования текста
-https://www.archlinux.org/packages/core/x86_64/flex/   # присутствует
+https://www.archlinux.org/packages/core/x86_64/flex/   # присутствует изначально
 
 lksctp-tools - # Реализация протокола SCTP (http://lksctp.sourceforge.net/)
 https://www.archlinux.org/packages/community/x86_64/lksctp-tools/
