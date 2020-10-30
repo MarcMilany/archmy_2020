@@ -518,8 +518,8 @@ sudo pacman -S antiword --noconfirm  # Community - Бесплатная прог
 sudo pacman -S --noconfirm  # 
 sudo pacman -S --noconfirm  # 
 sudo pacman -S --noconfirm  # 
-sudo pacman -S --noconfirm  # 
-sudo pacman -S --noconfirm  # 
+sudo pacman -S djvulibre --noconfirm  # Пакет для создания, управления и просмотра документов DjVu ('дежавю')
+sudo pacman -S calibre --noconfirm  # Приложение для управления электронными книгами
 sudo pacman -S catdoc --noconfirm  # Конвертер файлов Microsoft Word, Excel, PowerPoint и RTF в текст
 sudo pacman -S unrtf --noconfirm  # Программа командной строки, конвертирующая документы RTF в другие форматы
 
@@ -2886,7 +2886,15 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 
 
+hidapi - # Простая библиотека для связи с устройствами USB и Bluetooth HID
+https://www.archlinux.org/packages/community/x86_64/hidapi/   # присутствует
 
+
+media-player-info - # Файлы данных, описывающие возможности медиаплеера для систем post-HAL
+https://www.archlinux.org/packages/extra/any/media-player-info/
+
+id3lib - # Библиотека для чтения, записи и управления тегами ID3v1 и ID3v2
+https://www.archlinux.org/packages/extra/x86_64/id3lib/   # присутствует  -
 
 gptfdisk - # Инструмент для создания разделов в текстовом режиме, который работает с дисками с таблицей разделов GUID (GPT) 
 https://www.archlinux.org/packages/extra/x86_64/gptfdisk/   # присутствует -
@@ -2906,33 +2914,6 @@ w3m имеет множество настроек, задать парамет�
 Добавить алиас (встроенную команду):
 
 alias w3m='w3m адрес-сайта.ru'
-
-
-
-
-
-
-
-hidapi - # Простая библиотека для связи с устройствами USB и Bluetooth HID
-https://www.archlinux.org/packages/community/x86_64/hidapi/   # присутствует
-
-djvulibre - # Пакет для создания, управления и просмотра документов DjVu ('дежавю')
-https://www.archlinux.org/packages/extra/x86_64/djvulibre/
-
-
-calibre - # Community - Приложение для управления электронными книгами
-https://www.archlinux.org/packages/community/x86_64/calibre/
-
-
-media-player-info - # Файлы данных, описывающие возможности медиаплеера для систем post-HAL
-https://www.archlinux.org/packages/extra/any/media-player-info/
-
-id3lib - # Библиотека для чтения, записи и управления тегами ID3v1 и ID3v2
-https://www.archlinux.org/packages/extra/x86_64/id3lib/   # присутствует  -
-
-
-
-
 
 
 fwbuilder - Community - Объектно-ориентированный графический интерфейс и набор компиляторов для различных платформ межсетевых экранов
