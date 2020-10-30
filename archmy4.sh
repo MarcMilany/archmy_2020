@@ -2845,7 +2845,7 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  #
-sudo pacman -S w3m --noconfirm  # Текстовый веб-браузер, а также пейджер
+
 
 
 sudo pacman -S  --noconfirm  # 
