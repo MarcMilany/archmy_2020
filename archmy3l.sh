@@ -1393,6 +1393,7 @@ sudo pacman -S libfm-gtk2 --noconfirm  # Библиотека GTK + 2 для у�
 # sudo pacman -S light-locker --noconfirm  # Простой шкафчик сессий для LightDM   # присутствует
 sudo pacman -S logrotate --noconfirm  # Автоматическая ротация системных журналов
 # sudo pacman -S lsb-release --noconfirm  # Программа запроса версии LSB   # присутствует
+sudo pacman -S lsof --noconfirm  # Перечисляет открытые файлы для запуска процессов Unix
 sudo pacman -S man-db --noconfirm  # Утилита для чтения страниц руководства
 sudo pacman -S man-pages --noconfirm  # Страницы руководства Linux
 sudo pacman -S mc --noconfirm  # Файловый менеджер, эмулирующий Norton Commander
@@ -2591,7 +2592,7 @@ echo -e "${GREEN}==> ${BOLD}Установить рекомендованные 
 #echo -e "${BLUE}:: ${NC}Установить рекомендованные программы (пакеты)?"
 #echo 'Установить рекомендованные программы?'
 # Install the recommended programs
-echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gnome-system-monitor, gnome-disk-utility, gnome-multi-writer, frei0r-plugins, clonezilla, psensor, copyq, rsync, grsync, numlockx, modem-manager-gui, ranger, rofi, gsmartcontrol, testdisk, lsof, dmidecode, qemu)."
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gnome-system-monitor, gnome-disk-utility, gnome-multi-writer, frei0r-plugins, fuseiso, clonezilla, psensor, copyq, rsync, grsync, numlockx, modem-manager-gui, ranger, rofi, gsmartcontrol, testdisk, dmidecode, qemu)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -2619,6 +2620,7 @@ sudo pacman -S gnome-system-monitor --noconfirm  # Просмотр текущи
 sudo pacman -S gnome-disk-utility --noconfirm  # Утилита управления дисками для GNOME
 sudo pacman -S gnome-multi-writer --noconfirm  # Записать файл ISO на несколько USB-устройств одновременно
 sudo pacman -S frei0r-plugins --noconfirm  # Минималистичный плагин API для видеоэффектов
+sudo pacman -S fuseiso --noconfirm  # Модуль FUSE для монтирования образов файловой системы ISO
 sudo pacman -S clonezilla --noconfirm  # Раздел ncurses и программа для создания образов / клонирования дисков
 sudo pacman -S psensor --noconfirm  # Графический аппаратный монитор температуры для Linux
 sudo pacman -S copyq --noconfirm  # Менеджер буфера обмена с возможностью поиска и редактирования истории
@@ -2630,7 +2632,6 @@ sudo pacman -S rofi --noconfirm  # Переключатель окон, сред
 sudo pacman -S gsmartcontrol --noconfirm  # Графический пользовательский интерфейс для инструмента проверки состояния жесткого диска smartctl
 sudo pacman -S ranger --noconfirm  # Простой файловый менеджер в стиле vim
 sudo pacman -S testdisk --noconfirm  # Проверяет и восстанавливает разделы + PhotoRec, инструмент восстановления на основе сигнатур
-sudo pacman -S lsof --noconfirm  # Перечисляет открытые файлы для запуска процессов Unix
 sudo pacman -S dmidecode --noconfirm  # Утилиты, относящиеся к таблице интерфейса управления рабочим столом
 sudo pacman -S qemu --noconfirm  # Универсальный компьютерный эмулятор и виртуализатор с открытым исходным кодом
 # sudo pacman -S  --noconfirm  # 
