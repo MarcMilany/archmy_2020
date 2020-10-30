@@ -346,7 +346,7 @@ sudo pacman -S ncmpcpp --noconfirm  # Практически точный кло
 sudo pacman -S mpc --noconfirm  # Минималистичный интерфейс командной строки для MPD
 sudo pacman -S mpd --noconfirm  # Гибкое, мощное серверное приложение для воспроизведения музыки
 sudo pacman -S mjpegtools --noconfirm  # Набор инструментов, которые могут выполнять запись и воспроизведение видео, простое редактирование с вырезанием и вставкой и сжатие MPEG аудио и видео 
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S media-player-info --noconfirm  # Файлы данных, описывающие возможности медиаплеера для систем post-HAL
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -2888,10 +2888,6 @@ sudo pacman -S  --noconfirm  #
 
 hidapi - # Простая библиотека для связи с устройствами USB и Bluetooth HID
 https://www.archlinux.org/packages/community/x86_64/hidapi/   # присутствует
-
-
-media-player-info - # Файлы данных, описывающие возможности медиаплеера для систем post-HAL
-https://www.archlinux.org/packages/extra/any/media-player-info/
 
 id3lib - # Библиотека для чтения, записи и управления тегами ID3v1 и ID3v2
 https://www.archlinux.org/packages/extra/x86_64/id3lib/   # присутствует  -
