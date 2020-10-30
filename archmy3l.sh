@@ -1319,7 +1319,7 @@ echo -e "${GREEN}==> ${NC}Установка дополнительных баз
 #echo -e "${BLUE}:: ${NC}Установка дополнительных базовых программ (пакетов)" 
 #echo 'Установка дополнительных базовых программ (пакетов)'
 # Installing additional basic programs (packages)
-echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (accountsservice, acpi, acpid, android-tools, android-udev, arch-install-scripts, aspell-en, aspell-ru, b43-fwcutter, bash-completion, cmake, cpupower, crda, autofs, btrfs-progs, dhclient, dnsmasq, dosfstools, efibootmgr, f2fs-tools, fortune-mod, fsarchiver, sane, gnome-nettool, gvfs, gvfs-gphoto2, gvfs-nfs, gvfs-smb, gnu-netcat, haveged, hyphen-en, iftop, nmap, ncdu, hydra, isomd5sum, python-isomd5sum, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, lib32-flex, libfm-gtk2, logrotate, man-db, man-pages, mlocate, mtpfs, patchutils, pciutils, php, poppler-data, qt5-translations, python, pwgen, nss-mdns, scrot, xsel, powertop, reiserfsprogs, ruby, s-nail, smartmontools, syslinux, ethtool, glances, xterm, desktop-file-utils, gtop, lib32-curl, gpm, hddtemp, memtest86+, jfsutils, udiskie, usb_modeswitch, xorg-xkill, xorg-twm, yelp)."
+echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (accountsservice, acpi, acpid, android-tools, android-udev, arch-install-scripts, aspell-en, aspell-ru, b43-fwcutter, bash-completion, cmake, cpupower, crda, autofs, btrfs-progs, dhclient, dnsmasq, dosfstools, efibootmgr, f2fs-tools, fortune-mod, fsarchiver, sane, gnome-nettool, gvfs, gvfs-gphoto2, gvfs-nfs, gvfs-smb, gnu-netcat, haveged, hyphen-en, iftop, nmap, ncdu, hydra, isomd5sum, python-isomd5sum, termite, termite-terminfo, translate-shell, mc, pv, sox, youtube-dl, speedtest-cli, python-pip, lib32-flex, libfm-gtk2, logrotate, man-db, man-pages, mlocate, mtpfs, patchutils, pciutils, php, poppler-data, qt5-translations, python, pwgen, nss-mdns, scrot, xsel, powertop, reiserfsprogs, ruby, s-nail, smartmontools, syslinux, ethtool, glances, xterm, desktop-file-utils, gtop, lib32-curl, gpm, hddtemp, memtest86+, jfsutils, udiskie, usb_modeswitch, xorg-xkill, xorg-twm, yelp)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -1344,11 +1344,11 @@ echo " Установка дополнительных базовых прогр
 elif [[ $in_soft == 1 ]]; then
   echo ""  
   echo " Установка дополнительных базовых программ (пакетов) "
- sudo pacman -S accountsservice acpi acpid android-tools android-udev arch-install-scripts aspell-en aspell-ru autofs b43-fwcutter bash-completion btrfs-progs cmake cpupower crda dhclient dnsmasq dosfstools efibootmgr f2fs-tools fortune-mod fsarchiver sane gnome-nettool gvfs gvfs-gphoto2 gvfs-nfs gvfs-smb gnu-netcat haveged hyphen-en iftop nmap ncdu hydra isomd5sum python-isomd5sum lib32-flex libfm-gtk2 logrotate translate-shell mc pv sox youtube-dl speedtest-cli python-pip python nss-mdns man-db man-pages mlocate mtpfs pwgen patchutils pciutils php poppler-data qt5-translations scrot xsel powertop smartmontools syslinux ethtool glances xterm desktop-file-utils reiserfsprogs ruby s-nail gtop lib32-curl gpm hddtemp memtest86+ jfsutils udiskie usb_modeswitch xorg-xkill xorg-twm yelp --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64 
+ sudo pacman -S accountsservice acpi acpid android-tools android-udev arch-install-scripts aspell-en aspell-ru autofs b43-fwcutter bash-completion btrfs-progs cmake cpupower crda dhclient dnsmasq dosfstools efibootmgr f2fs-tools fortune-mod fsarchiver sane gnome-nettool gvfs gvfs-gphoto2 gvfs-nfs gvfs-smb gnu-netcat haveged hyphen-en iftop nmap ncdu hydra isomd5sum python-isomd5sum lib32-flex libfm-gtk2 logrotate translate-shell mc pv sox youtube-dl speedtest-cli python-pip python nss-mdns man-db man-pages mlocate mtpfs pwgen patchutils pciutils php poppler-data qt5-translations scrot xsel powertop smartmontools syslinux ethtool glances termite termite-terminfo xterm desktop-file-utils reiserfsprogs ruby s-nail gtop lib32-curl gpm hddtemp memtest86+ jfsutils udiskie usb_modeswitch xorg-xkill xorg-twm yelp --noconfirm  # reflector git curl  - пока присутствует в pkglist.x86_64 
 
   
 
-sudo pacman -S  termite termite-terminfo  --noconfirm  
+sudo pacman -S    --noconfirm  
 
 
 sudo pacman -S accountsservice --noconfirm  # Интерфейс D-Bus для запроса учетных записей пользователей и управления ими
@@ -1413,7 +1413,7 @@ sudo pacman -S poppler-data --noconfirm  # Кодирование данных �
 sudo pacman -S powertop --noconfirm  # Инструмент для диагностики проблем с энергопотреблением и управлением питанием
 sudo pacman -S pv --noconfirm  # Инструмент на основе терминала для мониторинга прохождения данных по конвейеру
 sudo pacman -S pwgen --noconfirm  # Генератор паролей для создания легко запоминающихся паролей
-sudo pacman -S python --noconfirm  # Новое поколение языка сценариев высокого уровня Python
+# sudo pacman -S python --noconfirm  # Новое поколение языка сценариев высокого уровня Python  # присутствует
 sudo pacman -S python-isomd5sum --noconfirm  # Привязки Python3 для isomd5sum
 sudo pacman -S python-pip --noconfirm  # Рекомендуемый PyPA инструмент для установки пакетов Python
 sudo pacman -S qt5-translations --noconfirm  # кросс-платформенное приложение и UI-фреймворк (переводы)
