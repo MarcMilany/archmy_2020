@@ -520,8 +520,8 @@ sudo pacman -S --noconfirm  #
 sudo pacman -S --noconfirm  # 
 sudo pacman -S --noconfirm  # 
 sudo pacman -S --noconfirm  # 
-sudo pacman -S --noconfirm  # 
-sudo pacman -S --noconfirm  # 
+sudo pacman -S catdoc --noconfirm  # Конвертер файлов Microsoft Word, Excel, PowerPoint и RTF в текст
+sudo pacman -S unrtf --noconfirm  # Программа командной строки, конвертирующая документы RTF в другие форматы
 
 echo 'Утилиты для редактирования документов, PDF, DjVus, NFO, DIZ и XPS... , Читалки электронных книг, Словари, Таблицы AUR'
 # Utilities for editing documents, PDF, Djvu, NFO, DIZ and XPS..., e-book Readers, Dictionaries, Tables AUR
@@ -2895,15 +2895,6 @@ https://www.tux.in.ua/articles/443   # присутствует
 
 gptfdisk - # Инструмент для создания разделов в текстовом режиме, который работает с дисками с таблицей разделов GUID (GPT) 
 https://www.archlinux.org/packages/extra/x86_64/gptfdisk/   # присутствует -
-
-
-
-
-
-catdoc - # Конвертер файлов Microsoft Word, Excel, PowerPoint и RTF в текст
-unrtf - # Программа командной строки, конвертирующая документы RTF в другие форматы
-
-
 
 
 w3m - # Текстовый веб-браузер, а также пейджер
