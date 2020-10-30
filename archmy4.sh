@@ -874,7 +874,6 @@ sudo pacman -S hexchat --noconfirm  # Популярный и простой в 
 sudo pacman -S kleopatra --noconfirm  # Диспетчер сертификатов и унифицированный графический интерфейс криптографии
 sudo pacman -S mutt --noconfirm  # Небольшой, но очень мощный текстовый почтовый клиент
 sudo pacman -S osmo --noconfirm  # Удобный персональный органайзер
-sudo pacman -S pacmanlogviewer --noconfirm  # Проверьте файлы журнала pacman
 sudo pacman -S rmlint --noconfirm  # Инструмент для удаления дубликатов и прочего ворса, намного быстрее, чем fdupes
 sudo pacman -S rmlint-shredder --noconfirm  # Графический пользовательский интерфейс для rmlint
 sudo pacman -S synapse --noconfirm  # Средство запуска семантических файлов
