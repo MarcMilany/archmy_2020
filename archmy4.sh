@@ -2830,12 +2830,10 @@ fi
 
 +++++++++++++========================+++++++++++++++++
 
-sudo pacman -S android-tools android-udev aspell-en b43-fwcutter cpupower crda dhclient dnsmasq efibootmgr fortune-mod fsarchiver gnome-nettool haveged hyphen-en lib32-flex libfm-gtk2 logrotate man-db man-pages mlocate mtpfs nss-mdns patchutils pciutils php poppler-data qt5-translations reiserfsprogs ruby s-nail termite termite-terminfo yelp --noconfirm  
+sudo pacman -S  b43-fwcutter cpupower crda dhclient dnsmasq efibootmgr fortune-mod fsarchiver gnome-nettool haveged hyphen-en lib32-flex libfm-gtk2 logrotate man-db man-pages mlocate mtpfs nss-mdns patchutils pciutils php poppler-data qt5-translations reiserfsprogs ruby s-nail termite termite-terminfo yelp --noconfirm  
 
 
-sudo pacman -S android-tools --noconfirm  # Инструменты платформы Android
-sudo pacman -S android-udev --noconfirm  # Правила Udev для подключения устройств Android к вашему Linux-серверу
-sudo pacman -S aspell-en --noconfirm  # Английский словарь для aspell
+
 sudo pacman -S b43-fwcutter --noconfirm  # Экстрактор прошивки для модуля ядра b43 (драйвер)
 sudo pacman -S cpupower --noconfirm  # Инструмент ядра Linux для проверки и настройки функций вашего процессора, связанных с энергосбережением
 sudo pacman -S crda --noconfirm  # Агент центрального регулирующего домена для беспроводных сетей
