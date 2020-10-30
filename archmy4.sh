@@ -2830,15 +2830,13 @@ fi
 
 +++++++++++++========================+++++++++++++++++
 
-sudo pacman -S    fortune-mod fsarchiver gnome-nettool haveged hyphen-en lib32-flex libfm-gtk2 logrotate man-db man-pages mlocate mtpfs nss-mdns patchutils pciutils php poppler-data qt5-translations reiserfsprogs ruby s-nail termite termite-terminfo yelp --noconfirm  
+sudo pacman -S     haveged hyphen-en lib32-flex libfm-gtk2 logrotate man-db man-pages mlocate mtpfs nss-mdns patchutils pciutils php poppler-data qt5-translations reiserfsprogs ruby s-nail termite termite-terminfo yelp --noconfirm  
 
 
 
 
 
-sudo pacman -S fortune-mod --noconfirm  # Программа Fortune Cookie от BSD games
-sudo pacman -S fsarchiver --noconfirm  # Безопасный и гибкий инструмент для резервного копирования и развертывания файловой системы
-sudo pacman -S gnome-nettool --noconfirm  # Графический интерфейс для различных сетевых инструментов
+
 sudo pacman -S haveged --noconfirm  # Демон сбора энтропии с использованием таймингов процессора
 sudo pacman -S hyphen-en --noconfirm  # Правила расстановки переносов в английском
 # sudo pacman -S inetutils --noconfirm  # Сборник общих сетевых программ   # присутствует
@@ -2856,13 +2854,13 @@ sudo pacman -S patchutils --noconfirm  # Небольшая коллекция �
 sudo pacman -S pciutils --noconfirm  # Библиотека и инструменты доступа к пространству конфигурации шины PCI
 sudo pacman -S php --noconfirm  # Язык сценариев общего назначения, особенно подходящий для веб-разработки
 sudo pacman -S poppler-data --noconfirm  # Кодирование данных для библиотеки рендеринга PDF Poppler
-sudo pacman -S qt5-translations --noconfirm  # росс-платформенное приложение и UI-фреймворк (переводы)
+sudo pacman -S qt5-translations --noconfirm  # кросс-платформенное приложение и UI-фреймворк (переводы)
 sudo pacman -S reiserfsprogs --noconfirm  # Утилиты Reiserfs
 sudo pacman -S ruby --noconfirm  # Объектно-ориентированный язык для быстрого и простого программирования
 sudo pacman -S s-nail --noconfirm  # Среда для отправки и получения почты
 sudo pacman -S termite --noconfirm  #  Простой терминал на базе VTE
 sudo pacman -S termite-terminfo --noconfirm  # Terminfo для Termite, простого терминала на базе VTE
-sudo pacman -S yelp --noconfirm  # Получите помощь с GNOME
+
 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
