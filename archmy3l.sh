@@ -2599,7 +2599,7 @@ echo -e "${GREEN}==> ${BOLD}Установить рекомендованные 
 #echo -e "${BLUE}:: ${NC}Установить рекомендованные программы (пакеты)?"
 #echo 'Установить рекомендованные программы?'
 # Install the recommended programs
-echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gnome-system-monitor, gnome-disk-utility, gnome-multi-writer, frei0r-plugins, fuseiso, clonezilla, psensor, copyq, rsync, grsync, numlockx, modem-manager-gui, ranger, rofi, gsmartcontrol, testdisk, dmidecode, qemu, w3m)."
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gnome-system-monitor, gnome-disk-utility, gnome-multi-writer, frei0r-plugins, fuseiso, clonezilla, psensor, copyq, rsync, grsync, numlockx, modem-manager-gui, ranger, pacmanlogviewer, rofi, gsmartcontrol, testdisk, dmidecode, qemu, w3m)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -2635,6 +2635,7 @@ sudo pacman -S rsync --noconfirm  # Быстрый и универсальный
 sudo pacman -S grsync --noconfirm  # GTK + GUI для rsync для синхронизации папок, файлов и создания резервных копий
 sudo pacman -S numlockx --noconfirm  # Включает клавишу numlock в X11
 sudo pacman -S modem-manager-gui --noconfirm  # Интерфейс для демона ModemManager, способного управлять определенными функциями модема
+sudo pacman -S pacmanlogviewer --noconfirm  # Проверьте файлы журнала pacman
 sudo pacman -S rofi --noconfirm  # Переключатель окон, средство запуска приложений и замена dmenu
 sudo pacman -S gsmartcontrol --noconfirm  # Графический пользовательский интерфейс для инструмента проверки состояния жесткого диска smartctl
 sudo pacman -S ranger --noconfirm  # Простой файловый менеджер в стиле vim
