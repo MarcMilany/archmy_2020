@@ -1384,6 +1384,7 @@ sudo pacman -S gvfs-nfs --noconfirm  # Реализация виртуально
 sudo pacman -S gvfs-smb --noconfirm  # Реализация виртуальной файловой системы для GIO (серверная часть SMB / CIFS; клиент Windows)
 sudo pacman -S haveged --noconfirm  # Демон сбора энтропии с использованием таймингов процессора
 sudo pacman -S hddtemp --noconfirm  # Показывает температуру вашего жесткого диска, читая информацию SMART
+sudo pacman -S hidapi --noconfirm  # Простая библиотека для связи с устройствами USB и Bluetooth HID
 sudo pacman -S hydra --noconfirm  # Очень быстрый взломщик входа в сеть, который поддерживает множество различных сервисов
 sudo pacman -S hyphen-en --noconfirm  # Правила расстановки переносов в английском
 sudo pacman -S iftop --noconfirm  # Отображение использования полосы пропускания на интерфейсе
