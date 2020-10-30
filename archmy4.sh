@@ -342,9 +342,9 @@ sudo pacman -S you-get --noconfirm  # Загрузчик видео с YouTube /
 sudo pacman -S youtube-viewer --noconfirm  # Утилита командной строки для просмотра видео на YouTube
 sudo pacman -S qmmp --noconfirm  # Аудиоплеер на Qt5
 sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
+sudo pacman -S ncmpcpp --noconfirm  # Практически точный клон ncmpc с некоторыми новыми функциями
+sudo pacman -S mpc --noconfirm  # Минималистичный интерфейс командной строки для MPD
+sudo pacman -S mpd --noconfirm  # Гибкое, мощное серверное приложение для воспроизведения музыки
 sudo pacman -S  --noconfirm  #  
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -2830,8 +2830,10 @@ fi
 
 +++++++++++++========================+++++++++++++++++
 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
+
+
+sudo pacman -S lksctp-tools --noconfirm  # Реализация протокола SCTP (http://lksctp.sourceforge.net/)
+sudo pacman -S fuse3 --noconfirm  # Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
@@ -2845,6 +2847,7 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  #
+sudo pacman -S w3m --noconfirm  # Текстовый веб-браузер, а также пейджер
 
 
 sudo pacman -S  --noconfirm  # 
@@ -2894,8 +2897,7 @@ gptfdisk - # Инструмент для создания разделов в т
 https://www.archlinux.org/packages/extra/x86_64/gptfdisk/   # присутствует -
 
 
-fuse3 - # Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
-https://www.archlinux.org/packages/extra/x86_64/fuse3/   # присутствует -
+
 
 
 catdoc - # Конвертер файлов Microsoft Word, Excel, PowerPoint и RTF в текст
@@ -2903,8 +2905,6 @@ unrtf - # Программа командной строки, конвертир
 
 
 
-ncmpcpp - # Практически точный клон ncmpc с некоторыми новыми функциями
-https://www.archlinux.org/packages/community/x86_64/ncmpcpp/
 
 w3m - # Текстовый веб-браузер, а также пейджер
 https://www.archlinux.org/packages/extra/x86_64/w3m/
@@ -2922,11 +2922,10 @@ w3m имеет множество настроек, задать парамет�
 alias w3m='w3m адрес-сайта.ru'
 
 
-mpd - # Гибкое, мощное серверное приложение для воспроизведения музыки
-https://www.archlinux.org/packages/extra/x86_64/mpd/
 
-mpc - # Минималистичный интерфейс командной строки для MPD
-https://www.archlinux.org/packages/extra/x86_64/mpc/
+
+
+
 
 hidapi - # Простая библиотека для связи с устройствами USB и Bluetooth HID
 https://www.archlinux.org/packages/community/x86_64/hidapi/   # присутствует
