@@ -4028,72 +4028,27 @@ sleep 02
 # --------------------------------
 
 clear
-echo ""
-echo -e "${GREEN}==> ${NC}Установить утилиту (пакет) dpkg или (пакет) dpkg-git - из AUR ?"
-# Install the dpkg utility (package) or dpkg-git (package) from AUR ?
-echo -e "${MAGENTA}=> ${BOLD}Dpkg - это инструменты (команда) для обработки пакетов Debian в системе. Если у вас есть .deb-пакеты, именно dpkg позволяет устанавливать или анализировать их содержимое. (https://www.archlinux.org/packages/community/x86_64/dpkg/) ${NC}"
-echo -e "${CYAN}:: ${NC}Имейте в виду, что иногда dpkg по той или иной причине не может установить пакет и возвращает ошибку; если пользователь даёт указание проигнорировать эту ошибку, будет выдано лишь предупреждение; для этого существуют различные опции..." 
-echo -e "${MAGENTA}=> ${BOLD}Dpkg-git - это инструменты (команда) предоставляет функции для обработки архитектур Debian, подстановочных знаков и отображения триплетов GNU и обратно. Если у вас есть .deb-пакеты, именно dpkg позволяет устанавливать или анализировать их содержимое. (https://aur.archlinux.org/packages/dpkg-git/) ${NC}"
-echo -e "${CYAN}:: ${NC}Установка Dpkg-git проходит через сборку из исходников. То есть установка производиться с помощью git clone (https://aur.archlinux.org/dpkg-git.git), PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/dpkg-git/), собирается и устанавливается."
-echo -e "${YELLOW}=> Важно: ${NC}Перед установкой .deb пакетов - ВЫПОЛНИТЕ резервное копирование пользовательских данных /пространства (разделов системы)-(возможность повреждения вашей системы)!"
-echo -e "${YELLOW}=> Важно: ${NC}Пакеты dpkg и dpkg-git - Конфликтуют (установить их одновременно НЕЛЬЗЯ)!"
-echo " Чтобы исключить в дальнейшем ошибки в работе системы, рекомендую вариант "1" (Установить Dpkg из community). "
-echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В данной опции выбор всегда остаётся за вами. "
-# Be careful! The installation process was fully automatic
-echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-# If you doubt your actions, think again... 
-echo ""
-while
-echo " Действия ввода, выполняется сразу после нажатия клавиши "
-    read -n1 -p " 
-    1 - Установить Dpkg (community),     2 - Установить Dpkg-git - из AUR,     
+echo -e "${MAGENTA}
+<<< Установка утилиты для создания backup - (резервное копирование) системы Archlinux >>> ${NC}"
+# Installing the utility for creating a backup - (backup) Archlinux system
 
-    0 - НЕТ - Пропустить действие: " t_deb  # sends right after the keypress; # отправляет сразу после нажатия клавиши
-    echo ''
-    [[ "$t_deb" =~ [^120] ]]
-do
-    :
-done
-if [[ $t_deb == 0 ]]; then
-echo ""  
-echo " Установка утилит (пакетов) пропущена "
-elif [[ $t_deb == 1 ]]; then
-  echo ""
-  echo " Установка пакета Dpkg (community) "
-sudo pacman -S dpkg --noconfirm  # Инструменты диспетчера пакетов Debian (Последнее обновление: 2020-10-13)
-echo " Установка пакета dpkg выполнена "
-elif [[ $t_deb == 2 ]]; then
-  echo ""
-  echo " Установка Dpkg-git - из AUR "
-##### dpkg-git ###### 
-# yay -S dpkg-git --noconfirm  # Система управления пакетами Debian (Последнее обновление: 2019-01-30)
-git clone https://aur.archlinux.org/dpkg-git.git  
-cd dpkg-git  
-# makepkg -si
-makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
-# makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
-# rm -rf dpkg-git
-rm -Rf dpkg-git   # удаляем директорию сборки
 echo ""
-echo " Сборка и установка dpkg-git выполнена "
-echo " Желательно перезагрузить систему для применения изменений "
-fi
-# ------------------------------------
-# Последнее обновление dpkg: 2020-10-13 16:31 UTC
-# https://www.archlinux.org/packages/community/x86_64/dpkg/
-# Последнее обновление dpkg-git: 2019-01-30 18:50
-# https://aur.archlinux.org/packages/dpkg-git/
-# https://aur.archlinux.org/dpkg-git.git
-# https://debian-handbook.info/browse/ru-RU/stable/sect.manipulating-packages-with-dpkg.html
-# ------------------------------------
-## Команда по работе с dpkg
-# Установите пакет debian с помощью dpkg:
-# dpkg -i package.deb  # какой бы пакет не был  (sudo dpkg -i package_name.deb)
-# Не рекомендуется (возможно, опасно)
-# Этот метод пытается установить пакет, используя формат упаковки debian на Arch, который не рекомендуется из-за возможной опасности повреждения вашей установки!
-# --------------------------------
+echo -e "${GREEN}==> ${NC}Установить Timeshift (пакет timeshift) для резервного копирования Archlinux?"
+# Install Timeshift (timeshift package) for Archlinux backup?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 clear
 echo -e "${MAGENTA}
