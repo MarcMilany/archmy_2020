@@ -4301,7 +4301,6 @@ ${NC}"
 # Clearing the pacman cache, and Removing unused dependencies.
 echo "" 
 echo -e "${YELLOW}==> Примечание: ${NC}Если! Вы сейчас устанавливали "AUR Helper"-'yay' (не yay-bin), а также Snap (пакет snapd) вместе с ними установилась зависимость 'go' - (Основные инструменты компилятора для языка программирования Go), который весит 559,0 МБ. Так, что если вам не нужна зависимость 'go', для дальнейшей сборки пакетов в установленной системе СОВЕТУЮ удалить её. В случае, если "AUR"-'yay', Snap (пакет snapd) НЕ БЫЛИ установлены, или зависимость 'go' была удалена ранее, то пропустите этот шаг."
-
 echo ""
 echo -e "${BLUE}:: ${BOLD}Удаление зависимости 'go' после установки "AUR Helper"-'yay', Snap (пакет snapd). ${NC}"
 echo -e "${YELLOW}==> ${NC} Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте..."
@@ -4406,11 +4405,18 @@ echo ""
 echo " Удаление всех пакетов-сирот (неиспользуемых зависимостей) выполнено "
 fi
 
+
 echo ""
 echo -e "${BLUE}:: ${NC}Удаление созданной папки (downloads), и скрипта установки программ (archmy3l)"
 #echo " Удаление созданной папки (downloads), и скрипта установки программ (archmy3l) "
 #echo ' Удаление созданной папки (downloads), и скрипта установки программ (archmy3l) '
 # Deleting the created folder (downloads) and the program installation script (archmy3l)
+echo -e "${YELLOW}==> ${NC}Если таковая (папка) была создана изначально!"
+# If it was created initially!
+
+
+
+
 sudo rm -R ~/downloads/
 sudo rm -rf ~/archmy3l
 
