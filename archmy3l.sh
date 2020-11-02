@@ -4391,7 +4391,7 @@ echo ""
 echo " Удаление всех пакетов-сирот (неиспользуемых зависимостей) пропущено "      
 elif [[ $rm_orphans == 1 ]]; then
 echo "" 
-#echo " Удаление всех пакетов-сирот (неиспользуемых зависимостей) "    
+echo " Удаление всех пакетов-сирот (неиспользуемых зависимостей) "    
 #sudo pacman --noconfirm -Rcsn $(pacman -Qdtq)  # --noconfirm (не спрашивать каких-либо подтверждений), -R --remove (Удалить пакет(ы) из системы), -c, --cascade (удалить пакеты и все пакеты, которые зависят от них), -s, --recursive (удалить ненужные зависимости), -n, --nosave (удалить конфигурационные файлы)
 sudo pacman -Rsn $(pacman -Qdtq) && rm -rf ~/.cache/thumbnails/* && rm -rf ~/.build/*
 #sudo pacman -Rsn $(pacman -Qqtd)  # удаляет пакеты-сироты (которые не используются ни одной программой)
@@ -4411,18 +4411,37 @@ echo -e "${BLUE}:: ${NC}Удаление созданной папки (download
 #echo " Удаление созданной папки (downloads), и скрипта установки программ (archmy3l) "
 #echo ' Удаление созданной папки (downloads), и скрипта установки программ (archmy3l) '
 # Deleting the created folder (downloads) and the program installation script (archmy3l)
-echo -e "${YELLOW}==> ${NC}Если таковая (папка) была создана изначально!"
+echo -e "${YELLOW}==> Примечание: ${NC}Если таковая (папка) была создана изначально!"
 # If it was created initially!
-
-
-
-
+echo " Будьте внимательны! Процесс удаления, был прописан полностью автоматическим. " 
+# Be careful! Removal process was fully automatic
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
+while
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p " 
+    1 - Да удалить папку (downloads),     0 - Нет пропустить этот шаг: " rm_down  # sends right after the keypress; # отправляет сразу после нажатия клавиши     
+    echo ''
+    [[ "$rm_down" =~ [^10] ]]
+do
+    :
+done
+if [[ $rm_down == 0 ]]; then
+echo ""
+echo " Удаление пропущено "      
+elif [[ $rm_down == 1 ]]; then
+echo "" 
+echo " Удаление папки (downloads), и скрипта установки программ (archmy3l) " 
 sudo rm -R ~/downloads/
 sudo rm -rf ~/archmy3l
+echo " Удаление выполнено "
+fi
 
 clear
 echo ""
-echo -e "${BLUE}:: ${NC}Посмотрим, Сохраним список Установленного софта (пакетов)"
+echo -e "${CYAN}=> ${NC}Посмотрим и Сохраним список установленного софта (пакетов)"
+echo -e "${BLUE}:: ${NC}Посмотрим список установленного софта (пакетов)?"
 #echo " Посмотрим список Установленного софта (пакетов) "
 # echo 'Список Установленного софта (пакетов)'
 # List of Installed software (packages)
@@ -4448,6 +4467,8 @@ echo ""
 sudo pacman -Qqe  # -Q --query  # Запрос к базе данных; -q, --quiet  # показать меньше информации для запроса и поиска; -e, --explicit  # список явно установленных пакетов (фильтр)
 echo ""
 sleep 60
+fi
+
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Сохранить список Установленного софта (пакетов)?"
@@ -4482,8 +4503,8 @@ sudo pacman -Qqe > ~/pkglist/pkglist.txt
 sudo pacman -Qqm > ~/pkglist/aurlist.txt
 echo " Сохранение списка установленного софта (пакетов) выполнено "
 fi
-fi
 ###########################################
+
 clear
 echo -e "${GREEN}
   <<< Поздравляем! Установка софта (пакетов) завершена! >>> ${NC}"
