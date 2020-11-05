@@ -466,14 +466,60 @@ echo -e "${MAGENTA}
 # Installing additional software (packages) for editing and development in Archlinux
 
 echo ""
-echo -e "${GREEN}==> ${NC}Установка дополнительных пакетов для расширения возможностей редактора Vim"
-#echo -e "${BLUE}:: ${NC}Установка дополнительных пакетов для расширения возможностей редактора Vim" 
-#echo 'Установка дополнительных пакетов для расширения возможностей редактора Vim'
-# Installing additional packages to extend the capabilities of the Vim editor
+echo -e "${GREEN}==> ${NC}Установка текстового редактора Vim или gVim (графическая оболочка для редактора Vim)"
+#echo -e "${BLUE}:: ${NC}Установка текстового редактора Vim или gVim (графическая оболочка для редактора Vim)" 
+#echo 'Установка текстового редактора Vim или gVim'
+# Installing the Vim or gVim text editor
+echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие варианты: ${NC}"
 echo -e "${MAGENTA}=> ${BOLD}Vim - это свободный текстовый редактор, созданный на основе более старого vi. Ныне это мощный текстовый редактор с полной свободой настройки и автоматизации, возможными благодаря расширениям и надстройкам. Пользовательский интерфейс Vim’а может работать в чистом текстовом режиме. Для поклонников vi - практически стопроцентная совместимость с vi. ${NC}"
 echo -e "${CYAN}:: ${NC}Функционал утилиты Vim как при работе с текстовыми файлами, так и цикл разработки (редактирование; компиляция; исправление программ; и т.д.) очень обширен. (https://www.vim.org/)"
 echo -e "${CYAN}:: ${NC}Существует и модификация для использования в графическом оконном интерфейсе - GVim."
-echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (vi, vim, vim-ansible, vim-ale, vim-airline, vim-airline-themes, vim-align, vim-bufexplorer, vim-ctrlp, vim-fugitive, vim-indent-object, vim-jad, vim-jedi, vim-latexsuite, vim-molokai, vim-nerdcommenter, vim-nerdtree, vim-pastie, vim-runtime, vim-seti, vim-spell-ru, vim-supertab, vim-surround, vim-syntastic, vim-tagbar, vim-ultisnips, vim-coverage-highlight, vim-csound, vim-easymotion, vim-editorconfig, vim-gitgutter, vim-grammalecte, vimpager)."
+echo -e "${MAGENTA}=> ${BOLD}gVim - представляет собой версию Vim, скомпилированную с поддержкой графического интерфейса. Обычно редактор Vim используют, запуская его в консоли или эмуляторе терминала. ${NC}"
+echo -e "${CYAN}:: ${NC}Однако если вы активно используете GUI, вам может быть полезен gVim. (https://www.vim.org/)"
+echo -e "${YELLOW}==> Примечание: ${BOLD}При установке приложение gVim пакета (gvim), само приложение Vim пакет (vim) будет удален (просто заменён на gvim). ${NC}"
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. "
+# Be careful! The installation process was fully automatic.
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
+while 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Установить редактор Vim,     2 - Установить приложение gVim (GUI),     
+
+    0 - НЕТ - Пропустить установку: " i_gvim  # sends right after the keypress; # отправляет сразу после нажатия клавиши    
+    echo ''
+    [[ "$i_gvim" =~ [^10] ]]
+do
+    :
+done 
+if [[ $i_gvim == 0 ]]; then 
+echo ""   
+echo " Установка пропущена "
+elif [[ $i_gvim == 1 ]]; then
+  echo ""    
+  echo " Установка редактора Vim "
+sudo pacman -S vim --noconfirm  # Vi Improved, улучшенная версия текстового редактора vi с широкими возможностями настройки
+echo ""
+echo " Установка редактора Vim выполнена "
+elif [[ $i_gvim == 2 ]]; then
+  echo ""    
+  echo " Установка приложение gVim графической оболочки для редактора Vim "
+# sudo pacman -Rsn vim  # Удалить пакет с зависимостями (не используемыми другими пакетами) и его конфигурационные файлы
+# sudo pacman -Rs vim  # Удалить пакет с зависимостями (не используемыми другими пакетами)
+#sudo pacman -R vim  # Удалить пакет vim
+sudo pacman -S gvim --noconfirm  # Vi Improved, улучшенная версия текстового редактора vi с широкими возможностями настройки (с расширенными функциями, такими как графический интерфейс)
+echo ""
+echo " Установка gVim графической оболочки для редактора Vim выполнена "
+fi
+
+clear
+echo ""
+echo -e "${GREEN}==> ${NC}Установка дополнительных пакетов для расширения возможностей редактора Vim или gVim"
+#echo -e "${BLUE}:: ${NC}Установка дополнительных пакетов для расширения возможностей редактора Vim или gVim" 
+#echo 'Установка дополнительных пакетов для расширения возможностей редактора Vim или gVim'
+# Installing additional packages to extend the capabilities of the Vim or gVim editor
+echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (vi, vim-ansible, vim-ale, vim-airline, vim-airline-themes, vim-align, vim-bufexplorer, vim-ctrlp, vim-fugitive, vim-indent-object, vim-jad, vim-jedi, vim-latexsuite, vim-molokai, vim-nerdcommenter, vim-nerdtree, vim-pastie, vim-runtime, vim-seti, vim-spell-ru, vim-supertab, vim-surround, vim-syntastic, vim-tagbar, vim-ultisnips, vim-coverage-highlight, vim-csound, vim-easymotion, vim-editorconfig, vim-gitgutter, vim-grammalecte, vimpager)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -483,23 +529,22 @@ echo ""
 while
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p " 
-    1 - Да установить,     0 - НЕТ - Пропустить действие: " i_vim  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да установить,     0 - НЕТ - Пропустить действие: " i_vi  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$i_vim" =~ [^10] ]]
+    [[ "$i_vi" =~ [^10] ]]
 do
     :
 done
-if [[ $i_vim == 0 ]]; then
+if [[ $i_vi == 0 ]]; then
 echo ""  
 echo " Установка дополнительных пакетов для редактора Vim пропущена "
-elif [[ $i_vim == 1 ]]; then
+elif [[ $i_vi == 1 ]]; then
 echo ""
 echo " Установка дополнительных пакетов для редактора Vim "
-# sudo pacman -S vi vim vim-ansible vim-ale vim-airline vim-airline-themes vim-align vim-bufexplorer vim-ctrlp vim-fugitive vim-indent-object vim-jad vim-jedi vim-latexsuite vim-molokai vim-nerdcommenter vim-nerdtree vim-pastie vim-runtime vim-seti vim-spell-ru vim-supertab vim-surround vim-syntastic vim-tagbar vim-ultisnips --noconfirm 
+# sudo pacman -S vi vim-ansible vim-ale vim-airline vim-airline-themes vim-align vim-bufexplorer vim-ctrlp vim-fugitive vim-indent-object vim-jad vim-jedi vim-latexsuite vim-molokai vim-nerdcommenter vim-nerdtree vim-pastie vim-runtime vim-seti vim-spell-ru vim-supertab vim-surround vim-syntastic vim-tagbar vim-ultisnips --noconfirm 
 #sudo pacman -S vim-coverage-highlight vim-csound vim-easymotion vim-editorconfig vim-gitgutter vim-grammalecte vimpager --noconfirm  # (https://www.vim.org/)
 # Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты шрифтов!
 sudo pacman -S vi --noconfirm  # Оригинальный текстовый редактор ex / vi
-sudo pacman -S vim --noconfirm  # Vi Improved, улучшенная версия текстового редактора vi с широкими возможностями настройки
 sudo pacman -S vim-ansible --noconfirm  # Плагин vim для подсветки синтаксиса распространенных типов файлов Ansible
 sudo pacman -S vim-ale --noconfirm  # Асинхронный Lint Engine
 sudo pacman -S vim-airline --noconfirm  # Строка состояния, написанная в Vimscript
@@ -534,41 +579,8 @@ sudo pacman -S vimpager --noconfirm  # Сценарий на основе vim д
 # sudo pacman -S  --noconfirm  #
 # sudo pacman -S  --noconfirm  #
 # sudo pacman -S  --noconfirm  #
-clear
 echo ""
 echo " Установка дополнительных пакетов для редактора Vim выполнена "
-echo ""
-echo -e "${BLUE}:: ${NC}Установить приложение gVim графическую оболочку для редактора Vim?"
-echo -e "${MAGENTA}=> ${BOLD}gVim - представляет собой версию Vim, скомпилированную с поддержкой графического интерфейса. Обычно редактор Vim используют, запуская его в консоли или эмуляторе терминала. ${NC}"
-echo -e "${CYAN}:: ${NC}Однако если вы активно используете GUI, вам может быть полезен gVim. (https://www.vim.org/)"
-echo -e "${YELLOW}==> Примечание: ${BOLD}При установке приложение gVim пакета (gvim), само приложение Vim пакет (vim) будет удален (просто заменён на gvim). ${NC}"
-echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. "
-# Be careful! The installation process was fully automatic.
-echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-# If you doubt your actions, think again... 
-echo "" 
-while 
-echo " Действия ввода, выполняется сразу после нажатия клавиши "
-    read -n1 -p "      
-    1 - Установить приложение gVim (GUI),     0 - НЕТ - Пропустить установку: " i_gvim  # sends right after the keypress; # отправляет сразу после нажатия клавиши    
-    echo ''
-    [[ "$i_gvim" =~ [^10] ]]
-do
-    :
-done 
-if [[ $i_gvim == 0 ]]; then 
-echo ""   
-echo " Установка графической оболочки для редактора Vim пропущена "
-elif [[ $i_gvim == 1 ]]; then
-  echo ""    
-  echo " Установка приложение gVim графической оболочки для редактора Vim "
-# sudo pacman -Rsn vim  # Удалить пакет с зависимостями (не используемыми другими пакетами) и его конфигурационные файлы
-# sudo pacman -Rs vim  # Удалить пакет с зависимостями (не используемыми другими пакетами)
-sudo pacman -R vim  # Удалить пакет vim
-sudo pacman -S gvim --noconfirm  # Vi Improved, улучшенная версия текстового редактора vi с широкими возможностями настройки (с расширенными функциями, такими как графический интерфейс)
-echo ""
-echo " Установка gVim графической оболочки для редактора Vim выполнена "
-fi
 fi
 
 clear
