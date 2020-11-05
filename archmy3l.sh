@@ -3368,6 +3368,7 @@ fi
 sleep 03
 
 ######### Drivers ##############
+clear
 echo -e "${MAGENTA}
   <<< Установка Свободных и Проприетарных драйверов для видеокарт (nvidia, amd, intel), а также драйверов для принтера. >>> ${NC}"
 # Install Proprietary drivers for video cards (nvidia, amd, intel), as well as printer drivers. 
