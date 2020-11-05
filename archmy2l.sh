@@ -410,38 +410,38 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done
-if [[ $prog_cpu == 1 ]]; then
+if [[ $prog_cpu == 0 ]]; then
 echo ""
-echo " Устанавливаем uCode для процессоров - AMD "
-sudo pacman -S amd-ucode --noconfirm  # Образ обновления микрокода для процессоров AMD
+echo " Установка микрокода процессоров пропущена "
+elif [[ $prog_cpu == 1 ]]; then
+  echo ""
+  echo " Устанавливаем uCode для процессоров - AMD "
+pacman -S amd-ucode --noconfirm  # Образ обновления микрокода для процессоров AMD
 echo " Установлены обновления стабильности и безопасности для микрокода процессора - AMD "
 echo " После завершения установки пакета программного обеспечения нужно перезагрузить компьютер "
 #echo ""
 #echo -e "${BLUE}:: ${NC}Обновляем grub.cfg (Сгенерируем grub.cfg)"
-#sudo grub-mkconfig -o /boot/grub/grub.cfg   # создаём конфигурационный файл     
+#grub-mkconfig -o /boot/grub/grub.cfg   # создаём конфигурационный файл     
 elif [[ $prog_cpu == 2 ]]; then
   echo ""  
   echo " Устанавливаем uCode для процессоров - INTEL "
-sudo pacman -S intel-ucode --noconfirm  # Образ обновления микрокода для процессоров INTEL
-sudo pacman -S iucode-tool --noconfirm  # Инструмент для управления пакетами микрокода Intel® IA-32 / X86-64
+pacman -S intel-ucode --noconfirm  # Образ обновления микрокода для процессоров INTEL
+pacman -S iucode-tool --noconfirm  # Инструмент для управления пакетами микрокода Intel® IA-32 / X86-64
 echo " Установлены обновления стабильности и безопасности для микрокода процессора - INTEL "
 echo " После завершения установки пакета программного обеспечения нужно перезагрузить компьютер " 
 #echo ""
 #echo -e "${BLUE}:: ${NC}Обновляем grub.cfg (Сгенерируем grub.cfg)"
-#sudo grub-mkconfig -o /boot/grub/grub.cfg   # создаём конфигурационный файл    
+#grub-mkconfig -o /boot/grub/grub.cfg   # создаём конфигурационный файл    
 elif [[ $prog_cpu == 3 ]]; then
   echo ""  
   echo " Устанавливаем uCode для процессоров - AMD и INTEL "
-sudo pacman -S amd-ucode intel-ucode --noconfirm  # Образ обновления микрокода для процессоров AMD и INTEL
-sudo pacman -S iucode-tool --noconfirm  # Инструмент для управления пакетами микрокода Intel® IA-32 / X86-64
+pacman -S amd-ucode intel-ucode --noconfirm  # Образ обновления микрокода для процессоров AMD и INTEL
+pacman -S iucode-tool --noconfirm  # Инструмент для управления пакетами микрокода Intel® IA-32 / X86-64
 echo " Установлены обновления стабильности и безопасности для микрокода процессоров - AMD и INTEL "
 echo " После завершения установки пакета программного обеспечения нужно перезагрузить компьютер "
 #echo ""
 #echo -e "${BLUE}:: ${NC}Обновляем grub.cfg (Сгенерируем grub.cfg)"
-#sudo grub-mkconfig -o /boot/grub/grub.cfg   # создаём конфигурационный файл    
-elif [[ $prog_cpu == 0 ]]; then
-  echo ""
-  echo " Установка микрокода процессоров пропущена "  
+#grub-mkconfig -o /boot/grub/grub.cfg   # создаём конфигурационный файл      
 fi
 
 echo ""
