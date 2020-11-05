@@ -4435,8 +4435,8 @@ echo " Удаление пропущено "
 elif [[ $rm_down == 1 ]]; then
 echo "" 
 echo " Удаление папки (downloads), и скрипта установки программ (archmy3l) " 
-sudo rm -R ~/downloads/
-sudo rm -rf ~/archmy3l
+sudo rm -R ~/downloads/  # Если таковая (папка) была создана изначально
+sudo rm -rf ~/archmy3l  # Если скрипт не был перемещён в другую директорию
 echo " Удаление выполнено "
 fi
 
