@@ -39,7 +39,6 @@ touch /etc/pacman.d/hooks/microcode_reload.hook
 echo " Пропишем нужные нам значения в созданном файле microcode_reload.hook "
 > /etc/pacman.d/hooks/microcode_reload.hook
 cat <<EOF >>/etc/pacman.d/hooks/microcode_reload.hook 
-
 [Trigger]
 Operation = Install
 Operation = Upgrade
