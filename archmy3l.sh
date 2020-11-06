@@ -4138,13 +4138,12 @@ cd ..   # поднимаемся на уровень выше (выходим и
 rm -Rf gstreamer0.10
 #######################
 echo ""
-echo " Создадим backup папки /.thumbnails (на всякий случай) "
-mv ~/.cache/thumbnails ~/.cache/thumbnails.bak
+#mv ~/.cache/thumbnails ~/.cache/thumbnails.bak
 # cp -R ~/.cache/thumbnails ~/.cache/thumbnails.bak 
-echo " Удалим миниатюры фото, которые накапились в системе "
+#echo " Удалим миниатюры фото, которые накапились в системе "
 ### thunar -q  # запустим менеджер thunar
 ### killall thunar  # завершим работу менеджера thunar 
-sudo rm -rf ~/.cache/thumbnails/  # удаляет миниатюры фото, которые накапливаются в системе
+#sudo rm -rf ~/.cache/thumbnails/  # удаляет миниатюры фото, которые накапливаются в системе
 #sudo rm -rf ~/.cache/thumbnails/*
 echo " Создадим backup папки /.config/Thunar "
 sudo mv ~/.config/Thunar ~/.config/Thunar.bak
