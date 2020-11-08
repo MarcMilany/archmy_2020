@@ -667,9 +667,9 @@ if [[ $i_mugshot == 0 ]]; then
 echo ""  
 echo " Установка Mugshot из AUR пропущена "
 elif [[ $i_mugshot == 1 ]]; then
-##### hblock ######  
+##### mugshot ######  
   echo ""
-  echo " Установка Mugshot из AUR "
+  echo " Установка Mugshot из AUR (для настройки личных данных пользователя) "
 # sudo pacman -S xfce4-whiskermenu-plugin --noconfirm  # Меню для Xfce4
 # yay -S mugshot --noconfirm  # Программа для обновления личных данных пользователя
 git clone https://aur.archlinux.org/mugshot.git   
