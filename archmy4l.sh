@@ -641,12 +641,15 @@ echo -e "${MAGENTA}
 # Installing additional software (packages) for updating the user's personal data in Archlinux
 
 echo ""
-echo -e "${GREEN}==> ${NC}Установка Mugshot из AUR (повысьте свою безопасность и конфиденциальность, заблокировав рекламу, отслеживание и вредоносные домены)"
+echo -e "${GREEN}==> ${NC}Установка Mugshot из AUR ()"
 #echo -e "${BLUE}:: ${NC}Установка hBlock (повысьте свою безопасность и конфиденциальность, заблокировав рекламу, отслеживание и вредоносные домены)" 
 #echo 'Установка hBlock'
 # Installing h Block (increase your security and privacy by blocking ads, tracking, and malicious domains)
 echo -e "${MAGENTA}=> ${BOLD}Mugshot - это облегченная утилита настройки пользователя для Linux, разработанная для простоты и легкости использования. Быстро обновляйте свой личный профиль и синхронизируйте обновления между приложениями. ${NC}"
-echo -e "${CYAN}:: ${NC}Установка hblock проходит через сборку из исходников AUR. То есть установка производиться с помощью git clone (https://aur.archlinux.org/hblock.git), PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/hblock/), собирается и устанавливается."
+echo -e "${MAGENTA}==> Примечание: ${NC}Желательно установить пакет (termite - https://www.archlinux.org/packages/community/x86_64/termite/ - Простой терминал на базе VTE), так как обновление списка доменов в файле hosts - проходит через терминал! hBlock доступен в различных менеджерах пакетов..."
+echo -e "${CYAN}:: ${NC}Установка mugshot проходит через сборку из исходников AUR. То есть установка производиться с помощью git clone (https://aur.archlinux.org/mugshot.git), PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/mugshot), собирается и устанавливается."
+
+
 echo -e "${MAGENTA}==> Примечание: ${NC}Желательно установить пакет (termite - https://www.archlinux.org/packages/community/x86_64/termite/ - Простой терминал на базе VTE), так как обновление списка доменов в файле hosts - проходит через терминал! hBlock доступен в различных менеджерах пакетов..."
 echo -e "${YELLOW}==> Применение: ${BOLD}Поведение hBlock по умолчанию можно настроить с помощью нескольких параметров. Воспользуйтесь --help опцией или проверьте полный список в файле hblock.1.md - (при скачивании и установке с сайта https://github.com/hectorm/hblock). ${NC}"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. "
@@ -657,29 +660,29 @@ echo ""
 while
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p " 
-    1 - Да установить,     0 - НЕТ - Пропустить действие: " i_hblock  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да установить,     0 - НЕТ - Пропустить действие: " i_mugshot  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$i_hblock" =~ [^10] ]]
+    [[ "$i_mugshot" =~ [^10] ]]
 do
     :
 done
-if [[ $i_hblock == 0 ]]; then
+if [[ $i_mugshot == 0 ]]; then
 echo ""  
-echo " Установка hBlock из AUR пропущена "
-elif [[ $i_hblock == 1 ]]; then
+echo " Установка Mugshot из AUR пропущена "
+elif [[ $i_mugshot == 1 ]]; then
 ##### hblock ######  
   echo ""
-  echo " Установка hBlock из AUR "
-# yay -S hblock --noconfirm  # Блокировщик рекламы, который создает файл hosts из автоматически загружаемых черных списков
-git clone https://aur.archlinux.org/hblock.git   
-cd hblock
+  echo " Установка Mugshot из AUR "
+# yay -S mugshot --noconfirm  # Программа для обновления личных данных пользователя
+git clone https://aur.archlinux.org/mugshot.git   
+cd mugshot
 # makepkg -si
 makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
 pwd    # покажет в какой директории мы находимся
 cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
-# rm -rf hblock
-rm -Rf hblock   # удаляем директорию сборки
+# rm -rf mugshot
+rm -Rf mugshot   # удаляем директорию сборки
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 echo " Желательно перезагрузить систему для применения изменений "
@@ -694,8 +697,8 @@ fi
 
 
 
-
-
+xfce4-whiskermenu-plugin  - # Меню для Xfce4
+https://www.archlinux.org/packages/community/x86_64/xfce4-whiskermenu-plugin/
 
 
 
