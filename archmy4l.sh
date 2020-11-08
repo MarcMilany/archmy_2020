@@ -661,43 +661,35 @@ echo " Если Вы сомневаетесь в своих действиях, 
 # If you doubt your actions, think again... 
 echo "" 
 while
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Блокировщик рекламы, который создает файл hosts из автоматически загружаемых черных списков.
-
-hblock  AUR  # Блокировщик рекламы, который создает файл hosts из автоматически загружаемых черных списков
-https://aur.archlinux.org/packages/hblock/
-https://aur.archlinux.org/hblock.git
-
-
-
-
-
-
-
-
-
-
-
-
-
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p " 
+    1 - Да установить,     0 - НЕТ - Пропустить действие: " i_hblock  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_hblock" =~ [^10] ]]
+do
+    :
+done
+if [[ $i_hblock == 0 ]]; then
+echo ""  
+echo " Установка hBlock из AUR пропущена "
+elif [[ $i_hblock == 1 ]]; then
+##### hblock ######  
+  echo ""
+  echo " Установка hBlock из AUR "
+# yay -S hblock --noconfirm  # Блокировщик рекламы, который создает файл hosts из автоматически загружаемых черных списков
+git clone https://aur.archlinux.org/hblock.git   
+cd hblock
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf hblock
+rm -Rf hblock   # удаляем директорию сборки
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+echo " Желательно перезагрузить систему для применения изменений "
+fi
 
 
 
