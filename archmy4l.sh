@@ -646,12 +646,9 @@ echo -e "${GREEN}==> ${NC}Установка Mugshot из AUR ()"
 #echo 'Установка hBlock'
 # Installing h Block (increase your security and privacy by blocking ads, tracking, and malicious domains)
 echo -e "${MAGENTA}=> ${BOLD}Mugshot - это облегченная утилита настройки пользователя для Linux, разработанная для простоты и легкости использования. Быстро обновляйте свой личный профиль и синхронизируйте обновления между приложениями. ${NC}"
-echo -e "${MAGENTA}==> Примечание: ${NC}Желательно установить пакет (termite - https://www.archlinux.org/packages/community/x86_64/termite/ - Простой терминал на базе VTE), так как обновление списка доменов в файле hosts - проходит через терминал! hBlock доступен в различных менеджерах пакетов..."
+echo -e "${MAGENTA}==> Примечание: ${NC}В обновляемую информацию личного профиля входят: - Изображение профиля Linux: ~ / .face и AccountService; Данные пользователя хранятся в / etc / passwd (используется finger и другими настольными приложениями); (Необязательно) Синхронизация изображение своего профиля со значком Pidgin; (Необязательно) Синхронизация данных пользователя с LibreOffice и т.д..."
 echo -e "${CYAN}:: ${NC}Установка mugshot проходит через сборку из исходников AUR. То есть установка производиться с помощью git clone (https://aur.archlinux.org/mugshot.git), PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/mugshot), собирается и устанавливается."
-
-
-echo -e "${MAGENTA}==> Примечание: ${NC}Желательно установить пакет (termite - https://www.archlinux.org/packages/community/x86_64/termite/ - Простой терминал на базе VTE), так как обновление списка доменов в файле hosts - проходит через терминал! hBlock доступен в различных менеджерах пакетов..."
-echo -e "${YELLOW}==> Применение: ${BOLD}Поведение hBlock по умолчанию можно настроить с помощью нескольких параметров. Воспользуйтесь --help опцией или проверьте полный список в файле hblock.1.md - (при скачивании и установке с сайта https://github.com/hectorm/hblock). ${NC}"
+echo -e "${YELLOW}==> Примечание: ${BOLD}Если вы используете рабочее окружение Xfce, то желательно установить пакет (xfce4-whiskermenu-plugin - Меню для Xfce4 - https://www.archlinux.org/packages/community/x86_64/xfce4-whiskermenu-plugin/ , если таковой не был установлен изначально). ${NC}"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. "
 # Be careful! The installation process was fully automatic.
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -673,6 +670,7 @@ elif [[ $i_mugshot == 1 ]]; then
 ##### hblock ######  
   echo ""
   echo " Установка Mugshot из AUR "
+# sudo pacman -S xfce4-whiskermenu-plugin --noconfirm  # Меню для Xfce4
 # yay -S mugshot --noconfirm  # Программа для обновления личных данных пользователя
 git clone https://aur.archlinux.org/mugshot.git   
 cd mugshot
