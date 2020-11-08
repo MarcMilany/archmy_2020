@@ -646,7 +646,7 @@ echo -e "${MAGENTA}
 # Installing additional software (packages) to improve security and privacy in Archlinux
 
 echo ""
-echo -e "${GREEN}==> ${NC}Установка hBlock (повысьте свою безопасность и конфиденциальность, заблокировав рекламу, отслеживание и вредоносные домены)"
+echo -e "${GREEN}==> ${NC}Установка hBlock из AUR (повысьте свою безопасность и конфиденциальность, заблокировав рекламу, отслеживание и вредоносные домены)"
 #echo -e "${BLUE}:: ${NC}Установка hBlock (повысьте свою безопасность и конфиденциальность, заблокировав рекламу, отслеживание и вредоносные домены)" 
 #echo 'Установка hBlock'
 # Installing h Block (increase your security and privacy by blocking ads, tracking, and malicious domains)
