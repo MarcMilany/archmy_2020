@@ -641,10 +641,10 @@ echo -e "${MAGENTA}
 # Installing additional software (packages) for updating the user's personal data in Archlinux
 
 echo ""
-echo -e "${GREEN}==> ${NC}Установка Mugshot из AUR ()"
-#echo -e "${BLUE}:: ${NC}Установка hBlock (повысьте свою безопасность и конфиденциальность, заблокировав рекламу, отслеживание и вредоносные домены)" 
-#echo 'Установка hBlock'
-# Installing h Block (increase your security and privacy by blocking ads, tracking, and malicious domains)
+echo -e "${GREEN}==> ${NC}Установка Mugshot из AUR (настройка личных данных пользователя)"
+#echo -e "${BLUE}:: ${NC}Установка Mugshot из AUR (настройка личных данных пользователя)" 
+#echo 'Установка Mugshot из AUR (настройка личных данных пользователя)'
+# Installing Mugshot from AUR (configuring user's personal data)
 echo -e "${MAGENTA}=> ${BOLD}Mugshot - это облегченная утилита настройки пользователя для Linux, разработанная для простоты и легкости использования. Быстро обновляйте свой личный профиль и синхронизируйте обновления между приложениями. ${NC}"
 echo -e "${MAGENTA}==> Примечание: ${NC}В обновляемую информацию личного профиля входят: - Изображение профиля Linux: ~ / .face и AccountService; Данные пользователя хранятся в / etc / passwd (используется finger и другими настольными приложениями); (Необязательно) Синхронизация изображение своего профиля со значком Pidgin; (Необязательно) Синхронизация данных пользователя с LibreOffice и т.д..."
 echo -e "${CYAN}:: ${NC}Установка mugshot проходит через сборку из исходников AUR. То есть установка производиться с помощью git clone (https://aur.archlinux.org/mugshot.git), PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/mugshot), собирается и устанавливается."
