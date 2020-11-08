@@ -640,56 +640,7 @@ fi
 
 
 
-clear
-echo -e "${MAGENTA}
-  <<< Установка дополнительного программного обеспечения (пакетов) для повышения безопасности и конфиденциальности в Archlinux >>> ${NC}"
-# Installing additional software (packages) to improve security and privacy in Archlinux
 
-echo ""
-echo -e "${GREEN}==> ${NC}Установка hBlock из AUR (повысьте свою безопасность и конфиденциальность, заблокировав рекламу, отслеживание и вредоносные домены)"
-#echo -e "${BLUE}:: ${NC}Установка hBlock (повысьте свою безопасность и конфиденциальность, заблокировав рекламу, отслеживание и вредоносные домены)" 
-#echo 'Установка hBlock'
-# Installing h Block (increase your security and privacy by blocking ads, tracking, and malicious domains)
-echo -e "${MAGENTA}=> ${BOLD}hBlock - это POSIX-совместимый сценарий оболочки, который получает список доменов, которые обслуживают рекламу, сценарии отслеживания и вредоносное ПО из нескольких источников, и создает файл hosts, среди других форматов, который предотвращает подключение вашей системы к ним. ${NC}"
-echo " hBlock доступен в различных менеджерах пакетов... "
-echo -e "${CYAN}:: ${NC}Установка hblock проходит через сборку из исходников AUR. То есть установка производиться с помощью git clone (https://aur.archlinux.org/hblock.git), PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/hblock/), собирается и устанавливается."
-echo -e "${MAGENTA}==> Примечание: ${NC}Желательно установить пакет (termite - https://www.archlinux.org/packages/community/x86_64/termite/ - Простой терминал на базе VTE), так как обновление списка доменов в файле hosts - проходит через терминал!"
-echo -e "${YELLOW}==> Применение: ${BOLD}Поведение hBlock по умолчанию можно настроить с помощью нескольких параметров. Воспользуйтесь --help опцией или проверьте полный список в файле hblock.1.md - (при скачивании и установке с сайта https://github.com/hectorm/hblock). ${NC}"
-echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. "
-# Be careful! The installation process was fully automatic.
-echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-# If you doubt your actions, think again... 
-echo "" 
-while
-echo " Действия ввода, выполняется сразу после нажатия клавиши "
-    read -n1 -p " 
-    1 - Да установить,     0 - НЕТ - Пропустить действие: " i_hblock  # sends right after the keypress; # отправляет сразу после нажатия клавиши
-    echo ''
-    [[ "$i_hblock" =~ [^10] ]]
-do
-    :
-done
-if [[ $i_hblock == 0 ]]; then
-echo ""  
-echo " Установка hBlock из AUR пропущена "
-elif [[ $i_hblock == 1 ]]; then
-##### hblock ######  
-  echo ""
-  echo " Установка hBlock из AUR "
-# yay -S hblock --noconfirm  # Блокировщик рекламы, который создает файл hosts из автоматически загружаемых черных списков
-git clone https://aur.archlinux.org/hblock.git   
-cd hblock
-# makepkg -si
-makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
-# makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
-# rm -rf hblock
-rm -Rf hblock   # удаляем директорию сборки
-echo ""   
-echo " Установка утилит (пакетов) выполнена "
-echo " Желательно перезагрузить систему для применения изменений "
-fi
 
 
 
