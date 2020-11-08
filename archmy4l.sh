@@ -637,7 +637,7 @@ fi
 
 clear
 echo -e "${MAGENTA}
-  <<< Установка дополнительного программного обеспечения (пакетов) для для обновления личных данных пользователя в Archlinux >>> ${NC}"
+  <<< Установка дополнительного программного обеспечения (пакетов) для обновления личных данных пользователя в Archlinux >>> ${NC}"
 # Installing additional software (packages) for updating the user's personal data in Archlinux
 
 echo ""
