@@ -668,7 +668,9 @@ fi
 
 
 
-
+hblock  AUR  # Блокировщик рекламы, который создает файл hosts из автоматически загружаемых черных списков
+https://aur.archlinux.org/packages/hblock/
+https://aur.archlinux.org/hblock.git
 
 
 
