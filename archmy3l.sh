@@ -2124,7 +2124,7 @@ elif [[ $i_gedit == 1 ]]; then
   echo " Установка текстового редактора (gedit) "
 sudo pacman -S gedit gedit-plugins --noconfirm  # Текстовый редактор GNOME
 #echo ""   
-echo " Устраняем прблему с win кодировкой в текстовом редакторе (gedit) "
+echo " Устраняем проблему с win кодировкой в текстовом редакторе (gedit) "
 gsettings set org.gnome.gedit.preferences.encodings candidate-encodings "['UTF-8', 'WINDOWS-1251', 'KOI8-R', 'CURRENT', 'ISO-8859-15', 'UTF-16']"
 echo ""   
 echo " Установка текстового редактора (gedit) выполнена "
