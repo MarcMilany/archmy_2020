@@ -362,6 +362,7 @@ echo " Установка дополнительных шрифтов "
 # sudo pacman -S fontforge gsfonts ttf-croscore ttf-ubuntu-font-family ttf-font-awesome ttf-hack ttf-carlito ttf-caladea ttf-bitstream-vera ttf-droid ttf-linux-libertine gnu-free-fonts powerline-fonts ttf-roboto-mono ttf-nerd-fonts-symbols ttf-ionicons ttf-arphic-ukai ttf-arphic-uming ttf-inconsolata sdl_ttf ttf-bitstream-vera font-bh-ttf xorg-fonts-type1 opendesktop-fonts ttf-fireflysung ttf-sazanami ttf-hanazono ttf-indic-otf cantarell-fonts --noconfirm  # Ставим шрифты:  https://www.archlinux.org/packages/                                                   
 #sudo pacman -S adobe-source-code-pro-fonts adobe-source-han-sans-cn-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts adobe-source-sans-pro-fonts --noconfirm  # Ставим шрифты:  https://www.archlinux.org/packages/
 # Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты шрифтов!
+mkdir ~/.fonts  # Создадим папку с локальными шрифтами
 sudo pacman -S fontforge --noconfirm  # Редактор контурных и растровых шрифтов 
 sudo pacman -S gsfonts --noconfirm  # (URW) ++ Базовый набор шрифтов [Уровень 2] (возможно уже установлен)
 sudo pacman -S ttf-croscore --noconfirm  # Основные шрифты Chrome OS, они метрически совместимы с MS, и хорошо смотрятся, содержат Arimo, Tinos, Cousine и тп.
