@@ -1391,7 +1391,7 @@ echo " Установка Брандмауэра UFW пропущена "
 elif [[ $i_firewall == 1 ]]; then
   echo ""    
   echo " Установка UFW (Несложный Брандмауэр) "
-sudo pacman -S ufw gufw --noconfirm
+sudo pacman -S ufw gufw --noconfirm  # Несложный и простой в использовании инструмент командной строки для управления межсетевым экраном netfilter; GUI - для управления брандмауэром Linux
 echo " Установка Брандмауэра UFW завершена "
 fi
 
