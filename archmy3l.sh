@@ -4241,6 +4241,7 @@ elif [[ $auto_firewall == 1 ]]; then
   echo ""  
   echo " Добавляем в автозагрузку UFW (сетевой экран) "
 sudo systemctl enable ufw
+#sudo systemctl start ufw
 echo " UFW (сетевой экран) успешно добавлен в автозагрузку " 
 fi
 
