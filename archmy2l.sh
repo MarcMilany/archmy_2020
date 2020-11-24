@@ -1336,8 +1336,10 @@ net.ipv4.conf.all.rp_filter=1
 net.ipv4.tcp_max_syn_backlog=1280
 kernel.core_uses_pid=1
 #
+# Fixing the indicator when writing files to a flash drive
 vm.dirty_bytes = 4194304
 vm.dirty_background_bytes = 4194304
+#
 vm.swappiness=10
 
 EOF
