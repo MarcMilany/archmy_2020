@@ -2283,7 +2283,7 @@ sudo pacman -S firefox --noconfirm  # Автономный веб-браузер
 sudo pacman -S firefox-i18n-ru --noconfirm  # Русский языковой пакет для Firefox
 sudo pacman -S firefox-spell-ru --noconfirm  # Русский словарь проверки орфографии для Firefox
 #sudo pacman -S firefox-i18n-en-us --noconfirm  # Английский (США) языковой пакет для Firefox
-sudo pacman -S flashplugin --noconfirm  # Adobe Flash Player NPAPI
+### sudo pacman -S flashplugin --noconfirm  # Adobe Flash Player NPAPI
 #sudo pacman -S firefox-developer-edition firefox-developer-edition-i18n-ru firefox-spell-ru flashplugin --noconfirm  # Версия для разработчиков
 clear
 echo ""    
