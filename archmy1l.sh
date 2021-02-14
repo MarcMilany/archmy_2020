@@ -222,11 +222,11 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done
- if [[ $hello == 1 ]]; then
+if [[ $hello == 1 ]]; then
   clear
   echo ""
   echo " Добро пожаловать в установку Arch Linux "
-  elif [[ $hello == 0 ]]; then
+elif [[ $hello == 0 ]]; then
   echo " Вы отказались от установки Arch Linux" 
    exit   
 fi
@@ -262,13 +262,13 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done
- if [[ $x_key == 0 ]]; then
-  echo ""
-  echo " Обновление ключей пропущено "
-  echo ""
-  echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
+if [[ $x_key == 0 ]]; then
+ echo ""
+ echo " Обновление ключей пропущено "
+ echo ""
+ echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
   pacman -Sy --noconfirm 
-  elif [[ $x_key == 1 ]]; then
+elif [[ $x_key == 1 ]]; then
   clear
   echo ""
   echo " Создаётся генерация мастер-ключа (брелка) pacman "  # gpg –refresh-keys
