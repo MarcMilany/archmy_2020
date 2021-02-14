@@ -263,29 +263,29 @@ do
     :
 done
  if [[ $x_key == 0 ]]; then
-echo ""
-echo " Обновление ключей пропущено "
-echo ""
-echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
-pacman -Sy --noconfirm 
-elif [[ $x_key == 1 ]]; then
+  echo ""
+  echo " Обновление ключей пропущено "
+  echo ""
+  echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
+  pacman -Sy --noconfirm 
+  elif [[ $x_key == 1 ]]; then
   clear
-echo ""
-echo " Создаётся генерация мастер-ключа (брелка) pacman "  # gpg –refresh-keys
-pacman-key --init  # генерация мастер-ключа (брелка) pacman
-echo " Далее идёт поиск ключей... "
-pacman-key --populate archlinux  # поиск ключей
-echo ""
-echo " Обновление ключей... "  
-pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
-echo ""
-echo "Обновим базы данных пакетов..."
+  echo ""
+  echo " Создаётся генерация мастер-ключа (брелка) pacman "  # gpg –refresh-keys
+  pacman-key --init  # генерация мастер-ключа (брелка) pacman
+  echo " Далее идёт поиск ключей... "
+  pacman-key --populate archlinux  # поиск ключей
+  echo ""
+  echo " Обновление ключей... "  
+  pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
+  echo ""
+  echo "Обновим базы данных пакетов..."
 ###  sudo pacman -Sy
-pacman -Syy  # обновление баз пакмэна (pacman) 
+  pacman -Syy  # обновление баз пакмэна (pacman) 
 # pacman -Syyu  # Обновим вашу систему (базу данных пакетов)
 # pacman -Syyu  --noconfirm
-echo ""
-echo " Обновление и добавление новых ключей выполнено "
+  echo ""
+  echo " Обновление и добавление новых ключей выполнено "
 fi
 sleep 1
 
