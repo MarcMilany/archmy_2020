@@ -638,7 +638,7 @@ cat <<EOF >>/etc/pacman.d/mirrorlist
 
 ##
 ## Arch Linux repository mirrorlist
-## Generated on 2020-10-03
+## Generated on 2021-02-03
 ## HTTP IPv4 HTTPS
 ## https://www.archlinux.org/mirrorlist/
 ## https://www.archlinux.org/mirrorlist/?country=RU&protocol=http&protocol=https&ip_version=4
@@ -648,6 +648,8 @@ cat <<EOF >>/etc/pacman.d/mirrorlist
 Server = https://mirror.rol.ru/archlinux/\$repo/os/\$arch
 Server = https://mirror.yandex.ru/archlinux/\$repo/os/\$arch
 Server = https://mirror.truenetwork.ru/archlinux/\$repo/os/\$arch
+Server = https://mirror.surf/archlinux/\$repo/os/\$arch
+#Server = http://mirror.surf/archlinux/\$repo/os/\$arch
 #Server = http://mirror.rol.ru/archlinux/\$repo/os/\$arch
 #Server = http://mirror.truenetwork.ru/archlinux/\$repo/os/\$arch
 #Server = http://mirror.yandex.ru/archlinux/\$repo/os/\$arch
@@ -656,7 +658,7 @@ Server = https://mirror.truenetwork.ru/archlinux/\$repo/os/\$arch
 
 ##
 ## Arch Linux repository mirrorlist
-## Generated on 2020-10-03
+## Generated on 2021-02-03
 ## HTTP IPv6 HTTPS
 ## https://www.archlinux.org/mirrorlist/
 ## https://www.archlinux.org/mirrorlist/?country=RU&ip_version=6
