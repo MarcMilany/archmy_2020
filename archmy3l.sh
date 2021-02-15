@@ -2277,41 +2277,41 @@ echo ""
 echo " Установка веб-браузера(ов) пропущена "
 elif [[ $in_browser == 1 ]]; then
 echo ""   
-echo " Установка веб-браузера Firefox (+ flashplugin) "
-#sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru flashplugin --noconfirm
+echo " Установка веб-браузера Firefox (без - flashplugin) "
+#sudo pacman -S firefox firefox-i18n-ru firefox-spell-ru --noconfirm
 sudo pacman -S firefox --noconfirm  # Автономный веб-браузер от mozilla.org
 sudo pacman -S firefox-i18n-ru --noconfirm  # Русский языковой пакет для Firefox
 sudo pacman -S firefox-spell-ru --noconfirm  # Русский словарь проверки орфографии для Firefox
 #sudo pacman -S firefox-i18n-en-us --noconfirm  # Английский (США) языковой пакет для Firefox
-### sudo pacman -S flashplugin --noconfirm  # Adobe Flash Player NPAPI
-#sudo pacman -S firefox-developer-edition firefox-developer-edition-i18n-ru firefox-spell-ru flashplugin --noconfirm  # Версия для разработчиков
+### yay -S flashplugin # Adobe Flash Player NPAPI
+#sudo pacman -S firefox-developer-edition firefox-developer-edition-i18n-ru firefox-spell-ru --noconfirm  # Версия для разработчиков
 clear
 echo ""    
-echo " Установка веб-браузера Firefox (+ flashplugin) выполнена "
+echo " Установка веб-браузера Firefox (без - flashplugin) выполнена "
 elif [[ $in_browser == 2 ]]; then    
 echo "" 
-echo " Установка веб-браузера Chromium (+ pepper-flash) " 
-#sudo pacman -S chromium pepper-flash --noconfirm   
+echo " Установка веб-браузера Chromium (без - pepper-flash) "   
 sudo pacman -S chromium --noconfirm  # Веб-браузер, созданный для скорости, простоты и безопасности
-### sudo pacman -S pepper-flash --noconfirm  # Adobe Flash Player PPAPI
+### yay -S pepper-flash # Adobe Flash Player PPAPI
 clear
 echo ""    
-echo " Установка веб-браузера Chromium (+ pepper-flash) выполнена "
+echo " Установка веб-браузера Chromium (без - pepper-flash) выполнена "
 elif [[ $in_browser == 3 ]]; then
 echo "" 
-echo " Установка веб-браузера Opera (+ pepper-flash) "
-#sudo pacman -S opera opera-ffmpeg-codecs pepper-flash --noconfirm  
+echo " Установка веб-браузера Opera (без - pepper-flash) "
+#sudo pacman -S opera opera-ffmpeg-codecs --noconfirm  
 sudo pacman -S opera --noconfirm  # Быстрый и безопасный веб-браузер
 sudo pacman -S opera-ffmpeg-codecs --noconfirm  # дополнительная поддержка проприетарных кодеков для оперы
-### sudo pacman -S pepper-flash --noconfirm  # Adobe Flash Player PPAPI
+### yay -S pepper-flash # Adobe Flash Player PPAPI
 clear
 echo ""    
-echo " Установка веб-браузера Opera (+ pepper-flash) выполнена "
+echo " Установка веб-браузера Opera (без - pepper-flash) выполнена "
 elif [[ $in_browser == 4 ]]; then
 echo "" 
 echo " Установка веб-браузеров Chromium Opera Firefox "    
 sudo pacman -S chromium opera opera-ffmpeg-codecs firefox firefox-i18n-ru firefox-spell-ru --noconfirm 
-### sudo yay -S pepper-flash flashplugin --noconfirm
+### yay -S pepper-flash
+### yay -S flashplugin 
 clear
 echo ""    
 echo " Установка веб-браузеров выполнена "
