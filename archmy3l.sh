@@ -2464,7 +2464,7 @@ echo -e "${GREEN}==> ${BOLD}Установить рекомендованные 
 #echo -e "${BLUE}:: ${NC}Установить рекомендованные программы (пакеты)?"
 #echo 'Установить рекомендованные программы?'
 # Install the recommended programs
-echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gparted, grub-customizer, dconf-editor, conky, conky-manager, obs-studio, filezilla, telegram-desktop, flameshot, redshift, bleachbit, doublecmd-gtk2, keepass, veracrypt, nomacs, onboard, meld, uget, plank, openshot, galculator-gtk2, gnome-calculator)." 
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gparted, grub-customizer, dconf-editor, conky, conky-manager, obs-studio, filezilla, telegram-desktop, discord, flameshot, redshift, bleachbit, doublecmd-gtk2, keepass, veracrypt, nomacs, onboard, meld, uget, plank, openshot, galculator-gtk2, gnome-calculator)." 
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -2651,6 +2651,35 @@ elif [[ $i_telegram == 1 ]]; then
   echo ""  
   echo " Установка Telegram Desktop "
 sudo pacman -S telegram-desktop --noconfirm  # Официальный клиент Telegram Desktop
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
+
+clear
+echo "" 
+echo -e "${BLUE}:: ${NC}Установить Discord (голосовой и текстовый чат)?" 
+echo -e "${MAGENTA}:: ${BOLD}Discord - это проприетарное кроссплатформенное универсальное приложение для голосового и текстового чата. ${NC}"
+echo " 'Discord' - специально разработан для геймеров; однако у многих сообществ с открытым исходным кодом также есть официальные серверы Discord. https://discord.com/open-source " 
+echo -e "${MAGENTA}=> ${NC}Discord можно использовать через веб-браузер или настольное приложение, созданное с помощью Electron. https://github.com/electron/electron"
+echo -e "${YELLOW}:: Примечание!${NC}Вы можете самостоятельно установить discord на arch linux. Загрузите файл discard с расширением .tar.gz с официального сайта (https://discord.com/download). Затем извлеките его с помощью tar-xvzf filename. Далее измените свой каталог на вновь извлеченный каталог и сделайте имя файла Discord исполняемым с помощью команды chmod +x Discord. Наконец, выполните команду ./Discord, чтобы запустить discord."
+echo " Ссылка на видео: - https://www.youtube.com/watch?v=bbVbFWVsbWQ&t=0s (Install discord on manjaro or arch linux) "
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_discord  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_discord" =~ [^10] ]]
+do
+    :
+done 
+if [[ $i_discord == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $i_discord == 1 ]]; then
+  echo ""  
+  echo " Установка Discord "
+sudo pacman -S discord --noconfirm  # Единый голосовой и текстовый чат для геймеров
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
