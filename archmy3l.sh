@@ -2464,7 +2464,7 @@ echo -e "${GREEN}==> ${BOLD}Установить рекомендованные 
 #echo -e "${BLUE}:: ${NC}Установить рекомендованные программы (пакеты)?"
 #echo 'Установить рекомендованные программы?'
 # Install the recommended programs
-echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gparted, grub-customizer, dconf-editor, conky, conky-manager, obs-studio, filezilla, telegram-desktop, discord, flameshot, redshift, bleachbit, doublecmd-gtk2, keepass, veracrypt, nomacs, onboard, meld, uget, plank, openshot, galculator-gtk2, gnome-calculator)." 
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gparted, grub-customizer, dconf-editor, conky, conky-manager, obs-studio, filezilla, telegram-desktop, discord, flameshot, redshift, bleachbit, doublecmd-gtk2, keepass, keepassxc, veracrypt, nomacs, onboard, meld, uget, plank, openshot, galculator-gtk2, gnome-calculator)." 
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -2810,6 +2810,33 @@ elif [[ $i_keepass == 1 ]]; then
   echo ""  
   echo " Установка KeePass "
 sudo pacman -S keepass --noconfirm  # менеджер паролей
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
+
+clear
+echo "" 
+echo -e "${BLUE}:: ${NC}Установить KeePassXC (для хранения паролей)?" 
+echo -e "${MAGENTA}:: ${BOLD}KeePassXC - простой в использовании менеджер паролей для Windows, Linux, Mac OS X и мобильных устройств. ${NC}"
+echo " KeePassXC является надежным способом для хранения паролей, является форком еще одного менеджера паролей KeePassX, преимущество KeePassXC заключается в его развитии, а точней в его разработке. " 
+echo " На сегодняшний день, осмелюсь предположить, это лучший менеджер паролей, надежный и что не мало важно, с открытым исходным кодом. Поддерживает алгоритмы шифрования – AES, Twofish или ChaCha20, имеет совместимость с другими менеджерами паролей – KeePass2, KeePassX, KeeWeb. Имеет интеграцию с браузерами Google Chrome, Chromium, Mozilla Firefox. " 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_keepassxc  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_keepassxc" =~ [^10] ]]
+do
+    :
+done 
+if [[ $i_keepassxc == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $i_keepassxc == 1 ]]; then
+  echo ""  
+  echo " Установка KeePass "
+sudo pacman -S keepassxc --noconfirm  # менеджер паролей
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
