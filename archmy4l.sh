@@ -398,9 +398,10 @@ sudo pacman -S adobe-source-han-sans-cn-fonts --noconfirm  # Adobe Source Han Sa
 sudo pacman -S adobe-source-han-sans-jp-fonts --noconfirm  # Adobe Source Han Sans Subset OTF - японские шрифты OpenType / CFF
 sudo pacman -S adobe-source-han-sans-kr-fonts --noconfirm  # Adobe Source Han Sans Subset OTF - корейские шрифты OpenType / CFF
 sudo pacman -S adobe-source-sans-pro-fonts --noconfirm  # Семейство шрифтов без засечек для сред пользовательского интерфейса
-# sudo pacman -S  --noconfirm  # 
-# sudo pacman -S  --noconfirm  # 
-# sudo pacman -S  --noconfirm  # 
+# sudo pacman -S noto-fonts --noconfirm  # Шрифты Google Noto TTF
+# sudo pacman -S noto-fonts-emoji --noconfirm  # Шрифты эмодзи Google Noto
+# sudo pacman -S noto-fonts-cjk --noconfirm  # Шрифты Google Noto CJK
+# sudo pacman -S --noconfirm  #
 echo ""
 echo " Обновим информацию о шрифтах "  # Update information about fonts
 sudo fc-cache -f -v
