@@ -3715,8 +3715,8 @@ sudo pacman -S hplip --noconfirm  # Драйверы для HP DeskJet, OfficeJe
 ### Рабочая группа Foomatic в OpenPrinting в Linux Foundation предоставляет PPD для многих драйверов принтеров
 sudo pacman -S foomatic-db --noconfirm  # Foomatic - собранная информация о принтерах, драйверах и параметрах драйверов в файлах XML, используемая foomatic-db-engine для создания файлов PPD.
 sudo pacman -S foomatic-db-engine --noconfirm  # Foomatic - движок базы данных Foomatic генерирует файлы PPD из данных в базе данных Foomatic XML. Он также содержит сценарии для непосредственного создания очередей печати и обработки заданий.
-sudo pacman -S splix --noconfirm  # 
-sudo pacman -S splix --noconfirm  # 
+sudo pacman -S foomatic-db-ppds --noconfirm  # Foomatic - PPD от производителей принтеров
+sudo pacman -S foomatic-db-nonfree --noconfirm  # Foomatic - расширение базы данных, состоящее из предоставленных производителем файлов PPD, выпущенных по несвободным лицензиям
 sudo pacman -S splix --noconfirm  # 
 sudo pacman -S splix --noconfirm  #  
 fi
