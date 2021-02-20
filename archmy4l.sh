@@ -359,7 +359,8 @@ echo " Установка дополнительных шрифтов пропу
 elif [[ $i_font == 1 ]]; then
 echo ""
 echo " Установка дополнительных шрифтов "
-# sudo pacman -S fontforge gsfonts ttf-croscore ttf-ubuntu-font-family ttf-font-awesome ttf-hack ttf-carlito ttf-caladea ttf-bitstream-vera ttf-droid ttf-linux-libertine gnu-free-fonts powerline-fonts ttf-roboto-mono ttf-nerd-fonts-symbols ttf-ionicons ttf-arphic-ukai ttf-arphic-uming ttf-inconsolata sdl_ttf ttf-bitstream-vera font-bh-ttf xorg-fonts-type1 opendesktop-fonts ttf-fireflysung ttf-sazanami ttf-hanazono ttf-indic-otf cantarell-fonts --noconfirm  # Ставим шрифты:  https://www.archlinux.org/packages/                                                   
+# sudo pacman -S fontforge gsfonts ttf-croscore ttf-ubuntu-font-family ttf-font-awesome ttf-hack ttf-carlito ttf-caladea ttf-bitstream-vera ttf-droid ttf-linux-libertine gnu-free-fonts powerline-fonts ttf-roboto-mono ttf-nerd-fonts-symbols ttf-ionicons ttf-arphic-ukai ttf-arphic-uming ttf-inconsolata sdl_ttf ttf-bitstream-vera font-bh-ttf xorg-fonts-type1 opendesktop-fonts ttf-fireflysung ttf-sazanami ttf-hanazono ttf-indic-otf cantarell-fonts --noconfirm  # Ставим шрифты:  https://www.archlinux.org/packages/
+# sudo pacman -S ttf-roboto noto-fonts noto-fonts-emoji noto-fonts-cjk --noconfirm                                                   
 #sudo pacman -S adobe-source-code-pro-fonts adobe-source-han-sans-cn-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts adobe-source-sans-pro-fonts --noconfirm  # Ставим шрифты:  https://www.archlinux.org/packages/
 # Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты шрифтов!
 mkdir ~/.fonts  # Создадим папку с локальными шрифтами
@@ -376,6 +377,7 @@ sudo pacman -S ttf-droid --noconfirm  # Шрифты общего назначе
 sudo pacman -S ttf-linux-libertine --noconfirm  # Шрифты OpenType с засечками (Libertine) и Sans Serif (Biolinum) с большим охватом Unicode
 sudo pacman -S gnu-free-fonts --noconfirm  # Бесплатное семейство масштабируемых контурных шрифтов
 sudo pacman -S powerline-fonts --noconfirm  # Исправленные шрифты для powerline
+sudo pacman -S ttf-roboto --noconfirm  # Фирменное семейство шрифтов Google (возможно уже установлен)
 sudo pacman -S ttf-roboto-mono --noconfirm  # Моноширинное дополнение к семейству роботов Roboto (возможно уже установлен)
 sudo pacman -S ttf-nerd-fonts-symbols --noconfirm  # Большое количество дополнительных глифов из популярных `` культовых шрифтов '' (2048-em)
 sudo pacman -S ttf-ionicons --noconfirm  # Шрифт из мобильного фреймворка Ionic
