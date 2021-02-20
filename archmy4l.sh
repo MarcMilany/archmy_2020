@@ -505,6 +505,7 @@ elif [[ $i_gvim == 1 ]]; then
   echo ""    
   echo " Установка редактора Vim "
 sudo pacman -S vim --noconfirm  # Vi Improved, улучшенная версия текстового редактора vi с широкими возможностями настройки
+# sudo pacman -S neovim --noconfirm  # Форк Vim с целью улучшить пользовательский интерфейс, плагины и графические интерфейсы
 echo ""
 echo " Установка редактора Vim выполнена "
 elif [[ $i_gvim == 2 ]]; then
