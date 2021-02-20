@@ -3711,7 +3711,14 @@ sudo pacman -S libcups simple-scan --noconfirm  # Система печати CU
 sudo pacman -S gsfonts gutenprint --noconfirm  # (URW) ++ Базовый набор шрифтов [Уровень 2]; Драйверы принтера высшего качества для систем POSIX ;  # python-imaging ???
 # Драйверы для HP DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых LaserJet 
 sudo pacman -S splix --noconfirm  # Драйверы CUPS для принтеров SPL (Samsung Printer Language)
-sudo pacman -S hplip --noconfirm  # Драйверы для HP DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых LaserJet   
+sudo pacman -S hplip --noconfirm  # Драйверы для HP DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых LaserJet  
+### Рабочая группа Foomatic в OpenPrinting в Linux Foundation предоставляет PPD для многих драйверов принтеров
+sudo pacman -S splix --noconfirm  # 
+sudo pacman -S splix --noconfirm  # 
+sudo pacman -S splix --noconfirm  # 
+sudo pacman -S splix --noconfirm  # 
+sudo pacman -S splix --noconfirm  # 
+sudo pacman -S splix --noconfirm  #  
 fi
 # ---------------------------------------------------------------------
 # List of applications:
