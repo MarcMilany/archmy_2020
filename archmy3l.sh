@@ -3713,8 +3713,8 @@ sudo pacman -S gsfonts gutenprint --noconfirm  # (URW) ++ Базовый наб�
 sudo pacman -S splix --noconfirm  # Драйверы CUPS для принтеров SPL (Samsung Printer Language)
 sudo pacman -S hplip --noconfirm  # Драйверы для HP DeskJet, OfficeJet, Photosmart, Business Inkjet и некоторых LaserJet  
 ### Рабочая группа Foomatic в OpenPrinting в Linux Foundation предоставляет PPD для многих драйверов принтеров
-sudo pacman -S splix --noconfirm  # 
-sudo pacman -S splix --noconfirm  # 
+sudo pacman -S foomatic-db --noconfirm  # Foomatic - собранная информация о принтерах, драйверах и параметрах драйверов в файлах XML, используемая foomatic-db-engine для создания файлов PPD.
+sudo pacman -S foomatic-db-engine --noconfirm  # Foomatic - движок базы данных Foomatic генерирует файлы PPD из данных в базе данных Foomatic XML. Он также содержит сценарии для непосредственного создания очередей печати и обработки заданий.
 sudo pacman -S splix --noconfirm  # 
 sudo pacman -S splix --noconfirm  # 
 sudo pacman -S splix --noconfirm  # 
