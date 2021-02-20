@@ -3717,8 +3717,8 @@ sudo pacman -S foomatic-db --noconfirm  # Foomatic - собранная инфо
 sudo pacman -S foomatic-db-engine --noconfirm  # Foomatic - движок базы данных Foomatic генерирует файлы PPD из данных в базе данных Foomatic XML. Он также содержит сценарии для непосредственного создания очередей печати и обработки заданий.
 sudo pacman -S foomatic-db-ppds --noconfirm  # Foomatic - PPD от производителей принтеров
 sudo pacman -S foomatic-db-nonfree --noconfirm  # Foomatic - расширение базы данных, состоящее из предоставленных производителем файлов PPD, выпущенных по несвободным лицензиям
-sudo pacman -S splix --noconfirm  # 
-sudo pacman -S splix --noconfirm  #  
+sudo pacman -S foomatic-db-nonfree-ppds --noconfirm  # Foomatic - бесплатные PPD от производителей принтеров
+sudo pacman -S foomatic-db-gutenprint-ppds --noconfirm  # Упрощенные готовые файлы PPD 
 fi
 # ---------------------------------------------------------------------
 # List of applications:
