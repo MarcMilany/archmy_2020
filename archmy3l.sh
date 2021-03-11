@@ -1847,7 +1847,10 @@ sudo pacman -S gnu-netcat --noconfirm  # GNU переписывает netcat, п
 sudo pacman -S gpm --noconfirm  # Сервер мыши для консоли и xterm
 sudo pacman -S gptfdisk --noconfirm  # Инструмент для создания разделов в текстовом режиме, который работает с дисками с таблицей разделов GUID (GPT)
 sudo pacman -S gtop --noconfirm  # Панель мониторинга системы для терминала
-sudo pacman -S gvfs --noconfirm  # Реализация виртуальной файловой системы для GIO
+sudo pacman -S gvfs --noconfirm  # Реализация виртуальной файловой системы для GIO (Разделенные пакеты: gvfs-afc, gvfs-goa, gvfs-google, gvfs-gphoto2, gvfs-mtp, еще…)
+# sudo pacman -S gvfs-mtp --noconfirm  # Реализация виртуальной файловой системы для GIO (бэкэнд MTP; Android, медиаплеер)
+# sudo pacman -S gvfs-afc --noconfirm  # Реализация виртуальной файловой системы для GIO (серверная часть AFC; мобильные устройства Apple)
+# sudo pacman -S gvfs-goa --noconfirm  # Реализация виртуальной файловой системы для GIO (серверная часть Gnome Online Accounts; облачное хранилище) 
 sudo pacman -S gvfs-gphoto2 --noconfirm  # Реализация виртуальной файловой системы для GIO (бэкэнд gphoto2; камера PTP, медиаплеер MTP)
 sudo pacman -S gvfs-nfs --noconfirm  # Реализация виртуальной файловой системы для GIO (серверная часть NFS)
 sudo pacman -S gvfs-smb --noconfirm  # Реализация виртуальной файловой системы для GIO (серверная часть SMB / CIFS; клиент Windows)
