@@ -1729,7 +1729,8 @@ echo " Создание каталогов пропущено "
 elif [[ $i_catalog == 1 ]]; then
 echo ""  
 echo " Создание пользовательских каталогов по умолчанию "     
- pacman -S xdg-user-dirs --noconfirm
+ pacman -S xdg-user-dirs --noconfirm  # Управляйте пользовательскими каталогами, такими как ~ / Desktop и ~ / Music
+# pacman -S xdg-user-dirs-gtk --noconfirm  # Создаёт каталоги пользователей и просит их переместить
  xdg-user-dirs-update 
  echo "" 
  echo " Создание каталогов успешно выполнено "
