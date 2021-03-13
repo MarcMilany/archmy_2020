@@ -360,8 +360,8 @@ elif [[ $i_font == 1 ]]; then
 echo ""
 echo " Установка дополнительных шрифтов "
 # sudo pacman -S fontforge gsfonts ttf-croscore ttf-ubuntu-font-family ttf-font-awesome ttf-hack ttf-carlito ttf-caladea ttf-bitstream-vera ttf-droid ttf-linux-libertine gnu-free-fonts powerline-fonts ttf-roboto-mono ttf-nerd-fonts-symbols ttf-ionicons ttf-arphic-ukai ttf-arphic-uming ttf-inconsolata sdl_ttf ttf-bitstream-vera font-bh-ttf xorg-fonts-type1 opendesktop-fonts ttf-fireflysung ttf-sazanami ttf-hanazono ttf-indic-otf cantarell-fonts --noconfirm  # Ставим шрифты:  https://www.archlinux.org/packages/
-# sudo pacman -S ttf-roboto noto-fonts noto-fonts-emoji noto-fonts-cjk --noconfirm                                                   
-#sudo pacman -S adobe-source-code-pro-fonts adobe-source-han-sans-cn-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts adobe-source-sans-pro-fonts --noconfirm  # Ставим шрифты:  https://www.archlinux.org/packages/
+# sudo pacman -S ttf-roboto noto-fonts noto-fonts-emoji noto-fonts-cjk freetype2 --noconfirm                                                   
+#sudo pacman -S adobe-source-code-pro-fonts adobe-source-han-sans-cn-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts adobe-source-sans-pro-fonts --noconfirm  # Ставим шрифты:  https://www.archlinux.org/packages/ 
 # Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты шрифтов!
 mkdir ~/.fonts  # Создадим папку с локальными шрифтами
 sudo pacman -S fontforge --noconfirm  # Редактор контурных и растровых шрифтов 
@@ -404,6 +404,7 @@ sudo pacman -S adobe-source-sans-pro-fonts --noconfirm  # Семейство ш�
 sudo pacman -S noto-fonts --noconfirm  # Шрифты Google Noto TTF
 sudo pacman -S noto-fonts-emoji --noconfirm  # Шрифты эмодзи Google Noto
 sudo pacman -S noto-fonts-cjk --noconfirm  # Шрифты Google Noto CJK
+sudo pacman -S freetype2 --noconfirm  #   # Библиотека растеризации шрифтов   
 # sudo pacman -S --noconfirm  #
 echo ""
 echo " Обновим информацию о шрифтах "  # Update information about fonts
