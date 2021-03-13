@@ -664,7 +664,7 @@ sudo pacman -S proxychains-ng privoxy openvpn --noconfirm
 sudo pacman -S privoxy --noconfirm  # Веб-прокси с расширенными возможностями фильтрации
 sudo pacman -S proxychains-ng --noconfirm  # Предварительный загрузчик ловушки, который позволяет перенаправлять TCP-трафик существующих динамически связанных программ через один или несколько SOCKS или HTTP-прокси
 sudo pacman -S openvpn --noconfirm  # Простой в использовании, надежный и настраиваемый VPN (виртуальная частная сеть)
-sudo pacman -S  --noconfirm  #
+sudo pacman -S openconnect --noconfirm  # Открытый клиент для Cisco AnyConnect VPN
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
