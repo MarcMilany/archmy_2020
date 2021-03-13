@@ -3100,6 +3100,7 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_galculator == 1 ]]; then
   echo ""  
   echo " Установка Galculator (калькулятор) (на основе GTK+)(версия GTK2) "
+sudo pacman -S galculator --noconfirm  # Научный калькулятор на основе GTK + (Обратные конфликты: galculator-gtk2)  
 sudo pacman -S galculator-gtk2 --noconfirm  # Научный калькулятор на основе GTK + (версия GTK2)
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
