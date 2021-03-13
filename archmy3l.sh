@@ -3097,7 +3097,7 @@ echo " Действия ввода, выполняется сразу после
 
     0 - НЕТ - Пропустить установку: " i_galculator  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$i_galculator" =~ [^10] ]]
+    [[ "$i_galculator" =~ [^120] ]]
 do
     :
 done 
@@ -3110,12 +3110,13 @@ elif [[ $i_galculator == 1 ]]; then
 sudo pacman -S galculator-gtk2 --noconfirm  # Научный калькулятор на основе GTK + (версия GTK2)
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
+elif [[ $i_galculator == 2 ]]; then
+  echo ""  
+  echo " Установка Galculator (калькулятор) (на основе GTK+)(версия GTK3) " 
+sudo pacman -S galculator --noconfirm  # Научный калькулятор на основе GTK + (версия GTK2) (Обратные конфликты: galculator-gtk2)
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
 fi
-
-sudo pacman -S galculator --noconfirm  # Научный калькулятор на основе GTK + (Обратные конфликты: galculator-gtk2) 
-
-
-
 
 clear
 echo "" 
