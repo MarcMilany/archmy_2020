@@ -3081,14 +3081,21 @@ fi
 
 clear
 echo "" 
-echo -e "${BLUE}:: ${NC}Установить Galculator (калькулятор)(на основе GTK+)(версия GTK2)?" 
+echo -e "${BLUE}:: ${NC}Установить Galculator (калькулятор)(на основе GTK+)(версия GTK2)(версия GTK3)?" 
 echo -e "${MAGENTA}:: ${BOLD}Galculator - научный калькулятор для Linux. Galculator имеет три режима работы: (простой, научный и paper mode, в котором вычисления можно проводить путем ввода выражения в текстовое окно). ${NC}"
 echo " Поддерживает десятичную, шестнадцатеричную, восьмеричную и двоичную системы счисления. Также поддерживаются разные угловые меры - градусы, радианы, грады. " 
+echo -e "${CYAN}:: ${NC}В сценарии присутствуют две версии Galculator (калькулятора): galculator-gtk2 -- # Научный калькулятор на основе GTK + (версия GTK2), и galculator -- # Научный калькулятор на основе GTK +  (версия GTK3) (Обратные конфликты: galculator-gtk2)."
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_galculator  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - galculator-gtk2 - на основе GTK + (версия GTK2),     2 - galculator - на основе GTK + (версия GTK3)     
+
+    0 - НЕТ - Пропустить установку: " i_galculator  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
     [[ "$i_galculator" =~ [^10] ]]
 do
@@ -3099,12 +3106,16 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_galculator == 1 ]]; then
   echo ""  
-  echo " Установка Galculator (калькулятор) (на основе GTK+)(версия GTK2) "
-sudo pacman -S galculator --noconfirm  # Научный калькулятор на основе GTK + (Обратные конфликты: galculator-gtk2)  
+  echo " Установка Galculator (калькулятор) (на основе GTK+)(версия GTK2) " 
 sudo pacman -S galculator-gtk2 --noconfirm  # Научный калькулятор на основе GTK + (версия GTK2)
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
+
+sudo pacman -S galculator --noconfirm  # Научный калькулятор на основе GTK + (Обратные конфликты: galculator-gtk2) 
+
+
+
 
 clear
 echo "" 
