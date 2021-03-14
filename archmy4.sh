@@ -706,9 +706,10 @@ ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
 sudo pacman -S simplescreenrecorder --noconfirm  # Многофункциональный экранный рекордер, поддерживающий X11 и OpenGL
+sudo pacman -S lib32-simplescreenrecorder --noconfirm  # Записывайте 32-битные приложения OpenGL с помощью SimpleScreenRecorder
 sudo pacman -S peek --noconfirm  # Простой экранный рекордер с простым в использовании интерфейсом
 sudo pacman -S gnome-screenshot --noconfirm  # Сфотографируйте свой экран
-sudo pacman -S  --noconfirm  #
+
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
@@ -733,11 +734,11 @@ echo 'Установить рекомендуемые программы из AU
 # To install the recommended program? AUR
 echo -e "${BLUE}
 'Список программ рекомендованных к установке:${GREEN}
-gksu debtap menulibre caffeine-ng inxi xneur fsearch-git cherrytree timeshift mocicon multiload-ng-indicator-gtk xfce4-multiload-ng-plugin-gtk2 keepass2-plugin-tray-icon gconf-editor gconf-cleaner webtorrent-desktop teamviewer corectrl lib32-simplescreenrecorder mkinitcpio-openswap fetchmirrors gtk3-mushrooms'
+gksu debtap menulibre caffeine-ng inxi xneur fsearch-git cherrytree timeshift mocicon multiload-ng-indicator-gtk xfce4-multiload-ng-plugin-gtk2 keepass2-plugin-tray-icon gconf-editor gconf-cleaner webtorrent-desktop teamviewer corectrl mkinitcpio-openswap fetchmirrors gtk3-mushrooms'
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-yay -S gksu debtap menulibre caffeine-ng inxi xneur fsearch-git cherrytree timeshift mocicon multiload-ng-indicator-gtk xfce4-multiload-ng-plugin-gtk2 keepass2-plugin-tray-icon gconf-editor gconf-cleaner webtorrent-desktop teamviewer corectrl qt4 xflux flameshot-git lib32-simplescreenrecorder mkinitcpio-openswap fetchmirrors gtk3-mushrooms --noconfirm  # xorg-xkill
+yay -S gksu debtap menulibre caffeine-ng inxi xneur fsearch-git cherrytree timeshift mocicon multiload-ng-indicator-gtk xfce4-multiload-ng-plugin-gtk2 keepass2-plugin-tray-icon gconf-editor gconf-cleaner webtorrent-desktop teamviewer corectrl qt4 xflux flameshot-git  mkinitcpio-openswap fetchmirrors gtk3-mushrooms --noconfirm  # xorg-xkill
 yay -S timeshift --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
