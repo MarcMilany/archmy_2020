@@ -1532,6 +1532,7 @@ sudo pacman -S bluez bluez-libs bluez-cups bluez-utils --noconfirm  # Демон
 #sudo pacman -S bluez-hid2hci --noconfirm  # Перевести HID проксирование bluetooth HCI в режим HCI; 
 #sudo pacman -S bluez-plugins --noconfirm  # Плагины bluez (контроллер PS3 Sixaxis) 
 #sudo pacman -S blueman --noconfirm  # blueman --диспетчер bluetooth устройств (полезно для i3)
+#sudo pacman -S blueberry --noconfirm  # Инструмент настройки Bluetooth
 #sudo systemctl enable bluetooth.service 
 echo ""   
 echo " Установка пакетов поддержки Bluetooth выполнена "
