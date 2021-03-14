@@ -751,9 +751,11 @@ fi
 
 elif [[ $prog_set == 1 ]]; then
   echo ""   
-  echo " Установка gconf - зависимость для libgksu "    
-git clone https://aur.archlinux.org/gconf.git  # Устаревшая система базы данных конфигурации
-cd gconf
+  echo " Установка radiotray - Интернет-радио плеер "    
+git clone https://aur.archlinux.org/radiotray.git  # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
+#git clone https://aur.archlinux.org/radiotray-ng.git  # Интернет-радио плеер для Linux
+cd radiotray
+#cd radiotray-ng
 #makepkg -fsri
 # makepkg -si
 makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
@@ -766,7 +768,7 @@ rm -Rf gconf
 radiotray  -  # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
 https://aur.archlinux.org/packages/radiotray/
 https://aur.archlinux.org/radiotray.git
- 
+
 radiotray-ng  -  # Интернет-радио плеер для Linux
 https://aur.archlinux.org/packages/radiotray-ng/
 https://aur.archlinux.org/radiotray-ng.git
