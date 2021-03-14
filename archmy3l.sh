@@ -2834,6 +2834,26 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sudo pacman -S cherrytree --noconfirm  # Приложение для создания иерархических заметок
+
+
 clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить Double Commander (файловый менеджер)?" 
