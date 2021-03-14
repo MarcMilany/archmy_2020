@@ -666,14 +666,15 @@ sudo pacman -S proxychains-ng --noconfirm  # Предварительный за
 sudo pacman -S openvpn --noconfirm  # Простой в использовании, надежный и настраиваемый VPN (виртуальная частная сеть)
 sudo pacman -S openconnect --noconfirm  # Открытый клиент для Cisco AnyConnect VPN
 sudo pacman -S vpnc --noconfirm  # Клиент VPN для концентраторов cisco3000 VPN
+sudo pacman -S networkmanager-openconnect --noconfirm  # Плагин NetworkManager VPN для OpenConnect
+sudo pacman -S networkmanager-pptp --noconfirm  # Плагин NetworkManager VPN для PPTP
+sudo pacman -S networkmanager-vpnc --noconfirm  # Плагин NetworkManager VPN для VPNC
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S samba --noconfirm  # Файловый сервер SMB и сервер домена AD
 sudo pacman -S smb4k --noconfirm  # Программа KDE, просматривающая общие ресурсы samba
-sudo pacman -S networkmanager-openconnect --noconfirm  # Плагин NetworkManager VPN для OpenConnect
-sudo pacman -S networkmanager-pptp --noconfirm  # Плагин NetworkManager VPN для PPTP
-sudo pacman -S networkmanager-vpnc --noconfirm  # Плагин NetworkManager VPN для VPNC
+
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
