@@ -705,8 +705,55 @@ echo ""
 echo " Установка (пакетов) выполнена "
 fi
 
+clear
+echo ""
+echo -e "${GREEN}==> ${NC}Установка мультимедиа утилит из (AUR)"
+#echo -e "${BLUE}:: ${NC}Установка Мультимедиа утилит AUR" 
+#echo 'Установка Мультимедиа утилит AUR'
+# Installing Multimedia utilities AUR
+echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - ()."
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
 
 
+
+
+
+
+
+echo 'Установка Мультимедиа утилит AUR'
+# 
+echo -e "${BLUE}
+'Список Мультимедиа утилит AUR:${GREEN}
+radiotray spotify vlc-tunein-radio vlc-pause-click-plugin audiobook-git cozy-audiobooks m4baker-git mp3gain easymp3gain-gtk2 myrulib-git'
+${NC}"
+read -p "1 - Да, 0 - Нет: " prog_set
+if [[ $prog_set == 1 ]]; then
+yay -S radiotray --noconfirm 
+yay -S spotify --noconfirm
+yay -S vlc-tunein-radio --noconfirm
+yay -S vlc-pause-click-plugin --noconfirm  # Плагин для VLC, который приостанавливает / воспроизводит видео по щелчку мыши
+yay -S audiobook-git --noconfirm
+yay -S cozy-audiobooks --noconfirm
+yay -S m4baker-git --noconfirm
+yay -S mp3gain --noconfirm
+yay -S easymp3gain-gtk2 --noconfirm
+yay -S myrulib-git --noconfirm
+yay -S  --noconfirm   
+yay -S  --noconfirm
+yay -S  --noconfirm
+yay -S  --noconfirm
+yay -S  --noconfirm
+#yay -S bluez-firmware --noconfirm  # Прошивки для чипов Bluetooth Broadcom BCM203x и STLC2300
+#yay -S pulseaudio-ctl --noconfirm  # Управляйте громкостью pulseaudio из оболочки или с помощью сочетаний клавиш
+
+elif [[ $prog_set == 0 ]]; then
+  echo 'Установка Мультимедиа утилит AUR пропущена.'
+fi
 
 
 
