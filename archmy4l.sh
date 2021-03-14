@@ -711,15 +711,41 @@ echo -e "${GREEN}==> ${NC}Установка мультимедиа утилит
 #echo -e "${BLUE}:: ${NC}Установка Мультимедиа утилит AUR" 
 #echo 'Установка Мультимедиа утилит AUR'
 # Installing Multimedia utilities AUR
-echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
+echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие утилиты (пакеты): ${NC}"
 echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - ()."
-echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+
+echo "  Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
 # If you doubt your actions, think again... 
 echo "" 
 
 
+
+
+
+echo "" 
+echo -e "${BLUE}:: ${NC}Установить аудиоплеер Audacious?" 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_audacious  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_audacious" =~ [^10] ]]
+do
+    :
+done 
+if [[ $i_audacious == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $i_audacious == 1 ]]; then
+  echo ""  
+  echo " Установка аудиоплеер Audacious "
+sudo pacman -S audacious audacious-plugins --noconfirm
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
 
 
 
