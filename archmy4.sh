@@ -609,7 +609,7 @@ yay -S mintstick unetbootin --noconfirm
 # yay -S woeusb-git --noconfirm  #
 yay -S mintstick --noconfirm  # Графический интерфейс для записи файлов .img или .iso на USB-накопитель. Он также может их форматировать
 yay -S unetbootin --noconfirm  # Создание загрузочных USB-накопителей Live
-yay -S woeusb-gui --noconfirm  #
+yay -S woeusb-gui --noconfirm  # Программа Linux для создания установщика USB-накопителя Windows с DVD-диска Windows или образа
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
