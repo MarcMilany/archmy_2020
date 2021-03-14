@@ -644,7 +644,7 @@ fi
 clear
 echo -e "${MAGENTA}
   <<< Установка Мультимедиа утилит (аудиоплееров, видео-проигрывателей и т.д.) в Archlinux >>> ${NC}"
-# Installing Multimedia audio players, video players, utilities, and codecs in Archlinux
+# Installing Multimedia utilities (audio players, video players, etc.) in Archlinux
 
 echo ""
 echo -e "${GREEN}==> ${NC}Установка мультимедиа утилит "
@@ -659,7 +659,28 @@ echo " Если Вы сомневаетесь в своих действиях, 
 # If you doubt your actions, think again... 
 echo "" 
 while 
+#echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+#read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " i_multi  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_multi  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_multi" =~ [^10] ]]
+do
+    :
+done 
+if [[ $i_multi == 0 ]]; then
+clear
+echo "" 
+echo " Установка просмотрщика процессов (системы) пропущена "
+elif [[ $i_multi == 1 ]]; then
+  echo ""    
+  echo " Установка утилит (пакетов) "   
 
+#clear
+echo ""   
+echo " Установка (пакетов) выполнена "
+fi
 
 
 
