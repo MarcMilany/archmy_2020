@@ -1829,6 +1829,7 @@ sudo pacman -S autofs --noconfirm  # Средство автомонтирова
 sudo pacman -S b43-fwcutter --noconfirm  # Экстрактор прошивки для модуля ядра b43 (драйвер) 
 sudo pacman -S bash-completion --noconfirm  # Программируемое завершение для оболочки bash
 sudo pacman -S beep --noconfirm  # Продвинутая программа звукового сигнала динамика ПК
+sudo pacman -S bind --noconfirm  # Полная, переносимая реализация протокола DNS
 sudo pacman -S btrfs-progs --noconfirm  # Утилиты файловой системы btrfs
 sudo pacman -S busybox --noconfirm  # Утилиты для аварийно-спасательных и встраиваемых систем
 sudo pacman -S ccache --noconfirm  # Кэш компилятора, который ускоряет перекомпиляцию за счет кеширования предыдущих компиляций
