@@ -951,18 +951,7 @@ sudo pacman -S ktorrent --noconfirm  # Мощный клиент BitTorrent дл
 yay -S ktorrent-git --noconfirm  # Мощный клиент BitTorrent. (Версия GIT)
 yay -S tixati --noconfirm  # Tixati - это программа для однорангового обмена файлами, использующая популярный протокол BitTorrent
 yay -S  --noconfirm  #
-
-
- #############################
- echo " Установка мультимедиа кодеков и утилит (пакетов) "
-#options+=("gst-plugin-libde265" "(AUR)" off)
-#options+=("libde265" "(AUR)" off)
-yay -S gst-plugin-libde265 --noconfirm  # Плагин Libde265 (открытая реализация видеокодека h.265) для gstreamer
-yay -S libde265 --noconfirm  # ???
-yay -S libde265-git --noconfirm  # Открытая реализация видеокодека H.265 (версия git)
-yay -S lib32-libde265 --noconfirm  # Открытая реализация видеокодека h.265 (32-разрядная версия)
-
-##################################
+================================
 
 echo 'Установка Дополнительных программ AUR'
 # Installing Additional programs AUR
