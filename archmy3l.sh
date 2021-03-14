@@ -2834,24 +2834,40 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+clear
+echo "" 
+echo -e "${BLUE}:: ${NC}Установить CherryTree (создания иерархических заметок)?" 
+echo -e "${MAGENTA}:: ${BOLD}CherryTree - это удобное и очень быстрое приложение для записи коротких заметок, позволяющее иерархически структурировать всю нужную информацию в наглядном виде. ${NC}"
+echo -e "${MAGENTA}=> ${NC}CherryTree может выступать в качестве текстового редактора, позволяя вставлять в текст таблицы, изображения, ссылки и другие элементы. Поддерживает подсветку синтаксиса."
+echo " Интерфейс CherryTree очень простой, красивый и удобный, что сразу же располагает пользователя, после установки. Многоуровневая структура, поддержка ссылок, тегов и другое ..." 
+
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_cherrytree  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_cherrytree" =~ [^10] ]]
+do
+    :
+done 
+if [[ $i_cherrytree == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $i_cherrytree == 1 ]]; then
+  echo ""  
+  echo " Установка CherryTree "
+sudo pacman -S cherrytree --noconfirm  # Приложение для создания иерархических заметок  
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
+
+echo -e "${MAGENTA}=> ${NC}Discord можно использовать через веб-браузер или настольное приложение, созданное с помощью Electron. https://github.com/electron/electron"
+echo -e "${YELLOW}:: Примечание!${NC}Вы можете самостоятельно установить discord на arch linux. Загрузите файл discard с расширением .tar.gz с официального сайта (https://discord.com/download). Затем извлеките его с помощью tar-xvzf filename. Далее измените свой каталог на вновь извлеченный каталог и сделайте имя файла Discord исполняемым с помощью команды chmod +x Discord. Наконец, выполните команду ./Discord, чтобы запустить discord."
+echo " Ссылка на видео: - https://www.youtube.com/watch?v=bbVbFWVsbWQ&t=0s (Install discord on manjaro or arch linux) "
+https://github.com/giuspen/cherrytree
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-sudo pacman -S cherrytree --noconfirm  # Приложение для создания иерархических заметок
 
 
 clear
