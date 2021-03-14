@@ -813,6 +813,13 @@ yay -S lib32-libde265 --noconfirm  # Открытая реализация ви�
 
 https://aur.archlinux.org/packages/spotify/
 https://wiki.archlinux.org/index.php/spotify
+-------------------------------------------
+spotify  -  # Запатентованный сервис потоковой передачи музыки
+https://aur.archlinux.org/packages/spotify/
+https://aur.archlinux.org/spotify.git 
+https://linuxhint.com/install-spotify-arch-linux/
+https://wiki.archlinux.org/index.php/Spotify  - Spotify
+
 Spotify
 Перейти к навигацииПерейти к поиску
 Spotify - это сервис потоковой передачи цифровой музыки с бизнес-моделью freemium. Эта статья в основном посвящена полуофициальному проприетарному клиенту Spotify для Linux , который разрабатывается инженерами Spotify в свободное время и активно не поддерживается Spotify. [1] В качестве альтернативы есть онлайн-плеер и ряд сторонних клиентов с открытым исходным кодом .
@@ -820,6 +827,68 @@ Spotify - это сервис потоковой передачи цифрово
 Spotify для Linux можно установить с пакетом spotify AUR . Если вы хотите воспроизводить локальные файлы, вам необходимо дополнительно установить zenity и ffmpeg-compat-57 AUR .
 
 
+
+
+--------------------------------------------
+
+vlc-tunein-radio  -  # Скрипт TuneIn Radio LUA для VLC 2.x
+https://aur.archlinux.org/packages/vlc-tunein-radio/
+https://aur.archlinux.org/vlc-tunein-radio.git 
+https://github.com/diegofn/TuneIn-Radio-VLC
+
+---------------------------------------------
+
+vlc-pause-click-plugin  -  # Плагин для VLC, который приостанавливает / воспроизводит видео при щелчке мышью
+https://aur.archlinux.org/packages/vlc-pause-click-plugin/
+https://aur.archlinux.org/vlc-pause-click-plugin.git 
+https://github.com/nurupo/vlc-pause-click-plugin
+
+---------------------------------------------
+
+audiobook-git  -  # Простая программа для чтения аудиокниг. Написано на QT / QML и C ++ 
+https://aur.archlinux.org/packages/audiobook-git/
+https://aur.archlinux.org/audiobook-git.git 
+https://github.com/bit-shift-io/audiobook
+
+----------------------------------------------
+
+cozy-audiobooks  -  # Современный проигрыватель аудиокниг для Linux с использованием GTK + 3
+https://aur.archlinux.org/packages/cozy-audiobooks/
+https://aur.archlinux.org/cozy-audiobooks.git
+https://github.com/geigi/cozy
+
+cosy-audiobooks-git  -  # Современный проигрыватель аудиокниг для Linux и macOS с использованием GTK + 3
+https://aur.archlinux.org/packages/cozy-audiobooks-git/
+https://aur.archlinux.org/cozy-audiobooks-git.git
+https://cozy.geigi.de
+
+------------------------------------------------
+
+m4baker-git  -  # Создавайте полнофункциональные m4b-аудиокниги
+https://aur.archlinux.org/packages/m4baker-git/
+https://aur.archlinux.org/m4baker-git.git
+https://github.com/crabmanX/m4baker
+
+------------------------------------------------
+
+mp3gain  -  # Нормализатор mp3 без потерь со статистическим анализом
+https://aur.archlinux.org/packages/mp3gain/
+https://aur.archlinux.org/mp3gain.git 
+https://sourceforge.net/projects/mp3gain/
+
+------------------------------------------------
+
+easymp3gain-gtk2  -  # Графический интерфейс пользователя (GUI) GTK2 для MP3Gain, VorbisGain и AACGain
+https://aur.archlinux.org/packages/easymp3gain-gtk2/
+https://aur.archlinux.org/easymp3gain-gtk2.git
+http://easymp3gain.sourceforge.net/
+
+------------------------------------------------
+
+myrulib-git  -  # Домашняя библиотека с поддержкой сайта lib.rus.ec
+https://aur.archlinux.org/packages/myrulib-git/
+https://aur.archlinux.org/myrulib-git.git 
+http://www.lintest.ru/wiki/MyRuLib
 
 
 
