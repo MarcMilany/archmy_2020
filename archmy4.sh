@@ -880,7 +880,7 @@ sudo pacman -S synapse --noconfirm  # Средство запуска семан
 sudo pacman -S variety --noconfirm  # Меняет обои с регулярным интервалом, используя указанные пользователем или автоматически загруженные изображения
 sudo pacman -S recolla --noconfirm  # Инструмент полнотекстового поиска на базе Xapian backend (recoll)
 sudo pacman -S notepadqq --noconfirm  # Notepad ++ - как текстовый редактор для Linux
-sudo pacman -S  --noconfirm  #
+sudo pacman -S leafpad --noconfirm  # Клон блокнота для GTK + 2.0
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
