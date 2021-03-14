@@ -3247,7 +3247,7 @@ echo -e "${GREEN}==> ${BOLD}Установить дополнительные с
 #echo -e "${BLUE}:: ${NC}Установить дополнительные сетевые утилиты, драйверы?"
 #echo 'Установить дополнительные сетевые утилиты, драйверы
 # Install additional network utilities, drivers
-echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (broadcom-wl-dkms, iwd, linux-atm, ndisc6, pptpclient, rp-pppoe, wvdial, xl2tpd)."
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (broadcom-wl-dkms, iwd, linux-atm, ndisc6, networkmanager-l2tp, pptpclient, rp-pppoe, wvdial, xl2tpd)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -3270,7 +3270,7 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $net_utilities == 1 ]]; then
   echo ""   
   echo " Установка рекомендованных утилит (пакетов) "
-# sudo pacman -S broadcom-wl-dkms iwd linux-atm ndisc6 pptpclient rp-pppoe wvdial xl2tpd --noconfirm  
+# sudo pacman -S broadcom-wl-dkms iwd linux-atm ndisc6 networkmanager-l2tp pptpclient rp-pppoe wvdial xl2tpd --noconfirm  
 sudo pacman -S broadcom-wl-dkms --noconfirm  # Драйвер беспроводной сети Broadcom 802.11 Linux STA
 sudo pacman -S iwd --noconfirm  # Демон беспроводной сети Интернет
 sudo pacman -S linux-atm --noconfirm  # Драйверы и инструменты для поддержки сети банкоматов под Linux
