@@ -778,6 +778,7 @@ read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
  
 yay -S spotify --noconfirm
+https://aur.archlinux.org/packages/spotify/
 yay -S vlc-tunein-radio --noconfirm
 yay -S vlc-pause-click-plugin --noconfirm  # Плагин для VLC, который приостанавливает / воспроизводит видео по щелчку мыши
 yay -S audiobook-git --noconfirm
