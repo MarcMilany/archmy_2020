@@ -652,7 +652,7 @@ echo -e "${GREEN}==> ${NC}Установка мультимедиа утилит
 #echo 'Установка мультимедиа утилит'
 # Installing Multimedia utilities
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
-echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - ()."
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (audacity, deadbeef, easytag, subdownloader, moc, mediainfo, mediainfo-gui, media-player-info, you-get, youtube-viewer, cmus, vorbisgain, ncmpcpp, mpc, mpd, mjpegtools, qmmp, mplayer)."
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -676,7 +676,7 @@ echo " Установка Мультимедиа утилит пропущена
 elif [[ $multimedia_prog == 1 ]]; then
   echo ""    
   echo " Установка утилит (пакетов) "   
-# sudo pacman -S audacity deadbeef easytag subdownloader moc mediainfo mediainfo-gui media-player-info --noconfirm
+# sudo pacman -S audacity deadbeef easytag subdownloader moc mediainfo mediainfo-gui media-player-info you-get youtube-viewer --noconfirm
 sudo pacman -S audacity --noconfirm  # Программа, позволяющая манипулировать сигналами цифрового звука
 sudo pacman -S deadbeef --noconfirm  # Аудиоплеер GTK + для GNU / Linux
 sudo pacman -S easytag --noconfirm  # Простое приложение для просмотра и редактирования тегов в аудиофайлах
@@ -695,7 +695,7 @@ sudo pacman -S vorbisgain --noconfirm  # Утилита, которая вычи
 sudo pacman -S ncmpcpp --noconfirm  # Практически точный клон ncmpc с некоторыми новыми функциями
 sudo pacman -S mpc --noconfirm  # Минималистичный интерфейс командной строки для MPD
 sudo pacman -S mpd --noconfirm  # Гибкое, мощное серверное приложение для воспроизведения музыки
-sudo pacman -S mjpegtools --noconfirm  # Набор инструментов, которые могут выполнять запись и воспроизведение видео, простое редактирование с вырезанием и вставкой и сжатие MPEG аудио и видео 
+sudo pacman -S  --noconfirm  # Набор инструментов, которые могут выполнять запись и воспроизведение видео, простое редактирование с вырезанием и вставкой и сжатие MPEG аудио и видео 
 # sudo pacman -S  --noconfirm  # 
 # sudo pacman -S  --noconfirm  # 
 # sudo pacman -S  --noconfirm  # 
