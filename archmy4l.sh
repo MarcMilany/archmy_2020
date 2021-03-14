@@ -404,7 +404,7 @@ sudo pacman -S adobe-source-sans-pro-fonts --noconfirm  # Семейство ш�
 sudo pacman -S noto-fonts --noconfirm  # Шрифты Google Noto TTF
 sudo pacman -S noto-fonts-emoji --noconfirm  # Шрифты эмодзи Google Noto
 sudo pacman -S noto-fonts-cjk --noconfirm  # Шрифты Google Noto CJK
-# sudo pacman -S freetype2 --noconfirm  #   # Библиотека растеризации шрифтов   
+# sudo pacman -S freetype2 --noconfirm  #   # Библиотека растеризации шрифтов  # присутствует   
 # sudo pacman -S --noconfirm  #
 # sudo pacman -S --noconfirm  #
 # sudo pacman -S --noconfirm  #
