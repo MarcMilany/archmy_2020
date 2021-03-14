@@ -1914,6 +1914,7 @@ sudo pacman -S sox --noconfirm  # Швейцарский армейский но
 sudo pacman -S smartmontools --noconfirm  # Управление и мониторинг жестких дисков ATA и SCSI с поддержкой SMAR
 sudo pacman -S speedtest-cli --noconfirm  # Интерфейс командной строки для тестирования пропускной способности интернета с помощью speedtest.net
 sudo pacman -S syslinux --noconfirm  # Коллекция загрузчиков, которые загружаются с файловых систем FAT, ext2 / 3/4 и btrfs, с компакт-дисков и через PXE
+sudo pacman -S systemd-ui --noconfirm  # Графический интерфейс для systemd
 sudo pacman -S termite --noconfirm  #  Простой терминал на базе VTE
 sudo pacman -S termite-terminfo --noconfirm  # Terminfo для Termite, простого терминала на базе VTE
 sudo pacman -S translate-shell --noconfirm  # Интерфейс командной строки и интерактивная оболочка для Google Translate
