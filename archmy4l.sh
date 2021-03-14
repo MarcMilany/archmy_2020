@@ -739,17 +739,34 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_radiotray == 1 ]]; then
   echo ""  
   echo " Установка аудиоплеер Audacious "
-yay -S radiotray --noconfirm # 
-yay -S radiotray-ng --noconfirm # 
+############ radiotray ##########  
+yay -S radiotray --noconfirm # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
+yay -S radiotray-ng --noconfirm # Интернет-радио плеер для Linux
+
+
+
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+elif [[ $prog_set == 1 ]]; then
+  echo ""   
+  echo " Установка gconf - зависимость для libgksu "    
+git clone https://aur.archlinux.org/gconf.git  # Устаревшая система базы данных конфигурации
+cd gconf
+#makepkg -fsri
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf gconf 
+rm -Rf gconf
 
 radiotray  -  # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
 https://aur.archlinux.org/packages/radiotray/
-https://aur.archlinux.org/radiotray.git 
-
+https://aur.archlinux.org/radiotray.git
+ 
 radiotray-ng  -  # Интернет-радио плеер для Linux
 https://aur.archlinux.org/packages/radiotray-ng/
 https://aur.archlinux.org/radiotray-ng.git
