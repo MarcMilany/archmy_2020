@@ -3223,10 +3223,10 @@ fi
 
 clear
 echo ""
-echo -e "${GREEN}==> ${BOLD}Установить дополнительные сетевые рекомендованные программы (пакеты)? ${NC}"
-#echo -e "${BLUE}:: ${NC}Установить рекомендованные программы (пакеты)?"
-#echo 'Установить рекомендованные программы?'
-# Install the recommended programs
+echo -e "${GREEN}==> ${BOLD}Установить дополнительные сетевые утилиты, драйверы? ${NC}"
+#echo -e "${BLUE}:: ${NC}Установить дополнительные сетевые утилиты, драйверы?"
+#echo 'Установить дополнительные сетевые утилиты, драйверы
+# Install additional network utilities, drivers
 echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (broadcom-wl-dkms, iwd, linux-atm, ndisc6, pptpclient, rp-pppoe, wvdial, xl2tpd)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
@@ -3238,16 +3238,16 @@ echo ""
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_net  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " net_utilities  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$i_collection" =~ [^10] ]]
+    [[ "$net_utilities" =~ [^10] ]]
 do
     :
 done 
-if [[ $i_collection == 0 ]]; then 
+if [[ $net_utilities == 0 ]]; then 
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
-elif [[ $i_collection == 1 ]]; then
+elif [[ $net_utilities == 1 ]]; then
   echo ""   
   echo " Установка рекомендованных утилит (пакетов) "
 # sudo pacman -S broadcom-wl-dkms iwd linux-atm ndisc6 pptpclient rp-pppoe wvdial xl2tpd --noconfirm  
