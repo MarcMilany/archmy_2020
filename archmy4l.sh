@@ -641,6 +641,23 @@ echo ""
 echo " Установка дополнительных пакетов для редактора Vim из AUR (через - yay) выполнена "
 fi
 
+clear
+echo -e "${MAGENTA}
+  <<< Установка Мультимедиа утилит (аудиоплееров, видео-проигрывателей и т.д.) в Archlinux >>> ${NC}"
+# Installing Multimedia audio players, video players, utilities, and codecs in Archlinux
+
+echo ""
+echo -e "${GREEN}==> ${NC}Установка мультимедиа утилит "
+#echo -e "${BLUE}:: ${NC}Установка мультимедиа утилит" 
+#echo 'Установка мультимедиа утилит'
+# Installing Multimedia utilities
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - ()."
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
+while 
 
 
 
