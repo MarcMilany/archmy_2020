@@ -3223,6 +3223,59 @@ fi
 
 clear
 echo ""
+echo -e "${GREEN}==> ${BOLD}Установить рекомендованные программы (пакеты)? ${NC}"
+#echo -e "${BLUE}:: ${NC}Установить рекомендованные программы (пакеты)?"
+#echo 'Установить рекомендованные программы?'
+# Install the recommended programs
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (broadcom-wl-dkms, iwd, linux-atm, ndisc6, pptpclient, rp-pppoe, wvdial, xl2tpd)."
+echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo -e "${YELLOW}==> ${NC}Установка будет производится сразу всех утилит (пакетов) - (без выбора)" 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_collection  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_collection" =~ [^10] ]]
+do
+    :
+done 
+if [[ $i_collection == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $i_collection == 1 ]]; then
+  echo ""   
+  echo " Установка рекомендованных утилит (пакетов) "
+# sudo pacman -S broadcom-wl-dkms iwd linux-atm ndisc6 pptpclient rp-pppoe wvdial xl2tpd --noconfirm  
+sudo pacman -S broadcom-wl-dkms --noconfirm  # Драйвер беспроводной сети Broadcom 802.11 Linux STA
+sudo pacman -S iwd --noconfirm  # Демон беспроводной сети Интернет
+sudo pacman -S linux-atm --noconfirm  # Драйверы и инструменты для поддержки сети банкоматов под Linux
+sudo pacman -S ndisc6 --noconfirm  # Сборник сетевых утилит IPv6
+sudo pacman -S pptpclient --noconfirm  # Клиент для проприетарного протокола туннелирования точка-точка от Microsoft, PPTP
+sudo pacman -S rp-pppoe --noconfirm  # Протокол точка-точка Roaring Penguin через клиент Ethernet
+sudo pacman -S clonezilla --noconfirm  # Раздел ncurses и программа для создания образов / клонирования дисков
+sudo pacman -S crypto++ --noconfirm  # Бесплатная библиотека классов C ++ криптографических схем
+sudo pacman -S ddrescue --noconfirm  # Инструмент восстановления данных GNU
+sudo pacman -S psensor --noconfirm  # Графический аппаратный монитор температуры для Linux
+sudo pacman -S copyq --noconfirm  # Менеджер буфера обмена с возможностью поиска и редактирования истории
+sudo pacman -S rsync --noconfirm  # Быстрый и универсальный инструмент для копирования удаленных и локальных файлов
+sudo pacman -S grsync --noconfirm  # GTK + GUI для rsync для синхронизации папок, файлов и создания резервных копий
+sudo pacman -S numlockx --noconfirm  # Включает клавишу numlock в X11
+sudo pacman -S modem-manager-gui --noconfirm  # Интерфейс для демона ModemManager, способного управлять определенными 
+# sudo pacman -S  --noconfirm  # 
+# sudo pacman -S  --noconfirm  #
+# sudo pacman -S  --noconfirm  #
+# sudo pacman -S  --noconfirm  #
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
+
+clear
+echo ""
 echo -e "${GREEN}==> ${NC}Установим TLP - Для увеличения продолжительности времени работы от батареи"
 #echo -e "${BLUE}:: ${NC}Установим TLP - Для увеличения продолжительности времени работы от батареи" 
 #echo 'Установим TLP - Для увеличения продолжительности времени работы от батареи'
