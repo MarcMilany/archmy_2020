@@ -3257,15 +3257,10 @@ sudo pacman -S linux-atm --noconfirm  # Драйверы и инструмент
 sudo pacman -S ndisc6 --noconfirm  # Сборник сетевых утилит IPv6
 sudo pacman -S pptpclient --noconfirm  # Клиент для проприетарного протокола туннелирования точка-точка от Microsoft, PPTP
 sudo pacman -S rp-pppoe --noconfirm  # Протокол точка-точка Roaring Penguin через клиент Ethernet
-sudo pacman -S clonezilla --noconfirm  # Раздел ncurses и программа для создания образов / клонирования дисков
-sudo pacman -S crypto++ --noconfirm  # Бесплатная библиотека классов C ++ криптографических схем
+sudo pacman -S wvdial --noconfirm  # Программа номеронабирателя для подключения к Интернету
+sudo pacman -S xl2tpd --noconfirm  # Реализация L2TP с открытым исходным кодом, поддерживаемая Xelerance Corporation
 sudo pacman -S ddrescue --noconfirm  # Инструмент восстановления данных GNU
-sudo pacman -S psensor --noconfirm  # Графический аппаратный монитор температуры для Linux
-sudo pacman -S copyq --noconfirm  # Менеджер буфера обмена с возможностью поиска и редактирования истории
-sudo pacman -S rsync --noconfirm  # Быстрый и универсальный инструмент для копирования удаленных и локальных файлов
-sudo pacman -S grsync --noconfirm  # GTK + GUI для rsync для синхронизации папок, файлов и создания резервных копий
-sudo pacman -S numlockx --noconfirm  # Включает клавишу numlock в X11
-sudo pacman -S modem-manager-gui --noconfirm  # Интерфейс для демона ModemManager, способного управлять определенными 
+# sudo pacman -S  --noconfirm  # 
 # sudo pacman -S  --noconfirm  # 
 # sudo pacman -S  --noconfirm  #
 # sudo pacman -S  --noconfirm  #
