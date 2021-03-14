@@ -3165,7 +3165,7 @@ echo -e "${GREEN}==> ${BOLD}Установить рекомендованные 
 #echo -e "${BLUE}:: ${NC}Установить рекомендованные программы (пакеты)?"
 #echo 'Установить рекомендованные программы?'
 # Install the recommended programs
-echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gnome-system-monitor, gnome-disk-utility, gnome-multi-writer, frei0r-plugins, fuseiso, clonezilla, psensor, copyq, rsync, grsync, numlockx, modem-manager-gui, ranger, pacmanlogviewer, rofi, gsmartcontrol, testdisk, dmidecode, qemu, w3m)."
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gnome-system-monitor, gnome-disk-utility, gnome-multi-writer, frei0r-plugins, fuseiso, clonezilla, crypto++, ddrescue, psensor, copyq, rsync, grsync, numlockx, modem-manager-gui, ranger, pacmanlogviewer, rofi, gsmartcontrol, testdisk, dmidecode, qemu, w3m)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -3195,6 +3195,8 @@ sudo pacman -S gnome-multi-writer --noconfirm  # Записать файл ISO �
 sudo pacman -S frei0r-plugins --noconfirm  # Минималистичный плагин API для видеоэффектов
 sudo pacman -S fuseiso --noconfirm  # Модуль FUSE для монтирования образов файловой системы ISO
 sudo pacman -S clonezilla --noconfirm  # Раздел ncurses и программа для создания образов / клонирования дисков
+sudo pacman -S crypto++ --noconfirm  # Бесплатная библиотека классов C ++ криптографических схем
+sudo pacman -S ddrescue --noconfirm  # Инструмент восстановления данных GNU
 sudo pacman -S psensor --noconfirm  # Графический аппаратный монитор температуры для Linux
 sudo pacman -S copyq --noconfirm  # Менеджер буфера обмена с возможностью поиска и редактирования истории
 sudo pacman -S rsync --noconfirm  # Быстрый и универсальный инструмент для копирования удаленных и локальных файлов
