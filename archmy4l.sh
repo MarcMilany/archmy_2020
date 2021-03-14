@@ -721,8 +721,8 @@ echo " Если Вы сомневаетесь в своих действиях, 
 # If you doubt your actions, think again... 
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить Интернет-радио плеер Radio Tray?" 
-echo -e "${MAGENTA}:: ${BOLD}Radio Tray - ранее известная как gcalctool(Calctool), является программным обеспечение калькулятор интегрирован с настольной GNOME среды. ${NC}"
-echo " Научный калькулятор - он запрограммирован в C и Val и часть приложений GNOME Key. " 
+echo -e "${MAGENTA}:: ${BOLD}Radio Tray (рус.Радио лоток) - проигрыватель потокового онлайн радио, предназначенный для прослушивания интернет-радиостанций в операционных системах Linux. ${NC}"
+echo " Эта небольшая утилита позволяет слушать радио, не загружая другие плееры типа Amorok или Rhythmbox, а также веб-браузер, тем самым экономя системные ресурсы компьютера и энергопотребление ноутбуков. " 
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
@@ -766,7 +766,12 @@ radiotray-ng  -  # Интернет-радио плеер для Linux
 https://aur.archlinux.org/packages/radiotray-ng/
 https://aur.archlinux.org/radiotray-ng.git
 https://github.com/ebruck/radiotray-ng
-
+#-----------------------------
+# Домашняя страница:
+# http://radiotray.sourceforge.net/
+# https://compizomania.blogspot.com/2016/06/radio-tray-ubuntulinux.html
+#
+#-----------------------------
 
 echo 'Установка Мультимедиа утилит AUR'
 # 
