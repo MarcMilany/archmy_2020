@@ -738,10 +738,10 @@ gksu debtap menulibre caffeine-ng inxi xneur fsearch-git timeshift mocicon multi
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-yay -S gksu debtap menulibre caffeine-ng inxi xneur fsearch-git timeshift mocicon multiload-ng-indicator-gtk xfce4-multiload-ng-plugin-gtk2 keepass2-plugin-tray-icon gconf-editor gconf-cleaner webtorrent-desktop teamviewer corectrl qt4 xflux flameshot-git  mkinitcpio-openswap fetchmirrors gtk3-mushrooms --noconfirm  # xorg-xkill
+yay -S gksu debtap menulibre caffeine-ng inxi xneur fsearch-git timeshift mocicon multiload-ng-indicator-gtk xfce4-multiload-ng-plugin-gtk2 keepass2-plugin-tray-icon gconf-editor gconf-cleaner webtorrent-desktop teamviewer corectrl qt4 xflux flameshot-git mkinitcpio-openswap fetchmirrors gtk3-mushrooms --noconfirm  # xorg-xkill
 yay -S timeshift --noconfirm  #
 yay -S  --noconfirm  #
-yay -S  --noconfirm  #
+yay -S teamviewer --noconfirm  # Универсальное программное обеспечение для удаленной поддержки и онлайн-встреч
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
