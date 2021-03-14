@@ -713,36 +713,33 @@ echo -e "${GREEN}==> ${NC}Установка мультимедиа утилит
 # Installing Multimedia utilities AUR
 echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие утилиты (пакеты): ${NC}"
 echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - ()."
-
-echo "  Процесс установки, был прописан полностью автоматическим. " 
+echo -e "${YELLOW}==> ${NC}Установка будет производится в порядке перечисления (по очереди)"
+echo " . "  
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
 # If you doubt your actions, think again... 
 echo "" 
-
-
-
-
-
-echo "" 
 echo -e "${BLUE}:: ${NC}Установить аудиоплеер Audacious?" 
+echo -e "${MAGENTA}:: ${BOLD}GNOME Calculator - ранее известная как gcalctool(Calctool), является программным обеспечение калькулятор интегрирован с настольной GNOME среды. ${NC}"
+echo " Научный калькулятор - он запрограммирован в C и Val и часть приложений GNOME Key. " 
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_audacious  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_radiotray  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$i_audacious" =~ [^10] ]]
+    [[ "$i_radiotray" =~ [^10] ]]
 do
     :
 done 
-if [[ $i_audacious == 0 ]]; then 
+if [[ $i_radiotray == 0 ]]; then 
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
-elif [[ $i_audacious == 1 ]]; then
+elif [[ $i_radiotray == 1 ]]; then
   echo ""  
   echo " Установка аудиоплеер Audacious "
-sudo pacman -S audacious audacious-plugins --noconfirm
+yay -S radiotray --noconfirm # 
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
@@ -759,7 +756,7 @@ radiotray spotify vlc-tunein-radio vlc-pause-click-plugin audiobook-git cozy-aud
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-yay -S radiotray --noconfirm 
+ 
 yay -S spotify --noconfirm
 yay -S vlc-tunein-radio --noconfirm
 yay -S vlc-pause-click-plugin --noconfirm  # Плагин для VLC, который приостанавливает / воспроизводит видео по щелчку мыши

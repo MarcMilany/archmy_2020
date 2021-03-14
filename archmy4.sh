@@ -1809,14 +1809,7 @@ pacman -Qqm > ~/aurlist.txt
 Soft AUR ===================
 ============================
 
-radiotray  -  # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
-https://aur.archlinux.org/packages/radiotray/
-https://aur.archlinux.org/radiotray.git 
 
-radiotray-ng  -  # Интернет-радио плеер для Linux
-https://aur.archlinux.org/packages/radiotray-ng/
-https://aur.archlinux.org/radiotray-ng.git
-https://github.com/ebruck/radiotray-ng
 
 -------------------------------------------
 
