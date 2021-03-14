@@ -1137,9 +1137,6 @@ xfce4-docklike-plugin-git  AUR  # Современная минималисти�
 https://aur.archlinux.org/packages/xfce4-docklike-plugin-git/
 https://aur.archlinux.org/xfce4-docklike-plugin-git.git
 
-networkmanager-l2tp  AUR  # Поддержка L2TP для NetworkManager
-https://aur.archlinux.org/packages/networkmanager-l2tp/
-https://aur.archlinux.org/networkmanager-l2tp.git
 
 lightdm-slick-greeter  AUR  # Красивое приветствие LightDM
 https://aur.archlinux.org/packages/lightdm-slick-greeter/
