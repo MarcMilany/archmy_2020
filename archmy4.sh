@@ -2985,9 +2985,12 @@ yay -S  --noconfirm  #
 #############################
 
 
+refind-efi-bin  AUR # Вилка REFIt UEFI Boot Manager Рода Смита - предварительно скомпилированный двоичный файл - построенный с использованием библиотек GNU-EFIaur
+https://aur.archlinux.org/packages/refind-efi-bin/
 
-
-
+=========================
+archiso  # Инструменты для создания Arch Linux live и установки образов iso -
+##############################
 
 
 
