@@ -651,6 +651,7 @@ echo -e "${GREEN}==> ${NC}Установка мультимедиа утилит
 #echo -e "${BLUE}:: ${NC}Установка мультимедиа утилит" 
 #echo 'Установка мультимедиа утилит'
 # Installing Multimedia utilities
+echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - ()."
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
