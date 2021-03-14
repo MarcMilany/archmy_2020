@@ -777,8 +777,7 @@ ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
  
-yay -S spotify --noconfirm
-https://aur.archlinux.org/packages/spotify/
+yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
 yay -S vlc-tunein-radio --noconfirm
 yay -S vlc-pause-click-plugin --noconfirm  # Плагин для VLC, который приостанавливает / воспроизводит видео по щелчку мыши
 yay -S audiobook-git --noconfirm
@@ -812,7 +811,7 @@ yay -S lib32-libde265 --noconfirm  # Открытая реализация ви�
 
 ##################################
 
-
+https://aur.archlinux.org/packages/spotify/
 https://wiki.archlinux.org/index.php/spotify
 Spotify
 Перейти к навигацииПерейти к поиску
