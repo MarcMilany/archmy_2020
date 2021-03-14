@@ -787,7 +787,7 @@ yay -S mp3gain --noconfirm  # Нормализатор mp3 без потерь �
 yay -S easymp3gain-gtk2 --noconfirm  # Графический интерфейс пользователя (GUI) GTK2 для MP3Gain, VorbisGain и AACGain
 
 yay -S m4baker-git --noconfirm  # Создавайте полнофункциональные m4b-аудиокниги (Собирается пакет долго!)
-yay -S myrulib-git --noconfirm
+yay -S myrulib-git --noconfirm  # Домашняя библиотека с поддержкой сайта lib.rus.ec
 yay -S  --noconfirm   
 yay -S  --noconfirm
 yay -S  --noconfirm
@@ -806,11 +806,25 @@ fi
  echo " Установка мультимедиа кодеков и утилит (пакетов) "
 #options+=("gst-plugin-libde265" "(AUR)" off)
 #options+=("libde265" "(AUR)" off)
-yay -S gst-plugin-libde265 --noconfirm  # Плагин Libde265 (открытая реализация видеокодека h.265) для gstreamer
-yay -S libde265 --noconfirm  # ???
-yay -S libde265-git --noconfirm  # Открытая реализация видеокодека H.265 (версия git)
-yay -S lib32-libde265 --noconfirm  # Открытая реализация видеокодека h.265 (32-разрядная версия)
 
+sudo pacman -S libde265 --noconfirm  # Открытая реализация видеокодека h.265
+https://archlinux.org/packages/extra/x86_64/libde265/
+https://github.com/strukturag/libde265
+
+yay -S gst-plugin-libde265 --noconfirm  # Плагин Libde265 (открытая реализация видеокодека h.265) для gstreamer
+https://aur.archlinux.org/packages/gst-plugin-libde265/
+https://aur.archlinux.org/gst-plugin-libde265.git
+https://github.com/strukturag/gstreamer-libde265
+
+yay -S libde265-git --noconfirm  # Открытая реализация видеокодека H.265 (версия git)
+https://aur.archlinux.org/packages/libde265-git/
+https://aur.archlinux.org/libde265-git.git 
+https://github.com/strukturag/libde265/
+
+yay -S lib32-libde265 --noconfirm  # Открытая реализация видеокодека h.265 (32-разрядная версия)
+https://aur.archlinux.org/packages/lib32-libde265/
+https://aur.archlinux.org/lib32-libde265.git
+https://github.com/strukturag/libde265
 ##################################
 
 https://aur.archlinux.org/packages/spotify/
