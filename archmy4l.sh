@@ -793,8 +793,7 @@ yay -S  --noconfirm
 yay -S  --noconfirm
 yay -S  --noconfirm
 yay -S  --noconfirm
-#yay -S bluez-firmware --noconfirm  # Прошивки для чипов Bluetooth Broadcom BCM203x и STLC2300
-#yay -S pulseaudio-ctl --noconfirm  # Управляйте громкостью pulseaudio из оболочки или с помощью сочетаний клавиш
+
 
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка Мультимедиа утилит AUR пропущена.'
@@ -825,6 +824,15 @@ yay -S lib32-libde265 --noconfirm  # Открытая реализация ви�
 https://aur.archlinux.org/packages/lib32-libde265/
 https://aur.archlinux.org/lib32-libde265.git
 https://github.com/strukturag/libde265
+
+
+#yay -S bluez-firmware --noconfirm  # Прошивки для чипов Bluetooth Broadcom BCM203x и STLC2300
+#yay -S pulseaudio-ctl --noconfirm  # Управляйте громкостью pulseaudio из оболочки или с помощью сочетаний клавиш
+
+
+
+
+
 ##################################
 
 https://aur.archlinux.org/packages/spotify/
