@@ -660,23 +660,46 @@ echo " Если Вы сомневаетесь в своих действиях, 
 echo "" 
 while 
 #echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-#read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " i_multi  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
+#read -p " 1 - Да установить, 0 - НЕТ - Пропустить установку: " multimedia_prog  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_multi  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " multimedia_prog  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$i_multi" =~ [^10] ]]
+    [[ "$multimedia_prog" =~ [^10] ]]
 do
     :
 done 
-if [[ $i_multi == 0 ]]; then
+if [[ $multimedia_prog == 0 ]]; then
 clear
 echo "" 
 echo " Установка Мультимедиа утилит пропущена "
-elif [[ $i_multi == 1 ]]; then
+elif [[ $multimedia_prog == 1 ]]; then
   echo ""    
   echo " Установка утилит (пакетов) "   
-
+# sudo pacman -S audacity deadbeef easytag subdownloader moc mediainfo mediainfo-gui media-player-info --noconfirm
+sudo pacman -S audacity --noconfirm  # Программа, позволяющая манипулировать сигналами цифрового звука
+sudo pacman -S deadbeef --noconfirm  # Аудиоплеер GTK + для GNU / Linux
+sudo pacman -S easytag --noconfirm  # Простое приложение для просмотра и редактирования тегов в аудиофайлах
+sudo pacman -S subdownloader --noconfirm  # Автоматическая загрузка / выгрузка субтитров с использованием быстрого хеширования
+sudo pacman -S moc --noconfirm  # Консольный аудиоплеер ncurses, разработанный, чтобы быть мощным и простым в использовании
+sudo pacman -S mediainfo --noconfirm  # Предоставляет техническую и теговую информацию о видео или аудио файле (интерфейс командной строки)
+sudo pacman -S mediainfo-gui --noconfirm  # Предоставляет техническую и теговую информацию о видео или аудио файле (интерфейс GUI)
+sudo pacman -S media-player-info --noconfirm  # Файлы данных, описывающие возможности медиаплеера для систем post-HAL
+sudo pacman -S you-get --noconfirm  # Загрузчик видео с YouTube / Youku / Niconico, написанный на Python 3
+sudo pacman -S youtube-viewer --noconfirm  # Утилита командной строки для просмотра видео на YouTube
+# sudo pacman -S qmmp --noconfirm  # Аудиоплеер на Qt5
+# sudo pacman -S mplayer --noconfirm # Медиаплеер для Linux
+# sudo pacman -S ffmpegthumbnailer --noconfirm  # Легкий эскиз видеофайлов, который может использоваться файловыми менеджерами # возможно присутствует
+sudo pacman -S cmus --noconfirm  # Многофункциональный музыкальный проигрыватель на базе ncurses
+sudo pacman -S vorbisgain --noconfirm  # Утилита, которая вычисляет значения ReplayGain для файлов Ogg Vorbis
+sudo pacman -S ncmpcpp --noconfirm  # Практически точный клон ncmpc с некоторыми новыми функциями
+sudo pacman -S mpc --noconfirm  # Минималистичный интерфейс командной строки для MPD
+sudo pacman -S mpd --noconfirm  # Гибкое, мощное серверное приложение для воспроизведения музыки
+sudo pacman -S mjpegtools --noconfirm  # Набор инструментов, которые могут выполнять запись и воспроизведение видео, простое редактирование с вырезанием и вставкой и сжатие MPEG аудио и видео 
+# sudo pacman -S  --noconfirm  # 
+# sudo pacman -S  --noconfirm  # 
+# sudo pacman -S  --noconfirm  # 
+# sudo pacman -S  --noconfirm  # 
 #clear
 echo ""   
 echo " Установка (пакетов) выполнена "
