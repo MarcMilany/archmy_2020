@@ -710,7 +710,7 @@ sudo pacman -S lib32-simplescreenrecorder --noconfirm  # Записывайте 
 sudo pacman -S peek --noconfirm  # Простой экранный рекордер с простым в использовании интерфейсом
 sudo pacman -S gnome-screenshot --noconfirm  # Сфотографируйте свой экран
 
-sudo pacman -S cherrytree --noconfirm  # Приложение для создания иерархических заметок
+
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
