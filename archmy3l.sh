@@ -3289,13 +3289,6 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
-
- # 
-https://archlinux.org/packages/community/x86_64/networkmanager-l2tp/
-https://github.com/nm-l2tp/NetworkManager-l2tp
-
-
-
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установим TLP - Для увеличения продолжительности времени работы от батареи"
