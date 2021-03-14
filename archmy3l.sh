@@ -3275,6 +3275,7 @@ sudo pacman -S broadcom-wl-dkms --noconfirm  # Драйвер беспровод
 sudo pacman -S iwd --noconfirm  # Демон беспроводной сети Интернет
 sudo pacman -S linux-atm --noconfirm  # Драйверы и инструменты для поддержки сети банкоматов под Linux
 sudo pacman -S ndisc6 --noconfirm  # Сборник сетевых утилит IPv6
+sudo pacman -S networkmanager-l2tp --noconfirm  # Поддержка L2TP для NetworkManager
 sudo pacman -S pptpclient --noconfirm  # Клиент для проприетарного протокола туннелирования точка-точка от Microsoft, PPTP
 sudo pacman -S rp-pppoe --noconfirm  # Протокол точка-точка Roaring Penguin через клиент Ethernet
 sudo pacman -S wvdial --noconfirm  # Программа номеронабирателя для подключения к Интернету
@@ -3287,6 +3288,13 @@ sudo pacman -S xl2tpd --noconfirm  # Реализация L2TP с открыты
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
+
+
+ # 
+https://archlinux.org/packages/community/x86_64/networkmanager-l2tp/
+https://github.com/nm-l2tp/NetworkManager-l2tp
+
+
 
 clear
 echo ""
