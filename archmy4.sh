@@ -349,7 +349,7 @@ sudo pacman -S mjpegtools --noconfirm  # Набор инструментов, к
 sudo pacman -S media-player-info --noconfirm  # Файлы данных, описывающие возможности медиаплеера для систем post-HAL
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
+#sudo pacman -S mplayer --noconfirm # Медиаплеер для Linux
 sudo pacman -S  --noconfirm  #   
 sudo pacman -S audacity deadbeef easytag subdownloader moc mediainfo mediainfo-gui --noconfirm
 elif [[ $prog_set == 0 ]]; then
@@ -374,7 +374,7 @@ yay -S m4baker-git --noconfirm
 yay -S mp3gain --noconfirm
 yay -S easymp3gain-gtk2 --noconfirm
 yay -S myrulib-git --noconfirm
-yay -S  --noconfirm
+yay -S  --noconfirm   
 yay -S  --noconfirm
 yay -S  --noconfirm
 yay -S  --noconfirm
