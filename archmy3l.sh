@@ -1907,6 +1907,8 @@ sudo pacman -S ruby --noconfirm  # Объектно-ориентированны
 sudo pacman -S s-nail --noconfirm  # Среда для отправки и получения почты
 sudo pacman -S sane --noconfirm  # Доступ к сканеру теперь простой
 sudo pacman -S scrot --noconfirm  # Простая утилита для создания снимков экрана из командной строки для X
+sudo pacman -S sg3_utils --noconfirm  # Универсальные утилиты SCSI
+sudo pacman -S sdparm --noconfirm  # Утилита, аналогичная hdparm, но для устройств SCSI
 sudo pacman -S solid --noconfirm  # Аппаратная интеграция и обнаружение
 sudo pacman -S sox --noconfirm  # Швейцарский армейский нож инструментов обработки звука
 sudo pacman -S smartmontools --noconfirm  # Управление и мониторинг жестких дисков ATA и SCSI с поддержкой SMAR
