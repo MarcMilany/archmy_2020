@@ -1842,6 +1842,7 @@ sudo pacman -S dhclient --noconfirm  # Автономный DHCP-клиент и
 sudo pacman -S dnsmasq --noconfirm  # Легкий, простой в настройке сервер пересылки DNS и DHCP-сервер
 sudo pacman -S dosfstools --noconfirm  # Утилиты файловой системы DOS
 sudo pacman -S efibootmgr --noconfirm  # Приложение пользовательского пространства Linux для изменения диспетчера загрузки EFI
+sudo pacman -S efitools --noconfirm  # Инструменты для управления платформами безопасной загрузки UEFI
 sudo pacman -S ethtool --noconfirm  # Утилита для управления сетевыми драйверами и оборудованием
 sudo pacman -S f2fs-tools --noconfirm  # Инструменты для файловой системы, дружественной к Flash (F2FS)
 sudo pacman -S flex --noconfirm  # Инструмент для создания программ сканирования текста
