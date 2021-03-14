@@ -2536,7 +2536,7 @@ echo -e "${GREEN}==> ${BOLD}Установить рекомендованные 
 #echo -e "${BLUE}:: ${NC}Установить рекомендованные программы (пакеты)?"
 #echo 'Установить рекомендованные программы?'
 # Install the recommended programs
-echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gparted, grub-customizer, dconf-editor, conky, conky-manager, obs-studio, filezilla, telegram-desktop, discord, flameshot, redshift, bleachbit, cherrytree, doublecmd-gtk2, keepass, keepassxc, veracrypt, nomacs, onboard, meld, uget, plank, openshot, galculator, galculator-gtk2, gnome-calculator)." 
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gparted, grub-customizer, dconf-editor, conky, conky-manager, obs-studio, filezilla, telegram-desktop, discord, flameshot, redshift, bleachbit, cherrytree, doublecmd-gtk2, keepass, keepassxc, veracrypt, kleopatra, nomacs, onboard, meld, uget, plank, openshot, galculator, galculator-gtk2, gnome-calculator)." 
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -2973,6 +2973,42 @@ sudo pacman -S veracrypt --noconfirm
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
+
+clear
+echo "" 
+echo -e "${BLUE}:: ${NC}Установить Kleopatra (создания иерархических заметок)?" 
+echo -e "${MAGENTA}:: ${BOLD}Kleopatra - это . ${NC}"
+echo -e "${MAGENTA}=> ${NC}Kleopatra ."
+echo " " 
+echo -e "${YELLOW}:: Примечание!${NC}Вы можете самостоятельно установить (пакет) cherrytree-bin (https://aur.archlinux.org/packages/cherrytree-bin/), или (пакет) cherrytree-git (https://aur.archlinux.org/packages/cherrytree-bin/), если Вам нужна версия из исходников. Так же эти версии (пакетов) будут представлены в следующем скрипте (archmy4l)."
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_kleopatra  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_cherrytree" =~ [^10] ]]
+do
+    :
+done 
+if [[ $i_kleopatra == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $i_kleopatra == 1 ]]; then
+  echo ""  
+  echo " Установка Kleopatra "
+sudo pacman -S kleopatra --noconfirm  # Диспетчер сертификатов и унифицированный графический интерфейс криптографии  
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
+# -----------------------------------
+# Ссылки: 
+# https://github.com/KDE/kleopatra
+# https://zenway.ru/page/kleopatra
+# https://habr.com/ru/post/316736/ (Сказание о Клеопатре и о российской криптографии)
+# https://jenyay.net/blog/2012/01/04/shifrovanie-s-pomoshhyu-gnupg-dlya-polzovatelejj/
+# https://ru.wikipedia.org/wiki/GnuPG
+#------------------------------------
 
 clear
 echo "" 
