@@ -1922,6 +1922,7 @@ sudo pacman -S termite-terminfo --noconfirm  # Terminfo для Termite, прос
 sudo pacman -S translate-shell --noconfirm  # Интерфейс командной строки и интерактивная оболочка для Google Translate
 sudo pacman -S udiskie --noconfirm  # Автоматическое монтирование съемных дисков с использованием udisks
 sudo pacman -S usb_modeswitch --noconfirm  # Активация переключаемых USB-устройств в Linux
+sudo pacman -S wimlib --noconfirm  # Библиотека и программа для извлечения, создания и изменения файлов WIM
 sudo pacman -S xsel --noconfirm  # XSel - это программа командной строки для получения и установки содержимого выделения X
 sudo pacman -S xterm --noconfirm  # Эмулятор терминала X
 # sudo pacman -S xorg-xclock --noconfirm  # X часы
