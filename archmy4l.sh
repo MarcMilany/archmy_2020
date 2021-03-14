@@ -743,8 +743,8 @@ elif [[ $i_radiotray == 1 ]]; then
   echo ""  
   echo " Установка Интернет-радио плеер Radio Tray "
 ############ radiotray ##########  
-#yay -S radiotray --noconfirm # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
-#yay -S radiotray-ng --noconfirm # Интернет-радио плеер для Linux  
+# yay -S radiotray --noconfirm # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
+# yay -S radiotray-ng --noconfirm # Интернет-радио плеер для Linux  
 git clone https://aur.archlinux.org/radiotray.git  # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
 #git clone https://aur.archlinux.org/radiotray-ng.git  # Интернет-радио плеер для Linux
 cd radiotray
@@ -759,28 +759,20 @@ cd ..   # поднимаемся на уровень выше (выходим и
 # rm -rf radiotray-ng
 rm -Rf radiotray
 #rm -Rf radiotray-ng
-
-
-radiotray  -  # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
-https://aur.archlinux.org/packages/radiotray/
-https://aur.archlinux.org/radiotray.git
-
-radiotray-ng  -  # Интернет-радио плеер для Linux
-https://aur.archlinux.org/packages/radiotray-ng/
-https://aur.archlinux.org/radiotray-ng.git
-https://github.com/ebruck/radiotray-ng
 #-----------------------------
 # Домашняя страница:
 # http://radiotray.sourceforge.net/
 # https://compizomania.blogspot.com/2016/06/radio-tray-ubuntulinux.html
-#
+# https://aur.archlinux.org/packages/radiotray/
+# https://aur.archlinux.org/packages/radiotray-ng/
+# https://github.com/ebruck/radiotray-ng
 #-----------------------------
 
 echo 'Установка Мультимедиа утилит AUR'
 # 
 echo -e "${BLUE}
 'Список Мультимедиа утилит AUR:${GREEN}
-radiotray spotify vlc-tunein-radio vlc-pause-click-plugin audiobook-git cozy-audiobooks m4baker-git mp3gain easymp3gain-gtk2 myrulib-git'
+ spotify vlc-tunein-radio vlc-pause-click-plugin audiobook-git cozy-audiobooks m4baker-git mp3gain easymp3gain-gtk2 myrulib-git'
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
