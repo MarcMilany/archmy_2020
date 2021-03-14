@@ -757,7 +757,16 @@ fi
 
 
 
+#############################
+ echo " Установка мультимедиа кодеков и утилит (пакетов) "
+#options+=("gst-plugin-libde265" "(AUR)" off)
+#options+=("libde265" "(AUR)" off)
+yay -S gst-plugin-libde265 --noconfirm  # Плагин Libde265 (открытая реализация видеокодека h.265) для gstreamer
+yay -S libde265 --noconfirm  # ???
+yay -S libde265-git --noconfirm  # Открытая реализация видеокодека H.265 (версия git)
+yay -S lib32-libde265 --noconfirm  # Открытая реализация видеокодека h.265 (32-разрядная версия)
 
+##################################
 
 
 
