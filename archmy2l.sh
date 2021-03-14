@@ -1364,8 +1364,8 @@ Arch Linux release
 EOF
 
 echo -e "${BLUE}:: ${NC}Создадим файл /etc/lsb-release (информация о релизе)"
-> /etc/lsb-release
-cat <<EOF >>/etc/lsb-release 
+> /etc/lsb-release.old
+cat <<EOF >>/etc/lsb-release.old 
 NAME="Arch Linux"
 PRETTY_NAME="Arch Linux"
 ID=arch
