@@ -5004,7 +5004,7 @@ uptime
 
 echo -e "${YELLOW}==> ...${NC}"
 echo -e "${BLUE}:: ${NC}Если хотите установить дополнительный софт (пакеты), тогда после перезагрузки и входа в систему выполните команду:"
-echo -e "${YELLOW}==> ${CYAN}wget git.io/archmy4 && sh archmy4l ${NC}"
+echo -e "${YELLOW}==> ${CYAN}wget git.io/archmy4l && sh archmy4l ${NC}"
 # Команды по установке :
 # wget git.io/archmy4l 
 # sh archmy4l
