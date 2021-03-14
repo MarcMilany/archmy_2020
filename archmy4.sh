@@ -598,7 +598,7 @@ yay -S  --noconfirm  #
 
 echo 'Утилиты для работы с CD,DVD, создание ISO образов, запись на флеш-накопители'
 # Utilities for working with CD, DVD, creating ISO images, writing to flash drives
-sudo pacman -S woeusb --noconfirm  # Программа Linux для создания установщика USB-накопителя Windows с DVD-диска Windows или образа
+# sudo pacman -S woeusb --noconfirm  # Программа Linux для создания установщика USB-накопителя Windows с DVD-диска Windows или образа
 sudo pacman -S xfburn --noconfirm  # Простой инструмент для записи CD / DVD на основе библиотек libburnia 
 sudo pacman -S --noconfirm  # 
 sudo pacman -S --noconfirm  # 
@@ -609,7 +609,7 @@ yay -S mintstick unetbootin --noconfirm
 # yay -S woeusb-git --noconfirm  #
 yay -S mintstick --noconfirm  # Графический интерфейс для записи файлов .img или .iso на USB-накопитель. Он также может их форматировать
 yay -S unetbootin --noconfirm  # Создание загрузочных USB-накопителей Live
-yay -S  --noconfirm  #
+yay -S woeusb-gui --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
