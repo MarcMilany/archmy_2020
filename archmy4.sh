@@ -1002,8 +1002,7 @@ yay -S  --noconfirm  #
 sudo pacman -S pepper-flash --noconfirm  # Adobe Flash Player PPAPI
 yay -S freshplayerplugin --noconfirm  # PPAPI-host Адаптер NPAPI-plugin (Recommended)
 yay -S freshplayerplugin-git --noconfirm  # PPAPI-host Адаптер NPAPI-plugin
-yay -S vivaldi --noconfirm  # Продвинутый браузер, созданный для опытных пользователей
-yay -S vivaldi-ffmpeg-codecs --noconfirm  # дополнительная поддержка проприетарных кодеков для vivaldi
+
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
