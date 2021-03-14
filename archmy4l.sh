@@ -740,12 +740,20 @@ elif [[ $i_radiotray == 1 ]]; then
   echo ""  
   echo " Установка аудиоплеер Audacious "
 yay -S radiotray --noconfirm # 
+yay -S radiotray-ng --noconfirm # 
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
 
+radiotray  -  # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
+https://aur.archlinux.org/packages/radiotray/
+https://aur.archlinux.org/radiotray.git 
 
+radiotray-ng  -  # Интернет-радио плеер для Linux
+https://aur.archlinux.org/packages/radiotray-ng/
+https://aur.archlinux.org/radiotray-ng.git
+https://github.com/ebruck/radiotray-ng
 
 
 echo 'Установка Мультимедиа утилит AUR'
