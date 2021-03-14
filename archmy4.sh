@@ -650,6 +650,7 @@ sudo pacman -S  --noconfirm  #
 echo 'Онлайн мессенжеры и Телефония, Управления чатом и группам AUR'
 # Online messengers and Telephony, chat and group Management AUR
 yay -S skypeforlinux-stable-bin skype-call-recorder vk-messenger viber pidgin-extprefs --noconfirm 
+yay -S teamviewer --noconfirm  # Универсальное программное обеспечение для удаленной поддержки и онлайн-встреч
 
 echo 'Сетевые утилиты, Tor, VPN, SSH, Samba и тд...'
 # Network utilities, Tor, VPN, SSH, Samba, etc...
@@ -734,14 +735,14 @@ echo 'Установить рекомендуемые программы из AU
 # To install the recommended program? AUR
 echo -e "${BLUE}
 'Список программ рекомендованных к установке:${GREEN}
-gksu debtap menulibre caffeine-ng inxi xneur fsearch-git timeshift mocicon multiload-ng-indicator-gtk xfce4-multiload-ng-plugin-gtk2 keepass2-plugin-tray-icon gconf-editor gconf-cleaner webtorrent-desktop teamviewer corectrl mkinitcpio-openswap fetchmirrors gtk3-mushrooms'
+gksu debtap menulibre caffeine-ng inxi xneur fsearch-git timeshift mocicon multiload-ng-indicator-gtk xfce4-multiload-ng-plugin-gtk2 keepass2-plugin-tray-icon gconf-editor gconf-cleaner webtorrent-desktop corectrl mkinitcpio-openswap fetchmirrors gtk3-mushrooms'
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-yay -S gksu debtap menulibre caffeine-ng inxi xneur fsearch-git timeshift mocicon multiload-ng-indicator-gtk xfce4-multiload-ng-plugin-gtk2 keepass2-plugin-tray-icon gconf-editor gconf-cleaner webtorrent-desktop teamviewer corectrl qt4 xflux flameshot-git mkinitcpio-openswap fetchmirrors gtk3-mushrooms --noconfirm  # xorg-xkill
+yay -S gksu debtap menulibre caffeine-ng inxi xneur fsearch-git timeshift mocicon multiload-ng-indicator-gtk xfce4-multiload-ng-plugin-gtk2 keepass2-plugin-tray-icon gconf-editor gconf-cleaner webtorrent-desktop corectrl qt4 xflux flameshot-git mkinitcpio-openswap fetchmirrors gtk3-mushrooms --noconfirm  # xorg-xkill
 yay -S timeshift --noconfirm  #
 yay -S  --noconfirm  #
-yay -S teamviewer --noconfirm  # Универсальное программное обеспечение для удаленной поддержки и онлайн-встреч
+
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
