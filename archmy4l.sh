@@ -694,8 +694,29 @@ while
 
 
 https://github.com/diegofn/TuneIn-Radio-VLC
+Прослушивание интернет-радио с помощью VLC media player
+https://www.youtube.com/watch?v=vWEzW_2ZYAU
+
+https://github.com/nurupo/vlc-pause-click-plugin
+Делаем Play и Pause кликом мыши в плеере vlc
+https://www.youtube.com/watch?v=G05VGD2_jGo&t=1s
 
 
+--------------------------------------------
+
+vlc-tunein-radio  -  # Скрипт TuneIn Radio LUA для VLC 2.x
+https://aur.archlinux.org/packages/vlc-tunein-radio/
+https://aur.archlinux.org/vlc-tunein-radio.git 
+https://github.com/diegofn/TuneIn-Radio-VLC
+
+---------------------------------------------
+
+vlc-pause-click-plugin  -  # Плагин для VLC, который приостанавливает / воспроизводит видео при щелчке мышью
+https://aur.archlinux.org/packages/vlc-pause-click-plugin/
+https://aur.archlinux.org/vlc-pause-click-plugin.git 
+https://github.com/nurupo/vlc-pause-click-plugin
+
+---------------------------------------------
 
 
 
@@ -787,22 +808,6 @@ Spotify для Linux можно установить с пакетом spotify A
 
 
 
-
---------------------------------------------
-
-vlc-tunein-radio  -  # Скрипт TuneIn Radio LUA для VLC 2.x
-https://aur.archlinux.org/packages/vlc-tunein-radio/
-https://aur.archlinux.org/vlc-tunein-radio.git 
-https://github.com/diegofn/TuneIn-Radio-VLC
-
----------------------------------------------
-
-vlc-pause-click-plugin  -  # Плагин для VLC, который приостанавливает / воспроизводит видео при щелчке мышью
-https://aur.archlinux.org/packages/vlc-pause-click-plugin/
-https://aur.archlinux.org/vlc-pause-click-plugin.git 
-https://github.com/nurupo/vlc-pause-click-plugin
-
----------------------------------------------
 
 audiobook-git  -  # Простая программа для чтения аудиокниг. Написано на QT / QML и C ++ 
 https://aur.archlinux.org/packages/audiobook-git/
