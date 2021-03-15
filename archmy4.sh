@@ -251,7 +251,21 @@ https://github.com/strukturag/libde265
 #yay -S bluez-firmware --noconfirm  # Прошивки для чипов Bluetooth Broadcom BCM203x и STLC2300
 #yay -S pulseaudio-ctl --noconfirm  # Управляйте громкостью pulseaudio из оболочки или с помощью сочетаний клавиш
 
+gst-plugin-libde265  -  # Плагин Libde265 (открытая реализация видеокодека h.265) для gstreamer
+https://aur.archlinux.org/packages/gst-plugin-libde265/
+https://aur.archlinux.org/gst-plugin-libde265.git 
+https://github.com/strukturag/gstreamer-libde265
 
+# libde265  -  #  ???
+libde265-git  -  # Открытая реализация видеокодека H.265 (версия git)
+https://aur.archlinux.org/packages/libde265-git/
+https://aur.archlinux.org/libde265-git.git
+https://github.com/strukturag/libde265/
+
+lib32-libde265 --noconfirm  # Открытая реализация видеокодека h.265 (32-разрядная версия)
+https://aur.archlinux.org/packages/lib32-libde265/
+https://aur.archlinux.org/lib32-libde265.git 
+https://github.com/strukturag/libde265
 
 
 
@@ -2326,21 +2340,7 @@ http://www.tixati.com/
 
 -------------------------------------
 
-gst-plugin-libde265  -  # Плагин Libde265 (открытая реализация видеокодека h.265) для gstreamer
-https://aur.archlinux.org/packages/gst-plugin-libde265/
-https://aur.archlinux.org/gst-plugin-libde265.git 
-https://github.com/strukturag/gstreamer-libde265
 
-# libde265  -  #  ???
-libde265-git  -  # Открытая реализация видеокодека H.265 (версия git)
-https://aur.archlinux.org/packages/libde265-git/
-https://aur.archlinux.org/libde265-git.git
-https://github.com/strukturag/libde265/
-
-lib32-libde265 --noconfirm  # Открытая реализация видеокодека h.265 (32-разрядная версия)
-https://aur.archlinux.org/packages/lib32-libde265/
-https://aur.archlinux.org/lib32-libde265.git 
-https://github.com/strukturag/libde265
 
 ---------------------------------------
 
