@@ -579,9 +579,8 @@ echo " Действия ввода, выполняется сразу после
     [[ "$multimedia_prog" =~ [^10] ]]
 do
     :
-done 
-if [[ $multimedia_prog == 0 ]]; then  
-clear
+done  
+if [[ $multimedia_prog == 0 ]]; then   
 echo "" 
 echo " Установка Мультимедиа утилит пропущена "
 elif [[ $multimedia_prog == 1 ]]; then
