@@ -774,14 +774,20 @@ elif [[ $i_spotify == 1 ]]; then
   echo ""    
   echo " Установка Spotify "
 
-
+yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
 
 
 echo ""
 echo " Установка Spotify выполнена "
-elif [[ $i_gvim == 2 ]]; then
+elif [[ $i_spotify == 2 ]]; then
   echo ""    
   echo " Установка Spotify + дополнения "
+
+yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
+sudo pacman -S zenity --noconfirm  # Отображение графических диалоговых окон из сценариев оболочки
+sudo pacman -S ffmpeg-compat-57 --noconfirm  # Пакет совместимости для ffmpeg для предоставления 57 версий libavcodec, libavdevice и libavformat, больше не предоставляемых пакетом ffmpeg
+sudo pacman -S xdg-desktop-portal-gtk --noconfirm  # Бэкэнд GTK + для xdg-desktop-portal
+
 
 
 
@@ -789,10 +795,6 @@ elif [[ $i_gvim == 2 ]]; then
 echo ""
 echo " Установка Spotify + дополнения выполнена "
 fi
-
-
-
-
 
 
 
