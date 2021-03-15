@@ -739,14 +739,63 @@ fi
 # https://www.youtube.com/watch?v=G05VGD2_jGo&t=1s
 #-----------------------------
 
+clear
+echo "" 
+echo -e "${BLUE}:: ${NC}Установить Spotify?" 
+echo -e "${MAGENTA}:: ${BOLD}Spotify - это популярная на западе платформа для прослушивания музыки и организации плейлистов. ${NC}"
+echo " Radio Tray не является полнофункциональным музыкальным плеером, уже существует множество отличных музыкальных плееров. Однако было необходимо простое приложение с минимальным интерфейсом только для прослушивания онлайн-радио, не загружая другие плееры типа Amorok или Rhythmbox, а также веб-браузер, тем самым экономя системные ресурсы компьютера и энергопотребление ноутбуков. И это единственная цель Radio Tray. " 
+echo " Radio Tray - это бесплатное программное обеспечение, работающее под лицензией GPL. " 
+echo -e "${CYAN}:: ${NC}Установка Radio Tray (radiotray), или (radiotray-ng), проходит через сборку из исходников. То есть установка производиться с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/radiotray/), (https://aur.archlinux.org/packages/radiotray-ng/) - собирается и устанавливается. "
 
 
 
 
 
+Spotify-это коммерческий музыкальный потоковый сервис, предоставляющий контент с ограниченным управлением цифровыми правами от звукозаписывающих лейблов, включая Sony, EMI, Warner Music Group и Universal.
+
+Spotify работает по модели freemium (основные услуги бесплатны, а дополнительные функции предлагаются через платные подписки). Spotify зарабатывает на продаже премиальных потоковых подписок пользователям и размещении рекламы третьим лицам.
 
 
+Установка Spotify
+Spotify может быть установлен различными способами, основанными на ваших личных предпочтениях.
 
+
+Установка из Arch User Respository(AUR)
+Чтобы установить Spotify из AUR, используйте свой любимый менеджер пакетов или команду:
+
+pamac build spotify
+
+Установка в качестве приложения Flatpak
+Если у вас установлен flatpak, вы можете установить Spotify с помощью:
+
+flatpak установить spotify
+
+Установка в виде оснастки
+Если у вас установлен snapd, вы можете установить Spotify с помощью:
+
+snap install spotify
+
+Советы и рекомендации
+Ручная настройка медиаключей
+Если ваша система не обнаруживает медиаключей, их имена (по порядку) XF86AudioPlay, XF86AudioStop, XF86AudioNext, XF86AudioPrevious
+
+dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
+dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Предыдущий
+
+Открытие ссылок из Spotify
+Spotify может не открывать ссылки (например, для сброса пароля или входа в систему через Facebook). Чтобы исправить это, установите xdg-desktop-portal-gtk через:
+
+pamac install xdg-desktop-portal-gtk
+
+Подписи PGP не могут быть проверены
+Импортируйте открытый ключ с помощью
+
+curl -sS https://download.spotify.com/debian/pubkey.gpg | gpg --import -
+затем попробуйте установить его снова
+
+pamac build spotify
 
 
 
