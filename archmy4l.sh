@@ -718,7 +718,7 @@ rm -Rf vlc-tunein-radio
 echo ""
 echo " Установка VLC TuneIn Radio (vlc-tunein-radio) выполнена "
 ############ vlc-pause-click-plugin ##########
-yay -S vlc-pause-click-plugin --noconfirm  # Плагин для VLC, который приостанавливает / воспроизводит видео по щелчку мыши
+# yay -S vlc-pause-click-plugin --noconfirm  # Плагин для VLC, который приостанавливает / воспроизводит видео по щелчку мыши
 git clone https://aur.archlinux.org/vlc-pause-click-plugin.git  # Плагин для VLC, который приостанавливает / воспроизводит видео по щелчку мыши
 cd vlc-pause-click-plugin
 #makepkg -fsri
@@ -739,16 +739,24 @@ fi
 # https://www.youtube.com/watch?v=G05VGD2_jGo&t=1s
 #-----------------------------
 
----------------------------------------------
-
-vlc-pause-click-plugin  -  # Плагин для VLC, который приостанавливает / воспроизводит видео при щелчке мышью
-https://aur.archlinux.org/packages/vlc-pause-click-plugin/
 
 
-https://github.com/nurupo/vlc-pause-click-plugin
+yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
 
----------------------------------------------
+https://aur.archlinux.org/packages/spotify/
+https://wiki.archlinux.org/index.php/spotify
+-------------------------------------------
+spotify  -  # Запатентованный сервис потоковой передачи музыки
+https://aur.archlinux.org/packages/spotify/
+https://aur.archlinux.org/spotify.git 
+https://linuxhint.com/install-spotify-arch-linux/
+https://wiki.archlinux.org/index.php/Spotify  - Spotify
 
+Spotify
+Перейти к навигацииПерейти к поиску
+Spotify - это сервис потоковой передачи цифровой музыки с бизнес-моделью freemium. Эта статья в основном посвящена полуофициальному проприетарному клиенту Spotify для Linux , который разрабатывается инженерами Spotify в свободное время и активно не поддерживается Spotify. [1] В качестве альтернативы есть онлайн-плеер и ряд сторонних клиентов с открытым исходным кодом .
+Установка
+Spotify для Linux можно установить с пакетом spotify AUR . Если вы хотите воспроизводить локальные файлы, вам необходимо дополнительно установить zenity и ffmpeg-compat-57 AUR .
 
 
 
@@ -824,22 +832,7 @@ https://github.com/strukturag/libde265
 
 
 ##################################
-yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
 
-https://aur.archlinux.org/packages/spotify/
-https://wiki.archlinux.org/index.php/spotify
--------------------------------------------
-spotify  -  # Запатентованный сервис потоковой передачи музыки
-https://aur.archlinux.org/packages/spotify/
-https://aur.archlinux.org/spotify.git 
-https://linuxhint.com/install-spotify-arch-linux/
-https://wiki.archlinux.org/index.php/Spotify  - Spotify
-
-Spotify
-Перейти к навигацииПерейти к поиску
-Spotify - это сервис потоковой передачи цифровой музыки с бизнес-моделью freemium. Эта статья в основном посвящена полуофициальному проприетарному клиенту Spotify для Linux , который разрабатывается инженерами Spotify в свободное время и активно не поддерживается Spotify. [1] В качестве альтернативы есть онлайн-плеер и ряд сторонних клиентов с открытым исходным кодом .
-Установка
-Spotify для Linux можно установить с пакетом spotify AUR . Если вы хотите воспроизводить локальные файлы, вам необходимо дополнительно установить zenity и ffmpeg-compat-57 AUR .
 
 
 
