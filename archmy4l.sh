@@ -696,7 +696,8 @@ while
 
 
 
-
+yay -S vlc-tunein-radio --noconfirm  # Скрипт TuneIn Radio LUA для VLC 2.x
+yay -S vlc-pause-click-plugin --noconfirm  # Плагин для VLC, который приостанавливает / воспроизводит видео по щелчку мыши
 
 
 
@@ -744,8 +745,7 @@ read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
  
 yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
-yay -S vlc-tunein-radio --noconfirm  # Скрипт TuneIn Radio LUA для VLC 2.x
-yay -S vlc-pause-click-plugin --noconfirm  # Плагин для VLC, который приостанавливает / воспроизводит видео по щелчку мыши
+
 yay -S audiobook-git --noconfirm  # Простая программа для чтения аудиокниг. Написано на QT / QML и C ++
 yay -S cozy-audiobooks --noconfirm  # Современный проигрыватель аудиокниг для Linux с использованием GTK + 3
 
