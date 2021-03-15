@@ -191,134 +191,122 @@ echo 'Создадим папку (downloads), и переходим в созд
 mkdir ~/downloads
 cd ~/downloads
 
-echo 'Установка дополнительных шрифтов'
-# The installation of additional fonts
+echo 'Установка Мультимедиа утилит AUR'
+# 
 echo -e "${BLUE}
-'Список дополнительных шрифтов:${GREEN}
-ttf-bitstream-vera freemind '
-${NC}"
-read -p "1 - Да, 0 - Нет: " i_font
-if [[ $i_font == 1 ]]; then
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  #
-elif [[ $i_font == 0 ]]; then
-  echo 'Установка дополнительных шрифтов пропущена.'
-fi
-
-echo ""
-echo -e "${BLUE}:: ${NC}Ставим шрифты"
-# Ставим шрифты:  https://www.archlinux.org/packages/
-sudo pacman -S fontforge --noconfirm  # Редактор контурных и растровых шрифтов
-sudo pacman -S gsfonts --noconfirm  # (URW) ++ Базовый набор шрифтов [Уровень 2]
-sudo pacman -S ttf-croscore --noconfirm  # Основные шрифты Chrome OS, они метрически совместимы с MS, и хорошо смотрятся, содержат Arimo, Tinos, Cousine и тп.
-sudo pacman -S ttf-ubuntu-font-family --noconfirm  # Семейство шрифтов Ubuntu - красивые, не вырвиглазные шрифты без засечек, использую в DE и текстовых документах.
-sudo pacman -S ttf-font-awesome --noconfirm  # Культовый шрифт, разработанный для Bootstrap
-sudo pacman -S ttf-hack --noconfirm  # Ухоженный и оптически сбалансированный шрифт на основе Bitstream Vera Mono
-sudo pacman -S ttf-carlito --noconfirm  # Шрифт Google Carlito - метрически совместим с MS Calibri
-sudo pacman -S ttf-caladea --noconfirm  # Семейство шрифтов с засечками по метрике, совместимое с семейством шрифтов MS Cambria 
-sudo pacman -S ttf-bitstream-vera --noconfirm  # Шрифты Bitstream Vera
-sudo pacman -S ttf-droid --noconfirm  # Шрифты общего назначения, выпущенные Google как часть Android
-sudo pacman -S ttf-linux-libertine --noconfirm  # Шрифты OpenType с засечками (Libertine) и Sans Serif (Biolinum) с большим охватом Unicode
-sudo pacman -S gnu-free-fonts --noconfirm  # Бесплатное семейство масштабируемых контурных шрифтов
-sudo pacman -S powerline-fonts --noconfirm  # Исправленные шрифты для powerline
-sudo pacman -S ttf-roboto-mono --noconfirm  # Моноширинное дополнение к семейству роботов Roboto
-sudo pacman -S ttf-nerd-fonts-symbols --noconfirm  # Большое количество дополнительных глифов из популярных `` культовых шрифтов '' (2048-em)
-sudo pacman -S ttf-ionicons --noconfirm  # Шрифт из мобильного фреймворка Ionic
-sudo pacman -S ttf-arphic-ukai --noconfirm  # Шрифт CJK Unicode в стиле Kaiti
-sudo pacman -S ttf-arphic-uming --noconfirm  # CJK Unicode шрифт в стиле Ming
-sudo pacman -S ttf-inconsolata --noconfirm  # Моноширинный шрифт для красивых списков кода и для терминала - шрифт для "коддинга", - Можно не ставить.
-sudo pacman -S sdl_ttf --noconfirm  # Библиотека, позволяющая использовать шрифты TrueType в ваших приложениях SDL
-sudo pacman -S ttf-bitstream-vera --noconfirm  # Шрифты Bitstream Vera.
-sudo pacman -S font-bh-ttf --noconfirm  # Шрифты X.org Luxi Truetype 
-sudo pacman -S xorg-fonts-type1 --noconfirm  # Шрифты X.org Type1
-# Китайские, Японские, Индийские шрифт
-sudo pacman -S opendesktop-fonts --noconfirm  # Китайские шрифты TrueType 
-sudo pacman -S ttf-fireflysung --noconfirm  # Китайские иероглифы: - ;
-sudo pacman -S ttf-sazanami --noconfirm  # Японские шрифты
-sudo pacman -S ttf-hanazono --noconfirm  # Бесплатный японский шрифт кандзи, который содержит около 78 685 символов (и 2 пробела), определенный в стандарте ISO / IEC 10646 / стандарте Unicode.
-sudo pacman -S ttf-indic-otf --noconfirm  # Коллекция индийских шрифтов Opentype
-
-sudo pacman -S adobe-source-code-pro-fonts --noconfirm  # Семейство моноширинных шрифтов для пользовательского интерфейса и среды программирования
-sudo pacman -S adobe-source-han-sans-cn-fonts --noconfirm  # Adobe Source Han Sans Subset OTF - упрощенные китайские шрифты OpenType / CFF
-sudo pacman -S adobe-source-han-sans-jp-fonts --noconfirm  # Adobe Source Han Sans Subset OTF - японские шрифты OpenType / CFF
-sudo pacman -S adobe-source-han-sans-kr-fonts --noconfirm  # Adobe Source Han Sans Subset OTF - корейские шрифты OpenType / CFF
-sudo pacman -S adobe-source-sans-pro-fonts --noconfirm  # Семейство шрифтов без засечек для сред пользовательского интерфейса
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  # 
-sudo pacman -S  --noconfirm  #
-
-# ---------------------------------
-# Узнать стоя или нет? 
-
-font-bitstream-speedo --noconfirm  # https://github.com/freedesktop/xorg-font-bitstream-speedo
-# ----------------------------------
-
-sudo pacman -S cantarell-fonts --noconfirm  # Шрифт Humanist sans serif
-
-echo 'Обновим информацию о шрифтах'
-# Update information about fonts
-sudo fc-cache -f -v
-
-echo 'Установка дополнительных шрифтов AUR'
-# The installation of additional fonts AUR
-echo -e "${BLUE}
-'Список дополнительных шрифтов AUR:${GREEN}
-ttf-ms-fonts font-manager'
+'Список Мультимедиа утилит AUR:${GREEN}
+ spotify vlc-tunein-radio vlc-pause-click-plugin audiobook-git cozy-audiobooks m4baker-git mp3gain easymp3gain-gtk2 myrulib-git'
 ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-yay -S font-manager --noconfirm  # Простое приложение для управления шрифтами для GTK + Desktop Environments   
-yay -S ttf-ms-fonts --noconfirm  # Основные шрифты TTF от Microsoft
-yay -S ttf-ms-win8 --noconfirm  # По желанию: (содержит в себе ttf-ms-fonts, ttf-vista-fonts и ttf-win7-fonts, т.е. всё что надо включая Calibri и .т.п.)
-yay -S artwiz-fonts --noconfirm  # Для пакета LibreOffice
-yay -S ttf-clear-sans --noconfirm  # Универсальный шрифт OpenType для экрана, печати и Интернета
-yay -S ttf-monaco --noconfirm  # Моноширинный шрифт без засечек Monaco со специальными символами
-yay -S montserrat-font-ttf --noconfirm  # Геометрический шрифт с кириллицей и расширенной латиницей от Джульетты Улановской
-yay -S ttf-paratype --noconfirm  # Семейство шрифтов ParaType с расширенными наборами символов кириллицы и латиницы
-yay -S powerline-fonts-git --noconfirm  # Исправленные шрифты для пользователей Powerline
-yay -S ttf-comfortaa --noconfirm  # Закругленный геометрический шрифт без засечек от Google, автор - Йохан Аакерлунд
-yay -S artwiz-fonts --noconfirm  # Это набор (улучшенных) шрифтов artwiz
-yay -S ttf-cheapskate --noconfirm  # Шрифты TTF от Дастина Норландера
-yay -S ttf-symbola --noconfirm  # Шрифт для символьных блоков стандарта Unicode (TTF)
-yay -S ttf-nerd-fonts-hack-complete-git --noconfirm  # Шрифт, разработанный для исходного кода. Исправлены иконки Nerd Fonts
-yay -S ttf-font-logos --noconfirm  # Значок шрифта с логотипами популярных дистрибутивов Linux
-yay -S ttf-font-icons --noconfirm  # Неперекрывающееся сочетание иконических шрифтов Ionicons и Awesome 
-yay -S ttf-droid-sans-mono-slashed-powerline-git --noconfirm  # Droid Sans Mono для Powerline (Slashed Zero) - шрифт с "треугольником" для powerline, использую в ZSH prompt
-yay -S ttf-dejavu-sans-mono-powerline-git --noconfirm  # DejaVu Sans Mono для Powerline
-yay -S ttf-material-icons-git --noconfirm  # Шрифт значка Google Material Design
-# yay -S ttf-wps-fonts --noconfirm  # Если установлен WPS - Символьные шрифты требуются wps-office
+ 
 
-yay -S nerd-fonts-hack --noconfirm  # Патченный взлом шрифтов из библиотеки nerd-fonts (https://aur.archlinux.org/packages/nerd-fonts-hack/)
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
+
+yay -S audiobook-git --noconfirm  # Простая программа для чтения аудиокниг. Написано на QT / QML и C ++
+yay -S cozy-audiobooks --noconfirm  # Современный проигрыватель аудиокниг для Linux с использованием GTK + 3
+
+yay -S mp3gain --noconfirm  # Нормализатор mp3 без потерь со статистическим анализом
+yay -S easymp3gain-gtk2 --noconfirm  # Графический интерфейс пользователя (GUI) GTK2 для MP3Gain, VorbisGain и AACGain
+
+yay -S m4baker-git --noconfirm  # Создавайте полнофункциональные m4b-аудиокниги (Собирается пакет долго!)
+yay -S myrulib-git --noconfirm  # Домашняя библиотека с поддержкой сайта lib.rus.ec
+yay -S  --noconfirm   
+yay -S  --noconfirm
+yay -S  --noconfirm
+yay -S  --noconfirm
+yay -S  --noconfirm
+
 
 elif [[ $prog_set == 0 ]]; then
-  echo 'Установка дополнительных шрифтов AUR пропущена.'
+  echo 'Установка Мультимедиа утилит AUR пропущена.'
 fi
 
-echo 'Обновим информацию о шрифтах'
-# Update information about fonts
-sudo fc-cache -f -v
+
+
+#############################
+ echo " Установка дополнительных мультимедиа кодеков и утилит (пакетов) "
+#options+=("gst-plugin-libde265" "(AUR)" off)
+#options+=("libde265" "(AUR)" off)
+
+sudo pacman -S libde265 --noconfirm  # Открытая реализация видеокодека h.265
+https://archlinux.org/packages/extra/x86_64/libde265/
+https://github.com/strukturag/libde265
+
+yay -S gst-plugin-libde265 --noconfirm  # Плагин Libde265 (открытая реализация видеокодека h.265) для gstreamer
+https://aur.archlinux.org/packages/gst-plugin-libde265/
+https://aur.archlinux.org/gst-plugin-libde265.git
+https://github.com/strukturag/gstreamer-libde265
+
+yay -S libde265-git --noconfirm  # Открытая реализация видеокодека H.265 (версия git)
+https://aur.archlinux.org/packages/libde265-git/
+https://aur.archlinux.org/libde265-git.git 
+https://github.com/strukturag/libde265/
+
+yay -S lib32-libde265 --noconfirm  # Открытая реализация видеокодека h.265 (32-разрядная версия)
+https://aur.archlinux.org/packages/lib32-libde265/
+https://aur.archlinux.org/lib32-libde265.git
+https://github.com/strukturag/libde265
+
+
+#yay -S bluez-firmware --noconfirm  # Прошивки для чипов Bluetooth Broadcom BCM203x и STLC2300
+#yay -S pulseaudio-ctl --noconfirm  # Управляйте громкостью pulseaudio из оболочки или с помощью сочетаний клавиш
+
+
+
+
+
+##################################
+
+
+
+
+
+audiobook-git  -  # Простая программа для чтения аудиокниг. Написано на QT / QML и C ++ 
+https://aur.archlinux.org/packages/audiobook-git/
+https://aur.archlinux.org/audiobook-git.git 
+https://github.com/bit-shift-io/audiobook
+
+----------------------------------------------
+
+cozy-audiobooks  -  # Современный проигрыватель аудиокниг для Linux с использованием GTK + 3
+https://aur.archlinux.org/packages/cozy-audiobooks/
+https://aur.archlinux.org/cozy-audiobooks.git
+https://github.com/geigi/cozy
+
+cosy-audiobooks-git  -  # Современный проигрыватель аудиокниг для Linux и macOS с использованием GTK + 3
+https://aur.archlinux.org/packages/cozy-audiobooks-git/
+https://aur.archlinux.org/cozy-audiobooks-git.git
+https://cozy.geigi.de
+
+------------------------------------------------
+
+m4baker-git  -  # Создавайте полнофункциональные m4b-аудиокниги
+https://aur.archlinux.org/packages/m4baker-git/
+https://aur.archlinux.org/m4baker-git.git
+https://github.com/crabmanX/m4baker
+
+------------------------------------------------
+
+mp3gain  -  # Нормализатор mp3 без потерь со статистическим анализом
+https://aur.archlinux.org/packages/mp3gain/
+https://aur.archlinux.org/mp3gain.git 
+https://sourceforge.net/projects/mp3gain/
+
+------------------------------------------------
+
+easymp3gain-gtk2  -  # Графический интерфейс пользователя (GUI) GTK2 для MP3Gain, VorbisGain и AACGain
+https://aur.archlinux.org/packages/easymp3gain-gtk2/
+https://aur.archlinux.org/easymp3gain-gtk2.git
+http://easymp3gain.sourceforge.net/
+
+------------------------------------------------
+
+myrulib-git  -  # Домашняя библиотека с поддержкой сайта lib.rus.ec
+https://aur.archlinux.org/packages/myrulib-git/
+https://aur.archlinux.org/myrulib-git.git 
+http://www.lintest.ru/wiki/MyRuLib
+
+
 
 
 
