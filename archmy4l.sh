@@ -664,6 +664,9 @@ cd ..   # поднимаемся на уровень выше (выходим и
 # rm -rf radiotray-ng
 rm -Rf radiotray
 #rm -Rf radiotray-ng
+echo ""
+echo " Установка TimeSet (timeset) выполнена "
+fi
 #-----------------------------
 # Домашняя страница:
 # http://radiotray.sourceforge.net/
@@ -700,38 +703,42 @@ echo " Установка дополнительных пакетов для п�
 elif [[ $vlc_plugin == 1 ]]; then
 echo ""
 echo " Установка дополнительных пакетов для проигрыватель VLC " 
+############ vlc-tunein-radio ##########
+yay -S vlc-tunein-radio --noconfirm  # Скрипт TuneIn Radio LUA для VLC 2.x,3.x
+git clone https://aur.archlinux.org/vlc-tunein-radio.git   # Скрипт TuneIn Radio LUA для VLC 2.x,3.x
+cd vlc-tunein-radio
+#makepkg -fsri
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf vlc-tunein-radio 
+rm -Rf vlc-tunein-radio
 
-
-
-
-
-
-
-
-
-
-yay -S vlc-tunein-radio --noconfirm  # Скрипт TuneIn Radio LUA для VLC 2.x
+############ vlc-pause-click-plugin ##########
 yay -S vlc-pause-click-plugin --noconfirm  # Плагин для VLC, который приостанавливает / воспроизводит видео по щелчку мыши
-
-
-
-
-https://github.com/diegofn/TuneIn-Radio-VLC
-Прослушивание интернет-радио с помощью VLC media player
-https://www.youtube.com/watch?v=vWEzW_2ZYAU
-
-https://github.com/nurupo/vlc-pause-click-plugin
-Делаем Play и Pause кликом мыши в плеере vlc
-https://www.youtube.com/watch?v=G05VGD2_jGo&t=1s
-
-
---------------------------------------------
-
-vlc-tunein-radio  -  # Скрипт TuneIn Radio LUA для VLC 2.x
-https://aur.archlinux.org/packages/vlc-tunein-radio/
-https://aur.archlinux.org/vlc-tunein-radio.git 
-
-https://github.com/diegofn/TuneIn-Radio-VLC
+git clone https://aur.archlinux.org/radiotray.git  # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
+#git clone https://aur.archlinux.org/radiotray-ng.git  # Интернет-радио плеер для Linux
+cd radiotray
+#cd radiotray-ng
+#makepkg -fsri
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf radiotray 
+rm -Rf radiotray
+echo ""
+echo " Установка TimeSet (timeset) выполнена "
+fi
+#-----------------------------
+# https://github.com/diegofn/TuneIn-Radio-VLC
+# https://github.com/nurupo/vlc-pause-click-plugin
+# Делаем Play и Pause кликом мыши в плеере vlc
+# https://www.youtube.com/watch?v=G05VGD2_jGo&t=1s
+#-----------------------------
 
 ---------------------------------------------
 
@@ -786,7 +793,7 @@ fi
 
 
 #############################
- echo " Установка мультимедиа кодеков и утилит (пакетов) "
+ echo " Установка дополнительных мультимедиа кодеков и утилит (пакетов) "
 #options+=("gst-plugin-libde265" "(AUR)" off)
 #options+=("libde265" "(AUR)" off)
 
@@ -884,7 +891,7 @@ http://www.lintest.ru/wiki/MyRuLib
 
 
 
-
+fi
 
 
 
