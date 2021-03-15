@@ -715,7 +715,8 @@ pwd    # покажет в какой директории мы находимс
 cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf vlc-tunein-radio 
 rm -Rf vlc-tunein-radio
-
+echo ""
+echo " Установка VLC TuneIn Radio (vlc-tunein-radio) выполнена "
 ############ vlc-pause-click-plugin ##########
 yay -S vlc-pause-click-plugin --noconfirm  # Плагин для VLC, который приостанавливает / воспроизводит видео по щелчку мыши
 git clone https://aur.archlinux.org/radiotray.git  # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
@@ -731,7 +732,7 @@ cd ..   # поднимаемся на уровень выше (выходим и
 # rm -rf radiotray 
 rm -Rf radiotray
 echo ""
-echo " Установка TimeSet (timeset) выполнена "
+echo " Установка VLC Pause Click Plugin (vlc-pause-click-plugin) выполнена "
 fi
 #-----------------------------
 # https://github.com/diegofn/TuneIn-Radio-VLC
