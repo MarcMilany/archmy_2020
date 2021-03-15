@@ -4534,7 +4534,9 @@ elif [[ $auto_firewall == 1 ]]; then
   echo " Добавляем в автозагрузку UFW (сетевой экран) "
 sudo systemctl enable ufw
 #sudo systemctl start ufw
-echo " UFW (сетевой экран) успешно добавлен в автозагрузку " 
+echo " UFW (сетевой экран) успешно добавлен в автозагрузку "
+
+
 fi
 
 sleep 01
@@ -4549,7 +4551,7 @@ echo ""
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_status  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да проверить,     0 - НЕТ - Пропустить проверку: " i_status  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
     [[ "$i_status" =~ [^10] ]]
 do
