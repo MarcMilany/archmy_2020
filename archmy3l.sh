@@ -4542,7 +4542,25 @@ echo ""
 echo -e "${BLUE}:: ${NC}Проверим статус запуска Firewall UFW (сетевой экран)" 
 #echo 'Проверим статус запуска Firewall UFW (сетевой экран)'
 # Check the startup status of Firewall UFW (network screen)
-echo -e "${CYAN}:: ${NC}Если нужно ВЫКлючить UFW (сетевой экран), то используйте команду: sudo ufw disable."
+echo -e "${MAGENTA}:: ${BOLD}Если нужно ВЫКлючить UFW (сетевой экран), то используйте команду: sudo ufw disable. ${NC}"
+echo -e "${CYAN}:: ${NC}Проверим статус UFW (сетевой экран), если таковой был вами установлен и запущен."
+echo " Будьте внимательны! В данной опции выбор остаётся за вами. "
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_ufw_status  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_ufw_status" =~ [^10] ]]
+do
+    :
+done 
+if [[ $i_ufw_status == 0 ]]; then 
+echo ""   
+echo " Проверка статуса UFW пропущена "
+elif [[ $i_ufw_status == 1 ]]; then
+  echo ""  
+  echo " Проверим статус UFW (сетевой экран) "
 sudo ufw status
 #sudo ufw status --verbose
 # ----------------------------------------------------------
