@@ -741,6 +741,16 @@ fi
 
 
 
+
+
+
+
+
+
+
+
+
+
 yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
 
 https://aur.archlinux.org/packages/spotify/
