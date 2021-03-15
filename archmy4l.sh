@@ -669,7 +669,7 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done 
-if [[ $multimedia_prog == 0 ]]; then
+if [[ $multimedia_prog == 0 ]]; then  
 clear
 echo "" 
 echo " Установка Мультимедиа утилит пропущена "
