@@ -4501,7 +4501,22 @@ elif [[ $set_firewall == 1 ]]; then
   echo ""  
   echo " Запускаем UFW (сетевой экран) "
 sudo ufw enable
+sleep 01
+echo ""
+echo -e "${BLUE}:: ${NC}Проверим статус запуска Firewall UFW (сетевой экран)" 
+echo -e "${MAGENTA}:: ${BOLD}Если нужно ВЫКлючить UFW (сетевой экран), то используйте команду: sudo ufw disable. ${NC}"
+echo -e "${CYAN}:: ${NC}Проверим статус UFW (сетевой экран), если таковой был вами установлен и запущен."
+echo "" 
+sudo ufw status
+#sudo ufw status --verbose
+sleep 01
 fi
+# -----------------------------------
+# Вы можете проверить статус работы UFW следующей командой:
+# sudo ufw status verbose  # -v, --verbose  -быть вербальным
+# Если нужно выключить, то используйте команду:
+# sudo ufw disable
+# -------------------------------------
 
 echo ""
 echo -e "${GREEN}==> ${NC}Добавляем в автозагрузку Firewall UFW (сетевой экран)?"
@@ -4535,42 +4550,8 @@ elif [[ $auto_firewall == 1 ]]; then
 sudo systemctl enable ufw
 #sudo systemctl start ufw
 echo " UFW (сетевой экран) успешно добавлен в автозагрузку "
-
-
-fi
-
 sleep 01
-echo ""
-echo -e "${BLUE}:: ${NC}Проверим статус запуска Firewall UFW (сетевой экран)" 
-#echo 'Проверим статус запуска Firewall UFW (сетевой экран)'
-# Check the startup status of Firewall UFW (network screen)
-echo -e "${MAGENTA}:: ${BOLD}Если нужно ВЫКлючить UFW (сетевой экран), то используйте команду: sudo ufw disable. ${NC}"
-echo -e "${CYAN}:: ${NC}Проверим статус UFW (сетевой экран), если таковой был вами установлен и запущен."
-echo " Будьте внимательны! В данной опции выбор остаётся за вами. "
-echo "" 
-while  
-echo " Действия ввода, выполняется сразу после нажатия клавиши "
-    read -n1 -p "      
-    1 - Да проверить,     0 - НЕТ - Пропустить проверку: " i_status  # sends right after the keypress; # отправляет сразу после нажатия клавиши
-    echo ''
-    [[ "$i_status" =~ [^10] ]]
-do
-    :
-done 
-if [[ $i_status == 0 ]]; then 
-echo ""   
-echo " Проверка статуса UFW пропущена "
-elif [[ $i_status == 1 ]]; then
-  echo ""  
-  echo " Проверим статус UFW (сетевой экран) "
-sudo ufw status
-#sudo ufw status --verbose
-# ----------------------------------------------------------
-# Вы можете проверить статус работы UFW следующей командой:
-# sudo ufw status verbose  # -v, --verbose  -быть вербальным
-# Если нужно выключить, то используйте команду:
-# sudo ufw disable
-# ------------------------------------------------------------
+fi
 
 clear
 echo ""
