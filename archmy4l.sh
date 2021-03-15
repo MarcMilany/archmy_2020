@@ -681,10 +681,10 @@ rm -Rf radiotray
 clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить дополнения для проигрыватель VLC, если таковой был вами установлен?" 
-echo -e "${MAGENTA}:: ${BOLD}VLC TuneIn Radio (vlc-tunein-radio) - скрипт TuneIn Radio LUA для VLC 2.x, предназначенный для прослушивания интернет-радиостанций в операционных системах Linux. ${NC}"
-echo " Radio Tray не является полнофункциональным музыкальным плеером, уже существует множество отличных музыкальных плееров. Однако было необходимо простое приложение с минимальным интерфейсом только для прослушивания онлайн-радио, не загружая другие плееры типа Amorok или Rhythmbox, а также веб-браузер, тем самым экономя системные ресурсы компьютера и энергопотребление ноутбуков. И это единственная цель Radio Tray. " 
-echo " Radio Tray - это бесплатное программное обеспечение, работающее под лицензией GPL. " 
-echo -e "${CYAN}:: ${NC}Установка Radio Tray (radiotray), или (radiotray-ng), проходит через сборку из исходников. То есть установка производиться с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/radiotray/), (https://aur.archlinux.org/packages/radiotray-ng/) - собирается и устанавливается. "
+echo -e "${MAGENTA}:: ${BOLD}В сценарии (скрипте) представлены несколько утилит: ${NC}"
+echo " VLC TuneIn Radio (vlc-tunein-radio) - скрипт (сценарий) LUA Service Discovery для VLC 2.x и 3.x, предназначенный для прослушивания интернет-радиостанций в операционных системах Linux. " 
+echo " VLC Pause Click Plugin (vlc-pause-click-plugin) - плагин для VLC, который приостанавливает / воспроизводит видео по щелчку мыши. " 
+echo -e "${CYAN}:: ${NC}Установка VLC TuneIn Radio (vlc-tunein-radio), и VLC Pause Click Plugin (vlc-pause-click-plugin) проходит через сборку из исходников. То есть установка производиться с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/radiotray/), (https://aur.archlinux.org/packages/radiotray-ng/) - собирается и устанавливается. "
 echo " Будьте внимательны! Установка пакета (radiotray-ng) - Закомментирована, если Вам нужен именно этот пакет, то раскомментируйте строки его установки, а строки установки пакета (radiotray) - закомментируйте. В данной опции выбор остаётся за вами. "
 echo "" 
 while 
