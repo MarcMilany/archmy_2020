@@ -665,7 +665,7 @@ cd ..   # поднимаемся на уровень выше (выходим и
 rm -Rf radiotray
 #rm -Rf radiotray-ng
 echo ""
-echo " Установка TimeSet (timeset) выполнена "
+echo " Установка Интернет-радио Radio Tray выполнена "
 fi
 #-----------------------------
 # Домашняя страница:
@@ -704,7 +704,7 @@ elif [[ $vlc_plugin == 1 ]]; then
 echo ""
 echo " Установка дополнительных пакетов для проигрыватель VLC " 
 ############ vlc-tunein-radio ##########
-yay -S vlc-tunein-radio --noconfirm  # Скрипт TuneIn Radio LUA для VLC 2.x,3.x
+# yay -S vlc-tunein-radio --noconfirm  # Скрипт TuneIn Radio LUA для VLC 2.x,3.x
 git clone https://aur.archlinux.org/vlc-tunein-radio.git   # Скрипт TuneIn Radio LUA для VLC 2.x,3.x
 cd vlc-tunein-radio
 #makepkg -fsri
@@ -719,18 +719,16 @@ echo ""
 echo " Установка VLC TuneIn Radio (vlc-tunein-radio) выполнена "
 ############ vlc-pause-click-plugin ##########
 yay -S vlc-pause-click-plugin --noconfirm  # Плагин для VLC, который приостанавливает / воспроизводит видео по щелчку мыши
-git clone https://aur.archlinux.org/radiotray.git  # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
-#git clone https://aur.archlinux.org/radiotray-ng.git  # Интернет-радио плеер для Linux
-cd radiotray
-#cd radiotray-ng
+git clone https://aur.archlinux.org/vlc-pause-click-plugin.git  # Плагин для VLC, который приостанавливает / воспроизводит видео по щелчку мыши
+cd vlc-pause-click-plugin
 #makepkg -fsri
 # makepkg -si
 makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
 pwd    # покажет в какой директории мы находимся
 cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
-# rm -rf radiotray 
-rm -Rf radiotray
+# rm -rf vlc-pause-click-plugin 
+rm -Rf vlc-pause-click-plugin
 echo ""
 echo " Установка VLC Pause Click Plugin (vlc-pause-click-plugin) выполнена "
 fi
@@ -745,7 +743,7 @@ fi
 
 vlc-pause-click-plugin  -  # Плагин для VLC, который приостанавливает / воспроизводит видео при щелчке мышью
 https://aur.archlinux.org/packages/vlc-pause-click-plugin/
-https://aur.archlinux.org/vlc-pause-click-plugin.git 
+
 
 https://github.com/nurupo/vlc-pause-click-plugin
 
@@ -826,6 +824,7 @@ https://github.com/strukturag/libde265
 
 
 ##################################
+yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
 
 https://aur.archlinux.org/packages/spotify/
 https://wiki.archlinux.org/index.php/spotify
