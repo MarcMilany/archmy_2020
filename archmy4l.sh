@@ -708,15 +708,14 @@ vlc-tunein-radio  -  # Скрипт TuneIn Radio LUA для VLC 2.x
 https://aur.archlinux.org/packages/vlc-tunein-radio/
 https://aur.archlinux.org/vlc-tunein-radio.git 
 
-https://aur.archlinux.org/vlc-tunein-radio.git 
 https://github.com/diegofn/TuneIn-Radio-VLC
 
 ---------------------------------------------
 
 vlc-pause-click-plugin  -  # Плагин для VLC, который приостанавливает / воспроизводит видео при щелчке мышью
 https://aur.archlinux.org/packages/vlc-pause-click-plugin/
-
 https://aur.archlinux.org/vlc-pause-click-plugin.git 
+
 https://github.com/nurupo/vlc-pause-click-plugin
 
 ---------------------------------------------
