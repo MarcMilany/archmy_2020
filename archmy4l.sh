@@ -743,65 +743,22 @@ clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить Spotify?" 
 echo -e "${MAGENTA}:: ${BOLD}Spotify - это популярная на западе платформа для прослушивания музыки и организации плейлистов. ${NC}"
-echo " Radio Tray не является полнофункциональным музыкальным плеером, уже существует множество отличных музыкальных плееров. Однако было необходимо простое приложение с минимальным интерфейсом только для прослушивания онлайн-радио, не загружая другие плееры типа Amorok или Rhythmbox, а также веб-браузер, тем самым экономя системные ресурсы компьютера и энергопотребление ноутбуков. И это единственная цель Radio Tray. " 
-echo " Radio Tray - это бесплатное программное обеспечение, работающее под лицензией GPL. " 
-echo -e "${CYAN}:: ${NC}Установка Radio Tray (radiotray), или (radiotray-ng), проходит через сборку из исходников. То есть установка производиться с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/radiotray/), (https://aur.archlinux.org/packages/radiotray-ng/) - собирается и устанавливается. "
+echo " Spotify - это коммерческий музыкальный потоковый сервис, предоставляющий контент с ограниченным управлением цифровыми правами от звукозаписывающих лейблов, включая Sony, EMI, Warner Music Group и Universal. " 
+echo " Spotify работает по модели freemium (основные услуги бесплатны, а дополнительные функции предлагаются через платные подписки). Spotify зарабатывает на продаже премиальных потоковых подписок пользователям и размещении рекламы третьим лицам. " 
+echo -e "${CYAN}:: ${NC}Установка Spotify (spotify ), или (radiotray-ng), проходит через сборку из исходников. То есть установка производиться с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/radiotray/), (https://aur.archlinux.org/packages/radiotray-ng/) - собирается и устанавливается. "
 
-
-
-
-
-Spotify-это коммерческий музыкальный потоковый сервис, предоставляющий контент с ограниченным управлением цифровыми правами от звукозаписывающих лейблов, включая Sony, EMI, Warner Music Group и Universal.
-
-Spotify работает по модели freemium (основные услуги бесплатны, а дополнительные функции предлагаются через платные подписки). Spotify зарабатывает на продаже премиальных потоковых подписок пользователям и размещении рекламы третьим лицам.
-
-
-Установка Spotify
-Spotify может быть установлен различными способами, основанными на ваших личных предпочтениях.
-
-
-Установка из Arch User Respository(AUR)
-Чтобы установить Spotify из AUR, используйте свой любимый менеджер пакетов или команду:
-
-pamac build spotify
-
-Установка в качестве приложения Flatpak
-Если у вас установлен flatpak, вы можете установить Spotify с помощью:
-
-flatpak установить spotify
-
-Установка в виде оснастки
-Если у вас установлен snapd, вы можете установить Spotify с помощью:
-
-snap install spotify
-
-Советы и рекомендации
-Ручная настройка медиаключей
-Если ваша система не обнаруживает медиаключей, их имена (по порядку) XF86AudioPlay, XF86AudioStop, XF86AudioNext, XF86AudioPrevious
-
-dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
-dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
-dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Предыдущий
 
 Открытие ссылок из Spotify
 Spotify может не открывать ссылки (например, для сброса пароля или входа в систему через Facebook). Чтобы исправить это, установите xdg-desktop-portal-gtk через:
 
-pamac install xdg-desktop-portal-gtk
-
-Подписи PGP не могут быть проверены
-Импортируйте открытый ключ с помощью
-
-curl -sS https://download.spotify.com/debian/pubkey.gpg | gpg --import -
-затем попробуйте установить его снова
-
-pamac build spotify
+pamac install xdg-desktop-portal-gtk  # Бэкэнд GTK + для xdg-desktop-portal
+https://archlinux.org/packages/extra/x86_64/xdg-desktop-portal-gtk/
+https://github.com/flatpak/xdg-desktop-portal-gtk
 
 Если у вас есть уже существующий, вы можете легко войти в свою учетную запись. В противном случае перейдите в Spotify и создайте учетную запись .
+Интерфейс довольно понятен. Если ваша система использует прокси, вы можете указать настройки для приложения. Вы также можете указать тип прокси (Socks4, Socks5, HTTP и т.д.).Наслаждайтесь музыкой!
+Если вы хотите воспроизводить локальные файлы, вам необходимо дополнительно установить zenity и ffmpeg-compat-57 AUR.
 
-Интерфейс довольно понятен. Если ваша система использует прокси, вы можете указать настройки для приложения. Вы также можете указать тип прокси (Socks4, Socks5, HTTP и т. Д.) Или «Без прокси».
-
-Наслаждайтесь музыкой!
 
 
 yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
@@ -815,12 +772,13 @@ https://aur.archlinux.org/spotify.git
 https://linuxhint.com/install-spotify-arch-linux/
 https://wiki.archlinux.org/index.php/Spotify  - Spotify
 
-Spotify
-Перейти к навигацииПерейти к поиску
-Spotify - это сервис потоковой передачи цифровой музыки с бизнес-моделью freemium. Эта статья в основном посвящена полуофициальному проприетарному клиенту Spotify для Linux , который разрабатывается инженерами Spotify в свободное время и активно не поддерживается Spotify. [1] В качестве альтернативы есть онлайн-плеер и ряд сторонних клиентов с открытым исходным кодом .
-Установка
-Spotify для Linux можно установить с пакетом spotify AUR . Если вы хотите воспроизводить локальные файлы, вам необходимо дополнительно установить zenity и ffmpeg-compat-57 AUR .
+zenity -  # Отображение графических диалоговых окон из сценариев оболочки
+https://archlinux.org/packages/extra/x86_64/zenity/
+https://gitlab.gnome.org/GNOME/zenity
 
+ffmpeg-compat-57 -  # Пакет совместимости для ffmpeg для предоставления 57 версий libavcodec, libavdevice и libavformat, больше не предоставляемых пакетом ffmpeg
+https://aur.archlinux.org/packages/ffmpeg-compat-57/
+https://aur.archlinux.org/ffmpeg-compat-57.git
 
 
 echo " . "  
