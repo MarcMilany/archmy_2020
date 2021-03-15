@@ -744,33 +744,40 @@ echo ""
 echo -e "${BLUE}:: ${NC}Установить Spotify?" 
 echo -e "${MAGENTA}:: ${BOLD}Spotify - это популярная на западе платформа для прослушивания музыки и организации плейлистов. ${NC}"
 echo " Spotify - это коммерческий музыкальный потоковый сервис, предоставляющий контент с ограниченным управлением цифровыми правами от звукозаписывающих лейблов, включая Sony, EMI, Warner Music Group и Universal. " 
-echo " Spotify работает по модели freemium (основные услуги бесплатны, а дополнительные функции предлагаются через платные подписки). Spotify зарабатывает на продаже премиальных потоковых подписок пользователям и размещении рекламы третьим лицам. " 
-echo -e "${CYAN}:: ${NC}Установка Spotify (spotify ), или (radiotray-ng), проходит через сборку из исходников. То есть установка производиться с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/radiotray/), (https://aur.archlinux.org/packages/radiotray-ng/) - собирается и устанавливается. "
+echo " Spotify работает по модели freemium (основные услуги бесплатны, а дополнительные функции предлагаются через платные подписки). Spotify зарабатывает на продаже премиальных потоковых подписок пользователям и размещении рекламы третьим лицам. "
+
+echo " Если вы хотите воспроизводить локальные файлы, вам необходимо дополнительно установить (пакеты) zenity и ffmpeg-compat-57. "
+echo " Spotify может не открывать ссылки (например, для сброса пароля или входа в систему через Facebook). Чтобы исправить это, установите (пакет) xdg-desktop-portal-gtk. "
 
 
-Открытие ссылок из Spotify
-Spotify может не открывать ссылки (например, для сброса пароля или входа в систему через Facebook). Чтобы исправить это, установите xdg-desktop-portal-gtk через:
 
-pamac install xdg-desktop-portal-gtk  # Бэкэнд GTK + для xdg-desktop-portal
-https://archlinux.org/packages/extra/x86_64/xdg-desktop-portal-gtk/
-https://github.com/flatpak/xdg-desktop-portal-gtk
 
-Если у вас есть уже существующий, вы можете легко войти в свою учетную запись. В противном случае перейдите в Spotify и создайте учетную запись .
-Интерфейс довольно понятен. Если ваша система использует прокси, вы можете указать настройки для приложения. Вы также можете указать тип прокси (Socks4, Socks5, HTTP и т.д.).Наслаждайтесь музыкой!
-Если вы хотите воспроизводить локальные файлы, вам необходимо дополнительно установить zenity и ffmpeg-compat-57 AUR.
+
+echo -e "${CYAN}:: ${NC}Установка Spotify (spotify) проходит через сборку из исходников. То есть установка производиться с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/spotify/) - собирается и устанавливается. "
+echo -e "${CYAN}:: ${NC}Установка дополнительных пакетов для Spotify - (zenity), (ffmpeg-compat-57), (xdg-desktop-portal-gtk) проходит из 'Официальных репозиториев Arch Linux' - (Не AUR). "
+
+
+
+
+
+
 
 
 
 yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
 
-https://aur.archlinux.org/packages/spotify/
+sudo pacman -S zenity --noconfirm  # Отображение графических диалоговых окон из сценариев оболочки
+sudo pacman -S ffmpeg-compat-57 --noconfirm  # Пакет совместимости для ffmpeg для предоставления 57 версий libavcodec, libavdevice и libavformat, больше не предоставляемых пакетом ffmpeg
+sudo pacman -S xdg-desktop-portal-gtk --noconfirm  # Бэкэнд GTK + для xdg-desktop-portal
+
+
 https://wiki.archlinux.org/index.php/spotify
 -------------------------------------------
 spotify  -  # Запатентованный сервис потоковой передачи музыки
 https://aur.archlinux.org/packages/spotify/
-https://aur.archlinux.org/spotify.git 
+https://aur.archlinux.org/spotify.git
 https://linuxhint.com/install-spotify-arch-linux/
-https://wiki.archlinux.org/index.php/Spotify  - Spotify
+https://wiki.archlinux.org/index.php/Spotify 
 
 zenity -  # Отображение графических диалоговых окон из сценариев оболочки
 https://archlinux.org/packages/extra/x86_64/zenity/
@@ -779,6 +786,14 @@ https://gitlab.gnome.org/GNOME/zenity
 ffmpeg-compat-57 -  # Пакет совместимости для ffmpeg для предоставления 57 версий libavcodec, libavdevice и libavformat, больше не предоставляемых пакетом ffmpeg
 https://aur.archlinux.org/packages/ffmpeg-compat-57/
 https://aur.archlinux.org/ffmpeg-compat-57.git
+
+xdg-desktop-portal-gtk  # Бэкэнд GTK + для xdg-desktop-portal
+https://archlinux.org/packages/extra/x86_64/xdg-desktop-portal-gtk/
+https://github.com/flatpak/xdg-desktop-portal-gtk
+
+Если у вас есть уже существующий, вы можете легко войти в свою учетную запись. В противном случае перейдите в Spotify и создайте учетную запись .
+Интерфейс довольно понятен. Если ваша система использует прокси, вы можете указать настройки для приложения. Вы также можете указать тип прокси (Socks4, Socks5, HTTP и т.д.).Наслаждайтесь музыкой!
+
 
 
 echo " . "  
