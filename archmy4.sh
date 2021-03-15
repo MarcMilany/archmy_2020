@@ -710,7 +710,9 @@ yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
-yay -S  --noconfirm  #
+yay -S fetchmirrors --noconfirm  # Получение и ранжирование нового зеркального списка pacman
+https://aur.archlinux.org/packages/fetchmirrors/
+https://aur.archlinux.org/fetchmirrors.git 
 yay -S keepass2-plugin-tray-icon --noconfirm  # Функциональная иконка в трее для KeePass2 (https://aur.archlinux.org/keepass2-plugin-tray-icon.git)
 yay -S gtk3-mushrooms --noconfirm  # GTK3 исправлен для классических настольных компьютеров, таких как XFCE или MATE. См. README
 yay -S  --noconfirm  #
