@@ -746,11 +746,11 @@ echo -e "${MAGENTA}:: ${BOLD}Spotify - это популярная на запа
 echo " Spotify - это коммерческий музыкальный потоковый сервис, предоставляющий контент с ограниченным управлением цифровыми правами от звукозаписывающих лейблов, включая Sony, EMI, Warner Music Group и Universal. " 
 echo " Spotify работает по модели freemium (основные услуги бесплатны, а дополнительные функции предлагаются через платные подписки). Spotify зарабатывает на продаже премиальных потоковых подписок пользователям и размещении рекламы третьим лицам. "
 echo -e "${YELLOW}==> Примечание: ${NC}Если Вы хотите воспроизводить локальные файлы, вам необходимо дополнительно установить (пакеты) zenity и ffmpeg-compat-57. Spotify может не открывать ссылки (например, для сброса пароля или входа в систему через Facebook). Чтобы исправить это, установите (пакет) xdg-desktop-portal-gtk." 
-echo " Если ваша система использует прокси, вы можете указать настройки для приложения. Вы также можете указать тип прокси (Socks4, Socks5, HTTP и т.д.). "
+echo " Если ваша система использует прокси, Вы можете указать настройки для приложения. Вы также можете указать тип прокси (Socks4, Socks5, HTTP и т.д.). "
 echo -e "${CYAN}:: ${NC}Установка Spotify (spotify) проходит через сборку из исходников. То есть установка производиться с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/spotify/) - собирается и устанавливается. "
-echo -e "${CYAN}:: ${NC}Установка дополнительных пакетов для Spotify - (zenity), (ffmpeg-compat-57), (xdg-desktop-portal-gtk) проходит из 'Официальных репозиториев Arch Linux' - (Не AUR). "
+echo -e "${CYAN}:: ${NC}Установка дополнительных пакетов для Spotify - (zenity), (xdg-desktop-portal-gtk) проходит из 'Официальных репозиториев Arch Linux' - (Не AUR). Кроме пакета (ffmpeg-compat-57), его установка производиться с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/ffmpeg-compat-57/) - собирается и устанавливается. "
 echo -e "${CYAN}==> Важно! ${NC}В сценарии (скрипте) представлены несколько вариантов установки: " 
-echo " Установка Spotify без дополнений и второй вариант Spotify + дополнения (zenity, ffmpeg-compat-57, xdg-desktop-portal-gtk). "
+echo " Установка Spotify без дополнений и второй вариант Spotify + дополнения (пакеты) (zenity, ffmpeg-compat-57, xdg-desktop-portal-gtk). "
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -773,59 +773,65 @@ echo " Установка пропущена "
 elif [[ $i_spotify == 1 ]]; then
   echo ""    
   echo " Установка Spotify "
-
-yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
-
-
+############ spotify ##########
+# yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
+git clone https://aur.archlinux.org/spotify.git  # Запатентованный сервис потоковой передачи музыки
+cd spotify
+#makepkg -fsri
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf spotify 
+rm -Rf spotify
 echo ""
 echo " Установка Spotify выполнена "
 elif [[ $i_spotify == 2 ]]; then
   echo ""    
   echo " Установка Spotify + дополнения "
-
-yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
+############ spotify ##########
+# yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
 sudo pacman -S zenity --noconfirm  # Отображение графических диалоговых окон из сценариев оболочки
-sudo pacman -S ffmpeg-compat-57 --noconfirm  # Пакет совместимости для ffmpeg для предоставления 57 версий libavcodec, libavdevice и libavformat, больше не предоставляемых пакетом ffmpeg
 sudo pacman -S xdg-desktop-portal-gtk --noconfirm  # Бэкэнд GTK + для xdg-desktop-portal
-
-
-
-
-
+git clone https://aur.archlinux.org/spotify.git  # Запатентованный сервис потоковой передачи музыки
+cd spotify
+#makepkg -fsri
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf spotify 
+rm -Rf spotify
+echo ""
+echo " Установка Spotify выполнена "
+############ ffmpeg-compat-57 ##########
+# yay -S ffmpeg-compat-57 --noconfirm  # Пакет совместимости для ffmpeg для предоставления 57 версий libavcodec, libavdevice и libavformat, больше не предоставляемых пакетом ffmpeg
+git clone https://aur.archlinux.org/ffmpeg-compat-57.git  # Пакет совместимости для ffmpeg для предоставления 57 версий libavcodec, libavdevice и libavformat, больше не предоставляемых пакетом ffmpeg
+cd ffmpeg-compat-57
+#makepkg -fsri
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf ffmpeg-compat-57 
+rm -Rf ffmpeg-compat-57
 echo ""
 echo " Установка Spotify + дополнения выполнена "
 fi
+#---------------------------
+# https://linuxhint.com/install-spotify-arch-linux/
+# https://wiki.archlinux.org/index.php/Spotify 
+# https://gitlab.gnome.org/GNOME/zenity
+# http://ffmpeg.org/
+# https://github.com/flatpak/xdg-desktop-portal-gtk
+#---------------------------
 
 
 
 
-
-yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
-
-sudo pacman -S zenity --noconfirm  # Отображение графических диалоговых окон из сценариев оболочки
-sudo pacman -S ffmpeg-compat-57 --noconfirm  # Пакет совместимости для ffmpeg для предоставления 57 версий libavcodec, libavdevice и libavformat, больше не предоставляемых пакетом ffmpeg
-sudo pacman -S xdg-desktop-portal-gtk --noconfirm  # Бэкэнд GTK + для xdg-desktop-portal
-
-
-https://wiki.archlinux.org/index.php/spotify
--------------------------------------------
-spotify  -  # Запатентованный сервис потоковой передачи музыки
-https://aur.archlinux.org/packages/spotify/
-https://aur.archlinux.org/spotify.git
-https://linuxhint.com/install-spotify-arch-linux/
-https://wiki.archlinux.org/index.php/Spotify 
-
-zenity -  # Отображение графических диалоговых окон из сценариев оболочки
-https://archlinux.org/packages/extra/x86_64/zenity/
-https://gitlab.gnome.org/GNOME/zenity
-
-ffmpeg-compat-57 -  # Пакет совместимости для ffmpeg для предоставления 57 версий libavcodec, libavdevice и libavformat, больше не предоставляемых пакетом ffmpeg
-https://aur.archlinux.org/packages/ffmpeg-compat-57/
-https://aur.archlinux.org/ffmpeg-compat-57.git
-
-xdg-desktop-portal-gtk  # Бэкэнд GTK + для xdg-desktop-portal
-https://archlinux.org/packages/extra/x86_64/xdg-desktop-portal-gtk/
-https://github.com/flatpak/xdg-desktop-portal-gtk
 
 
 
@@ -847,7 +853,7 @@ ${NC}"
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
  
-yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
+
 
 yay -S audiobook-git --noconfirm  # Простая программа для чтения аудиокниг. Написано на QT / QML и C ++
 yay -S cozy-audiobooks --noconfirm  # Современный проигрыватель аудиокниг для Linux с использованием GTK + 3
