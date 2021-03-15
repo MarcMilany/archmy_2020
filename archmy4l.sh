@@ -622,13 +622,8 @@ echo -e "${GREEN}==> ${NC}Установка мультимедиа утилит
 #echo 'Установка Мультимедиа утилит AUR'
 # Installing Multimedia utilities AUR
 echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие утилиты (пакеты): ${NC}"
-echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - ()."
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (radiotray, vlc-tunein-radio, vlc-pause-click-plugin, spotify, audiobook-git, cozy-audiobooks, mp3gain, easymp3gain-gtk2, m4baker-git, myrulib-git)."
 echo -e "${YELLOW}==> ${NC}Установка будет производится в порядке перечисления (по очереди)"
-echo " . "  
-echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
-# Be careful! The installation process was fully automatic
-echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-# If you doubt your actions, think again... 
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить Интернет-радио плеер Radio Tray?" 
 echo -e "${MAGENTA}:: ${BOLD}Radio Tray (рус.Радио лоток) - проигрыватель потокового онлайн радио, предназначенный для прослушивания интернет-радиостанций в операционных системах Linux. ${NC}"
@@ -732,7 +727,11 @@ https://github.com/nurupo/vlc-pause-click-plugin
 
 
 
-
+echo " . "  
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
 
 
 echo 'Установка Мультимедиа утилит AUR'
