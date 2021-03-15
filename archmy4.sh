@@ -2302,15 +2302,21 @@ https://aur.archlinux.org/packages/freshplayerplugin-git/
 https://aur.archlinux.org/freshplayerplugin-git.git 
 https://github.com/i-rinat/freshplayerplugin
 
+-----------------------------------------
+
 vivaldi  -  # Продвинутый браузер, созданный для опытных пользователей
-https://aur.archlinux.org/packages/vivaldi/
+https://archlinux.org/packages/community/x86_64/vivaldi/
 https://aur.archlinux.org/vivaldi.git
 https://vivaldi.com
 
 vivaldi-ffmpeg-codecs  -  # Дополнительная поддержка проприетарных кодеков для vivaldi
-https://aur.archlinux.org/packages/vivaldi-ffmpeg-codecs/
+https://archlinux.org/packages/community/x86_64/vivaldi-ffmpeg-codecs/
 https://aur.archlinux.org/vivaldi-ffmpeg-codecs.git 
 https://ffmpeg.org/
+
+passff-host -  # Хост-приложение для обмена сообщениями PassFF для Firefox, Chromium, Chrome, Vivaldi
+https://archlinux.org/packages/community/any/passff-host/
+https://github.com/passff/passff-host
 
 -------------------------------------
 
