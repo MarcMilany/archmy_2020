@@ -749,9 +749,12 @@ echo -e "${YELLOW}==> Примечание: ${NC}Если вы хотите во
 echo " Если ваша система использует прокси, вы можете указать настройки для приложения. Вы также можете указать тип прокси (Socks4, Socks5, HTTP и т.д.). "
 echo -e "${CYAN}:: ${NC}Установка Spotify (spotify) проходит через сборку из исходников. То есть установка производиться с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/spotify/) - собирается и устанавливается. "
 echo -e "${CYAN}:: ${NC}Установка дополнительных пакетов для Spotify - (zenity), (ffmpeg-compat-57), (xdg-desktop-portal-gtk) проходит из 'Официальных репозиториев Arch Linux' - (Не AUR). "
-echo -e "${CYAN}==> Важно! ${NC} " 
-
-
+echo -e "${CYAN}==> Важно! ${NC}В сценарии (скрипте) представлены несколько вариантов установки: " 
+echo " Установка Spotify без дополнений и второй вариант Spotify + дополнения (zenity, ffmpeg-compat-57, xdg-desktop-portal-gtk). "
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
 
 
 
