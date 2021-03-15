@@ -4549,16 +4549,16 @@ echo ""
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_ufw_status  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_status  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$i_ufw_status" =~ [^10] ]]
+    [[ "$i_status" =~ [^10] ]]
 do
     :
 done 
-if [[ $i_ufw_status == 0 ]]; then 
+if [[ $i_status == 0 ]]; then 
 echo ""   
 echo " Проверка статуса UFW пропущена "
-elif [[ $i_ufw_status == 1 ]]; then
+elif [[ $i_status == 1 ]]; then
   echo ""  
   echo " Проверим статус UFW (сетевой экран) "
 sudo ufw status
