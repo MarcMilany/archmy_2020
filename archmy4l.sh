@@ -546,15 +546,15 @@ elif [[ $i_sublimetext == 1 ]]; then
 ############ sublime-text-3 ##########
 yay -S sublime-text-3 --noconfirm  # Продуманный текстовый редактор для кода, html и прозы - стабильная сборка
 git clone   # Запатентованный сервис потоковой передачи музыки
-cd spotify
+cd sublime-text-3
 #makepkg -fsri
 # makepkg -si
 makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
 pwd    # покажет в какой директории мы находимся
 cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
-# rm -rf spotify 
-rm -Rf spotify
+# rm -rf sublime-text-3 
+rm -Rf sublime-text-3
 echo ""
 echo " Установка Sublime Text выполнена "
 elif [[ $i_sublimetext == 2 ]]; then
@@ -562,17 +562,16 @@ elif [[ $i_sublimetext == 2 ]]; then
   echo " Установка Sublime Text Dev "
 ############ sublime-text-dev ##########
 yay -S sublime-text-dev --noconfirm  # Сложный текстовый редактор для кода, html и прозы - dev build
-
 git clone https://aur.archlinux.org/spotify.git  # Запатентованный сервис потоковой передачи музыки
-cd spotify
+cd sublime-text-dev
 #makepkg -fsri
 # makepkg -si
 makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
 pwd    # покажет в какой директории мы находимся
 cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
-# rm -rf spotify 
-rm -Rf spotify
+# rm -rf sublime-text-dev 
+rm -Rf sublime-text-dev
 echo ""
 echo " Установка Sublime Text Dev выполнена "
 fi
