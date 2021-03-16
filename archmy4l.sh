@@ -760,7 +760,7 @@ sudo pacman -S vorbisgain --noconfirm  # Утилита, которая вычи
 sudo pacman -S ncmpcpp --noconfirm  # Практически точный клон ncmpc с некоторыми новыми функциями
 sudo pacman -S mpc --noconfirm  # Минималистичный интерфейс командной строки для MPD
 sudo pacman -S mpd --noconfirm  # Гибкое, мощное серверное приложение для воспроизведения музыки
-sudo pacman -S  --noconfirm  # Набор инструментов, которые могут выполнять запись и воспроизведение видео, простое редактирование с вырезанием и вставкой и сжатие MPEG аудио и видео 
+# sudo pacman -S  --noconfirm  # Набор инструментов, которые могут выполнять запись и воспроизведение видео, простое редактирование с вырезанием и вставкой и сжатие MPEG аудио и видео 
 # sudo pacman -S  --noconfirm  # 
 # sudo pacman -S  --noconfirm  # 
 # sudo pacman -S  --noconfirm  # 
@@ -946,8 +946,8 @@ elif [[ $i_spotify == 2 ]]; then
   echo " Установка Spotify + дополнения "
 ############ spotify ##########
 # yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
-sudo pacman -S zenity --noconfirm  # Отображение графических диалоговых окон из сценариев оболочки
-sudo pacman -S xdg-desktop-portal-gtk --noconfirm  # Бэкэнд GTK + для xdg-desktop-portal
+sudo pacman -S zenity --noconfirm  # Отображение графических диалоговых окон из сценариев оболочки (возможно присутствует)
+sudo pacman -S xdg-desktop-portal-gtk --noconfirm  # Бэкэнд GTK + для xdg-desktop-portal (возможно присутствует)
 git clone https://aur.archlinux.org/spotify.git  # Запатентованный сервис потоковой передачи музыки
 cd spotify
 #makepkg -fsri
