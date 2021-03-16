@@ -260,6 +260,7 @@ echo '#HARDWARECLOCK=localtime' >> /etc/vconsole.conf
 echo '#USECOLOR=yes' >> /etc/vconsole.conf
 echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf 
 #echo 'COMPRESSION="xz"' >> /etc/mkinitcpio.conf
+echo "vboxdrv" > /etc/modules-load.d/virtualbox.conf
 
 #clear
 echo ""
