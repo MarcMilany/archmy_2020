@@ -545,7 +545,7 @@ elif [[ $i_sublimetext == 1 ]]; then
   echo " Установка Sublime Text "
 ############ sublime-text-3 ##########
 yay -S sublime-text-3 --noconfirm  # Продуманный текстовый редактор для кода, html и прозы - стабильная сборка
-git clone   # Запатентованный сервис потоковой передачи музыки
+git clone https://aur.archlinux.org/sublime-text-3.git  # Продуманный текстовый редактор для кода, html и прозы - стабильная сборка
 cd sublime-text-3
 #makepkg -fsri
 # makepkg -si
@@ -562,7 +562,7 @@ elif [[ $i_sublimetext == 2 ]]; then
   echo " Установка Sublime Text Dev "
 ############ sublime-text-dev ##########
 yay -S sublime-text-dev --noconfirm  # Сложный текстовый редактор для кода, html и прозы - dev build
-git clone https://aur.archlinux.org/spotify.git  # Запатентованный сервис потоковой передачи музыки
+git clone https://aur.archlinux.org/sublime-text-dev.git  # Сложный текстовый редактор для кода, html и прозы - dev build
 cd sublime-text-dev
 #makepkg -fsri
 # makepkg -si
@@ -575,17 +575,6 @@ rm -Rf sublime-text-dev
 echo ""
 echo " Установка Sublime Text Dev выполнена "
 fi
-
-
-
-
-
-
-
-
-
-
-
 # ---------------------------------
 # Sublime Text для фронтэнд-разработчика
 # https://habr.com/ru/post/244681/
@@ -593,22 +582,6 @@ fi
 # http://www.sublimetext.com/3
 # https://sublimetext3.ru/
 #-----------------------------
-
-yay -S sublime-text-3 --noconfirm  # Продуманный текстовый редактор для кода, html и прозы - стабильная сборка
-
-https://aur.archlinux.org/packages/sublime-text-3/
-https://aur.archlinux.org/sublime-text-3.git  # Продуманный текстовый редактор для кода, html и прозы - стабильная сборка
-https://www.sublimetext.com/3
-
-yay -S sublime-text-dev --noconfirm  # Сложный текстовый редактор для кода, html и прозы - dev build
-
-https://aur.archlinux.org/packages/sublime-text-dev/
-https://aur.archlinux.org/sublime-text-dev.git  # Сложный текстовый редактор для кода, html и прозы - dev build
-http://www.sublimetext.com/3
-
-
-
-
 
 clear
 echo -e "${MAGENTA}
