@@ -544,7 +544,7 @@ elif [[ $i_sublimetext == 1 ]]; then
   echo ""    
   echo " Установка Spotify "
 ############ sublime-text-3 ##########
-# yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
+yay -S sublime-text-3 --noconfirm  # Продуманный текстовый редактор для кода, html и прозы - стабильная сборка
 git clone   # Запатентованный сервис потоковой передачи музыки
 cd spotify
 #makepkg -fsri
@@ -561,7 +561,7 @@ elif [[ $i_sublimetext == 2 ]]; then
   echo ""    
   echo " Установка Spotify + дополнения "
 ############ sublime-text-dev ##########
-# yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
+yay -S sublime-text-dev --noconfirm  # Сложный текстовый редактор для кода, html и прозы - dev build
 
 git clone https://aur.archlinux.org/spotify.git  # Запатентованный сервис потоковой передачи музыки
 cd spotify
@@ -575,20 +575,6 @@ cd ..   # поднимаемся на уровень выше (выходим и
 rm -Rf spotify
 echo ""
 echo " Установка Spotify выполнена "
-############ ffmpeg-compat-57 ##########
-# yay -S ffmpeg-compat-57 --noconfirm  # Пакет совместимости для ffmpeg для предоставления 57 версий libavcodec, libavdevice и libavformat, больше не предоставляемых пакетом ffmpeg
-git clone https://aur.archlinux.org/ffmpeg-compat-57.git  # Пакет совместимости для ffmpeg для предоставления 57 версий libavcodec, libavdevice и libavformat, больше не предоставляемых пакетом ffmpeg
-cd ffmpeg-compat-57
-#makepkg -fsri
-# makepkg -si
-makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
-# makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
-# rm -rf ffmpeg-compat-57 
-rm -Rf ffmpeg-compat-57
-echo ""
-echo " Установка Spotify + дополнения выполнена "
 fi
 
 
