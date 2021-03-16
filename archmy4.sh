@@ -354,13 +354,47 @@ expat -  # Библиотека парсера XML
 https://archlinux.org/packages/core/x86_64/expat/
 https://libexpat.github.io/
 
-expat (expat-git) -  # 
+expat (expat-git) -  # Библиотека потокового анализатора XML, написанная на C
 https://aur.archlinux.org/packages/expat-git/
+https://aur.archlinux.org/expat-git.git 
+https://libexpat.github.io/
+
+wxgtk2.8 -  # GTK + реализация wxWidgets API для GUI
+https://aur.archlinux.org/packages/wxgtk2.8/
+https://aur.archlinux.org/wxgtk2.8.git 
+http://wxwidgets.org
+
+wxgtk2.8-light -  # wxWidgets 2.8 с GTK2 Toolkit (GNOME / GStreamer бесплатно!)
+https://aur.archlinux.org/packages/wxgtk2.8-light/
+https://aur.archlinux.org/wxwidgets2.8-light.git 
+http://wxwidgets.org
+
+wxsqlite3 -  # Обертка wxWidgets для SQLite3, сборка для wxWidgets 2.8
+https://aur.archlinux.org/packages/wxsqlite3-2.8/
+https://aur.archlinux.org/wxsqlite3-2.8.git 
+http://wxcode.sourceforge.net/components/wxsqlite3/
+
+gstreamer0.10 -  # Мультимедийный фреймворк GStreamer
+https://aur.archlinux.org/packages/gstreamer0.10/
+https://aur.archlinux.org/gstreamer0.10.git
+https://gstreamer.freedesktop.org
 
 
-
-
-
+############ gstreamer0.10 ##########
+echo "" 
+echo " Установим мультимедийный фреймворк GStreamer из AUR "
+#yay -S gstreamer0.10 --noconfirm  # Мультимедийный фреймворк GStreamer (Если установлен yay - эта команда)
+git clone https://aur.archlinux.org/gstreamer0.10.git 
+cd gstreamer0.10
+#makepkg -fsri
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf gstreamer0.10 
+rm -Rf gstreamer0.10
+#######################
 
 -------------------------------------
 
