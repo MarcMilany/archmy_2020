@@ -753,7 +753,7 @@ sudo pacman -S media-player-info --noconfirm  # Файлы данных, опи�
 sudo pacman -S you-get --noconfirm  # Загрузчик видео с YouTube / Youku / Niconico, написанный на Python 3
 sudo pacman -S youtube-viewer --noconfirm  # Утилита командной строки для просмотра видео на YouTube
 # sudo pacman -S qmmp --noconfirm  # Аудиоплеер на Qt5
-# sudo pacman -S mplayer --noconfirm # Медиаплеер для Linux
+sudo pacman -S mplayer --noconfirm # Медиаплеер для Linux
 # sudo pacman -S ffmpegthumbnailer --noconfirm  # Легкий эскиз видеофайлов, который может использоваться файловыми менеджерами # возможно присутствует
 sudo pacman -S cmus --noconfirm  # Многофункциональный музыкальный проигрыватель на базе ncurses
 sudo pacman -S vorbisgain --noconfirm  # Утилита, которая вычисляет значения ReplayGain для файлов Ogg Vorbis
