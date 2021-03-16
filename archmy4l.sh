@@ -764,7 +764,7 @@ fi
 #-----------------------------
 # https://github.com/diegofn/TuneIn-Radio-VLC
 # https://github.com/nurupo/vlc-pause-click-plugin
-# Делаем Play и Pause кликом мыши в плеере vlc
+# Делаем Play и Pause кликом мыши в плеере vlc - Видео
 # https://www.youtube.com/watch?v=G05VGD2_jGo&t=1s
 #-----------------------------
 
