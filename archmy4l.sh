@@ -531,21 +531,21 @@ echo " Действия ввода, выполняется сразу после
     read -n1 -p "      
     1 - Установить Spotify,     2 - Установить Spotify + дополнения,     
 
-    0 - НЕТ - Пропустить установку: " i_spotify  # sends right after the keypress; # отправляет сразу после нажатия клавиши    
+    0 - НЕТ - Пропустить установку: " i_sublimetext  # sends right after the keypress; # отправляет сразу после нажатия клавиши    
     echo ''
-    [[ "$i_spotify" =~ [^120] ]]
+    [[ "$i_sublimetext" =~ [^120] ]]
 do
     :
 done 
-if [[ $i_spotify == 0 ]]; then 
+if [[ $i_sublimetext == 0 ]]; then 
 echo ""   
 echo " Установка пропущена "
-elif [[ $i_spotify == 1 ]]; then
+elif [[ $i_sublimetext == 1 ]]; then
   echo ""    
   echo " Установка Spotify "
-############ spotify ##########
+############ sublime-text-3 ##########
 # yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
-git clone https://aur.archlinux.org/spotify.git  # Запатентованный сервис потоковой передачи музыки
+git clone   # Запатентованный сервис потоковой передачи музыки
 cd spotify
 #makepkg -fsri
 # makepkg -si
@@ -557,13 +557,12 @@ cd ..   # поднимаемся на уровень выше (выходим и
 rm -Rf spotify
 echo ""
 echo " Установка Spotify выполнена "
-elif [[ $i_spotify == 2 ]]; then
+elif [[ $i_sublimetext == 2 ]]; then
   echo ""    
   echo " Установка Spotify + дополнения "
-############ spotify ##########
+############ sublime-text-dev ##########
 # yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
-sudo pacman -S zenity --noconfirm  # Отображение графических диалоговых окон из сценариев оболочки
-sudo pacman -S xdg-desktop-portal-gtk --noconfirm  # Бэкэнд GTK + для xdg-desktop-portal
+
 git clone https://aur.archlinux.org/spotify.git  # Запатентованный сервис потоковой передачи музыки
 cd spotify
 #makepkg -fsri
