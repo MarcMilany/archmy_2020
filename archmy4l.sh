@@ -969,6 +969,17 @@ cd ..   # поднимаемся на уровень выше (выходим и
 rm -Rf spotify
 echo ""
 echo " Установка Spotify выполнена "
+############ openjpeg ##########
+
+yay -S openjpeg --noconfirm  # 
+git clone https://aur.archlinux.org/openjpeg.git  #
+
+
+
+
+
+
+
 ############ ffmpeg-compat-57 ##########
 # yay -S ffmpeg-compat-57 --noconfirm  # Пакет совместимости для ffmpeg для предоставления 57 версий libavcodec, libavdevice и libavformat, больше не предоставляемых пакетом ffmpeg
 git clone https://aur.archlinux.org/ffmpeg-compat-57.git  # Пакет совместимости для ffmpeg для предоставления 57 версий libavcodec, libavdevice и libavformat, больше не предоставляемых пакетом ffmpeg
@@ -990,6 +1001,8 @@ fi
 # https://gitlab.gnome.org/GNOME/zenity
 # http://ffmpeg.org/
 # https://github.com/flatpak/xdg-desktop-portal-gtk
+# https://aur.archlinux.org/packages/openjpeg/
+# https://www.openjpeg.org
 #---------------------------
 
 
