@@ -265,6 +265,7 @@ sudo pacman -Syy  # обновление баз пакмэна (pacman)
 # sudo pacman -Syyu  --noconfirm  
 echo ""
 echo " Обновление и добавление новых ключей выполнено "
+fi
 sleep 01
 
 clear
