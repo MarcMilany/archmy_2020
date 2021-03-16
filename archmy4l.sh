@@ -781,8 +781,8 @@ echo -e "${CYAN}:: ${NC}Установка Spotify (spotify) проходит ч
 echo -e "${CYAN}:: ${NC}Установка дополнительных пакетов для Spotify - (zenity), (xdg-desktop-portal-gtk) проходит из 'Официальных репозиториев Arch Linux' - (Не AUR). Кроме пакета (ffmpeg-compat-57), его установка производиться с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/ffmpeg-compat-57/) - собирается и устанавливается. "
 echo -e "${CYAN}==> Важно! ${NC}В сценарии (скрипте) представлены несколько вариантов установки: " 
 echo " Установка Spotify без дополнений и второй вариант Spotify + дополнения (пакеты) (zenity, ffmpeg-compat-57, xdg-desktop-portal-gtk). "
-echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
-# Be careful! The installation process was fully automatic
+echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В данной опции выбор всегда остаётся за вами. "
+# Be careful! The installation process, after the option you selected, was registered fully automatic. In this option, the choice is always yours.
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
 # If you doubt your actions, think again... 
 echo "" 
