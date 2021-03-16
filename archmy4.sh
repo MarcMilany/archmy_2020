@@ -453,6 +453,9 @@ echo " Пользовательская оболочка ИЗМЕНЕНА (ср�
 
 
 
+
+
+
 echo 'Установка программ для обработки видео и аудио (конвертеры)'
 # Installing software for video and audio processing (converters)
 sudo pacman -S kdenlive --noconfirm
