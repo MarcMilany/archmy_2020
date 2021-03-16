@@ -970,16 +970,18 @@ rm -Rf spotify
 echo ""
 echo " Установка Spotify выполнена "
 ############ openjpeg ##########
-
-yay -S openjpeg --noconfirm  # 
-git clone https://aur.archlinux.org/openjpeg.git  #
-
-
-
-
-
-
-
+# sudo pacman -S openjpeg2 --noconfirm  # Кодек JPEG 2000 с открытым исходным кодом, версия 2.4.0 
+# yay -S openjpeg --noconfirm  # Кодек JPEG 2000 с открытым исходным кодом
+git clone https://aur.archlinux.org/openjpeg.git  # Кодек JPEG 2000 с открытым исходным кодом
+cd openjpeg
+#makepkg -fsri
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf openjpeg 
+rm -Rf openjpeg
 ############ ffmpeg-compat-57 ##########
 # yay -S ffmpeg-compat-57 --noconfirm  # Пакет совместимости для ffmpeg для предоставления 57 версий libavcodec, libavdevice и libavformat, больше не предоставляемых пакетом ffmpeg
 git clone https://aur.archlinux.org/ffmpeg-compat-57.git  # Пакет совместимости для ffmpeg для предоставления 57 версий libavcodec, libavdevice и libavformat, больше не предоставляемых пакетом ffmpeg
@@ -1001,7 +1003,7 @@ fi
 # https://gitlab.gnome.org/GNOME/zenity
 # http://ffmpeg.org/
 # https://github.com/flatpak/xdg-desktop-portal-gtk
-# https://aur.archlinux.org/packages/openjpeg/
+# https://github.com/uclouvain/openjpeg
 # https://www.openjpeg.org
 #---------------------------
 
