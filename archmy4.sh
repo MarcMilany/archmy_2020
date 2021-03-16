@@ -295,9 +295,31 @@ https://cozy.geigi.de
 ------------------------------------------------
 
 m4baker-git  -  # Создавайте полнофункциональные m4b-аудиокниги
+m4baker-git   - # Сначала (Phonon-qt4 pyqt4-common python2-pyqt4)
 https://aur.archlinux.org/packages/m4baker-git/
 https://aur.archlinux.org/m4baker-git.git
 https://github.com/crabmanX/m4baker
+
+phonon-qt4 -  # Мультимедийный фреймворк для KDE4
+https://aur.archlinux.org/packages/phonon-qt4/
+https://aur.archlinux.org/phonon-qt4.git 
+https://community.kde.org/Phonon
+
+pyqt4-common -  # Общие файлы PyQt, общие для python-pyqt4 и python2-pyqt4
+https://aur.archlinux.org/packages/pyqt4-common/
+https://aur.archlinux.org/pyqt4.git 
+https://riverbankcomputing.com/software/pyqt/intro
+
+qt4 -  # Кроссплатформенное приложение и фреймворк пользовательского интерфейса
+https://aur.archlinux.org/packages/qt4/
+https://aur.archlinux.org/qt4.git 
+https://www.qt.io
+
+python2-pyqt4 -  # Набор привязок Python 2.x для набора инструментов Qt
+https://aur.archlinux.org/packages/python2-pyqt4/
+https://aur.archlinux.org/pyqt4.git 
+https://riverbankcomputing.com/software/pyqt/intro
+
 
 ------------------------------------------------
 
@@ -316,9 +338,29 @@ http://easymp3gain.sourceforge.net/
 ------------------------------------------------
 
 myrulib-git  -  # Домашняя библиотека с поддержкой сайта lib.rus.ec
+myrulib-git   - # Сначала (wxgtk2.8 wxsqlite3-2.8 gstreamer0.10  0.10.36-17)
 https://aur.archlinux.org/packages/myrulib-git/
 https://aur.archlinux.org/myrulib-git.git 
 http://www.lintest.ru/wiki/MyRuLib
+
+
+myrulib-git    wxgtk2.8 wxsqlite3-2.8 gstreamer0.10  0.10.36-17
+expat (expat-git)
+wxgtk2.8 (wxgtk2.8-light)
+wxsqlite3-2.8
+git+https://github.com/lintest/myrulib.git
+
+expat -  # Библиотека парсера XML
+https://archlinux.org/packages/core/x86_64/expat/
+https://libexpat.github.io/
+
+expat (expat-git) -  # 
+https://aur.archlinux.org/packages/expat-git/
+
+
+
+
+
 
 -------------------------------------
 
