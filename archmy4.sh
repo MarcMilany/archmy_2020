@@ -482,8 +482,8 @@ sudo pacman -S unrtf --noconfirm  # Программа командной стр
 
 echo 'Утилиты для редактирования документов, PDF, DjVus, NFO, DIZ и XPS... , Читалки электронных книг, Словари, Таблицы AUR'
 # Utilities for editing documents, PDF, Djvu, NFO, DIZ and XPS..., e-book Readers, Dictionaries, Tables AUR
-yay -S sublime-text-dev hunspell-ru masterpdfeditor --noconfirm
-yay -S sublime-text-dev --noconfirm  # Сложный текстовый редактор для кода, html и прозы - dev build
+yay -S hunspell-ru masterpdfeditor --noconfirm
+yay -S --noconfirm  # 
 yay -S hunspell-ru --noconfirm  # Русский словарь hunspell
 yay -S masterpdfeditor --noconfirm  # Комплексное решение для просмотра, создания и редактирования файлов PDF
 yay -S  --noconfirm  #
