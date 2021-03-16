@@ -522,22 +522,6 @@ echo " Sublime Text на данный момент является одним �
 echo -e "${YELLOW}==> Примечание! ${NC}В сценарии (скрипте) представлены несколько вариантов установки: " 
 echo " Sublime Text (пакет) - (sublime-text-3) стабильная версия, и Sublime Text Dev (пакет) - (sublime-text-dev) версия для разработчиков. "
 echo -e "${CYAN}:: ${NC}Установка Sublime Text (sublime-text-3), или (sublime-text-dev), проходит через сборку из исходников. То есть установка производиться с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/sublime-text-3/), (https://aur.archlinux.org/packages/sublime-text-dev/) - собирается и устанавливается. "
-
-
-
-
-
-
-
-echo -e "${CYAN}:: ${NC}Установка Sublime Text (sublime-text-3) проходит через сборку из исходников. То есть установка производиться с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/spotify/) - собирается и устанавливается. "
-
-
-
-
-echo -e "${YELLOW}==> Примечание: ${NC}Если Вы хотите воспроизводить локальные файлы, вам необходимо дополнительно установить (пакеты) zenity и ffmpeg-compat-57. Spotify может не открывать ссылки (например, для сброса пароля или входа в систему через Facebook). Чтобы исправить это, установите (пакет) xdg-desktop-portal-gtk." 
-
-echo -e "${CYAN}:: ${NC}Установка дополнительных пакетов для Spotify - (zenity), (xdg-desktop-portal-gtk) проходит из 'Официальных репозиториев Arch Linux' - (Не AUR). Кроме пакета (ffmpeg-compat-57), его установка производиться с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/ffmpeg-compat-57/) - собирается и устанавливается. "
-
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -553,8 +537,15 @@ echo ""
 
 
 
-Sublime Text для фронтэнд-разработчика
-https://habr.com/ru/post/244681/
+
+
+# ---------------------------------
+# Sublime Text для фронтэнд-разработчика
+# https://habr.com/ru/post/244681/
+# https://www.sublimetext.com/3
+# http://www.sublimetext.com/3
+# https://sublimetext3.ru/
+#-----------------------------
 
 yay -S sublime-text-3 --noconfirm  # Продуманный текстовый редактор для кода, html и прозы - стабильная сборка
 
@@ -568,19 +559,7 @@ https://aur.archlinux.org/packages/sublime-text-dev/
 https://aur.archlinux.org/sublime-text-dev.git  # Сложный текстовый редактор для кода, html и прозы - dev build
 http://www.sublimetext.com/3
 
-pacman
-Install the GPG key:
 
-curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
-Select the channel to use:
-
-Stable
-echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
-Dev
-echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/dev/x86_64" | sudo tee -a /etc/pacman.conf
-Update pacman and install Sublime Text
-
-sudo pacman -Syu sublime-text
 
 
 
