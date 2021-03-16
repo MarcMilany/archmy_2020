@@ -519,12 +519,12 @@ echo -e "${GREEN}==> ${NC}Установка Sublime Text (Саблайм тек
 echo -e "${MAGENTA}:: ${BOLD}Sublime Text - это кроссплатформенный текстовый редактор, разработанный для пользователей, которые ищут эффективный, но минималистский инструмент для редактирования кода. Редактор, конечно же, прост, в котором отсутствуют панели инструментов или диалоговые окна. ${NC}"
 echo " Sublime Text на данный момент является одним из самых популярных текстовых редакторов, используемых для веб-разработки. Sublime во многом обязан своей популярностью сообществу, которое создало такое большое количество полезных плагинов. "
 echo -e "${YELLOW}==> Примечание! ${NC}В сценарии (скрипте) представлены несколько вариантов установки: " 
-echo " Sublime Text (пакет) - (sublime-text-3) стабильная версия, и Sublime Text Dev (пакет) - (sublime-text-dev) версия для разработчиков. "
+echo " Sublime Text (пакет) (sublime-text-3) - стабильная версия, и Sublime Text Dev (пакет) (sublime-text-dev) версия для разработчиков. "
 echo -e "${CYAN}:: ${NC}Установка Sublime Text (sublime-text-3), или (sublime-text-dev), проходит через сборку из исходников. То есть установка производиться с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/sublime-text-3/), (https://aur.archlinux.org/packages/sublime-text-dev/) - собирается и устанавливается. "
-echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
-# Be careful! The installation process was fully automatic
+echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В данной опции выбор всегда остаётся за вами. "
+# Be careful! The installation process, after the option you selected, was registered fully automatic. In this option, the choice is always yours.
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-# If you doubt your actions, think again... 
+# If you doubt your actions, think again...  
 echo "" 
 while 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
@@ -544,7 +544,7 @@ elif [[ $i_sublimetext == 1 ]]; then
   echo ""    
   echo " Установка Sublime Text "
 ############ sublime-text-3 ##########
-yay -S sublime-text-3 --noconfirm  # Продуманный текстовый редактор для кода, html и прозы - стабильная сборка
+# yay -S sublime-text-3 --noconfirm  # Продуманный текстовый редактор для кода, html и прозы - стабильная сборка
 git clone https://aur.archlinux.org/sublime-text-3.git  # Продуманный текстовый редактор для кода, html и прозы - стабильная сборка
 cd sublime-text-3
 #makepkg -fsri
@@ -561,7 +561,7 @@ elif [[ $i_sublimetext == 2 ]]; then
   echo ""    
   echo " Установка Sublime Text Dev "
 ############ sublime-text-dev ##########
-yay -S sublime-text-dev --noconfirm  # Сложный текстовый редактор для кода, html и прозы - dev build
+# yay -S sublime-text-dev --noconfirm  # Сложный текстовый редактор для кода, html и прозы - dev build
 git clone https://aur.archlinux.org/sublime-text-dev.git  # Сложный текстовый редактор для кода, html и прозы - dev build
 cd sublime-text-dev
 #makepkg -fsri
