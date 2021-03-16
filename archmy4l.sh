@@ -528,7 +528,8 @@ echo -e "${GREEN}==> ${NC}Установка мультимедиа утилит
 
 
 
-
+yay -S sublime-text-dev hunspell-ru masterpdfeditor --noconfirm
+yay -S sublime-text-dev --noconfirm  # Сложный текстовый редактор для кода, html и прозы - dev build
 
 
 clear
