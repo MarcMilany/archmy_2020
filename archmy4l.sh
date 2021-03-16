@@ -516,9 +516,19 @@ fi
 
 clear
 echo -e "${GREEN}==> ${NC}Установка Sublime Text (Саблайм текст) "
-#echo -e "${BLUE}:: ${NC}Установка мультимедиа утилит" 
-#echo 'Установка мультимедиа утилит'
-# Installing Multimedia utilities
+echo -e "${MAGENTA}:: ${BOLD}Spotify - это популярная на западе платформа для прослушивания музыки и организации плейлистов. ${NC}"
+echo " Spotify - это коммерческий музыкальный потоковый сервис, предоставляющий контент с ограниченным управлением цифровыми правами от звукозаписывающих лейблов, включая Sony, EMI, Warner Music Group и Universal. " 
+echo " Spotify работает по модели freemium (основные услуги бесплатны, а дополнительные функции предлагаются через платные подписки). Spotify зарабатывает на продаже премиальных потоковых подписок пользователям и размещении рекламы третьим лицам. "
+echo -e "${YELLOW}==> Примечание: ${NC}Если Вы хотите воспроизводить локальные файлы, вам необходимо дополнительно установить (пакеты) zenity и ffmpeg-compat-57. Spotify может не открывать ссылки (например, для сброса пароля или входа в систему через Facebook). Чтобы исправить это, установите (пакет) xdg-desktop-portal-gtk." 
+echo -e "${CYAN}:: ${NC}Установка Spotify (spotify) проходит через сборку из исходников. То есть установка производиться с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/spotify/) - собирается и устанавливается. "
+echo -e "${CYAN}:: ${NC}Установка дополнительных пакетов для Spotify - (zenity), (xdg-desktop-portal-gtk) проходит из 'Официальных репозиториев Arch Linux' - (Не AUR). Кроме пакета (ffmpeg-compat-57), его установка производиться с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/ffmpeg-compat-57/) - собирается и устанавливается. "
+echo -e "${CYAN}==> Важно! ${NC}В сценарии (скрипте) представлены несколько вариантов установки: " 
+echo " Установка Spotify без дополнений и второй вариант Spotify + дополнения (пакеты) (zenity, ffmpeg-compat-57, xdg-desktop-portal-gtk). "
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
 
 
 
