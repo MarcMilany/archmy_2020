@@ -770,7 +770,7 @@ sudo dmesg | grep microcode
 fi
 sleep 04
 
-clear
+#clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установить Микрокод для процессора INTEL_CPU, AMD_CPU?"
 echo -e "${BLUE}:: ${BOLD}Обновление Microcode (matching CPU) ${NC}"
