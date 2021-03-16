@@ -529,7 +529,7 @@ echo ""
 while 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Установить Spotify,     2 - Установить Spotify + дополнения,     
+    1 - Установить Sublime Text,     2 - Установить Sublime Text Dev,     
 
     0 - НЕТ - Пропустить установку: " i_sublimetext  # sends right after the keypress; # отправляет сразу после нажатия клавиши    
     echo ''
@@ -542,7 +542,7 @@ echo ""
 echo " Установка пропущена "
 elif [[ $i_sublimetext == 1 ]]; then
   echo ""    
-  echo " Установка Spotify "
+  echo " Установка Sublime Text "
 ############ sublime-text-3 ##########
 yay -S sublime-text-3 --noconfirm  # Продуманный текстовый редактор для кода, html и прозы - стабильная сборка
 git clone   # Запатентованный сервис потоковой передачи музыки
@@ -556,10 +556,10 @@ cd ..   # поднимаемся на уровень выше (выходим и
 # rm -rf spotify 
 rm -Rf spotify
 echo ""
-echo " Установка Spotify выполнена "
+echo " Установка Sublime Text выполнена "
 elif [[ $i_sublimetext == 2 ]]; then
   echo ""    
-  echo " Установка Spotify + дополнения "
+  echo " Установка Sublime Text Dev "
 ############ sublime-text-dev ##########
 yay -S sublime-text-dev --noconfirm  # Сложный текстовый редактор для кода, html и прозы - dev build
 
@@ -574,7 +574,7 @@ cd ..   # поднимаемся на уровень выше (выходим и
 # rm -rf spotify 
 rm -Rf spotify
 echo ""
-echo " Установка Spotify выполнена "
+echo " Установка Sublime Text Dev выполнена "
 fi
 
 
