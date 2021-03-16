@@ -408,6 +408,14 @@ https://aur.archlinux.org/ddrescue-gui.git
 https://launchpad.net/ddrescue-gui
 
 ---------------------------------------
+
+fetchmirrors -  # Утилита обновления зеркального списка Arch Linux pacman (Получение и ранжирование нового зеркального списка pacman)
+https://aur.archlinux.org/packages/fetchmirrors/
+https://aur.archlinux.org/fetchmirrors.git 
+https://github.com/deadhead420/fetchmirrors
+https://raw.githubusercontent.com/deadhead420/fetchmirrors/master/fetchmirrors.sh
+
+----------------------------------------
 Смена оболочки
 
 echo -e "${MAGENTA}=> ${BOLD}Вот какая оболочка (shell) используется в данный момент: ${NC}"
