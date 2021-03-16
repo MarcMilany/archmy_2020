@@ -525,11 +525,35 @@ echo -e "${GREEN}==> ${NC}Установка мультимедиа утилит
 
 
 
+Sublime Text (Саблайм текст) - удобный редактор кода с минималистичным дизайном, широким функционалом и поддержкой плагинов.
 
 
+yay -S sublime-text-3 --noconfirm  # Продуманный текстовый редактор для кода, html и прозы - стабильная сборка
 
-yay -S sublime-text-dev hunspell-ru masterpdfeditor --noconfirm
+https://aur.archlinux.org/packages/sublime-text-3/
+https://aur.archlinux.org/sublime-text-3.git  # Продуманный текстовый редактор для кода, html и прозы - стабильная сборка
+https://www.sublimetext.com/3
+
 yay -S sublime-text-dev --noconfirm  # Сложный текстовый редактор для кода, html и прозы - dev build
+
+https://aur.archlinux.org/packages/sublime-text-dev/
+https://aur.archlinux.org/sublime-text-dev.git  # Сложный текстовый редактор для кода, html и прозы - dev build
+http://www.sublimetext.com/3
+
+pacman
+Install the GPG key:
+
+curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
+Select the channel to use:
+
+Stable
+echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
+Dev
+echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/dev/x86_64" | sudo tee -a /etc/pacman.conf
+Update pacman and install Sublime Text
+
+sudo pacman -Syu sublime-text
+
 
 
 clear
