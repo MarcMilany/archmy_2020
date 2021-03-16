@@ -201,6 +201,21 @@ cat /proc/version
 cat /etc/lsb-release
 sleep 02
 
+echo -e "${CYAN}
+  <<< Установка обновлений для системы Arch Linux >>> ${NC}"
+# Installation of utilities (packages) for the Arch Linux system begins
+echo ""
+echo -e "${BLUE}:: ${NC}Обновим вашу систему (базу данных пакетов)"
+#echo "Обновим вашу систему (базу данных пакетов)"
+# Update your system (package database)
+echo -e "${YELLOW}:: ${NC}Загружаем базу данных пакетов независимо от того, есть ли какие-либо изменения в версиях или нет."
+#echo 'Загружаем базу данных пакетов независимо от того, есть ли какие-либо изменения в версиях или нет.'
+# Loading the package database regardless of whether there are any changes in the versions or not.
+echo ""
+sudo pacman -Syyu  --noconfirm  
+sleep 01
+
+clear
 echo ""
 echo -e "${BLUE}:: ${NC}Проверим корректность загрузки установленных микрокодов " 
 #echo " Давайте проверим, правильно ли загружен установленный микрокод "
@@ -228,17 +243,6 @@ sudo dmesg | grep microcode
 #dmesg | grep microcode
 fi
 sleep 02
-
-echo ""
-echo -e "${BLUE}:: ${NC}Обновим вашу систему (базу данных пакетов)"
-#echo "Обновим вашу систему (базу данных пакетов)"
-# Update your system (package database)
-echo -e "${YELLOW}:: ${NC}Загружаем базу данных пакетов независимо от того, есть ли какие-либо изменения в версиях или нет."
-#echo 'Загружаем базу данных пакетов независимо от того, есть ли какие-либо изменения в версиях или нет.'
-# Loading the package database regardless of whether there are any changes in the versions or not.
-echo ""
-sudo pacman -Syyu  --noconfirm  
-sleep 01
 
 clear
 echo -e "${MAGENTA}
