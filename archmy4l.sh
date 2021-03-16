@@ -764,7 +764,7 @@ sudo pacman -S vorbisgain --noconfirm  # Утилита, которая вычи
 sudo pacman -S ncmpcpp --noconfirm  # Практически точный клон ncmpc с некоторыми новыми функциями
 sudo pacman -S mpc --noconfirm  # Минималистичный интерфейс командной строки для MPD
 sudo pacman -S mpd --noconfirm  # Гибкое, мощное серверное приложение для воспроизведения музыки
-sudo pacman -S mjpegtools --noconfirm  # Набор инструментов, которые могут выполнять запись и воспроизведение видео, простое редактирование с вырезанием и вставкой и сжатие MPEG аудио и видео 
+sudo pacman -S mjpegtools --noconfirm  # Набор инструментов, которые могут выполнять запись и воспроизведение видео, простое редактирование с вырезанием и вставкой и сжатие MPEG аудио и видео (возможно присутствует)
 # sudo pacman -S  --noconfirm  # 
 # sudo pacman -S  --noconfirm  # 
 # sudo pacman -S  --noconfirm  # 
