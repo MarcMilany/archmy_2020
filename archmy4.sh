@@ -322,8 +322,10 @@ http://www.lintest.ru/wiki/MyRuLib
 
 -------------------------------------
 
-
-
+ddrescue-gui -  # Простой интерфейс с графическим интерфейсом, упрощающий использование ddrescue (инструмент для восстановления данных из командной строки)
+https://aur.archlinux.org/packages/ddrescue-gui/
+https://aur.archlinux.org/ddrescue-gui.git 
+https://launchpad.net/ddrescue-gui
 
 ---------------------------------------
 Смена оболочки
