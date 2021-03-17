@@ -831,21 +831,41 @@ if [[ $prog_set == 1 ]]; then
 yay -S gksu debtap menulibre caffeine-ng inxi xneur fsearch-git timeshift mocicon multiload-ng-indicator-gtk xfce4-multiload-ng-plugin-gtk2 keepass2-plugin-tray-icon gconf-editor gconf-cleaner webtorrent-desktop corectrl qt4 xflux flameshot-git mkinitcpio-openswap fetchmirrors gtk3-mushrooms --noconfirm  # xorg-xkill
 yay -S timeshift --noconfirm  #
 yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+
+yay -S gconf --noconfirm  # Устаревшая система базы данных конфигурации
+https://aur.archlinux.org/packages/gconf/
+https://aur.archlinux.org/gconf.git 
+https://projects-old.gnome.org/gconf/
 
 yay -S gconf-editor --noconfirm  # Графический редактор реестра gconf
+https://aur.archlinux.org/packages/gconf-editor/
+https://aur.archlinux.org/gconf-editor.git 
+https://www.gnome.org
+
 yay -S gconf-cleaner --noconfirm  # Инструмент очистки для GConf
-yay -S gconf --noconfirm  # Устаревшая система базы данных конфигурации
+https://aur.archlinux.org/packages/gconf-cleaner/
+https://aur.archlinux.org/gconf-cleaner.git 
+http://code.google.com/p/gconf-cleaner
+
+
 yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
+
 yay -S fetchmirrors --noconfirm  # Получение и ранжирование нового зеркального списка pacman
 https://aur.archlinux.org/packages/fetchmirrors/
 https://aur.archlinux.org/fetchmirrors.git 
+https://github.com/deadhead420/fetchmirrors
+
 yay -S keepass2-plugin-tray-icon --noconfirm  # Функциональная иконка в трее для KeePass2 (https://aur.archlinux.org/keepass2-plugin-tray-icon.git)
+https://aur.archlinux.org/packages/keepass2-plugin-tray-icon/
+https://aur.archlinux.org/keepass2-plugin-tray-icon.git 
+https://github.com/dlech/Keebuntu
+
 yay -S gtk3-mushrooms --noconfirm  # GTK3 исправлен для классических настольных компьютеров, таких как XFCE или MATE. См. README
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
