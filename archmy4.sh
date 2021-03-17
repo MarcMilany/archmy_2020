@@ -876,6 +876,10 @@ https://aur.archlinux.org/caffeine-ng.git
 https://github.com/caffeine-ng/caffeine-ng
 
 yay -S gtk3-mushrooms --noconfirm  # GTK3 исправлен для классических настольных компьютеров, таких как XFCE или MATE. См. README
+https://aur.archlinux.org/packages/gtk3-mushrooms/
+https://aur.archlinux.org/gtk3-mushrooms.git
+https://github.com/krumelmonster/gtk3-mushrooms
+
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
