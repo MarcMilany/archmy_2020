@@ -806,7 +806,7 @@ elif [[ $i_ddrescue == 1 ]]; then
 sudo pacman -S ddrescue --noconfirm  # Инструмент восстановления данных GNU
 echo ""
 echo " Установка Ddrescue выполнена "
-elif [[ $i_spotify == 2 ]]; then
+elif [[ $i_ddrescue == 2 ]]; then
   echo ""    
   echo " Установка Ddrescue + GUI "
 ############ ddrescue ##########
