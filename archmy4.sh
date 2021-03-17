@@ -270,7 +270,16 @@ https://github.com/strukturag/libde265
 
 
 ##################################
+youtube-dl -  # Программа командной строки для загрузки видео с YouTube.com и еще нескольких сайтов
+https://archlinux.org/packages/community/any/youtube-dl/
+https://ytdl-org.github.io/youtube-dl/
 
+youtube-dl-gui-git -  # Кросс-платформенный интерфейсный интерфейс популярного youtube-dl, написанный на wxPython
+https://aur.archlinux.org/packages/youtube-dl-gui-git/
+https://aur.archlinux.org/youtube-dl-gui-git.git 
+https://github.com/MrS0m30n3/youtube-dl-gui
+
+------------------------------------------
 
 audiobook-git  -  # Простая программа для чтения аудиокниг. Написано на QT / QML и C ++ 
 https://aur.archlinux.org/packages/audiobook-git/
