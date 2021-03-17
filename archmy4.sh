@@ -394,6 +394,13 @@ rm -Rf gstreamer0.10
 #######################
 
 -------------------------------------
+
+yay -S mocicon --noconfirm  # Апплет панели GTK, позволяющий управлять MOC (Music On Console)
+https://aur.archlinux.org/packages/mocicon/
+https://aur.archlinux.org/mocicon.git
+http://mocicon.sourceforge.net
+
+-------------------------------------
 Опции makepkg:
 -s/--syncdeps перед сборкой автоматически разрешает и устанавливает все зависимости с pacman. Если пакет зависит от других пакетов из AUR, вам нужно сначала установить их вручную.
 -i/--install установить пакет если он успешно собран. В качестве альтернативы собранный пакет может быть установлен с pacman -U.
@@ -830,7 +837,6 @@ read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
 yay -S gksu debtap menulibre caffeine-ng inxi xneur fsearch-git timeshift mocicon multiload-ng-indicator-gtk xfce4-multiload-ng-plugin-gtk2 keepass2-plugin-tray-icon gconf-editor gconf-cleaner webtorrent-desktop corectrl qt4 xflux flameshot-git mkinitcpio-openswap fetchmirrors gtk3-mushrooms --noconfirm  # xorg-xkill
 yay -S timeshift --noconfirm  #
-yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
