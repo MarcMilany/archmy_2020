@@ -1067,19 +1067,33 @@ echo -e "${MAGENTA}
   <<< Установить дополнительных утилит для восстановления данных с поврежденного жесткого диска (Если Вы обнаружите, что возникли ошибоки чтения диска, и начали сыпаться ошибками на консоль и в лог). >>> ${NC}"
 
 echo ""
-echo -e "${GREEN}==> ${NC}Установить TimeSet (bash скрипт - timeset) и GUI интерфейс для управления системной датой и временем (timeset-gui) из AUR"
-#echo 'Установить TimeSet (bash скрипт - timeset) и GUI интерфейс для управления системной датой и временем (timeset-gui)
-# Install TimeSet and GUI...
-echo -e "${BLUE}:: ${BOLD}Посмотрим дату, время, и часовой пояс ... ${NC}"
-timedatectl | grep "Time zone"
+echo -e "${GREEN}==> ${NC}Установить GNU ddrescue (ddrescue) и GUI интерфейс упрощающий использование ddrescue (ddrescue-gui) из AUR"
+# Install GNU ddrescue (ddrescue) and GUI interface to simplify the use of ddrescue (ddrescue-gui) from AUR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+echo -e "${BLUE}:: ${BOLD}Посмотрим идентификацию накопителей (name, label, size, fstype, model) ... ${NC}"
 date
 date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'     # одновременно отображает дату и часовой пояс
 echo ""
-
-
-
 sudo lsblk -f
-sudo lsblk -o name, label, , , , 
+sudo lsblk -o name, label, size, fstype, model 
+sudo findmnt -D  # Если вы не сможете определить ваши диски
 
 
 
@@ -1094,12 +1108,15 @@ sudo lsblk -o name, label, , , ,
 
 
 
-https://www.gnu.org/software/ddrescue/
 
-
-
-
-
+#-------------------------
+# https://www.gnu.org/software/ddrescue/
+# https://www.gnu.org/graphics/agnuhead.html
+# http://rus-linux.net/MyLDP/admin/ddrescue.html
+# https://www.k-max.name/linux/ddrescue-hdd-vosstanovlenie-and-examples/
+# http://sysadminblog.sagrer.ru/stati-i-gajdy/linux/21-primer-vosstanovleniya-dannykh-s-pomoshchyu-gnu-ddrescue.html
+# https://ru.wikipedia.org/wiki/Ddrescue
+#---------------------------
 
 
 
