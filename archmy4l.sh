@@ -1078,7 +1078,7 @@ echo ""
 
 
 
-
+sudo lsblk -f
 sudo lsblk -o name, label, , , , 
 
 
