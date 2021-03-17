@@ -400,6 +400,11 @@ https://aur.archlinux.org/packages/mocicon/
 https://aur.archlinux.org/mocicon.git
 http://mocicon.sourceforge.net
 
+mocicon  -  # Апплет панели GTK, позволяющий управлять MOC (Music On Console)
+https://aur.archlinux.org/packages/mocicon/
+https://aur.archlinux.org/mocicon.git 
+http://mocicon.sourceforge.net
+
 -------------------------------------
 Опции makepkg:
 -s/--syncdeps перед сборкой автоматически разрешает и устанавливает все зависимости с pacman. Если пакет зависит от других пакетов из AUR, вам нужно сначала установить их вручную.
@@ -2200,10 +2205,6 @@ https://github.com/star2000/autoupgrade
 
 ---------------------------------------
 
-mocicon  -  # Апплет панели GTK, позволяющий управлять MOC (Music On Console)
-https://aur.archlinux.org/packages/mocicon/
-https://aur.archlinux.org/mocicon.git 
-http://mocicon.sourceforge.net
 
 ---------------------------------------
 
