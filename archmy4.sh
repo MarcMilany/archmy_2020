@@ -886,12 +886,35 @@ https://aur.archlinux.org/packages/caffeine-ng/
 https://aur.archlinux.org/caffeine-ng.git
 https://github.com/caffeine-ng/caffeine-ng
 
+caffeine-ng  -  # Приложение строки состояния способно временно блокировать заставку и спящий режим
+https://aur.archlinux.org/packages/caffeine-ng/
+https://aur.archlinux.org/caffeine-ng.git
+https://github.com/caffeine-ng/caffeine-ng
+
+caffeine-ng-git  -  # Приложение строки состояния способно временно блокировать заставку и спящий режим
+https://aur.archlinux.org/packages/caffeine-ng-git/
+https://aur.archlinux.org/caffeine-ng-git.git 
+https://github.com/caffeine-ng/caffeine-ng
+
+
 yay -S gtk3-mushrooms --noconfirm  # GTK3 исправлен для классических настольных компьютеров, таких как XFCE или MATE. См. README
 https://aur.archlinux.org/packages/gtk3-mushrooms/
 https://aur.archlinux.org/gtk3-mushrooms.git
 https://github.com/krumelmonster/gtk3-mushrooms
 
-yay -S  --noconfirm  #
+yay -S inxi --noconfirm  # Полнофункциональный инструмент системной информации CLI
+
+inxi  -  # Полнофункциональный инструмент системной информации CLI
+https://aur.archlinux.org/packages/inxi/
+https://aur.archlinux.org/inxi.git 
+https://github.com/smxi/inxi
+
+inxi-git  -  # Полнофункциональный инструмент системной информации CLI
+https://aur.archlinux.org/packages/inxi-git/
+https://aur.archlinux.org/inxi-git.git
+https://github.com/smxi/inxi
+
+
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
@@ -2123,30 +2146,6 @@ https://github.com/bluesabre/menulibre
 Menulibre
 
 -----------------------------------------
-
-caffeine-ng  -  # Приложение строки состояния способно временно блокировать заставку и спящий режим
-https://aur.archlinux.org/packages/caffeine-ng/
-https://aur.archlinux.org/caffeine-ng.git
-https://github.com/caffeine-ng/caffeine-ng
-
-caffeine-ng-git  -  # Приложение строки состояния способно временно блокировать заставку и спящий режим
-https://aur.archlinux.org/packages/caffeine-ng-git/
-https://aur.archlinux.org/caffeine-ng-git.git 
-https://github.com/caffeine-ng/caffeine-ng
-
--------------------------------------------
-
-inxi  -  # Полнофункциональный инструмент системной информации CLI
-https://aur.archlinux.org/packages/inxi/
-https://aur.archlinux.org/inxi.git 
-https://github.com/smxi/inxi
-
-inxi-git  -  # Полнофункциональный инструмент системной информации CLI
-https://aur.archlinux.org/packages/inxi-git/
-https://aur.archlinux.org/inxi-git.git
-https://github.com/smxi/inxi
-
--------------------------------------------
 
 xneur  -  # X Neural Switcher определяет язык ввода и при необходимости корректирует раскладку клавиатуры
 https://aur.archlinux.org/packages/xneur/
