@@ -3201,7 +3201,7 @@ echo -e "${GREEN}==> ${BOLD}Установить рекомендованные 
 #echo -e "${BLUE}:: ${NC}Установить рекомендованные программы (пакеты)?"
 #echo 'Установить рекомендованные программы?'
 # Install the recommended programs
-echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gnome-system-monitor, gnome-disk-utility, gnome-multi-writer, gpart, frei0r-plugins, fuseiso, clonezilla, crypto++, ddrescue, psensor, copyq, rsync, grsync, numlockx, modem-manager-gui, ranger, pacmanlogviewer, rofi, gsmartcontrol, testdisk, dmidecode, qemu, w3m)."
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gnome-system-monitor, gnome-disk-utility, gnome-multi-writer, gpart, frei0r-plugins, fuseiso, clonezilla, crypto++, psensor, copyq, rsync, grsync, numlockx, modem-manager-gui, ranger, pacmanlogviewer, rofi, gsmartcontrol, testdisk, dmidecode, qemu, w3m)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -3224,7 +3224,7 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_collection == 1 ]]; then
   echo ""   
   echo " Установка рекомендованных утилит (пакетов) "
-# sudo pacman -S gnome-system-monitor gnome-disk-utility gnome-multi-writer gpart frei0r-plugins clonezilla crypto++ ddrescue psensor copyq rsync grsync numlockx modem-manager-gui rofi gsmartcontrol ranger testdisk lsof dmidecode qemu w3m --noconfirm  
+# sudo pacman -S gnome-system-monitor gnome-disk-utility gnome-multi-writer gpart frei0r-plugins clonezilla crypto++ psensor copyq rsync grsync numlockx modem-manager-gui rofi gsmartcontrol ranger testdisk lsof dmidecode qemu w3m --noconfirm  
 sudo pacman -S gnome-system-monitor --noconfirm  # Просмотр текущих процессов и мониторинг состояния системы
 sudo pacman -S gnome-disk-utility --noconfirm  # Утилита управления дисками для GNOME
 sudo pacman -S gnome-multi-writer --noconfirm  # Записать файл ISO на несколько USB-устройств одновременно
@@ -3233,7 +3233,6 @@ sudo pacman -S frei0r-plugins --noconfirm  # Минималистичный пл
 sudo pacman -S fuseiso --noconfirm  # Модуль FUSE для монтирования образов файловой системы ISO
 sudo pacman -S clonezilla --noconfirm  # Раздел ncurses и программа для создания образов / клонирования дисков
 sudo pacman -S crypto++ --noconfirm  # Бесплатная библиотека классов C ++ криптографических схем
-sudo pacman -S ddrescue --noconfirm  # Инструмент восстановления данных GNU
 sudo pacman -S psensor --noconfirm  # Графический аппаратный монитор температуры для Linux
 sudo pacman -S copyq --noconfirm  # Менеджер буфера обмена с возможностью поиска и редактирования истории
 sudo pacman -S rsync --noconfirm  # Быстрый и универсальный инструмент для копирования удаленных и локальных файлов
@@ -3296,10 +3295,6 @@ sudo pacman -S pptpclient --noconfirm  # Клиент для проприета�
 sudo pacman -S rp-pppoe --noconfirm  # Протокол точка-точка Roaring Penguin через клиент Ethernet
 sudo pacman -S wvdial --noconfirm  # Программа номеронабирателя для подключения к Интернету
 # sudo pacman -S  --noconfirm  # 
-# sudo pacman -S  --noconfirm  # 
-# sudo pacman -S  --noconfirm  #
-# sudo pacman -S  --noconfirm  #
-# sudo pacman -S  --noconfirm  #
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
