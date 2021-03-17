@@ -967,6 +967,7 @@ elif [[ $i_radiotray == 1 ]]; then
   echo ""  
   echo " Установка Интернет-радио плеер Radio Tray "
 ############ python2-dbus ########## 
+sudo pacman -S python2-dbus --noconfirm  # Привязки Python для DBUS
 
 
 
@@ -974,7 +975,7 @@ elif [[ $i_radiotray == 1 ]]; then
 
 
 
-  
+
 ############ radiotray ##########  
 # yay -S radiotray --noconfirm # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
 # yay -S radiotray-ng --noconfirm # Интернет-радио плеер для Linux  
