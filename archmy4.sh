@@ -398,15 +398,6 @@ rm -Rf gstreamer0.10
 
 -------------------------------------
 
-ddrescue -  # Инструмент восстановления данных GNU
-https://archlinux.org/packages/extra/x86_64/ddrescue/
-https://www.gnu.org/software/ddrescue/ddrescue.html
-
-ddrescue-gui -  # Простой интерфейс с графическим интерфейсом, упрощающий использование ddrescue (инструмент для восстановления данных из командной строки)
-https://aur.archlinux.org/packages/ddrescue-gui/
-https://aur.archlinux.org/ddrescue-gui.git 
-https://launchpad.net/ddrescue-gui
-
 ---------------------------------------
 
 fetchmirrors -  # Утилита обновления зеркального списка Arch Linux pacman (Получение и ранжирование нового зеркального списка pacman)
