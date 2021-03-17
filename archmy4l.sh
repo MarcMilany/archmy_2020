@@ -966,6 +966,15 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_radiotray == 1 ]]; then
   echo ""  
   echo " Установка Интернет-радио плеер Radio Tray "
+
+
+
+
+
+
+
+
+  
 ############ radiotray ##########  
 # yay -S radiotray --noconfirm # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
 # yay -S radiotray-ng --noconfirm # Интернет-радио плеер для Linux  
