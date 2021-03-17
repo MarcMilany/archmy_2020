@@ -767,6 +767,7 @@ fi
 #-----------------------------
 
 clear
+echo ""
 echo -e "${MAGENTA}
   <<< Установка дополнительных утилит для восстановления данных с поврежденного жесткого диска (Если Вы обнаружите, что возникли ошибоки чтения диска, и начали сыпаться ошибки на консоль и в лог). >>> ${NC}"
 echo ""
@@ -848,8 +849,9 @@ echo -e "${BLUE}:: ${BOLD}Посмотрим идентификацию нако
 date
 date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'     # одновременно отображает дату и часовой пояс
 echo ""
-sudo lsblk -f
-sudo lsblk -o name, label, size, fstype, model 
+# sudo lsblk -f
+sudo lsblk -o name,label,size,fstype,model
+echo "" 
 sudo findmnt -D  # Если вы не сможете определить ваши диски
 echo ""
 fi
