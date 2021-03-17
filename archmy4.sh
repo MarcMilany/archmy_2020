@@ -272,9 +272,6 @@ https://github.com/strukturag/libde265
 ##################################
 
 
-
-
-
 audiobook-git  -  # Простая программа для чтения аудиокниг. Написано на QT / QML и C ++ 
 https://aur.archlinux.org/packages/audiobook-git/
 https://aur.archlinux.org/audiobook-git.git 
