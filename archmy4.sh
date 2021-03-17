@@ -580,6 +580,11 @@ yay -S  --noconfirm  #
 yay -S  --noconfirm  # 
 yay -S  --noconfirm  # 
 
+virtualbox-ext-oracle  -  # Пакет расширений Oracle VM VirtualBox
+https://aur.archlinux.org/packages/virtualbox-ext-oracle/
+https://aur.archlinux.org/virtualbox-ext-oracle.git 
+https://www.virtualbox.org/
+
 echo 'Установка Java JDK средство разработки и среда для создания Java-приложений'
 # Installing Java JDK development tool and environment for creating Java applications
 sudo pacman -S jdk8-openjdk jre8-openjdk jre8-openjdk-headless --noconfirm
@@ -1984,10 +1989,7 @@ Soft AUR ===================
 
 ===============================================
 
-virtualbox-ext-oracle  -  # Пакет расширений Oracle VM VirtualBox
-https://aur.archlinux.org/packages/virtualbox-ext-oracle/
-https://aur.archlinux.org/virtualbox-ext-oracle.git 
-https://www.virtualbox.org/
+
 
 -----------------------------------------------
 
