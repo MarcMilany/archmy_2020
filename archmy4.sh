@@ -832,9 +832,9 @@ yay -S gksu debtap menulibre caffeine-ng inxi xneur fsearch-git timeshift mocico
 yay -S timeshift --noconfirm  #
 yay -S  --noconfirm  #
 
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
+yay -S gconf-editor --noconfirm  # Графический редактор реестра gconf
+yay -S gconf-cleaner --noconfirm  # Инструмент очистки для GConf
+yay -S gconf --noconfirm  # Устаревшая система базы данных конфигурации
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
