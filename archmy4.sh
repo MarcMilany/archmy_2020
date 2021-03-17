@@ -837,6 +837,8 @@ yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
+yay -S  --noconfirm  #
+
 
 yay -S gconf --noconfirm  # Устаревшая система базы данных конфигурации
 https://aur.archlinux.org/packages/gconf/
@@ -853,9 +855,6 @@ https://aur.archlinux.org/packages/gconf-cleaner/
 https://aur.archlinux.org/gconf-cleaner.git 
 http://code.google.com/p/gconf-cleaner
 
-
-yay -S  --noconfirm  #
-
 yay -S fetchmirrors --noconfirm  # Получение и ранжирование нового зеркального списка pacman
 https://aur.archlinux.org/packages/fetchmirrors/
 https://aur.archlinux.org/fetchmirrors.git 
@@ -866,9 +865,17 @@ https://aur.archlinux.org/packages/keepass2-plugin-tray-icon/
 https://aur.archlinux.org/keepass2-plugin-tray-icon.git 
 https://github.com/dlech/Keebuntu
 
+yay -S fsearch-git --noconfirm  # Утилита быстрого поиска файлов. Версия Git
+https://aur.archlinux.org/packages/fsearch-git/
+https://aur.archlinux.org/fsearch-git.git 
+https://cboxdoerfer.github.io/fsearch
+
+yay -S caffeine-ng --noconfirm  # Приложение в строке состояния способно временно блокировать заставку и спящий режим
+https://aur.archlinux.org/packages/caffeine-ng/
+https://aur.archlinux.org/caffeine-ng.git
+https://github.com/caffeine-ng/caffeine-ng
+
 yay -S gtk3-mushrooms --noconfirm  # GTK3 исправлен для классических настольных компьютеров, таких как XFCE или MATE. См. README
-yay -S  --noconfirm  #
-yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
 yay -S  --noconfirm  #
