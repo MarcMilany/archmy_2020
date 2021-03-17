@@ -1105,7 +1105,7 @@ elif [[ $i_spotify == 2 ]]; then
   echo ""    
   echo " Установка Ddrescue + GUI "
 ############ ddrescue-gui ##########
-yay -S ddrescue-gui --noconfirm  # Запатентованный сервис потоковой передачи музыки
+# yay -S ddrescue-gui --noconfirm  # Запатентованный сервис потоковой передачи музыки
 sudo pacman -S ddrescue --noconfirm  # Инструмент восстановления данных GNU
 git clone https://aur.archlinux.org/ddrescue-gui.git  # Простой интерфейс с графическим интерфейсом, упрощающий использование ddrescue (инструмент для восстановления данных из командной строки)
 cd ddrescue-gui
