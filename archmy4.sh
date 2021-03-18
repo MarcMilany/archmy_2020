@@ -1629,8 +1629,14 @@ python-libarchive-c # Интерфейс Python для libarchive
 python-lxml-docs # Связывание Python для библиотек libxml2 и libxslt (документы)
 python-magic # Привязки Python к волшебной библиотеке
 python-mako # Сверхбыстрый язык шаблонов, который заимствует лучшие идеи из существующих языков шаблонов
-
-
+python-markdown # Реализация Python Markdown Джона Грубера
+python-markupsafe # Реализует безопасную строку разметки XML / HTML / XHTML для Python
+python-maxminddb # Читатель для формата MaxMind DB
+python-msgpack  # Реализация сериализатора MessagePack для Python
+python-mutagen  # Устройство чтения и записи тегов аудиометаданных (библиотека Python)
+python-nose  # Расширение unittest на основе обнаружения
+python-numpy # Научные инструменты для Python
+python-olefile # Библиотека Python для анализа, чтения и записи файлов Microsoft OLE2 (ранее OleFileIO_PL)
 
 
 
@@ -1679,14 +1685,7 @@ https://github.com/Tierion/pymerkletools
 
 -------------------------------------------
 
-python-markdown # Реализация Python Markdown Джона Грубера
-python-markupsafe # Реализует безопасную строку разметки XML / HTML / XHTML для Python
-python-maxminddb # Читатель для формата MaxMind DB
-python-msgpack  # Реализация сериализатора MessagePack для Python
-python-mutagen 1.45.1-1
-python-nose 1.3.7-7
-python-numpy 1.19.1-1
-python-olefile 0.46-2
+
 python-ordered-set 4.0.2-1
 python-packaging 20.4-1
 python-paramiko 2.7.2-1
