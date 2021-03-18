@@ -811,6 +811,10 @@ elif [[ $i_spotify == 2 ]]; then
 ############ ddrescue ##########
 # yay -S ddrescue-gui --noconfirm  # Запатентованный сервис потоковой передачи музыки
 sudo pacman -S ddrescue --noconfirm  # Инструмент восстановления данных GNU
+############ lshw ##########
+sudo pacman -S lshw --noconfirm  # Небольшой инструмент для предоставления подробной информации об аппаратной конфигурации машины 
+############ python-beautifulsoup4 ##########
+sudo pacman -S python-beautifulsoup4 --noconfirm  # Синтаксический анализатор HTML / XML на Python, предназначенный для быстрого выполнения проектов, таких как очистка экрана
 ############ python-getdevinfo ##########
 git clone https://aur.archlinux.org/python-getdevinfo.git  # Сборщик информации об устройстве для Linux и macOS использование ddrescue (инструмент для восстановления данных из командной строки)
 cd python-getdevinfo
@@ -822,12 +826,10 @@ pwd    # покажет в какой директории мы находимс
 cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf python-getdevinfo 
 rm -Rf python-getdevinfo
+############ python-requests ##########
+sudo pacman -S python-requests --noconfirm  # Python HTTP для людей
 ############ python-wxpython ##########
 sudo pacman -S python-wxpython --noconfirm  # Кросс-платформенный набор инструментов с графическим интерфейсом
-############ lshw ##########
-sudo pacman -S lshw --noconfirm  # Небольшой инструмент для предоставления подробной информации об аппаратной конфигурации машины 
-############ python-beautifulsoup4 ##########
-sudo pacman -S python-beautifulsoup4 --noconfirm  # Синтаксический анализатор HTML / XML на Python, предназначенный для быстрого выполнения проектов, таких как очистка экрана
 ############ ddrescue-gui ##########
 git clone https://aur.archlinux.org/ddrescue-gui.git  # Простой интерфейс с графическим интерфейсом, упрощающий использование ddrescue (инструмент для восстановления данных из командной строки)
 cd ddrescue-gui
