@@ -974,9 +974,30 @@ sudo pacman -S python-gobject --noconfirm  # Привязки Python для GLib
 ############ python2-lxml ##########
 sudo pacman -S python-lxml --noconfirm  # Связывание Python3 для библиотек libxml2 и libxslt (-S python-lxml --force # принудительная установка)
 sudo pacman -S python-lxml-docs --noconfirm  # Связывание Python для библиотек libxml2 и libxslt (документы)
-
-
-
+############ python2-notify ##########
+# yay -S python2-notify --noconfirm # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux 
+git clone https://aur.archlinux.org/python2-notify.git  # Привязки Python для libnotify задач Linux
+cd python2-notify
+#makepkg -fsri
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf python2-notify 
+rm -Rf python2-notify
+############ python2-xdg ##########
+# yay -S radiotray --noconfirm # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
+git clone   # 
+cd radiotray
+#makepkg -fsri
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf radiotray 
+rm -Rf radiotray
 
 
 
