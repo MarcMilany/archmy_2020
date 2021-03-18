@@ -1642,7 +1642,7 @@ python-olefile # Библиотека Python для анализа, чтения
 
 
 
-
+python-ujson # Сверхбыстрый кодировщик и декодер JSON для Python
 python-unidecode # ASCII транслитерации текста Unicode
 python-webencodings # Это Python-реализация стандарта кодирования WHATWG
 python-websockets # Реализация протокола WebSocket на Python (RFC 6455)
@@ -1651,7 +1651,11 @@ python-yaml # Привязки Python для YAML с использование�
 python-zope-event # Предоставляет простую систему событий
 python-zope-interface # Интерфейсы Zope для Python 3.x
 
+
 ----------------------------
+
+########## Биткойн ###########
+
 python-base58   AUR  # Биткойн-совместимая реализация Base58 и Base58Check
 https://aur.archlinux.org/packages/python-base58/
 https://aur.archlinux.org/python-base58.git 
@@ -1681,6 +1685,13 @@ python-merkletools   AUR  # Инструменты Python для создани�
 https://aur.archlinux.org/packages/python-merkletools/
 https://aur.archlinux.org/python-merkletools.git 
 https://github.com/Tierion/pymerkletools
+
+python-twitter   AUR  # Набор инструментов API и командной строки для Twitter (twitter.com)
+https://aur.archlinux.org/packages/python-twitter/
+https://aur.archlinux.org/python-twitter.git 
+http://pypi.python.org/pypi/twitter/
+
+
 
 
 -------------------------------------------
@@ -1746,8 +1757,8 @@ python-sqlalchemy 1.3.19-1
 python-termcolor 1.1.0-8
 python-tlsh 3.17.0-2
 python-toml 0.10.1-1
-python-twitter 1.18.0-2
-python-ujson 3.1.0-1
+
+
 
 
 -------------------------------------------
