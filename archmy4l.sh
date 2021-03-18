@@ -986,28 +986,9 @@ pwd    # покажет в какой директории мы находимс
 cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf python2-notify 
 rm -Rf python2-notify
-############ python2-xdg ##########
-# yay -S radiotray --noconfirm # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
-git clone   # 
-cd radiotray
-#makepkg -fsri
-# makepkg -si
-makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
-# makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
-# rm -rf radiotray 
-rm -Rf radiotray
-
-
-
-
-
-
-
-
-  -> python2-notify
-  -> python2-xdg
+############ python2-xdg (python2-pyxdg) ##########
+# -> python2-xdg замена на python2-pyxdg
+sudo pacman -S python2-pyxdg --noconfirm  # Библиотека Python для доступа к стандартам freedesktop.org
 ############ radiotray ##########  
 # yay -S radiotray --noconfirm # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
 # yay -S radiotray-ng --noconfirm # Интернет-радио плеер для Linux  
