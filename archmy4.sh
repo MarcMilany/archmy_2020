@@ -1480,12 +1480,13 @@ sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 
-sudo pacman -S python python-anytree python-appdirs python-arrow python-cairo python-chardet python-dbus python-dbus-common python-ewmh python-gobject python-idna python-isodate python-lxml python-mutagen python-ordered-set python-packaging python-pexpect python-ply python-ptyprocess python-pycountry python-pycryptodome python-pyparsing python-pyqt5 python-pyqt5-sip python-pysocks python-pyxdg python-requests python-setuptools python-sip python-six python-urllib3 python-websocket-client --noconfirm  # python +
+sudo pacman -S python python-anytree python-appdirs python-arrow python-asn1crypto python-cairo python-chardet python-dbus python-dbus-common python-ewmh python-gobject python-idna python-isodate python-lxml python-mutagen python-ordered-set python-packaging python-pexpect python-ply python-ptyprocess python-pycountry python-pycryptodome python-pyparsing python-pyqt5 python-pyqt5-sip python-pysocks python-pyxdg python-requests python-setuptools python-sip python-six python-urllib3 python-websocket-client --noconfirm  # python +
 
 sudo pacman -S python --noconfirm  # Новое поколение языка сценариев высокого уровня Python
 sudo pacman -S python-anytree --noconfirm  # Мощная и легкая древовидная структура данных Python
 sudo pacman -S python-appdirs --noconfirm  # Небольшой модуль Python для определения соответствующих директорий для конкретной платформы, например «директории пользовательских данных».
 sudo pacman -S python-arrow --noconfirm  # Лучшие даты и время для Python
+sudo pacman -S python-asn1crypto --noconfirm  # Библиотека Python ASN.1 с упором на производительность и pythonic API
 sudo pacman -S python-cairo --noconfirm  # Привязки Python для графической библиотеки cairo
 sudo pacman -S python-chardet --noconfirm  # Модуль Python3 для автоматического определения кодировки символов
 sudo pacman -S python-dbus --noconfirm  # Привязки Python для DBUS
@@ -1589,7 +1590,7 @@ sudo pacman -S  --noconfirm  #
 
 ----------------------------------
 
-python-asn1crypto # Библиотека Python ASN.1 с упором на производительность и pythonic API
+
 python-atspi # Привязки Python для D-Bus AT-SPI
 python-attrs # Атрибуты без шаблона
 python-bcrypt # Современное хеширование паролей для вашего программного обеспечения и ваших серверов
@@ -1670,15 +1671,18 @@ python-coincurve   AUR  # Кросс-платформенные привязки
 https://aur.archlinux.org/packages/python-coincurve/
 https://aur.archlinux.org/python-coincurve.git 
 
+python-merkletools   AUR  # Инструменты Python для создания и проверки деревьев Меркла и доказательств
+https://aur.archlinux.org/packages/python-merkletools/
+https://aur.archlinux.org/python-merkletools.git 
+https://github.com/Tierion/pymerkletools
 
 
 -------------------------------------------
 
 python-markdown # Реализация Python Markdown Джона Грубера
-python-markupsafe 1.1.1-4
-python-maxminddb 2.0.2-1
-python-merkletools 1.0.3-3
-python-msgpack 1.0.0-1
+python-markupsafe # Реализует безопасную строку разметки XML / HTML / XHTML для Python
+python-maxminddb # Читатель для формата MaxMind DB
+python-msgpack  # Реализация сериализатора MessagePack для Python
 python-mutagen 1.45.1-1
 python-nose 1.3.7-7
 python-numpy 1.19.1-1
@@ -1750,7 +1754,7 @@ python-ujson 3.1.0-1
 -------------------------------------------
 
 python2 2.7.18-1
-python2-appdirs 1.4.4-1
+python2-appdirs 1.4.4-1   # Небольшой модуль Python для определения соответствующих директорий для конкретной платформы, например «директории пользовательских данных»
 python2-apsw 3.33.0-1
 python2-asn1crypto 1.4.0-1
 python2-backports 1.0-3
