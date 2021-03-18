@@ -1300,10 +1300,6 @@ lightdm-slick-greeter  AUR  # Красивое приветствие LightDM
 https://aur.archlinux.org/packages/lightdm-slick-greeter/
 https://aur.archlinux.org/lightdm-slick-greeter.git
 
-python2-imaging  AUR  # PIL. Предоставляет возможности обработки изображений для Python
-https://aur.archlinux.org/packages/python2-imaging/
-https://aur.archlinux.org/python2-imaging.git  
-
 bluez-utils-compat  AUR  # Утилиты для разработки и отладки стека протоколов Bluetooth. Включает устаревшие инструменты.
 https://aur.archlinux.org/packages/bluez-utils-compat/
 https://aur.archlinux.org/bluez-utils-compat.git 
@@ -1720,6 +1716,12 @@ https://aur.archlinux.org/python-twitter.git
 http://pypi.python.org/pypi/twitter/
 
 
+python2-imaging  AUR  # PIL. Предоставляет возможности обработки изображений для Python
+https://aur.archlinux.org/packages/python2-imaging/
+https://aur.archlinux.org/python2-imaging.git 
+http://www.pythonware.com/products/pil/index.htm
+
+
 
 
 -------------------------------------------
@@ -1824,7 +1826,7 @@ python2-ordered-set 3.1.1-3
 python2-packaging 20.4-1
 python2-pathlib2 2.3.5-1
 python2-pep517 0.8.2-1
-python2-pillow 6.2.1-2
+python2-pillow 6.2.1-2  # Вилка Python Imaging Library (PIL)
 python2-pip 20.1.1-1
 python2-ply 3.11-5
 python2-progress 1.5-3
