@@ -967,7 +967,13 @@ elif [[ $i_radiotray == 1 ]]; then
   echo ""  
   echo " Установка Интернет-радио плеер Radio Tray "
 ############ python2-dbus ########## 
-sudo pacman -S python2-dbus --noconfirm  # Привязки Python для DBUS
+sudo pacman -S python-dbus --noconfirm  # Привязки Python для DBUS
+sudo pacman -S python-dbus-common --noconfirm  # Общие файлы dbus-python, общие для python-dbus и python2-dbus
+############ python2-gobject ##########
+sudo pacman -S python-gobject --noconfirm  # Привязки Python для GLib / GObject / GIO / GTK +
+############ python2-lxml ##########
+sudo pacman -S python-lxml --noconfirm  # Связывание Python3 для библиотек libxml2 и libxslt (-S python-lxml --force # принудительная установка)
+sudo pacman -S python-lxml-docs --noconfirm  # Связывание Python для библиотек libxml2 и libxslt (документы)
 
 
 
@@ -976,6 +982,11 @@ sudo pacman -S python2-dbus --noconfirm  # Привязки Python для DBUS
 
 
 
+
+
+
+  -> python2-notify
+  -> python2-xdg
 ############ radiotray ##########  
 # yay -S radiotray --noconfirm # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
 # yay -S radiotray-ng --noconfirm # Интернет-радио плеер для Linux  
