@@ -966,9 +966,10 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_radiotray == 1 ]]; then
   echo ""  
   echo " Установка Интернет-радио плеер Radio Tray "
-############ python2-dbus ########## 
-sudo pacman -S python-dbus --noconfirm  # Привязки Python для DBUS
-sudo pacman -S python-dbus-common --noconfirm  # Общие файлы dbus-python, общие для python-dbus и python2-dbus
+############ python2-dbus ##########
+sudo pacman -S dbus-python --noconfirm  # Привязки Python для DBUS (замена python-dbus , python-dbus-common)  
+### sudo pacman -S python-dbus --noconfirm  # Привязки Python для DBUS
+### sudo pacman -S python-dbus-common --noconfirm  # Общие файлы dbus-python, общие для python-dbus и python2-dbus
 ############ python2-gobject ##########
 sudo pacman -S python-gobject --noconfirm  # Привязки Python для GLib / GObject / GIO / GTK +
 ############ python2-lxml ##########
@@ -989,6 +990,18 @@ rm -Rf python2-notify
 ############ python2-xdg (python2-pyxdg) ##########
 # -> python2-xdg замена на python2-pyxdg
 sudo pacman -S python2-pyxdg --noconfirm  # Библиотека Python для доступа к стандартам freedesktop.org
+############ pygtk ##########
+# yay -S pygtk --noconfirm # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux 
+git clone https://aur.archlinux.org/pygtk.git  # Привязки Python для набора виджетов GTK
+cd pygtk
+#makepkg -fsri
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf pygtk 
+rm -Rf pygtk
 ############ radiotray ##########  
 # yay -S radiotray --noconfirm # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
 # yay -S radiotray-ng --noconfirm # Интернет-радио плеер для Linux  
