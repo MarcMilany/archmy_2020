@@ -1648,6 +1648,19 @@ python-pexpect # Для управления и автоматизации пр�
 python-pillow # Вилка Python Imaging Library (PIL)
 python-pip # Рекомендуемый PyPA инструмент для установки пакетов Python
 python-ply # Реализация инструментов парсинга lex и yacc
+python-powerline # Библиотека Python для Powerline
+python-progress # Простые в использовании индикаторы выполнения для Python
+python-psutil # Кросс-платформенный модуль процессов и системных утилит для Python
+python-ptyprocess # Запустить подпроцесс в псевдотерминале
+python-pyasn1 # Библиотека ASN.1 для Python 3
+python-pyasn1-modules # Коллекция модулей протоколов на основе ASN.1
+python-pycparser # Синтаксический анализатор C и генератор AST, написанные на Python
+python-pycups # Привязки Python для libcups
+python-pycurl # Интерфейс Python 3.x для libcurl
+
+
+
+
 
 
 
@@ -1696,6 +1709,11 @@ https://aur.archlinux.org/packages/python-merkletools/
 https://aur.archlinux.org/python-merkletools.git 
 https://github.com/Tierion/pymerkletools
 
+python-pyparted   AUR  # Модуль Python для GNU parted
+https://aur.archlinux.org/packages/python-pyparted/
+https://aur.archlinux.org/python-pyparted.git
+https://github.com/dcantrell/pyparted
+
 python-twitter   AUR  # Набор инструментов API и командной строки для Twitter (twitter.com)
 https://aur.archlinux.org/packages/python-twitter/
 https://aur.archlinux.org/python-twitter.git 
@@ -1705,18 +1723,9 @@ http://pypi.python.org/pypi/twitter/
 
 
 -------------------------------------------
+### ПРОВЕРИТЬ ############
 
 
-
-python-powerline 2.8.1-1
-python-progress 1.5-3
-python-psutil 5.7.2-1
-python-ptyprocess 0.6.0-4
-python-pyasn1 0.4.8-2
-python-pyasn1-modules 0.2.8-1
-python-pycparser 2.20-1
-python-pycups 2.0.1-1
-python-pycurl 7.43.0.6-1
 python-pyelftools 0.26-1
 python-pyelliptic 2.0.1-2
 python-pyfiglet 0.8.post0-3
@@ -1725,7 +1734,7 @@ python-pyicu 2.5-1
 python-pynacl 1.4.0-1
 python-pyopenssl 19.1.0-2
 python-pyparsing 2.4.7-1
-python-pyparted 3.11.6-1
+
 python-pyphen 0.9.5-3
 python-pyqt4 4.12.3-4
 python-pyqt5 5.15.0-3
@@ -1751,7 +1760,6 @@ python-setuptools 1:49.6.0-1
 python-shiboken2 5.15.0-2
 python-sip 4.19.24-1
 python-sip-pyqt4 4.19.22-1
-python-six 1.15.0-1
 python-soupsieve 2.0.1-1
 python-sqlalchemy 1.3.19-1
 python-termcolor 1.1.0-8
