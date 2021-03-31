@@ -2358,6 +2358,7 @@ echo " Установка веб-браузера Firefox (без - flashplugin)
 sudo pacman -S firefox --noconfirm  # Автономный веб-браузер от mozilla.org
 sudo pacman -S firefox-i18n-ru --noconfirm  # Русский языковой пакет для Firefox
 sudo pacman -S firefox-spell-ru --noconfirm  # Русский словарь проверки орфографии для Firefox
+sudo pacman -S firefox-ublock-origin --noconfirm  # Надстройка эффективного блокировщика для различных браузеров. Быстрый, мощный и компактный
 #sudo pacman -S firefox-i18n-en-us --noconfirm  # Английский (США) языковой пакет для Firefox
 ### yay -S flashplugin # Adobe Flash Player NPAPI
 #sudo pacman -S firefox-developer-edition firefox-developer-edition-i18n-ru firefox-spell-ru --noconfirm  # Версия для разработчиков
