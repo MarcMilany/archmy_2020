@@ -4433,19 +4433,13 @@ echo -e "${GREEN}==> ${NC}Установить графический интер
 #echo -e "${BLUE}:: ${NC}Установить графический интерфейс для Reflector и утилиты преобразователя IP-адресов"
 #echo 'Установить графический интерфейс для Reflector и утилиты преобразователя IP-адресов'
 # Install the GUI for Reflector and the IP Address Converter utility?
-
-
-
-
-
-
-Reflector - скрипт, который автоматизирует процесс настройки зеркал, включающий в себя загрузку свежего списка зеркал со страницы Mirror Status, фильтрацию из них наиболее обновленных, сортировку по скорости и сохранение в /etc/pacman.d/mirrorlist.
+echo -e "${MAGENTA}:: ${BOLD}Reflector - скрипт, который автоматизирует процесс настройки зеркал, включающий в себя загрузку свежего списка зеркал со страницы Mirror Status, фильтрацию из них наиболее обновленных, сортировку по скорости и сохранение в /etc/pacman.d/mirrorlist. ${NC}"
 echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие варианты: ${NC}"
-echo -e "${MAGENTA}:: ${NC}1 - MenuLibre - удобный инструмент, Python / GTK графическая утилита для редактирования меню приложений в графических рабочих окружениях Gnome, LXDE, XFCE и Unity, предоставляя несколько дополнительных возможностей не имеющихся в стандартных для окружений "Редакторах меню" (те которые их имеют и сторонних)."
-echo " MenuLibre в удобном и интуитивно понятном пользовательском интерфейсе создавать/изменять/удалять пункты меню, изменять категории приложений, просматривать/изменять команды запуска, менять описание и др... "
-echo -e "${CYAN}:: ${NC}Установка menulibre проходит через сборку из исходников AUR. То есть установка производиться с помощью git clone (https://aur.archlinux.org/menulibre.git), PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/menulibre/), собирается и устанавливается."
-echo -e "${MAGENTA}:: ${NC}2 - Alacarte - (https://www.archlinux.org/packages/extra/any/alacarte/) простой в использовании редактор меню, написанный на основе технологии GNOME, позволяющий добавлять новые и изменять существующие подменю и их элементы."
-echo " Он создан в соответствии со спецификацией freedesktop.org и должен работать в любой графической среде, поддерживающей эту спецификацию. (https://gitlab.gnome.org/GNOME/alacarte) "
+echo -e "${MAGENTA}:: ${NC}1 - Reflector-Simple - Простая оболочка графического интерфейса для reflector (отражателя)."
+echo -e "${CYAN}:: ${NC}Установка reflector-simple проходит через сборку из исходников AUR. То есть установка производиться с помощью git clone (https://aur.archlinux.org/reflector-simple.git), PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/reflector-simple/), собирается и устанавливается."
+echo " Вместе с (пакетом) reflector-simple будут установлены утилиты преобразователя IP-адресов : - geoip, geoip-database, zenity, yad. Эти (пакеты) скачивается и устанавливается из 'Официальных репозиториев Arch Linux'. "
+echo -e "${MAGENTA}:: ${NC}2 - Fetchmirrors - Утилита обновления зеркального списка Arch Linux pacman."
+echo -e "${CYAN}:: ${NC}Установка reflector-simple проходит через сборку из исходников AUR. То есть установка производиться с помощью git clone (https://aur.archlinux.org/fetchmirrors.git), PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/fetchmirrors/), собирается и устанавливается."
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
