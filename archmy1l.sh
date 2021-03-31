@@ -897,7 +897,7 @@ done
 rm /mnt/etc/pacman.d/mirrorlist 
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
 pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman  - пока присутствует в pkglist.x86_64
-reflector --verbose --country 'Russia' -l 7 -p https -p http -n 7 --save /etc/pacman.d/mirrorlist --sort rate
+reflector --verbose --country 'Russia' -l 9 -p https -p http -n 9 --save /etc/pacman.d/mirrorlist --sort rate
   echo "" 
   echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
 cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
