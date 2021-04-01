@@ -262,9 +262,9 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done
-if [[ $x_key == 0 ]]; then
- echo ""
- echo " Обновление ключей пропущено "
+ if [[ $x_key == 0 ]]; then
+echo ""
+echo " Обновление ключей пропущено " 
  echo ""
  echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
   pacman -Sy --noconfirm 
