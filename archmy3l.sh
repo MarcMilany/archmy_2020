@@ -4235,7 +4235,6 @@ elif [[ $i_reflector == 1 ]]; then
 ##### reflector-simple ###### 
 sudo pacman -S geoip --noconfirm  # Библиотека C и утилиты преобразователя IP-адресов в страну без использования DNS
 sudo pacman -S geoip-database --noconfirm  # Устаревшая база данных стран GeoIP (на основе данных GeoLite2, созданных MaxMind)
-# Это - публичная база данных соответствий IP-страна. IP-город(city database) там тоже есть, но полная версия - платная ЕМНИП. Нужно всяким пакетам типа wireshark, pmacct и т.д. чтобы выводить информацию по IP-адресам
 sudo pacman -S zenity --noconfirm  # Отображение графических диалоговых окон из сценариев оболочки (возможно присутствует)
 sudo pacman -S yad --noconfirm  # Вилка zenity - отображение графических диалогов из сценариев оболочки или командной строки
 # yay -S reflector-simple --noconfirm  # Простая оболочка графического интерфейса для reflector (отражателя)
@@ -4276,7 +4275,6 @@ elif [[ $i_reflector == 3 ]]; then
 ##### reflector-simple ###### 
 sudo pacman -S geoip --noconfirm  # Библиотека C и утилиты преобразователя IP-адресов в страну без использования DNS
 sudo pacman -S geoip-database --noconfirm  # Устаревшая база данных стран GeoIP (на основе данных GeoLite2, созданных MaxMind)
-# Это - публичная база данных соответствий IP-страна. IP-город(city database) там тоже есть, но полная версия - платная ЕМНИП. Нужно всяким пакетам типа wireshark, pmacct и т.д. чтобы выводить информацию по IP-адресам
 sudo pacman -S zenity --noconfirm  # Отображение графических диалоговых окон из сценариев оболочки (возможно присутствует)
 sudo pacman -S yad --noconfirm  # Вилка zenity - отображение графических диалогов из сценариев оболочки или командной строки
 # yay -S reflector-simple --noconfirm  # Простая оболочка графического интерфейса для reflector (отражателя)
