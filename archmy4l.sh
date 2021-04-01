@@ -868,10 +868,128 @@ fi
 # https://ru.wikipedia.org/wiki/Ddrescue
 #---------------------------
 
+clear
+echo -e "${MAGENTA}
+  <<< Установка графического интерфейса для Reflector (отражателя) в Archlinux >>> ${NC}"
+# Installing the program (package) menu Editor in Archlinux
 
+echo ""
+echo -e "${GREEN}==> ${NC}Установить графический интерфейс для Reflector и утилиты преобразователя IP-адресов?"
+#echo -e "${BLUE}:: ${NC}Установить графический интерфейс для Reflector и утилиты преобразователя IP-адресов"
+#echo 'Установить графический интерфейс для Reflector и утилиты преобразователя IP-адресов'
+# Install the GUI for Reflector and the IP Address Converter utility?
+echo -e "${MAGENTA}:: ${BOLD}Reflector - скрипт, который автоматизирует процесс настройки зеркал, включающий в себя загрузку свежего списка зеркал со страницы Mirror Status, фильтрацию из них наиболее обновленных, сортировку по скорости и сохранение в /etc/pacman.d/mirrorlist. ${NC}"
+echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие варианты: ${NC}"
+echo -e "${MAGENTA}:: ${NC}1 - Reflector-Simple - Простая оболочка графического интерфейса для reflector (отражателя)."
+echo -e "${CYAN}:: ${NC}Установка reflector-simple проходит через сборку из исходников AUR. То есть установка производиться с помощью git clone (https://aur.archlinux.org/reflector-simple.git), PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/reflector-simple/), собирается и устанавливается."
+echo " Вместе с (пакетом) reflector-simple будут установлены утилиты преобразователя IP-адресов : - geoip, geoip-database, zenity, yad. Эти (пакеты) скачивается и устанавливается из 'Официальных репозиториев Arch Linux'. "
+echo -e "${MAGENTA}:: ${NC}2 - Fetchmirrors - Утилита обновления зеркального списка Arch Linux pacman."
+echo -e "${CYAN}:: ${NC}Установка fetchmirrors проходит через сборку из исходников AUR. То есть установка производиться с помощью git clone (https://aur.archlinux.org/fetchmirrors.git), PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/fetchmirrors/), собирается и устанавливается."
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
+while
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Установить Reflector-Simple,     2 - Установить Fetchmirrors,     
 
-
-
+    3 - Установить Reflector-Simple + Fetchmirrors,      0 - НЕТ - Пропустить установку: " i_reflector  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_reflector" =~ [^1230] ]]
+do
+    :
+done 
+if [[ $i_reflector == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $i_reflector == 1 ]]; then
+  echo ""  
+  echo " Установка Reflector-Simple "
+##### reflector-simple ###### 
+sudo pacman -S geoip --noconfirm  # Библиотека C и утилиты преобразователя IP-адресов в страну без использования DNS
+sudo pacman -S geoip-database --noconfirm  # Устаревшая база данных стран GeoIP (на основе данных GeoLite2, созданных MaxMind)
+sudo pacman -S zenity --noconfirm  # Отображение графических диалоговых окон из сценариев оболочки (возможно присутствует)
+sudo pacman -S yad --noconfirm  # Вилка zenity - отображение графических диалогов из сценариев оболочки или командной строки
+# yay -S reflector-simple --noconfirm  # Простая оболочка графического интерфейса для reflector (отражателя)
+git clone https://aur.archlinux.org/reflector-simple.git  # Простая оболочка графического интерфейса для reflector (отражателя)
+cd reflector-simple
+#makepkg -fsri
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf reflector-simple 
+rm -Rf reflector-simple
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+echo " Желательно перезагрузить систему для применения изменений "
+elif [[ $i_reflector == 2 ]]; then
+  echo ""  
+  echo " Установка Fetchmirrors "
+##### fetchmirrors ######   
+# yay -S fetchmirrors --noconfirm  # Получите новый зеркальный список pacman и оцените лучшее
+git clone https://aur.archlinux.org/fetchmirrors.git  # Утилита обновления зеркального списка Arch Linux pacman
+cd fetchmirrors
+#makepkg -fsri
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf fetchmirrors 
+rm -Rf fetchmirrors
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+echo " Желательно перезагрузить систему для применения изменений "
+elif [[ $i_reflector == 3 ]]; then
+  echo ""  
+  echo " Установка Reflector-Simple + Fetchmirrors "
+##### reflector-simple ###### 
+sudo pacman -S geoip --noconfirm  # Библиотека C и утилиты преобразователя IP-адресов в страну без использования DNS
+sudo pacman -S geoip-database --noconfirm  # Устаревшая база данных стран GeoIP (на основе данных GeoLite2, созданных MaxMind)
+sudo pacman -S zenity --noconfirm  # Отображение графических диалоговых окон из сценариев оболочки (возможно присутствует)
+sudo pacman -S yad --noconfirm  # Вилка zenity - отображение графических диалогов из сценариев оболочки или командной строки
+# yay -S reflector-simple --noconfirm  # Простая оболочка графического интерфейса для reflector (отражателя)
+git clone https://aur.archlinux.org/reflector-simple.git  # Простая оболочка графического интерфейса для reflector (отражателя)
+cd reflector-simple
+#makepkg -fsri
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf reflector-simple 
+rm -Rf reflector-simple
+##### fetchmirrors ######   
+# yay -S fetchmirrors --noconfirm  # Получите новый зеркальный список pacman и оцените лучшее
+git clone https://aur.archlinux.org/fetchmirrors.git  # Утилита обновления зеркального списка Arch Linux pacman
+cd fetchmirrors
+#makepkg -fsri
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf fetchmirrors 
+rm -Rf fetchmirrors
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+echo " Желательно перезагрузить систему для применения изменений "
+fi
+#----------------------
+# https://github.com/endeavouros-team/PKGBUILDS/tree/master/reflector-simple
+# https://github.com/deadhead420/fetchmirrors
+# https://dev.maxmind.com/geoip/legacy/downloadable/
+# https://github.com/v1cont/yad
+# ДЛЯ ПАРАНОИКОВ!!! (FOR THE PARANOID)
+# GEOIP - Это публичная база данных соответствий IP-страна. IP-город (city database) там тоже есть, но полная версия - платная ЕМНИП.
+# Нужно всяким пакетам типа wireshark, pmacct и т.д. чтобы выводить информацию по IP-адресам
+# Эта штука сама по себе ничего отследить не может. Это база соответствий IP-адресов странам. Если провести аналогию с телефонными номерами, то это как справочник, где указано, какой телефонный код относится к какой стране (+7 = Россия, +1 = США и пр.). За деньги можно купить список кодов городов.
+# https://www.8host.com/blog/opredelenie-mestopolozheniya-polzovatelya-pri-pomoshhi-geoip-i-elk/
+#---------------------
 
 clear
 echo -e "${MAGENTA}
