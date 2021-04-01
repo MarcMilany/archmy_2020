@@ -2406,6 +2406,13 @@ https://aur.archlinux.org/zsh-theme-powerlevel10k-git.git
 https://github.com/romkatv/powerlevel10k
 
 
+-----------------------------------
+
+zsh-fast-syntax-highlighting-git  -  # Оптимизированная и расширенная подсветка синтаксиса zsh
+https://aur.archlinux.org/packages/zsh-fast-syntax-highlighting-git/
+https://aur.archlinux.org/zsh-fast-syntax-highlighting-git.git
+https://github.com/zdharma/fast-syntax-highlighting
+
 =====================================
 
 vim-colorsamplerpack  -  # Различные цветовые схемы для vim
