@@ -4266,7 +4266,7 @@ rm -Rf xfce4-docklike-plugin-git
 #######################
 echo ""  
 echo " Создание пользовательских каталогов по умолчанию "     
-pacman -S xdg-user-dirs-gtk --noconfirm  # Создаёт каталоги пользователей и просит их переместить
+sudo pacman -S xdg-user-dirs-gtk --noconfirm  # Создаёт каталоги пользователей и просит их переместить
 xdg-user-dirs-gtk-update  # Обновить закладки в thunar (левое меню)
 echo "" 
 echo " Создание каталогов успешно выполнено "
