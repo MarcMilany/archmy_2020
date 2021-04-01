@@ -2400,10 +2400,10 @@ https://github.com/ohmyzsh/ohmyzsh
 
 --------------------------------------
 
-
-
-
-
+zsh-theme-powerlevel10k-git  -  # Powerlevel10k - это тема для Zsh. Он подчеркивает скорость, гибкость и готовность к работе.
+https://aur.archlinux.org/packages/zsh-theme-powerlevel10k-git/
+https://aur.archlinux.org/zsh-theme-powerlevel10k-git.git 
+https://github.com/romkatv/powerlevel10k
 
 
 =====================================
