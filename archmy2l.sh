@@ -1733,6 +1733,7 @@ echo " Создание пользовательских каталогов по
  pacman -S xdg-user-dirs --noconfirm  # Управляйте пользовательскими каталогами, такими как ~ / Desktop и ~ / Music
 # pacman -S xdg-user-dirs-gtk --noconfirm  # Создаёт каталоги пользователей и просит их переместить
  xdg-user-dirs-update 
+# xdg-user-dirs-gtk-update  # Обновить закладки в thunar (левое меню)
  echo "" 
  echo " Создание каталогов успешно выполнено "
 fi
