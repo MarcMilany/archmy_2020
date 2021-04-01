@@ -868,6 +868,11 @@ fi
 # https://ru.wikipedia.org/wiki/Ddrescue
 #---------------------------
 
+
+
+
+
+
 clear
 echo -e "${MAGENTA}
   <<< Установка Мультимедиа утилит (аудиоплееров, видео-проигрывателей и т.д.) в Archlinux >>> ${NC}"
