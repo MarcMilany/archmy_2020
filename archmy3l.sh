@@ -4387,6 +4387,12 @@ cd ..   # поднимаемся на уровень выше (выходим и
 # rm -rf xfce4-docklike-plugin-git 
 rm -Rf xfce4-docklike-plugin-git
 #######################
+echo ""  
+echo " Создание пользовательских каталогов по умолчанию "     
+pacman -S xdg-user-dirs-gtk --noconfirm  # Создаёт каталоги пользователей и просит их переместить
+xdg-user-dirs-gtk-update  # Обновить закладки в thunar (левое меню)
+echo "" 
+echo " Создание каталогов успешно выполнено "
 echo ""
 #mv ~/.cache/thumbnails ~/.cache/thumbnails.bak
 # cp -R ~/.cache/thumbnails ~/.cache/thumbnails.bak 
