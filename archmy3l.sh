@@ -4195,7 +4195,7 @@ sleep 02
 
 clear
 echo -e "${MAGENTA}
-  <<< Установка графического интерфейса для reflector (отражателя) в Archlinux >>> ${NC}"
+  <<< Установка графического интерфейса для Reflector (отражателя) в Archlinux >>> ${NC}"
 # Installing the program (package) menu Editor in Archlinux
 
 echo ""
