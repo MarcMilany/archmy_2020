@@ -4306,6 +4306,17 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 echo " Желательно перезагрузить систему для применения изменений "
 fi
+#----------------------
+# https://github.com/endeavouros-team/PKGBUILDS/tree/master/reflector-simple
+# https://github.com/deadhead420/fetchmirrors
+# https://dev.maxmind.com/geoip/legacy/downloadable/
+# https://github.com/v1cont/yad
+# ДЛЯ ПАРАНОИКОВ!!! (FOR THE PARANOID)
+# GEOIP - Это публичная база данных соответствий IP-страна. IP-город (city database) там тоже есть, но полная версия - платная ЕМНИП.
+# Нужно всяким пакетам типа wireshark, pmacct и т.д. чтобы выводить информацию по IP-адресам
+# Эта штука сама по себе ничего отследить не может. Это база соответствий IP-адресов странам. Если провести аналогию с телефонными номерами, то это как справочник, где указано, какой телефонный код относится к какой стране (+7 = Россия, +1 = США и пр.). За деньги можно купить список кодов городов.
+# https://www.8host.com/blog/opredelenie-mestopolozheniya-polzovatelya-pri-pomoshhi-geoip-i-elk/
+#---------------------
 
 clear
 echo -e "${MAGENTA}
