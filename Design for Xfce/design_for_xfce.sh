@@ -55,6 +55,7 @@
 ### https://aur.archlinux.org/packages/moka-icon-theme-git/
 ### https://aur.archlinux.org/moka-icon-theme-git.git 
 ### https://github.com/moka-project/moka-icon-theme
+### https://snwh.org/moka
 ###
 ### papirus-smplayer-theme-git  AUR  # Тема Papirus для SMPlayer (версия git)  
 ### https://aur.archlinux.org/packages/papirus-smplayer-theme-git/ 
@@ -322,8 +323,7 @@ echo -e "${BLUE}:: ${NC}Установить Arc Icon Theme (arc-icon-theme)?"
 echo -e "${YELLOW}==> Примечание: ${NC}Тема значков ещё не закончено! В некоторых случаях это может работать не так, как ожидалось."
 echo -e "${MAGENTA}:: ${BOLD}Arc Icon Theme (arc-icon-theme) - это единственный полный официальный набор значков Arc, доступный где-либо, и все они живут в одной теме. ${NC}"
 echo " Эти значки и папки Arc были тщательно созданы, чтобы соответствовать всем традиционным схемам тем рабочего стола Arc, но они, безусловно, могут дополнять другие темы рабочего стола. " 
-
-
+echo -e "${RED}==> Требования: ${NC}Эта тема не предоставляет значки приложений, ей нужна другая тема значков, чтобы наследовать их. По умолчанию эта тема будет искать тему значков Moka (https://aur.archlinux.org/packages/moka-icon-theme-git/ ; https://github.com/moka-project/moka-icon-theme), чтобы получить недостающие значки. Если Moka не установлен, он будет использовать тему значков Gnome в качестве запасного варианта. "
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
