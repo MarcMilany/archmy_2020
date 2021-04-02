@@ -85,6 +85,7 @@ skipfont="0"
 fspkgs=""
 EDITOR=nano
 #EDITOR=nano visudo  # Выполните команду с правами суперпользователя
+#BROWSER="firefox"
 DESING_FOR_XFCE_LANG="russian"  # Installer default language (Язык установки по умолчанию)
 script_path=$(readlink -f ${0%/*})
 umask 0022 # Определение окончательных прав доступа
