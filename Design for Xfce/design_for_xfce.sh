@@ -418,7 +418,7 @@ echo -e "${MAGENTA}
   <<< Установка (пакетов) (иконок, тем, курсоров, темы для утилит) из AUR (Arch User Repository) >>> ${NC}"
 
 echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете установить или пропустить установку (пакетов) оформления, установка будет производится в порядке перечисления (по очереди)." 
-echo -e "${YELLOW}==> Внимание! ${NC}Установка (пакетов) будет проходить через - Yay (Yaourt, помощник AUR), если таковой был вами установлен. Также установка (пакетов) в скрипте будет прописана через сборку из исходников, но в данный момент - Закомментирована #, если Вам нужен именно этот способ сборки и установки, то раскомментируйте строки их установки, а строки установки (пакетов) через Yay - закомментируйте." 
+echo -e "${YELLOW}==> Внимание! ${NC}Установка (пакетов) будет проходить через - Yay (Yaourt, помощник AUR), если таковой был вами установлен. Также установка (пакетов) в скрипте будет прописана через сборку из исходников, но в данный момент - Закомментирована (одинарной #), если Вам нужен именно этот способ сборки и установки, то раскомментируйте строки их установки, а строки установки (пакетов) через Yay - закомментируйте." 
 echo ""
 echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (arc-gtk-theme, arc-icon-theme, papirus-icon-theme, capitaine-cursors, hicolor-icon-theme-возможно установлена)." 
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
@@ -448,27 +448,20 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_breeze_cur == 1 ]]; then
   echo ""  
   echo " Breeze Default Cursor Theme (breeze-default-cursor-theme) "
-yay -S breeze-default-cursor-theme --noconfirm  # Простая оболочка графического интерфейса для reflector (отражателя)
-### breeze-default-cursor-theme ####
-git clone https://aur.archlinux.org/reflector-simple.git  # Простая оболочка графического интерфейса для reflector (отражателя)
-cd reflector-simple
+yay -S breeze-default-cursor-theme --noconfirm  # Тема курсора по умолчанию Breeze
+#### breeze-default-cursor-theme ####
+#git clone https://aur.archlinux.org/breeze-default-cursor-theme.git  # Тема курсора по умолчанию Breeze
+#cd breeze-default-cursor-theme
 ### makepkg -fsri
 ### makepkg -si
 ### makepkg -g  # посчитает контрольные суммы пакетов, далее нужно просто эти контрольные суммы заменить в PKGBUILD`е 
 ### sudo mousepad PKGBUILD  # открыть PKGBUILD в редакторе текста
-makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+#makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 ### makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+#pwd    # покажет в какой директории мы находимся
+#cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 ### rm -rf reflector-simple 
-rm -Rf reflector-simple
-
-
-
-
-
-
-sudo pacman -S capitaine-cursors --noconfirm  # Тема x-cursor, вдохновленная macOS и основанная на KDE Breeze
+#rm -Rf breeze-default-cursor-theme
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
@@ -480,12 +473,7 @@ fi
 
 
 
-###
-### breeze-default-cursor-theme  AUR  # Тема курсора по умолчанию Breeze.
-### https://aur.archlinux.org/packages/breeze-default-cursor-theme/
-### https://aur.archlinux.org/breeze-default-cursor-theme.git 
-### https://www.gnome-look.org/p/999991
-###
+
 
 
 
@@ -494,6 +482,12 @@ Moka - это иконный проект для FreeDesktop
 ### https://aur.archlinux.org/packages/moka-icon-theme-git/
 ### https://aur.archlinux.org/moka-icon-theme-git.git 
 ### https://github.com/moka-project/moka-icon-theme
+
+
+
+
+
+
 ###
 ### arc-firefox-theme  AUR  # Официальная тема Arc Firefox (отсутствует)
 ### https://aur.archlinux.org/packages/arc-firefox-theme/ 
