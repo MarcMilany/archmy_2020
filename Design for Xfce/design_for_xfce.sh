@@ -489,7 +489,7 @@ elif [[ $i_moka_icon == 1 ]]; then
   echo " Установка Moka Icon Theme (moka-icon-theme-git) "
 yay -S moka-icon-theme-git --noconfirm  # Тема значков разработана в минималистичном плоском стиле с использованием простой геометрии и цветов
 #### moka-icon-theme-git ####
-git clone https://aur.archlinux.org/moka-icon-theme-git.git  # Это иконный проект для FreeDesktop
+#git clone https://aur.archlinux.org/moka-icon-theme-git.git  # Это иконный проект для FreeDesktop
 #cd moka-icon-theme-git
 ### makepkg -fsri
 ### makepkg -si
