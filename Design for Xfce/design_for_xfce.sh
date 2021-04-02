@@ -399,26 +399,24 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
-
-
-
-
-
-
-
-
-
-Capitaine cursors
-###
-### capitaine-cursors - # Тема x-cursor, вдохновленная macOS и основанная на KDE Breeze
-### https://www.archlinux.org/packages/community/any/capitaine-cursors/
-### https://github.com/keeferrourke/capitaine-cursors
 ###
 ### hicolor-icon-theme - # Freedesktop.org Hicolor тема значков (возможно уже установлена)
 ### https://www.archlinux.org/packages/extra/any/hicolor-icon-theme/
 ### https://www.freedesktop.org/wiki/Software/icon-theme/
+###
 
-#######################
+
+
+
+
+
+
+
+
+
+
+
+
 ###
 ### breeze-default-cursor-theme  AUR  # Тема курсора по умолчанию Breeze.
 ### https://aur.archlinux.org/packages/breeze-default-cursor-theme/
