@@ -348,9 +348,9 @@ fi
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Установить Papirus (papirus-icon-theme)?" 
-echo -e "${MAGENTA}:: ${BOLD}Papirus (papirus-icon-theme) - это плоская тема с прозрачными элементами для GTK 3, GTK 2 и различных оболочек рабочего стола, оконных менеджеров и приложений. ${NC}"
-echo " Arc хорошо подходит для настольных сред на основе GTK (GNOME, Cinnamon, Xfce, Unity, MATE, Budgie и т.д.). " 
-echo " Тема оформления Arc содержит три темы: Arc - светлая тема, Arc-Dark - темная тема, Arc-Darker - светлая тема с темными заголовками окон. "
+echo -e "${MAGENTA}:: ${BOLD}Papirus (papirus-icon-theme) - это бесплатная тема значков на основе SVG с открытым исходным кодом для Linux с материальным и плоским стилем. ${NC}"
+echo " Все элементы имеют четкое различие и очертания. Также главная особенность - это сочные оттенки тона. " 
+echo " Тема значков Papirus доступна в четырех вариантах: Papirus, Papirus Dark, Papirus Light (Лайт), ePapirus (для elementary OS и Pantheon Desktop). (https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) "
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
