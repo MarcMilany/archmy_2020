@@ -276,7 +276,22 @@ echo ""
 echo " Обновление выполнено "
 fi
 
+clear
 echo ""
+echo -e "${GREEN}==> ${NC}Установить дополнительные базовые утилиты (пакеты) wget, curl, git?" 
+#echo -e "${BLUE}:: ${NC}Установить дополнительные базовые утилиты (пакеты) wget, curl, git"
+#echo "Установить дополнительные базовые утилиты (пакеты) wget, curl, git"
+# Install additional basic utilities (packages) wget, curl, fit
+echo -e "${YELLOW}==> Примечание: ${BOLD}Вы можете пропустить установку этих утилит (пакетов), если таковые были ранее вами установлены и присутствуют в систему Arch'a. ${NC}"
+
+
+
+
+
+
+
+
+
 echo -e " Установка базовых программ и пакетов wget, curl, git "
 # sudo pacman -S --needed base-devel git
 sudo pacman -S --noconfirm --needed wget curl git
