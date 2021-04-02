@@ -230,14 +230,6 @@ echo " Надежный источник данных IP-адресов (https:/
 wget http://ipinfo.io/ip -qO -
 sleep 03
 
-echo ""
-echo -e "${BLUE}:: ${NC}Узнаем версию и данные о релизе Arch'a ... :) " 
-#echo "Узнаем версию и данные о релизе Arch'a ... :)"
-# Find out the version and release data for Arch ... :)
-cat /proc/version
-cat /etc/lsb-release.old
-sleep 03
-
 clear
 echo -e "${CYAN}
   <<< Установка обновлений для системы Arch Linux >>> ${NC}"
