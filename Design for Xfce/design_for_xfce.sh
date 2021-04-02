@@ -315,7 +315,7 @@ sudo pacman -S --noconfirm --needed wget curl git
 # sudo pacman -S curl --noconfirm  # Утилита и библиотека для поиска URL
 # sudo pacman -S git --noconfirm  # Быстрая распределенная система контроля версий
 echo ""
-echo " Обновление выполнено "
+echo " Установка выполнена "
 fi
 #------------------------
 # Справка по pacman:
