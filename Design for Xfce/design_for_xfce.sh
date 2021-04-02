@@ -270,6 +270,112 @@ echo ""
 echo " Обновление выполнено "
 fi
 
+clear
+echo -e "${MAGENTA}
+  <<< Установка (пакетов) (иконок, тем, курсоров, темы-папки) из 'Официальных репозиториев Arch Linux' >>> ${NC}"
 
+echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете установить или пропустить установку (пакетов) оформления, установка  ." 
+echo -e "${YELLOW}==> Внимание! ${NC}Во время установки (пакетов) (возможно) Вас попросят ввести (Пароль пользователя) для $username." 
+echo ""
+echo -e "${GREEN}==> ${NC}Установка AUR Helper (yay) или (pikaur)"
+echo -e "${MAGENTA}:: ${NC} AUR - Пользовательский репозиторий, поддерживаемое сообществом хранилище ПО, в который пользователи загружают скрипты для установки программного обеспечения."
+echo " В AUR - есть практически всё, что можно установить на Linux. В том числе и программы, которые для других дистробутивов пришлось бы собирать из исходников. "
+echo -e "${CYAN}=> ${BOLD}В сценарии скрипта присутствуют следующие варианты: ${NC}"
+echo " 1 - Установка 'AUR'-'yay' с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/yay.git), собирается и устанавливается, то выбирайте вариант - "1" "
+echo " 2 - Установка 'AUR'-'pikaur' с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/pikaur.git), собирается и устанавливается, то выбирайте вариант - "2" "
+echo -e "${YELLOW}==> ${BOLD}Важно! Подчеркну (обратить внимание)! Pikaur - идёт как зависимость для Octopi. ${NC}"
+echo " Будьте внимательны! В этом действии выбор остаётся за вами. "
+echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
+echo "" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### arc-gtk-theme - # Плоская тема с прозрачными элементами для GTK 3, GTK 2 и Gnome-Shell
+### https://www.archlinux.org/packages/community/any/arc-gtk-theme/
+### https://github.com/jnsh/arc-theme
+###
+### arc-icon-theme - # Тема значка дуги. Только официальные релизы
+### https://www.archlinux.org/packages/community/any/arc-icon-theme/
+### https://github.com/horst3180/arc-icon-theme
+###
+### arc-firefox-theme  AUR  # Официальная тема Arc Firefox (отсутствует)
+### https://aur.archlinux.org/packages/arc-firefox-theme/ 
+### https://aur.archlinux.org/arc-firefox-theme.git
+###
+### arc-firefox-theme-git  AUR  # Тема Arc Firefox
+### https://aur.archlinux.org/packages/arc-firefox-theme-git/ 
+### https://aur.archlinux.org/arc-firefox-theme-git.git
+### https://github.com/horst3180/arc-firefox-theme 
+###
+### papirus-icon-theme - # Тема значка папируса
+### https://www.archlinux.org/packages/community/any/papirus-icon-theme/
+### https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
+###
+### capitaine-cursors - # Тема x-cursor, вдохновленная macOS и основанная на KDE Breeze
+### https://www.archlinux.org/packages/community/any/capitaine-cursors/
+### https://github.com/keeferrourke/capitaine-cursors
+###
+### hicolor-icon-theme - # Freedesktop.org Hicolor тема значков (возможно уже установлена)
+### https://www.archlinux.org/packages/extra/any/hicolor-icon-theme/
+### https://www.freedesktop.org/wiki/Software/icon-theme/
+###
+### breeze-default-cursor-theme  AUR  # Тема курсора по умолчанию Breeze.
+### https://aur.archlinux.org/packages/breeze-default-cursor-theme/
+### https://aur.archlinux.org/breeze-default-cursor-theme.git 
+### https://www.gnome-look.org/p/999991
+###
+### papirus-smplayer-theme-git  AUR  # Тема Papirus для SMPlayer (версия git)  
+### https://aur.archlinux.org/packages/papirus-smplayer-theme-git/ 
+### https://aur.archlinux.org/papirus-smplayer-theme-git.git 
+### https://github.com/PapirusDevelopmentTeam/papirus-smplayer-theme
+###
+### papirus-filezilla-themes  AUR  # Тема значков Papirus для Filezilla
+### https://aur.archlinux.org/packages/papirus-filezilla-themes/
+### https://aur.archlinux.org/papirus-filezilla-themes.git 
+### https://github.com/PapirusDevelopmentTeam/papirus-filezilla-themes
+###
+### papirus-folder  AUR  # Изменение цвета папки темы значка Papirus
+### https://aur.archlinux.org/packages/papirus-folders/ 
+### https://aur.archlinux.org/papirus-folders.git
+### https://github.com/PapirusDevelopmentTeam/papirus-folders
+###
+### papirus-libreoffice-theme  AUR  # Тема Papirus для LibreOffice
+### https://aur.archlinux.org/packages/papirus-libreoffice-theme/
+### https://aur.archlinux.org/papirus-libreoffice-theme.git 
+### https://github.com/PapirusDevelopmentTeam/papirus-libreoffice-theme 
+### 
+### papirus-libreoffice-theme-git  AUR  # Тема Papirus для LibreOffice 
+### https://aur.archlinux.org/packages/papirus-libreoffice-theme-git/
+### https://aur.archlinux.org/papirus-libreoffice-theme-git.git 
+### https://github.com/PapirusDevelopmentTeam/papirus-libreoffice-theme
+
+
+
+
+
+
+
+
+
+echo -e "${MAGENTA}
+  <<< Установка AUR (Arch User Repository) >>> ${NC}"
+
+echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете пропустить установку "AUR", пункт для установки будет продублирован в следующем скрипте (archmy3l). И Вы сможете установить "AUR Helper" уже из установленной системы." 
+echo -e "${YELLOW}==> Внимание! ${NC}Во время установки "AUR", Вас попросят ввести (Пароль пользователя) для $username." 
 
 
