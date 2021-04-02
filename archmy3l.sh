@@ -4357,10 +4357,16 @@ fi
 # ----------------------------------
 
 
-#######################
+
 echo "" 
 echo " Установим Панель задач Docklike для XFCE из AUR "
 echo " Современная, похожая на док-станцию, минималистская панель задач для XFCE "
+
+
+
+
+
+#### xfce4-docklike-plugin #######
 #yay -S xfce4-docklike-plugin-git --noconfirm  # Панель задач Docklike (Если установлен yay - эта команда)
 git clone https://aur.archlinux.org/xfce4-docklike-plugin-git.git  
 cd xfce4-docklike-plugin-git
