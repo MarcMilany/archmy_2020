@@ -281,6 +281,9 @@ echo -e " Установка базовых программ и пакетов w
 # sudo pacman -S --needed base-devel git
 sudo pacman -S --noconfirm --needed wget curl git
 
+
+
+
 clear
 echo -e "${MAGENTA}
   <<< Установка (пакетов) (иконок, тем, курсоров, темы-папки) из 'Официальных репозиториев Arch Linux' >>> ${NC}"
