@@ -309,9 +309,21 @@ echo -e " Установка базовых программ и пакетов w
 sudo pacman -S --noconfirm --needed wget curl git
 
 
-sudo pacman -S wget --noconfirm  # 
-sudo pacman -S curl --noconfirm  # 
+sudo pacman -S wget --noconfirm  # Сетевая утилита для извлечения файлов из Интернета
+sudo pacman -S curl --noconfirm  # Утилита и библиотека для поиска URL
 sudo pacman -S git --noconfirm  # Быстрая распределенная система контроля версий
+
+
+
+
+#-------------------------------
+# https://git-scm.com/
+# https://archlinux.org/packages/extra/x86_64/git/
+# https://www.gnu.org/software/wget/wget.html
+# https://archlinux.org/packages/extra/x86_64/wget/
+# https://curl.se/
+# https://archlinux.org/packages/core/x86_64/curl/
+#--------------------------------
 
 
 
