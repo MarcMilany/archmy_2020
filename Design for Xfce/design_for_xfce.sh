@@ -51,6 +51,11 @@
 ### https://aur.archlinux.org/breeze-default-cursor-theme.git 
 ### https://www.gnome-look.org/p/999991
 ###
+### moka-icon-theme-git  AUR  # Тема значков разработана в минималистичном плоском стиле с использованием простой геометрии и цветов
+### https://aur.archlinux.org/packages/moka-icon-theme-git/
+### https://aur.archlinux.org/moka-icon-theme-git.git 
+### https://github.com/moka-project/moka-icon-theme
+###
 ### papirus-smplayer-theme-git  AUR  # Тема Papirus для SMPlayer (версия git)  
 ### https://aur.archlinux.org/packages/papirus-smplayer-theme-git/ 
 ### https://aur.archlinux.org/papirus-smplayer-theme-git.git 
@@ -312,17 +317,34 @@ fi
 
 clear
 echo ""
+echo -e "${BLUE}:: ${NC}Установить Arc Icon Theme (arc-icon-theme)?" 
+echo -e "${MAGENTA}:: ${BOLD}Arc Icon Theme (arc-icon-theme) - это плоская тема с прозрачными элементами для GTK 3, GTK 2 и различных оболочек рабочего стола, оконных менеджеров и приложений. ${NC}"
+echo " Arc хорошо подходит для настольных сред на основе GTK (GNOME, Cinnamon, Xfce, Unity, MATE, Budgie и т.д.). " 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_arc_icon  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_arc_icon" =~ [^10] ]]
+do
+    :
+done 
+if [[ $i_arc_icon == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $i_arc_icon == 1 ]]; then
+  echo ""  
+  echo " Установка Arc Icon Theme (arc-icon-theme) "
+sudo pacman -S arc-icon-theme --noconfirm  # Тема значка дуги. Только официальные релизы
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
 
 
 
 
 
-
-
-
-
-
-Arc Icon Theme (arc-icon-theme)
 
 ###
 ### arc-icon-theme - # Тема значка дуги. Только официальные релизы
@@ -347,6 +369,12 @@ Arc Icon Theme (arc-icon-theme)
 ### https://aur.archlinux.org/packages/breeze-default-cursor-theme/
 ### https://aur.archlinux.org/breeze-default-cursor-theme.git 
 ### https://www.gnome-look.org/p/999991
+###
+### moka-icon-theme-git  AUR  # Тема значков разработана в минималистичном плоском стиле с использованием простой геометрии и цветов
+### https://aur.archlinux.org/packages/moka-icon-theme-git/
+### https://aur.archlinux.org/moka-icon-theme-git.git 
+### https://github.com/moka-project/moka-icon-theme
+###
 ### arc-firefox-theme  AUR  # Официальная тема Arc Firefox (отсутствует)
 ### https://aur.archlinux.org/packages/arc-firefox-theme/ 
 ### https://aur.archlinux.org/arc-firefox-theme.git
