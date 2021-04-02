@@ -4358,15 +4358,20 @@ fi
 
 clear
 echo ""
-echo -e "${GREEN}==> ${NC}Установить Панель задач Docklike для XFCE?"
-echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (font-manager, ttf-ms-fonts, ttf-clear-sans, ttf-monaco, montserrat-font-ttf, ttf-paratype, ttf-comfortaa, ttf-cheapskate, ttf-symbola, ttf-nerd-fonts-hack-complete-git, ttf-font-logos, ttf-font-icons)." 
-echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты шрифтов!"
-echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
-# Be careful! The installation process was fully automatic
+echo -e "${GREEN}==> ${NC}Установить Docklike Plugin для XFCE?"
+echo -e "${MAGENTA}:: ${BOLD}Docklike - это док-панель задач для панели Xfce. Используя его на рабочем столе Xfce, вы получи-те "панель задач только значки" с поддержкой прикрепления приложений и груп-пировкой окон. ${NC}"
+echo " Этот плагин панели Xfce является отличной альтернативой DockBarX, с меньшим количеством функций и настроек. "
+
+
+echo -e "${YELLOW}==> Примечание! ${NC}В сценарии (скрипте) представлены несколько вариантов установки: " 
+echo " Sublime Text (пакет) (sublime-text-3) - стабильная версия, и Sublime Text Dev (пакет) (sublime-text-dev) версия для разработчиков. "
+echo -e "${CYAN}:: ${NC}Установка Sublime Text (sublime-text-3), или (sublime-text-dev), проходит через сборку из исходников. То есть установка производиться с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/sublime-text-3/), (https://aur.archlinux.org/packages/sublime-text-dev/) - собирается и устанавливается. "
+echo " Будьте внимательны! Процесс установки, после выбранного вами варианта был прописан полностью автоматическим. В данной опции выбор всегда остаётся за вами. "
+# Be careful! The installation process, after the option you selected, was registered fully automatic. In this option, the choice is always yours.
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-# If you doubt your actions, think again... 
-echo ""
-while
+# If you doubt your actions, think again...  
+echo "" 
+while 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p " 
     1 - Да установить,     0 - НЕТ - Пропустить действие: " i_docklike  # sends right after the keypress; # отправляет сразу после нажатия клавиши
