@@ -4380,21 +4380,10 @@ do
 done
 if [[ $i_docklike == 0 ]]; then
 echo ""  
-echo " Установка Docklike для XFCE из AUR пропущена "
+echo " Установка Docklike Plugin пропущена "
 elif [[ $i_docklike == 1 ]]; then
 echo ""
-echo " Установка панель задач Docklike для XFCE из AUR (xfce4-docklike-plugin) "
-
-
-
-
-
-
-echo "" 
-echo " Установим Панель задач Docklike для XFCE из AUR "
-echo " Современная, похожая на док-станцию, минималистская панель задач для XFCE "
-
-
+echo " Установка Docklike Plugin (xfce4-docklike-plugin) "
 #### xfce4-docklike-plugin #######
 #yay -S xfce4-docklike-plugin-git --noconfirm  # Панель задач Docklike (Если установлен yay - эта команда)
 git clone https://aur.archlinux.org/xfce4-docklike-plugin-git.git  
@@ -4407,17 +4396,18 @@ pwd    # покажет в какой директории мы находимс
 cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf xfce4-docklike-plugin-git 
 rm -Rf xfce4-docklike-plugin-git
-
-
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
 #-------------------------
 # Важно!!!
 # Нужно удерживать ctrl, чтобы изменить порядок закрепленных приложений.
 # (Я подумал, что было бы неплохо упомянуть эту информацию. Я нашел это в проекте README как раз перед тем, как собирался открепить все и переставить их с нуля.)
 # https://aur.archlinux.org/packages/xfce4-docklike-plugin-git/
 # https://github.com/nsz32/docklike-plugin
-#
-#
-
+# https://github.com/topics/xfce4-panel-plugin
+# https://compizomania.blogspot.com/2020/12/docklike-plugin-xfce.html
+#------------------------------
 
 clear
 echo -e "${MAGENTA}
