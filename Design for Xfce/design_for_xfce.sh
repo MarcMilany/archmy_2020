@@ -296,20 +296,21 @@ echo ""
 while 
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить действие: " upd_sys  # sends right after the keypress; # отправляет сразу после нажатия клавиши    
+    1 - Да установить,     0 - НЕТ - Пропустить действие: " basic_utilities  # sends right after the keypress; # отправляет сразу после нажатия клавиши    
     echo ''
-    [[ "$upd_sys" =~ [^10] ]]
+    [[ "$basic_utilities" =~ [^10] ]]
 do
     :
 done 
-if [[ $upd_sys == 0 ]]; then 
+if [[ $basic_utilities == 0 ]]; then 
 echo ""   
 echo " Установка базовых утилит (пакетов) пропущена "
-elif [[ $upd_sys == 1 ]]; then
+elif [[ $basic_utilities == 1 ]]; then
   echo ""    
   echo " Установка Установка базовых утилит (пакетов) wget, curl, git "
-# sudo pacman -S --needed base-devel git
+# sudo pacman -S --needed base-devel git wget #curl  - пока присутствует в pkglist.x86_64
 sudo pacman -S --noconfirm --needed wget curl git
+# sudo pacman -S wget git --noconfirm  #curl  - пока присутствует в pkglist.x86_64
 # sudo pacman -S wget --noconfirm  # Сетевая утилита для извлечения файлов из Интернета
 # sudo pacman -S curl --noconfirm  # Утилита и библиотека для поиска URL
 # sudo pacman -S git --noconfirm  # Быстрая распределенная система контроля версий
@@ -328,7 +329,6 @@ fi
 # https://curl.se/
 # https://archlinux.org/packages/core/x86_64/curl/
 #--------------------------------
-
 
 
 
