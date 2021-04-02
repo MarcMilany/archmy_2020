@@ -4251,21 +4251,6 @@ cd ..   # поднимаемся на уровень выше (выходим и
 # rm -rf gstreamer0.10 
 rm -Rf gstreamer0.10
 #######################
-echo "" 
-echo " Установим Панель задач Docklike для XFCE из AUR "
-echo " Современная, похожая на док-станцию, минималистская панель задач для XFCE "
-#yay -S xfce4-docklike-plugin-git --noconfirm  # Панель задач Docklike (Если установлен yay - эта команда)
-git clone https://aur.archlinux.org/xfce4-docklike-plugin-git.git  
-cd xfce4-docklike-plugin-git
-#makepkg -fsri
-# makepkg -si
-makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
-# makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
-# rm -rf xfce4-docklike-plugin-git 
-rm -Rf xfce4-docklike-plugin-git
-#######################
 echo ""  
 echo " Создание пользовательских каталогов по умолчанию "     
 sudo pacman -S xdg-user-dirs-gtk --noconfirm  # Создаёт каталоги пользователей и просит их переместить
@@ -4370,6 +4355,29 @@ fi
 # Default applications (Русский)
 # https://wiki.archlinux.org/index.php/Default_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 # ----------------------------------
+
+
+#######################
+echo "" 
+echo " Установим Панель задач Docklike для XFCE из AUR "
+echo " Современная, похожая на док-станцию, минималистская панель задач для XFCE "
+#yay -S xfce4-docklike-plugin-git --noconfirm  # Панель задач Docklike (Если установлен yay - эта команда)
+git clone https://aur.archlinux.org/xfce4-docklike-plugin-git.git  
+cd xfce4-docklike-plugin-git
+#makepkg -fsri
+# makepkg -si
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf xfce4-docklike-plugin-git 
+rm -Rf xfce4-docklike-plugin-git
+
+
+
+
+
+
 
 clear
 echo -e "${MAGENTA}
