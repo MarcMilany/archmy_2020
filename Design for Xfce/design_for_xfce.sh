@@ -34,7 +34,7 @@
 ### https://aur.archlinux.org/arc-firefox-theme-git.git
 ### https://github.com/horst3180/arc-firefox-theme 
 ###
-### papirus-icon-theme - # Тема значка папируса
+### papirus-icon-theme - # Тема значка Papirus (папируса)
 ### https://www.archlinux.org/packages/community/any/papirus-icon-theme/
 ### https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
 ###
@@ -377,11 +377,6 @@ fi
 
 
 
-
-###
-### papirus-icon-theme - # Тема значка папируса
-### https://www.archlinux.org/packages/community/any/papirus-icon-theme/
-### https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
 ###
 ### capitaine-cursors - # Тема x-cursor, вдохновленная macOS и основанная на KDE Breeze
 ### https://www.archlinux.org/packages/community/any/capitaine-cursors/
