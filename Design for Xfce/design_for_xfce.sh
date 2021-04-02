@@ -513,27 +513,24 @@ fi
 
 
 
-Moka - это иконный проект для FreeDesktop
-### moka-icon-theme-git  AUR  # Тема значков разработана в минималистичном плоском стиле с использованием простой геометрии и цветов
-### https://aur.archlinux.org/packages/moka-icon-theme-git/
-### https://aur.archlinux.org/moka-icon-theme-git.git 
-### https://github.com/moka-project/moka-icon-theme
 
 
 
 
 
 
-###
-### arc-firefox-theme  AUR  # Официальная тема Arc Firefox (отсутствует)
-### https://aur.archlinux.org/packages/arc-firefox-theme/ 
-### https://aur.archlinux.org/arc-firefox-theme.git
-###
+arc-firefox-theme-git
+
 ### arc-firefox-theme-git  AUR  # Тема Arc Firefox
 ### https://aur.archlinux.org/packages/arc-firefox-theme-git/ 
 ### https://aur.archlinux.org/arc-firefox-theme-git.git
 ### https://github.com/horst3180/arc-firefox-theme 
 ###
+
+
+
+
+
 ###
 ### papirus-smplayer-theme-git  AUR  # Тема Papirus для SMPlayer (версия git)  
 ### https://aur.archlinux.org/packages/papirus-smplayer-theme-git/ 
