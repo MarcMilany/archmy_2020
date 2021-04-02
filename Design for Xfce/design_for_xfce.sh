@@ -372,11 +372,43 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+clear
+echo ""
+echo -e "${BLUE}:: ${NC}Установить Papirus (papirus-icon-theme)?" 
+echo -e "${MAGENTA}:: ${BOLD}Papirus (papirus-icon-theme) - это бесплатная тема значков на основе SVG с открытым исходным кодом для Linux с материальным и плоским стилем. ${NC}"
+echo " Все элементы имеют четкое различие и очертания. Также главная особенность - это сочные оттенки тона. " 
+echo " Тема значков Papirus доступна в четырех вариантах: Papirus, Papirus Dark, Papirus Light (Лайт), ePapirus (для elementary OS и Pantheon Desktop). (https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) "
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_papirus_icon  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_papirus_icon" =~ [^10] ]]
+do
+    :
+done 
+if [[ $i_papirus_icon == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $i_papirus_icon == 1 ]]; then
+  echo ""  
+  echo " Установка Arc Theme (arc-gtk-theme) "
+sudo pacman -S papirus-icon-theme --noconfirm  # Тема значка Papirus (папируса)
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
 
 
 
 
 
+
+
+
+
+
+Capitaine cursors
 ###
 ### capitaine-cursors - # Тема x-cursor, вдохновленная macOS и основанная на KDE Breeze
 ### https://www.archlinux.org/packages/community/any/capitaine-cursors/
