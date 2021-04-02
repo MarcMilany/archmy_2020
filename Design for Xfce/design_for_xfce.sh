@@ -414,7 +414,7 @@ echo -e "${MAGENTA}
 echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете установить или пропустить установку (пакетов) оформления, установка будет производится в порядке перечисления (по очереди)." 
 echo -e "${YELLOW}==> Внимание! ${NC}Установка (пакетов) будет проходить через - Yay (Yaourt, помощник AUR), если таковой был вами установлен. Также установка (пакетов) в скрипте будет прописана через сборку из исходников, но в данный момент - Закомментирована (одинарной #), если Вам нужен именно этот способ сборки и установки, то раскомментируйте строки их установки, а строки установки (пакетов) через Yay - закомментируйте." 
 echo ""
-echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (breeze-default-cursor-theme, moka-icon-theme-git, arc-firefox-theme-git, , , , ,)." 
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (breeze-default-cursor-theme, moka-icon-theme-git, arc-firefox-theme-git, papirus-smplayer-theme-git, papirus-filezilla-themes, papirus-folder, papirus-libreoffice-theme, papirus-libreoffice-theme-git)." 
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic 
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -502,22 +502,24 @@ fi
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Установить Arc Firefox Theme (arc-firefox-theme-git)?" 
-echo -e "${MAGENTA}:: ${BOLD}Arc Firefox Theme (arc-firefox-theme-git) - это стилизованный набор иконок FreeDesktop, созданный для простоты. ${NC}"
-echo " В нём используется простая геометрия и яркие цвета, и он был разработан и оптимизирован для достижения идеального изображения на рабочем столе. (https://github.com/moka-project/moka-icon-theme) " 
+echo -e "${MAGENTA}:: ${BOLD}Arc Firefox Theme (arc-firefox-theme-git) - это официальная тема Arc Firefox, созданная для браузера Firefox (mozilla.org). ${NC}"
+echo -e "${YELLOW}==> Примечание: ${NC}Эта тема предназначена для использования вместе с темой Arc GTK (arc-gtk-theme), не используйте ее с другими темами GTK, иначе она будет выглядеть сломанной. (https://github.com/jnsh/arc-theme)"
+echo " Тема доступна в виде коллекции на (addons.mozilla.org). (https://github.com/horst3180/arc-firefox-theme) " 
+echo -e "${RED}==> Требования: ${NC}Эта тема совместима с Firefox 40+ и Firefox 38 ESR. "
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_moka_icon  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_arc_firefox  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$i_moka_icon" =~ [^10] ]]
+    [[ "$i_arc_firefox" =~ [^10] ]]
 do
     :
 done 
-if [[ $i_moka_icon == 0 ]]; then 
+if [[ $i_arc_firefox == 0 ]]; then 
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
-elif [[ $i_moka_icon == 1 ]]; then
+elif [[ $i_arc_firefox == 1 ]]; then
   echo ""  
   echo " Установка Arc Firefox Theme (arc-firefox-theme-git) "
 yay -S arc-firefox-theme-git --noconfirm  # Тема значков разработана в минималистичном плоском стиле с использованием простой геометрии и цветов
@@ -544,19 +546,6 @@ fi
 
 
 
-
-
-
-
-Arc Firefox Theme
-
-arc-firefox-theme-git
-
-### arc-firefox-theme-git  AUR  # Тема Arc Firefox
-### https://aur.archlinux.org/packages/arc-firefox-theme-git/ 
-### https://aur.archlinux.org/arc-firefox-theme-git.git
-### https://github.com/horst3180/arc-firefox-theme 
-###
 
 
 
