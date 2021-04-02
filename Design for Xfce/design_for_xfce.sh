@@ -276,6 +276,11 @@ echo ""
 echo " Обновление выполнено "
 fi
 
+echo ""
+echo -e " Установка базовых программ и пакетов wget, curl, git "
+# sudo pacman -S --needed base-devel git
+sudo pacman -S --noconfirm --needed wget curl git
+
 clear
 echo -e "${MAGENTA}
   <<< Установка (пакетов) (иконок, тем, курсоров, темы-папки) из 'Официальных репозиториев Arch Linux' >>> ${NC}"
@@ -446,7 +451,7 @@ elif [[ $i_breeze_cur == 1 ]]; then
 
 
 
-  
+
 sudo pacman -S capitaine-cursors --noconfirm  # Тема x-cursor, вдохновленная macOS и основанная на KDE Breeze
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
