@@ -4382,8 +4382,8 @@ if [[ $i_docklike == 0 ]]; then
 echo ""  
 echo " Установка Docklike Plugin пропущена "
 elif [[ $i_docklike == 1 ]]; then
-echo ""
-echo " Установка Docklike Plugin (xfce4-docklike-plugin) "
+  echo ""
+  echo " Установка Docklike Plugin (xfce4-docklike-plugin) "
 #### xfce4-docklike-plugin #######
 #yay -S xfce4-docklike-plugin-git --noconfirm  # Панель задач Docklike (Если установлен yay - эта команда)
 git clone https://aur.archlinux.org/xfce4-docklike-plugin-git.git  
