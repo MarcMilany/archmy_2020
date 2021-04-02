@@ -274,19 +274,44 @@ clear
 echo -e "${MAGENTA}
   <<< Установка (пакетов) (иконок, тем, курсоров, темы-папки) из 'Официальных репозиториев Arch Linux' >>> ${NC}"
 
-echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете установить или пропустить установку (пакетов) оформления, установка  ." 
+echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете установить или пропустить установку (пакетов) оформления, установка будет производится в порядке перечисления (по очереди)." 
 echo -e "${YELLOW}==> Внимание! ${NC}Во время установки (пакетов) (возможно) Вас попросят ввести (Пароль пользователя) для $username." 
 echo ""
-echo -e "${GREEN}==> ${NC}Установка AUR Helper (yay) или (pikaur)"
-echo -e "${MAGENTA}:: ${NC} AUR - Пользовательский репозиторий, поддерживаемое сообществом хранилище ПО, в который пользователи загружают скрипты для установки программного обеспечения."
-echo " В AUR - есть практически всё, что можно установить на Linux. В том числе и программы, которые для других дистробутивов пришлось бы собирать из исходников. "
-echo -e "${CYAN}=> ${BOLD}В сценарии скрипта присутствуют следующие варианты: ${NC}"
-echo " 1 - Установка 'AUR'-'yay' с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/yay.git), собирается и устанавливается, то выбирайте вариант - "1" "
-echo " 2 - Установка 'AUR'-'pikaur' с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/pikaur.git), собирается и устанавливается, то выбирайте вариант - "2" "
-echo -e "${YELLOW}==> ${BOLD}Важно! Подчеркну (обратить внимание)! Pikaur - идёт как зависимость для Octopi. ${NC}"
-echo " Будьте внимательны! В этом действии выбор остаётся за вами. "
-echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (arc-gtk-theme, arc-icon-theme, papirus-icon-theme, capitaine-cursors, hicolor-icon-theme-возможно установлена)." 
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic 
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again...
+echo -e "${YELLOW}==> ${NC}Установка будет производится в порядке перечисления (по очереди)" 
+#echo 'Установка будет производится в порядке перечисления (по очереди)'
+# Installation will be performed in the order listed (one at a time)
+echo ""
+echo -e "${BLUE}:: ${NC}Установить Arc Theme (arc-gtk-theme)?" 
+echo -e "${MAGENTA}:: ${BOLD}Arc Theme (arc-gtk-theme) - это плоская тема с прозрачными элементами для GTK 3, GTK 2 и различных оболочек рабочего стола, оконных менеджеров и приложений. ${NC}"
+echo " Arc хорошо подходит для настольных сред на основе GTK (GNOME, Cinnamon, Xfce, Unity, MATE, Budgie и т.д.). " 
 echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_arc_theme  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_arc_theme" =~ [^10] ]]
+do
+    :
+done 
+if [[ $i_arc_theme == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $i_arc_theme == 1 ]]; then
+  echo ""  
+  echo " Установка Arc Theme (arc-gtk-theme) "
+sudo pacman -S arc-gtk-theme --noconfirm  # Плоская тема с прозрачными элементами для GTK 3, GTK 2 и Gnome-Shell
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
+
+clear
+echo ""
 
 
 
@@ -297,30 +322,12 @@ echo ""
 
 
 
+Arc Icon Theme (arc-icon-theme)
 
-
-
-
-
-
-
-
-### arc-gtk-theme - # Плоская тема с прозрачными элементами для GTK 3, GTK 2 и Gnome-Shell
-### https://www.archlinux.org/packages/community/any/arc-gtk-theme/
-### https://github.com/jnsh/arc-theme
 ###
 ### arc-icon-theme - # Тема значка дуги. Только официальные релизы
 ### https://www.archlinux.org/packages/community/any/arc-icon-theme/
 ### https://github.com/horst3180/arc-icon-theme
-###
-### arc-firefox-theme  AUR  # Официальная тема Arc Firefox (отсутствует)
-### https://aur.archlinux.org/packages/arc-firefox-theme/ 
-### https://aur.archlinux.org/arc-firefox-theme.git
-###
-### arc-firefox-theme-git  AUR  # Тема Arc Firefox
-### https://aur.archlinux.org/packages/arc-firefox-theme-git/ 
-### https://aur.archlinux.org/arc-firefox-theme-git.git
-### https://github.com/horst3180/arc-firefox-theme 
 ###
 ### papirus-icon-theme - # Тема значка папируса
 ### https://www.archlinux.org/packages/community/any/papirus-icon-theme/
@@ -333,11 +340,22 @@ echo ""
 ### hicolor-icon-theme - # Freedesktop.org Hicolor тема значков (возможно уже установлена)
 ### https://www.archlinux.org/packages/extra/any/hicolor-icon-theme/
 ### https://www.freedesktop.org/wiki/Software/icon-theme/
+
+#######################
 ###
 ### breeze-default-cursor-theme  AUR  # Тема курсора по умолчанию Breeze.
 ### https://aur.archlinux.org/packages/breeze-default-cursor-theme/
 ### https://aur.archlinux.org/breeze-default-cursor-theme.git 
 ### https://www.gnome-look.org/p/999991
+### arc-firefox-theme  AUR  # Официальная тема Arc Firefox (отсутствует)
+### https://aur.archlinux.org/packages/arc-firefox-theme/ 
+### https://aur.archlinux.org/arc-firefox-theme.git
+###
+### arc-firefox-theme-git  AUR  # Тема Arc Firefox
+### https://aur.archlinux.org/packages/arc-firefox-theme-git/ 
+### https://aur.archlinux.org/arc-firefox-theme-git.git
+### https://github.com/horst3180/arc-firefox-theme 
+###
 ###
 ### papirus-smplayer-theme-git  AUR  # Тема Papirus для SMPlayer (версия git)  
 ### https://aur.archlinux.org/packages/papirus-smplayer-theme-git/ 
