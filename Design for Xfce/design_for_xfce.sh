@@ -447,7 +447,7 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_breeze_cur == 1 ]]; then
   echo ""  
-  echo " Breeze Default Cursor Theme (breeze-default-cursor-theme) "
+  echo " Установка Breeze Default Cursor Theme (breeze-default-cursor-theme) "
 yay -S breeze-default-cursor-theme --noconfirm  # Тема курсора по умолчанию Breeze
 #### breeze-default-cursor-theme ####
 #git clone https://aur.archlinux.org/breeze-default-cursor-theme.git  # Тема курсора по умолчанию Breeze
@@ -466,8 +466,44 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
-
-
+clear
+echo ""
+echo -e "${BLUE}:: ${NC}Установить Moka Icon Theme (moka-icon-theme-git)?" 
+echo -e "${MAGENTA}:: ${BOLD}Moka Icon Theme (moka-icon-theme-git) - это набор элегантных указателей мыши, созданных на основе курсоров из коллекции свободной среды рабочего стола KDE. Указатели окрашены в тёмно-серые тона, наделены светлой рамкой и цветными специальными индикаторами. ${NC}"
+echo " Пользоваться ими достаточно удобно как со светлыми, так и с тёмными темами оформления. Своим внешним видом они чем-то похожи на стандартные указатели Windows :). (https://www.gnome-look.org/p/999991) " 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_moka_icon  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_moka_icon" =~ [^10] ]]
+do
+    :
+done 
+if [[ $i_moka_icon == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $i_moka_icon == 1 ]]; then
+  echo ""  
+  echo " Установка Moka Icon Theme (moka-icon-theme-git) "
+yay -S breeze-default-cursor-theme --noconfirm  # Тема курсора по умолчанию Breeze
+#### breeze-default-cursor-theme ####
+#git clone https://aur.archlinux.org/breeze-default-cursor-theme.git  # Тема курсора по умолчанию Breeze
+#cd breeze-default-cursor-theme
+### makepkg -fsri
+### makepkg -si
+### makepkg -g  # посчитает контрольные суммы пакетов, далее нужно просто эти контрольные суммы заменить в PKGBUILD`е 
+### sudo mousepad PKGBUILD  # открыть PKGBUILD в редакторе текста
+#makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+### makepkg -si --skipinteg
+#pwd    # покажет в какой директории мы находимся
+#cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+### rm -rf reflector-simple 
+#rm -Rf breeze-default-cursor-theme
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
 
 
 
