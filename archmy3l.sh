@@ -4356,14 +4356,40 @@ fi
 # https://wiki.archlinux.org/index.php/Default_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)
 # ----------------------------------
 
+clear
+echo ""
+echo -e "${GREEN}==> ${NC}Установить Панель задач Docklike для XFCE?"
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (font-manager, ttf-ms-fonts, ttf-clear-sans, ttf-monaco, montserrat-font-ttf, ttf-paratype, ttf-comfortaa, ttf-cheapskate, ttf-symbola, ttf-nerd-fonts-hack-complete-git, ttf-font-logos, ttf-font-icons)." 
+echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты шрифтов!"
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo ""
+while
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p " 
+    1 - Да установить,     0 - НЕТ - Пропустить действие: " i_docklike  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_docklike" =~ [^10] ]]
+do
+    :
+done
+if [[ $i_docklike == 0 ]]; then
+echo ""  
+echo " Установка Docklike для XFCE из AUR пропущена "
+elif [[ $i_docklike == 1 ]]; then
+echo ""
+echo " Установка панель задач Docklike для XFCE из AUR (xfce4-docklike-plugin) "
+
+
+
+
 
 
 echo "" 
 echo " Установим Панель задач Docklike для XFCE из AUR "
 echo " Современная, похожая на док-станцию, минималистская панель задач для XFCE "
-
-
-
 
 
 #### xfce4-docklike-plugin #######
