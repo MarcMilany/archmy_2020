@@ -318,6 +318,7 @@ fi
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Установить Arc Icon Theme (arc-icon-theme)?" 
+echo -e "${YELLOW}==> Примечание: ${NC}Тема значков ещё не закончено! В некоторых случаях это может работать не так, как ожидалось."
 echo -e "${MAGENTA}:: ${BOLD}Arc Icon Theme (arc-icon-theme) - это плоская тема с прозрачными элементами для GTK 3, GTK 2 и различных оболочек рабочего стола, оконных менеджеров и приложений. ${NC}"
 echo " Arc хорошо подходит для настольных сред на основе GTK (GNOME, Cinnamon, Xfce, Unity, MATE, Budgie и т.д.). " 
 echo "" 
