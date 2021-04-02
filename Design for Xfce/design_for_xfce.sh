@@ -294,6 +294,7 @@ echo ""
 echo -e "${BLUE}:: ${NC}Установить Arc Theme (arc-gtk-theme)?" 
 echo -e "${MAGENTA}:: ${BOLD}Arc Theme (arc-gtk-theme) - это плоская тема с прозрачными элементами для GTK 3, GTK 2 и различных оболочек рабочего стола, оконных менеджеров и приложений. ${NC}"
 echo " Arc хорошо подходит для настольных сред на основе GTK (GNOME, Cinnamon, Xfce, Unity, MATE, Budgie и т.д.). " 
+echo " Тема оформления Arc содержит три темы: Arc - светлая тема, Arc-Dark - темная тема, Arc-Darker - светлая тема с темными заголовками окон. "
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
@@ -344,13 +345,7 @@ fi
 
 
 
-
-
-
-###
-### arc-icon-theme - # Тема значка дуги. Только официальные релизы
-### https://www.archlinux.org/packages/community/any/arc-icon-theme/
-### https://github.com/horst3180/arc-icon-theme
+https://github.com/horst3180/arc-icon-theme
 ###
 ### papirus-icon-theme - # Тема значка папируса
 ### https://www.archlinux.org/packages/community/any/papirus-icon-theme/
