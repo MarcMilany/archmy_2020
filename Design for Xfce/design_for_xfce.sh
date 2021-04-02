@@ -460,7 +460,7 @@ yay -S breeze-default-cursor-theme --noconfirm  # Тема курсора по �
 ### makepkg -si --skipinteg
 #pwd    # покажет в какой директории мы находимся
 #cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
-### rm -rf reflector-simple 
+### rm -rf breeze-default-cursor-theme 
 #rm -Rf breeze-default-cursor-theme
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
@@ -487,10 +487,10 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_moka_icon == 1 ]]; then
   echo ""  
   echo " Установка Moka Icon Theme (moka-icon-theme-git) "
-yay -S breeze-default-cursor-theme --noconfirm  # Тема курсора по умолчанию Breeze
-#### breeze-default-cursor-theme ####
-#git clone https://aur.archlinux.org/breeze-default-cursor-theme.git  # Тема курсора по умолчанию Breeze
-#cd breeze-default-cursor-theme
+yay -S moka-icon-theme-git --noconfirm  # Тема значков разработана в минималистичном плоском стиле с использованием простой геометрии и цветов
+#### moka-icon-theme-git ####
+git clone https://aur.archlinux.org/moka-icon-theme-git.git  # Это иконный проект для FreeDesktop
+#cd moka-icon-theme-git
 ### makepkg -fsri
 ### makepkg -si
 ### makepkg -g  # посчитает контрольные суммы пакетов, далее нужно просто эти контрольные суммы заменить в PKGBUILD`е 
@@ -499,8 +499,8 @@ yay -S breeze-default-cursor-theme --noconfirm  # Тема курсора по �
 ### makepkg -si --skipinteg
 #pwd    # покажет в какой директории мы находимся
 #cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
-### rm -rf reflector-simple 
-#rm -Rf breeze-default-cursor-theme
+### rm -rf moka-icon-theme-git 
+#rm -Rf moka-icon-theme-git
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
