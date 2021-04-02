@@ -405,10 +405,23 @@ fi
 ### https://www.freedesktop.org/wiki/Software/icon-theme/
 ###
 
+clear
+echo -e "${MAGENTA}
+  <<< Установка (пакетов) (иконок, тем, курсоров, темы для утилит) из AUR (Arch User Repository) >>> ${NC}"
 
-
-
-
+echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете установить или пропустить установку (пакетов) оформления, установка будет производится в порядке перечисления (по очереди)." 
+echo -e "${YELLOW}==> Внимание! ${NC}Установка (пакетов) будет проходить через - Yay (Yaourt, помощник AUR), если таковой был вами установлен." 
+echo ""
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (arc-gtk-theme, arc-icon-theme, papirus-icon-theme, capitaine-cursors, hicolor-icon-theme-возможно установлена)." 
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
+# Be careful! The installation process was fully automatic 
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again...
+echo -e "${YELLOW}==> ${NC}Установка будет производится в порядке перечисления (по очереди)" 
+#echo 'Установка будет производится в порядке перечисления (по очереди)'
+# Installation will be performed in the order listed (one at a time)
+echo ""
+echo -e "${BLUE}:: ${NC}Установить Arc Theme (arc-gtk-theme)?" 
 
 
 
