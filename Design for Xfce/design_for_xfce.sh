@@ -407,12 +407,6 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
-###
-### hicolor-icon-theme - # Freedesktop.org Hicolor тема значков (возможно уже установлена)
-### https://www.archlinux.org/packages/extra/any/hicolor-icon-theme/
-### https://www.freedesktop.org/wiki/Software/icon-theme/
-###
-
 clear
 echo -e "${MAGENTA}
   <<< Установка (пакетов) (иконок, тем, курсоров, темы для утилит) из AUR (Arch User Repository) >>> ${NC}"
@@ -420,7 +414,7 @@ echo -e "${MAGENTA}
 echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете установить или пропустить установку (пакетов) оформления, установка будет производится в порядке перечисления (по очереди)." 
 echo -e "${YELLOW}==> Внимание! ${NC}Установка (пакетов) будет проходить через - Yay (Yaourt, помощник AUR), если таковой был вами установлен. Также установка (пакетов) в скрипте будет прописана через сборку из исходников, но в данный момент - Закомментирована (одинарной #), если Вам нужен именно этот способ сборки и установки, то раскомментируйте строки их установки, а строки установки (пакетов) через Yay - закомментируйте." 
 echo ""
-echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (arc-gtk-theme, arc-icon-theme, papirus-icon-theme, capitaine-cursors, hicolor-icon-theme-возможно установлена)." 
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (breeze-default-cursor-theme, moka-icon-theme-git, arc-firefox-theme-git, , , , ,)." 
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic 
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -505,6 +499,44 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+clear
+echo ""
+echo -e "${BLUE}:: ${NC}Установить Arc Firefox Theme (arc-firefox-theme-git)?" 
+echo -e "${MAGENTA}:: ${BOLD}Arc Firefox Theme (arc-firefox-theme-git) - это стилизованный набор иконок FreeDesktop, созданный для простоты. ${NC}"
+echo " В нём используется простая геометрия и яркие цвета, и он был разработан и оптимизирован для достижения идеального изображения на рабочем столе. (https://github.com/moka-project/moka-icon-theme) " 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_moka_icon  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_moka_icon" =~ [^10] ]]
+do
+    :
+done 
+if [[ $i_moka_icon == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $i_moka_icon == 1 ]]; then
+  echo ""  
+  echo " Установка Arc Firefox Theme (arc-firefox-theme-git) "
+yay -S arc-firefox-theme-git --noconfirm  # Тема значков разработана в минималистичном плоском стиле с использованием простой геометрии и цветов
+#### arc-firefox-theme-git ####
+#git clone https://aur.archlinux.org/arc-firefox-theme-git.git  # Тема Arc Firefox
+#cd arc-firefox-theme-git
+### makepkg -fsri
+### makepkg -si
+### makepkg -g  # посчитает контрольные суммы пакетов, далее нужно просто эти контрольные суммы заменить в PKGBUILD`е 
+### sudo mousepad PKGBUILD  # открыть PKGBUILD в редакторе текста
+#makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+### makepkg -si --skipinteg
+#pwd    # покажет в какой директории мы находимся
+#cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+### rm -rf arc-firefox-theme-git 
+#rm -Rf arc-firefox-theme-git
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
 
 
 
@@ -516,8 +548,7 @@ fi
 
 
 
-
-
+Arc Firefox Theme
 
 arc-firefox-theme-git
 
