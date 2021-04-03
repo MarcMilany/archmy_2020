@@ -212,7 +212,7 @@ echo -e "${YELLOW}:: ${NC}Загружаем базу данных пакето�
 #echo 'Загружаем базу данных пакетов независимо от того, есть ли какие-либо изменения в версиях или нет.'
 # Loading the package database regardless of whether there are any changes in the versions or not.
 echo ""
-sudo pacman -Syyu  --noconfirm  
+sudo pacman -Syyu --noconfirm  
 sleep 01
 
 clear
