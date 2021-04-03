@@ -1,5 +1,10 @@
 #!/bin/bash
 #### Смотрите пометки (справочки) и доп.иформацию в самом скрипте! #### 
+
+
+
+
+
 ###############################################################
 ### oh_my_zsh.sh  (Оболочка по умолчанию)
 ###
@@ -16,98 +21,7 @@
 ### License (Лицензия): LGPL-3.0
 ###############################################################
 ###
-############ Default shell ###########
-###  Установка Zsh (если он в настоящее время не используется)
-###
-### zsh  # Очень продвинутый и программируемый интерпретатор команд (оболочка) для UNIX
-### https://archlinux.org/packages/extra/x86_64/zsh/
-### https://www.zsh.org/
-###
-### zsh-syntax-highlighting  # Рыбная оболочка как подсветка синтаксиса для Zsh
-### https://archlinux.org/packages/community/any/zsh-syntax-highlighting/
-### https://github.com/zsh-users/zsh-syntax-highlighting
-### 
-### zsh-autosuggestions  # Рыбоподобные самовнушения для zsh (история команд)
-### https://archlinux.org/packages/community/any/zsh-autosuggestions/
-### https://github.com/zsh-users/zsh-autosuggestions
-###
-### grml-zsh-config  # Настройка zsh в grml
-### https://archlinux.org/packages/extra/any/grml-zsh-config/
-### https://grml.org/zsh/
-###
-### zsh-completions  # Дополнительные определения завершения для Zsh
-### https://archlinux.org/packages/community/any/zsh-completions/
-### https://github.com/zsh-users/zsh-completions
-###
-### zsh-history-substring-search  # ZSH порт поиска рыбной истории (стрелка вверх)
-### https://archlinux.org/packages/community/any/zsh-history-substring-search/
-### https://github.com/zsh-users/zsh-history-substring-search
-###
-###  Установка Oh My Zsh (если он в настоящее время не используется)
-###
-### oh-my-zsh-git  AUR  # Фреймворк, управляемый сообществом, для управления вашей конфигурацией zsh. 
-### Включает 180+ дополнительных плагинов и более 120 тем, чтобы оживить ваше утро, а также инструмент автоматического обновления, чтобы вы могли легко быть в курсе последних обновлений от сообщества
-### https://aur.archlinux.org/packages/oh-my-zsh-git/
-### https://aur.archlinux.org/oh-my-zsh-git.git
-### https://github.com/ohmyzsh/ohmyzsh
-###
-### zsh-theme-powerlevel9k-git  AUR  # Тема powerlevel9k для zsh
-### https://aur.archlinux.org/packages/zsh-theme-powerlevel9k-git/
-### https://aur.archlinux.org/zsh-theme-powerlevel9k-git.git 
-### https://github.com/bhilburn/powerlevel9k
-###
-### zsh-theme-powerlevel10k-git  AUR  # Powerlevel10k - это тема для Zsh. Он подчеркивает скорость, гибкость и готовность к работе
-### https://aur.archlinux.org/packages/zsh-theme-powerlevel10k-git/
-### https://aur.archlinux.org/zsh-theme-powerlevel10k-git.git 
-### https://github.com/romkatv/powerlevel10k
-###
-### nerd-fonts-hack  AUR  # Тема Arc Firefox
-### https://aur.archlinux.org/packages/nerd-fonts-hack/ 
-### https://aur.archlinux.org/nerd-fonts-hack.git 
-### https://github.com/ryanoasis/nerd-fonts 
-###
-######### Вот несколько крутых плагинов ###############
-###
-### autojump  AUR # Более быстрый способ навигации по файловой системе (по папкам) из командной строки 
-### https://aur.archlinux.org/packages/autojump/
-### https://aur.archlinux.org/autojump.git
-### https://github.com/wting/autojump
-###
-### autojump  AUR # Более быстрый способ навигации по файловой системе (по папкам) из командной строки 
-### https://aur.archlinux.org/packages/autojump-git/
-### https://aur.archlinux.org/autojump-git.git
-### http://github.com/wting/autojump
-###
-### ansiweather  AUR # Сценарий оболочки для отображения текущих погодных условий в вашем терминале с поддержкой цветов ANSI и символов Unicode
-### https://aur.archlinux.org/packages/ansiweather/
-### https://aur.archlinux.org/ansiweather.git 
-### https://github.com/fcambus/ansiweather
-###
-######### Дополнительно ###############
-###
-### fast-syntax-highlighting  AUR  # Оптимизированная и расширенная подсветка синтаксиса zsh
-### https://aur.archlinux.org/packages/zsh-fast-syntax-highlighting/
-### https://aur.archlinux.org/zsh-fast-syntax-highlighting.git
-### https://github.com/zdharma/fast-syntax-highlighting
-###
-### zsh-fast-syntax-highlighting-git  AUR  # Оптимизированная и расширенная подсветка синтаксиса zsh
-### https://aur.archlinux.org/packages/zsh-fast-syntax-highlighting-git/
-### https://aur.archlinux.org/zsh-fast-syntax-highlighting-git.git
-### https://github.com/zdharma/fast-syntax-highlighting
-###
-### pacaur  AUR  # Помощник AUR, минимизирующий взаимодействие с пользователем 
-### https://aur.archlinux.org/packages/pacaur/
-### https://aur.archlinux.org/pacaur.git  
-### https://github.com/E5ten/pacaur
-### Последнее обновление: 2019-04-01 23:16
-### 
-### pacaur-git  AUR  # Помощник AUR, минимизирующий взаимодействие с пользователем 
-### https://aur.archlinux.org/packages/pacaur-git/
-### https://aur.archlinux.org/pacaur-git.git  
-### https://github.com/E5ten/pacaur
-### Последнее обновление: 2019-03-05 04:01
-###
-################################
+
 ###
 apptitle="Arch Linux Fast Install v1.6 LegasyBIOS - Version: 2020.07.16.00.40.38 (GPLv3)"
 baseurl=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/url%20links%20abbreviated/git%20url
@@ -314,6 +228,12 @@ fi
 # https://archlinux.org/packages/core/x86_64/curl/
 #--------------------------------
 
+##########################################
+
+
+
+
+
 
 
 
@@ -347,7 +267,98 @@ echo ""
 #exit(0)  # означает чистый выход без каких-либо ошибок (проблем)
 #exit(1)  # означает, что была какая-то ошибка (проблема), и именно поэтому программа выходит
 
-
+############ Default shell ###########
+###  Установка Zsh (если он в настоящее время не используется)
+###
+### zsh  # Очень продвинутый и программируемый интерпретатор команд (оболочка) для UNIX
+### https://archlinux.org/packages/extra/x86_64/zsh/
+### https://www.zsh.org/
+###
+### zsh-syntax-highlighting  # Рыбная оболочка как подсветка синтаксиса для Zsh
+### https://archlinux.org/packages/community/any/zsh-syntax-highlighting/
+### https://github.com/zsh-users/zsh-syntax-highlighting
+### 
+### zsh-autosuggestions  # Рыбоподобные самовнушения для zsh (история команд)
+### https://archlinux.org/packages/community/any/zsh-autosuggestions/
+### https://github.com/zsh-users/zsh-autosuggestions
+###
+### grml-zsh-config  # Настройка zsh в grml
+### https://archlinux.org/packages/extra/any/grml-zsh-config/
+### https://grml.org/zsh/
+###
+### zsh-completions  # Дополнительные определения завершения для Zsh
+### https://archlinux.org/packages/community/any/zsh-completions/
+### https://github.com/zsh-users/zsh-completions
+###
+### zsh-history-substring-search  # ZSH порт поиска рыбной истории (стрелка вверх)
+### https://archlinux.org/packages/community/any/zsh-history-substring-search/
+### https://github.com/zsh-users/zsh-history-substring-search
+###
+###  Установка Oh My Zsh (если он в настоящее время не используется)
+###
+### oh-my-zsh-git  AUR  # Фреймворк, управляемый сообществом, для управления вашей конфигурацией zsh. 
+### Включает 180+ дополнительных плагинов и более 120 тем, чтобы оживить ваше утро, а также инструмент автоматического обновления, чтобы вы могли легко быть в курсе последних обновлений от сообщества
+### https://aur.archlinux.org/packages/oh-my-zsh-git/
+### https://aur.archlinux.org/oh-my-zsh-git.git
+### https://github.com/ohmyzsh/ohmyzsh
+###
+### zsh-theme-powerlevel9k-git  AUR  # Тема powerlevel9k для zsh
+### https://aur.archlinux.org/packages/zsh-theme-powerlevel9k-git/
+### https://aur.archlinux.org/zsh-theme-powerlevel9k-git.git 
+### https://github.com/bhilburn/powerlevel9k
+###
+### zsh-theme-powerlevel10k-git  AUR  # Powerlevel10k - это тема для Zsh. Он подчеркивает скорость, гибкость и готовность к работе
+### https://aur.archlinux.org/packages/zsh-theme-powerlevel10k-git/
+### https://aur.archlinux.org/zsh-theme-powerlevel10k-git.git 
+### https://github.com/romkatv/powerlevel10k
+###
+### nerd-fonts-hack  AUR  # Тема Arc Firefox
+### https://aur.archlinux.org/packages/nerd-fonts-hack/ 
+### https://aur.archlinux.org/nerd-fonts-hack.git 
+### https://github.com/ryanoasis/nerd-fonts 
+###
+######### Вот несколько крутых плагинов ###############
+###
+### autojump  AUR # Более быстрый способ навигации по файловой системе (по папкам) из командной строки 
+### https://aur.archlinux.org/packages/autojump/
+### https://aur.archlinux.org/autojump.git
+### https://github.com/wting/autojump
+###
+### autojump  AUR # Более быстрый способ навигации по файловой системе (по папкам) из командной строки 
+### https://aur.archlinux.org/packages/autojump-git/
+### https://aur.archlinux.org/autojump-git.git
+### http://github.com/wting/autojump
+###
+### ansiweather  AUR # Сценарий оболочки для отображения текущих погодных условий в вашем терминале с поддержкой цветов ANSI и символов Unicode
+### https://aur.archlinux.org/packages/ansiweather/
+### https://aur.archlinux.org/ansiweather.git 
+### https://github.com/fcambus/ansiweather
+###
+######### Дополнительно ###############
+###
+### fast-syntax-highlighting  AUR  # Оптимизированная и расширенная подсветка синтаксиса zsh
+### https://aur.archlinux.org/packages/zsh-fast-syntax-highlighting/
+### https://aur.archlinux.org/zsh-fast-syntax-highlighting.git
+### https://github.com/zdharma/fast-syntax-highlighting
+###
+### zsh-fast-syntax-highlighting-git  AUR  # Оптимизированная и расширенная подсветка синтаксиса zsh
+### https://aur.archlinux.org/packages/zsh-fast-syntax-highlighting-git/
+### https://aur.archlinux.org/zsh-fast-syntax-highlighting-git.git
+### https://github.com/zdharma/fast-syntax-highlighting
+###
+### pacaur  AUR  # Помощник AUR, минимизирующий взаимодействие с пользователем 
+### https://aur.archlinux.org/packages/pacaur/
+### https://aur.archlinux.org/pacaur.git  
+### https://github.com/E5ten/pacaur
+### Последнее обновление: 2019-04-01 23:16
+### 
+### pacaur-git  AUR  # Помощник AUR, минимизирующий взаимодействие с пользователем 
+### https://aur.archlinux.org/packages/pacaur-git/
+### https://aur.archlinux.org/pacaur-git.git  
+### https://github.com/E5ten/pacaur
+### Последнее обновление: 2019-03-05 04:01
+###
+################################
 
 
 
