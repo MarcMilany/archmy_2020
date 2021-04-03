@@ -766,9 +766,9 @@ elif [[ $i_papirus_libre == 1 ]]; then
   echo " Установка Papirus theme for LibreOffice (papirus-libreoffice-theme) "
 yay -S papirus-libreoffice-theme --noconfirm  # Тема Papirus для LibreOffice
 ### * Установить тему: 
-## wget -qO- https://git.io/papirus-folders-install | sh
+## wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/install-papirus-root.sh | sh
 ### * Удалить тему:
-### wget -qO- https://git.io/papirus-folders-install | env uninstall=true sh
+### wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/remove-papirus.sh | sh
 #### papirus-folder #### 
 #git clone https://aur.archlinux.org/papirus-folders.git  # Тема Papirus для LibreOffice
 #cd papirus-folder
@@ -789,9 +789,9 @@ elif [[ $i_papirus_libre == 2 ]]; then
   echo " Установка Papirus theme for LibreOffice (papirus-libreoffice-theme-git) "
 yay -S papirus-libreoffice-theme-git --noconfirm  # Тема Papirus для LibreOffice
 ### * Установить тему: 
-## wget -qO- https://git.io/papirus-folders-install | sh
+## wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/install-papirus-root.sh | sh
 ### * Удалить тему:
-### wget -qO- https://git.io/papirus-folders-install | env uninstall=true sh
+### wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/remove-papirus.sh | sh
 #### papirus-folder #### 
 #git clone https://aur.archlinux.org/papirus-folders.git  # Тема Papirus для LibreOffice 
 #cd papirus-folder
@@ -813,7 +813,7 @@ fi
 
 
 
-wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/install-papirus-root.sh | s
+wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/install-papirus-root.sh | sh
 
 
 wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/remove-papirus.sh | sh
