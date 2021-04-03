@@ -630,7 +630,7 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
-#################################
+
 
 
 
@@ -689,7 +689,7 @@ fi
 ### https://aur.archlinux.org/papirus-filezilla-themes.git 
 ### https://github.com/PapirusDevelopmentTeam/papirus-filezilla-themes
 
-
+#################################
 
 Papirus Folders
 
