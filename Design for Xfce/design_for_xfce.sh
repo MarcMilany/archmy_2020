@@ -630,12 +630,6 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
-
-
-
-
-
-
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Установить Papirus theme for FileZilla (papirus-filezilla-themes)?" 
@@ -681,13 +675,6 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
-
-
-###
-### papirus-filezilla-themes  AUR  # Тема значков Papirus для Filezilla
-### https://aur.archlinux.org/packages/papirus-filezilla-themes/
-### https://aur.archlinux.org/papirus-filezilla-themes.git 
-### https://github.com/PapirusDevelopmentTeam/papirus-filezilla-themes
 
 #################################
 
