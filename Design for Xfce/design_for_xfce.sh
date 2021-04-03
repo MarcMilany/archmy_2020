@@ -421,9 +421,8 @@ echo -e "${MAGENTA}:: ${BOLD}Faba Icon Theme (faba-icon-theme-git) - это се
 echo " Faba была разработана с учетом простоты и соответствия стандартам значков. (https://github.com/snwh/faba-icon-theme) " 
 echo " Он специально разработан как базовый с минимальным набором значков для темы значков Moka (или других тем). "
 echo -e "${CYAN}=> Копирование или повторное использование: ${NC}Этот проект имеет смешанное лицензирование. Вы можете свободно копировать, распространять и / или изменять аспекты этой работы в соответствии с условиями каждой лицензии (если не указано иное). "
-
-
-
+echo " Будьте внимательны! В данной опции выбор всегда остаётся за вами. "
+# Be careful! In this option, the choice is always yours.
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
@@ -454,9 +453,31 @@ yay -S moka-icon-theme-git --noconfirm  # Тема значков разрабо
 #cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 ### rm -rf moka-icon-theme-git 
 #rm -Rf moka-icon-theme-git
+  echo ""  
+  echo " Установка Faba Icon Theme (faba-icon-theme-git) "
+yay -S faba-icon-theme-git --noconfirm  # Это базовый набор иконок для Faba. Он разработан с учетом простоты и соответствия стандартам
+#### faba-icon-theme-git ####
+#git clone https://aur.archlinux.org/faba-icon-theme-git.git  # Это базовый набор иконок для Faba
+#cd faba-icon-theme-git
+### makepkg -fsri
+### makepkg -si
+### makepkg -g  # посчитает контрольные суммы пакетов, далее нужно просто эти контрольные суммы заменить в PKGBUILD`е 
+### sudo mousepad PKGBUILD  # открыть PKGBUILD в редакторе текста
+#makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+### makepkg -si --skipinteg
+#pwd    # покажет в какой директории мы находимся
+#cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+### rm -rf faba-icon-theme-git 
+#rm -Rf faba-icon-theme-git
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
+#-------------------------
+# Могу я предложить добавить Faenza к наследству?
+# это решит некоторые проблемы с отсутствующими значками (например, в tidybattery) как для Faba, так и для Moka.
+# поэтому в Faba / index.theme в разделе [Иконки] добавьте строку:
+# Inherits = Faenza,
+#----------------------------
 
 clear
 echo ""
