@@ -239,6 +239,7 @@ elif [[ $upd_sys == 2 ]]; then
 echo ""
 echo " Обновление базы данных выполнено "
 fi
+sleep 01
 
 clear
 echo ""
