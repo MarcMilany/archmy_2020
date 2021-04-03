@@ -309,7 +309,7 @@ echo ""
 echo " Установка базовых утилит (пакетов) пропущена "
 elif [[ $basic_utilities == 1 ]]; then
   echo ""    
-  echo " Установка Установка базовых утилит (пакетов) wget, curl, git "
+  echo " Установка базовых утилит (пакетов) wget, curl, git "
 # sudo pacman -S --needed base-devel git wget #curl  - пока присутствует в pkglist.x86_64
 sudo pacman -S --noconfirm --needed wget curl git
 # sudo pacman -S wget git --noconfirm  #curl  - пока присутствует в pkglist.x86_64
