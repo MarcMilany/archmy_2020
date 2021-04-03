@@ -3011,16 +3011,16 @@ echo ""
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_keyboard  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_onboard  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$i_keyboard" =~ [^10] ]]
+    [[ "$i_onboard" =~ [^10] ]]
 do
     :
 done 
-if [[ $i_keyboard == 0 ]]; then 
+if [[ $i_onboard == 0 ]]; then 
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
-elif [[ $i_keyboard == 1 ]]; then
+elif [[ $i_onboard == 1 ]]; then
   echo ""  
   echo " Установка Onboard (экранной клавиатуры) "
 sudo pacman -S onboard --noconfirm  # Экранная клавиатура
