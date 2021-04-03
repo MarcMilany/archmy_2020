@@ -187,7 +187,7 @@ echo -e "${BLUE}:: ${NC}Узнаем версию и данные о релиз�
 cat /proc/version
 #cat /etc/lsb-release.old
 cat /etc/lsb-release
-sleep 03
+sleep 02
 
 clear
 echo -e "${CYAN}
