@@ -201,18 +201,56 @@ cat /proc/version
 cat /etc/lsb-release
 sleep 02
 
+clear
 echo -e "${CYAN}
   <<< Установка обновлений для системы Arch Linux >>> ${NC}"
 # Installation of utilities (packages) for the Arch Linux system begins
 echo ""
-echo -e "${BLUE}:: ${NC}Обновим вашу систему (базу данных пакетов)"
+echo -e "${GREEN}==> ${NC}Обновим вашу систему (базу данных пакетов)?" 
+#echo -e "${BLUE}:: ${NC}Обновим вашу систему (базу данных пакетов)"
 #echo "Обновим вашу систему (базу данных пакетов)"
 # Update your system (package database)
-echo -e "${YELLOW}:: ${NC}Загружаем базу данных пакетов независимо от того, есть ли какие-либо изменения в версиях или нет."
-#echo 'Загружаем базу данных пакетов независимо от того, есть ли какие-либо изменения в версиях или нет.'
+echo -e "${CYAN}=> ${BOLD}В сценарии (скрипте) присутствуют следующие варианты: ${NC}"
+echo " 1 - Обновление базы данных пакетов плюс обновление самих пакетов (pacman -Syyu) "
+echo -e "${RED}==> Важно! ${NC}Если при обновлении системы прилетели обновления ядра и установились, то Вам нужно желательно остановить исполнения сценария (скрипта), и выполнить команду по обновлению загрузчика 'grub' - sudo grub-mkconfig -o /boot/grub/grub.cfg , затем перезагрузить систему." 
+echo -e "${YELLOW}==> Примечание: ${BOLD}Загружаем базу данных пакетов независимо от того, есть ли какие-либо изменения в версиях или нет. ${NC}"
 # Loading the package database regardless of whether there are any changes in the versions or not.
+echo " 2 - Просто обновть базы данных пакетов пакмэна (pacman -Syy) "
+echo -e "${YELLOW}==> Примечание: ${BOLD}Возможно Вас попросят ввести пароль пользователя (user). ${NC}"
+echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. "
+# Be careful! The installation process was fully automatic.
+echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+# If you doubt your actions, think again... 
+echo "" 
+while 
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Обновить и установить (pacman -Syyu),     2 - Обновть базы данных пакетов (pacman -Syy)     
+
+    0 - НЕТ - Пропустить обновление и установку: " upd_sys  # sends right after the keypress; # отправляет сразу после нажатия клавиши    
+    echo ''
+    [[ "$upd_sys" =~ [^120] ]]
+do
+    :
+done 
+if [[ $upd_sys == 0 ]]; then 
+echo ""   
+echo " Установка обновлений пропущена "
+elif [[ $upd_sys == 1 ]]; then
+  echo ""    
+  echo " Установка обновлений (базы данных пакетов) "
+  sudo pacman -Syyu --noconfirm  # Обновление баз плюс обновление пакетов (--noconfirm - не спрашивать каких-либо подтверждений)
+# sudo pacman -Syyu  # Обновим вашу систему (базу данных пакетов)
 echo ""
-sudo pacman -Syyu --noconfirm  
+echo " Обновление и установка выполнено "
+elif [[ $upd_sys == 2 ]]; then
+  echo ""    
+  echo " Обновим базы данных пакетов... "
+###  sudo pacman -Sy
+  sudo pacman -Syy  # обновление баз пакмэна (pacman)  
+echo ""
+echo " Обновление базы данных выполнено "
+fi
 sleep 01
 
 clear
