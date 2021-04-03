@@ -592,10 +592,9 @@ fi
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Установить Papirus theme for SMPlayer (papirus-smplayer-theme-git)?" 
-echo -e "${MAGENTA}:: ${BOLD}Papirus theme for SMPlayer (papirus-smplayer-theme-git) - это официальная тема Arc Firefox, созданная для браузера Firefox (mozilla.org). ${NC}"
-echo -e "${YELLOW}==> Примечание: ${NC}Эта тема предназначена для использования вместе с темой Arc GTK (arc-gtk-theme), не используйте ее с другими темами GTK, иначе она будет выглядеть сломанной. (https://github.com/jnsh/arc-theme)"
-echo " Тема доступна в виде коллекции на (addons.mozilla.org). (https://github.com/horst3180/arc-firefox-theme) " 
-echo -e "${RED}==> Требования: ${NC}Эта тема совместима с Firefox 40+ и Firefox 38 ESR. "
+echo -e "${MAGENTA}:: ${BOLD}Papirus theme for SMPlayer (papirus-smplayer-theme-git) - это тема созданная PapirusDevelopmentTeam для медиаплеера со встроенными кодеками SMPlayer (https://www.smplayer.info/). ${NC}"
+echo -e "${YELLOW}==> Примечание: ${NC}Начиная с версии SMPlayer 16.6 и выше, в пакет были добавлены темы Papirus и Papirus Dark. (https://github.com/PapirusDevelopmentTeam/papirus-smplayer-theme)"
+echo " Вы также можете использовать сценарии для установки последней версии прямо из этого репо (независимо от вашего дистрибутива), через GNU Wget (wget). Но в данный момент команда - Закомментирована (двойной ##), если Вам нужен именно этот способ сборки и установки, то раскомментируйте строки их установки, а строки установки (пакетов) через Yay - закомментируйте. " 
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
@@ -612,8 +611,12 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_papirus_smpl == 1 ]]; then
   echo ""  
   echo " Установка Papirus theme for SMPlayer (papirus-smplayer-theme-git) "
-yay -S papirus-smplayer-theme-git --noconfirm  # Тема Papirus для SMPlayer (версия git) 
-#### papirus-smplayer-theme-git ####
+yay -S papirus-smplayer-theme-git --noconfirm  # Тема Papirus для SMPlayer (версия git)
+### * Установить тему: 
+## wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-smplayer-theme/master/install.sh | sh
+### * Удалить тему для плеера:
+### wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-smplayer-theme/master/install.sh | env uninstall=true sh
+#### papirus-smplayer-theme-git #### 
 #git clone https://aur.archlinux.org/papirus-smplayer-theme-git.git  # Тема Papirus для SMPlayer (версия git) 
 #cd papirus-smplayer-theme-git
 ### makepkg -fsri
@@ -633,18 +636,6 @@ fi
 
 
 
-
-
-
-
-
-
-
-
-
-Papirus theme for SMPlayer (papirus-smplayer-theme-git)
-
-Тема Papirus для SMPlayer (версия git)
 
 ###
 ### papirus-smplayer-theme-git  AUR  # Тема Papirus для SMPlayer (версия git)  
