@@ -222,7 +222,7 @@ echo " Установка обновлений пропущена "
 elif [[ $upd_sys == 1 ]]; then
   echo ""    
   echo " Установка обновлений (базы данных пакетов) "
-sudo pacman -Syyu  --noconfirm  # Обновление баз плюс обновление пакетов (--noconfirm - не спрашивать каких-либо подтверждений)
+sudo pacman -Syyu --noconfirm  # Обновление баз плюс обновление пакетов (--noconfirm - не спрашивать каких-либо подтверждений)
 # sudo pacman -Syyu  # Обновим вашу систему (базу данных пакетов)
 echo ""
 echo " Обновление выполнено "
@@ -329,7 +329,8 @@ echo -e "${BLUE}:: ${NC}Установить Arc Icon Theme (arc-icon-theme)?"
 echo -e "${YELLOW}==> Примечание: ${NC}Тема значков ещё не закончена! В некоторых случаях это может работать не так, как ожидалось."
 echo -e "${MAGENTA}:: ${BOLD}Arc Icon Theme (arc-icon-theme) - это единственный полный официальный набор значков Arc, доступный где-либо, и все они живут в одной теме. (https://github.com/horst3180/arc-icon-theme) ${NC}"
 echo " Эти значки и папки Arc были тщательно созданы, чтобы соответствовать всем традиционным схемам тем рабочего стола Arc, но они, безусловно, могут дополнять другие темы рабочего стола. " 
-echo -e "${RED}==> Требования: ${NC}Эта тема не предоставляет значки приложений, ей нужна другая тема значков, чтобы наследовать их. По умолчанию эта тема будет искать тему значков Moka (https://aur.archlinux.org/packages/moka-icon-theme-git/ ; https://github.com/moka-project/moka-icon-theme), чтобы получить недостающие значки. Если Moka не установлен, он будет использовать тему значков Gnome в качестве запасного варианта. "
+echo -e "${RED}==> Требования: ${NC}Эта тема не предоставляет значки приложений, ей нужна другая тема значков, чтобы наследовать их. По умолчанию эта тема будет искать тему значков Moka (https://aur.archlinux.org/packages/moka-icon-theme-git/ ; https://github.com/moka-project/moka-icon-theme), чтобы получить недостающие значки. "
+echo " Если Moka не установлен, он будет использовать тему значков Gnome в качестве запасного варианта. "
 echo -e "${CYAN}=> Справка (пояснение): ${NC}Тема значков Moka будет представлена в сценарии (скрипте) далее, пакетом Moka Icon Theme (moka-icon-theme-git)."
 echo " Будьте внимательны! В данной опции выбор всегда остаётся за вами. "
 echo "" 
@@ -545,7 +546,7 @@ echo ""
 echo -e "${BLUE}:: ${NC}Установить Papirus theme for SMPlayer (papirus-smplayer-theme-git)?" 
 echo -e "${MAGENTA}:: ${BOLD}Papirus theme for SMPlayer (papirus-smplayer-theme-git) - это тема созданная PapirusDevelopmentTeam для медиаплеера со встроенными кодеками SMPlayer (https://www.smplayer.info/). ${NC}"
 echo -e "${YELLOW}==> Примечание: ${NC}Начиная с версии SMPlayer 16.6 и выше, в пакет были добавлены темы Papirus и Papirus Dark. Сменить тему нужно (можно) в настройках внешнего вида в самом плеера! (https://github.com/PapirusDevelopmentTeam/papirus-smplayer-theme)"
-echo -e "${CYAN}=> Справка (пояснение): ${NC}Если у Вас в системе вместе с пакетом (smplayer) установлен пакет (smplayer-themes), то можете ПРОПУСТИТЬ установку Papirus theme for SMPlayer (papirus-smplayer-theme-git), так как написано выше в пакет уже были добавлены темы Papirus и Papirus Dark. (может возникнуть конфликт с пакета papirus-smplayer-theme-git с пакетом smplayer-themes) "
+echo -e "${CYAN}=> Справка (пояснение): ${NC}Если у Вас в системе вместе с пакетом (smplayer) установлен пакет (smplayer-themes), то можете ПРОПУСТИТЬ установку Papirus theme for SMPlayer (papirus-smplayer-theme-git), так как написано выше в пакет уже были добавлены темы Papirus и Papirus Dark. (может возникнуть конфликт пакета papirus-smplayer-theme-git с пакетом smplayer-themes) "
 echo " Вы также можете использовать сценарии для установки последней версии прямо из этого репо (независимо от вашего дистрибутива), через GNU Wget (wget). Но в данный момент команда - Закомментирована (двойной ##), если Вам нужен именно этот способ сборки и установки, то раскомментируйте строки установки, а строки установки (пакетов) через Yay - закомментируйте. " 
 echo "" 
 while  
