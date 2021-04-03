@@ -742,12 +742,9 @@ clear
 echo ""
 echo -e "${BLUE}:: ${NC}Установить Papirus theme for LibreOffice (papirus-libreoffice-theme) или (papirus-libreoffice-theme-git)?" 
 echo -e "${RED}==> Важно! ${NC}Возможно! Этот проект не поддерживается, LibreOffice 5.3 последняя поддерживаемая версия. "
-echo -e "${MAGENTA}:: ${BOLD}Papirus theme for LibreOffice (papirus-libreoffice-theme) - это сценарий bash, который позволяет изменять цвет папок в теме значков Papirus и её ветвях (основанных на версии 20171007 и новее). ${NC}"
-
-
+echo -e "${MAGENTA}:: ${BOLD}Papirus theme for LibreOffice (papirus-libreoffice-theme) и (papirus-libreoffice-theme-git) - это тема созданная PapirusDevelopmentTeam для LibreOffice (https://www.libreoffice.org/). ${NC}"
 echo " Тема Papirus для LibreOffice доступна в трех вариантах: ePapirus, Papirus, Papirus Dark. (https://github.com/PapirusDevelopmentTeam/papirus-libreoffice-theme) "
 echo -e "${YELLOW}==> Примечание: ${NC}Перейдите в Инструменты → Параметры → LibreOffice → Просмотр, чтобы выбрать тему."
-
 
 echo -e "${CYAN}=> Использование скрипта: ${NC}Папки Papirus не имеют графического интерфейса, но это полнофункциональное приложение командной строки с дополнениями TAB. Ниже Вы увидите несколько примеров использования."
 echo " Вы также можете использовать сценарии для установки последней версии прямо из этого репо (независимо от вашего дистрибутива), через GNU Wget (wget). Но в данный момент команда - Закомментирована (двойной ##), если Вам нужен именно этот способ сборки и установки, то раскомментируйте строки установки, а строки установки (пакетов) через Yay - закомментируйте. " 
@@ -821,7 +818,7 @@ wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libre
 
 wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/remove-papirus.sh | sh
 
-** Этот проект не поддерживается. LibreOffice 5.3 - последняя поддерживаемая версия. **
+
 
 
 ###
