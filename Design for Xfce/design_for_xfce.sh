@@ -570,7 +570,7 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_arc_firefox == 1 ]]; then
   echo ""  
   echo " Установка Arc Firefox Theme (arc-firefox-theme-git) "
-yay -S arc-firefox-theme-git --noconfirm  # Тема значков разработана в минималистичном плоском стиле с использованием простой геометрии и цветов
+yay -S arc-firefox-theme-git --noconfirm  # Тема Arc Firefox
 #### arc-firefox-theme-git ####
 #git clone https://aur.archlinux.org/arc-firefox-theme-git.git  # Тема Arc Firefox
 #cd arc-firefox-theme-git
