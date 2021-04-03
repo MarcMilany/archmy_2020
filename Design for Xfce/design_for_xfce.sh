@@ -660,12 +660,12 @@ elif [[ $i_papirus_smpl == 1 ]]; then
   echo " Установка Papirus theme for SMPlayer (papirus-smplayer-theme-git) "
 yay -S papirus-smplayer-theme-git --noconfirm  # Тема Papirus для SMPlayer (версия git)
 ### * Установить тему: 
-## wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-smplayer-theme/master/install.sh | sh
-### * Удалить тему для плеера:
-### wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-smplayer-theme/master/install.sh | env uninstall=true sh
-#### papirus-smplayer-theme-git #### 
-#git clone https://aur.archlinux.org/papirus-smplayer-theme-git.git  # Тема Papirus для SMPlayer (версия git) 
-#cd papirus-smplayer-theme-git
+## wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-filezilla-themes/master/install.sh | sh
+### * Удалить тему для клиента FTP:
+### wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-filezilla-themes/master/install.sh | env uninstall=true sh
+#### papirus-filezilla-themes #### 
+#git clone https://aur.archlinux.org/papirus-filezilla-themes.git  # Тема значков Papirus для Filezilla 
+#cd papirus-filezilla-themes
 ### makepkg -fsri
 ### makepkg -si
 ### makepkg -g  # посчитает контрольные суммы пакетов, далее нужно просто эти контрольные суммы заменить в PKGBUILD`е 
@@ -674,13 +674,13 @@ yay -S papirus-smplayer-theme-git --noconfirm  # Тема Papirus для SMPlaye
 ### makepkg -si --skipinteg
 #pwd    # покажет в какой директории мы находимся
 #cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
-### rm -rf papirus-smplayer-theme-git 
-#rm -Rf papirus-smplayer-theme-git
+### rm -rf papirus-filezilla-themes 
+#rm -Rf papirus-filezilla-themes
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
-
+Papirus для FileZilla
 
 Быстрый и надежный клиент FTP, FTPS и SFTP
 https://filezilla-project.org/
