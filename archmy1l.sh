@@ -256,19 +256,19 @@ echo ""
 while
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p " 
-    1 - Да обновить ключи,    0 - Нет пропустить: " x_key  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да обновить ключи,    0 - Нет пропустить: " i_key  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$x_key" =~ [^10] ]]
+    [[ "$i_key" =~ [^10] ]]
 do
     :
 done
- if [[ $x_key == 0 ]]; then
+if [[ $i_key == 0 ]]; then
 echo ""
 echo " Обновление ключей пропущено " 
- echo ""
- echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
-  pacman -Sy --noconfirm 
-elif [[ $x_key == 1 ]]; then
+echo ""
+echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
+pacman -Sy --noconfirm 
+elif [[ $i_key == 1 ]]; then
   clear
   echo ""
   echo " Создаётся генерация мастер-ключа (брелка) pacman "  # gpg –refresh-keys
