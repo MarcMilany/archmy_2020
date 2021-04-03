@@ -199,7 +199,7 @@ echo -e "${BLUE}:: ${NC}Узнаем версию и данные о релиз�
 # Find out the version and release data for Arch ... :)
 cat /proc/version
 cat /etc/lsb-release.old
-sleep 03
+sleep 02
 
 clear
 echo -e "${CYAN}
