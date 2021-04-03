@@ -1,6 +1,23 @@
 #!/bin/bash
 #### Смотрите пометки (справочки) и доп.иформацию в самом скрипте! #### 
-###############################################################
+
+apptitle="Arch Linux Fast Install v1.6 LegasyBIOS - Version: 2020.07.16.00.40.38 (GPLv3)"
+baseurl=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/url%20links%20abbreviated/git%20url
+cpl=0
+skipfont="0"
+fspkgs=""
+EDITOR=nano
+#EDITOR=nano visudo  # Выполните команду с правами суперпользователя
+#BROWSER="firefox"
+
+DESING_FOR_XFCE_LANG="russian"  # Installer default language (Язык установки по умолчанию)
+
+script_path=$(readlink -f ${0%/*})
+
+umask 0022 # Определение окончательных прав доступа
+# Для суперпользователя (root) umask по умолчанию равна 0022
+
+##############################################################
 ### design_for_xfce.sh  (Оформление для Xfce)
 ###
 ### Copyright (C) 2021 Marc Milany
@@ -15,90 +32,11 @@
 ###
 ### License (Лицензия): LGPL-3.0
 ###############################################################
-###
-############ Design for Xfce ###########
-### arc-gtk-theme - # Плоская тема с прозрачными элементами для GTK 3, GTK 2 и Gnome-Shell
-### https://www.archlinux.org/packages/community/any/arc-gtk-theme/
-### https://github.com/jnsh/arc-theme
-###
-### arc-icon-theme - # Тема значка дуги. Только официальные релизы
-### https://www.archlinux.org/packages/community/any/arc-icon-theme/
-### https://github.com/horst3180/arc-icon-theme
-###
-### arc-firefox-theme  AUR  # Официальная тема Arc Firefox (отсутствует)
-### https://aur.archlinux.org/packages/arc-firefox-theme/ 
-### https://aur.archlinux.org/arc-firefox-theme.git
-###
-### arc-firefox-theme-git  AUR  # Тема Arc Firefox
-### https://aur.archlinux.org/packages/arc-firefox-theme-git/ 
-### https://aur.archlinux.org/arc-firefox-theme-git.git
-### https://github.com/horst3180/arc-firefox-theme 
-###
-### papirus-icon-theme - # Тема значка Papirus (папируса)
-### https://www.archlinux.org/packages/community/any/papirus-icon-theme/
-### https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
-###
-### capitaine-cursors - # Тема x-cursor, вдохновленная macOS и основанная на KDE Breeze
-### https://www.archlinux.org/packages/community/any/capitaine-cursors/
-### https://github.com/keeferrourke/capitaine-cursors
-###
-### hicolor-icon-theme - # Freedesktop.org Hicolor тема значков (возможно уже установлена)
-### https://www.archlinux.org/packages/extra/any/hicolor-icon-theme/
-### https://www.freedesktop.org/wiki/Software/icon-theme/
-###
-### breeze-default-cursor-theme  AUR  # Тема курсора по умолчанию Breeze.
-### https://aur.archlinux.org/packages/breeze-default-cursor-theme/
-### https://aur.archlinux.org/breeze-default-cursor-theme.git 
-### https://www.gnome-look.org/p/999991
-###
-### moka-icon-theme-git  AUR  # Тема значков разработана в минималистичном плоском стиле с использованием простой геометрии и цветов
-### https://aur.archlinux.org/packages/moka-icon-theme-git/
-### https://aur.archlinux.org/moka-icon-theme-git.git 
-### https://github.com/moka-project/moka-icon-theme
-### https://snwh.org/moka
-###
-### papirus-smplayer-theme-git  AUR  # Тема Papirus для SMPlayer (версия git)  
-### https://aur.archlinux.org/packages/papirus-smplayer-theme-git/ 
-### https://aur.archlinux.org/papirus-smplayer-theme-git.git 
-### https://github.com/PapirusDevelopmentTeam/papirus-smplayer-theme
-###
-### papirus-filezilla-themes  AUR  # Тема значков Papirus для Filezilla
-### https://aur.archlinux.org/packages/papirus-filezilla-themes/
-### https://aur.archlinux.org/papirus-filezilla-themes.git 
-### https://github.com/PapirusDevelopmentTeam/papirus-filezilla-themes
-###
-### papirus-folder  AUR  # Изменение цвета папки темы значка Papirus
-### https://aur.archlinux.org/packages/papirus-folders/ 
-### https://aur.archlinux.org/papirus-folders.git
-### https://github.com/PapirusDevelopmentTeam/papirus-folders
-###
-### papirus-libreoffice-theme  AUR  # Тема Papirus для LibreOffice (Возможно этот проект не поддерживается)
-### https://aur.archlinux.org/packages/papirus-libreoffice-theme/
-### https://aur.archlinux.org/papirus-libreoffice-theme.git 
-### https://github.com/PapirusDevelopmentTeam/papirus-libreoffice-theme 
-### Последнее обновление:	2020-01-14 21:27
-###
-### papirus-libreoffice-theme-git  AUR  # Тема Papirus для LibreOffice (Возможно этот проект не поддерживается)
-### https://aur.archlinux.org/packages/papirus-libreoffice-theme-git/
-### https://aur.archlinux.org/papirus-libreoffice-theme-git.git 
-### https://github.com/PapirusDevelopmentTeam/papirus-libreoffice-theme
-### Последнее обновление:	2020-08-15 14:03
-###
-################################
-###
-apptitle="Arch Linux Fast Install v1.6 LegasyBIOS - Version: 2020.07.16.00.40.38 (GPLv3)"
-baseurl=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/url%20links%20abbreviated/git%20url
-cpl=0
-skipfont="0"
-fspkgs=""
-EDITOR=nano
-#EDITOR=nano visudo  # Выполните команду с правами суперпользователя
-#BROWSER="firefox"
-DESING_FOR_XFCE_LANG="russian"  # Installer default language (Язык установки по умолчанию)
-script_path=$(readlink -f ${0%/*})
-umask 0022 # Определение окончательных прав доступа
-# Для суперпользователя (root) umask по умолчанию равна 0022
+
 set -e "\n${RED}Error: ${YELLOW}${*}${NC}"  # Эта команда остановит выполнение сценария после сбоя команды и будет отправлен код ошибки
+ 
+###############################################################
+
 ### Help and usage (--help or -h) (Справка)
 _help() {
     echo -e "${BLUE}
@@ -138,7 +76,9 @@ _chroot() {
     arch-chroot /mnt <<EOF "${1}"
 EOF
 }
-########################################
+
+###################################################################
+
 ### Warning (Предупреждение)
 _warning_banner() {
     echo -e "${YELLOW}
@@ -152,11 +92,12 @@ ${NC}
 ${NC}
 Автор не несёт ответственности за любое нанесение вреда при использовании скрипта. 
 Вы используйте его на свой страх и риск, или изменяйте под свои личные нужды. 
-В данный момент сценарий (скрипта) находится в процессе доработки по прописыванию устанавливаемых (пакетов), и небольшой корректировке (Воен. Внесение поправок в наводку орудий по результатам наблюдений с наблюдательных пунктов).
+В данный момент сценарий (скрипта) находится в процессе доработки по прописыванию устанавливаемого софта (пакетов), и небольшой корректировке (Воен. Внесение поправок в наводку орудий по результатам наблюдений с наблюдательных пунктов).
 
 ${BLUE}===> ******************************************************* ${NC}"
 }
-##########################################
+###################################################################
+
 ### Display banner (Дисплей баннер)
 _warning_banner
 
@@ -237,6 +178,15 @@ echo -e "${BLUE}:: ${NC}Посмотрим данные о нашем соеди
 echo -e "${CYAN}=> ${NC}С помощью IPinfo вы можете точно определять местонахождение ваших пользователей, настраивать их взаимодействие, предотвращать мошенничество, обеспечивать соответствие и многое другое."
 echo " Надежный источник данных IP-адресов (https://ipinfo.io/) "
 wget http://ipinfo.io/ip -qO -
+sleep 03
+
+echo ""
+echo -e "${BLUE}:: ${NC}Узнаем версию и данные о релизе Arch'a ... :) " 
+#echo "Узнаем версию и данные о релизе Arch'a ... :)"
+# Find out the version and release data for Arch ... :)
+cat /proc/version
+#cat /etc/lsb-release.old
+cat /etc/lsb-release
 sleep 03
 
 clear
@@ -593,6 +543,7 @@ echo ""
 echo -e "${BLUE}:: ${NC}Установить Papirus theme for SMPlayer (papirus-smplayer-theme-git)?" 
 echo -e "${MAGENTA}:: ${BOLD}Papirus theme for SMPlayer (papirus-smplayer-theme-git) - это тема созданная PapirusDevelopmentTeam для медиаплеера со встроенными кодеками SMPlayer (https://www.smplayer.info/). ${NC}"
 echo -e "${YELLOW}==> Примечание: ${NC}Начиная с версии SMPlayer 16.6 и выше, в пакет были добавлены темы Papirus и Papirus Dark. Сменить тему нужно (можно) в настройках внешнего вида в самом плеера! (https://github.com/PapirusDevelopmentTeam/papirus-smplayer-theme)"
+echo -e "${CYAN}=> Справка (пояснение): ${NC}Если у Вас в системе вместе с пакетом (smplayer) установлен пакет (smplayer-themes), то можете ПРОПУСТИТЬ установку Papirus theme for SMPlayer (papirus-smplayer-theme-git), так как написано выше в пакет уже были добавлены темы Papirus и Papirus Dark. (может возникнуть конфликт с пакета papirus-smplayer-theme-git с пакетом smplayer-themes) "
 echo " Вы также можете использовать сценарии для установки последней версии прямо из этого репо (независимо от вашего дистрибутива), через GNU Wget (wget). Но в данный момент команда - Закомментирована (двойной ##), если Вам нужен именно этот способ сборки и установки, то раскомментируйте строки установки, а строки установки (пакетов) через Yay - закомментируйте. " 
 echo "" 
 while  
@@ -700,9 +651,10 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_papirus_folder == 1 ]]; then
   echo ""  
   echo " Установка Papirus Folders (papirus-folder) "
-yay -S papirus-folder --noconfirm  # Изменение цвета папки темы значка Papirus
+##yay -S papirus-folder --noconfirm  # Изменение цвета папки темы значка Papirus
 ### * Установить тему: 
-## wget -qO- https://git.io/papirus-folders-install | sh
+wget -qO- https://git.io/papirus-folders-install | sh
+papirus-folders -l --theme Papirus-Dark
 ### * Удалить тему:
 ### wget -qO- https://git.io/papirus-folders-install | env uninstall=true sh
 #### papirus-folder #### 
@@ -738,11 +690,13 @@ fi
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Установить Papirus theme for LibreOffice (papirus-libreoffice-theme) или (papirus-libreoffice-theme-git)?" 
-echo -e "${RED}==> Важно! ${NC}Возможно! Этот проект не поддерживается, LibreOffice 5.3 последняя поддерживаемая версия. "
+echo -e "${RED}==> Важно! ${NC}Этот проект не поддерживается, LibreOffice 5.3 - последняя поддерживаемая версия, но саму тему МОЖНО установить. (проверено РАБОТАЕТ в версии libreoffice-still 7.0.5-1)"
 echo -e "${MAGENTA}:: ${BOLD}Papirus theme for LibreOffice (papirus-libreoffice-theme) и (papirus-libreoffice-theme-git) - это тема созданная PapirusDevelopmentTeam для LibreOffice (https://www.libreoffice.org/). ${NC}"
 echo " Тема Papirus для LibreOffice доступна в трех вариантах: ePapirus, Papirus, Papirus Dark. (https://github.com/PapirusDevelopmentTeam/papirus-libreoffice-theme) "
 echo -e "${YELLOW}==> Примечание: ${NC}Перейдите в Инструменты → Параметры → LibreOffice → Просмотр, чтобы выбрать тему."
 echo " Вы также можете использовать сценарии для установки последней версии прямо из этого репо (независимо от вашего дистрибутива), через GNU Wget (wget). Но в данный момент команда - Закомментирована (двойной ##), если Вам нужен именно этот способ сборки и установки, то раскомментируйте строки установки, а строки установки (пакетов) через Yay - закомментируйте. " 
+echo " Будьте внимательны! В данной опции выбор всегда остаётся за вами. "
+# Be careful! In this option, the choice is always yours.
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
@@ -838,6 +792,107 @@ echo -e "${BLUE}:: ${BOLD}Теперь вам надо ввести exit, зат
 # echo " Установка завершена для выхода введите >> exit << "
 #exit(0)  # означает чистый выход без каких-либо ошибок (проблем)
 #exit(1)  # означает, что была какая-то ошибка (проблема), и именно поэтому программа выходит
+
+############ Design for Xfce ###########
+###
+### arc-gtk-theme - # Плоская тема с прозрачными элементами для GTK 3, GTK 2 и Gnome-Shell
+### https://www.archlinux.org/packages/community/any/arc-gtk-theme/
+### https://github.com/jnsh/arc-theme
+###
+### arc-icon-theme - # Тема значка дуги. Только официальные релизы
+### https://www.archlinux.org/packages/community/any/arc-icon-theme/
+### https://github.com/horst3180/arc-icon-theme
+###
+### arc-firefox-theme  AUR  # Официальная тема Arc Firefox (отсутствует)
+### https://aur.archlinux.org/packages/arc-firefox-theme/ 
+### https://aur.archlinux.org/arc-firefox-theme.git
+###
+### arc-firefox-theme-git  AUR  # Тема Arc Firefox
+### https://aur.archlinux.org/packages/arc-firefox-theme-git/ 
+### https://aur.archlinux.org/arc-firefox-theme-git.git
+### https://github.com/horst3180/arc-firefox-theme 
+###
+### papirus-icon-theme - # Тема значка Papirus (папируса)
+### https://www.archlinux.org/packages/community/any/papirus-icon-theme/
+### https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
+###
+### capitaine-cursors - # Тема x-cursor, вдохновленная macOS и основанная на KDE Breeze
+### https://www.archlinux.org/packages/community/any/capitaine-cursors/
+### https://github.com/keeferrourke/capitaine-cursors
+###
+### hicolor-icon-theme - # Freedesktop.org Hicolor тема значков (возможно уже установлена)
+### https://www.archlinux.org/packages/extra/any/hicolor-icon-theme/
+### https://www.freedesktop.org/wiki/Software/icon-theme/
+###
+### breeze-default-cursor-theme  AUR  # Тема курсора по умолчанию Breeze.
+### https://aur.archlinux.org/packages/breeze-default-cursor-theme/
+### https://aur.archlinux.org/breeze-default-cursor-theme.git 
+### https://www.gnome-look.org/p/999991
+###
+### moka-icon-theme-git  AUR  # Тема значков разработана в минималистичном плоском стиле с использованием простой геометрии и цветов
+### https://aur.archlinux.org/packages/moka-icon-theme-git/
+### https://aur.archlinux.org/moka-icon-theme-git.git 
+### https://github.com/moka-project/moka-icon-theme
+### https://snwh.org/moka
+###
+### papirus-smplayer-theme-git  AUR  # Тема Papirus для SMPlayer (версия git)  
+### https://aur.archlinux.org/packages/papirus-smplayer-theme-git/ 
+### https://aur.archlinux.org/papirus-smplayer-theme-git.git 
+### https://github.com/PapirusDevelopmentTeam/papirus-smplayer-theme
+###
+### papirus-filezilla-themes  AUR  # Тема значков Papirus для Filezilla
+### https://aur.archlinux.org/packages/papirus-filezilla-themes/
+### https://aur.archlinux.org/papirus-filezilla-themes.git 
+### https://github.com/PapirusDevelopmentTeam/papirus-filezilla-themes
+###
+### papirus-folder  AUR  # Изменение цвета папки темы значка Papirus
+### https://aur.archlinux.org/packages/papirus-folders/ 
+### https://aur.archlinux.org/papirus-folders.git
+### https://github.com/PapirusDevelopmentTeam/papirus-folders
+###
+### papirus-libreoffice-theme  AUR  # Тема Papirus для LibreOffice (Возможно этот проект не поддерживается)
+### https://aur.archlinux.org/packages/papirus-libreoffice-theme/
+### https://aur.archlinux.org/papirus-libreoffice-theme.git 
+### https://github.com/PapirusDevelopmentTeam/papirus-libreoffice-theme 
+### Последнее обновление: 2020-01-14 21:27
+###
+### papirus-libreoffice-theme-git  AUR  # Тема Papirus для LibreOffice (Возможно этот проект не поддерживается)
+### https://aur.archlinux.org/packages/papirus-libreoffice-theme-git/
+### https://aur.archlinux.org/papirus-libreoffice-theme-git.git 
+### https://github.com/PapirusDevelopmentTeam/papirus-libreoffice-theme
+### Последнее обновление: 2020-08-15 14:03
+###
+################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
