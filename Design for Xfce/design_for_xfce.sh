@@ -418,6 +418,14 @@ echo -e "${MAGENTA}:: ${BOLD}Moka Icon Theme (moka-icon-theme-git) - это ст
 echo " Каждый значок Moka был разработан и оптимизирован для каждого размера, чтобы добиться идеального вида на вашем рабочем столе. (https://github.com/moka-project/moka-icon-theme) " 
 echo " Кроме того, один из наиболее полных доступных наборов значков, Moka предоставляет тысячи значков для многих приложений. Независимо от того, какой рабочий стол Linux вы используете, Moka поможет вам. " 
 
+echo -e "${MAGENTA}:: ${BOLD}Faba Icon Theme (faba-icon-theme-git) - это сексуальный и современный набор иконок FreeDesktop с элементами танго и элементарных элементов. (https://snwh.org/moka) (https://snwh.org/) ${NC}"
+echo " Faba была разработана с учетом простоты и соответствия стандартам значков. (https://github.com/snwh/faba-icon-theme) " 
+echo " Он специально разработан как базовый с минимальным набором значков для темы значков Moka (или других тем). "
+
+
+
+
+
 
 
 
@@ -788,6 +796,12 @@ echo ""
 ### https://aur.archlinux.org/moka-icon-theme-git.git 
 ### https://github.com/moka-project/moka-icon-theme
 ### https://snwh.org/moka
+###
+### faba-icon-theme-git  AUR  # Это базовый набор иконок для Faba. Он разработан с учетом простоты и соответствия стандартам
+### https://aur.archlinux.org/packages/faba-icon-theme-git/
+### https://aur.archlinux.org/faba-icon-theme-git.git
+### https://github.com/snwh/faba-icon-theme
+### 
 ###
 ### papirus-smplayer-theme-git  AUR  # Тема Papirus для SMPlayer (версия git)  
 ### https://aur.archlinux.org/packages/papirus-smplayer-theme-git/ 
