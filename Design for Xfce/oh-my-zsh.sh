@@ -1,9 +1,21 @@
 #!/bin/bash
 #### Смотрите пометки (справочки) и доп.иформацию в самом скрипте! #### 
 
+apptitle="Arch Linux Fast Install v1.6 LegasyBIOS - Version: 2020.07.16.00.40.38 (GPLv3)"
+baseurl=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/url%20links%20abbreviated/git%20url
+cpl=0
+skipfont="0"
+fspkgs=""
+EDITOR=nano
+#EDITOR=nano visudo  # Выполните команду с правами суперпользователя
+#BROWSER="firefox"
 
+OH_MY_ZSH_LANG="russian"  # Installer default language (Язык установки по умолчанию)
 
+script_path=$(readlink -f ${0%/*})
 
+umask 0022 # Определение окончательных прав доступа
+# Для суперпользователя (root) umask по умолчанию равна 0022
 
 ###############################################################
 ### oh_my_zsh.sh  (Оболочка по умолчанию)
@@ -20,22 +32,11 @@
 ###
 ### License (Лицензия): LGPL-3.0
 ###############################################################
-###
 
-###
-apptitle="Arch Linux Fast Install v1.6 LegasyBIOS - Version: 2020.07.16.00.40.38 (GPLv3)"
-baseurl=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/url%20links%20abbreviated/git%20url
-cpl=0
-skipfont="0"
-fspkgs=""
-EDITOR=nano
-#EDITOR=nano visudo  # Выполните команду с правами суперпользователя
-#BROWSER="firefox"
-OH_MY_ZSH_LANG="russian"  # Installer default language (Язык установки по умолчанию)
-script_path=$(readlink -f ${0%/*})
-umask 0022 # Определение окончательных прав доступа
-# Для суперпользователя (root) umask по умолчанию равна 0022
 set -e "\n${RED}Error: ${YELLOW}${*}${NC}"  # Эта команда остановит выполнение сценария после сбоя команды и будет отправлен код ошибки
+ 
+###############################################################
+
 ### Help and usage (--help or -h) (Справка)
 _help() {
     echo -e "${BLUE}
@@ -75,7 +76,9 @@ _chroot() {
     arch-chroot /mnt <<EOF "${1}"
 EOF
 }
-########################################
+
+###################################################################
+
 ### Warning (Предупреждение)
 _warning_banner() {
     echo -e "${YELLOW}
@@ -94,10 +97,11 @@ ${NC}
 ${BLUE}===> ******************************************************* ${NC}"
 }
 ##########################################
+
 ### Display banner (Дисплей баннер)
 _warning_banner
 
-sleep 20
+sleep 15
 #echo -e "${MAGENTA}==> ${BOLD}Если у Вас беспроводное соединение, запустите nmtui и подключитесь к сети. ${NC}"
 #echo 'Если у Вас беспроводное соединение, запустите nmtui и подключитесь к сети.'
 # If you have a wireless connection, launch nmtui and connect to the network.
