@@ -675,15 +675,73 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+clear
+echo ""
+echo -e "${BLUE}:: ${NC}Установить Papirus Folders (papirus-folder)?" 
+echo -e "${MAGENTA}:: ${BOLD}Papirus Folders (papirus-folder) - это сценарий bash, который позволяет изменять цвет папок в теме значков Papirus и её ветвях (основанных на версии 20171007 и новее). ${NC}"
+echo -e "${YELLOW}==> Примечание: ${NC}Чтобы изменить цвет отдельной папки, вы можете использовать Folder Color или Dolphin Folder Color. (https://github.com/PapirusDevelopmentTeam/papirus-folders)"
+echo -e "${CYAN}=> Использование скрипта: ${NC}Папки Papirus не имеют графического интерфейса, но это полнофункциональное приложение командной строки с дополнениями TAB. Ниже Вы увидите несколько примеров использования."
+echo " Вы также можете использовать сценарии для установки последней версии прямо из этого репо (независимо от вашего дистрибутива), через GNU Wget (wget). Но в данный момент команда - Закомментирована (двойной ##), если Вам нужен именно этот способ сборки и установки, то раскомментируйте строки установки, а строки установки (пакетов) через Yay - закомментируйте. " 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_papirus-folder  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_papirus-folder" =~ [^10] ]]
+do
+    :
+done 
+if [[ $i_papirus-folder == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $i_papirus-folder == 1 ]]; then
+  echo ""  
+  echo " Установка Papirus Folders (papirus-folder) "
+yay -S papirus-folder --noconfirm  # Изменение цвета папки темы значка Papirus
+### * Установить тему: 
+## wget -qO- https://git.io/papirus-folders-install | sh
+### * Удалить тему:
+### wget -qO- https://git.io/papirus-folders-install | env uninstall=true sh
+#### papirus-folder #### 
+#git clone https://aur.archlinux.org/papirus-folders.git  # Изменение цвета папки темы значка Papirus 
+#cd papirus-folder
+### makepkg -fsri
+### makepkg -si
+### makepkg -g  # посчитает контрольные суммы пакетов, далее нужно просто эти контрольные суммы заменить в PKGBUILD`е 
+### sudo mousepad PKGBUILD  # открыть PKGBUILD в редакторе текста
+#makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+### makepkg -si --skipinteg
+#pwd    # покажет в какой директории мы находимся
+#cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+### rm -rf papirus-folder 
+#rm -Rf papirus-folder
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
+#---------------------------
+# Использование скрипта:
+# Выбор нужных нам иконок (выбираем нужный цвет по таблице)
+# * Показать текущий цвет и доступные цвета для Papirus-Dark
+# papirus-folders -l --theme Papirus-Dark
+# * Измените цвет папок на коричневый для Papirus-Dark
+# papirus-folders -C brown --theme Papirus-Dark
+# * Вернуться к цвету папок по умолчанию для Papirus-Dark
+# papirus-folders -D --theme Papirus-Dark
+# * Восстановить последний использованный цвет из файла конфигурации
+# papirus-folders -Ru
+# Последняя команда чрезвычайно полезна для восстановления цвета после обновления темы значка (официальные установщики papirus-icon-theme и некоторых сторонних пакетов делают это автоматически).
+#---------------------------
 
-#################################
+
+###########################
 
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Установить Papirus Folders (papirus-folder)?" 
 echo -e "${MAGENTA}:: ${BOLD}Papirus Folders (papirus-folder) - это сценарий bash, который позволяет изменять цвет папок в теме значков Papirus и её ветвях (основанных на версии 20171007 и новее). ${NC}"
 echo -e "${YELLOW}==> Примечание: ${NC}Чтобы изменить цвет отдельной папки, вы можете использовать Folder Color или Dolphin Folder Color. (https://github.com/PapirusDevelopmentTeam/papirus-folders)"
-echo -e "${CYAN}=> Справка: ${NC}Запустите FileZilla и в строке меню выберите Правка → Настройки. В окне настроек слева выберите Интерфейс → Категория Темы. Выберите новую тему из раскрывающегося списка тем. Выберите масштабный коэффициент 1,00 вместо 1,25 (или оставьте как есть - в зависимости от темы). Нажмите кнопку ОК, чтобы установить новую выбранную тему."
+echo -e "${CYAN}=> Использование скрипта: ${NC}Папки Papirus не имеют графического интерфейса, но это полнофункциональное приложение командной строки с дополнениями TAB. Ниже Вы увидите несколько примеров использования."
 echo " Вы также можете использовать сценарии для установки последней версии прямо из этого репо (независимо от вашего дистрибутива), через GNU Wget (wget). Но в данный момент команда - Закомментирована (двойной ##), если Вам нужен именно этот способ сборки и установки, то раскомментируйте строки установки, а строки установки (пакетов) через Yay - закомментируйте. " 
 echo "" 
 while  
@@ -726,16 +784,6 @@ fi
 
 
 
-###
-### papirus-folder  AUR  # Изменение цвета папки темы значка Papirus
-### https://aur.archlinux.org/packages/papirus-folders/ 
-### https://aur.archlinux.org/papirus-folders.git
-### https://github.com/PapirusDevelopmentTeam/papirus-folders
-
-https://aur.archlinux.org/papirus-folders.git 
-https://github.com/PapirusDevelopmentTeam/papirus-folders
-
-
 
 
 
@@ -749,7 +797,10 @@ Libre Office Papirus Theme
 ### papirus-libreoffice-theme  AUR  # Тема Papirus для LibreOffice
 ### https://aur.archlinux.org/packages/papirus-libreoffice-theme/
 ### https://aur.archlinux.org/papirus-libreoffice-theme.git 
-### https://github.com/PapirusDevelopmentTeam/papirus-libreoffice-theme 
+### https://github.com/PapirusDevelopmentTeam/papirus-libreoffice-theme
+
+
+
 ### 
 ### papirus-libreoffice-theme-git  AUR  # Тема Papirus для LibreOffice 
 ### https://aur.archlinux.org/packages/papirus-libreoffice-theme-git/
