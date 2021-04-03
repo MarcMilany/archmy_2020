@@ -745,14 +745,14 @@ echo -e "${RED}==> Важно! ${NC}Возможно! Этот проект не
 echo -e "${MAGENTA}:: ${BOLD}Papirus theme for LibreOffice (papirus-libreoffice-theme) и (papirus-libreoffice-theme-git) - это тема созданная PapirusDevelopmentTeam для LibreOffice (https://www.libreoffice.org/). ${NC}"
 echo " Тема Papirus для LibreOffice доступна в трех вариантах: ePapirus, Papirus, Papirus Dark. (https://github.com/PapirusDevelopmentTeam/papirus-libreoffice-theme) "
 echo -e "${YELLOW}==> Примечание: ${NC}Перейдите в Инструменты → Параметры → LibreOffice → Просмотр, чтобы выбрать тему."
-
-echo -e "${CYAN}=> Использование скрипта: ${NC}Папки Papirus не имеют графического интерфейса, но это полнофункциональное приложение командной строки с дополнениями TAB. Ниже Вы увидите несколько примеров использования."
 echo " Вы также можете использовать сценарии для установки последней версии прямо из этого репо (независимо от вашего дистрибутива), через GNU Wget (wget). Но в данный момент команда - Закомментирована (двойной ##), если Вам нужен именно этот способ сборки и установки, то раскомментируйте строки установки, а строки установки (пакетов) через Yay - закомментируйте. " 
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_papirus_libre  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Установить (papirus-libreoffice-theme),   2 - Установить (papirus-libreoffice-theme-git),       
+
+    0 - НЕТ - Пропустить установку: " i_papirus_libre  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
     [[ "$i_papirus_libre" =~ [^120] ]]
 do
