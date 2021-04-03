@@ -76,11 +76,13 @@
 ### https://aur.archlinux.org/packages/papirus-libreoffice-theme/
 ### https://aur.archlinux.org/papirus-libreoffice-theme.git 
 ### https://github.com/PapirusDevelopmentTeam/papirus-libreoffice-theme 
-### 
+### Последнее обновление:	2020-01-14 21:27
+###
 ### papirus-libreoffice-theme-git  AUR  # Тема Papirus для LibreOffice 
 ### https://aur.archlinux.org/packages/papirus-libreoffice-theme-git/
 ### https://aur.archlinux.org/papirus-libreoffice-theme-git.git 
 ### https://github.com/PapirusDevelopmentTeam/papirus-libreoffice-theme
+### Последнее обновление:	2020-08-15 14:03
 ###
 ################################
 ###
@@ -738,8 +740,9 @@ fi
 
 clear
 echo ""
-echo -e "${BLUE}:: ${NC}Установить Papirus Folders (papirus-folder)?" 
-echo -e "${MAGENTA}:: ${BOLD}Papirus Folders (papirus-folder) - это сценарий bash, который позволяет изменять цвет папок в теме значков Papirus и её ветвях (основанных на версии 20171007 и новее). ${NC}"
+echo -e "${BLUE}:: ${NC}Установить Papirus theme for LibreOffice (papirus-libreoffice-theme) или (papirus-libreoffice-theme-git)?" 
+echo -e "${RED}==> Важно! ${NC}Возможно! Этот проект не поддерживается, LibreOffice 5.3 последняя поддерживаемая версия. "
+echo -e "${MAGENTA}:: ${BOLD}Papirus theme for LibreOffice (papirus-libreoffice-theme) - это сценарий bash, который позволяет изменять цвет папок в теме значков Papirus и её ветвях (основанных на версии 20171007 и новее). ${NC}"
 echo -e "${YELLOW}==> Примечание: ${NC}Чтобы изменить цвет отдельной папки, вы можете использовать Folder Color или Dolphin Folder Color. (https://github.com/PapirusDevelopmentTeam/papirus-folders)"
 echo -e "${CYAN}=> Использование скрипта: ${NC}Папки Papirus не имеют графического интерфейса, но это полнофункциональное приложение командной строки с дополнениями TAB. Ниже Вы увидите несколько примеров использования."
 echo " Вы также можете использовать сценарии для установки последней версии прямо из этого репо (независимо от вашего дистрибутива), через GNU Wget (wget). Но в данный момент команда - Закомментирована (двойной ##), если Вам нужен именно этот способ сборки и установки, то раскомментируйте строки установки, а строки установки (пакетов) через Yay - закомментируйте. " 
@@ -783,14 +786,28 @@ fi
 
 
 
+echo -e "${RED}==> Важно! ${NC}Возможно! Этот проект не поддерживается, LibreOffice 5.3 последняя поддерживаемая версия. "
 
 
 
-
-
+Papirus theme for LibreOffice
 
 Libre Office Papirus Theme
 
+Тема Papirus для LibreOffice доступна в трех вариантах:
+
+ePapirus
+Papirus
+Papirus Dark
+
+ПРИМЕЧАНИЕ. Перейдите в Инструменты → Параметры → LibreOffice → Просмотр, чтобы выбрать тему.
+
+wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/install-papirus-root.sh | s
+
+
+wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/remove-papirus.sh | sh
+
+** Этот проект не поддерживается. LibreOffice 5.3 - последняя поддерживаемая версия. **
 
 
 ###
