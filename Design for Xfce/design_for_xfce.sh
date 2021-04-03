@@ -72,13 +72,13 @@
 ### https://aur.archlinux.org/papirus-folders.git
 ### https://github.com/PapirusDevelopmentTeam/papirus-folders
 ###
-### papirus-libreoffice-theme  AUR  # Тема Papirus для LibreOffice
+### papirus-libreoffice-theme  AUR  # Тема Papirus для LibreOffice (Возможно этот проект не поддерживается)
 ### https://aur.archlinux.org/packages/papirus-libreoffice-theme/
 ### https://aur.archlinux.org/papirus-libreoffice-theme.git 
 ### https://github.com/PapirusDevelopmentTeam/papirus-libreoffice-theme 
 ### Последнее обновление:	2020-01-14 21:27
 ###
-### papirus-libreoffice-theme-git  AUR  # Тема Papirus для LibreOffice 
+### papirus-libreoffice-theme-git  AUR  # Тема Papirus для LibreOffice (Возможно этот проект не поддерживается)
 ### https://aur.archlinux.org/packages/papirus-libreoffice-theme-git/
 ### https://aur.archlinux.org/papirus-libreoffice-theme-git.git 
 ### https://github.com/PapirusDevelopmentTeam/papirus-libreoffice-theme
@@ -805,9 +805,39 @@ yay -S papirus-libreoffice-theme-git --noconfirm  # Тема Papirus для Libr
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
+###########################################
 
+clear
+echo -e "${GREEN}
+  <<< Поздравляем! Установка утилит (пакетов) оформления завершена! >>> ${NC}"
+# Congratulations! The installation of the design utilities (packages) is complete!.
+echo ""
+echo -e "${YELLOW}==> ${NC}Желательно перезагрузить систему для применения изменений"
+#echo 'Желательно перезагрузить систему для применения изменений'
+# It is advisable to restart the system to apply the changes
+echo -e "${BLUE}:: ${BOLD}Посмотрим дату и время ... для проверки времени ${NC}"
+date  # Посмотрим дату и время без характеристик для проверки времени
+date +'%d/%m/%Y  %H:%M:%S [%:z  %Z]'  # одновременно отображает дату и часовой пояс
 
-########################
+echo -e "${BLUE}:: ${BOLD}Отобразить время работы системы ... ${NC}"
+uptime
+
+echo -e "${YELLOW}==> ...${NC}"
+echo -e "${GREEN}
+  <<< Желаю Вам удачи во всех начинаниях, верных и точных решений! >>> ${NC}"
+echo ""
+echo -e "${GREEN}
+  <<< ♥ Либо ты идешь вперед... либо в зад. >>> ${NC}"
+#echo '♥ Либо ты идешь вперед... либо в зад.' 
+# ♥ Either you go forward... or you go up your ass.
+# ===============================================
+echo -e "${RED}### ${BLUE}########################################################### ${RED}### ${NC}" 
+echo -e "${RED}==> ${BOLD}Выходим из установленной системы ${NC}"
+
+echo -e "${BLUE}:: ${BOLD}Теперь вам надо ввести exit, затем перезагрузить систему ${NC}"
+#echo " Установка завершена для выхода введите >> exit << "
+#exit(0)  # означает чистый выход без каких-либо ошибок (проблем)
+#exit(1)  # означает, что была какая-то ошибка (проблема), и именно поэтому программа выходит
 
 
 
