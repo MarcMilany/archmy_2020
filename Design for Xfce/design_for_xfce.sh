@@ -600,16 +600,16 @@ echo ""
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_papirus_smplayer  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_papirus_smpl  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$i_papirus_smplayer" =~ [^10] ]]
+    [[ "$i_papirus_smpl" =~ [^10] ]]
 do
     :
 done 
-if [[ $i_papirus_smplayer == 0 ]]; then 
+if [[ $i_papirus_smpl == 0 ]]; then 
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
-elif [[ $i_papirus_smplayer == 1 ]]; then
+elif [[ $i_papirus_smpl == 1 ]]; then
   echo ""  
   echo " Установка Papirus theme for SMPlayer (papirus-smplayer-theme-git) "
 yay -S papirus-smplayer-theme-git --noconfirm  # Тема Papirus для SMPlayer (версия git) 
