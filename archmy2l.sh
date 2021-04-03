@@ -98,7 +98,7 @@ echo ""
 echo -e "${BLUE}:: ${NC}Обновим вашу систему (базу данных пакетов)"
 echo -e "${YELLOW}:: ${NC}Загружаем базу данных пакетов независимо от того, есть ли какие-либо изменения в версиях или нет."
 echo ""
-pacman -Syyu  --noconfirm  
+pacman -Syyu --noconfirm  
 sleep 01
 
 clear
