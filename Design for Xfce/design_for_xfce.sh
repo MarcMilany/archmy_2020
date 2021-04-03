@@ -638,9 +638,10 @@ fi
 
 clear
 echo ""
-echo -e "${BLUE}:: ${NC}Установить Papirus theme for SMPlayer (papirus-smplayer-theme-git)?" 
-echo -e "${MAGENTA}:: ${BOLD}Papirus theme for SMPlayer (papirus-smplayer-theme-git) - это тема созданная PapirusDevelopmentTeam для медиаплеера со встроенными кодеками SMPlayer (https://www.smplayer.info/). ${NC}"
-echo -e "${YELLOW}==> Примечание: ${NC}Начиная с версии SMPlayer 16.6 и выше, в пакет были добавлены темы Papirus и Papirus Dark. Сменить тему нужно (можно) в настройках внешнего вида в самом плеера! (https://github.com/PapirusDevelopmentTeam/papirus-smplayer-theme)"
+echo -e "${BLUE}:: ${NC}Установить Papirus theme for FileZilla (papirus-filezilla-themes)?" 
+echo -e "${MAGENTA}:: ${BOLD}Papirus theme for FileZilla (papirus-filezilla-themes) - это тема созданная PapirusDevelopmentTeam для FileZilla (быстрый и надежный клиент FTP, FTPS...) (https://filezilla-project.org/). ${NC}"
+echo -e "${YELLOW}==> Примечание: ${NC}Запустите FileZilla и выберите тему. (https://github.com/PapirusDevelopmentTeam/papirus-filezilla-themes)"
+echo -e "${CYAN}=> Справка: ${NC}Запустите FileZilla и в строке меню выберите Правка → Настройки . В окне настроек слева выберите Интерфейс → Категория Темы. Выберите новую тему из раскрывающегося списка тем. Выберите масштабный коэффициент 1,00 вместо 1,25 (или оставьте как есть - в зависимости от темы). Нажмите кнопку ОК, чтобы установить новую выбранную тему."
 echo " Вы также можете использовать сценарии для установки последней версии прямо из этого репо (независимо от вашего дистрибутива), через GNU Wget (wget). Но в данный момент команда - Закомментирована (двойной ##), если Вам нужен именно этот способ сборки и установки, то раскомментируйте строки установки, а строки установки (пакетов) через Yay - закомментируйте. " 
 echo "" 
 while  
@@ -657,7 +658,7 @@ echo ""
 echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_papirus_smpl == 1 ]]; then
   echo ""  
-  echo " Установка Papirus theme for SMPlayer (papirus-smplayer-theme-git) "
+  echo " Установка Papirus theme for FileZilla (papirus-filezilla-themes) "
 yay -S papirus-smplayer-theme-git --noconfirm  # Тема Papirus для SMPlayer (версия git)
 ### * Установить тему: 
 ## wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-filezilla-themes/master/install.sh | sh
