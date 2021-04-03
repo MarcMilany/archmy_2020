@@ -603,13 +603,21 @@ fi
 
 
 
+Papirus theme for SMPlayer (papirus-smplayer-theme-git)
 
+Тема Papirus для SMPlayer (версия git)
 
 ###
 ### papirus-smplayer-theme-git  AUR  # Тема Papirus для SMPlayer (версия git)  
 ### https://aur.archlinux.org/packages/papirus-smplayer-theme-git/ 
 ### https://aur.archlinux.org/papirus-smplayer-theme-git.git 
 ### https://github.com/PapirusDevelopmentTeam/papirus-smplayer-theme
+
+
+
+
+
+
 ###
 ### papirus-filezilla-themes  AUR  # Тема значков Papirus для Filezilla
 ### https://aur.archlinux.org/packages/papirus-filezilla-themes/
