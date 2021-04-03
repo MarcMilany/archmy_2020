@@ -590,7 +590,7 @@ clear
 echo ""
 echo -e "${BLUE}:: ${NC}Установить Papirus theme for SMPlayer (papirus-smplayer-theme-git)?" 
 echo -e "${MAGENTA}:: ${BOLD}Papirus theme for SMPlayer (papirus-smplayer-theme-git) - это тема созданная PapirusDevelopmentTeam для медиаплеера со встроенными кодеками SMPlayer (https://www.smplayer.info/). ${NC}"
-echo -e "${YELLOW}==> Примечание: ${NC}Начиная с версии SMPlayer 16.6 и выше, в пакет были добавлены темы Papirus и Papirus Dark. (https://github.com/PapirusDevelopmentTeam/papirus-smplayer-theme)"
+echo -e "${YELLOW}==> Примечание: ${NC}Начиная с версии SMPlayer 16.6 и выше, в пакет были добавлены темы Papirus и Papirus Dark. Сменить тему нужно (можно) в настройках внешнего вида в самом плеера! (https://github.com/PapirusDevelopmentTeam/papirus-smplayer-theme)"
 echo " Вы также можете использовать сценарии для установки последней версии прямо из этого репо (независимо от вашего дистрибутива), через GNU Wget (wget). Но в данный момент команда - Закомментирована (двойной ##), если Вам нужен именно этот способ сборки и установки, то раскомментируйте строки их установки, а строки установки (пакетов) через Yay - закомментируйте. " 
 echo "" 
 while  
@@ -632,12 +632,54 @@ fi
 
 #################################
 
+clear
+echo ""
+echo -e "${BLUE}:: ${NC}Установить Papirus theme for SMPlayer (papirus-smplayer-theme-git)?" 
+echo -e "${MAGENTA}:: ${BOLD}Papirus theme for SMPlayer (papirus-smplayer-theme-git) - это тема созданная PapirusDevelopmentTeam для медиаплеера со встроенными кодеками SMPlayer (https://www.smplayer.info/). ${NC}"
+echo -e "${YELLOW}==> Примечание: ${NC}Начиная с версии SMPlayer 16.6 и выше, в пакет были добавлены темы Papirus и Papirus Dark. Сменить тему нужно (можно) в настройках внешнего вида в самом плеера! (https://github.com/PapirusDevelopmentTeam/papirus-smplayer-theme)"
+echo " Вы также можете использовать сценарии для установки последней версии прямо из этого репо (независимо от вашего дистрибутива), через GNU Wget (wget). Но в данный момент команда - Закомментирована (двойной ##), если Вам нужен именно этот способ сборки и установки, то раскомментируйте строки их установки, а строки установки (пакетов) через Yay - закомментируйте. " 
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_papirus_smpl  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_papirus_smpl" =~ [^10] ]]
+do
+    :
+done 
+if [[ $i_papirus_smpl == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $i_papirus_smpl == 1 ]]; then
+  echo ""  
+  echo " Установка Papirus theme for SMPlayer (papirus-smplayer-theme-git) "
+yay -S papirus-smplayer-theme-git --noconfirm  # Тема Papirus для SMPlayer (версия git)
+### * Установить тему: 
+## wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-smplayer-theme/master/install.sh | sh
+### * Удалить тему для плеера:
+### wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-smplayer-theme/master/install.sh | env uninstall=true sh
+#### papirus-smplayer-theme-git #### 
+#git clone https://aur.archlinux.org/papirus-smplayer-theme-git.git  # Тема Papirus для SMPlayer (версия git) 
+#cd papirus-smplayer-theme-git
+### makepkg -fsri
+### makepkg -si
+### makepkg -g  # посчитает контрольные суммы пакетов, далее нужно просто эти контрольные суммы заменить в PKGBUILD`е 
+### sudo mousepad PKGBUILD  # открыть PKGBUILD в редакторе текста
+#makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+### makepkg -si --skipinteg
+#pwd    # покажет в какой директории мы находимся
+#cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+### rm -rf papirus-smplayer-theme-git 
+#rm -Rf papirus-smplayer-theme-git
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
 
 
 
-
-
-
+Быстрый и надежный клиент FTP, FTPS и SFTP
+https://filezilla-project.org/
 
 ###
 ### papirus-filezilla-themes  AUR  # Тема значков Papirus для Filezilla
