@@ -586,9 +586,6 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
-
-#################################
-
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Установить Papirus theme for SMPlayer (papirus-smplayer-theme-git)?" 
@@ -633,6 +630,13 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
+#################################
+
+
+
+
+
+
 
 
 
@@ -653,6 +657,11 @@ fi
 ### https://aur.archlinux.org/packages/papirus-filezilla-themes/
 ### https://aur.archlinux.org/papirus-filezilla-themes.git 
 ### https://github.com/PapirusDevelopmentTeam/papirus-filezilla-themes
+
+
+
+
+
 ###
 ### papirus-folder  AUR  # Изменение цвета папки темы значка Papirus
 ### https://aur.archlinux.org/packages/papirus-folders/ 
