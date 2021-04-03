@@ -315,7 +315,7 @@ sudo pacman -S --noconfirm --needed wget curl git
 # sudo pacman -S curl --noconfirm  # Утилита и библиотека для поиска URL
 # sudo pacman -S git --noconfirm  # Быстрая распределенная система контроля версий
 echo ""
-echo " Установка выполнена "
+echo " Установка утилит (пакетов) выполнена "
 fi
 #------------------------
 # Справка по pacman:
@@ -589,7 +589,46 @@ fi
 
 #################################
 
-
+clear
+echo ""
+echo -e "${BLUE}:: ${NC}Установить Arc Firefox Theme (arc-firefox-theme-git)?" 
+echo -e "${MAGENTA}:: ${BOLD}Arc Firefox Theme (arc-firefox-theme-git) - это официальная тема Arc Firefox, созданная для браузера Firefox (mozilla.org). ${NC}"
+echo -e "${YELLOW}==> Примечание: ${NC}Эта тема предназначена для использования вместе с темой Arc GTK (arc-gtk-theme), не используйте ее с другими темами GTK, иначе она будет выглядеть сломанной. (https://github.com/jnsh/arc-theme)"
+echo " Тема доступна в виде коллекции на (addons.mozilla.org). (https://github.com/horst3180/arc-firefox-theme) " 
+echo -e "${RED}==> Требования: ${NC}Эта тема совместима с Firefox 40+ и Firefox 38 ESR. "
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_papirus_smplayer  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$i_papirus_smplayer" =~ [^10] ]]
+do
+    :
+done 
+if [[ $i_papirus_smplayer == 0 ]]; then 
+echo ""   
+echo " Установка утилит (пакетов) пропущена "
+elif [[ $i_papirus_smplayer == 1 ]]; then
+  echo ""  
+  echo " Установка Papirus theme for SMPlayer (papirus-smplayer-theme-git) "
+yay -S papirus-smplayer-theme-git --noconfirm  # Тема Papirus для SMPlayer (версия git) 
+#### papirus-smplayer-theme-git ####
+#git clone https://aur.archlinux.org/papirus-smplayer-theme-git.git  # Тема Papirus для SMPlayer (версия git) 
+#cd papirus-smplayer-theme-git
+### makepkg -fsri
+### makepkg -si
+### makepkg -g  # посчитает контрольные суммы пакетов, далее нужно просто эти контрольные суммы заменить в PKGBUILD`е 
+### sudo mousepad PKGBUILD  # открыть PKGBUILD в редакторе текста
+#makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+### makepkg -si --skipinteg
+#pwd    # покажет в какой директории мы находимся
+#cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+### rm -rf papirus-smplayer-theme-git 
+#rm -Rf papirus-smplayer-theme-git
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+fi
 
 
 
