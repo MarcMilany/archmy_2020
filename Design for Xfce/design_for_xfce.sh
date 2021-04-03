@@ -801,7 +801,7 @@ echo ""
 ### https://aur.archlinux.org/packages/faba-icon-theme-git/
 ### https://aur.archlinux.org/faba-icon-theme-git.git
 ### https://github.com/snwh/faba-icon-theme
-### 
+### https://snwh.org/
 ###
 ### papirus-smplayer-theme-git  AUR  # Тема Papirus для SMPlayer (версия git)  
 ### https://aur.archlinux.org/packages/papirus-smplayer-theme-git/ 
