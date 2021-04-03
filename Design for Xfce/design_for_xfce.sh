@@ -258,7 +258,10 @@ if [[ $basic_utilities == 0 ]]; then
 echo ""   
 echo " Установка базовых утилит (пакетов) пропущена "
 elif [[ $basic_utilities == 1 ]]; then
-  echo ""    
+  echo ""
+  echo "Обновим базы данных пакетов..."
+###  sudo pacman -Sy
+  sudo pacman -Syy  # обновление баз пакмэна (pacman)     
   echo " Установка базовых утилит (пакетов) wget, curl, git "
 # sudo pacman -S --needed base-devel git wget #curl  - пока присутствует в pkglist.x86_64
 sudo pacman -S --noconfirm --needed wget curl git
