@@ -413,10 +413,14 @@ fi
 
 clear
 echo ""
-echo -e "${BLUE}:: ${NC}Установить Moka Icon Theme (moka-icon-theme-git)?" 
+echo -e "${BLUE}:: ${NC}Установить Moka Icon Theme (moka-icon-theme-git) и Faba Icon Theme (faba-icon-theme-git)?" 
 echo -e "${MAGENTA}:: ${BOLD}Moka Icon Theme (moka-icon-theme-git) - это стилизованный набор иконок FreeDesktop, созданный для простоты. В нём используется простая геометрия и яркие цвета. (https://snwh.org/moka) ${NC}"
 echo " Каждый значок Moka был разработан и оптимизирован для каждого размера, чтобы добиться идеального вида на вашем рабочем столе. (https://github.com/moka-project/moka-icon-theme) " 
 echo " Кроме того, один из наиболее полных доступных наборов значков, Moka предоставляет тысячи значков для многих приложений. Независимо от того, какой рабочий стол Linux вы используете, Moka поможет вам. " 
+
+
+
+
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
