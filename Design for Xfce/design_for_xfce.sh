@@ -735,9 +735,6 @@ fi
 # Последняя команда чрезвычайно полезна для восстановления цвета после обновления темы значка (официальные установщики papirus-icon-theme и некоторых сторонних пакетов делают это автоматически).
 #---------------------------
 
-
-###########################
-
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Установить Papirus theme for LibreOffice (papirus-libreoffice-theme) или (papirus-libreoffice-theme-git)?" 
@@ -810,43 +807,8 @@ echo " Установка утилит (пакетов) выполнена "
 fi
 
 
-
-
-
-###
-### papirus-libreoffice-theme  AUR  # Тема Papirus для LibreOffice
-### https://aur.archlinux.org/packages/papirus-libreoffice-theme/
-### https://aur.archlinux.org/papirus-libreoffice-theme.git 
-### https://github.com/PapirusDevelopmentTeam/papirus-libreoffice-theme
-
-
-
-### 
-### papirus-libreoffice-theme-git  AUR  # Тема Papirus для LibreOffice 
-### https://aur.archlinux.org/packages/papirus-libreoffice-theme-git/
-### https://aur.archlinux.org/papirus-libreoffice-theme-git.git 
-### https://github.com/PapirusDevelopmentTeam/papirus-libreoffice-theme
+########################
 
 
 
 
-
-
-
-
-
-echo -e "${MAGENTA}
-  <<< Установка AUR (Arch User Repository) >>> ${NC}"
-
-echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете пропустить установку "AUR", пункт для установки будет продублирован в следующем скрипте (archmy3l). И Вы сможете установить "AUR Helper" уже из установленной системы." 
-echo -e "${YELLOW}==> Внимание! ${NC}Во время установки "AUR", Вас попросят ввести (Пароль пользователя) для $username." 
-
-echo -e "${GREEN}==> ${NC}Установка AUR Helper (yay) или (pikaur)"
-echo -e "${MAGENTA}:: ${NC} AUR - Пользовательский репозиторий, поддерживаемое сообществом хранилище ПО, в который пользователи загружают скрипты для установки программного обеспечения."
-echo " В AUR - есть практически всё, что можно установить на Linux. В том числе и программы, которые для других дистробутивов пришлось бы собирать из исходников. "
-echo -e "${CYAN}=> ${BOLD}В сценарии скрипта присутствуют следующие варианты: ${NC}"
-echo " 1 - Установка 'AUR'-'yay' с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/yay.git), собирается и устанавливается, то выбирайте вариант - "1" "
-echo " 2 - Установка 'AUR'-'pikaur' с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/pikaur.git), собирается и устанавливается, то выбирайте вариант - "2" "
-echo -e "${YELLOW}==> ${BOLD}Важно! Подчеркну (обратить внимание)! Pikaur - идёт как зависимость для Octopi. ${NC}"
-echo " Будьте внимательны! В этом действии выбор остаётся за вами. "
-echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
