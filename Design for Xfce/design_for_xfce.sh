@@ -769,9 +769,9 @@ yay -S papirus-libreoffice-theme --noconfirm  # Тема Papirus для LibreOff
 ## wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/install-papirus-root.sh | sh
 ### * Удалить тему:
 ### wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/remove-papirus.sh | sh
-#### papirus-folder #### 
-#git clone https://aur.archlinux.org/papirus-folders.git  # Тема Papirus для LibreOffice
-#cd papirus-folder
+#### papirus-libreoffice-theme #### 
+#git clone https://aur.archlinux.org/papirus-libreoffice-theme.git  # Тема Papirus для LibreOffice
+#cd papirus-libreoffice-theme
 ### makepkg -fsri
 ### makepkg -si
 ### makepkg -g  # посчитает контрольные суммы пакетов, далее нужно просто эти контрольные суммы заменить в PKGBUILD`е 
@@ -780,8 +780,8 @@ yay -S papirus-libreoffice-theme --noconfirm  # Тема Papirus для LibreOff
 ### makepkg -si --skipinteg
 #pwd    # покажет в какой директории мы находимся
 #cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
-### rm -rf papirus-folder 
-#rm -Rf papirus-folder
+### rm -rf papirus-libreoffice-theme 
+#rm -Rf papirus-libreoffice-theme
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 elif [[ $i_papirus_libre == 2 ]]; then
@@ -792,9 +792,9 @@ yay -S papirus-libreoffice-theme-git --noconfirm  # Тема Papirus для Libr
 ## wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/install-papirus-root.sh | sh
 ### * Удалить тему:
 ### wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/remove-papirus.sh | sh
-#### papirus-folder #### 
-#git clone https://aur.archlinux.org/papirus-folders.git  # Тема Papirus для LibreOffice 
-#cd papirus-folder
+#### papirus-libreoffice-theme-git #### 
+#git clone https://aur.archlinux.org/papirus-libreoffice-theme-git.git  # Тема Papirus для LibreOffice 
+#cd papirus-libreoffice-theme-git
 ### makepkg -fsri
 ### makepkg -si
 ### makepkg -g  # посчитает контрольные суммы пакетов, далее нужно просто эти контрольные суммы заменить в PKGBUILD`е 
@@ -803,20 +803,12 @@ yay -S papirus-libreoffice-theme-git --noconfirm  # Тема Papirus для Libr
 ### makepkg -si --skipinteg
 #pwd    # покажет в какой директории мы находимся
 #cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
-### rm -rf papirus-folder 
-#rm -Rf papirus-folder
+### rm -rf papirus-libreoffice-theme-git
+#rm -Rf papirus-libreoffice-theme-git
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
 
-
-
-
-
-wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/install-papirus-root.sh | sh
-
-
-wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/remove-papirus.sh | sh
 
 
 
