@@ -672,7 +672,8 @@ fi
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Установить Papirus theme for LibreOffice (papirus-libreoffice-theme) или (papirus-libreoffice-theme-git)?" 
-echo -e "${RED}==> Важно! ${NC}Этот проект не поддерживается, LibreOffice 5.3 - последняя поддерживаемая версия, но саму тему МОЖНО установить. (проверено РАБОТАЕТ в версии libreoffice-still 7.0.5-1)"
+echo -e "${RED}==> Важно! ${NC}Этот проект не поддерживается, LibreOffice 5.3 - последняя поддерживаемая версия, но саму тему МОЖНО установить. "
+echo -e "${GREEN} ==> Проверено! РАБОТАЕТ в LibreOffice версии - (libreoffice-still 7.0.5-1) ${NC}"
 echo -e "${MAGENTA}:: ${BOLD}Papirus theme for LibreOffice (papirus-libreoffice-theme) и (papirus-libreoffice-theme-git) - это тема созданная PapirusDevelopmentTeam для LibreOffice (https://www.libreoffice.org/). ${NC}"
 echo " Тема Papirus для LibreOffice доступна в трех вариантах: ePapirus, Papirus, Papirus Dark. (https://github.com/PapirusDevelopmentTeam/papirus-libreoffice-theme) "
 echo -e "${YELLOW}==> Примечание: ${NC}Перейдите в Инструменты → Параметры → LibreOffice → Просмотр, чтобы выбрать тему."
