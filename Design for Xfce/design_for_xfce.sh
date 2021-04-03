@@ -647,19 +647,19 @@ echo ""
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_papirus_smpl  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    1 - Да установить,     0 - НЕТ - Пропустить установку: " i_papirus_zilla  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$i_papirus_smpl" =~ [^10] ]]
+    [[ "$i_papirus_zilla" =~ [^10] ]]
 do
     :
 done 
-if [[ $i_papirus_smpl == 0 ]]; then 
+if [[ $i_papirus_zilla == 0 ]]; then 
 echo ""   
 echo " Установка утилит (пакетов) пропущена "
-elif [[ $i_papirus_smpl == 1 ]]; then
+elif [[ $i_papirus_zilla == 1 ]]; then
   echo ""  
   echo " Установка Papirus theme for FileZilla (papirus-filezilla-themes) "
-yay -S papirus-smplayer-theme-git --noconfirm  # Тема Papirus для SMPlayer (версия git)
+yay -S papirus-filezilla-themes --noconfirm  # Тема значков Papirus для Filezilla
 ### * Установить тему: 
 ## wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-filezilla-themes/master/install.sh | sh
 ### * Удалить тему для клиента FTP:
@@ -681,10 +681,7 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
-Papirus для FileZilla
 
-Быстрый и надежный клиент FTP, FTPS и SFTP
-https://filezilla-project.org/
 
 ###
 ### papirus-filezilla-themes  AUR  # Тема значков Papirus для Filezilla
@@ -694,13 +691,19 @@ https://filezilla-project.org/
 
 
 
-
+Papirus Folders
 
 ###
 ### papirus-folder  AUR  # Изменение цвета папки темы значка Papirus
 ### https://aur.archlinux.org/packages/papirus-folders/ 
 ### https://aur.archlinux.org/papirus-folders.git
 ### https://github.com/PapirusDevelopmentTeam/papirus-folders
+
+
+Libre Office Papirus Theme
+
+
+
 ###
 ### papirus-libreoffice-theme  AUR  # Тема Papirus для LibreOffice
 ### https://aur.archlinux.org/packages/papirus-libreoffice-theme/
