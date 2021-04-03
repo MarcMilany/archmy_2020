@@ -336,7 +336,7 @@ echo ""
 echo -e "${BLUE}:: ${NC}Установить Capitaine cursors (capitaine-cursors)?" 
 echo -e "${MAGENTA}:: ${BOLD}Capitaine cursors (capitaine-cursors) - это тема x-cursor, вдохновленная macOS и основанная на KDE Breeze. Исходные файлы были созданы в Inkscape, а тема была разработана так, чтобы хорошо сочетаться с набором значков La Capitaine. ${NC}"
 echo " Этот курсор должен масштабироваться соответствующим образом для любого разрешения экрана. " 
-echo " Если Вы сочтёте его слишком маленьким на ваш вкус, поищите параметры масштабирования курсора в настройках рабочего стола :). (https://github.com/keeferrourke/capitaine-cursors) "
+echo " Если Вы сочтёте его слишком маленьким на ваш вкус :), поищите параметры масштабирования курсора в настройках рабочего стола. (https://github.com/keeferrourke/capitaine-cursors) "
 echo "" 
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
