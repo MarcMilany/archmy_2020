@@ -1238,63 +1238,63 @@ elif [[ $i_spotify == 1 ]]; then
   echo ""    
   echo " Установка Spotify "
 ############ spotify ##########
-# yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
-git clone https://aur.archlinux.org/spotify.git  # Запатентованный сервис потоковой передачи музыки
-cd spotify
+yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
+## git clone https://aur.archlinux.org/spotify.git  # Запатентованный сервис потоковой передачи музыки
+## cd spotify
 #makepkg -fsri
 # makepkg -si
-makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+## makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+## pwd    # покажет в какой директории мы находимся
+## cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf spotify 
-rm -Rf spotify
+## rm -Rf spotify
 echo ""
 echo " Установка Spotify выполнена "
 elif [[ $i_spotify == 2 ]]; then
   echo ""    
   echo " Установка Spotify + дополнения "
 ############ spotify ##########
-# yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
+yay -S spotify --noconfirm  # Запатентованный сервис потоковой передачи музыки
 sudo pacman -S zenity --noconfirm  # Отображение графических диалоговых окон из сценариев оболочки (возможно присутствует)
 sudo pacman -S xdg-desktop-portal-gtk --noconfirm  # Бэкэнд GTK + для xdg-desktop-portal (возможно присутствует)
-git clone https://aur.archlinux.org/spotify.git  # Запатентованный сервис потоковой передачи музыки
-cd spotify
+## git clone https://aur.archlinux.org/spotify.git  # Запатентованный сервис потоковой передачи музыки
+## cd spotify
 #makepkg -fsri
 # makepkg -si
-makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+## makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+## pwd    # покажет в какой директории мы находимся
+## cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf spotify 
-rm -Rf spotify
+## rm -Rf spotify
 echo ""
 echo " Установка Spotify выполнена "
 ############ openjpeg ##########
 # sudo pacman -S openjpeg2 --noconfirm  # Кодек JPEG 2000 с открытым исходным кодом, версия 2.4.0 
-# yay -S openjpeg --noconfirm  # Кодек JPEG 2000 с открытым исходным кодом
-git clone https://aur.archlinux.org/openjpeg.git  # Кодек JPEG 2000 с открытым исходным кодом
-cd openjpeg
+yay -S openjpeg --noconfirm  # Кодек JPEG 2000 с открытым исходным кодом
+## git clone https://aur.archlinux.org/openjpeg.git  # Кодек JPEG 2000 с открытым исходным кодом
+## cd openjpeg
 #makepkg -fsri
 # makepkg -si
-makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+## makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+## pwd    # покажет в какой директории мы находимся
+## cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf openjpeg 
-rm -Rf openjpeg
+## rm -Rf openjpeg
 ############ ffmpeg-compat-57 ##########
-# yay -S ffmpeg-compat-57 --noconfirm  # Пакет совместимости для ffmpeg для предоставления 57 версий libavcodec, libavdevice и libavformat, больше не предоставляемых пакетом ffmpeg
-git clone https://aur.archlinux.org/ffmpeg-compat-57.git  # Пакет совместимости для ffmpeg для предоставления 57 версий libavcodec, libavdevice и libavformat, больше не предоставляемых пакетом ffmpeg
-cd ffmpeg-compat-57
+yay -S ffmpeg-compat-57 --noconfirm  # Пакет совместимости для ffmpeg для предоставления 57 версий libavcodec, libavdevice и libavformat, больше не предоставляемых пакетом ffmpeg
+## git clone https://aur.archlinux.org/ffmpeg-compat-57.git  # Пакет совместимости для ffmpeg для предоставления 57 версий libavcodec, libavdevice и libavformat, больше не предоставляемых пакетом ffmpeg
+## cd ffmpeg-compat-57
 #makepkg -fsri
 # makepkg -si
-makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+## makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+## pwd    # покажет в какой директории мы находимся
+## cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf ffmpeg-compat-57 
-rm -Rf ffmpeg-compat-57
+## rm -Rf ffmpeg-compat-57
 echo ""
 echo " Установка Spotify + дополнения выполнена "
 fi
