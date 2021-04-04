@@ -4396,19 +4396,20 @@ elif [[ $i_docklike == 1 ]]; then
   echo ""
   echo " Установка Docklike Plugin (xfce4-docklike-plugin) "
 #### xfce4-docklike-plugin #######
-yay -S xfce4-docklike-plugin --noconfirm  # Современная минималистичная панель задач в стиле док-станции для XFCE
+#yay -S xfce4-docklike-plugin --noconfirm  # Современная минималистичная панель задач в стиле док-станции для XFCE
 #yay -S xfce4-docklike-plugin-git --noconfirm  # Панель задач Docklike (Если установлен yay - эта команда)
-## git clone https://aur.archlinux.org/xfce4-docklike-plugin.git 
+git clone https://aur.archlinux.org/xfce4-docklike-plugin.git 
 # git clone https://aur.archlinux.org/xfce4-docklike-plugin-git.git 
-## cd xfce4-docklike-plugin
+cd xfce4-docklike-plugin
 # cd xfce4-docklike-plugin-git
 #makepkg -fsri
 # makepkg -si
-## makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
-## pwd    # покажет в какой директории мы находимся
-## cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
-## rm -Rf xfce4-docklike-plugin
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf xfce4-docklike-plugin
+rm -Rf xfce4-docklike-plugin
 # rm -Rf xfce4-docklike-plugin-git
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
@@ -4423,8 +4424,6 @@ fi
 # https://github.com/topics/xfce4-panel-plugin
 # https://compizomania.blogspot.com/2020/12/docklike-plugin-xfce.html
 #------------------------------
-
-
 
 clear
 echo -e "${MAGENTA}
