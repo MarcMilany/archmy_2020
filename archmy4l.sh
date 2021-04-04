@@ -1093,41 +1093,41 @@ yay -S python2-notify --noconfirm # Онлайн-проигрыватель по
 # makepkg -si
 ## makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+## pwd    # покажет в какой директории мы находимся
+## cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf python2-notify 
-rm -Rf python2-notify
+## rm -Rf python2-notify
 ############ python2-xdg (python2-pyxdg) ##########
 # -> python2-xdg замена на python2-pyxdg
 sudo pacman -S python2-pyxdg --noconfirm  # Библиотека Python для доступа к стандартам freedesktop.org
 ############ pygtk ##########
-# yay -S pygtk --noconfirm # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux 
-git clone https://aur.archlinux.org/pygtk.git  # Привязки Python для набора виджетов GTK
-cd pygtk
+yay -S pygtk --noconfirm # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux 
+## git clone https://aur.archlinux.org/pygtk.git  # Привязки Python для набора виджетов GTK
+## cd pygtk
 #makepkg -fsri
 # makepkg -si
-makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+## makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+## pwd    # покажет в какой директории мы находимся
+## cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf pygtk 
-rm -Rf pygtk
+## rm -Rf pygtk
 ############ radiotray ##########  
 # yay -S radiotray --noconfirm # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
-# yay -S radiotray-ng --noconfirm # Интернет-радио плеер для Linux  
-git clone https://aur.archlinux.org/radiotray.git  # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
+yay -S radiotray-ng --noconfirm # Интернет-радио плеер для Linux  
+## git clone https://aur.archlinux.org/radiotray.git  # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux
 #git clone https://aur.archlinux.org/radiotray-ng.git  # Интернет-радио плеер для Linux
-cd radiotray
+## cd radiotray
 #cd radiotray-ng
 #makepkg -fsri
 # makepkg -si
-makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+## makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+## pwd    # покажет в какой директории мы находимся
+## cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf radiotray 
 # rm -rf radiotray-ng
-rm -Rf radiotray
+## rm -Rf radiotray
 #rm -Rf radiotray-ng
 echo ""
 echo " Установка Интернет-радио Radio Tray выполнена "
