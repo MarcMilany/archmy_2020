@@ -1085,6 +1085,9 @@ sudo pacman -S python-gobject --noconfirm  # Привязки Python для GLib
 ############ python2-lxml ##########
 sudo pacman -S python-lxml --noconfirm  # Связывание Python3 для библиотек libxml2 и libxslt (-S python-lxml --force # принудительная установка)
 sudo pacman -S python-lxml-docs --noconfirm  # Связывание Python для библиотек libxml2 и libxslt (документы)
+############ python2-xdg (python2-pyxdg) ##########
+# -> python2-xdg замена на python2-pyxdg
+sudo pacman -S python2-pyxdg --noconfirm  # Библиотека Python для доступа к стандартам freedesktop.org
 ############ python2-notify ##########
 yay -S python2-notify --noconfirm # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux 
 ## git clone https://aur.archlinux.org/python2-notify.git  # Привязки Python для libnotify задач Linux
@@ -1097,9 +1100,6 @@ yay -S python2-notify --noconfirm # Онлайн-проигрыватель по
 ## cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf python2-notify 
 ## rm -Rf python2-notify
-############ python2-xdg (python2-pyxdg) ##########
-# -> python2-xdg замена на python2-pyxdg
-sudo pacman -S python2-pyxdg --noconfirm  # Библиотека Python для доступа к стандартам freedesktop.org
 ############ pygtk ##########
 yay -S pygtk --noconfirm # Онлайн-проигрыватель потокового радио, работающий на панели задач Linux 
 ## git clone https://aur.archlinux.org/pygtk.git  # Привязки Python для набора виджетов GTK
