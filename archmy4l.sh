@@ -897,7 +897,7 @@ cd reflector-simple  # переместит пользователя в ката
 ### Новые sha512sums (01.04.2021г)
 ### sha512sums=('9e2bea3c059ae4b3308427fb41b6565c9bff5930793d3e0ee381b6620a738952c3453673c7d28a1efbff3e8bd6287c642068c43f634917cd6077f026d9982bd3'
 ###   '2def334909a5bbe3c6f82043f62a0f3f3c6747b7813ad9154f43e70c303301e079f8e81ea41b306f1b6f8a8e37afd535686b2e4642fb6b9357d97a7fad1e0d0a')
-# sudo mousepad PKGBUILD  # открыть PKGBUILD в редакторе текста
+# mousepad PKGBUILD  # открыть PKGBUILD в редакторе текста
 makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
 pwd    # покажет в какой директории мы находимся
