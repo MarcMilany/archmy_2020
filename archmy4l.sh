@@ -137,69 +137,7 @@ ping -c2 archlinux.org
 echo -e "${CYAN}==> ${NC}Если пинг идёт едем дальше ... :)"
 #echo 'Если пинг идёт едем дальше ... :)'
 # If the ping goes we go further ... :)
-
-echo ""
-echo -e "${MAGENTA}==> ${NC}Давайте проверим наш часовой пояс ... :)"
-#echo 'Давайте проверим наш часовой пояс ... :)'
-# Let's check our time zone ... :)
-timedatectl | grep "Time zone"
-
-echo ""
-echo -e "${BLUE}:: ${NC}Если NetworkManager запущен смотрим состояние интерфейсов" 
-#echo "Если NetworkManager запущен смотрим состояние интерфейсов"
-# If NetworkManager is running look at the state of the interfaces
-# Первым делом нужно запустить NetworkManager:
-# sudo systemctl start NetworkManager
-# Если NetworkManager запущен смотрим состояние интерфейсов (с помощью - nmcli):  
-nmcli general status
-
-echo ""
-echo -e "${BLUE}:: ${NC}Посмотреть имя хоста"
-# View host name
-nmcli general hostname 
-
-echo ""
-echo -e "${BLUE}:: ${NC}Получаем состояние интерфейсов"
-# Getting the state of interfaces
-nmcli device status
-
-echo ""
-echo -e "${BLUE}:: ${NC}Смотрим список доступных подключений"
-# See the list of available connections
-nmcli connection show
-
-echo ""
-echo -e "${BLUE}:: ${NC}Смотрим состояние wifi подключения"
-# Looking at the status of the wifi connection
-nmcli radio wifi
-# -------------------------------------------
-# Посмотреть список доступных сетей wifi:
-# nmcli device wifi list
-# Теперь включаем:
-# nmcli radio wifi on
-# Или отключаем:
-# nmcli radio wifi off
-# Команда для подключения к новой сети wifi выглядит не намного сложнее. Например, давайте подключимся к сети TP-Link с паролем 12345678:
-# nmcli device wifi connect "TP-Link" password 12345678 name "TP-Link Wifi"
-# Если всё прошло хорошо, то вы получите уже привычное сообщение про создание подключения с именем TP-Link Wifi и это имя в дальнейшем можно использовать для редактирования этого подключения и управления им, как описано выше.
-# ------------------------------------------------
-
-echo ""
-echo -e "${BLUE}:: ${NC}Посмотрим данные о нашем соединение с помощью IPinfo..." 
-#echo " Посмотрим данные о нашем соединение с помощью IPinfo..."
-# Let's look at the data about our connection using IP info...
-echo -e "${CYAN}=> ${NC}С помощью IPinfo вы можете точно определять местонахождение ваших пользователей, настраивать их взаимодействие, предотвращать мошенничество, обеспечивать соответствие и многое другое."
-echo " Надежный источник данных IP-адресов (https://ipinfo.io/) "
-wget http://ipinfo.io/ip -qO -
 sleep 03
-
-echo ""
-echo -e "${BLUE}:: ${NC}Узнаем версию и данные о релизе Arch'a ... :) " 
-#echo "Узнаем версию и данные о релизе Arch'a ... :)"
-# Find out the version and release data for Arch ... :)
-cat /proc/version
-cat /etc/lsb-release
-sleep 02
 
 clear
 echo -e "${CYAN}
