@@ -1418,7 +1418,9 @@ pacman -S zsh zsh-syntax-highlighting zsh-autosuggestions grml-zsh-config --noco
 pacman -S zsh-completions zsh-history-substring-search  --noconfirm  
 echo 'source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh' >> /etc/zsh/zshrc
 echo 'source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> /etc/zsh/zshrc
-echo 'prompt adam2' >> /etc/zsh/zshrc
+#echo 'prompt adam2' >> /etc/zsh/zshrc
+echo 'prompt fire' >> /etc/zsh/zshrc
+
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Сменим командную оболочку пользователя с Bash на ZSH ?"
