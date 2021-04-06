@@ -2416,7 +2416,7 @@ https://github.com/zdharma/fast-syntax-highlighting
 
 -----------------------------------
 
-nohang 0.2.0-1  # Сложный обработчик нехватки памяти
+nohang  AUR - # Сложный обработчик нехватки памяти
 
 https://aur.archlinux.org/packages/nohang/
 https://aur.archlinux.org/nohang.git
@@ -2426,7 +2426,7 @@ Last Updated: 2021-03-18 07:38
 Сложный обработчик нехватки памяти
 
 
-nohang-git  -  # Сложный обработчик нехватки памяти
+nohang-git  AUR -  # Сложный обработчик нехватки памяти
 
 https://aur.archlinux.org/packages/nohang-git/
 https://aur.archlinux.org/nohang-git.git 
@@ -2434,6 +2434,23 @@ https://github.com/hakavlad/nohang
 
 Last Updated: 2020-07-04 12:10
 Сложный обработчик нехватки памяти
+
+----------------------------------
+
+ananicy-git  AUR  -  #  Ananicy - еще один автоматический демон с поддержкой правил сообщества
+https://aur.archlinux.org/packages/ananicy-git/
+https://aur.archlinux.org/ananicy-git.git 
+https://github.com/Nefelim4ag/Ananicy.git
+
+
+ananicy  AUR  -  #  Еще один демон auto nice с поддержкой правил сообщества
+https://aur.archlinux.org/packages/ananicy/
+https://aur.archlinux.org/ananicy.git 
+https://github.com/Nefelim4ag/Ananicy.git
+
+-----------------------------------
+
+
 
 
 =====================================
