@@ -2413,6 +2413,29 @@ https://aur.archlinux.org/packages/zsh-fast-syntax-highlighting-git/
 https://aur.archlinux.org/zsh-fast-syntax-highlighting-git.git
 https://github.com/zdharma/fast-syntax-highlighting
 
+
+-----------------------------------
+
+nohang 0.2.0-1  # Сложный обработчик нехватки памяти
+
+https://aur.archlinux.org/packages/nohang/
+https://aur.archlinux.org/nohang.git
+https://github.com/hakavlad/nohang
+
+Last Updated: 2021-03-18 07:38
+Сложный обработчик нехватки памяти
+
+
+nohang-git  -  # Сложный обработчик нехватки памяти
+
+https://aur.archlinux.org/packages/nohang-git/
+https://aur.archlinux.org/nohang-git.git 
+https://github.com/hakavlad/nohang
+
+Last Updated: 2020-07-04 12:10
+Сложный обработчик нехватки памяти
+
+
 =====================================
 
 vim-colorsamplerpack  -  # Различные цветовые схемы для vim
