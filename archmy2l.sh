@@ -1636,6 +1636,8 @@ chown -R $username:users /home/$username/gksu/PKGBUILD
 cd /home/$username/gksu
 sudo -u $username  makepkg -si --noconfirm  
 rm -Rf /home/$username/gksu
+######### qtermwidget #######
+pacman -S qtermwidget --noconfirm  # Виджет терминала для Qt, используемый QTerminal
 ######### octopi #######
 cd /home/$username
 git clone https://aur.archlinux.org/octopi.git
@@ -1666,6 +1668,8 @@ chown -R $username:users /home/$username/alpm_octopi_utils/PKGBUILD
 cd /home/$username/alpm_octopi_utils
 sudo -u $username  makepkg -si --noconfirm  
 rm -Rf /home/$username/alpm_octopi_utils
+######### qtermwidget #######
+pacman -S qtermwidget --noconfirm  # Виджет терминала для Qt, используемый QTerminal
 ######### octopi #######
 cd /home/$username
 git clone https://aur.archlinux.org/octopi.git
