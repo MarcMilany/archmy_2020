@@ -1380,6 +1380,22 @@ https://www.archlinux.org/packages/extra/x86_64/feh/
 hblock  AUR  # Блокировщик рекламы, который создает файл hosts из автоматически загружаемых черных списков
 https://aur.archlinux.org/packages/hblock/
 https://aur.archlinux.org/hblock.git
+https://github.com/hectorm/hblock
+Last Updated: 2021-03-08 19:55
+
+Установка
+hBlock доступен в различных менеджерах пакетов. Обновленный список можно найти в файле PACKAGES.md .
+
+Последнюю доступную версию также можно установить вручную, выполнив следующие команды:
+
+curl -o /tmp/hblock 'https://raw.githubusercontent.com/hectorm/hblock/v3.2.1/hblock' \
+  && echo '698932a84a0cd51ee633c84ca36713e520a0f40c30e2afc59b0fd7016c9c70f8  /tmp/hblock' | shasum -c \
+  && sudo mv /tmp/hblock /usr/local/bin/hblock \
+  && sudo chown 0:0 /usr/local/bin/hblock \
+  && sudo chmod 755 /usr/local/bin/hblock
+  
+  hBlock - это POSIX-совместимый сценарий оболочки, который получает список доменов, которые обслуживают рекламу, сценарии отслеживания и вредоносные программы из нескольких источников, и создает файл хостов , среди других форматов , который предотвращает подключение вашей системы к ним.
+  
 
 firefox-extension-leechblock  AUR  # LeechBlock - это простой бесплатный инструмент для повышения производительности, предназначенный для блокировки тех сайтов, которые тратят время впустую, которые могут высосать жизнь из вашего рабочего дня.
 https://aur.archlinux.org/packages/firefox-extension-leechblock/
