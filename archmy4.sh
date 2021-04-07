@@ -933,7 +933,8 @@ sudo pacman -S python-setuptools-scm --noconfirm  # Управляет верс�
 
 python-setuptools-scm  -  # Управляет версиями пакетов python в метаданных scm
 https://archlinux.org/packages/community/any/python-setuptools-scm/
-
+https://github.com/pypa/setuptools_scm
+Последнее обновление: 2021-03-04 23:20 UTC
 
 caffeine-ng-git  -  # Приложение строки состояния способно временно блокировать заставку и спящий режим
 https://aur.archlinux.org/packages/caffeine-ng-git/
