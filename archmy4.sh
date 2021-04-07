@@ -987,7 +987,6 @@ http://click.pocoo.org/
 
 --------------------------------
 
-
 yay -S gtk3-mushrooms --noconfirm  # GTK3 исправлен для классических настольных компьютеров, таких как XFCE или MATE. См. README
 https://aur.archlinux.org/packages/gtk3-mushrooms/
 https://aur.archlinux.org/gtk3-mushrooms.git
