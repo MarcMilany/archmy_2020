@@ -1428,15 +1428,36 @@ Last Updated: 2020-09-03 23:15
 lightdm-slick-greeter  AUR  # Красивое приветствие LightDM
 https://aur.archlinux.org/packages/lightdm-slick-greeter/
 https://aur.archlinux.org/lightdm-slick-greeter.git
+https://github.com/linuxmint/slick-greeter
+Последнее обновление: 2021-01-20 18:44
+
+Конфигурация
+Конфигурация по умолчанию хранится в dconf под схемой x.dm.slick-greeter.
+Дистрибутивы должны устанавливать свои собственные значения по умолчанию, используя переопределение glib.
+Пользователи могут создавать и изменять /etc/lightdm/slick-greeter.conf, настройки в этих файлах имеют приоритет и перезаписывают настройки dconf.
+Инструмент настройки доступен по адресу https://github.com/linuxmint/lightdm-settings.
+
+Функции
+Slick-Greeter является кросс-распространяемым и должен работать практически везде.
+Все апплеты панели встроены. Приветствие не запускает и не загружает внешние индикаторы.
+Программа приветствия не запускает и не загружает демон настроек.
+Это средство приветствия поддерживает HiDPI.
+Сессии подтверждены. Если сеанс по умолчанию / выбранный отсутствует в системе, программа приветствия сканирует известные сеансы в / usr / share / xsessions и заменяет неверный выбор сеанса действительным сеансом.
+Вы можете сделать снимок экрана, нажав PrintScrn. Снимок экрана сохраняется в /var/lib/lightdm/Screenshot.png.
+
 
 bluez-utils-compat  AUR  # Утилиты для разработки и отладки стека протоколов Bluetooth. Включает устаревшие инструменты.
 https://aur.archlinux.org/packages/bluez-utils-compat/
 https://aur.archlinux.org/bluez-utils-compat.git 
+http://www.bluez.org/
+Последнее обновление: 2021-02-24 18:04
 
 
 grml-iso  AUR  # добавьте ISO-образ grml в меню загрузки grub2
 https://aur.archlinux.org/packages/grml-iso/
 https://aur.archlinux.org/grml-iso.git 
+
+
 
 ИЛИ grml-rescueboot  AUR  # grub2 скрипт для добавления ISO-образов grml в меню загрузки grub2
 https://aur.archlinux.org/packages/grml-rescueboot/
