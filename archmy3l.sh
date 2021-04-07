@@ -1198,6 +1198,8 @@ pwd    # покажет в какой директории мы находимс
 cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf gksu  
 rm -Rf gksu
+######### qtermwidget #######
+sudo pacman -S qtermwidget --noconfirm  # Виджет терминала для Qt, используемый QTerminal
 ######### octopi #######
 git clone https://aur.archlinux.org/octopi.git
 cd octopi
@@ -1236,6 +1238,8 @@ pwd    # покажет в какой директории мы находимс
 cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf alpm_octopi_utils  
 rm -Rf alpm_octopi_utils
+######### qtermwidget #######
+sudo pacman -S qtermwidget --noconfirm  # Виджет терминала для Qt, используемый QTerminal
 ######### octopi #######
 git clone https://aur.archlinux.org/octopi.git
 cd octopi
