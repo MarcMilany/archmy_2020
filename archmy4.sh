@@ -1328,6 +1328,8 @@ https://aur.archlinux.org/oh-my-zsh-git.git
 https://github.com/ohmyzsh/ohmyzsh
 Последнее обновление: 2020-04-16 17:58
 
+---------------------------------
+
 skippy-xd-git  AUR  # Полноэкранный переключатель задач для X11, похожий на Apple Expose
 https://aur.archlinux.org/packages/skippy-xd-git/
 https://github.com/dreamcat4/skippy-xd
