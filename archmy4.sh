@@ -936,6 +936,28 @@ https://archlinux.org/packages/community/any/python-setuptools-scm/
 https://github.com/pypa/setuptools_scm
 Последнее обновление: 2021-03-04 23:20 UTC
 
+
+sudo pacman -S python-ewmh --noconfirm  # Реализация Python подсказок расширенного оконного менеджера на основе Xlib
+
+python-ewmh  -  # Реализация Python подсказок расширенного оконного менеджера на основе Xlib
+https://archlinux.org/packages/community/any/python-ewmh/
+https://github.com/parkouss/pyewmh
+Последнее обновление: 2020-12-02 04:40 UTC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 caffeine-ng-git  -  # Приложение строки состояния способно временно блокировать заставку и спящий режим
 https://aur.archlinux.org/packages/caffeine-ng-git/
 https://aur.archlinux.org/caffeine-ng-git.git 
