@@ -1414,10 +1414,15 @@ https://aur.archlinux.org/xfce4-docklike-plugin.git
 https://github.com/nsz32/docklike-plugin
 Last Updated: 2021-03-14 08:28
 
+Пользовательский репозиторий ArchLinux (AUR)
+yay -S xfce4-docklike-plugin-git
+
 
 xfce4-docklike-plugin-git  AUR  # Современная минималистичная панель задач в стиле док-станции для XFCE
 https://aur.archlinux.org/packages/xfce4-docklike-plugin-git/
 https://aur.archlinux.org/xfce4-docklike-plugin-git.git
+https://github.com/nsz32/docklike-plugin
+Last Updated: 2020-09-03 23:15
 
 
 lightdm-slick-greeter  AUR  # Красивое приветствие LightDM
