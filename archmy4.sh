@@ -1456,13 +1456,25 @@ http://www.bluez.org/
 grml-iso  AUR  # добавьте ISO-образ grml в меню загрузки grub2
 https://aur.archlinux.org/packages/grml-iso/
 https://aur.archlinux.org/grml-iso.git 
+http://wiki.grml.org/doku.php?id=rescueboot
+Последнее обновление: 2020-07-26 23:59
 
+Предисловие
+Система восстановления Grml поддерживает загрузку Grml ISO с жесткого диска. Это обеспечивает достойный способ иметь Grml ISO в / boot / grml / на вашем жестком диске, и пока жесткий диск и его загрузчик GRUB работают, вы можете загрузить систему восстановления Grml без аварийного компакт-диска, USB-ручки или Доступна среда PXE.
 
+Чтобы максимально упростить эту задачу, мы создали grml-rescueboot, который интегрирует загрузку по ISO в GRUB. Пакет grml-rescueboot включает сценарий для update-grub, который ищет образы Grml ISO в / boot / grml и автоматически добавляет запись для каждого образа.
 
-ИЛИ grml-rescueboot  AUR  # grub2 скрипт для добавления ISO-образов grml в меню загрузки grub2
+Требования
+Grml ISO
+Загрузчик GRUB2
+
+ИЛИ 
+
+grml-rescueboot  AUR  # grub2 скрипт для добавления ISO-образов grml в меню загрузки grub2
 https://aur.archlinux.org/packages/grml-rescueboot/
 https://aur.archlinux.org/grml-rescueboot.git 
-
+http://wiki.grml.org/doku.php?id=rescueboot
+Последнее обновление: 2020-12-29 09:11
 
 -----------------------------
 
