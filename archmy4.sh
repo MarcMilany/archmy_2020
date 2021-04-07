@@ -1512,24 +1512,65 @@ https://www.archlinux.org/packages/extra/any/hicolor-icon-theme/
 echo ' Установка тем AUR '
 yay -S osx-arc-shadow papirus-maia-icon-theme-git breeze-default-cursor-theme --noconfirm
 
-osx-arc-shadow  AUR  # ???
+-osx-arc-shadow  AUR  # ???
 https://aur.archlinux.org/packages/?O=0&SeB=nd&K=osx-arc&outdated=&SB=n&SO=a&PP=50&do_Search=Go
 
 osx-arc-white-git  AUR  # OSX-Arc-White Theme для Cinnamon, GNOME, Unity, Xfce и GTK +
 https://aur.archlinux.org/packages/osx-arc-white-git/
 https://aur.archlinux.org/osx-arc-white-git.git 
-osx-arc-plus  AUR  # Тема OSX-Arc-Plus для GTK 3.x 
+https://github.com/fusion809/OSX-Arc-White
+Last Updated: 2017-12-09 13:56
+
+-osx-arc-plus  AUR  # Тема OSX-Arc-Plus для GTK 3.x  ???????
 https://aur.archlinux.org/packages/osx-arc-plus/
 https://aur.archlinux.org/osx-arc-plus.git
+
+
 osx-arc-white  AUR  # OSX-Arc-Белая тема для GTK 3.x
 https://aur.archlinux.org/packages/osx-arc-white/
 https://aur.archlinux.org/osx-arc-white.git 
+https://www.gnome-look.org/p/1167049/
+Last Updated: 2018-01-17 17:26
+
+
 osx-arc-aurorae-theme  AUR  # Тема Aurorae, разработанная для дополнения тем gtk OSX-Arc @ LinxGem33
 https://aur.archlinux.org/packages/osx-arc-aurorae-theme/
 https://aur.archlinux.org/osx-arc-aurorae-theme.git 
+https://github.com/iboyperson/OSX-Arc-Aurorae
+Last Updated: 2018-10-23 04:08
+
+Установить:
+Находясь в каталоге клонов, выполните эту команду:
+
+cp -r OSX-Arc* ~/.local/share/aurorae/themes/
+Arch Linux (AUR)
+Если у вас есть тризен (или любой другой помощник AUR):
+
+<Insert AUR Helper Here> -S osx-arc-aurorae-theme 
+Если ты не:
+
+git clone https://aur.archlinux.org/osx-arc-aurorae-theme.git && cd osx-arc-aurorae-theme && makepkg -si
+
 osx-arc-aurorae-theme-git  AUR  # Тема Aurorae, разработанная для дополнения тем gtk OSX-Arc @ LinxGem33
 https://aur.archlinux.org/packages/osx-arc-aurorae-theme-git/
 https://aur.archlinux.org/osx-arc-aurorae-theme-git.git
+https://github.com/iboyperson/OSX-Arc-Aurorae
+Last Updated: 2018-10-27 23:21
+Установить:
+Находясь в каталоге клонов, выполните эту команду:
+
+cp -r OSX-Arc* ~/.local/share/aurorae/themes/
+Arch Linux (AUR)
+Если у вас есть тризен (или любой другой помощник AUR):
+
+<Insert AUR Helper Here> -S osx-arc-aurorae-theme 
+Если ты не:
+
+git clone https://aur.archlinux.org/osx-arc-aurorae-theme.git && cd osx-arc-aurorae-theme && makepkg -si
+
+-------------------------------------
+
+
 
 papirus-maia-icon-theme-git  AUR  # Вариант Manjaro темы значков Papirus (версия git)
 https://aur.archlinux.org/packages/papirus-maia-icon-theme-git/
