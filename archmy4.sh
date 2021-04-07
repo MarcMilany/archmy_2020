@@ -945,17 +945,20 @@ https://github.com/parkouss/pyewmh
 Последнее обновление: 2020-12-02 04:40 UTC
 
 
+sudo pacman -S python-wheel --noconfirm  # Формат встроенного пакета для Python
 
+python-wheel  -  # Формат встроенного пакета для Python
+https://archlinux.org/packages/community/any/python-wheel/
+https://pypi.python.org/pypi/wheel
+Последнее обновление: 2020-12-13 21:57 UTC
 
+yay -S python-pulsectl --noconfirm  # Интерфейс высокого уровня Python и привязки на основе ctypes для PulseAudio (libpulse)
 
-
-
-
-
-
-
-
-
+python-pulsectl  AUR  -  # Интерфейс высокого уровня Python и привязки на основе ctypes для PulseAudio (libpulse)
+https://aur.archlinux.org/packages/python-pulsectl/
+https://aur.archlinux.org/python-pulsectl.git 
+https://github.com/mk-fg/python-pulse-control
+Последнее обновление: 2021-03-08 15:35
 
 
 caffeine-ng-git  -  # Приложение строки состояния способно временно блокировать заставку и спящий режим
