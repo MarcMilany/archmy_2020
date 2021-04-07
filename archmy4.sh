@@ -972,6 +972,22 @@ https://aur.archlinux.org/caffeine-ng-git.git
 https://github.com/caffeine-ng/caffeine-ng
 
 
+==> Установка недостающих зависимостей...
+разрешение зависимостей...
+проверка конфликтов...
+
+Пакеты (1) python-click-7.1.2-4
+
+sudo pacman -S python-click --noconfirm  # Простая оболочка вокруг optparse для мощных утилит командной строки
+
+python-click  -  # Простая оболочка вокруг optparse для мощных утилит командной строки
+https://archlinux.org/packages/community/any/python-click/
+http://click.pocoo.org/
+Последнее обновление: 2021-03-30 14:27 UTC
+
+--------------------------------
+
+
 yay -S gtk3-mushrooms --noconfirm  # GTK3 исправлен для классических настольных компьютеров, таких как XFCE или MATE. См. README
 https://aur.archlinux.org/packages/gtk3-mushrooms/
 https://aur.archlinux.org/gtk3-mushrooms.git
