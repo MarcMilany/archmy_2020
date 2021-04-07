@@ -2334,8 +2334,27 @@ http://atdot.ch/scr/
 ==> Проверка зависимостей для сборки...
 ==> ОШИБКА: Не удалось разрешить все зависимости
 
-yay -S qt4 --noconfirm  # 
-yay -S qt4 --noconfirm --needed  # 
+yay -S qt4 --noconfirm  # Кроссплатформенное приложение и фреймворк пользовательского интерфейса
+yay -S qt4 --noconfirm --needed  # Кроссплатформенное приложение и фреймворк пользовательского интерфейса
+
+Qt - это самый быстрый и умный способ создания ведущего в отрасли программного обеспечения, которое нравится пользователям.
+
+qt4 -  # Кроссплатформенное приложение и фреймворк пользовательского интерфейса
+https://aur.archlinux.org/packages/qt4/
+https://aur.archlinux.org/qt4.git 
+https://www.qt.io
+==> Установка недостающих зависимостей...
+разрешение зависимостей...
+проверка конфликтов...
+
+Пакеты (1) unixodbc-2.3.9-1
+
+sudo pacman -S unixodbc --noconfirm  # ODBC - это открытая спецификация для предоставления разработчикам приложений предсказуемого API для доступа к источникам данных
+
+unixodbc  -  # ODBC - это открытая спецификация для предоставления разработчикам приложений предсказуемого API для доступа к источникам данных
+https://archlinux.org/packages/core/x86_64/unixodbc/
+http://www.unixodbc.org/
+
 
 -----------------------------------------
 
@@ -2364,6 +2383,87 @@ system-config-samba  -  # Инструмент настройки Samba от Red
 https://aur.archlinux.org/packages/system-config-samba/
 https://aur.archlinux.org/system-config-samba.git 
 http://fedoraproject.org/wiki/SystemConfig/samba
+
+system-config-samba  -  # Инструмент настройки Samba от Red Hat
+https://aur.archlinux.org/packages/system-config-samba/
+https://aur.archlinux.org/system-config-samba.git 
+http://fedoraproject.org/wiki/SystemConfig/samba
+
+==> Установка недостающих зависимостей...
+[sudo] пароль для alex: 
+ошибка: не найдена цель: libuser
+==> ОШИБКА: pacman: не удалось установить недостающие зависимости.
+==> Недостающие зависимости:
+  -> samba
+  -> libuser
+==> Проверка зависимостей для сборки...
+==> ОШИБКА: Не удалось разрешить все зависимости.
+
+
+sudo pacman -S samba --noconfirm  # Файловый сервер SMB и сервер домена AD
+yay -S libuser --noconfirm  # Стандартизированный интерфейс для управления и администрирования учетных записей пользователей и групп
+
+  echo ""  
+  echo " Установка LibUser "
+##### libuser ###### 
+# yay -S libuser --noconfirm  # Стандартизированный интерфейс для управления и администрирования учетных записей пользователей и групп
+git clone https://aur.archlinux.org/libuser.git # Стандартизированный интерфейс для управления и администрирования учетных записей пользователей и групп
+cd libuser  # переместит пользователя в каталог с исходниками
+#makepkg -fsri
+# makepkg -si
+# makepkg -g  # посчитает контрольные суммы пакетов, далее нужно просто эти контрольные суммы заменить в PKGBUILD`е на правильные (
+# mousepad PKGBUILD  # открыть PKGBUILD в редакторе текста
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+# makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+# rm -rf libuser
+rm -Rf libuser
+echo ""   
+echo " Установка утилит (пакетов) выполнена "
+echo " Желательно перезагрузить систему для применения изменений "
+
+
+sudo pacman -S samba --noconfirm  # Файловый сервер SMB и сервер домена AD
+
+samba  -  # Файловый сервер SMB и сервер домена AD
+https://archlinux.org/packages/extra/x86_64/samba/
+https://www.samba.org
+Last Updated: 2021-03-25 18:49 UTC
+
+О самбе
+Samba - это стандартный набор программ для взаимодействия с Windows для Linux и Unix.
+
+Samba - это бесплатное программное обеспечение под лицензией GNU General Public License , проект Samba является членом Software Freedom Conservancy .
+
+С 1992 года Samba предоставляет безопасные, стабильные и быстрые службы файлов и печати для всех клиентов, использующих протокол SMB / CIFS, таких как все версии DOS и Windows, OS / 2, Linux и многие другие.
+
+Samba - важный компонент для беспрепятственной интеграции серверов и рабочих столов Linux / Unix в среды Active Directory. Он может функционировать как контроллер домена или как обычный член домена.
+
+----------
+yay -S libuser --noconfirm  # Стандартизированный интерфейс для управления и администрирования учетных записей пользователей и групп
+
+libuser  - AUR  # Стандартизированный интерфейс для управления и администрирования учетных записей пользователей и групп
+https://aur.archlinux.org/packages/libuser/
+https://aur.archlinux.org/libuser.git
+https://pagure.io/libuser/
+Last Updated: 2018-01-07 12:44
+
+Библиотека libuser реализует стандартизированный интерфейс для управления и
+администрирование учетных записей пользователей и групп. Библиотека использует подключаемые серверные части для
+интерфейс со своими источниками данных.
+
+Примеры приложений, смоделированных по образцу приложений, включенных в набор теневых паролей
+включены.
+
+Новые выпуски будут доступны по адресу https://pagure.io/libuser.
+
+Ошибки
+====
+Пожалуйста, подумайте о том, чтобы сообщить об ошибке в систему отслеживания ошибок вашего дистрибутива.
+
+В противном случае сообщайте об ошибках на https://pagure.io/libuser. Запросы на вытягивание
+особенно приветствую.
 
 ------------------------------------------
 
@@ -2405,10 +2505,41 @@ https://aur.archlinux.org/packages/xneur/
 https://aur.archlinux.org/xneur.git
 http://www.xneur.ru
 
+==> ОШИБКА: Произошел сбой в build().
+    Прерывание...
+makepkg -s  5,14s user 1,33s system 96% cpu 6,735 total
+
+ИЛИ
+
+xneur-devel-git  - AUR  # X Neural Switcher определяет язык ввода и корректирует раскладку клавиатуры. Версия Git
+https://aur.archlinux.org/packages/xneur-devel-git/
+https://aur.archlinux.org/xneur-devel-git.git
+https://github.com/AndrewCrewKuznetsov/xneur-devel
+Последнее обновление: 2019-12-15 12:50
+
+Зависимости:
+enchant1  -  AUR  # Библиотека-оболочка для общей проверки орфографии
+https://aur.archlinux.org/packages/enchant1.6/
+https://aur.archlinux.org/enchant1.6.git 
+https://abiword.github.io/enchant/
+Last Updated: 2018-02-25 16:33
+
+Enchant - это библиотека (и программа командной строки), которая объединяет ряд различных библиотек и программ проверки орфографии с единым интерфейсом. Используя Enchant, вы можете использовать широкий спектр библиотек проверки правописания, в том числе некоторые специализированные для определенных языков, без необходимости программировать интерфейс каждой библиотеки. Если вызывать библиотеку C неудобно, вы можете получить доступ к большей части функций Enchant через программу enchant, которая обменивается данными по каналу, например ispell, и действительно совместима с ispell.
+
+
 gxneur  -  # Интерфейс GTK для XNeur
 https://aur.archlinux.org/packages/gxneur/
 https://aur.archlinux.org/gxneur.git 
 http://www.xneur.ru
+
+==> Установка недостающих зависимостей...
+[sudo] пароль для alex: 
+ошибка: не найдена цель: xneur>=0.20.0
+==> ОШИБКА: pacman: не удалось установить недостающие зависимости.
+==> Недостающие зависимости:
+  -> xneur>=0.20.0
+==> Проверка зависимостей для сборки...
+==> ОШИБКА: Не удалось разрешить все зависимости.
 
 ------------------------------------------
 
@@ -2429,10 +2560,17 @@ https://aur.archlinux.org/packages/cherrytree-bin/
 https://aur.archlinux.org/cherrytree-bin.git
 https://www.giuspen.com/cherrytree/
 
-cherrytree  -  # Приложение для создания иерархических заметок, версия git
+cherrytree-git  -  # Приложение для создания иерархических заметок, версия git
 https://aur.archlinux.org/packages/cherrytree-git/
 https://aur.archlinux.org/cherrytree-git.git 
 https://github.com/giuspen/cherrytree
+
+sudo pacman -S spdlog --noconfirm   # Очень быстрая, только для заголовков / скомпилированная библиотека журналов C ++
+
+spdlog  -  # Очень быстрая, только для заголовков / скомпилированная библиотека журналов C ++
+https://archlinux.org/packages/community/x86_64/spdlog/
+https://github.com/gabime/spdlog
+Последнее обновление: 2021-03-27 01:30 UTC
 
 ----------------------------------------
 
@@ -2584,7 +2722,29 @@ https://aur.archlinux.org/packages/gtk3-mushrooms/
 https://aur.archlinux.org/gtk3-mushrooms.git
 https://github.com/krumelmonster/gtk3-mushrooms
 
--------------------------------------
+==> Установка недостающих зависимостей...
+разрешение зависимостей...
+проверка конфликтов...
+
+Пакеты (2) libsass-3.6.4-1  sassc-3.6.1-2
+
+Будет загружено:  0,74 MiB
+Будет установлено:  2,71 MiB
+
+sudo pacman -S libsass --noconfirm  # C реализация препроцессора Sass CSS (библиотека)
+sudo pacman -S sassc --noconfirm  # C реализация препроцессора Sass CSS
+
+libsass  -  # C реализация препроцессора Sass CSS (библиотека)
+https://archlinux.org/packages/community/x86_64/libsass/
+http://libsass.org/
+Последнее обновление: 2020-05-01 17:44 UTC
+
+sassc  -  # C реализация препроцессора Sass CSS
+https://archlinux.org/packages/community/x86_64/sassc/
+http://libsass.org/
+Последнее обновление: 2020-07-09 18:08 UTC
+
+------- ------------------------------
 
 lib32-libudev0  -  # 
 # ( lib32-libudev0-shim-nosystemd )  -  # Библиотека совместимости libudev.so.0 для систем с более новыми версиями udev (32 бит)
