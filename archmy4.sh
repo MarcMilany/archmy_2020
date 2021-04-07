@@ -2325,6 +2325,18 @@ https://aur.archlinux.org/packages/skype-call-recorder/
 https://aur.archlinux.org/skype-call-recorder.git 
 http://atdot.ch/scr/
 
+==> Установка недостающих зависимостей...
+[sudo] пароль для alex: 
+ошибка: не найдена цель: qt4
+==> ОШИБКА: pacman: не удалось установить недостающие зависимости.
+==> Недостающие зависимости:
+  -> qt4
+==> Проверка зависимостей для сборки...
+==> ОШИБКА: Не удалось разрешить все зависимости
+
+yay -S qt4 --noconfirm  # 
+yay -S qt4 --noconfirm --needed  # 
+
 -----------------------------------------
 
 vk-messenger  -  # VK Messenger для Linux
