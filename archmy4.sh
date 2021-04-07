@@ -1408,6 +1408,13 @@ LeechBlock NG - это простой инструмент повышения п
 Только с Firefox - установите Firefox прямо сейчас
 
 
+xfce4-docklike-plugin  AUR  # Современная минималистичная панель задач в стиле док-станции для XFCE
+https://aur.archlinux.org/packages/xfce4-docklike-plugin/
+https://aur.archlinux.org/xfce4-docklike-plugin.git 
+https://github.com/nsz32/docklike-plugin
+Last Updated: 2021-03-14 08:28
+
+
 xfce4-docklike-plugin-git  AUR  # Современная минималистичная панель задач в стиле док-станции для XFCE
 https://aur.archlinux.org/packages/xfce4-docklike-plugin-git/
 https://aur.archlinux.org/xfce4-docklike-plugin-git.git
