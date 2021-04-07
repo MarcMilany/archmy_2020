@@ -1395,11 +1395,18 @@ curl -o /tmp/hblock 'https://raw.githubusercontent.com/hectorm/hblock/v3.2.1/hbl
   && sudo chmod 755 /usr/local/bin/hblock
   
   hBlock - это POSIX-совместимый сценарий оболочки, который получает список доменов, которые обслуживают рекламу, сценарии отслеживания и вредоносные программы из нескольких источников, и создает файл хостов , среди других форматов , который предотвращает подключение вашей системы к ним.
-  
+
 
 firefox-extension-leechblock  AUR  # LeechBlock - это простой бесплатный инструмент для повышения производительности, предназначенный для блокировки тех сайтов, которые тратят время впустую, которые могут высосать жизнь из вашего рабочего дня.
 https://aur.archlinux.org/packages/firefox-extension-leechblock/
 https://aur.archlinux.org/firefox-extension-leechblock.git
+https://addons.mozilla.org/en-US/firefox/addon/leechblock-ng/
+Последнее обновление: 2019-04-09 21:51
+
+LeechBlock NG - это простой инструмент повышения производительности, предназначенный для блокировки тех сайтов, которые тратят время впустую, которые могут высосать жизнь из вашего рабочего дня. Все, что вам нужно сделать, это указать, какие сайты и когда блокировать.
+
+Только с Firefox - установите Firefox прямо сейчас
+
 
 xfce4-docklike-plugin-git  AUR  # Современная минималистичная панель задач в стиле док-станции для XFCE
 https://aur.archlinux.org/packages/xfce4-docklike-plugin-git/
