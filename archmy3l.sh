@@ -1805,7 +1805,7 @@ echo -e "${GREEN}==> ${NC}Установка дополнительных баз
 #echo -e "${BLUE}:: ${NC}Установка дополнительных базовых программ (пакетов)" 
 #echo 'Установка дополнительных базовых программ (пакетов)'
 # Installing additional basic programs (packages)
-echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (accountsservice, acpi, acpid, android-tools, android-udev, arch-install-scripts, aspell-en, aspell-ru, autofs, b43-fwcutter, bash-completion, beep, bind, btrfs-progs, busybox, ccache, cmake, cpio, cpupower, crda, davfs2, desktop-file-utils, dhclient, dnsmasq, dosfstools, efibootmgr, efitools, ethtool, f2fs-tools, flex, fortune-mod, fsarchiver, fuse3, glances, gnome-nettool, gnu-netcat, gpm, gptfdisk, gtop, gvfs, gvfs-gphoto2, gvfs-nfs, gvfs-smb, haveged, hddtemp, hidapi, hwinfo, hydra, hyphen-en, id3lib, iftop, inetutils, isomd5sum, jfsutils, lib32-curl, lib32-flex, libfm-gtk2, lksctp-tools, logrotate, lsof, lsb-release, man-db, man-pages, mc, memtest86+, mlocate, mtpfs, ncdu, nfs-utils, nss-mdns, pacman-contrib, patchutils, pciutils, php, poppler-data, powertop, pv, pwgen, python-isomd5sum, python-pip, qt5-translations, reiserfsprogs, ruby, s-nail, sane, scrot, sg3_utils, sdparm, solid, sox, smartmontools, speedtest-cli, squashfs-tools, syslinux, systemd-ui, termite, termite-terminfo, translate-shell, udiskie, usb_modeswitch, wimlib, xsel, xterm, xorg-twm, xorg-xkill, yelp, youtube-dl)."
+echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (accountsservice, acpi, acpid, android-tools, android-udev, arch-install-scripts, aspell-en, aspell-ru, autofs, b43-fwcutter, bash-completion, beep, bind, btrfs-progs, busybox, ccache, cmake, cpio, cpupower, crda, davfs2, desktop-file-utils, dhclient, dnsmasq, dosfstools, efibootmgr, efitools, ethtool, f2fs-tools, flex, fortune-mod, fsarchiver, fuse3, glances, gnome-nettool, gnu-netcat, gpm, gptfdisk, gtop, gvfs, gvfs-gphoto2, gvfs-nfs, gvfs-smb, haveged, hddtemp, hidapi, hwinfo, hydra, hyphen-en, id3lib, iftop, inetutils, isomd5sum, jfsutils, lib32-curl, lib32-flex, libfm-gtk2, lksctp-tools, logrotate, lsof, lsb-release, man-db, man-pages, mc, memtest86+, mlocate, mtpfs, ncdu, nfs-utils, nss-mdns, pacman-contrib, patchutils, pciutils, php, poppler-data, powertop, pv, pwgen, python-isomd5sum, python-pip, qt5-translations, reiserfsprogs, ruby, s-nail, sane, scrot, sg3_utils, sdparm, sof-firmware, solid, sox, smartmontools, speedtest-cli, squashfs-tools, syslinux, systemd-ui, termite, termite-terminfo, translate-shell, udiskie, usb_modeswitch, wimlib, xsel, xterm, xorg-twm, xorg-xkill, yelp, youtube-dl)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -1830,7 +1830,7 @@ echo " Установка дополнительных базовых прогр
 elif [[ $in_soft == 1 ]]; then
   echo ""  
   echo " Установка дополнительных базовых программ (пакетов) "
-# sudo pacman -S accountsservice acpi acpid android-tools android-udev arch-install-scripts aspell-en aspell-ru autofs b43-fwcutter bash-completion beep bind btrfs-progs busybox ccache cmake cpio cpupower crda davfs2 desktop-file-utils dhclient dnsmasq dosfstools efibootmgr efitools ethtool f2fs-tools flex fortune-mod fsarchiver fuse3 glances gnome-nettool gnu-netcat gpm gptfdisk gtop gvfs gvfs-gphoto2 gvfs-nfs gvfs-smb haveged hddtemp hidapi hwinfo hydra hyphen-en id3lib iftop inetutils isomd5sum jfsutils lib32-curl lib32-flex libfm-gtk2 lksctp-tools logrotate lsof man-db man-pages mc memtest86+ mlocate mtpfs ncdu nfs-utils nss-mdns patchutils pciutils php poppler-data powertop pv pwgen python-isomd5sum python-pip qt5-translations reiserfsprogs ruby s-nail sane scrot sg3_utils sdparm solid sox smartmontools speedtest-cli squashfs-tools syslinux systemd-ui termite termite-terminfo translate-shell udiskie usb_modeswitch wimlib xsel xterm xorg-twm xorg-xkill yelp youtube-dl --noconfirm  # light-locker lsb-release python python2 - присутствует  
+# sudo pacman -S accountsservice acpi acpid android-tools android-udev arch-install-scripts aspell-en aspell-ru autofs b43-fwcutter bash-completion beep bind btrfs-progs busybox ccache cmake cpio cpupower crda davfs2 desktop-file-utils dhclient dnsmasq dosfstools efibootmgr efitools ethtool f2fs-tools flex fortune-mod fsarchiver fuse3 glances gnome-nettool gnu-netcat gpm gptfdisk gtop gvfs gvfs-gphoto2 gvfs-nfs gvfs-smb haveged hddtemp hidapi hwinfo hydra hyphen-en id3lib iftop inetutils isomd5sum jfsutils lib32-curl lib32-flex libfm-gtk2 lksctp-tools logrotate lsof man-db man-pages mc memtest86+ mlocate mtpfs ncdu nfs-utils nss-mdns patchutils pciutils php poppler-data powertop pv pwgen python-isomd5sum python-pip qt5-translations reiserfsprogs ruby s-nail sane scrot sg3_utils sdparm sof-firmware solid sox smartmontools speedtest-cli squashfs-tools syslinux systemd-ui termite termite-terminfo translate-shell udiskie usb_modeswitch wimlib xsel xterm xorg-twm xorg-xkill yelp youtube-dl --noconfirm  # light-locker lsb-release python python2 - присутствует  
 # reflector git curl  - пока присутствует в pkglist.x86_64 
 sudo pacman -S accountsservice --noconfirm  # Интерфейс D-Bus для запроса учетных записей пользователей и управления ими
 sudo pacman -S acpi --noconfirm  # Клиент для показаний батареи, мощности и температуры
@@ -1928,6 +1928,7 @@ sudo pacman -S sane --noconfirm  # Доступ к сканеру теперь �
 sudo pacman -S scrot --noconfirm  # Простая утилита для создания снимков экрана из командной строки для X
 sudo pacman -S sg3_utils --noconfirm  # Универсальные утилиты SCSI
 sudo pacman -S sdparm --noconfirm  # Утилита, аналогичная hdparm, но для устройств SCSI
+sudo pacman -S sof-firmware --noconfirm  # Звук открыть прошивку
 sudo pacman -S solid --noconfirm  # Аппаратная интеграция и обнаружение
 sudo pacman -S sox --noconfirm  # Швейцарский армейский нож инструментов обработки звука
 sudo pacman -S smartmontools --noconfirm  # Управление и мониторинг жестких дисков ATA и SCSI с поддержкой SMAR
@@ -1948,7 +1949,6 @@ sudo pacman -S xorg-twm --noconfirm  # Вкладка Window Manager для си
 sudo pacman -S xorg-xkill --noconfirm  # Убить клиента его X-ресурсом
 sudo pacman -S yelp --noconfirm  # Получите помощь с GNOME
 sudo pacman -S youtube-dl --noconfirm  # Программа командной строки для загрузки видео с YouTube.com и еще нескольких сайтов
-# sudo pacman -S  --noconfirm  #
 # sudo pacman -S  --noconfirm  # 
 # sudo pacman -S  --noconfirm  # 
 ### Исправим отображение миниатюр в файловом менеджере ###
@@ -3218,7 +3218,7 @@ echo -e "${GREEN}==> ${BOLD}Установить рекомендованные 
 #echo -e "${BLUE}:: ${NC}Установить рекомендованные программы (пакеты)?"
 #echo 'Установить рекомендованные программы?'
 # Install the recommended programs
-echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (gnome-system-monitor, gnome-disk-utility, gnome-multi-writer, gpart, frei0r-plugins, fuseiso, clonezilla, crypto++, psensor, copyq, rsync, grsync, numlockx, modem-manager-gui, ranger, pacmanlogviewer, rofi, gsmartcontrol, testdisk, dmidecode, qemu, w3m)."
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (edk2-ovmf gnome-system-monitor, gnome-disk-utility, gnome-multi-writer, gpart, frei0r-plugins, fuseiso, clonezilla, crypto++, psensor, copyq, rsync, grsync, numlockx, modem-manager-gui, ranger, pacmanlogviewer, rofi, gsmartcontrol, testdisk, dmidecode, virt-manager, qemu, qemu-arch-extra, w3m)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -3241,7 +3241,8 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_collection == 1 ]]; then
   echo ""   
   echo " Установка рекомендованных утилит (пакетов) "
-# sudo pacman -S gnome-system-monitor gnome-disk-utility gnome-multi-writer gpart frei0r-plugins clonezilla crypto++ psensor copyq rsync grsync numlockx modem-manager-gui rofi gsmartcontrol ranger testdisk lsof dmidecode qemu w3m --noconfirm  
+# sudo pacman -S gnome-system-monitor gnome-disk-utility gnome-multi-writer gpart frei0r-plugins clonezilla crypto++ psensor copyq rsync grsync numlockx modem-manager-gui rofi gsmartcontrol ranger testdisk lsof dmidecode qemu qemu-arch-extra virt-manager edk2-ovmf w3m --noconfirm
+sudo pacman -S edk2-ovmf --noconfirm  # Прошивки для виртуальных машин (x86_64, i686)  
 sudo pacman -S gnome-system-monitor --noconfirm  # Просмотр текущих процессов и мониторинг состояния системы
 sudo pacman -S gnome-disk-utility --noconfirm  # Утилита управления дисками для GNOME
 sudo pacman -S gnome-multi-writer --noconfirm  # Записать файл ISO на несколько USB-устройств одновременно
@@ -3263,10 +3264,12 @@ sudo pacman -S ranger --noconfirm  # Простой файловый менед�
 sudo pacman -S testdisk --noconfirm  # Проверяет и восстанавливает разделы + PhotoRec, инструмент восстановления на основе сигнатур
 sudo pacman -S dmidecode --noconfirm  # Утилиты, относящиеся к таблице интерфейса управления рабочим столом
 sudo pacman -S qemu --noconfirm  # Универсальный компьютерный эмулятор и виртуализатор с открытым исходным кодом
+sudo pacman -S qemu-arch-extra --noconfirm  # QEMU для зарубежных архитектур
+sudo pacman -S virt-manager --noconfirm  # Настольный пользовательский интерфейс для управления виртуальными машинами
 sudo pacman -S w3m --noconfirm  # Текстовый веб-браузер, а также пейджер
-# sudo pacman -S  --noconfirm  # 
-# sudo pacman -S  --noconfirm  #
-# sudo pacman -S  --noconfirm  #
+
+
+
 # sudo pacman -S  --noconfirm  #
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
@@ -3278,7 +3281,7 @@ echo -e "${GREEN}==> ${BOLD}Установить дополнительные с
 #echo -e "${BLUE}:: ${NC}Установить дополнительные сетевые утилиты, драйверы?"
 #echo 'Установить дополнительные сетевые утилиты, драйверы
 # Install additional network utilities, drivers
-echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (broadcom-wl-dkms, iwd, linux-atm, ndisc6, networkmanager-l2tp, pptpclient, rp-pppoe, wvdial, xl2tpd)."
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (broadcom-wl-dkms, ebtables, ipset, iwd, linux-atm, ndisc6, networkmanager-l2tp, pptpclient, rp-pppoe, wvdial, xl2tpd)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -3301,8 +3304,10 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $net_utilities == 1 ]]; then
   echo ""   
   echo " Установка рекомендованных утилит (пакетов) "
-# sudo pacman -S broadcom-wl-dkms iwd linux-atm ndisc6 networkmanager-l2tp pptpclient rp-pppoe wvdial xl2tpd --noconfirm  
+# sudo pacman -S broadcom-wl-dkms ebtables ipset iwd linux-atm ndisc6 networkmanager-l2tp pptpclient rp-pppoe wvdial xl2tpd --noconfirm
 sudo pacman -S broadcom-wl-dkms --noconfirm  # Драйвер беспроводной сети Broadcom 802.11 Linux STA
+sudo pacman -S ebtables --noconfirm  # Утилиты фильтрации Ethernet-моста 
+sudo pacman -S ipset --noconfirm  # Инструмент администрирования наборов IP
 sudo pacman -S iwd --noconfirm  # Демон беспроводной сети Интернет
 sudo pacman -S linux-atm --noconfirm  # Драйверы и инструменты для поддержки сети банкоматов под Linux
 sudo pacman -S ndisc6 --noconfirm  # Сборник сетевых утилит IPv6
