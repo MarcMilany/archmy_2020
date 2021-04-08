@@ -3361,6 +3361,7 @@ sudo pacman -S tlp tlp-rdw --noconfirm
 #sudo pacman -S tp_smapi acpi_call --noconfirm  # Для ThinkPad (ноутбуков), или Интел платформ Sandy Bridge
 #sudo pacman -S acpi_call-dkms --noconfirm  # если ядра не из официальных репозиториев
 #sudo pacman -S acpi_call --noconfirm  # Модуль ядра Linux, который позволяет вызывать методы ACPI через / proc / acpi / call
+#systemctl enable acpid
 echo ""
 echo " Установка утилит (пакетов) завершена " 
 fi
