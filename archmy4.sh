@@ -2879,6 +2879,24 @@ https://aur.archlinux.org/packages/xflux-gui-git/
 https://aur.archlinux.org/xflux-gui-git.git
 https://justgetflux.com/linux.html
 
+==> Установка недостающих зависимостей...
+[sudo] пароль для alex: 
+ошибка: не найдена цель: xflux
+==> ОШИБКА: pacman: не удалось установить недостающие зависимости.
+==> Недостающие зависимости:
+  -> xflux
+  -> libindicator-gtk2
+==> Проверка зависимостей для сборки...
+==> ОШИБКА: Не удалось разрешить все зависимости.
+
+yay -S xflux --noconfirm  # (f.lux для X) Адаптивно изменяет цветовую температуру монитора, чтобы снизить нагрузку на глаза (версия для командной строки)
+
+sudo pacman -S libindicator-gtk2 --noconfirm  # Набор символов и удобных функций для индикаторов Ayatana (библиотека GTK+ 2)
+
+libindicator-gtk2  # Набор символов и удобных функций для индикаторов Ayatana (библиотека GTK+ 2)
+https://archlinux.org/packages/community/x86_64/libindicator-gtk2/
+https://launchpad.net/libindicator
+Last Updated:   2020-03-16 08:37 UTC
 ---------------------------------------
 
 flameshot-git  -  # Мощное, но простое в использовании программное обеспечение для создания снимков экрана
@@ -2938,11 +2956,191 @@ http://libsass.org/
 
 ------- ------------------------------
 
+==> Недостающие зависимости:
+  -> libeudev
+==> Проверка зависимостей для сборки...
+==> ОШИБКА: Не удалось разрешить все зависимости.
+
 lib32-libudev0  -  # 
 # ( lib32-libudev0-shim-nosystemd )  -  # Библиотека совместимости libudev.so.0 для систем с более новыми версиями udev (32 бит)
 https://aur.archlinux.org/packages/lib32-libudev0-shim-nosystemd/
 https://aur.archlinux.org/lib32-libudev0-shim-nosystemd.git
 https://github.com/archlinux/libudev0-shim
+
+==> ОШИБКА: pacman: не удалось установить недостающие зависимости.
+==> Недостающие зависимости:
+  -> libeudev
+  -> lib32-eudev
+  -> libudev0-shim
+==> Проверка зависимостей для сборки...
+==> ОШИБКА: Не удалось разрешить все зависимости.
+
+yay -S libeudev --noconfirm  # Клиентские библиотеки eudev
+
+Обнаружены конфликты пакетов:
+ -> Установка libeudev приведёт к удалению: systemd-libs (libudev.so)
+конфликты пакетов не могут быть разрешены опцией noconfirm, прерывание
+
+yay -S lib32-eudev --noconfirm  # Инструменты разработки пользовательского пространства (udev), разветвленные Gentoo (32-разрядные)
+
+sudo pacman -S libudev0-shim --noconfirm  # Библиотека совместимости libudev.so.0 для систем с более новыми версиями udev
+
+libeudev  AUR  # Клиентские библиотеки eudev
+https://aur.archlinux.org/packages/libeudev/
+https://aur.archlinux.org/eudev.git 
+https://github.com/gentoo/eudev
+Last Updated:   2021-03-16 21:09
+
+==> Установка недостающих зависимостей...
+[sudo] пароль для alex: 
+разрешение зависимостей...
+проверка конфликтов...
+
+Пакеты (1) gperf-3.1-3
+
+Будет загружено:  0,10 MiB
+Будет установлено:  0,23 MiB
+
+sudo pacman -S gperf --noconfirm  # Идеальный генератор хэш-функций
+
+gperf  -  # Идеальный генератор хэш-функций
+https://archlinux.org/packages/extra/x86_64/gperf/
+https://www.gnu.org/software/gperf/
+Last Updated:   2020-05-19 01:35 UTC
+
+ИЛИ
+
+libeudev-git  AUR  # Клиентские библиотеки eudev
+https://aur.archlinux.org/packages/libeudev-git/
+https://aur.archlinux.org/eudev-git.git 
+https://github.com/gentoo/eudev
+Last Updated:   2020-12-13 01:36
+
+sudo pacman -S gperf --noconfirm  # Идеальный генератор хэш-функций
+
+gperf  -  # Идеальный генератор хэш-функций
+https://archlinux.org/packages/extra/x86_64/gperf/
+https://www.gnu.org/software/gperf/
+Last Updated:   2020-05-19 01:35 UTC
+
+
+❯ yay -S libeudev-git --noconfirm 
+:: Проверка конфликтов...
+:: Проверка внутренних конфликтов...
+ -> 
+Обнаружены конфликты пакетов:
+ -> Установка libeudev-git приведёт к удалению: lib32-eudev (libudev.so), systemd-libs (libudev.so)
+конфликты пакетов не могут быть разрешены опцией noconfirm, прерывание
+
+
+
+lib32-eudev  AUR  # Инструменты разработки пользовательского пространства (udev), разветвленные Gentoo (32-разрядные)
+https://aur.archlinux.org/packages/lib32-eudev/
+https://aur.archlinux.org/lib32-eudev.git
+https://dev.gentoo.org/~blueness/eudev
+Last Updated:   2021-03-16 21:10
+
+==> Установка недостающих зависимостей...
+[sudo] пароль для alex: 
+разрешение зависимостей...
+проверка конфликтов...
+
+Пакеты (2) lib32-pcre-8.44-1  lib32-glib2-2.68.0-5
+
+Будет загружено:  1,52 MiB
+Будет установлено:  5,04 MiB
+
+sudo pacman -S lib32-pcre --noconfirm  # Библиотека, реализующая регулярные выражения в стиле Perl 5 (32-разрядные)
+
+sudo pacman -S lib32-glib2 --noconfirm  # Низкоуровневая базовая библиотека (32-битная)
+
+lib32-pcre  -  # Библиотека, реализующая регулярные выражения в стиле Perl 5 (32-разрядные)
+https://archlinux.org/packages/multilib/x86_64/lib32-pcre/
+https://www.pcre.org
+Last Updated:   2020-03-15 23:34 UTC
+
+lib32-glib2  -  #Низкоуровневая базовая библиотека (32-битная)
+https://archlinux.org/packages/multilib/x86_64/lib32-glib2/
+https://wiki.gnome.org/Projects/GLib
+Last Updated:   2021-03-27 00:03 UTC
+
+
+==> Установка недостающих зависимостей...
+[sudo] пароль для alex: 
+ошибка: не найдена цель: lib32-kmod
+==> ОШИБКА: pacman: не удалось установить недостающие зависимости.
+==> Недостающие зависимости:
+  -> lib32-kmod
+==> ОШИБКА: Не удалось разрешить все зависимости.
+
+
+yay -S lib32-kmod-minimal-git --noconfirm  # Обработка модулей ядра Linux
+
+lib32-kmod-minimal-git  AUR  # Обработка модулей ядра Linux
+https://aur.archlinux.org/packages/lib32-kmod-minimal-git/
+https://aur.archlinux.org/lib32-kmod-minimal-git.git
+https://www.kernel.org/pub/linux/utils/kernel/kmod
+Last Updated:   2021-01-12 01:16
+
+==> Завершена сборка пакета lib32-kmod-minimal-git v28+16+g8742be0-1 (Чт 08 апр 2021 00:40:04)
+
+ИЛИ
+
+yay -S lib32-kmod --noconfirm  # Обработка модулей ядра Linux
+
+
+lib32-kmod  AUR  # Обработка модулей ядра Linux
+https://aur.archlinux.org/packages/lib32-kmod/
+https://aur.archlinux.org/lib32-kmod.git
+http://git.kernel.org/?p=utils/kernel/kmod/kmod.git;a=summary
+Last Updated:   2018-03-06 22:05
+
+==> Проверка файлов source с использованием md5sums...
+    kmod-25.tar.xz ... Готово
+    kmod-25.tar.sign ... Пропущено
+==> Проверка подписей исходных файлов с помощью 'gpg'...
+    kmod-25.tar ... СБОЙ (неизвестный открытый ключ 9BA2A5A630CBEA53)
+==> ОШИБКА: Одна или больше PGP-подписей не могут быть проверены!
+------------
+
+ИЛИ 
+
+lib32-eudev-git   AUR  # Инструменты разработки пользовательского пространства (udev), разветвленные Gentoo (32-разрядные)
+https://aur.archlinux.org/packages/lib32-eudev-git/
+https://aur.archlinux.org/lib32-eudev-git.git 
+https://dev.gentoo.org/~blueness/eudev
+Last Updated:   2020-09-18 22:26
+
+sudo pacman -S lib32-pcre --noconfirm  # Библиотека, реализующая регулярные выражения в стиле Perl 5 (32-разрядные)
+
+sudo pacman -S lib32-glib2 --noconfirm  # Низкоуровневая базовая библиотека (32-битная)
+
+lib32-pcre  -  # Библиотека, реализующая регулярные выражения в стиле Perl 5 (32-разрядные)
+https://archlinux.org/packages/multilib/x86_64/lib32-pcre/
+https://www.pcre.org
+Last Updated:   2020-03-15 23:34 UTC
+
+lib32-glib2  -  #Низкоуровневая базовая библиотека (32-битная)
+https://archlinux.org/packages/multilib/x86_64/lib32-glib2/
+https://wiki.gnome.org/Projects/GLib
+Last Updated:   2021-03-27 00:03 UTC
+
+
+libudev0-shim  -  # Библиотека совместимости libudev.so.0 для систем с более новыми версиями udev
+https://archlinux.org/packages/community/x86_64/libudev0-shim/
+https://github.com/archlinux/libudev0-shim
+Last Updated:   2020-07-09 18:08 UTC
+
+ИЛИ
+
+libudev0-shim-nosystemd  AUR  # Библиотека совместимости libudev.so.0 для систем с более новыми версиями udev
+https://aur.archlinux.org/packages/libudev0-shim-nosystemd/
+https://aur.archlinux.org/libudev0-shim-nosystemd.git 
+https://github.com/archlinux/libudev0-shim 
+Last Updated:   2021-02-10 01:35
+
+!!! ПАКЕТ lib32-eudev НЕ БЫЛ СОБРАН!
+
 
 ------------------------------------
 
