@@ -618,6 +618,7 @@ sudo pacman -S jdk8-openjdk --noconfirm  # Комплект разработчи
 sudo pacman -S jre8-openjdk --noconfirm  # Полная среда выполнения OpenJDK Java 8
 sudo pacman -S jre8-openjdk-headless --noconfirm  # 
 sudo pacman -S  --noconfirm  # OpenJDK Java 8 автономная среда выполнения
+sudo pacman -S npm --noconfirm   # Менеджер пакетов для javascript
 sudo pacman -S  --noconfirm  # 
 sudo pacman -S  --noconfirm  # 
 
@@ -2524,6 +2525,40 @@ https://aur.archlinux.org/enchant1.6.git
 https://abiword.github.io/enchant/
 Last Updated: 2018-02-25 16:33
 
+==> Проверка зависимостей для запуска...
+==> Установка недостающих зависимостей...
+разрешение зависимостей...
+проверка конфликтов...
+
+Пакеты (2) hspell-1.4-3  libvoikko-4.3.1-1
+
+Будет загружено:  0,78 MiB
+Будет установлено:  1,19 MiB
+
+
+You have to check if enchant1.6 is installed
+And /usr/include/enchant is a symlink to /usr/include/enchant1.6
+ln -s /usr/include/enchant1.6 /usr/include/enchant
+makepkg -s  6,11s user 2,06s system 58% cpu 14,062 total
+
+sudo ln -s /usr/include/enchant1.6 /usr/include/enchant #
+
+sudo pacman -S hspell --noconfirm  # Проверка орфографии на иврите 
+
+sudo pacman -S libvoikko --noconfirm  # Средство проверки орфографии и грамматики, расстановка переносов и сбор связанных лингвистических данных для финского языка 
+
+hspell  -  # Проверка орфографии на иврите
+https://archlinux.org/packages/extra/x86_64/hspell/
+http://www.ivrix.org.il/projects/spell-checker/
+Последнее обновление: 2020-05-21 00:24 UTC
+
+
+libvoikko  -  # Средство проверки орфографии и грамматики, расстановка переносов и сбор связанных лингвистических данных для финского языка
+https://archlinux.org/packages/extra/x86_64/libvoikko/
+http://voikko.sourceforge.net
+Последнее обновление: 2021-03-13 09:05 UTC
+
+
 Enchant - это библиотека (и программа командной строки), которая объединяет ряд различных библиотек и программ проверки орфографии с единым интерфейсом. Используя Enchant, вы можете использовать широкий спектр библиотек проверки правописания, в том числе некоторые специализированные для определенных языков, без необходимости программировать интерфейс каждой библиотеки. Если вызывать библиотеку C неудобно, вы можете получить доступ к большей части функций Enchant через программу enchant, которая обменивается данными по каналу, например ispell, и действительно совместима с ispell.
 
 
@@ -2540,6 +2575,96 @@ http://www.xneur.ru
   -> xneur>=0.20.0
 ==> Проверка зависимостей для сборки...
 ==> ОШИБКА: Не удалось разрешить все зависимости.
+
+
+Package requirements (xnconfig = 0.20.0) were not met:
+
+Package dependency requirement 'xnconfig = 0.20.0' could not be satisfied.
+Package 'xnconfig' has version '0.21.0', required version is '= 0.20.0'
+
+Consider adjusting the PKG_CONFIG_PATH environment variable if you
+installed software in a non-standard prefix.
+
+Alternatively, you may set the environment variables XNEURCONF_CFLAGS
+and XNEURCONF_LIBS to avoid the need to call pkg-config.
+See the pkg-config man page for more details.
+
+==> ОШИБКА: Произошел сбой в build().
+    Прерывание...
+makepkg -s  4,82s user 1,17s system 94% cpu 6,369 total
+
+Замена gxneur
+
+gxneur-devel-git  - AUR  # Интерфейс GTK для XNeur (XNeur GTK frontend. Git version)
+https://aur.archlinux.org/packages/gxneur-devel-git/
+https://aur.archlinux.org/gxneur-devel-git.git
+https://github.com/AndrewCrewKuznetsov/xneur-devel
+Last Updated:   2019-12-15 12:53
+
+Dependencies (5) - Зависимости
+
+    gconf (gconf-gtk2)
+    libglade
+    xorg-xprop
+    xneur-devel-git>=0.21.0
+    git (git-git) (make)
+    
+  ==> ОШИБКА: Переменная 'depends' не должна быть пустой.  
+
+ GNU nano 5.6.1                        PKGBUILD                                  
+ 1 # Packager: push_sla <push2001sla@gmail.com>
+ 2 # Developer: andrewcrew@rambler.ru
+ 3
+ 4 pkgname=gxneur-devel-git
+ 5 pkgver=0.21.0
+ 6 pkgrel=30
+ 7 epoch=
+ 8 pkgdesc="XNeur GTK frontend. Git version"
+ 9 arch=('any')
+10 url="https://github.com/AndrewCrewKuznetsov/xneur-devel"
+11 license=('GPL')
+12 groups=()
+13 depends=('libglade' "xneur-devel-git=$pkgver" 'gconf' 'xorg-xprop' '')
+14 makedepends=('git')
+15 checkdepends=()
+16 optdepends=()
+17 provides=("gxneur=$pkgver")
+18 conflicts=('gxneur')
+19 replaces=('gxneur')
+20 backup=()
+21 options=()
+22 install=
+
+:: Проверка целостности gxneur-devel-git...
+==> ОШИБКА: Переменная 'depends' не должна быть пустой.
+:: Preparing gxneur-devel-git...
+==> ОШИБКА: Переменная 'depends' не должна быть пустой.
+:: failed to verify integrity or prepare gxneur-devel-git package
+:: failed to verify integrity or prepare gxneur-devel-git package
+pacaur -S gxneur-devel-git  5,06s user 0,80s system 2% cpu 3:25,07 total
+
+
+Исправить PKGBUILD 
+
+❯ mousepad PKGBUILD
+
+убрать пустые скобки '' Переменная 'depends' не должна быть пустой.
+
+depends=('libglade' "xneur-devel-git=$pkgver" 'gconf' 'xorg-xprop' '')
+
+Результат:
+
+depends=('libglade' "xneur-devel-git=$pkgver" 'gconf' 'xorg-xprop')
+
+Запускаем сборку пакета
+
+❯ makepkg -s
+
+-- Configuring incomplete, errors occurred!
+See also "/home/alex/gxneur-devel-git/src/xneur-devel/gxneur/build/CMakeFiles/CMakeOutput.log".
+==> ОШИБКА: Произошел сбой в build().
+    Прерывание...
+makepkg -s  23,83s user 5,55s system 7% cpu 6:24,49 total
 
 ------------------------------------------
 
@@ -2640,10 +2765,69 @@ https://aur.archlinux.org/packages/webtorrent-desktop/
 https://aur.archlinux.org/webtorrent-desktop.git 
 https://webtorrent.io/desktop
 
+webtorrent-desktop  -  # Потоковый торрент-клиент
+https://aur.archlinux.org/packages/webtorrent-desktop/
+https://aur.archlinux.org/webtorrent-desktop.git 
+https://webtorrent.io/desktop
+
+==> Проверка зависимостей для запуска...
+==> Установка недостающих зависимостей...
+[sudo] пароль для alex: 
+разрешение зависимостей...
+проверка конфликтов...
+
+Пакеты (3) c-ares-1.17.1-1  re2-1:20210401-1  electron-12.0.2-1
+
+Будет загружено:   49,20 MiB
+Будет установлено:  165,20 MiB
+
+==> Проверка зависимостей для сборки...
+==> Установка недостающих зависимостей...
+разрешение зависимостей...
+проверка конфликтов...
+
+Пакеты (3) node-gyp-7.1.2-1  semver-7.3.5-2  npm-7.8.0-1
+
+Будет загружено:   3,42 MiB
+Будет установлено:  16,62 MiB
+
+
+sudo pacman -S c-ares --noconfirm   # Библиотека AC для асинхронных DNS-запросов
+sudo pacman -S re2 --noconfirm   # Быстрый, безопасный, ориентированный на многопоточность механизм регулярных выражений
+sudo pacman -S electron --noconfirm   # 
+sudo pacman -S node-gyp --noconfirm   # 
+sudo pacman -S semver --noconfirm   # 
+sudo pacman -S npm --noconfirm   # Менеджер пакетов для javascript
+
+
 webtorrent-desktop-bin  -  # Потоковый торрент-клиент
 https://aur.archlinux.org/packages/webtorrent-desktop-bin/
 https://aur.archlinux.org/webtorrent-desktop-bin.git
 https://webtorrent.io/desktop
+
+
+c-ares  -  # Библиотека AC для асинхронных DNS-запросов
+https://archlinux.org/packages/extra/x86_64/c-ares/
+https://c-ares.haxx.se/
+Last Updated: 2020-11-19 20:45 UTC
+
+
+re2  -  # Быстрый, безопасный, ориентированный на многопоточность механизм регулярных выражений
+https://archlinux.org/packages/extra/x86_64/re2/
+https://github.com/google/re2
+Последнее обновление: 2021-04-01 02:59 UTC
+
+electron  -  # 
+
+
+
+
+
+
+npm  -  # Менеджер пакетов для javascript
+https://archlinux.org/packages/community/any/npm/
+https://www.npmjs.com/
+Последнее обновление: 2021-04-02 19:18 UTC
 
 --------------------------------------
 
