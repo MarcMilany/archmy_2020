@@ -2794,7 +2794,7 @@ https://webtorrent.io/desktop
 
 sudo pacman -S c-ares --noconfirm   # Библиотека AC для асинхронных DNS-запросов
 sudo pacman -S re2 --noconfirm   # Быстрый, безопасный, ориентированный на многопоточность механизм регулярных выражений
-sudo pacman -S electron --noconfirm   # 
+sudo pacman -S electron --noconfirm   # Создавайте кроссплатформенные настольные приложения с помощью веб-технологий
 sudo pacman -S node-gyp --noconfirm   # 
 sudo pacman -S semver --noconfirm   # 
 sudo pacman -S npm --noconfirm   # Менеджер пакетов для javascript
@@ -2817,10 +2817,10 @@ https://archlinux.org/packages/extra/x86_64/re2/
 https://github.com/google/re2
 Последнее обновление: 2021-04-01 02:59 UTC
 
-electron  -  # 
-
-
-
+electron  -  # Создавайте кроссплатформенные настольные приложения с помощью веб-технологий
+https://archlinux.org/packages/community/x86_64/electron/
+https://electronjs.org/
+Последнее обновление: 2021-04-01 14:57 UTC
 
 
 
