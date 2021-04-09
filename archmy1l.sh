@@ -170,16 +170,19 @@ echo -e "${BLUE}:: ${NC}Install the Terminus font"
 # Установим шрифт Terminus
 pacman -Sy terminus-font --noconfirm  # Моноширинный растровый шрифт (для X11 и консоли)
 #pacman -Syy terminus-font  # Моноширинный растровый шрифт (для X11 и консоли)
+#man vconsole.conf
 
 echo ""
 echo -e "${BLUE}:: ${NC}Setting up the Russian language, changing the console font to one that supports Cyrillic for ease of use" 
 # Настроим русский язык, изменим консольный шрифт на тот, который поддерживает кириллицу для удобства работы
 loadkeys ru
 # loadkeys us
+setfont ter-v14b
 #setfont cyr-sun16
-setfont ter-v16b ### 
+#setfont ter-v16b ### Установленный setfont
 #setfont ter-v20b  # Шрифт терминус и русская локаль # чтобы шрифт стал побольше
 ### setfont ter-v22b
+### setfont ter-v32b
 
 echo -e "${CYAN}==> ${NC}Добавим русскую локаль в систему установки"
 sed -i 's/#ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale.gen
