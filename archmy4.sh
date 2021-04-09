@@ -2795,8 +2795,8 @@ https://webtorrent.io/desktop
 sudo pacman -S c-ares --noconfirm   # Библиотека AC для асинхронных DNS-запросов
 sudo pacman -S re2 --noconfirm   # Быстрый, безопасный, ориентированный на многопоточность механизм регулярных выражений
 sudo pacman -S electron --noconfirm   # Создавайте кроссплатформенные настольные приложения с помощью веб-технологий
-sudo pacman -S node-gyp --noconfirm   # 
-sudo pacman -S semver --noconfirm   # 
+sudo pacman -S node-gyp --noconfirm   # Инструмент для сборки надстроек Node.js
+sudo pacman -S semver --noconfirm   # Парсер семантической версии, используемый npm
 sudo pacman -S npm --noconfirm   # Менеджер пакетов для javascript
 
 
@@ -2822,7 +2822,15 @@ https://archlinux.org/packages/community/x86_64/electron/
 https://electronjs.org/
 Последнее обновление: 2021-04-01 14:57 UTC
 
+node-gyp  -  # Инструмент для сборки надстроек Node.js
+https://archlinux.org/packages/community/any/node-gyp/
+https://github.com/nodejs/node-gyp
+Последнее обновление: 2021-01-22 17:59 UTC
 
+semver  -  # Парсер семантической версии, используемый npm
+https://archlinux.org/packages/community/any/semver/
+https://github.com/npm/node-semver
+Последнее обновление: 2021-03-23 ​​16:07 UTC
 
 npm  -  # Менеджер пакетов для javascript
 https://archlinux.org/packages/community/any/npm/
