@@ -4053,7 +4053,7 @@ fi
 # https://ru.wikipedia.org/wiki/Ddrescue
 #---------------------------
 
-
+printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
 
 
 
