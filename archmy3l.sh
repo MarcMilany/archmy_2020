@@ -3368,6 +3368,8 @@ fi
 # https://linrunner.de/tlp/settings/disks.html
 # https://archlinux.org/packages/community/x86_64/acpi_call/
 # https://github.com/mkottman/acpi_call
+# Хотите использовать acpi_call через графический интерфейс? 
+# https://github.com/marcoDallas/acpi_call_GUI_systemd
 # ===============================
 
 clear
