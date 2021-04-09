@@ -3017,8 +3017,63 @@ https://github.com/Nefelim4ag/Ananicy.git
 
 -----------------------------------
 
+https://aur.archlinux.org/packages/?O=0&SeB=nd&K=gtkhash-&outdated=&SB=n&SO=a&PP=50&do_Search=Go
 
 
+gtkhash  AUR  # Утилита GTK+ для вычисления дайджестов сообщений или контрольных сумм (A GTK+ utility for computing message digests or checksums)
+https://aur.archlinux.org/packages/gtkhash/
+https://aur.archlinux.org/gtkhash.git
+https://github.com/tristanheaven/gtkhash
+Last Updated:   2020-11-13 18:55
+
+
+gtkhash-thunar  AUR  # Утилита GTK+ для вычисления дайджестов сообщений или контрольных сумм (плагин Thunar filemanager) 
+https://aur.archlinux.org/packages/gtkhash-thunar/
+https://aur.archlinux.org/gtkhash.git 
+https://github.com/tristanheaven/gtkhash
+Last Updated:   2020-11-13 18:55
+
+gtkhash-thunar-git  AUR  # Утилита GTK+ для вычисления дайджестов сообщений или контрольных сумм (версия разработки). - Плагин Thunar filemanager
+gtkhash-git
+https://aur.archlinux.org/packages/gtkhash-thunar-git/
+https://aur.archlinux.org/gtkhash-git.git
+http://gtkhash.sourceforge.net/
+Last Updated:   2015-07-08 03:24
+
+==> Проверка зависимостей для сборки...
+==> Установка недостающих зависимостей...
+[sudo] пароль для alex: 
+разрешение зависимостей...
+проверка конфликтов...
+
+Пакеты (2) cinnamon-desktop-4.8.1-1  nemo-4.8.5-1
+
+Будет загружено:  1,39 MiB
+Будет установлено:  6,67 MiB
+
+==> ОШИБКА: Произошел сбой в build().
+    Прерывание...
+makepkg -s  44,63s user 3,79s system 77% cpu 1:02,59 total
+
+
+GtkHash — простая графическая утилита для расчета различных контрольных сумм (хэш-функций) для файлов.
+
+GtkHash-это настольная утилита для вычисления дайджестов сообщений или контрольных сумм. Поддерживаются самые известные хэш-функции, включая MD5, SHA1, SHA2 (SHA256/SHA512), SHA3 и BLAKE 2.
+
+Он разработан как простая в использовании графическая альтернатива инструментам командной строки, таким как md5sum.
+
+Особенности:
+
+Поддержка проверки файлов контрольной суммы из sfv, sha256sum и т. Д.
+Ключевое хеширование (HMAC)
+Параллельное/многопоточное вычисление хэша
+Удаленный доступ к файлам с помощью GIO/GVfs
+Интеграция с файловым менеджером
+Маленький и быстрый
+
+GtkHash-это свободное программное обеспечение: вы можете распространять его и/или изменять в соответствии с условиями GNU General Public License, опубликованной Фондом свободного программного обеспечения, либо версией 2 Лицензии, либо (по вашему выбору) любой более поздней версией.
+
+-----------------------------------
 
 =====================================
 
