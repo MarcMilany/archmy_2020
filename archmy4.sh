@@ -1682,7 +1682,8 @@ sudo pacman -S  --noconfirm  #
 
 sudo pacman -S python python-anytree python-appdirs python-arrow python-asn1crypto python-cairo python-chardet python-dbus python-dbus-common python-ewmh python-gobject python-idna python-isodate python-lxml python-mutagen python-ordered-set python-packaging python-pexpect python-ply python-ptyprocess python-pycountry python-pycryptodome python-pyparsing python-pyqt5 python-pyqt5-sip python-pysocks python-pyxdg python-requests python-setuptools python-sip python-six python-urllib3 python-websocket-client --noconfirm  # python +
 
-sudo pacman -S python --noconfirm  # Новое поколение языка сценариев высокого уровня Python
+sudo pacman -S --noconfirm --needed python  # Новое поколение языка сценариев высокого уровня Python
+# sudo pacman -S python --noconfirm  # Новое поколение языка сценариев высокого уровня Python
 sudo pacman -S python-anytree --noconfirm  # Мощная и легкая древовидная структура данных Python
 sudo pacman -S python-appdirs --noconfirm  # Небольшой модуль Python для определения соответствующих директорий для конкретной платформы, например «директории пользовательских данных».
 sudo pacman -S python-arrow --noconfirm  # Лучшие даты и время для Python
@@ -1857,14 +1858,39 @@ python-pyasn1-modules # Коллекция модулей протоколов �
 python-pycparser # Синтаксический анализатор C и генератор AST, написанные на Python
 python-pycups # Привязки Python для libcups
 python-pycurl # Интерфейс Python 3.x для libcurl
-
-
-
-
-
-
-
-
+python-pyelftools # Библиотека Python для анализа файлов ELF и отладочной информации DWARF
+python-pyfiglet # Реализация FIGlet на чистом питоне
+python-pygments # Подсветка синтаксиса Python
+python-pyicu # Связывание Python для ICU
+python-pynacl # Привязка Python к библиотеке сетей и криптографии (NaCl)
+python-pyopenssl # Модуль оболочки Python3 вокруг библиотеки OpenSSL
+python-pyparsing # Модуль общего синтаксического анализа для Python
+python-pyphen # Модуль Pure Python для переноса текста
+python-pyqt5 # Набор привязок Python для инструментария Qt5
+python-pyqt5-sip # Поддержка модуля sip для PyQt5
+python-pyquery # Библиотека для Python, похожая на jquery
+python-pysmbc # Привязки Python 3 для libsmbclient
+python-pysocks # SOCKS4, SOCKS5 или HTTP-прокси (вилка Anorov PySocks заменяет socksipy)
+python-pysol_cards # Карты Deal PySol FC
+python-pyudev # Привязки Python к libudev
+python-pywal # Создавайте и изменяйте цветовые схемы на лету
+python-pyxdg # Библиотека Python для доступа к стандартам freedesktop.org
+python-random2 # Python 3 совместимый порт случайного модуля Python 2
+python-requests # Python HTTP для людей
+python-resolvelib # Преобразуйте абстрактные зависимости в конкретные
+python-retrying # Библиотека перенастройки Python общего назначения
+python-rsa # Реализация RSA на чистом Python
+python-scipy # SciPy - это программное обеспечение с открытым исходным кодом для математики, естественных наук и инженерии
+python-secretstorage # Безопасно храните пароли и другие личные данные с помощью API SecretService DBus
+python-setproctitle # Позволяет процессу Python изменять название процесса
+python-setuptools # Легко загружайте, собирайте, устанавливайте, обновляйте и удаляйте пакеты Python
+python-shiboken2 # Создает привязки для библиотек C ++ с использованием исходного кода CPython
+python-sip # Привязки Python SIP4 для библиотек C и C ++ (python-sip4)
+python-soupsieve # Реализация селектора CSS4 для Beautiful Soup
+python-sqlalchemy # Набор инструментов Python SQL и объектно-реляционное сопоставление
+python-termcolor # Форматирование цвета ANSII для вывода в терминал
+python-tlsh # Библиотека нечеткого сопоставления, которая генерирует хеш-значение, которое можно использовать для сравнений схожести
+python-toml # Библиотека Python для анализа и создания TOML
 python-ujson # Сверхбыстрый кодировщик и декодер JSON для Python
 python-unidecode # ASCII транслитерации текста Unicode
 python-webencodings # Это Python-реализация стандарта кодирования WHATWG
@@ -1875,6 +1901,10 @@ python-zope-event # Предоставляет простую систему с�
 python-zope-interface # Интерфейсы Zope для Python 3.x
 
 
+
+
+
+
 ----------------------------
 
 ########## Биткойн ###########
@@ -1882,27 +1912,36 @@ python-zope-interface # Интерфейсы Zope для Python 3.x
 python-base58   AUR  # Биткойн-совместимая реализация Base58 и Base58Check
 https://aur.archlinux.org/packages/python-base58/
 https://aur.archlinux.org/python-base58.git 
+https://github.com/keis/base58
 
 python-bitcoinlib # Библиотека Python3, обеспечивающая простой интерфейс для структур данных и протокола Биткойн
 https://www.archlinux.org/packages/community/any/python-bitcoinlib/
+https://github.com/petertodd/python-bitcoinlib
 
 --------------------------------------
 
+########## Python AUR ###########
+
+
 python-basiciw    AUR  # Получение информации, такой как ESSID или качество сигнала, с беспроводных карт (модуль Python)
 https://aur.archlinux.org/packages/python-basiciw/
-https://aur.archlinux.org/python-basiciw.git 
+https://aur.archlinux.org/python-basiciw.git
+https://github.com/enkore/basiciw/
 
 python-bencode.py    AUR  # Простой парсер бенкода (для Python 2, Python 3 и PyPy)
 https://aur.archlinux.org/packages/python-bencode.py/
 https://aur.archlinux.org/python-bencode.py.git 
+https://github.com/fuzeman/bencode.py
 
 pythonqt    AUR  # Динамическая привязка Python для приложений Qt
 https://aur.archlinux.org/packages/pythonqt/
-https://aur.archlinux.org/pythonqt.git 
+https://aur.archlinux.org/pythonqt.git
+http://pythonqt.sourceforge.net/
 
 python-coincurve   AUR  # Кросс-платформенные привязки Python CFFI для libsecp256k1
 https://aur.archlinux.org/packages/python-coincurve/
-https://aur.archlinux.org/python-coincurve.git 
+https://aur.archlinux.org/python-coincurve.git
+https://github.com/ofek/coincurve
 
 python-merkletools   AUR  # Инструменты Python для создания и проверки деревьев Меркла и доказательств
 https://aur.archlinux.org/packages/python-merkletools/
@@ -1925,57 +1964,37 @@ https://aur.archlinux.org/packages/python2-imaging/
 https://aur.archlinux.org/python2-imaging.git 
 http://www.pythonware.com/products/pil/index.htm
 
+python-pyelliptic  AUR  # Оболочка Python OpenSSL для ECC (ECDSA, ECIES), AES, HMAC, Blowfish, ...
+https://aur.archlinux.org/packages/python-pyelliptic/
+https://aur.archlinux.org/python-pyelliptic.git
+https://github.com/radfish/pyelliptic
 
+python-pyqt4  AUR  # Набор привязок Python 3.x для набора инструментов Qt
+https://aur.archlinux.org/packages/python-pyqt4/
+https://aur.archlinux.org/pyqt4.git
+https://riverbankcomputing.com/software/pyqt/intro
+
+python-pywapi  AUR  # Обертка Python вокруг Yahoo! Погода, Weather.com и API NOAA
+https://aur.archlinux.org/packages/python-pywapi/
+https://aur.archlinux.org/python-pywapi.git
+https://launchpad.net/python-weather-api
+
+python-requests-cache  AUR  # Прозрачный постоянный кеш для библиотеки http://python-requests.org/ 
+https://aur.archlinux.org/packages/python-requests-cache/
+https://aur.archlinux.org/python-requests-cache.git
+https://github.com/reclosedev/requests-cache
+
+python-sip-pyqt4  AUR  # Привязки Python 3.x SIP для библиотек C и C ++ (версия PyQt4)
+https://aur.archlinux.org/packages/python-sip-pyqt4/
+https://aur.archlinux.org/python-sip-pyqt4.git
+https://www.riverbankcomputing.com/software/sip/intro
+
+#---------------------------------------------
 
 
 -------------------------------------------
 ### ПРОВЕРИТЬ ############
 
-
-python-pyelftools 0.26-1
-python-pyelliptic 2.0.1-2
-python-pyfiglet 0.8.post0-3
-python-pygments 2.6.1-3
-python-pyicu 2.5-1
-python-pynacl 1.4.0-1
-python-pyopenssl 19.1.0-2
-python-pyparsing 2.4.7-1
-
-python-pyphen 0.9.5-3
-python-pyqt4 4.12.3-4
-python-pyqt5 5.15.0-3
-python-pyqt5-sip 12.8.1-1
-python-pyquery 1.4.1-3
-python-pysmbc 1.0.20-1
-python-pysocks 1.7.1-1
-python-pysol_cards 0.10.1-1
-python-pyudev 0.22-3
-python-pywal 3.3.0-2
-python-pywapi 0.3.8-7
-python-pyxdg 0.26-6
-python-random2 1.0.1-4
-python-requests 2.24.0-1
-python-requests-cache 0.5.2-1
-python-resolvelib 0.4.0-1
-python-retrying 1.3.3-7
-python-rsa 4.6-1
-python-scipy 1.5.2-1
-python-secretstorage 3.1.2-1
-python-setproctitle 1.1.10-5
-python-setuptools 1:49.6.0-1
-python-shiboken2 5.15.0-2
-python-sip 4.19.24-1
-python-sip-pyqt4 4.19.22-1
-python-soupsieve 2.0.1-1
-python-sqlalchemy 1.3.19-1
-python-termcolor 1.1.0-8
-python-tlsh 3.17.0-2
-python-toml 0.10.1-1
-
-
-
-
--------------------------------------------
 
 python2 2.7.18-1
 python2-appdirs 1.4.4-1   # Небольшой модуль Python для определения соответствующих директорий для конкретной платформы, например «директории пользовательских данных»
