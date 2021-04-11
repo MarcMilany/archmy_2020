@@ -1909,6 +1909,7 @@ sudo pacman -S mtpfs --noconfirm  # Файловая система FUSE, под
 sudo pacman -S ncdu --noconfirm  # Анализатор использования диска с интерфейсом ncurses
 sudo pacman -S nfs-utils --noconfirm  # Программы поддержки для сетевых файловых систем
 sudo pacman -S nss-mdns --noconfirm  # Плагин glibc, обеспечивающий разрешение имени хоста через mDNS
+### sudo pacman -S openbsd-netcat --noconfirm  #  Швейцарский армейский нож TCP / IP. Вариант OpenBSD (Важно конфликтует с gnu-netcat - GNU переписывает netcat, приложение для создания сетевых трубопроводов)
 #sudo pacman -S pacman-contrib --noconfirm  # Предоставленные скрипты и инструменты для систем pacman  # присутствует
 sudo pacman -S patchutils --noconfirm  # Небольшая коллекция программ, работающих с файлами патчей
 sudo pacman -S pciutils --noconfirm  # Библиотека и инструменты доступа к пространству конфигурации шины PCI
