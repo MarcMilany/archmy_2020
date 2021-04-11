@@ -1792,114 +1792,6 @@ sudo pacman -S  --noconfirm  #
 ----------------------------------
 
 
-python-atspi # Привязки Python для D-Bus AT-SPI
-python-attrs # Атрибуты без шаблона
-python-bcrypt # Современное хеширование паролей для вашего программного обеспечения и ваших серверов
-python-beaker # Кэширование и сеансы промежуточного программного обеспечения WSGI для использования с веб-приложениями и автономными скриптами и приложениями Python
-python-beautifulsoup4 # Синтаксический анализатор HTML / XML на Python, предназначенный для быстрых проектов, таких как очистка экрана
-python-cachecontrol # httplib2 кеширование запросов
-python-cffi # Интерфейс внешних функций для Python, вызывающего код C
-python-colorama # Python API для кроссплатформенного цветного текста терминала
-python-colour # Библиотека манипуляций с цветовыми представлениями (RGB, HSL, web, ...)
-python-configobj # Простое, но мощное средство чтения и записи конфигурационных файлов для Python
-python-contextlib2 # Обратный перенос модуля contextlib стандартной библиотеки на более ранние версии Python
-python-cryptography # Пакет, предназначенный для предоставления криптографических рецептов и примитивов разработчикам Python
-python-cssselect # Библиотека Python3, которая анализирует селекторы CSS3 и переводит их в XPath 1.0
-python-d2to1 # Библиотека Python, которая позволяет использовать файлы setup.cfg, подобные distutils2, для метаданных пакета с помощью скрипта distribute / setuptools setup.py
-python-dateutil # Предоставляет мощные расширения для стандартного модуля datetime
-python-defusedxml # Защита от XML-бомбы для модулей Python stdlib
-python-distlib # Низкоуровневые компоненты distutils2 / упаковка
-python-distro # API информации о платформе ОС Linux
-python-distutils-extra # Улучшения в системе сборки Python
-python-docopt # Пифонический парсер аргументов, который заставит вас улыбнуться
-python-entrypoints # Обнаружение и загрузка точек входа из установленных пакетов
-python-eyed3 # Модуль Python и программа для обработки информации о файлах mp3
-python-future # Чистая поддержка одного источника для Python 3 и 2
-python-gevent # Сетевая библиотека Python, которая использует greenlet и libev для простого и масштабируемого параллелизма
-python-gevent-websocket # Библиотека WebSocket для сетевой библиотеки gevent
-python-gobject # Привязки Python для GLib / GObject / GIO / GTK +
-python-greenlet # Легкое параллельное программирование в процессе
-python-html5lib # Парсер / токенизатор HTML Python на основе спецификации WHATWG HTML5
-python-httplib2 # Обширная клиентская библиотека HTTP, поддерживающая множество функций
-python-jedi # Отличное автозаполнение для Python
-python-jeepney # Низкоуровневая оболочка протокола Python DBus на чистом уровне
-python-jinja # Простой питонический язык шаблонов, написанный на Python
-python-keyring # Безопасное хранение и доступ к вашим паролям
-python-keyutils # Набор привязок python для keyutils
-python-libarchive-c # Интерфейс Python для libarchive
-python-lxml-docs # Связывание Python для библиотек libxml2 и libxslt (документы)
-python-magic # Привязки Python к волшебной библиотеке
-python-mako # Сверхбыстрый язык шаблонов, который заимствует лучшие идеи из существующих языков шаблонов
-python-markdown # Реализация Python Markdown Джона Грубера
-python-markupsafe # Реализует безопасную строку разметки XML / HTML / XHTML для Python
-python-maxminddb # Читатель для формата MaxMind DB
-python-msgpack  # Реализация сериализатора MessagePack для Python
-python-mutagen  # Устройство чтения и записи тегов аудиометаданных (библиотека Python)
-python-nose  # Расширение unittest на основе обнаружения
-python-numpy # Научные инструменты для Python
-python-olefile # Библиотека Python для анализа, чтения и записи файлов Microsoft OLE2 (ранее OleFileIO_PL)
-python-ordered-set # MutableSet, который запоминает свой порядок, так что каждая запись имеет индекс
-python-packaging # Основные утилиты для пакетов Python
-python-paramiko # Модуль Python, реализующий протокол SSH2
-python-parso # Синтаксический анализатор Python, поддерживающий восстановление ошибок и двусторонний синтаксический анализ для разных версий Python
-python-patiencediff # Patiencediff реализации Python и C
-python-pbr # Разумность сборки Python
-python-pep517 # Оболочки для сборки пакетов Python с использованием хуков PEP 517
-python-pexpect # Для управления и автоматизации приложений
-python-pillow # Вилка Python Imaging Library (PIL)
-python-pip # Рекомендуемый PyPA инструмент для установки пакетов Python
-python-ply # Реализация инструментов парсинга lex и yacc
-python-powerline # Библиотека Python для Powerline
-python-progress # Простые в использовании индикаторы выполнения для Python
-python-psutil # Кросс-платформенный модуль процессов и системных утилит для Python
-python-ptyprocess # Запустить подпроцесс в псевдотерминале
-python-pyasn1 # Библиотека ASN.1 для Python 3
-python-pyasn1-modules # Коллекция модулей протоколов на основе ASN.1
-python-pycparser # Синтаксический анализатор C и генератор AST, написанные на Python
-python-pycups # Привязки Python для libcups
-python-pycurl # Интерфейс Python 3.x для libcurl
-python-pyelftools # Библиотека Python для анализа файлов ELF и отладочной информации DWARF
-python-pyfiglet # Реализация FIGlet на чистом питоне
-python-pygments # Подсветка синтаксиса Python
-python-pyicu # Связывание Python для ICU
-python-pynacl # Привязка Python к библиотеке сетей и криптографии (NaCl)
-python-pyopenssl # Модуль оболочки Python3 вокруг библиотеки OpenSSL
-python-pyparsing # Модуль общего синтаксического анализа для Python
-python-pyphen # Модуль Pure Python для переноса текста
-python-pyqt5 # Набор привязок Python для инструментария Qt5
-python-pyqt5-sip # Поддержка модуля sip для PyQt5
-python-pyquery # Библиотека для Python, похожая на jquery
-python-pysmbc # Привязки Python 3 для libsmbclient
-python-pysocks # SOCKS4, SOCKS5 или HTTP-прокси (вилка Anorov PySocks заменяет socksipy)
-python-pysol_cards # Карты Deal PySol FC
-python-pyudev # Привязки Python к libudev
-python-pywal # Создавайте и изменяйте цветовые схемы на лету
-python-pyxdg # Библиотека Python для доступа к стандартам freedesktop.org
-python-random2 # Python 3 совместимый порт случайного модуля Python 2
-python-requests # Python HTTP для людей
-python-resolvelib # Преобразуйте абстрактные зависимости в конкретные
-python-retrying # Библиотека перенастройки Python общего назначения
-python-rsa # Реализация RSA на чистом Python
-python-scipy # SciPy - это программное обеспечение с открытым исходным кодом для математики, естественных наук и инженерии
-python-secretstorage # Безопасно храните пароли и другие личные данные с помощью API SecretService DBus
-python-setproctitle # Позволяет процессу Python изменять название процесса
-python-setuptools # Легко загружайте, собирайте, устанавливайте, обновляйте и удаляйте пакеты Python
-python-shiboken2 # Создает привязки для библиотек C ++ с использованием исходного кода CPython
-python-sip # Привязки Python SIP4 для библиотек C и C ++ (python-sip4)
-python-soupsieve # Реализация селектора CSS4 для Beautiful Soup
-python-sqlalchemy # Набор инструментов Python SQL и объектно-реляционное сопоставление
-python-termcolor # Форматирование цвета ANSII для вывода в терминал
-python-tlsh # Библиотека нечеткого сопоставления, которая генерирует хеш-значение, которое можно использовать для сравнений схожести
-python-toml # Библиотека Python для анализа и создания TOML
-python-ujson # Сверхбыстрый кодировщик и декодер JSON для Python
-python-unidecode # ASCII транслитерации текста Unicode
-python-webencodings # Это Python-реализация стандарта кодирования WHATWG
-python-websockets # Реализация протокола WebSocket на Python (RFC 6455)
-python-xapp # Библиотека Python Xapp
-python-yaml # Привязки Python для YAML с использованием быстрой библиотеки libYAML
-python-zope-event # Предоставляет простую систему событий
-python-zope-interface # Интерфейсы Zope для Python 3.x
-
 
 
 
@@ -1989,111 +1881,6 @@ https://aur.archlinux.org/packages/python-sip-pyqt4/
 https://aur.archlinux.org/python-sip-pyqt4.git
 https://www.riverbankcomputing.com/software/sip/intro
 
-#---------------------------------------------
-
-
--------------------------------------------
-### ПРОВЕРИТЬ ############
-
-
-python2 2.7.18-1
-python2-appdirs 1.4.4-1   # Небольшой модуль Python для определения соответствующих директорий для конкретной платформы, например «директории пользовательских данных»
-python2-apsw 3.33.0-1
-python2-asn1crypto 1.4.0-1
-python2-backports 1.0-3
-python2-backports.functools_lru_cache 1.6.1-2
-python2-beautifulsoup4 4.9.1-1
-python2-cachecontrol 0.12.6-1
-python2-cairo 1.18.2-4
-python2-cffi 1.14.2-1
-python2-chardet 3.0.4-5
-python2-colorama 0.4.3-1
-python2-configparser 4.0.2-2
-python2-contextlib2 0.6.0.post1-1
-python2-cryptography 3.1-1
-python2-css-parser 1.0.4-3
-python2-cssselect 1.1.0-4
-python2-cycler 0.10.0-6
-python2-dateutil 2.8.1-3
-python2-dbus 1.2.16-1
-python2-distlib 0.3.1-1
-python2-distro 1.5.0-1
-python2-dnspython 1.16.0-3
-python2-enum34 1.1.9-1
-python2-feedparser 5.2.1-6
-python2-fuse 1.0.0-2
-python2-gevent 20.6.2-1
-python2-gobject 3.36.1-1
-python2-gobject2 2.28.7-5
-python2-greenlet 0.4.16-1
-python2-html2text 2019.8.11-4
-python2-html5-parser 0.4.9-2
-python2-html5lib 1.1-1
-python2-httplib2 0.18.1-1
-python2-idna 2.10-1
-python2-importlib-metadata 1.6.1-1
-python2-ipaddress 1.0.23-2
-python2-kiwisolver 1.1.0-4
-python2-lxml 4.5.2-1
-python2-markdown 3.1.1-5
-python2-matplotlib 2.2.5-2
-python2-mechanize 1:0.4.5-1
-python2-msgpack 0.6.2-4
-python2-netifaces 0.10.9-3
-python2-nose 1.3.7-7
-python2-numpy 1.16.6-1
-python2-oauth2 1.9.0-1
-python2-olefile 0.46-2
-python2-opengl 3.1.5-1
-python2-ordered-set 3.1.1-3
-python2-packaging 20.4-1
-python2-pathlib2 2.3.5-1
-python2-pep517 0.8.2-1
-python2-pillow 6.2.1-2  # Вилка Python Imaging Library (PIL)
-python2-pip 20.1.1-1
-python2-ply 3.11-5
-python2-progress 1.5-3
-python2-psutil 5.7.2-1
-python2-pyasn1 0.4.8-2
-python2-pybluez 0.22-4
-python2-pychm 0.8.6-1
-python2-pycparser 2.20-1
-python2-pycups 1.9.74-1
-python2-pygments 2.5.2-2
-python2-pyopenssl 19.1.0-2
-python2-pyparsing 2.4.7-1
-python2-pyphen 0.9.4-1
-python2-pyqt4 4.12.3-4
-python2-pyqt5 5.15.0-3
-python2-pyqtwebengine 5.15.0-2
-python2-regex 2020.7.14-1
-python2-requests 2.24.0-1
-python2-resolvelib 0.4.0-1
-python2-retrying 1.3.3-7
-python2-rfc6555 0.0.0-2
-python2-scandir 1.10.0-3
-python2-selectors2 2.0.1-4
-python2-setuptools 2:44.1.1-1
-python2-simplejson 3.17.2-1
-python2-sip-pyqt4 4.19.22-1
-python2-sip-pyqt5 4.19.24-1
-python2-six 1.15.0-1
-python2-soupsieve 1.9.6-2
-python2-toml 0.10.1-1
-python2-unrardll 0.1.4-2
-python2-uritemplate 3.0.1-1
-python2-urllib3 1.25.10-1
-python2-webencodings 0.5.1-4
-python2-zipp 1:1.1.1-1
-python2-zope-event 4.4-3
-python2-zope-interface 5.1.0-1
-python3-memoizedb 2017.3.30-4
-python3-xcgf 2017.3-4
-python3-xcpf 2019.11-2
-
-python2 2.7.18-1
-python2-pyxdg 0.26-6
-------------------------------------------
 
 
 Дополнительно
@@ -4076,10 +3863,358 @@ printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
 
 
 
+########## Python ###########
+sudo pacman -S python python-anytree python-appdirs python-arrow python-asn1crypto python-cairo python-chardet python-dbus python-dbus-common python-ewmh python-gobject python-idna python-isodate python-lxml python-mutagen python-ordered-set python-packaging python-pexpect python-ply python-ptyprocess python-pycountry python-pycryptodome python-pyparsing python-pyqt5 python-pyqt5-sip python-pysocks python-pyxdg python-requests python-setuptools python-sip python-six python-urllib3 python-websocket-client --noconfirm  # python +
+
+
+
+sudo pacman -S --noconfirm --needed python  # Новое поколение языка сценариев высокого уровня Python
+# sudo pacman -S python --noconfirm  # Новое поколение языка сценариев высокого уровня Python
+sudo pacman -S python-anytree --noconfirm  # Мощная и легкая древовидная структура данных Python
+sudo pacman -S python-appdirs --noconfirm  # Небольшой модуль Python для определения соответствующих директорий для конкретной платформы, например «директории пользовательских данных».
+sudo pacman -S python-arrow --noconfirm  # Лучшие даты и время для Python
+sudo pacman -S python-asn1crypto --noconfirm  # Библиотека Python ASN.1 с упором на производительность и pythonic API
+sudo pacman -S python-atspi --noconfirm  #  Привязки Python для D-Bus AT-SPI
+sudo pacman -S python-attrs --noconfirm  # Атрибуты без шаблона
+sudo pacman -S python-bcrypt --noconfirm  # Современное хеширование паролей для вашего программного обеспечения и ваших серверов
+sudo pacman -S python-beaker --noconfirm  # Кэширование и сеансы промежуточного программного обеспечения WSGI для использования с веб-приложениями и автономными скриптами и приложениями Python
+sudo pacman -S python-beautifulsoup4 --noconfirm  # Синтаксический анализатор HTML / XML на Python, предназначенный для быстрых проектов, таких как очистка экрана
+sudo pacman -S python-cachecontrol --noconfirm  # httplib2 кеширование запросов
+sudo pacman -S python-cffi --noconfirm  # Интерфейс внешних функций для Python, вызывающего код C
+sudo pacman -S python-cairo --noconfirm  # Привязки Python для графической библиотеки cairo
+sudo pacman -S python-chardet --noconfirm  # Модуль Python3 для автоматического определения кодировки символов
+sudo pacman -S python-colorama --noconfirm  # Python API для кроссплатформенного цветного текста терминала
+sudo pacman -S python-colour --noconfirm  # Библиотека манипуляций с цветовыми представлениями (RGB, HSL, web, ...)
+sudo pacman -S python-configobj --noconfirm  # Простое, но мощное средство чтения и записи конфигурационных файлов для Python
+sudo pacman -S python-contextlib2 --noconfirm  # Обратный перенос модуля contextlib стандартной библиотеки на более ранние версии Python
+sudo pacman -S python-cryptography --noconfirm  # Пакет, предназначенный для предоставления криптографических рецептов и примитивов разработчикам Python
+sudo pacman -S python-cssselect --noconfirm  # Библиотека Python3, которая анализирует селекторы CSS3 и переводит их в XPath 1.0
+sudo pacman -S python-d2to1 --noconfirm  # Библиотека Python, которая позволяет использовать файлы setup.cfg, подобные distutils2, для метаданных пакета с помощью скрипта distribute / setuptools setup.py
+sudo pacman -S python-dateutil --noconfirm  # Предоставляет мощные расширения для стандартного модуля datetime 
+sudo pacman -S python-dbus --noconfirm  # Привязки Python для DBUS
+sudo pacman -S python-dbus-common --noconfirm  # Общие файлы dbus-python, общие для python-dbus и python2-dbus
+sudo pacman -S python-defusedxml --noconfirm  # Защита от XML-бомбы для модулей Python stdlib
+sudo pacman -S python-distlib --noconfirm  # Низкоуровневые компоненты distutils2 / упаковка
+sudo pacman -S python-distro --noconfirm  # API информации о платформе ОС Linux
+sudo pacman -S python-distutils-extra --noconfirm  # Улучшения в системе сборки Python
+sudo pacman -S python-docopt --noconfirm  # Пифонический парсер аргументов, который заставит вас улыбнуться
+sudo pacman -S python-entrypoints --noconfirm  # Обнаружение и загрузка точек входа из установленных пакетов
+sudo pacman -S python-ewmh --noconfirm  # Реализация Python подсказок Extended Window Manager на основе Xlib
+sudo pacman -S python-eyed3 --noconfirm  # Модуль Python и программа для обработки информации о файлах mp3
+sudo pacman -S python-future --noconfirm  # Чистая поддержка одного источника для Python 3 и 2
+sudo pacman -S python-gevent --noconfirm  # Сетевая библиотека Python, которая использует greenlet и libev для простого и масштабируемого параллелизма
+sudo pacman -S python-gevent-websocket --noconfirm  # Библиотека WebSocket для сетевой библиотеки gevent
+sudo pacman -S python-greenlet --noconfirm  # Легкое параллельное программирование в процессе
+sudo pacman -S python-gobject --noconfirm  # Привязки Python для GLib / GObject / GIO / GTK +
+sudo pacman -S python-html5lib --noconfirm  # Парсер / токенизатор HTML Python на основе спецификации WHATWG HTML5
+sudo pacman -S python-httplib2 --noconfirm  # Обширная клиентская библиотека HTTP, поддерживающая множество функций
+sudo pacman -S python-idna --noconfirm  # Интернационализированные доменные имена в приложениях (IDNA)
+sudo pacman -S python-isodate --noconfirm  # Синтаксический анализатор даты / времени / продолжительности и форматирование ISO 8601
+sudo pacman -S python-jedi --noconfirm  # Отличное автозаполнение для Python
+sudo pacman -S python-jeepney --noconfirm  # Низкоуровневая оболочка протокола Python DBus на чистом уровне
+sudo pacman -S python-jinja --noconfirm  # Простой питонический язык шаблонов, написанный на Python
+sudo pacman -S python-keyring --noconfirm  # Безопасное хранение и доступ к вашим паролям
+sudo pacman -S python-keyutils --noconfirm  # Набор привязок python для keyutils
+sudo pacman -S python-libarchive-c --noconfirm  # Интерфейс Python для libarchive
+sudo pacman -S python-lxml --noconfirm  # Связывание Python3 для библиотек libxml2 и libxslt (-S python-lxml --force # принудительная установка)
+sudo pacman -S python-lxml-docs --noconfirm  # Связывание Python для библиотек libxml2 и libxslt (документы)
+sudo pacman -S python-magic --noconfirm  # Привязки Python к волшебной библиотеке
+sudo pacman -S python-mako --noconfirm  # Сверхбыстрый язык шаблонов, который заимствует лучшие идеи из существующих языков шаблонов
+sudo pacman -S python-markdown --noconfirm  # Реализация Python Markdown Джона Грубера
+sudo pacman -S python-markupsafe --noconfirm  # Реализует безопасную строку разметки XML / HTML / XHTML для Python
+sudo pacman -S python-maxminddb --noconfirm  # Читатель для формата MaxMind DB
+sudo pacman -S python-msgpack --noconfirm  # Реализация сериализатора MessagePack для Python
+sudo pacman -S python-mutagen --noconfirm  # (mutagen) Средство чтения и записи тегов метаданных аудио (библиотека Python)
+sudo pacman -S python-nose --noconfirm  # Расширение unittest на основе обнаружения
+sudo pacman -S python-numpy --noconfirm  # Научные инструменты для Python
+sudo pacman -S python-olefile --noconfirm  # Библиотека Python для анализа, чтения и записи файлов Microsoft OLE2 (ранее OleFileIO_PL)
+sudo pacman -S python-ordered-set --noconfirm  # MutableSet, который запоминает свой порядок, так что каждая запись имеет индекс
+sudo pacman -S python-packaging --noconfirm  # Основные утилиты для пакетов Python
+sudo pacman -S python-paramiko --noconfirm  # Модуль Python, реализующий протокол SSH2
+sudo pacman -S python-parso --noconfirm  # Синтаксический анализатор Python, поддерживающий восстановление ошибок и двусторонний синтаксический анализ для разных версий Python
+sudo pacman -S python-patiencediff --noconfirm  # Patiencediff реализации Python и C
+sudo pacman -S python-pbr --noconfirm  # Разумность сборки Python
+sudo pacman -S python-pep517 --noconfirm  # Оболочки для сборки пакетов Python с использованием хуков PEP 517
+sudo pacman -S python-pillow --noconfirm  # Вилка Python Imaging Library (PIL)
+sudo pacman -S --noconfirm --needed python-pip  # Рекомендуемый PyPA инструмент для установки пакетов Python
+sudo pacman -S python-pexpect --noconfirm  # Для управления и автоматизации приложений
+sudo pacman -S python-ply --noconfirm  # Реализация инструментов парсинга lex и yacc
+sudo pacman -S python-powerline --noconfirm  # Библиотека Python для Powerline
+sudo pacman -S python-progress --noconfirm  # Простые в использовании индикаторы выполнения для Python
+sudo pacman -S python-psutil --noconfirm  # Кросс-платформенный модуль процессов и системных утилит для Python
+sudo pacman -S python-ptyprocess --noconfirm  # Запустить подпроцесс в псевдотерминале
+sudo pacman -S python-pyasn1 --noconfirm  # Библиотека ASN.1 для Python 3
+sudo pacman -S python-pyasn1-modules --noconfirm  # Коллекция модулей протоколов на основе ASN.1
+sudo pacman -S python-pycountry --noconfirm  # Определения страны, подразделения, языка, валюты и алфавита ИСО и их переводы
+sudo pacman -S python-pycparser --noconfirm  # Синтаксический анализатор C и генератор AST, написанные на Python
+sudo pacman -S python-pycups --noconfirm  # Привязки Python для libcups
+sudo pacman -S python-pycurl --noconfirm  # Интерфейс Python 3.x для libcurl
+sudo pacman -S python-pycryptodome --noconfirm  # Коллекция криптографических алгоритмов и протоколов, реализованных для использования из Python 3
+sudo pacman -S python-pyelftools --noconfirm  # Библиотека Python для анализа файлов ELF и отладочной информации DWARF
+sudo pacman -S python-pyfiglet --noconfirm  # Реализация FIGlet на чистом питоне
+sudo pacman -S python-pygments --noconfirm  # Подсветка синтаксиса Python
+sudo pacman -S python-pyicu --noconfirm  # Связывание Python для ICU
+sudo pacman -S python-pynacl --noconfirm  # Привязка Python к библиотеке сетей и криптографии (NaCl)
+sudo pacman -S python-pyopenssl --noconfirm  # Модуль оболочки Python3 вокруг библиотеки OpenSSL
+sudo pacman -S python-pyparsing --noconfirm  # Модуль общего синтаксического анализа для Python
+sudo pacman -S python-pyphen --noconfirm  # Модуль Pure Python для переноса текста
+sudo pacman -S python-pyqt5 --noconfirm  # Набор привязок Python для инструментария Qt5
+sudo pacman -S python-pyqt5-sip --noconfirm  # Поддержка модуля sip для PyQt5
+sudo pacman -S python-pyquery --noconfirm  # Библиотека для Python, похожая на jquery
+sudo pacman -S python-pysmbc --noconfirm  # Привязки Python 3 для libsmbclient
+sudo pacman -S python-pysocks --noconfirm  # SOCKS4, SOCKS5 или HTTP-прокси (вилка Anorov PySocks заменяет socksipy)
+sudo pacman -S python-pysol_cards --noconfirm  # Карты Deal PySol FC
+sudo pacman -S python-pyudev --noconfirm  # Привязки Python к libudev
+sudo pacman -S python-pywal --noconfirm  # Создавайте и изменяйте цветовые схемы на лету
+sudo pacman -S python-pyxdg --noconfirm  # Библиотека Python для доступа к стандартам freedesktop.org
+sudo pacman -S python-random2 --noconfirm  # Python 3 совместимый порт случайного модуля Python 2
+sudo pacman -S python-requests --noconfirm  # Python HTTP для людей
+sudo pacman -S python-resolvelib --noconfirm  # Преобразуйте абстрактные зависимости в конкретные
+sudo pacman -S python-retrying --noconfirm  # Библиотека перенастройки Python общего назначения
+sudo pacman -S python-rsa --noconfirm  # Реализация RSA на чистом Python
+sudo pacman -S python-scipy --noconfirm  # SciPy - это программное обеспечение с открытым исходным кодом для математики, естественных наук и инженерии
+sudo pacman -S python-secretstorage --noconfirm  # Безопасно храните пароли и другие личные данные с помощью API SecretService DBus
+sudo pacman -S python-setproctitle --noconfirm  # Позволяет процессу Python изменять название процесса
+sudo pacman -S python-setuptools --noconfirm  # Легко загружайте, собирайте, устанавливайте, обновляйте и удаляйте пакеты Python
+sudo pacman -S python-shiboken2 --noconfirm  # Создает привязки для библиотек C ++ с использованием исходного кода CPython
+sudo pacman -S python-sip --noconfirm  # Привязки Python SIP4 для библиотек C и C ++ (python-sip4)
+sudo pacman -S python-six --noconfirm  # Утилиты совместимости с Python 2 и 3
+sudo pacman -S python-soupsieve --noconfirm  # Реализация селектора CSS4 для Beautiful Soup
+sudo pacman -S python-sqlalchemy --noconfirm  # Набор инструментов Python SQL и объектно-реляционное сопоставление
+sudo pacman -S python-termcolor --noconfirm  # Форматирование цвета ANSII для вывода в терминал
+sudo pacman -S python-tlsh --noconfirm  # Библиотека нечеткого сопоставления, которая генерирует хеш-значение, которое можно использовать для сравнений схожести
+sudo pacman -S python-toml --noconfirm  # Библиотека Python для анализа и создания TOML
+sudo pacman -S python-ujson --noconfirm  # Сверхбыстрый кодировщик и декодер JSON для Python
+sudo pacman -S python-unidecode --noconfirm  # ASCII транслитерации текста Unicode
+sudo pacman -S python-urllib3 --noconfirm  # Библиотека HTTP с потокобезопасным пулом соединений и поддержкой публикации файлов
+sudo pacman -S python-webencodings --noconfirm  # Это Python-реализация стандарта кодирования WHATWG
+sudo pacman -S python-websockets --noconfirm  # Реализация протокола WebSocket на Python (RFC 6455)
+sudo pacman -S python-websocket-client --noconfirm  # Клиентская библиотека WebSocket для Python
+sudo pacman -S python-xapp --noconfirm  # Библиотека Python Xapp
+sudo pacman -S python-yaml --noconfirm  # Привязки Python для YAML с использованием быстрой библиотеки libYAML
+sudo pacman -S python-zope-event --noconfirm  # Предоставляет простую систему событий
+sudo pacman -S python-zope-interface --noconfirm  # Интерфейсы Zope для Python 3.x
+# sudo pacman -S  --noconfirm  # 
+# sudo pacman -S  --noconfirm  # 
+# sudo pacman -S  --noconfirm  # 
+# sudo pacman -S --noconfirm --needed   # 
+#############################
+
+
+########## Python AUR ###########
+yay -S python-basiciw --noconfirm  # Получение информации, такой как ESSID или качество сигнала, с беспроводных карт (модуль Python)
+yay -S python-bencode.py --noconfirm  # Простой парсер бенкода (для Python 2, Python 3 и PyPy)
+yay -S pythonqt --noconfirm  # Динамическая привязка Python для приложений Qt
+yay -S python-coincurve --noconfirm  # Кросс-платформенные привязки Python CFFI для libsecp256k1
+yay -S python-merkletools --noconfirm  # Инструменты Python для создания и проверки деревьев Меркла и доказательств
+yay -S python-pyelliptic --noconfirm  # Оболочка Python OpenSSL для ECC (ECDSA, ECIES), AES, HMAC, Blowfish, ...
+yay -S python-pyparted --noconfirm  # Модуль Python для GNU parted
+yay -S python-pyqt4 --noconfirm  # Набор привязок Python 3.x для набора инструментов Qt
+yay -S python-pywapi --noconfirm  # Обертка Python вокруг Yahoo! Погода, Weather.com и API NOAA
+yay -S python-requests-cache --noconfirm  # Прозрачный постоянный кеш для библиотеки
+yay -S python-sip-pyqt4 --noconfirm  # Привязки Python 3.x SIP для библиотек C и C ++ (версия PyQt4)
+yay -S python-twitter --noconfirm  # Набор инструментов API и командной строки для Twitter (twitter.com)
+########## Python2 AUR ###########
+yay -S python2-imaging --noconfirm  # PIL. Предоставляет возможности обработки изображений для Python
+# yay -S  --noconfirm  #
+# yay -S  --noconfirm  #
+# yay -S  --noconfirm  #
+# yay -S  --noconfirm --needed  #
+########## Python AUR (Биткойн) ###########
+# yay -S python-base58 --noconfirm  # Биткойн-совместимая реализация Base58 и Base58Check
+# yay -S python-bitcoinlib --noconfirm  # Библиотека Python3, обеспечивающая простой интерфейс для структур данных и протокола Биткойн
+# yay -S  --noconfirm  #
+###########################
+
+
+
+###################################
+###
+########## Python AUR ###########
+###
+### python-basiciw    AUR  # Получение информации, такой как ESSID или качество сигнала, с беспроводных карт (модуль Python)
+### https://aur.archlinux.org/packages/python-basiciw/
+### https://aur.archlinux.org/python-basiciw.git
+### https://github.com/enkore/basiciw/
+###
+### python-bencode.py    AUR  # Простой парсер бенкода (для Python 2, Python 3 и PyPy)
+### https://aur.archlinux.org/packages/python-bencode.py/
+### https://aur.archlinux.org/python-bencode.py.git 
+### https://github.com/fuzeman/bencode.py
+###
+### pythonqt    AUR  # Динамическая привязка Python для приложений Qt
+### https://aur.archlinux.org/packages/pythonqt/
+### https://aur.archlinux.org/pythonqt.git
+### http://pythonqt.sourceforge.net/
+###
+### python-coincurve   AUR  # Кросс-платформенные привязки Python CFFI для libsecp256k1
+### https://aur.archlinux.org/packages/python-coincurve/
+### https://aur.archlinux.org/python-coincurve.git
+### https://github.com/ofek/coincurve
+###
+### python-merkletools   AUR  # Инструменты Python для создания и проверки деревьев Меркла и доказательств
+### https://aur.archlinux.org/packages/python-merkletools/
+### https://aur.archlinux.org/python-merkletools.git 
+### https://github.com/Tierion/pymerkletools
+###
+### python-pyparted   AUR  # Модуль Python для GNU parted
+### https://aur.archlinux.org/packages/python-pyparted/
+### https://aur.archlinux.org/python-pyparted.git
+### https://github.com/dcantrell/pyparted
+###
+### python-twitter   AUR  # Набор инструментов API и командной строки для Twitter (twitter.com)
+### https://aur.archlinux.org/packages/python-twitter/
+### https://aur.archlinux.org/python-twitter.git 
+### http://pypi.python.org/pypi/twitter/
+###
+### python2-imaging  AUR  # PIL. Предоставляет возможности обработки изображений для Python
+### https://aur.archlinux.org/packages/python2-imaging/
+### https://aur.archlinux.org/python2-imaging.git 
+### http://www.pythonware.com/products/pil/index.htm
+###
+### python-pyelliptic  AUR  # Оболочка Python OpenSSL для ECC (ECDSA, ECIES), AES, HMAC, Blowfish, ...
+### https://aur.archlinux.org/packages/python-pyelliptic/
+### https://aur.archlinux.org/python-pyelliptic.git
+### https://github.com/radfish/pyelliptic
+###
+### python-pyqt4  AUR  # Набор привязок Python 3.x для набора инструментов Qt
+### https://aur.archlinux.org/packages/python-pyqt4/
+### https://aur.archlinux.org/pyqt4.git
+### https://riverbankcomputing.com/software/pyqt/intro
+###
+### python-pywapi  AUR  # Обертка Python вокруг Yahoo! Погода, Weather.com и API NOAA
+### https://aur.archlinux.org/packages/python-pywapi/
+### https://aur.archlinux.org/python-pywapi.git
+### https://launchpad.net/python-weather-api
+###
+### python-requests-cache  AUR  # Прозрачный постоянный кеш для библиотеки http://python-requests.org/ 
+### https://aur.archlinux.org/packages/python-requests-cache/
+### https://aur.archlinux.org/python-requests-cache.git
+### https://github.com/reclosedev/requests-cache
+###
+### python-sip-pyqt4  AUR  # Привязки Python 3.x SIP для библиотек C и C ++ (версия PyQt4)
+### https://aur.archlinux.org/packages/python-sip-pyqt4/
+### https://aur.archlinux.org/python-sip-pyqt4.git
+### https://www.riverbankcomputing.com/software/sip/intro
+###
+########## Биткойн ###########
+###
+### python-base58   AUR  # Биткойн-совместимая реализация Base58 и Base58Check
+### https://aur.archlinux.org/packages/python-base58/
+### https://aur.archlinux.org/python-base58.git 
+### https://github.com/keis/base58
+###
+### python-bitcoinlib # Библиотека Python3, обеспечивающая простой интерфейс для структур данных и протокола Биткойн
+### https://www.archlinux.org/packages/community/any/python-bitcoinlib/
+### https://github.com/petertodd/python-bitcoinlib
+###
+###############################
 
 
 
 
+
+
+### ПРОВЕРИТЬ ############
+
+
+python2 2.7.18-1
+python2-appdirs 1.4.4-1   # Небольшой модуль Python для определения соответствующих директорий для конкретной платформы, например «директории пользовательских данных»
+python2-apsw 3.33.0-1
+python2-asn1crypto 1.4.0-1
+python2-backports 1.0-3
+python2-backports.functools_lru_cache 1.6.1-2
+python2-beautifulsoup4 4.9.1-1
+python2-cachecontrol 0.12.6-1
+python2-cairo 1.18.2-4
+python2-cffi 1.14.2-1
+python2-chardet 3.0.4-5
+python2-colorama 0.4.3-1
+python2-configparser 4.0.2-2
+python2-contextlib2 0.6.0.post1-1
+python2-cryptography 3.1-1
+python2-css-parser 1.0.4-3
+python2-cssselect 1.1.0-4
+python2-cycler 0.10.0-6
+python2-dateutil 2.8.1-3
+python2-dbus 1.2.16-1
+python2-distlib 0.3.1-1
+python2-distro 1.5.0-1
+python2-dnspython 1.16.0-3
+python2-enum34 1.1.9-1
+python2-feedparser 5.2.1-6
+python2-fuse 1.0.0-2
+python2-gevent 20.6.2-1
+python2-gobject 3.36.1-1
+python2-gobject2 2.28.7-5
+python2-greenlet 0.4.16-1
+python2-html2text 2019.8.11-4
+python2-html5-parser 0.4.9-2
+python2-html5lib 1.1-1
+python2-httplib2 0.18.1-1
+python2-idna 2.10-1
+python2-importlib-metadata 1.6.1-1
+python2-ipaddress 1.0.23-2
+python2-kiwisolver 1.1.0-4
+python2-lxml 4.5.2-1
+python2-markdown 3.1.1-5
+python2-matplotlib 2.2.5-2
+python2-mechanize 1:0.4.5-1
+python2-msgpack 0.6.2-4
+python2-netifaces 0.10.9-3
+python2-nose 1.3.7-7
+python2-numpy 1.16.6-1
+python2-oauth2 1.9.0-1
+python2-olefile 0.46-2
+python2-opengl 3.1.5-1
+python2-ordered-set 3.1.1-3
+python2-packaging 20.4-1
+python2-pathlib2 2.3.5-1
+python2-pep517 0.8.2-1
+python2-pillow 6.2.1-2  # Вилка Python Imaging Library (PIL)
+python2-pip 20.1.1-1
+python2-ply 3.11-5
+python2-progress 1.5-3
+python2-psutil 5.7.2-1
+python2-pyasn1 0.4.8-2
+python2-pybluez 0.22-4
+python2-pychm 0.8.6-1
+python2-pycparser 2.20-1
+python2-pycups 1.9.74-1
+python2-pygments 2.5.2-2
+python2-pyopenssl 19.1.0-2
+python2-pyparsing 2.4.7-1
+python2-pyphen 0.9.4-1
+python2-pyqt4 4.12.3-4
+python2-pyqt5 5.15.0-3
+python2-pyqtwebengine 5.15.0-2
+python2-regex 2020.7.14-1
+python2-requests 2.24.0-1
+python2-resolvelib 0.4.0-1
+python2-retrying 1.3.3-7
+python2-rfc6555 0.0.0-2
+python2-scandir 1.10.0-3
+python2-selectors2 2.0.1-4
+python2-setuptools 2:44.1.1-1
+python2-simplejson 3.17.2-1
+python2-sip-pyqt4 4.19.22-1
+python2-sip-pyqt5 4.19.24-1
+python2-six 1.15.0-1
+python2-soupsieve 1.9.6-2
+python2-toml 0.10.1-1
+python2-unrardll 0.1.4-2
+python2-uritemplate 3.0.1-1
+python2-urllib3 1.25.10-1
+python2-webencodings 0.5.1-4
+python2-zipp 1:1.1.1-1
+python2-zope-event 4.4-3
+python2-zope-interface 5.1.0-1
+python3-memoizedb 2017.3.30-4
+python3-xcgf 2017.3-4
+python3-xcpf 2019.11-2
+
+python2 2.7.18-1
+python2-pyxdg 0.26-6
 
 
 
