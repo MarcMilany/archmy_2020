@@ -3753,6 +3753,8 @@ elif [[ $videocard == 2 ]]; then
   echo " Установка Свободных драйверов для AMD/(ATI) "
 sudo pacman -S lib32-mesa mesa-vdpau lib32-mesa-vdpau libva-mesa-driver lib32-libva-mesa-driver --noconfirm  # Драйверы Mesa
 sudo pacman -S vulkan-radeon lib32-vulkan-radeon --noconfirm  # Драйвер Radeon Vulkan mesa; Драйвер Radeon Vulkan mesa (32-разрядный)
+sudo pacman -S vulkan-icd-loader --noconfirm  # Загрузчик устанавливаемого клиентского драйвера (ICD) Vulkan
+sudo pacman -S lib32-vulkan-icd-loader --noconfirm  # Загрузчик устанавливаемого клиентского драйвера (ICD) Vulkan (32-разрядный)
 sudo pacman -S libvdpau-va-gl --noconfirm  # Драйвер VDPAU с бэкэндом OpenGL / VAAPI
 sudo pacman -S xf86-video-amdgpu --noconfirm  # Видеодрайвер X.org amdgpu - ВОЗМОЖНО уже установлен с (X.org)
 sudo pacman -S xf86-video-ati --noconfirm  # Видеодрайвер X.org ati - ВОЗМОЖНО уже установлен с (X.org)
@@ -3766,6 +3768,8 @@ elif [[ $videocard == 3 ]]; then
 sudo pacman -S vdpauinfo libva-utils libva libvdpau libvdpau-va-gl lib32-libvdpau --noconfirm  
 sudo pacman -S lib32-mesa vulkan-intel libva-intel-driver lib32-libva-intel-driver lib32-vulkan-intel --noconfirm
 sudo pacman -S xf86-video-intel --noconfirm  # X.org Intel i810 / i830 / i915 / 945G / G965 + видеодрайверы - ВОЗМОЖНО уже установлен с (X.org)
+sudo pacman -S vulkan-icd-loader --noconfirm  # Загрузчик устанавливаемого клиентского драйвера (ICD) Vulkan
+sudo pacman -S lib32-vulkan-icd-loader --noconfirm  # Загрузчик устанавливаемого клиентского драйвера (ICD) Vulkan (32-разрядный)
 # lib32-intel-dri - не найден
 clear 
 echo "" 
@@ -3787,6 +3791,8 @@ sudo pacman -S vulkan-radeon lib32-vulkan-radeon --noconfirm  # Драйвер R
 sudo pacman -S libvdpau-va-gl --noconfirm  # Драйвер VDPAU с бэкэндом OpenGL / VAAPI
 sudo pacman -S xf86-video-amdgpu --noconfirm  # Видеодрайвер X.org amdgpu - ВОЗМОЖНО уже установлен с (X.org)
 sudo pacman -S xf86-video-ati --noconfirm  # Видеодрайвер X.org ati - ВОЗМОЖНО уже установлен с (X.org)
+sudo pacman -S vulkan-icd-loader --noconfirm  # Загрузчик устанавливаемого клиентского драйвера (ICD) Vulkan
+sudo pacman -S lib32-vulkan-icd-loader --noconfirm  # Загрузчик устанавливаемого клиентского драйвера (ICD) Vulkan (32-разрядный)
 echo " Установка драйверов для видеокарт (amd/ati) выполнена "
 echo ""    
 echo " Установка Свободных драйверов для Intel "
