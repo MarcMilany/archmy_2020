@@ -273,6 +273,7 @@ echo " Создаётся генерация мастер-ключа (брелк
 pacman-key --init  # генерация мастер-ключа (брелка) pacman
 echo " Далее идёт поиск ключей... "
 pacman-key --populate archlinux  # поиск ключей
+# pacman-key --populate
 echo ""
 echo " Обновление ключей... "  
 pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
