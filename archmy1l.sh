@@ -266,16 +266,10 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done
-if [[ $i_key == 0 ]]; then
+if [[ $i_key == 1 ]]; then
+clear
 echo ""
-echo " Обновление ключей пропущено " 
-echo ""
-echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
-pacman -Sy --noconfirm 
-elif [[ $i_key == 1 ]]; then
-  clear
-  echo ""
-  echo " Создаётся генерация мастер-ключа (брелка) pacman "  # gpg –refresh-keys
+echo " Создаётся генерация мастер-ключа (брелка) pacman "  # gpg –refresh-keys
   pacman-key --init  # генерация мастер-ключа (брелка) pacman
   echo " Далее идёт поиск ключей... "
   pacman-key --populate archlinux  # поиск ключей
@@ -289,7 +283,13 @@ elif [[ $i_key == 1 ]]; then
 # pacman -Syyu  # Обновим вашу систему (базу данных пакетов)
 # pacman -Syyu  --noconfirm
   echo ""
-  echo " Обновление и добавление новых ключей выполнено "
+  echo " Обновление и добавление новых ключей выполнено " 
+elif [[ $i_key == 0 ]]; then
+  echo ""
+  echo " Обновление ключей пропущено " 
+  echo ""
+  echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
+  pacman -Sy --noconfirm
 fi
 sleep 1
 
