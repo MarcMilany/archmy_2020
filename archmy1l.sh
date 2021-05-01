@@ -235,6 +235,7 @@ elif [[ $hello == 0 ]]; then
    exit   
 fi
 
+clear
 echo -e "${GREEN}
   <<< Начинается установка минимальной системы Arch Linux >>>
 ${NC}"
@@ -247,13 +248,16 @@ timedatectl set-ntp true  # Синхронизируем наши системн
 echo ""
 echo " Для начала устанавливаем время по Москве, чтобы потом не оказалось, что файловые системы созданы в будущем "
 timedatectl set-timezone Europe/Moscow
+sleep 01
 
 echo -e "${BLUE}:: ${NC}Посмотрим статус службы NTP (NTP service)"
 timedatectl status 
 
 echo -e "${BLUE}:: ${NC}Посмотрим дату и время без характеристик для проверки времени"
 date
+sleep 04
 
+clear
 echo ""
 echo -e "${YELLOW}==> ${NC}Обновить и добавить новые ключи?"
 echo " Данный этап поможет вам избежать проблем с ключами Pacmаn, если Вы используете не свежий образ ArchLinux для установки! "
