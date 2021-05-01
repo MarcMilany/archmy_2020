@@ -244,10 +244,9 @@ echo -e "${BLUE}:: ${NC}Установка и настройка начата в
 
 echo -e "${BLUE}:: ${NC}Синхронизация системных часов"  
 timedatectl set-ntp true  # Синхронизируем наши системные часы, включаем ntp, если надо сменим часовой пояс
+# timedatectl set-timezone Europe/Moscow
+# echo " Для начала устанавливаем время по Москве, чтобы потом не оказалось, что файловые системы созданы в будущем "
 # timedatectl set-ntp true && timedatectl set-timezone Europe/Moscow
-echo ""
-echo " Для начала устанавливаем время по Москве, чтобы потом не оказалось, что файловые системы созданы в будущем "
-timedatectl set-timezone Europe/Moscow
 sleep 01
 
 echo -e "${BLUE}:: ${NC}Посмотрим статус службы NTP (NTP service)"
