@@ -243,18 +243,18 @@ ${NC}"
 echo -e "${BLUE}:: ${NC}Установка и настройка начата в $(date +%T)" 
 
 echo -e "${BLUE}:: ${NC}Синхронизация системных часов"  
-timedatectl set-ntp true  # Синхронизируем наши системные часы, включаем ntp, если надо сменим часовой пояс
+#timedatectl set-ntp true  # Синхронизируем наши системные часы, включаем ntp, если надо сменим часовой пояс
 # timedatectl set-timezone Europe/Moscow
-# echo " Для начала устанавливаем время по Москве, чтобы потом не оказалось, что файловые системы созданы в будущем "
-# timedatectl set-ntp true && timedatectl set-timezone Europe/Moscow
-sleep 01
+echo " Для начала устанавливаем время по Москве, чтобы потом не оказалось, что файловые системы созданы в будущем "
+timedatectl set-ntp true && timedatectl set-timezone Europe/Moscow
+sleep 02
 
 echo -e "${BLUE}:: ${NC}Посмотрим статус службы NTP (NTP service)"
 timedatectl status 
 
 echo -e "${BLUE}:: ${NC}Посмотрим дату и время без характеристик для проверки времени"
 date
-sleep 04
+sleep 08
 
 clear
 echo ""
@@ -415,7 +415,7 @@ echo -e "${BLUE}:: ${NC}Ваша разметка диска"
 fdisk -l  # Ещё раз проверте правильность разбивки на разделы!
 lsblk -f
 #lsblk -lo 
-sleep 03
+sleep 07
 
 clear
 echo ""
