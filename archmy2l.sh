@@ -171,15 +171,15 @@ do
     :
 done
 if [[ $hw_clock == 0 ]]; then
-echo ""  
-echo " Настройка часов (времени) пропущена " 
+  echo ""  
+  echo " Настройка часов (времени) пропущена " 
 elif [[ $hw_clock == 1 ]]; then
-hwclock --systohc --utc
+  hwclock --systohc --utc
   echo ""
   echo " Вы выбрали hwclock --systohc --utc "
   echo " UTC - часы дают универсальное время на нулевом часовом поясе " 
 elif [[ $hw_clock == 2 ]]; then
-hwclock --systohc --local
+  hwclock --systohc --local
   echo ""
   echo " Вы выбрали hwclock --systohc --localtime "
   echo " Localtime - часы идут по времени локального часового пояса " 
@@ -312,37 +312,37 @@ do
     :
 done
 if [[ $i_grub == 1 ]]; then
-echo ""    
-pacman -Syy  # обновление баз пакмэна (pacman)
-pacman -S grub --noconfirm  # Файлы и утилиты для установки GRUB2 содержатся в пакете grub
+  echo ""    
+  pacman -Syy  # обновление баз пакмэна (pacman)
+  pacman -S grub --noconfirm  # Файлы и утилиты для установки GRUB2 содержатся в пакете grub
 # pacman -S --noconfirm --needed grub  # GNU GR и унифицированный загрузчик (2)
-uname -rm  # для определения архитектуры процессора, имени хоста системы и версии ядра, работающего в системе
-lsblk -f  # Команда lsblk выводит список всех блочных устройств
-echo ""
-echo -e "${YELLOW}=> Примечание: ${BOLD}/dev/sdX - диск (не раздел), на котором должен быть установлен GRUB. ${NC}"
-echo ""
+  uname -rm  # для определения архитектуры процессора, имени хоста системы и версии ядра, работающего в системе
+  lsblk -f  # Команда lsblk выводит список всех блочных устройств
+  echo ""
+  echo -e "${YELLOW}=> Примечание: ${BOLD}/dev/sdX - диск (не раздел), на котором должен быть установлен GRUB. ${NC}"
+  echo ""
 # Если вы используете LVM для вашего /boot, вы можете установить GRUB на нескольких физических дисках.
- echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
- read -p " => Укажите диск куда установить GRUB (sda/sdb например sda или sdb) : " x_cfd  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
- grub-install /dev/$x_cfd  # Записываем загрузчик в MBR (Master Boot Record) нашего внутреннего накопителя (sda; sdb; sdc; sdd)
-#grub-install --recheck /dev/$x_cfd  # Если Вы получили сообщение об ошибке (--recheck - удалить существующую карту устройств)
-#grub-install --boot-directory=/mnt/boot /dev/$x_cfd  # установить файлы загрузчика в другой каталог
+  echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+  read -p " => Укажите диск куда установить GRUB (sda/sdb например sda или sdb) : " x_cfd  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+  grub-install /dev/$x_cfd  # Записываем загрузчик в MBR (Master Boot Record) нашего внутреннего накопителя (sda; sdb; sdc; sdd)
+# grub-install --recheck /dev/$x_cfd  # Если Вы получили сообщение об ошибке (--recheck - удалить существующую карту устройств)
+# grub-install --boot-directory=/mnt/boot /dev/$x_cfd  # установить файлы загрузчика в другой каталог
   echo " Загрузчик GRUB установлен на выбранный вами диск (раздел). " 
 elif [[ $i_grub == 2 ]]; then
-echo ""    
-pacman -Syy  # обновление баз пакмэна (pacman)
-pacman -S grub --noconfirm  # Файлы и утилиты для установки GRUB2 содержатся в пакете grub
-uname -rm  # для определения архитектуры процессора, имени хоста системы и версии ядра, работающего в системе
-lsblk -f # Команда lsblk выводит список всех блочных устройств
-echo ""
-echo -e "${YELLOW}=> Примечание: ${BOLD}/dev/sdX - диск (а не раздел ), на котором должен быть установлен GRUB. ${NC}"
-echo ""
+  echo ""    
+  pacman -Syy  # обновление баз пакмэна (pacman)
+  pacman -S grub --noconfirm  # Файлы и утилиты для установки GRUB2 содержатся в пакете grub
+  uname -rm  # для определения архитектуры процессора, имени хоста системы и версии ядра, работающего в системе
+  lsblk -f # Команда lsblk выводит список всех блочных устройств
+  echo ""
+  echo -e "${YELLOW}=> Примечание: ${BOLD}/dev/sdX - диск (а не раздел ), на котором должен быть установлен GRUB. ${NC}"
+  echo ""
 # Если вы используете LVM для вашего /boot, вы можете установить GRUB на нескольких физических дисках.
- echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
- read -p " => Укажите диск куда установить GRUB (sda/sdb например sda или sdb) : " x_cfd # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+  echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+  read -p " => Укажите диск куда установить GRUB (sda/sdb например sda или sdb) : " x_cfd # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
 # Если нужно установить BIOS-версию загрузчика из-под системы, загруженной в режиме UEFI
- grub-install --target=i386-pc /dev/$x_cfd  # Записываем загрузчик в MBR (Master Boot Record) нашего внутреннего накопителя (sda; sdb; sdc; sdd)
-#grub-install --target=i386-pc --recheck /dev/$x_cfd   # Если Вы получили сообщение об ошибке
+  grub-install --target=i386-pc /dev/$x_cfd  # Записываем загрузчик в MBR (Master Boot Record) нашего внутреннего накопителя (sda; sdb; sdc; sdd)
+# grub-install --target=i386-pc --recheck /dev/$x_cfd   # Если Вы получили сообщение об ошибке
   echo " Загрузчик GRUB установлен на выбранный вами диск (раздел) "  
 elif [[ $i_grub == 0 ]]; then  
   echo "" 
