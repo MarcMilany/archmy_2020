@@ -721,7 +721,7 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done
-if [[ $t_pacstrap == 1 ]]; then
+ if [[ $t_pacstrap == 1 ]]; then
 clear
 echo ""
 echo " Установка выбранного вами, групп "
