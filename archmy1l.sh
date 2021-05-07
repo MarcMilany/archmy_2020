@@ -159,12 +159,10 @@ ${NC}
 
 # Команды по установке : - archiso login: root (automatic login)
 echo -e "${RED}=> ${NC}Acceptable limit for the list of arguments..."
-# Допустимый лимит (предел) списка аргументов...'
-getconf ARG_MAX
+getconf ARG_MAX  # Допустимый лимит (предел) списка аргументов...'
 
 echo -e "${BLUE}:: ${NC}The determination of the final access rights"
-# Определение окончательных прав доступа - Для суперпользователя (root) umask по умолчанию равна 0022
-umask     
+umask  # Определение окончательных прав доступа - Для суперпользователя (root) umask по умолчанию равна 0022    
 
 echo -e "${BLUE}:: ${NC}Install the Terminus font"
 # Установим шрифт Terminus
