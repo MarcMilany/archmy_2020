@@ -1144,7 +1144,7 @@ echo " Установка DM (менеджера входа) завершена 
 echo ""
 echo " Подключаем автозагрузку менеджера входа "
 #systemctl enable lightdm.service
-systemctl enable lightdm.service -f
+systemctl enable lightdm.service -f  # systemctl - специальный инструмент для управления службами в Linux
 sleep 1 
 clear
 echo ""
@@ -1152,12 +1152,12 @@ echo " Менеджера входа LightDM установлен и подкл�
 elif [[ $i_dm == 2 ]]; then
   echo ""  
   echo " Установка LXDM (менеджера входа) "
-pacman -S lxdm --noconfirm
+pacman -S lxdm --noconfirm  # Легкий диспетчер отображения X11
 echo " Установка DM (менеджера входа) завершена "
 echo ""
 echo " Подключаем автозагрузку менеджера входа "
 #systemctl enable lxdm.service
-systemctl enable lxdm.service -f
+systemctl enable lxdm.service -f  # systemctl - специальный инструмент для управления службами в Linux
 sleep 1 
 clear
 echo ""
@@ -1165,12 +1165,12 @@ echo " Менеджера входа LXDM установлен и подключ
 elif [[ $i_dm == 3 ]]; then
   echo ""  
   echo " Установка GDM (менеджера входа) "
-pacman -S gdm --noconfirm
+pacman -S gdm --noconfirm  # Диспетчер отображения и экран входа в систему
 echo " Установка DM (менеджера входа) завершена "
 echo ""
 echo " Подключаем автозагрузку менеджера входа "
 #systemctl enable gdm.service
-systemctl enable gdm.service -f
+systemctl enable gdm.service -f  # systemctl - специальный инструмент для управления службами в Linux
 sleep 1
 clear
 echo ""
@@ -1178,12 +1178,12 @@ echo " Менеджера входа GDM установлен и подключ�
 elif [[ $i_dm == 4 ]]; then
   echo ""  
   echo " Установка SDDM (менеджера входа) "
-pacman -S sddm sddm-kcm --noconfirm
+pacman -S sddm sddm-kcm --noconfirm  # Диспетчер отображения X11 и Wayland на основе QML; Модуль конфигурации KDE для SDDM
 echo " Установка DM (менеджера входа) завершена "
 echo ""
 echo " Подключаем автозагрузку менеджера входа "
 #systemctl enable sddm.service
-systemctl enable sddm.service -f
+systemctl enable sddm.service -f  # systemctl - специальный инструмент для управления службами в Linux
 sleep 1 
 clear
 echo ""
@@ -1215,7 +1215,7 @@ pacman -S networkmanager networkmanager-openvpn network-manager-applet ppp --noc
 #pacman -Sy networkmanager networkmanager-openvpn network-manager-applet ppp --noconfirm
 echo ""
 echo -e "${BLUE}:: ${NC}Подключаем Networkmanager в автозагрузку"	
-systemctl enable NetworkManager
+systemctl enable NetworkManager  # systemctl - специальный инструмент для управления службами в Linux
 echo " NetworkManager успешно добавлен в автозагрузку "
  elif [[ $i_network  == 0 ]]; then
 echo " Установка NetworkManager пропущена "
@@ -1242,7 +1242,7 @@ do
 done
 if [[ $x_dhcpcd == 1 ]]; then
 echo ""    
-systemctl enable dhcpcd   # для активации проводных соединений
+systemctl enable dhcpcd   # для активации проводных соединений  # systemctl - инструмент для управления службами
 echo " Dhcpcd успешно добавлен в автозагрузку "  
 elif [[ $x_dhcpcd == 0 ]]; then
   echo ' Dhcpcd не включен в автозагрузку, при необходиости это можно будет сделать уже в установленной системе '
