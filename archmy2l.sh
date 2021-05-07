@@ -728,20 +728,19 @@ elif [[ $x_de == 2 ]]; then
   clear
   echo ""
   echo " DE (среда рабочего стола) Xfce успешно установлено "  
-
-echo ""
-echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Display manager) менеджера входа в Xfce"
-echo -e "${MAGENTA}=> ${BOLD}Файл ~/.xinitrc представляет собой шелл-скрипт передаваемый xinit посредством команды startx. ${NC}"
-echo -e "${MAGENTA}:: ${NC}Он используется для запуска Среды рабочего стола, Оконного менеджера и других программ запускаемых с X сервером (например запуска демонов, и установки переменных окружений."
-echo -e "${CYAN}:: ${NC}Программа xinit запускает Xorg сервер и работает в качестве программы первого клиента на системах не использующих Экранный менеджер."
-echo " Давайте проанализируем действия, которые выполняются. "
-echo " 1 - Если вам нужен автовход без DM (Display manager), тогда укажите "1" "
-echo " Вы хотите автологин определенного пользователя, автоматический запуск Иксов, запуск окружения (KDE, XFCE, Gnom и т.д.). "
-echo " Всё можно сделать без использования DM (например SDDM, LightDM и т.д.), поскольку реализация автозагрузки окружения реализован через startx. "
-echo " 2(0) - Если Вы по прежнему желаете использовать DM (например SDDM, LightDM и т.д.), или в дальнейшем захотите установить, и использовать 2(е) окружение (Т.е. DE - KDE, XFCE, Gnom и т.д.), тогда укажите "0" " 
-echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
-echo ""
+  echo ""
+  echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Display manager) менеджера входа в Xfce"
+  echo -e "${MAGENTA}=> ${BOLD}Файл ~/.xinitrc представляет собой шелл-скрипт передаваемый xinit посредством команды startx. ${NC}"
+  echo -e "${MAGENTA}:: ${NC}Он используется для запуска Среды рабочего стола, Оконного менеджера и других программ запускаемых с X сервером (например запуска демонов, и установки переменных окружений."
+  echo -e "${CYAN}:: ${NC}Программа xinit запускает Xorg сервер и работает в качестве программы первого клиента на системах не использующих Экранный менеджер."
+  echo " Давайте проанализируем действия, которые выполняются. "
+  echo " 1 - Если вам нужен автовход без DM (Display manager), тогда укажите "1" "
+  echo " Вы хотите автологин определенного пользователя, автоматический запуск Иксов, запуск окружения (KDE, XFCE, Gnom и т.д.). "
+  echo " Всё можно сделать без использования DM (например SDDM, LightDM и т.д.), поскольку реализация автозагрузки окружения реализован через startx. "
+  echo " 2(0) - Если Вы по прежнему желаете использовать DM (например SDDM, LightDM и т.д.), или в дальнейшем захотите установить, и использовать 2(е) окружение (Т.е. DE - KDE, XFCE, Gnom и т.д.), тогда укажите "0" " 
+  echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+  echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
+  echo ""
 while
     echo " Действия ввода, выполняется сразу после нажатия клавиши " 
     read -n1 -p  "
@@ -761,41 +760,41 @@ elif [[ $i_xfce  == 1 ]]; then
   echo " Действия по настройке автовхода без DM (Display manager) "  
   echo " Поскольку реализация автозагрузки окружения реализована через startx - (иксы), то если Вы установили X.Org Server возможно пакет (xorg-xinit) - уже установлен "      
 # pacman -S xorg-xinit --noconfirm   # Программа инициализации X.Org
-pacman -S --noconfirm --needed xorg-xinit  # Программа инициализации X.Org
-# Если файл .xinitrc не существует, то копируем его из /etc/X11/xinit/xinitrc
-# в папку пользователя cp /etc/X11/xinit/xinitrc ~/.xinitrc
-cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc # копируем файл .xinitrc в каталог пользователя
-chown $username:users /home/$username/.xinitrc  # даем доступ пользователю к файлу
-chmod +x /home/$username/.xinitrc   # получаем права на исполнения скрипта
-sed -i 52,55d /home/$username/.xinitrc  # редактируем файл -> и прописываем команду на запуск
-# # Данные блоки нужны для того, чтобы StartX автоматически запускал нужное окружение, соответственно в секции Window Manager of your choice раскомментируйте нужную сессию
-echo "exec startxfce4 " >> /home/$username/.xinitrc  
-mkdir /etc/systemd/system/getty@tty1.service.d/  # создаём папку
-echo " [Service] " > /etc/systemd/system/getty@tty1.service.d/override.conf
-echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
-echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
-# Делаем автоматический запуск Иксов в нужной виртуальной консоли после залогинивания нашего пользователя
-echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile 
-echo ""
-echo " Действия по настройке автовхода без DM (Display manager) выполнены "
+  pacman -S --noconfirm --needed xorg-xinit  # Программа инициализации X.Org
+### Если файл .xinitrc не существует, то копируем его из /etc/X11/xinit/xinitrc
+### в папку пользователя cp /etc/X11/xinit/xinitrc ~/.xinitrc
+  cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc # копируем файл .xinitrc в каталог пользователя
+  chown $username:users /home/$username/.xinitrc  # даем доступ пользователю к файлу
+  chmod +x /home/$username/.xinitrc   # получаем права на исполнения скрипта
+  sed -i 52,55d /home/$username/.xinitrc  # редактируем файл -> и прописываем команду на запуск
+### Данные блоки нужны для того, чтобы StartX автоматически запускал нужное окружение, соответственно в секции Window Manager of your choice раскомментируйте нужную сессию
+  echo "exec startxfce4 " >> /home/$username/.xinitrc  
+  mkdir /etc/systemd/system/getty@tty1.service.d/  # создаём папку
+  echo " [Service] " > /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
+### Делаем автоматический запуск Иксов в нужной виртуальной консоли после залогинивания нашего пользователя
+  echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile 
+  echo ""
+  echo " Действия по настройке автовхода без DM (Display manager) выполнены "
 fi
-clear
+  clear
 elif [[ $x_de == 3 ]]; then
-echo " Установка Gnome " 
-pacman -S gnome gnome-extra  --noconfirm
-clear
-echo ""
-echo " DE (среда рабочего стола) Gnome успешно установлено " 
-echo ""
-echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Display manager) менеджера входа в GNOME"
-echo " Давайте проанализируем действия, которые выполняются. "
-echo " 1 - Если вам нужен автовход без DM (Display manager), тогда укажите "1" "
-echo " Вы хотите автологин определенного пользователя, автоматический запуск Иксов, запуск окружения (KDE, XFCE, Gnom и т.д.). "
-echo " Всё можно сделать без использования DM (например SDDM, LightDM и т.д.), поскольку реализация автозагрузки окружения реализован через startx. "
-echo " 2(0) - Если Вы по прежнему желаете использовать DM (например SDDM, LightDM и т.д.), или в дальнейшем захотите установить, и использовать 2(е) окружение (Т.е. DE - KDE, XFCE, Gnom и т.д.), тогда укажите "0" " 
-echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
-echo ""
+  echo " Установка Gnome " 
+  pacman -S gnome gnome-extra  --noconfirm
+  clear
+  echo ""
+  echo " DE (среда рабочего стола) Gnome успешно установлено " 
+  echo ""
+  echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Display manager) менеджера входа в GNOME"
+  echo " Давайте проанализируем действия, которые выполняются. "
+  echo " 1 - Если вам нужен автовход без DM (Display manager), тогда укажите "1" "
+  echo " Вы хотите автологин определенного пользователя, автоматический запуск Иксов, запуск окружения (KDE, XFCE, Gnom и т.д.). "
+  echo " Всё можно сделать без использования DM (например SDDM, LightDM и т.д.), поскольку реализация автозагрузки окружения реализован через startx. "
+  echo " 2(0) - Если Вы по прежнему желаете использовать DM (например SDDM, LightDM и т.д.), или в дальнейшем захотите установить, и использовать 2(е) окружение (Т.е. DE - KDE, XFCE, Gnom и т.д.), тогда укажите "0" " 
+  echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+  echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
+  echo ""
 while
     echo " Действия ввода, выполняется сразу после нажатия клавиши " 
     read -n1 -p  "
@@ -808,42 +807,42 @@ do
     :
 done
 if [[ $i_gnome  == 0 ]]; then
-echo " Буду использовать DM (Display manager) "
+  echo " Буду использовать DM (Display manager) "
 elif [[ $i_gnome  == 1 ]]; then 
   echo ""  
   echo " Действия по настройке автовхода без DM (Display manager) "  
   echo " Поскольку реализация автозагрузки окружения реализована через startx - (иксы), то если Вы установили X.Org Server возможно пакет (xorg-xinit) - уже установлен " 
-pacman -S xorg-xinit --noconfirm
-cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc # копируем файл .xinitrc в каталог пользователя
-chown $username:users /home/$username/.xinitrc  # даем доступ пользователю к файлу
-chmod +x /home/$username/.xinitrc   # получаем права на исполнения скрипта
-sed -i 52,55d /home/$username/.xinitrc  # редактируем файл -> и прописываем команду на запуск
-echo "exec gnome-session " >> /home/$username/.xinitrc  
-mkdir /etc/systemd/system/getty@tty1.service.d/  # создаём папку
-echo " [Service] " > /etc/systemd/system/getty@tty1.service.d/override.conf
-echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
-echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
-echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile 
-echo ""
-echo " Действия по настройке автовхода без DM (Display manager) выполнены "
+  pacman -S xorg-xinit --noconfirm
+  cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc # копируем файл .xinitrc в каталог пользователя
+  chown $username:users /home/$username/.xinitrc  # даем доступ пользователю к файлу
+  chmod +x /home/$username/.xinitrc   # получаем права на исполнения скрипта
+  sed -i 52,55d /home/$username/.xinitrc  # редактируем файл -> и прописываем команду на запуск
+  echo "exec gnome-session " >> /home/$username/.xinitrc  
+  mkdir /etc/systemd/system/getty@tty1.service.d/  # создаём папку
+  echo " [Service] " > /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile 
+  echo ""
+  echo " Действия по настройке автовхода без DM (Display manager) выполнены "
 fi
-clear
+  clear
 elif [[ $x_de == 4 ]]; then
-echo " Установка LXDE " 
-pacman -S lxde --noconfirm
-clear
-echo ""
-echo " DE (среда рабочего стола) LXDE успешно установлено " 
-echo ""
-echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Display manager) менеджера входа в LXDE"
-echo " Давайте проанализируем действия, которые выполняются. "
-echo " 1 - Если вам нужен автовход без DM (Display manager), тогда укажите "1" "
-echo " Вы хотите автологин определенного пользователя, автоматический запуск Иксов, запуск окружения (KDE, XFCE, Gnom и т.д.). "
-echo " Всё можно сделать без использования DM (например SDDM, LightDM и т.д.), поскольку реализация автозагрузки окружения реализован через startx. "
-echo " 2(0) - Если Вы по прежнему желаете использовать DM (например SDDM, LightDM и т.д.), или в дальнейшем захотите установить, и использовать 2(е) окружение (Т.е. DE - KDE, XFCE, Gnom и т.д.), тогда укажите "0" " 
-echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
-echo ""
+  echo " Установка LXDE " 
+  pacman -S lxde --noconfirm
+  clear
+  echo ""
+  echo " DE (среда рабочего стола) LXDE успешно установлено " 
+  echo ""
+  echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Display manager) менеджера входа в LXDE"
+  echo " Давайте проанализируем действия, которые выполняются. "
+  echo " 1 - Если вам нужен автовход без DM (Display manager), тогда укажите "1" "
+  echo " Вы хотите автологин определенного пользователя, автоматический запуск Иксов, запуск окружения (KDE, XFCE, Gnom и т.д.). "
+  echo " Всё можно сделать без использования DM (например SDDM, LightDM и т.д.), поскольку реализация автозагрузки окружения реализован через startx. "
+  echo " 2(0) - Если Вы по прежнему желаете использовать DM (например SDDM, LightDM и т.д.), или в дальнейшем захотите установить, и использовать 2(е) окружение (Т.е. DE - KDE, XFCE, Gnom и т.д.), тогда укажите "0" " 
+  echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+  echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
+  echo ""
 while
     echo " Действия ввода, выполняется сразу после нажатия клавиши " 
     read -n1 -p  "
@@ -856,42 +855,42 @@ do
     :
 done
 if [[ $i_lxde  == 0 ]]; then
-echo " Буду использовать DM (Display manager) "
+  echo " Буду использовать DM (Display manager) "
 elif [[ $i_lxde  == 1 ]]; then
   echo ""  
   echo " Действия по настройке автовхода без DM (Display manager) "  
   echo " Поскольку реализация автозагрузки окружения реализована через startx - (иксы), то если Вы установили X.Org Server возможно пакет (xorg-xinit) - уже установлен "    
-pacman -S xorg-xinit --noconfirm
-cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
-chown $username:users /home/$username/.xinitrc
-chmod +x /home/$username/.xinitrc
-sed -i 52,55d /home/$username/.xinitrc
-echo "exec startlxde " >> /home/$username/.xinitrc
-mkdir /etc/systemd/system/getty@tty1.service.d/
-echo " [Service] " > /etc/systemd/system/getty@tty1.service.d/override.conf
-echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
-echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
-echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile
-echo ""
-echo " Действия по настройке автовхода без DM (Display manager) выполнены "
+  pacman -S xorg-xinit --noconfirm
+  cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
+  chown $username:users /home/$username/.xinitrc
+  chmod +x /home/$username/.xinitrc
+  sed -i 52,55d /home/$username/.xinitrc
+  echo "exec startlxde " >> /home/$username/.xinitrc
+  mkdir /etc/systemd/system/getty@tty1.service.d/
+  echo " [Service] " > /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile
+  echo ""
+  echo " Действия по настройке автовхода без DM (Display manager) выполнены "
 fi
-clear
+  clear
 elif [[ $x_de == 5 ]]; then
-echo " Установка Deepin " 
-pacman -S deepin deepin-extra --noconfirm
-clear
-echo ""
-echo " DE (среда рабочего стола) Deepin успешно установлено " 
-echo ""
-echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Display manager) менеджера входа в Deepin"
-echo " Давайте проанализируем действия, которые выполняются. "
-echo " 1 - Если вам нужен автовход без DM (Display manager), тогда укажите "1" "
-echo " Вы хотите автологин определенного пользователя, автоматический запуск Иксов, запуск окружения (KDE, XFCE, Gnom и т.д.). "
-echo " Всё можно сделать без использования DM (например SDDM, LightDM и т.д.), поскольку реализация автозагрузки окружения реализован через startx. "
-echo " 2(0) - Если Вы по прежнему желаете использовать DM (например SDDM, LightDM и т.д.), или в дальнейшем захотите установить, и использовать 2(е) окружение (Т.е. DE - KDE, XFCE, Gnom и т.д.), тогда укажите "0" " 
-echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
-echo ""
+  echo " Установка Deepin " 
+  pacman -S deepin deepin-extra --noconfirm
+  clear
+  echo ""
+  echo " DE (среда рабочего стола) Deepin успешно установлено " 
+  echo ""
+  echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Display manager) менеджера входа в Deepin"
+  echo " Давайте проанализируем действия, которые выполняются. "
+  echo " 1 - Если вам нужен автовход без DM (Display manager), тогда укажите "1" "
+  echo " Вы хотите автологин определенного пользователя, автоматический запуск Иксов, запуск окружения (KDE, XFCE, Gnom и т.д.). "
+  echo " Всё можно сделать без использования DM (например SDDM, LightDM и т.д.), поскольку реализация автозагрузки окружения реализован через startx. "
+  echo " 2(0) - Если Вы по прежнему желаете использовать DM (например SDDM, LightDM и т.д.), или в дальнейшем захотите установить, и использовать 2(е) окружение (Т.е. DE - KDE, XFCE, Gnom и т.д.), тогда укажите "0" " 
+  echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+  echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
+  echo ""
 while
     echo " Действия ввода, выполняется сразу после нажатия клавиши " 
     read -n1 -p  "
@@ -904,42 +903,42 @@ do
     :
 done
 if [[ $i_deepin  == 0 ]]; then
-echo " Буду использовать DM (Display manager) "
+  echo " Буду использовать DM (Display manager) "
 elif [[ $i_deepin  == 1 ]]; then
   echo ""  
   echo " Действия по настройке автовхода без DM (Display manager) "  
   echo " Поскольку реализация автозагрузки окружения реализована через startx - (иксы), то если Вы установили X.Org Server возможно пакет (xorg-xinit) - уже установлен "    
-pacman -S xorg-xinit --noconfirm
-cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
-chown $username:users /home/$username/.xinitrc
-chmod +x /home/$username/.xinitrc
-sed -i 52,55d /home/$username/.xinitrc
-echo "exec startdde  " >> /home/$username/.xinitrc
-mkdir /etc/systemd/system/getty@tty1.service.d/
-echo " [Service] " > /etc/systemd/system/getty@tty1.service.d/override.conf
-echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
-echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
-echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile
-echo ""
-echo " Действия по настройке автовхода без DM (Display manager) выполнены "
+  pacman -S xorg-xinit --noconfirm
+  cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
+  chown $username:users /home/$username/.xinitrc
+  chmod +x /home/$username/.xinitrc
+  sed -i 52,55d /home/$username/.xinitrc
+  echo "exec startdde  " >> /home/$username/.xinitrc
+  mkdir /etc/systemd/system/getty@tty1.service.d/
+  echo " [Service] " > /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile
+  echo ""
+  echo " Действия по настройке автовхода без DM (Display manager) выполнены "
 fi
-clear
+  clear
 elif [[ $x_de == 6 ]]; then
-echo " Установка Mate " 
-pacman -S  mate mate-extra  --noconfirm
-clear
-echo ""
-echo " DE (среда рабочего стола) Mate успешно установлено " 
-echo ""
-echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Display manager) менеджера входа в Mate"
-echo " Давайте проанализируем действия, которые выполняются. "
-echo " 1 - Если вам нужен автовход без DM (Display manager), тогда укажите "1" "
-echo " Вы хотите автологин определенного пользователя, автоматический запуск Иксов, запуск окружения (KDE, XFCE, Gnom и т.д.). "
-echo " Всё можно сделать без использования DM (например SDDM, LightDM и т.д.), поскольку реализация автозагрузки окружения реализован через startx. "
-echo " 2(0) - Если Вы по прежнему желаете использовать DM (например SDDM, LightDM и т.д.), или в дальнейшем захотите установить, и использовать 2(е) окружение (Т.е. DE - KDE, XFCE, Gnom и т.д.), тогда укажите "0" " 
-echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
-echo ""
+  echo " Установка Mate " 
+  pacman -S  mate mate-extra  --noconfirm
+  clear
+  echo ""
+  echo " DE (среда рабочего стола) Mate успешно установлено " 
+  echo ""
+  echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Display manager) менеджера входа в Mate"
+  echo " Давайте проанализируем действия, которые выполняются. "
+  echo " 1 - Если вам нужен автовход без DM (Display manager), тогда укажите "1" "
+  echo " Вы хотите автологин определенного пользователя, автоматический запуск Иксов, запуск окружения (KDE, XFCE, Gnom и т.д.). "
+  echo " Всё можно сделать без использования DM (например SDDM, LightDM и т.д.), поскольку реализация автозагрузки окружения реализован через startx. "
+  echo " 2(0) - Если Вы по прежнему желаете использовать DM (например SDDM, LightDM и т.д.), или в дальнейшем захотите установить, и использовать 2(е) окружение (Т.е. DE - KDE, XFCE, Gnom и т.д.), тогда укажите "0" " 
+  echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+  echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
+  echo ""
 while
     echo " Действия ввода, выполняется сразу после нажатия клавиши " 
     read -n1 -p  "
@@ -952,42 +951,42 @@ do
     :
 done
 if [[ $i_mate  == 0 ]]; then
-echo " Буду использовать DM (Display manager) "
+  echo " Буду использовать DM (Display manager) "
 elif [[ $i_mate  == 1 ]]; then
   echo ""  
   echo " Действия по настройке автовхода без DM (Display manager) "  
   echo " Поскольку реализация автозагрузки окружения реализована через startx - (иксы), то если Вы установили X.Org Server возможно пакет (xorg-xinit) - уже установлен "    
-pacman -S xorg-xinit --noconfirm
-cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
-chown $username:users /home/$username/.xinitrc
-chmod +x /home/$username/.xinitrc
-sed -i 52,55d /home/$username/.xinitrc
-echo "exec mate-session  " >> /home/$username/.xinitrc
-mkdir /etc/systemd/system/getty@tty1.service.d/
-echo " [Service] " > /etc/systemd/system/getty@tty1.service.d/override.conf
-echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
-echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
-echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile
-echo ""
-echo " Действия по настройке автовхода без DM (Display manager) выполнены "
+  pacman -S xorg-xinit --noconfirm
+  cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
+  chown $username:users /home/$username/.xinitrc
+  chmod +x /home/$username/.xinitrc
+  sed -i 52,55d /home/$username/.xinitrc
+  echo "exec mate-session  " >> /home/$username/.xinitrc
+  mkdir /etc/systemd/system/getty@tty1.service.d/
+  echo " [Service] " > /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile
+  echo ""
+  echo " Действия по настройке автовхода без DM (Display manager) выполнены "
 fi
-clear
+  clear
 elif [[ $x_de == 7 ]]; then
-echo " Установка Lxqt " 
-pacman -S lxqt lxqt-qtplugin lxqt-themes oxygen-icons xscreensaver --noconfirm
-clear
-echo ""
-echo " DE (среда рабочего стола) Lxqt успешно установлено " 
-echo ""
-echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Display manager) менеджера входа в Lxqt"
-echo " Давайте проанализируем действия, которые выполняются. "
-echo " 1 - Если вам нужен автовход без DM (Display manager), тогда укажите "1" "
-echo " Вы хотите автологин определенного пользователя, автоматический запуск Иксов, запуск окружения (KDE, XFCE, Gnom и т.д.). "
-echo " Всё можно сделать без использования DM (например SDDM, LightDM и т.д.), поскольку реализация автозагрузки окружения реализован через startx. "
-echo " 2(0) - Если Вы по прежнему желаете использовать DM (например SDDM, LightDM и т.д.), или в дальнейшем захотите установить, и использовать 2(е) окружение (Т.е. DE - KDE, XFCE, Gnom и т.д.), тогда укажите "0" " 
-echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
-echo ""
+  echo " Установка Lxqt " 
+  pacman -S lxqt lxqt-qtplugin lxqt-themes oxygen-icons xscreensaver --noconfirm
+  clear
+  echo ""
+  echo " DE (среда рабочего стола) Lxqt успешно установлено " 
+  echo ""
+  echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Display manager) менеджера входа в Lxqt"
+  echo " Давайте проанализируем действия, которые выполняются. "
+  echo " 1 - Если вам нужен автовход без DM (Display manager), тогда укажите "1" "
+  echo " Вы хотите автологин определенного пользователя, автоматический запуск Иксов, запуск окружения (KDE, XFCE, Gnom и т.д.). "
+  echo " Всё можно сделать без использования DM (например SDDM, LightDM и т.д.), поскольку реализация автозагрузки окружения реализован через startx. "
+  echo " 2(0) - Если Вы по прежнему желаете использовать DM (например SDDM, LightDM и т.д.), или в дальнейшем захотите установить, и использовать 2(е) окружение (Т.е. DE - KDE, XFCE, Gnom и т.д.), тогда укажите "0" " 
+  echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+  echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
+  echo ""
 while
     echo " Действия ввода, выполняется сразу после нажатия клавиши " 
     read -n1 -p  "
@@ -1000,42 +999,42 @@ do
     :
 done
 if [[ $i_lxqt  == 0 ]]; then
-echo " Буду использовать DM (Display manager) "
+  echo " Буду использовать DM (Display manager) "
 elif [[ $i_lxqt  == 1 ]]; then
   echo ""  
   echo " Действия по настройке автовхода без DM (Display manager) "  
   echo " Поскольку реализация автозагрузки окружения реализована через startx - (иксы), то если Вы установили X.Org Server возможно пакет (xorg-xinit) - уже установлен "    
-pacman -S xorg-xinit --noconfirm
-cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
-chown $username:users /home/$username/.xinitrc
-chmod +x /home/$username/.xinitrc
-sed -i 52,55d /home/$username/.xinitrc
-echo "exec startlxqt " >> /home/$username/.xinitrc
-mkdir /etc/systemd/system/getty@tty1.service.d/
-echo " [Service] " > /etc/systemd/system/getty@tty1.service.d/override.conf
-echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
-echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
-echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile
-echo ""
-echo " Действия по настройке автовхода без DM (Display manager) выполнены "
+  pacman -S xorg-xinit --noconfirm
+  cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
+  chown $username:users /home/$username/.xinitrc
+  chmod +x /home/$username/.xinitrc
+  sed -i 52,55d /home/$username/.xinitrc
+  echo "exec startlxqt " >> /home/$username/.xinitrc
+  mkdir /etc/systemd/system/getty@tty1.service.d/
+  echo " [Service] " > /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile
+  echo ""
+  echo " Действия по настройке автовхода без DM (Display manager) выполнены "
 fi
-clear
+  clear
 elif [[ $x_de == 8 ]]; then
-echo " Установка i3 (тайловый оконный менеджер) " 
-pacman -S i3 i3-wm i3status dmenu --noconfirm
-clear
-echo ""
-echo " i3 (тайловый оконный менеджер) успешно установлен " 
-echo ""
-echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Display manager) менеджера входа в i3"
-echo " Давайте проанализируем действия, которые выполняются. "
-echo " 1 - Если вам нужен автовход без DM (Display manager), тогда укажите "1" "
-echo " Вы хотите автологин определенного пользователя, автоматический запуск Иксов, запуск окружения (KDE, XFCE, Gnom и т.д.). "
-echo " Всё можно сделать без использования DM (например SDDM, LightDM и т.д.), поскольку реализация автозагрузки окружения реализован через startx. "
-echo " 2(0) - Если Вы по прежнему желаете использовать DM (например SDDM, LightDM и т.д.), или в дальнейшем захотите установить, и использовать 2(е) окружение (Т.е. DE - KDE, XFCE, Gnom и т.д.), тогда укажите "0" " 
-echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
-echo ""
+  echo " Установка i3 (тайловый оконный менеджер) " 
+  pacman -S i3 i3-wm i3status dmenu --noconfirm
+  clear
+  echo ""
+  echo " i3 (тайловый оконный менеджер) успешно установлен " 
+  echo ""
+  echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Display manager) менеджера входа в i3"
+  echo " Давайте проанализируем действия, которые выполняются. "
+  echo " 1 - Если вам нужен автовход без DM (Display manager), тогда укажите "1" "
+  echo " Вы хотите автологин определенного пользователя, автоматический запуск Иксов, запуск окружения (KDE, XFCE, Gnom и т.д.). "
+  echo " Всё можно сделать без использования DM (например SDDM, LightDM и т.д.), поскольку реализация автозагрузки окружения реализован через startx. "
+  echo " 2(0) - Если Вы по прежнему желаете использовать DM (например SDDM, LightDM и т.д.), или в дальнейшем захотите установить, и использовать 2(е) окружение (Т.е. DE - KDE, XFCE, Gnom и т.д.), тогда укажите "0" " 
+  echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+  echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
+  echo ""
 while
     echo " Действия ввода, выполняется сразу после нажатия клавиши " 
     read -n1 -p  "
@@ -1048,24 +1047,24 @@ do
     :
 done
 if [[ $i_i3w  == 0 ]]; then
-echo " Буду использовать DM (Display manager) "
+  echo " Буду использовать DM (Display manager) "
 elif [[ $i_i3w  == 1 ]]; then
   echo ""  
   echo " Действия по настройке автовхода без DM (Display manager) "  
   echo " Поскольку реализация автозагрузки окружения реализована через startx - (иксы), то если Вы установили X.Org Server возможно пакет (xorg-xinit) - уже установлен "    
-pacman -S xorg-xinit --noconfirm
-cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
-chown $username:users /home/$username/.xinitrc
-chmod +x /home/$username/.xinitrc
-sed -i 52,55d /home/$username/.xinitrc
-echo "exec i3 " >> /home/$username/.xinitrc
-mkdir /etc/systemd/system/getty@tty1.service.d/
-echo " [Service] " > /etc/systemd/system/getty@tty1.service.d/override.conf
-echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
-echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
-echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile
-echo ""
-echo " Действия по настройке автовхода без DM (Display manager) выполнены "
+  pacman -S xorg-xinit --noconfirm
+  cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
+  chown $username:users /home/$username/.xinitrc
+  chmod +x /home/$username/.xinitrc
+  sed -i 52,55d /home/$username/.xinitrc
+  echo "exec i3 " >> /home/$username/.xinitrc
+  mkdir /etc/systemd/system/getty@tty1.service.d/
+  echo " [Service] " > /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile
+  echo ""
+  echo " Действия по настройке автовхода без DM (Display manager) выполнены "
 fi
 fi
 
@@ -1100,62 +1099,62 @@ do
     :
 done 
 if [[ $i_dm == 0 ]]; then
-clear
- echo "" 
- echo " Установка DM (Display manager) пропущена "
+  clear
+  echo "" 
+  echo " Установка DM (Display manager) пропущена "
 elif [[ $i_dm == 1 ]]; then
   echo ""  
   echo " Установка LightDM (менеджера входа) "
-pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm  # Легкий диспетчер дисплеев; GTK + приветствие для LightDM; Редактор настроек для LightDM GTK + Greeter.
-pacman -S light-locker --noconfirm  # Простой шкафчик сессий для LightDM
-echo " Установка DM (менеджера входа) завершена "
-echo ""
-echo " Подключаем автозагрузку менеджера входа "
-#systemctl enable lightdm.service
-systemctl enable lightdm.service -f  # systemctl - специальный инструмент для управления службами в Linux
-sleep 1 
-clear
-echo ""
-echo " Менеджера входа LightDM установлен и подключен в автозагрузку "
+  pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm  # Легкий диспетчер дисплеев; GTK + приветствие для LightDM; Редактор настроек для LightDM GTK + Greeter.
+  pacman -S light-locker --noconfirm  # Простой шкафчик сессий для LightDM
+  echo " Установка DM (менеджера входа) завершена "
+  echo ""
+  echo " Подключаем автозагрузку менеджера входа "
+# systemctl enable lightdm.service
+  systemctl enable lightdm.service -f  # systemctl - специальный инструмент для управления службами в Linux
+  sleep 1 
+  clear
+  echo ""
+  echo " Менеджера входа LightDM установлен и подключен в автозагрузку "
 elif [[ $i_dm == 2 ]]; then
   echo ""  
   echo " Установка LXDM (менеджера входа) "
-pacman -S lxdm --noconfirm  # Легкий диспетчер отображения X11
-echo " Установка DM (менеджера входа) завершена "
-echo ""
-echo " Подключаем автозагрузку менеджера входа "
-#systemctl enable lxdm.service
-systemctl enable lxdm.service -f  # systemctl - специальный инструмент для управления службами в Linux
-sleep 1 
-clear
-echo ""
-echo " Менеджера входа LXDM установлен и подключен в автозагрузку "
+  pacman -S lxdm --noconfirm  # Легкий диспетчер отображения X11
+  echo " Установка DM (менеджера входа) завершена "
+  echo ""
+  echo " Подключаем автозагрузку менеджера входа "
+# systemctl enable lxdm.service
+  systemctl enable lxdm.service -f  # systemctl - специальный инструмент для управления службами в Linux
+  sleep 1 
+  clear
+  echo ""
+  echo " Менеджера входа LXDM установлен и подключен в автозагрузку "
 elif [[ $i_dm == 3 ]]; then
   echo ""  
   echo " Установка GDM (менеджера входа) "
-pacman -S gdm --noconfirm  # Диспетчер отображения и экран входа в систему
-echo " Установка DM (менеджера входа) завершена "
-echo ""
-echo " Подключаем автозагрузку менеджера входа "
-#systemctl enable gdm.service
-systemctl enable gdm.service -f  # systemctl - специальный инструмент для управления службами в Linux
-sleep 1
-clear
-echo ""
-echo " Менеджера входа GDM установлен и подключен в автозагрузку "
+  pacman -S gdm --noconfirm  # Диспетчер отображения и экран входа в систему
+  echo " Установка DM (менеджера входа) завершена "
+  echo ""
+  echo " Подключаем автозагрузку менеджера входа "
+# systemctl enable gdm.service
+  systemctl enable gdm.service -f  # systemctl - специальный инструмент для управления службами в Linux
+  sleep 1
+  clear
+  echo ""
+  echo " Менеджера входа GDM установлен и подключен в автозагрузку "
 elif [[ $i_dm == 4 ]]; then
   echo ""  
   echo " Установка SDDM (менеджера входа) "
-pacman -S sddm sddm-kcm --noconfirm  # Диспетчер отображения X11 и Wayland на основе QML; Модуль конфигурации KDE для SDDM
-echo " Установка DM (менеджера входа) завершена "
-echo ""
-echo " Подключаем автозагрузку менеджера входа "
-#systemctl enable sddm.service
-systemctl enable sddm.service -f  # systemctl - специальный инструмент для управления службами в Linux
-sleep 1 
-clear
-echo ""
-echo " Менеджера входа SDDM установлен и подключен в автозагрузку " 
+  pacman -S sddm sddm-kcm --noconfirm  # Диспетчер отображения X11 и Wayland на основе QML; Модуль конфигурации KDE для SDDM
+  echo " Установка DM (менеджера входа) завершена "
+  echo ""
+  echo " Подключаем автозагрузку менеджера входа "
+# systemctl enable sddm.service
+  systemctl enable sddm.service -f  # systemctl - специальный инструмент для управления службами в Linux
+  sleep 1 
+  clear
+  echo ""
+  echo " Менеджера входа SDDM установлен и подключен в автозагрузку " 
 fi
 
 echo ""
@@ -1177,17 +1176,17 @@ do
     :
 done
 if [[ $i_network  == 1 ]]; then
-echo ""
-echo " Ставим сетевые утилиты Networkmanager "		
-pacman -S networkmanager networkmanager-openvpn network-manager-applet ppp --noconfirm  # Диспетчер сетевых подключений и пользовательские приложения; Плагин NetworkManager VPN для OpenVPN; Апплет для управления сетевыми подключениями; Демон, реализующий протокол точка-точка для коммутируемого доступа в сеть.
+  echo ""
+  echo " Ставим сетевые утилиты Networkmanager "		
+  pacman -S networkmanager networkmanager-openvpn network-manager-applet ppp --noconfirm  # Диспетчер сетевых подключений и пользовательские приложения; Плагин NetworkManager VPN для OpenVPN; Апплет для управления сетевыми подключениями; Демон, реализующий протокол точка-точка для коммутируемого доступа в сеть.
 #pacman -Sy networkmanager networkmanager-openvpn network-manager-applet ppp --noconfirm
-echo ""
-echo -e "${BLUE}:: ${NC}Подключаем Networkmanager в автозагрузку"	
-#systemctl enable NetworkManager  # systemctl - специальный инструмент для управления службами в Linux
-systemctl enable NetworkManager.service 
-echo " NetworkManager успешно добавлен в автозагрузку "
- elif [[ $i_network  == 0 ]]; then
-echo " Установка NetworkManager пропущена "
+  echo ""
+  echo -e "${BLUE}:: ${NC}Подключаем Networkmanager в автозагрузку"	
+# systemctl enable NetworkManager  # systemctl - специальный инструмент для управления службами в Linux
+  systemctl enable NetworkManager.service 
+  echo " NetworkManager успешно добавлен в автозагрузку "
+elif [[ $i_network  == 0 ]]; then
+  echo " Установка NetworkManager пропущена "
 fi
 
 sleep 02
@@ -1210,10 +1209,10 @@ do
     :
 done
 if [[ $x_dhcpcd == 1 ]]; then
-echo ""    
-#systemctl enable dhcpcd   # для активации проводных соединений  # systemctl - инструмент для управления службами
-systemctl enable dhcpcd.service
-echo " Dhcpcd успешно добавлен в автозагрузку "  
+  echo ""    
+# systemctl enable dhcpcd   # для активации проводных соединений  # systemctl - инструмент для управления службами
+  systemctl enable dhcpcd.service
+  echo " Dhcpcd успешно добавлен в автозагрузку "  
 elif [[ $x_dhcpcd == 0 ]]; then
   echo ' Dhcpcd не включен в автозагрузку, при необходиости это можно будет сделать уже в установленной системе '
 fi
@@ -1381,17 +1380,17 @@ do
     :
 done
 if [[ $i_catalog == 0 ]]; then
-echo ""  
-echo " Создание каталогов пропущено "
+  echo ""  
+  echo " Создание каталогов пропущено "
 elif [[ $i_catalog == 1 ]]; then
-echo ""  
-echo " Создание пользовательских каталогов по умолчанию "     
- pacman -S xdg-user-dirs --noconfirm  # Управляйте пользовательскими каталогами, такими как ~ / Desktop и ~ / Music
+  echo ""  
+  echo " Создание пользовательских каталогов по умолчанию "     
+  pacman -S xdg-user-dirs --noconfirm  # Управляйте пользовательскими каталогами, такими как ~ / Desktop и ~ / Music
 # pacman -S xdg-user-dirs-gtk --noconfirm  # Создаёт каталоги пользователей и просит их переместить
- xdg-user-dirs-update 
+  xdg-user-dirs-update 
 # xdg-user-dirs-gtk-update  # Обновить закладки в thunar (левое меню)
- echo "" 
- echo " Создание каталогов успешно выполнено "
+  echo "" 
+  echo " Создание каталогов успешно выполнено "
 fi
 
 clear
@@ -1418,26 +1417,25 @@ do
     :
 done 
 if [[ $x_shell == 0 ]]; then 
-clear 
-echo ""  
-echo " Оболочка (shell) НЕ изменена, по умолчанию остаётся Bash! "
+  clear 
+  echo ""  
+  echo " Оболочка (shell) НЕ изменена, по умолчанию остаётся Bash! "
 elif [[ $x_shell == 1 ]]; then 
-clear
-echo "" 
-echo " Установка ZSH (shell) оболочки "
-pacman -S zsh zsh-syntax-highlighting zsh-autosuggestions grml-zsh-config --noconfirm
-pacman -S zsh-completions zsh-history-substring-search  --noconfirm  
-echo 'source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh' >> /etc/zsh/zshrc
-echo 'source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> /etc/zsh/zshrc
-#echo 'prompt adam2' >> /etc/zsh/zshrc
-echo 'prompt fire' >> /etc/zsh/zshrc
-
-clear
-echo ""
-echo -e "${BLUE}:: ${NC}Сменим командную оболочку пользователя с Bash на ZSH ?"
-echo -e "${YELLOW}=> Важно! ${BOLD}Если Вы сменили пользовательскую оболочку, то при первом запуске консоли (терминала) - нажмите 0 (ноль), и пользовательская оболочка (сразу будет) ИЗМЕНЕНА, с BASH на ZSH. ${NC}"
-echo " Будьте внимательны! В данной опции выбор всегда остаётся за вами. "
-echo "" 
+  clear
+  echo "" 
+  echo " Установка ZSH (shell) оболочки "
+  pacman -S zsh zsh-syntax-highlighting zsh-autosuggestions grml-zsh-config --noconfirm
+  pacman -S zsh-completions zsh-history-substring-search  --noconfirm  
+  echo 'source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh' >> /etc/zsh/zshrc
+  echo 'source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> /etc/zsh/zshrc
+# echo 'prompt adam2' >> /etc/zsh/zshrc
+  echo 'prompt fire' >> /etc/zsh/zshrc
+  clear
+  echo ""
+  echo -e "${BLUE}:: ${NC}Сменим командную оболочку пользователя с Bash на ZSH ?"
+  echo -e "${YELLOW}=> Важно! ${BOLD}Если Вы сменили пользовательскую оболочку, то при первом запуске консоли (терминала) - нажмите 0 (ноль), и пользовательская оболочка (сразу будет) ИЗМЕНЕНА, с BASH на ZSH. ${NC}"
+  echo " Будьте внимательны! В данной опции выбор всегда остаётся за вами. "
+  echo "" 
 while
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
@@ -1448,16 +1446,16 @@ do
     :
 done 
 if [[ $t_shell == 0 ]]; then 
-clear
-echo ""
-echo " Пользовательская оболочка (shell) НЕ изменена, по умолчанию остаётся BASH "
+  clear
+  echo ""
+  echo " Пользовательская оболочка (shell) НЕ изменена, по умолчанию остаётся BASH "
 elif [[ $t_shell == 1 ]]; then
-chsh -s /bin/zsh
-chsh -s /bin/zsh $username
-clear
-echo ""
-echo " Важно! При первом запуске консоли (терминала) - нажмите "0" "
-echo " Пользовательская оболочка ИЗМЕНЕНА (сразу будет), с BASH на ZSH "
+  chsh -s /bin/zsh
+  chsh -s /bin/zsh $username
+  clear
+  echo ""
+  echo " Важно! При первом запуске консоли (терминала) - нажмите "0" "
+  echo " Пользовательская оболочка ИЗМЕНЕНА (сразу будет), с BASH на ZSH "
 fi
 fi 
 
