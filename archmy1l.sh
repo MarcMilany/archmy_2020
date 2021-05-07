@@ -244,25 +244,25 @@ dmidecode -t bios  # BIOS – это предпрограмма (код, вши�
 
 #echo -e "${BLUE}:: ${NC}Смотрим информацию о материнской плате"
 #dmidecode -t baseboard
-#dmidecode --type baseboard
+# dmidecode --type baseboard
 
 #echo -e "${BLUE}:: ${NC}Смотрим информацию о разьемах на материнской плате"
 #dmidecode -t connector
-#dmidecode --type connector
+# dmidecode --type connector
 
 #echo -e "${BLUE}:: ${NC}Информация о установленных модулях памяти и колличестве слотов под нее"
 #echo " Информация об оперативной памяти "
 #dmidecode -t memory
-#dmidecode --type memory
+# dmidecode --type memory
 
 #echo -e "${BLUE}:: ${NC}Смотрим информацию об аппаратном обеспечении"
 #echo " Информация о переключателях системной платы "
 #dmidecode -t system
-#dmidecode --type system
+# dmidecode --type system
 
 #echo -e "${BLUE}:: ${NC}Смотрим информацию о центральном процессоре (CPU)"
 #dmidecode -t processor
-#dmidecode --type processor
+# dmidecode --type processor
 
 sleep 01
 clear
