@@ -607,8 +607,8 @@ fi
 
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"  
-pacman -Sy   #--noconfirm --noprogressbar --quiet
-#pacman -Syy --noconfirm --noprogressbar --quiet
+pacman -Sy   #--noconfirm --noprogressbar --quiet (обновить списки пакетов из репозиториев)
+#pacman -Syy --noconfirm --noprogressbar --quiet (обновление баз пакмэна - pacman)
 
 clear
 echo ""
@@ -1211,7 +1211,7 @@ done
 if [[ $i_network  == 1 ]]; then
 echo ""
 echo " Ставим сетевые утилиты Networkmanager "		
-pacman -S networkmanager networkmanager-openvpn network-manager-applet ppp --noconfirm
+pacman -S networkmanager networkmanager-openvpn network-manager-applet ppp --noconfirm  # Диспетчер сетевых подключений и пользовательские приложения; Плагин NetworkManager VPN для OpenVPN; Апплет для управления сетевыми подключениями; Демон, реализующий протокол точка-точка для коммутируемого доступа в сеть.
 #pacman -Sy networkmanager networkmanager-openvpn network-manager-applet ppp --noconfirm
 echo ""
 echo -e "${BLUE}:: ${NC}Подключаем Networkmanager в автозагрузку"	
