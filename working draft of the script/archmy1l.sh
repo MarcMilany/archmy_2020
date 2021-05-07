@@ -1194,11 +1194,16 @@ done
   clear
   echo ""
   echo " Установка выбранного вами, групп "
-  pacstrap /mnt base base-devel nano vim dhcpcd netctl which inetutils  #wget 
+  pacstrap /mnt base base-devel nano vim dhcpcd netctl which inetutils  #wget
+# pacstrap -i /mnt base base-devel nano dhcpcd netctl which inetutils --noconfirm    
 #  pacstrap /mnt base            #--noconfirm --noprogressbar --quiet
 #  pacstrap /mnt base-devel      #--noconfirm
 #  pacstrap /mnt --needed base-devel
 #  pacstrap /mnt nano vim dhcpcd netctl which inetutils #wget
+### pacman -S pkgfile --noconfirm  # Обозреватель метаданных pacman .files
+### pkgfile --update  # Синхронизировать базу данных pkgfile
+### pkgfile pacstrap  # Найти пакет, которому принадлежит файл - pacstrap
+### pacman -S extra/arch-install-scripts --noconfirm  # Скрипты для помощи в установке Arch Linux
 clear
   echo ""
   echo " Установка выбранного вами, групп (base + base-devel + packages) выполнена "
