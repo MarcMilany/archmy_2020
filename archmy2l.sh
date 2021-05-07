@@ -527,19 +527,19 @@ do
     :
 done
 if [[ $i_sudo  == 0 ]]; then
-clear
-echo ""
-echo " Добавление настройки sudo пропущено "
+  clear
+  echo ""
+  echo " Добавление настройки sudo пропущено "
 elif [[ $i_sudo  == 1 ]]; then
-sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
-clear
-echo ""
-echo " Sudo с запросом пароля выполнено "
+  sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
+  clear
+  echo ""
+  echo " Sudo с запросом пароля выполнено "
 elif [[ $i_sudo  == 2 ]]; then
-sed -i 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
-clear
-echo ""
-echo " Sudo nopassword (БЕЗ запроса пароля) добавлено  "
+  sed -i 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+  clear
+  echo ""
+  echo " Sudo nopassword (БЕЗ запроса пароля) добавлено  "
 fi
 
 echo ""
@@ -561,16 +561,16 @@ do
     :
 done
 if [[ $i_multilib  == 0 ]]; then
-#clear
-echo ""
-echo " Добавление Multilib репозитория пропущено "
+# clear
+  echo ""
+  echo " Добавление Multilib репозитория пропущено "
 elif [[ $i_multilib  == 1 ]]; then
-sed -i 's/#Color/Color/' /etc/pacman.conf
-#sed -i '/#Color/ s/^#//' /etc/pacman.conf
-sed -i '/^Co/ aILoveCandy' /etc/pacman.conf
-sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
-echo ""
-echo " Multilib репозиторий добавлен (раскомментирован) "
+  sed -i 's/#Color/Color/' /etc/pacman.conf
+# sed -i '/#Color/ s/^#//' /etc/pacman.conf
+  sed -i '/^Co/ aILoveCandy' /etc/pacman.conf
+  sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
+  echo ""
+  echo " Multilib репозиторий добавлен (раскомментирован) "
 fi
 
 echo ""
