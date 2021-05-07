@@ -57,7 +57,7 @@ echo "# https://wiki.archlinux.org/index.php/Installation_guide #"
 echo "###########################################################"                                                                                               
 sleep 03
 clear
-##########################################
+######################################
 ### Help and usage (--help or -h) (Справка)
 _help() {
     echo -e "${BLUE}
@@ -206,7 +206,7 @@ ip a  # Смотрим какие у нас есть интернет-интер
  
 echo ""
 echo -e "${GREEN}=> ${NC}Для проверки интернета можно пропинговать какой-либо сервис" 
-ping -c2 archlinux.org
+ping -c2 archlinux.org  # Утилита ping - это очень простой инструмент для диагностики сети
 
 echo -e "${CYAN}==> ${NC}Если пинг идёт едем дальше ... :)"
 
@@ -252,7 +252,7 @@ echo -e "${BLUE}:: ${NC}Посмотрим статус службы NTP (NTP se
 timedatectl status 
 
 echo -e "${BLUE}:: ${NC}Посмотрим дату и время без характеристик для проверки времени"
-date
+date  # команда date работает с датой и временем (можно извлекать любую дату в разнообразном формате)
 sleep 03
 
 clear
@@ -285,7 +285,7 @@ echo " Обновление ключей... "
 pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
 echo ""
 echo "Обновим базы данных пакетов..."
-###  sudo pacman -Sy
+###  sudo pacman -Sy  # обновить списки пакетов из репозиториев
 pacman -Syy  # обновление баз пакмэна (pacman) 
 # pacman -Syyu  # Обновим вашу систему (базу данных пакетов)
 # pacman -Syyu  --noconfirm
@@ -854,18 +854,21 @@ elif [[ $x_fstab == 2 ]]; then
   echo ""
   echo " Генерируем fstab выбранным вами методом "
   echo " LABEL - genfstab -L -p /mnt > /mnt/etc/fstab "
+  genfstab -pL /mnt > /mnt/etc/fstab
 echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. "
 elif [[ $x_fstab == 3 ]]; then
   clear
   echo ""
   echo " Генерируем fstab выбранным вами методом "
   echo " PARTLABEL - genfstab -t PARTLABEL -p /mnt > /mnt/etc/fstab "
+  genfstab -t PARTLABEL -p /mnt > /mnt/etc/fstab
 echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. "   
 elif [[ $x_fstab == 4 ]]; then
   clear
   echo ""
   echo " Генерируем fstab выбранным вами методом "
   echo " PARTUUID - genfstab -t PARTUUID -p /mnt > /mnt/etc/fstab "
+  genfstab -t PARTUUID -p /mnt > /mnt/etc/fstab
 echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. "
 fi 
 
