@@ -843,7 +843,7 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done   
- if [[ $x_fstab == 1 ]]; then
+if [[ $x_fstab == 1 ]]; then
   clear
   echo ""
   echo " Генерируем fstab выбранным вами методом "
