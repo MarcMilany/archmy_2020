@@ -397,7 +397,7 @@ if [[ $cfdisk == 1 ]]; then
    clear
    echo ""
  echo -e "${BLUE}:: ${NC}Выбор диска для установки"  
- lsblk -f
+ lsblk -f  # Команда lsblk выводит список всех блочных устройств
   echo ""
   echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
   read -p " => Укажите диск (sda/sdb например sda или sdb) : " cfd
@@ -412,9 +412,9 @@ clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Ваша разметка диска" 
 fdisk -l  # Ещё раз проверте правильность разбивки на разделы!
-lsblk -f
-#lsblk -lo 
-sleep 07
+lsblk -f  # Команда lsblk выводит список всех блочных устройств
+#lsblk -lo  # Команда lsblk выводит список всех блочных устройств
+sleep 05
 
 clear
 echo ""
@@ -422,7 +422,7 @@ echo -e "${GREEN}==> ${NC}Форматирование разделов диск
 echo -e "${BLUE}:: ${NC}Установка название флага boot,root,swap,home"
 echo -e "${BLUE}:: ${NC}Монтирование разделов диска"
 ########## Root  ########
-lsblk -f
+lsblk -f  # Команда lsblk выводит список всех блочных устройств
 echo ""
 echo -e "${BLUE}:: ${NC}Форматируем и монтируем ROOT раздел?"
 echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
@@ -434,7 +434,7 @@ echo ""
 ########## Boot  ########
 clear
 echo ""
-lsblk -f
+lsblk -f  # Команда lsblk выводит список всех блочных устройств
 echo ""
 echo -e "${BLUE}:: ${NC}Форматируем BOOT раздел?"
 echo " Если таковой был создан при разметке в cfdisk "
@@ -461,7 +461,7 @@ fi
 ########## Swap  ########
 clear
 echo ""
-lsblk -f
+lsblk -f  # Команда lsblk выводит список всех блочных устройств
 echo ""
 echo -e "${BLUE}:: ${NC}Форматируем Swap раздел?"
 echo " Если таковой был создан при разметке в cfdisk "
@@ -514,14 +514,14 @@ do
 done 
    if [[ $homeF == 1 ]]; then
    echo ""
-   lsblk -f
+   lsblk -f  # Команда lsblk выводит список всех блочных устройств
    echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
    read -p " Укажите HOME раздел (sda/sdb 1.2.3.4 (sda6 например)): " home  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
    mkfs.ext4 /dev/$home -L home
    mkdir /mnt/home
    mount /dev/$home /mnt/home
    elif [[ $homeF == 0 ]]; then
- lsblk -f
+ lsblk -f  # Команда lsblk выводит список всех блочных устройств
  echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
  read -p " Укажите HOME раздел (sda/sdb 1.2.3.4 (sda6 например)): " homeV  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
  mkdir /mnt/home  
@@ -567,7 +567,7 @@ if [[ $diskC == 0 ]]; then
   echo ' Действие пропущено '
   elif [[ $diskC == 1 ]]; then
    clear
- lsblk -f
+ lsblk -f  # Команда lsblk выводит список всех блочных устройств
   echo ""
   echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
   read -p " Укажите диск "C" раздел(sda/sdb 1.2.3.4 (sda4 например) ) : " diskCc
@@ -591,7 +591,7 @@ if [[ $diskD == 0 ]]; then
   echo ' Действие пропущено '
  elif [[ $diskD == 1 ]]; then
    clear
- lsblk -f
+ lsblk -f  # Команда lsblk выводит список всех блочных устройств
   echo ""
   echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
   read -p " Укажите диск "D" раздел(sda/sdb 1.2.3.4 (sda5 например)) : " diskDd
@@ -613,7 +613,7 @@ do
 done
  if [[ $diskE == 1 ]]; then
    clear
- lsblk -f
+ lsblk -f  # Команда lsblk выводит список всех блочных устройств
   echo ""
   echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
   read -p " Укажите диск "E" раздел(sda/sdb 1.2.3.4 (sda5 например)) : " diskDe
