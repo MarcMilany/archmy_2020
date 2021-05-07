@@ -563,7 +563,7 @@ echo '#USECOLOR=yes' >> /etc/vconsole.conf
 #echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf
 #echo 'COMPRESSION="xz"' >> /etc/mkinitcpio.conf
 #echo -e "KEYMAP=ru\nFONT=cyr-sun16\nFONT_MAP=\CONSOLEMAP=" > /etc/vconsole.conf
-
+#echo -e "KEYMAP=ru\nFONT=cyr-sun16\nFONT_MAP=" > /etc/vconsole.conf
 #-----------------------------------------------------------
 #echo 'Вписываем KEYMAP=ru FONT=ter-v16n'
 #echo 'KEYMAP=us' >> /etc/vconsole.conf
