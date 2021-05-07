@@ -655,14 +655,14 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done
-if [[ $t_pacstrap == 1 ]]; then
-clear
-echo ""
-echo " Установка выбранного вами, групп "
-#pacstrap /mnt base base-devel nano dhcpcd netctl which inetutils  #wget vim
-pacstrap -i /mnt base base-devel nano dhcpcd netctl which inetutils --noconfirm
-clear
-echo ""
+ if [[ $t_pacstrap == 1 ]]; then
+  clear
+  echo ""
+  echo " Установка выбранного вами, групп "
+# pacstrap /mnt base base-devel nano dhcpcd netctl which inetutils  #wget vim
+  pacstrap -i /mnt base base-devel nano dhcpcd netctl which inetutils --noconfirm
+  clear
+  echo ""
 echo " Установка выбранного вами, групп (base + base-devel + packages) выполнена "
 elif [[ $t_pacstrap == 2 ]]; then
   clear
