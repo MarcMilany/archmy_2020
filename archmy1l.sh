@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Смотрите пометки (справочки) и доп.иформацию в самом скрипте!
 ###########################################################
 #######  <<< Скрипт для установки Arch Linux >>>    #######
@@ -40,7 +41,7 @@ EDITOR=nano
 
 ARCHMY1_LANG="russian"  # Installer default language (Язык установки по умолчанию)
 script_path=$(readlink -f ${0%/*})
-# ischroot=0
+#ischroot=0
 
 umask 0022 # Определение окончательных прав доступа - Для суперпользователя (root) umask по умолчанию равна 0022
 
@@ -59,6 +60,64 @@ ${GREY}<https://wiki.archlinux.org/index.php/Installation_guide>${NC}"
 ### Shell color codes (Цветовые коды оболочки)
 RED="\e[1;31m"; GREEN="\e[1;32m"; YELLOW="\e[1;33m"; GREY="\e[3;93m"
 BLUE="\e[1;34m"; CYAN="\e[1;36m"; BOLD="\e[1;37m"; MAGENTA="\e[1;35m"; NC="\e[0m"
+
+### Automatic error detection (Автоматическое обнаружение ошибок)
+_set() {
+    set [--abefhkmnptuvxBCHP] [-o option] [arg ...]
+}
+
+_set() {
+    set -e "\n${RED}Error: ${YELLOW}${*}${NC}"
+    _note "${MSG_ERROR}"
+    sleep 1; $$
+}
+  
+### Display install steps (Отображение шагов установки)
+_info() {
+    echo -e "${YELLOW}\n==> ${CYAN}${1}...${NC}"; sleep 1
+}
+
+### Download show progress bar only (Скачать показывать только индикатор выполнения)
+_wget() {
+    wget "${1}" --quiet --show-progress
+}
+
+### Execute action in chrooted environment (Выполнение действия в хромированной среде)
+_chroot() {
+    arch-chroot /mnt <<EOF "${1}"
+EOF
+}
+
+### Display error, cleanup and kill (Ошибка отображения, очистка и убийство)
+_error() {
+    echo -e "\n${RED}Error: ${YELLOW}${*}${NC}"
+    _note "${MSG_ERROR}"
+    sleep 1; _cleanup; _exit_msg; kill -9 $$
+}
+
+### Cleanup on keyboard interrupt (Очистка при прерывании работы клавиатуры)
+_trap() {
+trap '_error ${MSG_KEYBOARD}' 1 2 3 6
+}
+#trap "set -$-" RETURN; set +o nounset
+# Или
+#trap "set -${-//[is]}" RETURN; set +o nounset
+#..., устраняя недействительные флаги и действительно решая эту проблему!
+
+### Reboot with 10s timeout (Перезагрузка с таймаутом 10 секунд)
+_reboot() {
+    for (( SECOND=10; SECOND>=1; SECOND-- )); do
+        echo -ne "\r\033[K${GREEN}${MSG_REBOOT} ${SECOND}s...${NC}"
+        sleep 1
+    done
+    reboot; exit 0
+}
+
+### Say goodbye (Распрощаться)
+_exit_msg() {
+    echo -e "\n${GREEN}<<< ${BLUE}${APPNAME} ${VERSION} ${BOLD}by \
+${AUTHOR} ${RED}under ${LICENSE} ${GREEN}>>>${NC}"""
+}
 
 #########   Baner  ####################
 #_arch_fast_install_banner
@@ -92,14 +151,16 @@ ${NC}
 Вы используйте его на свой страх и риск, или изменяйте под свои личные нужды."
 }
 
-echo -e "${BLUE}:: ${NC}Installation Commands : - archiso login: root (automatic login)"
+echo ""
+echo -e "${GREEN}:: ${NC}Installation Commands :=) "
 
-echo -e "${RED}=> ${NC}Acceptable limit for the list of arguments..."
+echo -e "${CYAN}=> ${NC}Acceptable limit for the list of arguments..."
 getconf ARG_MAX  # Допустимый лимит (предел) списка аргументов...'
 
 echo -e "${BLUE}:: ${NC}The determination of the final access rights"
 umask  # Определение окончательных прав доступа - Для суперпользователя (root) umask по умолчанию равна 0022    
 
+echo ""
 echo -e "${BLUE}:: ${NC}Install the Terminus font"  # Установим шрифт Terminus
 pacman -Sy terminus-font --noconfirm  # Моноширинный растровый шрифт (для X11 и консоли)
 # pacman -Syy terminus-font  # Моноширинный растровый шрифт (для X11 и консоли)
@@ -205,24 +266,24 @@ do
     :
 done
 if [[ $i_key == 1 ]]; then
-clear
-echo ""
-echo " Создаётся генерация мастер-ключа (брелка) pacman "  # gpg –refresh-keys
-pacman-key --init  # генерация мастер-ключа (брелка) pacman
-echo " Далее идёт поиск ключей... "
-pacman-key --populate archlinux  # поиск ключей
+  clear
+  echo ""
+  echo " Создаётся генерация мастер-ключа (брелка) pacman "  # gpg –refresh-keys
+  pacman-key --init  # генерация мастер-ключа (брелка) pacman
+  echo " Далее идёт поиск ключей... "
+  pacman-key --populate archlinux  # поиск ключей
 # pacman-key --populate
-echo ""
-echo " Обновление ключей... "  
-pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
-echo ""
-echo "Обновим базы данных пакетов..."
-###  pacman -Sy  # обновить списки пакетов из репозиториев
-pacman -Syy  # обновление баз пакмэна (pacman) 
+  echo ""
+  echo " Обновление ключей... "  
+  pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
+  echo ""
+  echo " Обновим базы данных пакетов... "
+### pacman -Sy  # обновить списки пакетов из репозиториев
+  pacman -Syy  # обновление баз пакмэна (pacman) 
 # pacman -Syyu  # Обновим вашу систему (базу данных пакетов)
 # pacman -Syyu  --noconfirm
-echo ""
-echo " Обновление и добавление новых ключей выполнено " 
+  echo ""
+  echo " Обновление и добавление новых ключей выполнено " 
 elif [[ $i_key == 0 ]]; then
   echo ""
   echo " Обновление ключей пропущено " 
@@ -241,7 +302,7 @@ pacman -S dmidecode --noconfirm  # Утилиты, относящиеся к т�
 echo ""
 echo -e "${BLUE}:: ${NC}Смотрим информацию о BIOS"
 dmidecode -t bios  # BIOS – это предпрограмма (код, вшитый в материнскую плату компьютера)
-#dmidecode --type BIOS
+# dmidecode --type BIOS
 
 #echo -e "${BLUE}:: ${NC}Смотрим информацию о материнской плате"
 #dmidecode -t baseboard
@@ -299,9 +360,9 @@ do
     :
 done
 if [[ $sgdisk == 1 ]]; then
-echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "    
-read -p " => Укажите диск (sda/sdb например sda или sdb) : " cfd
-sgdisk --zap-all /dev/$cfd   #sda; sdb; sdc; sdd - sgdisk - это манипулятор таблицы разделов Unix-подобных систем
+  echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "    
+  read -p " => Укажите диск (sda/sdb например sda или sdb) : " cfd
+  sgdisk --zap-all /dev/$cfd   #sda; sdb; sdc; sdd - sgdisk - это манипулятор таблицы разделов Unix-подобных систем
   echo " Создание новых записей GPT в памяти. "
   echo " Структуры данных GPT уничтожены! Теперь вы можете разбить диск на разделы с помощью fdisk или других утилит. " 
 elif [[ $sgdisk == 0 ]]; then
@@ -326,18 +387,18 @@ do
     :
 done
 if [[ $cfdisk == 1 ]]; then
-   clear
-   echo ""
- echo -e "${BLUE}:: ${NC}Выбор диска для установки"  
- lsblk -f  # Команда lsblk выводит список всех блочных устройств
+  clear
+  echo ""
+  echo -e "${BLUE}:: ${NC}Выбор диска для установки"  
+  lsblk -f  # Команда lsblk выводит список всех блочных устройств
   echo ""
   echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
   read -p " => Укажите диск (sda/sdb например sda или sdb) : " cfd
-cfdisk /dev/$cfd  # Утилита cfdisk используется для работы с дисковым пространством в операционных системах Linux
-echo ""
-clear
+  cfdisk /dev/$cfd  # Утилита cfdisk используется для работы с дисковым пространством в операционных системах Linux
+  echo ""
+  clear
 elif [[ $cfdisk == 0 ]]; then
-  echo " Разметка диска(ов) (разделов) пропропущена "       
+  echo " Разметка диска(ов) (разделов) пропропущена "        
 fi
 
 clear 
@@ -412,7 +473,7 @@ if [[ $swap == 1 ]]; then
   mkswap /dev/$swaps -L swap
   swapon /dev/$swaps 
 elif [[ $swap == 0 ]]; then
-   echo ' Добавление Swap раздела пропущено. '   
+  echo " Добавление Swap раздела пропущено. "    
 fi
 ########## Home  ########
 clear
@@ -431,9 +492,9 @@ do
     :
 done 
 if [[ $homes == 0 ]]; then
-  echo ' Добавление Home раздела пропущено. '
+  echo " Добавление Home раздела пропущено. "
 elif [[ $homes == 1 ]]; then
-   echo ' Добавление домашнего раздела (HOME) '   
+  echo " Добавление домашнего раздела (HOME) "   
 echo -e "${BLUE}:: ${NC}Форматируем Home раздел?"
 while
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
@@ -445,20 +506,20 @@ do
     :
 done 
    if [[ $homeF == 1 ]]; then
-   echo ""
-   lsblk -f  # Команда lsblk выводит список всех блочных устройств
-   echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
-   read -p " Укажите HOME раздел (sda/sdb 1.2.3.4 (sda6 например)): " home  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
-   mkfs.ext4 /dev/$home -L home
-   mkdir /mnt/home
-   mount /dev/$home /mnt/home
+     echo ""
+     lsblk -f  # Команда lsblk выводит список всех блочных устройств
+     echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+     read -p " Укажите HOME раздел (sda/sdb 1.2.3.4 (sda6 например)): " home  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+     mkfs.ext4 /dev/$home -L home
+     mkdir /mnt/home
+     mount /dev/$home /mnt/home
    elif [[ $homeF == 0 ]]; then
- lsblk -f  # Команда lsblk выводит список всех блочных устройств
- echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
- read -p " Укажите HOME раздел (sda/sdb 1.2.3.4 (sda6 например)): " homeV  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
- mkdir /mnt/home  
- mount /dev/$homeV /mnt/home
-fi
+     lsblk -f  # Команда lsblk выводит список всех блочных устройств
+     echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
+     read -p " Укажите HOME раздел (sda/sdb 1.2.3.4 (sda6 например)): " homeV  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
+     mkdir /mnt/home  
+     mount /dev/$homeV /mnt/home
+   fi
 fi
 sleep 02
 
@@ -479,8 +540,8 @@ do
     :
 done
 if [[ $wind == 0 ]]; then
-  echo ' Действие пропущено '
-  elif [[ $wind == 1 ]]; then    
+  echo " Действие пропущено "
+elif [[ $wind == 1 ]]; then    
   echo " ### Приступим к добавлению разделов Windows ### "
 ############### Disk C ##############
 echo ""
@@ -496,16 +557,16 @@ do
     :
 done
 if [[ $diskC == 0 ]]; then
-  echo ' Действие пропущено '
-  elif [[ $diskC == 1 ]]; then
-   clear
- lsblk -f  # Команда lsblk выводит список всех блочных устройств
+  echo " Действие пропущено "
+elif [[ $diskC == 1 ]]; then
+  clear
+  lsblk -f  # Команда lsblk выводит список всех блочных устройств
   echo ""
   echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
   read -p " Укажите диск "C" раздел(sda/sdb 1.2.3.4 (sda4 например) ) : " diskCc
   mkdir /mnt/C 
   mount /dev/$diskCc /mnt/C
-  fi
+fi
 ############### Disk D #############
 echo ""
 echo -e "${BLUE}:: ${NC}Добавим раздел диск "D"(Data Disk) Windows?"
@@ -520,16 +581,16 @@ do
     :
 done
 if [[ $diskD == 0 ]]; then
-  echo ' Действие пропущено '
- elif [[ $diskD == 1 ]]; then
-   clear
- lsblk -f  # Команда lsblk выводит список всех блочных устройств
+  echo " Действие пропущено "
+elif [[ $diskD == 1 ]]; then
+  clear
+  lsblk -f  # Команда lsblk выводит список всех блочных устройств
   echo ""
   echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
   read -p " Укажите диск "D" раздел(sda/sdb 1.2.3.4 (sda5 например)) : " diskDd
   mkdir /mnt/D 
   mount /dev/$diskDd /mnt/D
-  fi
+fi
 ###### disk E ########
 echo ""
 echo -e "${BLUE}:: ${NC}Добавим раздел диск "E"(Work Disk) Windows?"
@@ -543,18 +604,18 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done
- if [[ $diskE == 1 ]]; then
-   clear
- lsblk -f  # Команда lsblk выводит список всех блочных устройств
+if [[ $diskE == 1 ]]; then
+  clear
+  lsblk -f  # Команда lsblk выводит список всех блочных устройств
   echo ""
   echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
   read -p " Укажите диск "E" раздел(sda/sdb 1.2.3.4 (sda5 например)) : " diskDe
   mkdir /mnt/E 
   mount /dev/$diskDe /mnt/E
-  elif [[ $diskE == 0 ]]; then
-  echo ' Действие пропущено '
-  fi 
-  fi
+elif [[ $diskE == 0 ]]; then
+  echo " Действие пропущено "
+fi 
+fi
 ###################################
 
 echo ""
@@ -656,7 +717,7 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done
- if [[ $t_pacstrap == 1 ]]; then
+if [[ $t_pacstrap == 1 ]]; then
   clear
   echo ""
   echo " Установка выбранного вами, групп "
@@ -664,7 +725,7 @@ done
   pacstrap -i /mnt base base-devel nano dhcpcd netctl which inetutils --noconfirm
   clear
   echo ""
-echo " Установка выбранного вами, групп (base + base-devel + packages) выполнена "
+  echo " Установка выбранного вами, групп (base + base-devel + packages) выполнена "
 elif [[ $t_pacstrap == 2 ]]; then
   clear
   echo ""
@@ -672,7 +733,7 @@ elif [[ $t_pacstrap == 2 ]]; then
   pacstrap /mnt base nano dhcpcd netctl which inetutils #wget vim
   clear
   echo ""
-echo " Установка выбранного вами, групп (base + packages) выполнена "
+  echo " Установка выбранного вами, групп (base + packages) выполнена "
 elif [[ $t_pacstrap == 3 ]]; then
   clear
   echo ""
@@ -680,7 +741,7 @@ elif [[ $t_pacstrap == 3 ]]; then
   pacstrap /mnt base base base-devel 
   clear
   echo ""
-echo " Установка выбранного вами, групп (base + base-devel) выполнена "  
+  echo " Установка выбранного вами, групп (base + base-devel) выполнена "  
 elif [[ $t_pacstrap == 4 ]]; then
   clear
   echo ""
@@ -688,7 +749,7 @@ elif [[ $t_pacstrap == 4 ]]; then
   pacstrap /mnt base 
   clear
   echo ""
-echo " Установка выбранной вами, группы (base) выполнена "
+  echo " Установка выбранной вами, группы (base) выполнена "
 fi 
 
 echo ""
@@ -715,14 +776,14 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done  
- if [[ $x_pacstrap == 1 ]]; then
+if [[ $x_pacstrap == 1 ]]; then
   clear
   echo ""
   echo " Установка выбранного вами ядра (linux) "
   pacstrap /mnt linux linux-firmware linux-headers #linux-docs
   clear
   echo ""
-echo " Ядро (linux) операционной системы установленно " 
+  echo " Ядро (linux) операционной системы установленно " 
 elif [[ $x_pacstrap == 2 ]]; then
   clear
   echo ""
@@ -730,7 +791,7 @@ elif [[ $x_pacstrap == 2 ]]; then
   pacstrap /mnt linux-hardened linux-firmware linux-hardened-headers #linux-hardened-docs
   clear
   echo ""
-echo " Ядро (linux-hardened) операционной системы установленно "   
+  echo " Ядро (linux-hardened) операционной системы установленно "   
 elif [[ $x_pacstrap == 3 ]]; then
   clear
   echo ""
@@ -739,7 +800,7 @@ elif [[ $x_pacstrap == 3 ]]; then
   pacstrap -i /mnt linux-lts linux-firmware linux-lts-headers linux-lts-docs --noconfirm
   clear
   echo ""
-echo " Ядро (linux-lts) операционной системы установленно " 
+  echo " Ядро (linux-lts) операционной системы установленно " 
 elif [[ $x_pacstrap == 4 ]]; then
   clear
   echo ""
@@ -747,7 +808,7 @@ elif [[ $x_pacstrap == 4 ]]; then
   pacstrap /mnt linux-zen linux-firmware linux-zen-headers #linux-zen-docs
   clear
   echo ""
-echo " Ядро (linux-zen) операционной системы установленно " 
+  echo " Ядро (linux-zen) операционной системы установленно " 
 fi
 
 echo ""
@@ -784,28 +845,28 @@ if [[ $x_fstab == 1 ]]; then
   echo " Генерируем fstab выбранным вами методом "
   echo " UUID - genfstab -U -p /mnt > /mnt/etc/fstab "
   genfstab -pU /mnt >> /mnt/etc/fstab
-echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. " 
+  echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. " 
 elif [[ $x_fstab == 2 ]]; then
   clear
   echo ""
   echo " Генерируем fstab выбранным вами методом "
   echo " LABEL - genfstab -L -p /mnt > /mnt/etc/fstab "
   genfstab -pL /mnt > /mnt/etc/fstab
-echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. "
+  echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. "
 elif [[ $x_fstab == 3 ]]; then
   clear
   echo ""
   echo " Генерируем fstab выбранным вами методом "
   echo " PARTLABEL - genfstab -t PARTLABEL -p /mnt > /mnt/etc/fstab "
   genfstab -t PARTLABEL -p /mnt > /mnt/etc/fstab
-echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. "   
+  echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. "   
 elif [[ $x_fstab == 4 ]]; then
   clear
   echo ""
   echo " Генерируем fstab выбранным вами методом "
   echo " PARTUUID - genfstab -t PARTUUID -p /mnt > /mnt/etc/fstab "
   genfstab -t PARTUUID -p /mnt > /mnt/etc/fstab
-echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. "
+  echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. "
 fi 
 
 echo ""
@@ -845,61 +906,61 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done 
- if [[ $zerkala == 1 ]]; then
+if [[ $zerkala == 1 ]]; then
   echo "" 
   echo " Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist "
-rm /mnt/etc/pacman.d/mirrorlist 
+  rm /mnt/etc/pacman.d/mirrorlist 
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
-pacman -S --noconfirm --needed reflector  
-#pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman  - пока присутствует в pkglist.x86_64
+  pacman -S --noconfirm --needed reflector  
+# pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman  - пока присутствует в pkglist.x86_64
   echo ""
-reflector --verbose --country 'Russia' -l 9 -p https -p http -n 9 --save /etc/pacman.d/mirrorlist --sort rate
+  reflector --verbose --country 'Russia' -l 9 -p https -p http -n 9 --save /etc/pacman.d/mirrorlist --sort rate
   echo "" 
   echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
-cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
+  cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
   echo " Копируем резервного списка зеркал (mirrorlist.backup) в /mnt "
-cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup   
+  cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup   
 elif [[ $zerkala == 2 ]]; then
   echo "" 
   echo " Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist "
-rm /mnt/etc/pacman.d/mirrorlist    
+  rm /mnt/etc/pacman.d/mirrorlist    
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
-pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman
-reflector --verbose -l 50 -p http --sort rate --save /etc/pacman.d/mirrorlist
-reflector --verbose -l 15 --sort rate --save /etc/pacman.d/mirrorlist
+  pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman
+  reflector --verbose -l 50 -p http --sort rate --save /etc/pacman.d/mirrorlist
+  reflector --verbose -l 15 --sort rate --save /etc/pacman.d/mirrorlist
   echo "" 
   echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
-cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
+  cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
   echo " Копируем резервного списка зеркал (mirrorlist.backup) в /mnt "
-cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup
+  cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup
 elif [[ $zerkala == 3 ]]; then
   echo "" 
   echo " Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist "
-rm /mnt/etc/pacman.d/mirrorlist    
+  rm /mnt/etc/pacman.d/mirrorlist    
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
-pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman 
-#reflector --verbose --country Kazakhstan -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist 
-reflector --verbose --country 'Kazakhstan' -l 5 -p https -p http -n 5 --save /etc/pacman.d/mirrorlist --sort rate
+  pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman 
+# reflector --verbose --country Kazakhstan -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist 
+  reflector --verbose --country 'Kazakhstan' -l 5 -p https -p http -n 5 --save /etc/pacman.d/mirrorlist --sort rate
   echo "" 
   echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
-cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
+  cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
   echo " Копируем резервного списка зеркал (mirrorlist.backup) в /mnt "
-cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup 
+  cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup 
 elif [[ $zerkala == 4 ]]; then
   echo ""
   echo " Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist "
-rm /mnt/etc/pacman.d/mirrorlist     
+  rm /mnt/etc/pacman.d/mirrorlist     
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
-pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman
-reflector -c "Russia" -c "Belarus" -c "Ukraine" -c "Poland" -f 20 -l 20 -p https -p http -n 20 --save /etc/pacman.d/mirrorlist --sort rate
+  pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman
+  reflector -c "Russia" -c "Belarus" -c "Ukraine" -c "Poland" -f 20 -l 20 -p https -p http -n 20 --save /etc/pacman.d/mirrorlist --sort rate
   echo "" 
   echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
-cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
+  cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
   echo " Копируем резервного списка зеркал (mirrorlist.backup) в /mnt "
-cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup
-  elif [[ $zerkala == 0 ]]; then
-   echo "" 
-   echo  " Смена зеркал пропущена "   
+  cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup
+elif [[ $zerkala == 0 ]]; then
+  echo "" 
+  echo  " Смена зеркал пропущена "   
 fi
 
 clear
@@ -939,19 +1000,19 @@ do
 done
 if [[ $int == 1 ]]; then
   echo ""
- echo " Первый этап установки Arch'a закончен " 
- echo 'Установка продолжится в ARCH-LINUX chroot' 
-echo ""   
+  echo " Первый этап установки Arch'a закончен " 
+  echo 'Установка продолжится в ARCH-LINUX chroot' 
+  echo ""   
 # pacman -S curl --noconfirm --noprogressbar  # Утилита и библиотека для поиска URL
-#arch-chroot /mnt sh -c "$(curl -fsSL https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh)"
-arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"
+# arch-chroot /mnt sh -c "$(curl -fsSL https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh)"
+  arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"
 echo " ############################################### "
 echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
 echo " ############################################### "
 echo " Размонтирование всех смонтированных файловых систем (кроме корневой) "
 umount -a
 reboot
-  elif [[ $int == 2 ]]; then
+elif [[ $int == 2 ]]; then
   echo ""
   pacman -S wget --noconfirm --noprogressbar  # Сетевая утилита для извлечения файлов из Интернета
   wget -P /mnt https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh
@@ -972,15 +1033,15 @@ echo " Размонтирование всех смонтированных фа
 umount -a
 reboot 
 elif [[ $int == 3 ]]; then
-echo ""
+  echo ""
 # pacman -S curl --noconfirm --noprogressbar  # Утилита и библиотека для поиска URL
   curl -LO https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh
   mv archmy2l.sh /mnt
   chmod +x /mnt/archmy2l.sh
- echo "" 
- echo " Первый этап установки Arch'a закончен " 
- echo 'Установка продолжится в ARCH-LINUX chroot' 
- echo ""
+  echo "" 
+  echo " Первый этап установки Arch'a закончен " 
+  echo 'Установка продолжится в ARCH-LINUX chroot' 
+  echo ""
   echo -e "${YELLOW}=> ${BOLD}Важно! Для удачного продолжения установки выполните эти пунты: ${NC}"
   echo " 1 - Проверьте подключение сети интернет для продолжения установки в arch-chroot - "ping -c2 8.8.8.8" "
   echo " 2 - Вводим команду для продолжения установки "./archmy2l.sh" "  
@@ -994,3 +1055,99 @@ umount -a
 reboot   
 fi
 ########################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
