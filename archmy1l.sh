@@ -91,7 +91,8 @@ ${NC}
 Вы используйте его на свой страх и риск, или изменяйте под свои личные нужды."
 }
 
-# Команды по установке : - archiso login: root (automatic login)
+echo -e "${BLUE}:: ${NC}Installation Commands : - archiso login: root (automatic login)"
+
 echo -e "${RED}=> ${NC}Acceptable limit for the list of arguments..."
 getconf ARG_MAX  # Допустимый лимит (предел) списка аргументов...'
 
