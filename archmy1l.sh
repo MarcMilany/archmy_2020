@@ -571,7 +571,7 @@ if [[ $diskC == 0 ]]; then
   mkdir /mnt/C 
   mount /dev/$diskCc /mnt/C
   fi
-############### Disk D ##############
+############### Disk D #############
 echo ""
 echo -e "${BLUE}:: ${NC}Добавим раздел диск "D"(Data Disk) Windows?"
 echo " Если таковой был создан при разметке в cfdisk "
