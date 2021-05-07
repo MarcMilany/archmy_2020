@@ -1816,7 +1816,6 @@ sudo pacman -S btrfs-progs --noconfirm  # Утилиты файловой сис
 sudo pacman -S busybox --noconfirm  # Утилиты для аварийно-спасательных и встраиваемых систем
 sudo pacman -S c-ares --noconfirm   # Библиотека AC для асинхронных DNS-запросов
 sudo pacman -S ccache --noconfirm  # Кэш компилятора, который ускоряет перекомпиляцию за счет кеширования предыдущих компиляций
-sudo pacman -S cmake --noconfirm  # Кросс-платформенная система сборки с открытым исходным кодом
 sudo pacman -S cpio --noconfirm  # Инструмент для копирования файлов в или из архива cpio или tar
 sudo pacman -S cpupower --noconfirm  # Инструмент ядра Linux для проверки и настройки функций вашего процессора, связанных с энергосбережением
 sudo pacman -S crda --noconfirm  # Агент центрального регулирующего домена для беспроводных сетей
