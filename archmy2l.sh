@@ -236,7 +236,7 @@ echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen 
 
 echo -e "${BLUE}:: ${NC}Обновим текущую локаль системы"
-locale-gen  # Мы ввели locale-gen для генерации тех самых локалей.
+locale-gen  # Мы ввели locale-gen для генерации тех самых локалей
 
 sleep 02
 echo -e "${BLUE}:: ${NC}Указываем язык системы"
