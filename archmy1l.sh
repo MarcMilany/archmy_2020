@@ -690,7 +690,7 @@ echo -e "${BLUE}:: ${NC}Создание (backup) резервного спис�
 cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 
 echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал для загрузки в mirrorlist"
-cat /etc/pacman.d/mirrorlist
+cat /etc/pacman.d/mirrorlist  # cat читает данные из файла или стандартного ввода и выводит их на экран
 
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
 sudo pacman -Sy 
@@ -870,8 +870,12 @@ fi
 
 echo ""
 echo -e "${BLUE}:: ${NC}Просмотреть содержимое файла fstab"
-cat /mnt/etc/fstab
+cat /mnt/etc/fstab  # cat читает данные из файла или стандартного ввода и выводит их на экран
 sleep 02
+echo " Проcмотрим UUID идентификатор нашего устройства: "
+echo ""
+blkid /dev/sd*  # Для просмотра UUID (или Universal Unique Identifier) - это универсальный уникальный идентификатор определенного устройства компьютера
+sleep 01
 
 clear
 echo ""
@@ -906,7 +910,8 @@ done
   echo " Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist "
 rm /mnt/etc/pacman.d/mirrorlist 
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
-pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman  - пока присутствует в pkglist.x86_64
+pacman -S --noconfirm --needed reflector  
+#pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman  - пока присутствует в pkglist.x86_64
 reflector --verbose --country 'Russia' -l 9 -p https -p http -n 9 --save /etc/pacman.d/mirrorlist --sort rate
   echo "" 
   echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
@@ -960,7 +965,7 @@ clear
 echo ""
 echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал /mnt/etc/pacman.d/mirrorlist"
 echo ""
-cat /mnt/etc/pacman.d/mirrorlist
+cat /mnt/etc/pacman.d/mirrorlist  # cat читает данные из файла или стандартного ввода и выводит их на экран
 
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
@@ -1027,7 +1032,7 @@ umount -a
 reboot 
 elif [[ $int == 3 ]]; then
 echo ""
- #pacman -S curl --noconfirm --noprogressbar  # Утилита и библиотека для поиска URL
+# pacman -S curl --noconfirm --noprogressbar  # Утилита и библиотека для поиска URL
   curl -LO https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh
   mv archmy2l.sh /mnt
   chmod +x /mnt/archmy2l.sh
