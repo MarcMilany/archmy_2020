@@ -1,5 +1,30 @@
 #!/bin/bash
-#### Смотрите пометки (справочки) и доп.иформацию в самом скрипте! #### 
+# Смотрите пометки (справочки) и доп.иформацию в самом скрипте!
+###########################################################
+########  <<< Скрипт для установки Arch Linux >>>  #########
+#### Этот скрипт находится в процессе 'Внесение попра- ####
+#### вок в наводку орудий по результатам наблюдений с  ####
+#### наблюдательных пунктов'.                          ####
+#### Внимание! Автор не несёт ответственности за любое ####
+#### нанесение вреда при использовании скрипта.        ####
+#### Лицензия (license): LGPL-3.0                      ####
+#### (http://opensource.org/licenses/lgpl-3.0.html     #### 
+#### В разработке принимали участие (author) :         ####
+#### Алексей Бойко https://vk.com/ordanax              ####
+#### Степан Скрябин https://vk.com/zurg3               ####
+#### Михаил Сарвилин https://vk.com/michael170707      ####
+#### Данил Антошкин https://vk.com/danil.antoshkin     ####
+#### Юрий Порунцов https://vk.com/poruncov             ####
+#### Анфиса Липко https://vc.ru/u/596418-anfisa-lipko  ####
+#### Alex Creio https://vk.com/creio                   ####
+#### Jeremy Pardo (grm34) https://www.archboot.org/    ####
+#### Marc Milany - 'Не ищи меня 'Вконтакте',           ####
+####                в 'Одноклассниках'' нас нету, ...  ####
+#### Releases ArchLinux:                               ####
+####     https://www.archlinux.org/releng/releases/    ####
+#### Installation guide - Arch Wiki  (referance):      ####
+# https://wiki.archlinux.org/index.php/Installation_guide #
+###########################################################
 
 apptitle="Arch Linux Fast Install v1.6 LegasyBIOS - Version: 2020.07.16.00.40.38 (GPLv3)"
 baseurl=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/url%20links%20abbreviated/git%20url
@@ -15,49 +40,10 @@ EDITOR=nano
 
 ARCHMY1_LANG="russian"  # Installer default language (Язык установки по умолчанию)
 script_path=$(readlink -f ${0%/*})
+# ischroot=0
 umask 0022 # Определение окончательных прав доступа - Для суперпользователя (root) umask по умолчанию равна 0022
-
 set -e "\n${RED}Error: ${YELLOW}${*}${NC}"  # Эта команда остановит выполнение сценария после сбоя команды и будет отправлен код ошибки
-echo ""
-echo -e "${BLUE}:: ${NC}Краткая информация о скрипте "
-echo ""
-echo "###########################################################"
-echo "########  <<< Скрипт по установке Arch Linux >>>  #########"
-echo "#### Скрипт 'arch2020.sh' создан на основе различных   ####"
-echo "#### сценариев (скриптов). При работе (выполнении)     ####"
-echo "#### скрипта Вы получаете возможность быстрой установ- ####"
-echo "#### ки ArchLinux с вашими личными настройками (при    ####"                                         
-echo "#### условии, что Вы его изменили под себя, в против-  ####"       
-echo "#### ном случае с моими настройками).                  ####" 
-echo "#### В скрипте прописана установка grub для LegasyBIOS ####"  
-echo "#### и выбор DE/WM (сред рабочего стола), а также DM   ####"
-echo "#### (Менеджера входа), и т.д...                       ####"
-echo "#### Этот скрипт находится в процессе 'Внесение попра- ####"
-echo "#### вок в наводку орудий по результатам наблюдений с  ####"
-echo "#### наблюдательных пунктов'.                          ####"
-echo "#### Внимание! Автор не несёт ответственности за любое ####"
-echo "#### нанесение вреда при использовании скрипта.        ####"
-echo "#### Лицензия (license): LGPL-3.0                      ####"
-echo "#### (http://opensource.org/licenses/lgpl-3.0.html     ####" 
-echo "#### В разработке принимали участие (author) :         ####"
-echo "#### Алексей Бойко https://vk.com/ordanax              ####"
-echo "#### Степан Скрябин https://vk.com/zurg3               ####"
-echo "#### Михаил Сарвилин https://vk.com/michael170707      ####"
-echo "#### Данил Антошкин https://vk.com/danil.antoshkin     ####"
-echo "#### Юрий Порунцов https://vk.com/poruncov             ####"
-echo "#### Анфиса Липко https://vc.ru/u/596418-anfisa-lipko  ####"
-echo "#### Alex Creio https://vk.com/creio                   ####"
-echo "#### Jeremy Pardo (grm34) https://www.archboot.org/    ####"
-echo "#### Marc Milany - 'Не ищи меня 'Вконтакте',           ####"
-echo "####                в 'Одноклассниках'' нас нету, ...  ####"
-echo "#### Releases ArchLinux:                               ####"
-echo "####     https://www.archlinux.org/releng/releases/    ####"
-echo "#### Installation guide - Arch Wiki  (referance):      ####"
-echo "# https://wiki.archlinux.org/index.php/Installation_guide #"
-echo "###########################################################"                                                                                               
-sleep 03
-clear
-######################################
+
 ### Help and usage (--help or -h) (Справка)
 _help() {
     echo -e "${BLUE}
@@ -374,6 +360,7 @@ elif [[ $sgdisk == 0 ]]; then
   echo 'Операция пропущена.'
 fi
 
+clear
 echo -e "${MAGENTA}
   <<< Вся разметка диска(ов) производится только в cfdisk! >>>
 ${NC}"
@@ -411,7 +398,7 @@ echo -e "${BLUE}:: ${NC}Ваша разметка диска"
 fdisk -l  # Посмотрим список доступных (созданных) дисков и разделов 
 lsblk -f  # Команда lsblk выводит список всех блочных устройств
 #lsblk -lo  # Команда lsblk выводит список всех блочных устройств
-sleep 05
+sleep 03
 
 clear
 echo ""
@@ -876,7 +863,7 @@ echo ""
 echo -e "${BLUE}:: ${NC}Просмотреть содержимое файла fstab"
 cat /mnt/etc/fstab  # cat читает данные из файла или стандартного ввода и выводит их на экран
 sleep 02
-echo " Проcмотрим UUID идентификатор нашего устройства: "
+echo -e "${BLUE}:: ${NC}Взглянем на UUID идентификатор(ы) нашего устройства:"
 echo ""
 blkid /dev/sd*  # Для просмотра UUID (или Universal Unique Identifier) - это универсальный уникальный идентификатор определенного устройства компьютера
 sleep 01
@@ -914,8 +901,8 @@ done
   echo " Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist "
 rm /mnt/etc/pacman.d/mirrorlist 
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
-pacman -S --noconfirm --needed reflector  
-#pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman  - пока присутствует в pkglist.x86_64
+#pacman -S --noconfirm --needed reflector  
+pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman  - пока присутствует в pkglist.x86_64
 reflector --verbose --country 'Russia' -l 9 -p https -p http -n 9 --save /etc/pacman.d/mirrorlist --sort rate
   echo "" 
   echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
