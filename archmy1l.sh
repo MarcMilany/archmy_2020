@@ -253,7 +253,7 @@ timedatectl status
 
 echo -e "${BLUE}:: ${NC}Посмотрим дату и время без характеристик для проверки времени"
 date
-sleep 04
+sleep 03
 
 clear
 echo ""
@@ -693,7 +693,7 @@ echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зе�
 cat /etc/pacman.d/mirrorlist  # cat читает данные из файла или стандартного ввода и выводит их на экран
 
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
-sudo pacman -Sy 
+sudo pacman -Sy  # обновить списки пакетов из репозиториев
 
 clear
 echo ""  
@@ -725,7 +725,8 @@ if [[ $t_pacstrap == 1 ]]; then
 clear
 echo ""
 echo " Установка выбранного вами, групп "
-pacstrap /mnt base base-devel nano dhcpcd netctl which inetutils  #wget vim
+pacstrap -i /mnt base base-devel nano dhcpcd netctl which inetutils --noconfirm
+#pacstrap /mnt base base-devel nano dhcpcd netctl which inetutils  #wget vim
 clear
 echo ""
 echo " Установка выбранного вами, групп (base + base-devel + packages) выполнена "
