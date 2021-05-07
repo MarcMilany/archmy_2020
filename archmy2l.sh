@@ -78,7 +78,7 @@ _arch_fast_install_banner_2
 sleep 02
 echo ""
 echo -e "${GREEN}=> ${NC}Для проверки интернета можно пропинговать какой-либо сервис" 
-ping -c2 archlinux.org
+ping -c2 archlinux.org  # Утилита ping - это очень простой инструмент для диагностики сети
 
 echo -e "${CYAN}==> ${NC}Если пинг идёт едем дальше ... :)"
 
