@@ -646,7 +646,7 @@ cat <<EOF >>/etc/pacman.d/mirrorlist
 
 ##
 ## Arch Linux repository mirrorlist
-## Generated on 2021-04-03
+## Generated on 2021-05-06
 ## HTTP IPv4 HTTPS
 ## https://www.archlinux.org/mirrorlist/
 ## https://www.archlinux.org/mirrorlist/?country=RU&protocol=http&protocol=https&ip_version=4
@@ -668,7 +668,7 @@ Server = https://mirror.truenetwork.ru/archlinux/\$repo/os/\$arch
 
 ##
 ## Arch Linux repository mirrorlist
-## Generated on 2021-04-03
+## Generated on 2021-05-06
 ## HTTP IPv6 HTTPS
 ## https://www.archlinux.org/mirrorlist/
 ## https://www.archlinux.org/mirrorlist/?country=RU&ip_version=6
@@ -974,7 +974,7 @@ cat /mnt/etc/pacman.d/mirrorlist  # cat читает данные из файл�
 
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
-sudo pacman -Sy  # обновить списки пакетов из репозиториев
+pacman -Sy  # обновить списки пакетов из репозиториев
 sleep 01
 
 clear
