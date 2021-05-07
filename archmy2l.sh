@@ -1215,7 +1215,8 @@ pacman -S networkmanager networkmanager-openvpn network-manager-applet ppp --noc
 #pacman -Sy networkmanager networkmanager-openvpn network-manager-applet ppp --noconfirm
 echo ""
 echo -e "${BLUE}:: ${NC}Подключаем Networkmanager в автозагрузку"	
-systemctl enable NetworkManager  # systemctl - специальный инструмент для управления службами в Linux
+#systemctl enable NetworkManager  # systemctl - специальный инструмент для управления службами в Linux
+systemctl enable NetworkManager.service 
 echo " NetworkManager успешно добавлен в автозагрузку "
  elif [[ $i_network  == 0 ]]; then
 echo " Установка NetworkManager пропущена "
@@ -1242,7 +1243,8 @@ do
 done
 if [[ $x_dhcpcd == 1 ]]; then
 echo ""    
-systemctl enable dhcpcd   # для активации проводных соединений  # systemctl - инструмент для управления службами
+#systemctl enable dhcpcd   # для активации проводных соединений  # systemctl - инструмент для управления службами
+systemctl enable dhcpcd.service
 echo " Dhcpcd успешно добавлен в автозагрузку "  
 elif [[ $x_dhcpcd == 0 ]]; then
   echo ' Dhcpcd не включен в автозагрузку, при необходиости это можно будет сделать уже в установленной системе '
