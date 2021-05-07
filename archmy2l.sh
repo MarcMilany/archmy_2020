@@ -357,15 +357,15 @@ echo ""
  echo " Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter") "
  read -p " => Укажите диск куда установить GRUB (sda/sdb например sda или sdb) : " x_cfd  # To confirm the input actions, click 'Enter' ; # Чтобы подтвердить действия ввода, нажмите кнопку 'Ввод' ("Enter")
  grub-install /dev/$x_cfd  # Записываем загрузчик в MBR (Master Boot Record) нашего внутреннего накопителя (sda; sdb; sdc; sdd)
-#grub-install --recheck /dev/$x_cfd     # Если Вы получили сообщение об ошибке
+#grub-install --recheck /dev/$x_cfd  # Если Вы получили сообщение об ошибке (--recheck - удалить существующую карту устройств)
 #grub-install --boot-directory=/mnt/boot /dev/$x_cfd  # установить файлы загрузчика в другой каталог
   echo " Загрузчик GRUB установлен на выбранный вами диск (раздел). " 
 elif [[ $i_grub == 2 ]]; then
 echo ""    
-pacman -Syy
+pacman -Syy  # обновление баз пакмэна (pacman)
 pacman -S grub --noconfirm  # Файлы и утилиты для установки GRUB2 содержатся в пакете grub
-uname -rm
-lsblk -f
+uname -rm  # для определения архитектуры процессора, имени хоста системы и версии ядра, работающего в системе
+lsblk -f # Команда lsblk выводит список всех блочных устройств
 echo ""
 echo -e "${YELLOW}=> ${BOLD}Примечание: /dev/sdX - диск (а не раздел ), на котором должен быть установлен GRUB. ${NC}"
 echo ""
