@@ -487,7 +487,7 @@ done
 if [[ $i_finger == 1 ]]; then
   echo ""  
   echo " Информация о my username : (достаточно имени) "
-chfn $username
+  chfn $username
 elif [[ $i_finger == 0 ]]; then
   echo ""  
   echo ' Настройка пропущена. '
