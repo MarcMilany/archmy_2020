@@ -783,10 +783,10 @@ done
  if [[ $x_pacstrap == 1 ]]; then
   clear
   echo ""
- echo " Установка выбранного вами ядра (linux) "
- pacstrap /mnt linux linux-firmware linux-headers #linux-docs
- clear
- echo ""
+  echo " Установка выбранного вами ядра (linux) "
+  pacstrap /mnt linux linux-firmware linux-headers #linux-docs
+  clear
+  echo ""
 echo " Ядро (linux) операционной системы установленно " 
 elif [[ $x_pacstrap == 2 ]]; then
   clear
