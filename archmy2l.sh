@@ -97,14 +97,14 @@ do
     :
 done
 if [[ $i_rm == 0 ]]; then
-clear
-echo ""
-echo " Очистка пропущена "
+  clear
+  echo ""
+  echo " Очистка пропущена "
 elif [[ $i_rm == 1 ]]; then
-clear    
-rm -rf /home/$username/.*
-echo ""
-echo " Очистка завершена "
+  clear    
+  rm -rf /home/$username/.*
+  echo ""
+  echo " Очистка завершена "
 fi 
 
 echo ""
