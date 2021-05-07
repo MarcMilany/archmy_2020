@@ -1487,8 +1487,7 @@ clear
 echo ""    
 echo " Установка AUR Helper пропущена "
 elif [[ $in_aur_help == 1 ]]; then
-pacman -Syu    
-# pacman -S git
+pacman -Syu  # Обновим вашу систему (базу данных пакетов)    
 echo ""
 echo " Установка AUR Helper - (yay) "
 cd /home/$username
@@ -1502,8 +1501,7 @@ clear
 echo ""
 echo " Установка AUR Helper (yay) завершена "
 elif [[ $in_aur_help == 2 ]]; then
-pacman -Syu    
-# pacman -S git
+pacman -Syu  # Обновим вашу систему (базу данных пакетов)    
 echo ""
 echo " Установка AUR Helper - (pikaur) "    
 cd /home/$username
