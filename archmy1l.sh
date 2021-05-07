@@ -336,7 +336,7 @@ cfdisk /dev/$cfd  # Утилита cfdisk используется для раб
 echo ""
 clear
 elif [[ $cfdisk == 0 ]]; then
-  echo ' Разметка пропущена. '      
+  echo " Разметка диска(ов) (разделов) пропропущена "       
 fi
 
 clear 
