@@ -161,8 +161,8 @@ if [[ $hello == 1 ]]; then
   echo ""
   echo " Добро пожаловать в установку Arch Linux "
 elif [[ $hello == 0 ]]; then
-  echo " Вы отказались от установки Arch Linux" 
-   exit   
+  echo " Вы отказались от установки Arch Linux " 
+  exit   
 fi
 
 clear
