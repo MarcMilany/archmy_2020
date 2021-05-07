@@ -699,27 +699,27 @@ do
     :
 done
 if [[ $i_kde  == 0 ]]; then
-echo " Буду использовать DM (Display manager) "
+  echo " Буду использовать DM (Display manager) "
 elif [[ $i_kde  == 1 ]]; then
   echo ""  
   echo " Действия по настройке автовхода без DM (Display manager) "  
   echo " Поскольку реализация автозагрузки окружения реализована через startx - (иксы), то если Вы установили X.Org Server возможно пакет (xorg-xinit) - уже установлен "    
-pacman -S xorg-xinit --noconfirm
-cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
-chown $username:users /home/$username/.xinitrc
-chmod +x /home/$username/.xinitrc
-sed -i 52,55d /home/$username/.xinitrc
-echo "exec startplasma-x11 " >> /home/$username/.xinitrc
-mkdir /etc/systemd/system/getty@tty1.service.d/
-echo " [Service] " > /etc/systemd/system/getty@tty1.service.d/override.conf
-echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
-echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
-echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile
-echo ""
-echo " Действия по настройке автовхода без DM (Display manager) выполнены "
+  pacman -S xorg-xinit --noconfirm
+  cp /etc/X11/xinit/xinitrc /home/$username/.xinitrc
+  chown $username:users /home/$username/.xinitrc
+  chmod +x /home/$username/.xinitrc
+  sed -i 52,55d /home/$username/.xinitrc
+  echo "exec startplasma-x11 " >> /home/$username/.xinitrc
+  mkdir /etc/systemd/system/getty@tty1.service.d/
+  echo " [Service] " > /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo " ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo   ExecStart=-/usr/bin/agetty --autologin $username --noclear %I 38400 linux >> /etc/systemd/system/getty@tty1.service.d/override.conf
+  echo ' [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx ' >> /etc/profile
+  echo ""
+  echo " Действия по настройке автовхода без DM (Display manager) выполнены "
 fi
-pacman -R konqueror --noconfirm  # Файловый менеджер и веб-браузер KDE
-clear
+ pacman -R konqueror --noconfirm  # Файловый менеджер и веб-браузер KDE
+ clear
 elif [[ $x_de == 2 ]]; then
 echo ""    
 echo " Установка Xfce + Goodies for Xfce "     
