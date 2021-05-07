@@ -800,7 +800,8 @@ elif [[ $x_pacstrap == 3 ]]; then
   clear
   echo ""
   echo " Установка выбранного вами ядра (linux-lts) "
-  pacstrap /mnt linux-lts linux-firmware linux-lts-headers #linux-lts-docs
+# pacstrap /mnt linux-lts linux-firmware linux-lts-headers #linux-lts-docs
+  pacstrap -i /mnt linux-lts linux-firmware linux-lts-headers linux-lts-docs --noconfirm
   clear
   echo ""
 echo " Ядро (linux-lts) операционной системы установленно " 
