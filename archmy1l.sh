@@ -669,24 +669,24 @@ elif [[ $t_pacstrap == 2 ]]; then
   echo ""
   echo " Установка выбранного вами, группы "
   pacstrap /mnt base nano dhcpcd netctl which inetutils #wget vim
-clear
-echo ""
+  clear
+  echo ""
 echo " Установка выбранного вами, групп (base + packages) выполнена "
 elif [[ $t_pacstrap == 3 ]]; then
   clear
   echo ""
   echo " Установка выбранных вами групп "
   pacstrap /mnt base base base-devel 
-clear
-echo ""
+  clear
+  echo ""
 echo " Установка выбранного вами, групп (base + base-devel) выполнена "  
 elif [[ $t_pacstrap == 4 ]]; then
   clear
   echo ""
   echo " Установка выбранной вами группы "
   pacstrap /mnt base 
-clear
-echo ""
+  clear
+  echo ""
 echo " Установка выбранной вами, группы (base) выполнена "
 fi 
 
