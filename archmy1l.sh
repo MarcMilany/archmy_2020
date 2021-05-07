@@ -772,9 +772,9 @@ echo ""
 while
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - LINUX,           2 - LINUX_HARDENED,
+    1 - LINUX (Kernel),           2 - LINUX_HARDENED (Kernel),
 
-    3 - LINUX_LTS,       4 - LINUX_ZEN: " x_pacstrap  # sends right after the keypress; # отправляет сразу после нажатия клавиши  
+    3 - LINUX_LTS (Kernel),       4 - LINUX_ZEN (Kernel): " x_pacstrap  # sends right after the keypress; # отправляет сразу после нажатия клавиши  
     echo ''
     [[ "$x_pacstrap" =~ [^1234] ]]
 do
