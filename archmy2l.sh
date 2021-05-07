@@ -721,13 +721,13 @@ fi
  pacman -R konqueror --noconfirm  # Файловый менеджер и веб-браузер KDE
  clear
 elif [[ $x_de == 2 ]]; then
-echo ""    
-echo " Установка Xfce + Goodies for Xfce "     
-pacman -S xfce4 xfce4-goodies --noconfirm  # Xfce воплощает традиционную философию UNIX
-#mv /usr/share/xsessions/xfce.desktop ~/
-clear
-echo ""
-echo " DE (среда рабочего стола) Xfce успешно установлено "  
+  echo ""    
+  echo " Установка Xfce + Goodies for Xfce "     
+  pacman -S xfce4 xfce4-goodies --noconfirm  # Xfce воплощает традиционную философию UNIX
+# mv /usr/share/xsessions/xfce.desktop ~/
+  clear
+  echo ""
+  echo " DE (среда рабочего стола) Xfce успешно установлено "  
 
 echo ""
 echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Display manager) менеджера входа в Xfce"
@@ -754,8 +754,8 @@ do
     :
 done
 if [[ $i_xfce  == 0 ]]; then
-echo ""    
-echo " Буду использовать DM (Display manager) "
+  echo ""    
+  echo " Буду использовать DM (Display manager) "
 elif [[ $i_xfce  == 1 ]]; then
   echo ""  
   echo " Действия по настройке автовхода без DM (Display manager) "  
