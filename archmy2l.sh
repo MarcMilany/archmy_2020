@@ -669,24 +669,24 @@ do
     :
 done
 if [[ $x_de == 0 ]]; then
-echo ""
-echo " Установка DE (среда рабочего стола) была пропущена "
+  echo ""
+  echo " Установка DE (среда рабочего стола) была пропущена "
 elif [[ $x_de == 1 ]]; then
-echo " Установка KDE(Plasma) " 
-pacman -S  plasma plasma-meta plasma-pa plasma-desktop kde-system-meta kde-utilities-meta kio-extras kwalletmanager latte-dock  konsole  kwalletmanager --noconfirm
-clear 
-echo ""
-echo " DE (Plasma KDE) успешно установлено " 
-echo ""
-echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Display manager) менеджера входа в KDE(Plasma)"
-echo " Давайте проанализируем действия, которые выполняются. "
-echo " 1 - Если вам нужен автовход без DM (Display manager), тогда укажите "1" "
-echo " Вы хотите автологин определенного пользователя, автоматический запуск Иксов, запуск окружения (KDE, XFCE, Gnom и т.д.). "
-echo " Всё можно сделать без использования DM (например SDDM, LightDM и т.д.), поскольку реализация автозагрузки окружения реализован через startx. "
-echo " 2(0) - Если Вы по прежнему желаете использовать DM (например SDDM, LightDM и т.д.), или в дальнейшем захотите установить, и использовать 2(е) окружение (Т.е. DE - KDE, XFCE, Gnom и т.д.), тогда укажите "0" " 
-echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
-echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
-echo ""
+  echo " Установка KDE(Plasma) " 
+  pacman -S  plasma plasma-meta plasma-pa plasma-desktop kde-system-meta kde-utilities-meta kio-extras kwalletmanager latte-dock  konsole  kwalletmanager --noconfirm
+  clear 
+  echo ""
+  echo " DE (Plasma KDE) успешно установлено " 
+  echo ""
+  echo -e "${GREEN}==> ${NC}Настройка автовхода без DM (Display manager) менеджера входа в KDE(Plasma)"
+  echo " Давайте проанализируем действия, которые выполняются. "
+  echo " 1 - Если вам нужен автовход без DM (Display manager), тогда укажите "1" "
+  echo " Вы хотите автологин определенного пользователя, автоматический запуск Иксов, запуск окружения (KDE, XFCE, Gnom и т.д.). "
+  echo " Всё можно сделать без использования DM (например SDDM, LightDM и т.д.), поскольку реализация автозагрузки окружения реализован через startx. "
+  echo " 2(0) - Если Вы по прежнему желаете использовать DM (например SDDM, LightDM и т.д.), или в дальнейшем захотите установить, и использовать 2(е) окружение (Т.е. DE - KDE, XFCE, Gnom и т.д.), тогда укажите "0" " 
+  echo " Будьте внимательны! Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
+  echo -e "${YELLOW}==> ${NC}Действия выполняются в указанном порядке" 
+  echo ""
 while
     echo " Действия ввода, выполняется сразу после нажатия клавиши " 
     read -n1 -p  "
