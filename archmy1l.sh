@@ -41,11 +41,18 @@ EDITOR=nano
 ARCHMY1_LANG="russian"  # Installer default language (Язык установки по умолчанию)
 script_path=$(readlink -f ${0%/*})
 # ischroot=0
+
 umask 0022 # Определение окончательных прав доступа - Для суперпользователя (root) umask по умолчанию равна 0022
 
 set -e "\n${RED}Error: ${YELLOW}${*}${NC}"  # Эта команда остановит выполнение сценария после сбоя команды и будет отправлен код ошибки
 
 ### Help and usage (--help or -h) (Справка)
+_help() {
+    echo -e "${BLUE}
+Installation guide - Arch Wiki
+${BOLD}For more information, see the wiki: \
+${GREY}<https://wiki.archlinux.org/index.php/Installation_guide>${NC}"
+}
 
 ### SHARED VARIABLES AND FUNCTIONS (ОБЩИЕ ПЕРЕМЕННЫЕ И ФУНКЦИИ)
 ### Shell color codes (Цветовые коды оболочки)
