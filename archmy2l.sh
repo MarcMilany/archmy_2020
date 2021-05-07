@@ -616,8 +616,8 @@ do
     :
 done
 if [[ $vm_setting == 0 ]]; then
-#echo ""
-echo " Установка Xorg (иксов) пропущена (используется VDS, или VPS) "  
+# echo ""
+  echo " Установка Xorg (иксов) пропущена (используется VDS, или VPS) "  
 elif [[ $vm_setting == 1 ]]; then
   gui_install="xorg-server xorg-drivers xorg-xinit"  #(или на vmware) # --confirm   всегда спрашивать подтверждение
 # gui_install="xorg-server xorg-drivers --noconfirm"     # xorg-xinit 
