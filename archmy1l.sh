@@ -665,8 +665,7 @@ if [[ $t_pacstrap == 1 ]]; then
   clear
   echo ""
   echo " Установка выбранного вами, групп "
-# pacstrap /mnt base base-devel nano dhcpcd netctl which inetutils  #wget vim
-  pacstrap -i /mnt base base-devel nano dhcpcd netctl which inetutils --noconfirm
+  pacstrap /mnt base base-devel nano dhcpcd netctl which inetutils  #wget vim
   clear
   echo ""
   echo " Установка выбранного вами, групп (base + base-devel + packages) выполнена "
@@ -740,8 +739,7 @@ elif [[ $x_pacstrap == 3 ]]; then
   clear
   echo ""
   echo " Установка выбранного вами ядра (linux-lts) "
-# pacstrap /mnt linux-lts linux-firmware linux-lts-headers #linux-lts-docs
-  pacstrap -i /mnt linux-lts linux-firmware linux-lts-headers linux-lts-docs --noconfirm
+  pacstrap /mnt linux-lts linux-firmware linux-lts-headers linux-lts-docs
   clear
   echo ""
   echo " Ядро (linux-lts) операционной системы установленно " 
@@ -950,7 +948,7 @@ if [[ $int == 1 ]]; then
   echo ""   
 # pacman -S curl --noconfirm --noprogressbar --quiet  # Утилита и библиотека для поиска URL
 # arch-chroot /mnt sh -c "$(curl -fsSL https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh)"
-  arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l.sh)"  # sh вызывает программу sh как интерпретатор и флаг -c означает выполнение следующей команды, интерпретируемой этой программой (выполнить команду специально с этой оболочкой вместо bash)
+  arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"  # sh вызывает программу sh как интерпретатор и флаг -c означает выполнение следующей команды, интерпретируемой этой программой (выполнить команду специально с этой оболочкой вместо bash)
   echo " ############################################### "
   echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
   echo " ############################################### "
