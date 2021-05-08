@@ -17,6 +17,12 @@ umask 0022 # Определение окончательных прав дост
 set -e # Эта команда остановит выполнение сценария после сбоя команды и будет отправлен код ошибки
 
 ### Help and usage (--help or -h) (Справка)
+_help() {
+    echo -e "${BLUE}
+Installation guide - Arch Wiki
+${BOLD}For more information, see the wiki: \
+${GREY}<https://wiki.archlinux.org/index.php/Installation_guide>${NC}"
+}
 
 ### SHARED VARIABLES AND FUNCTIONS (ОБЩИЕ ПЕРЕМЕННЫЕ И ФУНКЦИИ)
 ### Shell color codes (Цветовые коды оболочки)
@@ -1461,10 +1467,10 @@ fi
 
 clear
 echo -e "${MAGENTA}
-  <<< Установка AUR (Arch User Repository) >>> ${NC}"
-
+  <<< Установка AUR (Arch User Repository) >>> ${NC}" 
+   
 echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете пропустить установку "AUR", пункт для установки будет продублирован в следующем скрипте (archmy3l). И Вы сможете установить "AUR Helper" уже из установленной системы." 
-echo -e "${YELLOW}==> Внимание! ${NC}Во время установки "AUR", Вас попросят ввести (Пароль пользователя) для $username." 
+echo -e "${YELLOW}==> Внимание! ${NC}Во время установки "AUR", Вас попросят ввести (Пароль пользователя) для $username."
 
 echo ""
 echo -e "${GREEN}==> ${NC}Установка AUR Helper (yay) или (pikaur)"
@@ -1489,37 +1495,37 @@ do
     :
 done 
 if [[ $in_aur_help == 0 ]]; then
-clear
-echo ""    
-echo " Установка AUR Helper пропущена "
+  clear
+  echo ""    
+  echo " Установка AUR Helper пропущена "
 elif [[ $in_aur_help == 1 ]]; then
-pacman -Syu  # Обновим вашу систему (базу данных пакетов)    
-echo ""
-echo " Установка AUR Helper - (yay) "
-cd /home/$username
-git clone https://aur.archlinux.org/yay.git
-chown -R $username:users /home/$username/yay   #-R, --recursive - рекурсивная обработка всех подкаталогов;
-chown -R $username:users /home/$username/yay/PKGBUILD  #-R, --recursive - рекурсивная обработка всех подкаталогов;
-cd /home/$username/yay  
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/yay
-clear
-echo ""
-echo " Установка AUR Helper (yay) завершена "
+  pacman -Syu  # Обновим вашу систему (базу данных пакетов)    
+  echo ""
+  echo " Установка AUR Helper - (yay) "
+  cd /home/$username
+  git clone https://aur.archlinux.org/yay.git
+  chown -R $username:users /home/$username/yay   #-R, --recursive - рекурсивная обработка всех подкаталогов;
+  chown -R $username:users /home/$username/yay/PKGBUILD  #-R, --recursive - рекурсивная обработка всех подкаталогов;
+  cd /home/$username/yay  
+  sudo -u $username  makepkg -si --noconfirm  
+  rm -Rf /home/$username/yay
+  clear
+  echo ""
+  echo " Установка AUR Helper (yay) завершена "
 elif [[ $in_aur_help == 2 ]]; then
-pacman -Syu  # Обновим вашу систему (базу данных пакетов)    
-echo ""
-echo " Установка AUR Helper - (pikaur) "    
-cd /home/$username
-git clone https://aur.archlinux.org/pikaur.git
-chown -R $username:users /home/$username/pikaur   #-R, --recursive - рекурсивная обработка всех подкаталогов;
-chown -R $username:users /home/$username/pikaur/PKGBUILD  #-R, --recursive - рекурсивная обработка всех подкаталогов;
-cd /home/$username/pikaur   
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/pikaur
-clear
-echo ""
-echo " Установка AUR Helper (pikaur) завершена "
+  pacman -Syu  # Обновим вашу систему (базу данных пакетов)    
+  echo ""
+  echo " Установка AUR Helper - (pikaur) "    
+  cd /home/$username
+  git clone https://aur.archlinux.org/pikaur.git
+  chown -R $username:users /home/$username/pikaur   #-R, --recursive - рекурсивная обработка всех подкаталогов;
+  chown -R $username:users /home/$username/pikaur/PKGBUILD  #-R, --recursive - рекурсивная обработка всех подкаталогов;
+  cd /home/$username/pikaur   
+  sudo -u $username  makepkg -si --noconfirm  
+  rm -Rf /home/$username/pikaur
+  clear
+  echo ""
+  echo " Установка AUR Helper (pikaur) завершена "
 fi
 
 echo ""
@@ -1543,18 +1549,18 @@ do
     :
 done 
 if [[ $in_aur_update == 0 ]]; then
-echo ""    
-echo " Обновление баз данных пакетов, и системы пропущено "
+  echo ""    
+  echo " Обновление баз данных пакетов, и системы пропущено "
 elif [[ $in_aur_update == 1 ]]; then
   echo ""    
   echo " Обновление баз данных пакетов, и системы через - AUR (Yay) "
-yay -Syy
-yay -Syu
+  yay -Syy
+  yay -Syu
 elif [[ $in_aur_update == 2 ]]; then
   echo ""    
   echo " Обновление баз данных пакетов, и системы через - AUR (Pikaur) "
-pikaur -Syy
-pikaur -Syu
+  pikaur -Syy
+  pikaur -Syu
 fi
 
 sleep 01
@@ -1590,127 +1596,127 @@ do
     :
 done 
 if [[ $graphic_aur == 0 ]]; then 
-clear 
-echo ""  
-echo " Установка Графического менеджера пакетов пропущена "
+  clear 
+  echo ""  
+  echo " Установка Графического менеджера пакетов пропущена "
 elif [[ $graphic_aur == 1 ]]; then
   echo ""  
   echo " Установка Графического менеджера Pacman gui (pamac-aur) "
 ##### pamac-aur ###### 
-cd /home/$username
- git clone https://aur.archlinux.org/pamac-aur.git
-chown -R $username:users /home/$username/pamac-aur
-chown -R $username:users /home/$username/pamac-aur/PKGBUILD 
-cd /home/$username/pamac-aur
-sudo -u $username  makepkg -si --noconfirm  
+  cd /home/$username
+  git clone https://aur.archlinux.org/pamac-aur.git
+  chown -R $username:users /home/$username/pamac-aur
+  chown -R $username:users /home/$username/pamac-aur/PKGBUILD 
+  cd /home/$username/pamac-aur
+  sudo -u $username  makepkg -si --noconfirm  
 # makepkg --noconfirm --needed -sic 
-rm -Rf /home/$username/pamac-aur
-clear
-echo ""
-echo " Графический менеджер Pamac-aur успешно установлен! "
+  rm -Rf /home/$username/pamac-aur
+  clear
+  echo ""
+  echo " Графический менеджер Pamac-aur успешно установлен! "
 elif [[ $graphic_aur == 2 ]]; then
   echo ""  
   echo " Установка Графического менеджера Octopi "    
 ##### alpm_octopi_utils ######    
-cd /home/$username
-git clone https://aur.archlinux.org/alpm_octopi_utils.git
-chown -R $username:users /home/$username/alpm_octopi_utils
-chown -R $username:users /home/$username/alpm_octopi_utils/PKGBUILD 
-cd /home/$username/alpm_octopi_utils
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/alpm_octopi_utils
+  cd /home/$username
+  git clone https://aur.archlinux.org/alpm_octopi_utils.git
+  chown -R $username:users /home/$username/alpm_octopi_utils
+  chown -R $username:users /home/$username/alpm_octopi_utils/PKGBUILD 
+  cd /home/$username/alpm_octopi_utils
+  sudo -u $username  makepkg -si --noconfirm  
+  rm -Rf /home/$username/alpm_octopi_utils
 ############ gconf ##########
-cd /home/$username
-git clone https://aur.archlinux.org/gconf.git  # Устаревшая система базы данных конфигурации
-chown -R $username:users /home/$username/gconf
-chown -R $username:users /home/$username/gconf/PKGBUILD 
-cd /home/$username/gconf  
-sudo -u $username  makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений 
-rm -Rf /home/$username/gconf
+  cd /home/$username
+  git clone https://aur.archlinux.org/gconf.git  # Устаревшая система базы данных конфигурации
+  chown -R $username:users /home/$username/gconf
+  chown -R $username:users /home/$username/gconf/PKGBUILD 
+  cd /home/$username/gconf  
+  sudo -u $username  makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений 
+  rm -Rf /home/$username/gconf
 ############ libgksu ##########
-cd /home/$username
-git clone https://aur.archlinux.org/libgksu.git
-chown -R $username:users /home/$username/libgksu
-chown -R $username:users /home/$username/libgksu/PKGBUILD 
-cd /home/$username/libgksu
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/libgksu
+  cd /home/$username
+  git clone https://aur.archlinux.org/libgksu.git
+  chown -R $username:users /home/$username/libgksu
+  chown -R $username:users /home/$username/libgksu/PKGBUILD 
+  cd /home/$username/libgksu
+  sudo -u $username  makepkg -si --noconfirm  
+  rm -Rf /home/$username/libgksu
 ############ gksu ##########
-cd /home/$username
-git clone https://aur.archlinux.org/gksu.git
-chown -R $username:users /home/$username/gksu
-chown -R $username:users /home/$username/gksu/PKGBUILD 
-cd /home/$username/gksu
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/gksu
+  cd /home/$username
+  git clone https://aur.archlinux.org/gksu.git
+  chown -R $username:users /home/$username/gksu
+  chown -R $username:users /home/$username/gksu/PKGBUILD 
+  cd /home/$username/gksu
+  sudo -u $username  makepkg -si --noconfirm  
+  rm -Rf /home/$username/gksu
 ######### qtermwidget #######
-pacman -S qtermwidget --noconfirm  # Виджет терминала для Qt, используемый QTerminal
+  pacman -S qtermwidget --noconfirm  # Виджет терминала для Qt, используемый QTerminal
 ######### octopi #######
-cd /home/$username
-git clone https://aur.archlinux.org/octopi.git
-chown -R $username:users /home/$username/octopi
-chown -R $username:users /home/$username/octopi/PKGBUILD 
-cd /home/$username/octopi
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/octopi
-clear
-echo ""
-echo " Графический менеджер Octopi успешно установлен! "
+  cd /home/$username
+  git clone https://aur.archlinux.org/octopi.git
+  chown -R $username:users /home/$username/octopi
+  chown -R $username:users /home/$username/octopi/PKGBUILD 
+  cd /home/$username/octopi
+  sudo -u $username  makepkg -si --noconfirm  
+  rm -Rf /home/$username/octopi
+  clear
+  echo ""
+  echo " Графический менеджер Octopi успешно установлен! "
 elif [[ $graphic_aur == 3 ]]; then
   echo ""  
   echo " Установка Графического менеджера Octopi - (pikaur) "    
 ##### pikaur ######    
-cd /home/$username
-git clone https://aur.archlinux.org/pikaur.git
-chown -R $username:users /home/$username/pikaur   
-chown -R $username:users /home/$username/pikaur/PKGBUILD 
-cd /home/$username/pikaur   
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/pikaur
+  cd /home/$username
+  git clone https://aur.archlinux.org/pikaur.git
+  chown -R $username:users /home/$username/pikaur   
+  chown -R $username:users /home/$username/pikaur/PKGBUILD 
+  cd /home/$username/pikaur   
+  sudo -u $username  makepkg -si --noconfirm  
+  rm -Rf /home/$username/pikaur
 ##### alpm_octopi_utils ######
-cd /home/$username
-git clone https://aur.archlinux.org/alpm_octopi_utils.git
-chown -R $username:users /home/$username/alpm_octopi_utils
-chown -R $username:users /home/$username/alpm_octopi_utils/PKGBUILD 
-cd /home/$username/alpm_octopi_utils
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/alpm_octopi_utils
+  cd /home/$username
+  git clone https://aur.archlinux.org/alpm_octopi_utils.git
+  chown -R $username:users /home/$username/alpm_octopi_utils
+  chown -R $username:users /home/$username/alpm_octopi_utils/PKGBUILD 
+  cd /home/$username/alpm_octopi_utils
+  sudo -u $username  makepkg -si --noconfirm  
+  rm -Rf /home/$username/alpm_octopi_utils
 ######### qtermwidget #######
-pacman -S qtermwidget --noconfirm  # Виджет терминала для Qt, используемый QTerminal
+  pacman -S qtermwidget --noconfirm  # Виджет терминала для Qt, используемый QTerminal
 ######### octopi #######
-cd /home/$username
-git clone https://aur.archlinux.org/octopi.git
-chown -R $username:users /home/$username/octopi
-chown -R $username:users /home/$username/octopi/PKGBUILD 
-cd /home/$username/octopi
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/octopi
+  cd /home/$username
+  git clone https://aur.archlinux.org/octopi.git
+  chown -R $username:users /home/$username/octopi
+  chown -R $username:users /home/$username/octopi/PKGBUILD 
+  cd /home/$username/octopi
+  sudo -u $username  makepkg -si --noconfirm  
+  rm -Rf /home/$username/octopi
 ############ gconf ##########
-cd /home/$username
-git clone https://aur.archlinux.org/gconf.git 
-chown -R $username:users /home/$username/gconf
-chown -R $username:users /home/$username/gconf/PKGBUILD 
-cd /home/$username/gconf  
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/gconf
+  cd /home/$username
+  git clone https://aur.archlinux.org/gconf.git 
+  chown -R $username:users /home/$username/gconf
+  chown -R $username:users /home/$username/gconf/PKGBUILD 
+  cd /home/$username/gconf  
+  sudo -u $username  makepkg -si --noconfirm  
+  rm -Rf /home/$username/gconf
 ############ libgksu ##########
-cd /home/$username
-git clone https://aur.archlinux.org/libgksu.git
-chown -R $username:users /home/$username/libgksu
-chown -R $username:users /home/$username/libgksu/PKGBUILD 
-cd /home/$username/libgksu
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/libgksu
+  cd /home/$username
+  git clone https://aur.archlinux.org/libgksu.git
+  chown -R $username:users /home/$username/libgksu
+  chown -R $username:users /home/$username/libgksu/PKGBUILD 
+  cd /home/$username/libgksu
+  sudo -u $username  makepkg -si --noconfirm  
+  rm -Rf /home/$username/libgksu
 ############ gksu ##########
-git clone https://aur.archlinux.org/gksu.git
-chown -R $username:users /home/$username/gksu
-chown -R $username:users /home/$username/gksu/PKGBUILD 
-cd /home/$username/gksu
-sudo -u $username  makepkg -si --noconfirm  
-rm -Rf /home/$username/gksu
-clear
-echo ""
-echo " Графический менеджер Octopi успешно установлен! "
+  git clone https://aur.archlinux.org/gksu.git
+  chown -R $username:users /home/$username/gksu
+  chown -R $username:users /home/$username/gksu/PKGBUILD 
+  cd /home/$username/gksu
+  sudo -u $username  makepkg -si --noconfirm  
+  rm -Rf /home/$username/gksu
+  clear
+  echo ""
+  echo " Графический менеджер Octopi успешно установлен! "
 fi 
 
 echo ""
@@ -1735,16 +1741,16 @@ do
     :
 done
 if [[ $vm_fstab == 0 ]]; then
-echo ""    
-echo " Этап редактирования пропущен " 
+  echo ""    
+  echo " Этап редактирования пропущен " 
 elif [[ $vm_fstab == 1 ]]; then
-nano /etc/fstab
+  nano /etc/fstab
 elif [[ $vm_fstab == 2 ]]; then
-echo ""
-echo " Просмотреть содержимое файла fstab "    
-echo ""    
-cat /etc/fstab
-sleep 3
+  echo ""
+  echo " Просмотреть содержимое файла fstab "    
+  echo ""    
+  cat /etc/fstab
+  sleep 3
 fi
 
 clear
@@ -1769,13 +1775,13 @@ do
     :
 done
 if [[ $rm_tool == 0 ]]; then
-echo ""
-echo " Удаление зависимости 'go' пропущено "      
+  echo ""
+  echo " Удаление зависимости 'go' пропущено "      
 elif [[ $rm_tool == 1 ]]; then
-#pacman -Rs go
-pacman --noconfirm -Rs go    # --noconfirm  --не спрашивать каких-либо подтверждений
- echo "" 
- echo " Удаление зависимость 'go' выполнено "
+# pacman -Rs go
+  pacman --noconfirm -Rs go    # --noconfirm  --не спрашивать каких-либо подтверждений
+  echo "" 
+  echo " Удаление зависимость 'go' выполнено "
 fi
 
 clear
@@ -1799,10 +1805,10 @@ do
     :
 done
 if [[ $rm_cache == 0 ]]; then
-echo ""
-echo " Удаление кэша ВСЕХ установленных пакетов пропущено "      
+  echo ""
+  echo " Удаление кэша ВСЕХ установленных пакетов пропущено "      
 elif [[ $rm_cache == 1 ]]; then      
-pacman --noconfirm -Scc  # Удалит кеш всех пакетов (можно раз в неделю вручную запускать команду)
+  pacman --noconfirm -Scc  # Удалит кеш всех пакетов (можно раз в неделю вручную запускать команду)
 fi
 
 clear             
