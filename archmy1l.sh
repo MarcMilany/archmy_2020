@@ -911,8 +911,10 @@ if [[ $zerkala == 1 ]]; then
   echo " Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist "
   rm /mnt/etc/pacman.d/mirrorlist 
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
-  pacman -S --noconfirm --needed reflector  
+# pacman -S --noconfirm --needed reflector  
 # pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman  - пока присутствует в pkglist.x86_64
+  pacman -Sy --noconfirm --noprogressbar --quiet reflector
+  pacman -S --noconfirm --needed --noprogressbar --quiet reflector
   echo ""
   reflector --verbose --country 'Russia' -l 9 -p https -p http -n 9 --save /etc/pacman.d/mirrorlist --sort rate
   echo "" 
