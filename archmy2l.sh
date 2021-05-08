@@ -1279,6 +1279,12 @@ if [[ $i_network  == 1 ]]; then
   pacman -S networkmanager networkmanager-openvpn network-manager-applet ppp --noconfirm  # Диспетчер сетевых подключений и пользовательские приложения; Плагин NetworkManager VPN для OpenVPN; Апплет для управления сетевыми подключениями; Демон, реализующий протокол точка-точка для коммутируемого доступа в сеть.
 # pacman -Sy networkmanager networkmanager-openvpn network-manager-applet ppp --noconfirm
   echo ""
+  echo -e "${BLUE}:: ${NC}Ставим дополнительные сетевые утилиты"
+  pacman -S pptpclient --noconfirm  # Клиент для проприетарного протокола туннелирования точка-точка от Microsoft, PPTP
+  pacman -S rp-pppoe --noconfirm  # Протокол точка-точка Roaring Penguin через клиент Ethernet
+  pacman -S xl2tpd --noconfirm  # Реализация L2TP с открытым исходным кодом, поддерживаемая Xelerance Corporation
+  pacman -S networkmanager-l2tp --noconfirm  # Поддержка L2TP для NetworkManager
+  echo ""
   echo -e "${BLUE}:: ${NC}Подключаем Networkmanager в автозагрузку"	
 # systemctl enable NetworkManager  # systemctl - специальный инструмент для управления службами в Linux
   systemctl enable NetworkManager.service 
