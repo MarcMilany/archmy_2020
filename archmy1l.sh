@@ -38,13 +38,10 @@ gpg_key=
 verbose=""
 EDITOR=nano
 #EDITOR=nano visudo  # Выполните команду с правами суперпользователя
-
 ARCHMY1_LANG="russian"  # Installer default language (Язык установки по умолчанию)
 script_path=$(readlink -f ${0%/*})
 #ischroot=0
-
 umask 0022 # Определение окончательных прав доступа - Для суперпользователя (root) umask по умолчанию равна 0022
-
 set -e # Эта команда остановит выполнение сценария после сбоя команды и будет отправлен код ошибки
 # set -euxo pipefail
 

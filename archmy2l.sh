@@ -6,6 +6,10 @@ baseurl=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/url%20li
 cpl=0
 skipfont="0"
 fspkgs=""
+iso_label="ARCH_$(date +%Y%m)"
+iso_version=$(date +%Y.%m.%d)
+gpg_key=
+verbose=""
 EDITOR=nano
 #EDITOR=nano visudo  # Выполните команду с правами суперпользователя
 
