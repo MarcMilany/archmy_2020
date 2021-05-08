@@ -1038,12 +1038,12 @@ if [[ $int == 1 ]]; then
 # pacman -S curl --noconfirm --noprogressbar  # Утилита и библиотека для поиска URL
 # arch-chroot /mnt sh -c "$(curl -fsSL https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh)"
   arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"
-echo " ############################################### "
-echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
-echo " ############################################### "
-echo " Размонтирование всех смонтированных файловых систем (кроме корневой) "
-umount -a  # файловые системы, упомянутые в fstab (cоответсвующего типа/параметров) должны быть размонтированы и остановлены (кроме тех, для которых указана опция noauto)
-reboot
+  echo " ############################################### "
+  echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
+  echo " ############################################### "
+  echo " Размонтирование всех смонтированных файловых систем (кроме корневой) "
+  umount -a  # файловые системы, упомянутые в fstab (cоответсвующего типа/параметров) должны быть размонтированы и остановлены (кроме тех, для которых указана опция noauto)
+  reboot
 elif [[ $int == 2 ]]; then
   echo ""
   pacman -S wget --noconfirm --noprogressbar  # Сетевая утилита для извлечения файлов из Интернета
@@ -1058,12 +1058,12 @@ elif [[ $int == 2 ]]; then
   echo " 2 - Вводим команду для продолжения установки "./archmy2l.sh" "  
   echo ""
   arch-chroot /mnt 
-echo " ############################################### "
-echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
-echo " ############################################### "
-echo " Размонтирование всех смонтированных файловых систем (кроме корневой) "
-umount -a
-reboot 
+  echo " ############################################### "
+  echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
+  echo " ############################################### "
+  echo " Размонтирование всех смонтированных файловых систем (кроме корневой) "
+  umount -a
+  reboot 
 elif [[ $int == 3 ]]; then
   echo ""
 # pacman -S curl --noconfirm --noprogressbar  # Утилита и библиотека для поиска URL
@@ -1079,12 +1079,12 @@ elif [[ $int == 3 ]]; then
   echo " 2 - Вводим команду для продолжения установки "./archmy2l.sh" "  
   echo ""
   arch-chroot /mnt 
-echo " ############################################### "
-echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
-echo " ############################################### "
-echo " Размонтирование всех смонтированных файловых систем (кроме корневой) "
-umount -a
-reboot   
+  echo " ############################################### "
+  echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
+  echo " ############################################### "
+  echo " Размонтирование всех смонтированных файловых систем (кроме корневой) "
+  umount -a
+  reboot   
 fi
 ########################################
 
