@@ -638,7 +638,7 @@ Server = https://mirror.truenetwork.ru/archlinux/\$repo/os/\$arch
 #Server = http://archlinux.zepto.cloud/$repo/os/\$arch
 
 EOF
-
+\
 echo -e "${BLUE}:: ${NC}Создание (backup) резервного списка зеркал mirrorlist - (mirrorlist.backup)"
 cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 
