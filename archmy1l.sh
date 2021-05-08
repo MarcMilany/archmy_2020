@@ -11,7 +11,6 @@ gpg_key=
 verbose=""
 EDITOR=nano
 #EDITOR=nano visudo  # Выполните команду с правами суперпользователя
-#ischroot=0
 
 ARCHMY1_LANG="russian"  # Installer default language (Язык установки по умолчанию)
 
