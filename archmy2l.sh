@@ -1862,5 +1862,5 @@ echo -e "${BLUE}:: ${BOLD}Теперь вам надо ввести (exit) reboo
 exit
 exit
   
-
+# end of script
 
