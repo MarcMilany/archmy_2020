@@ -3278,7 +3278,7 @@ sudo pacman -S ebtables --noconfirm  # Утилиты фильтрации Ether
 sudo pacman -S ipset --noconfirm  # Инструмент администрирования наборов IP
 sudo pacman -S iwd --noconfirm  # Демон беспроводной сети Интернет
 sudo pacman -S linux-atm --noconfirm  # Драйверы и инструменты для поддержки сети банкоматов под Linux
-sudo pacman -S ndisc6 --noconfirm  # Сборник сетевых утилит IPv6
+sudo pacman -S ndisc6 --noconfirm  # Сборник сетевых утилит IPv6 (https://www.remlab.net/ndisc6/)
 sudo pacman -S xl2tpd --noconfirm  # Реализация L2TP с открытым исходным кодом, поддерживаемая Xelerance Corporation
 sudo pacman -S networkmanager-l2tp --noconfirm  # Поддержка L2TP для NetworkManager
 sudo pacman -S pptpclient --noconfirm  # Клиент для проприетарного протокола туннелирования точка-точка от Microsoft, PPTP
