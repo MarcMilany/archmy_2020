@@ -592,10 +592,11 @@ echo ""
 echo -e "${BLUE}:: ${NC}Посмотреть содержмое каталога /mnt."
 ls /mnt  # Посмотреть содержимое той или иной папки
 
+_arch_update_mirrorlist() {
 echo ""
 echo -e "${BLUE}:: ${NC}Изменяем серверов-зеркал для загрузки. Ставим зеркало для России от Яндекс"
 > /etc/pacman.d/mirrorlist
-cat <<\EOF >>/etc/pacman.d/mirrorlist
+cat <<EOF >>/etc/pacman.d/mirrorlist
 
 ##
 ## Arch Linux repository mirrorlist
@@ -603,7 +604,7 @@ cat <<\EOF >>/etc/pacman.d/mirrorlist
 ## HTTP IPv4 HTTPS
 ## https://www.archlinux.org/mirrorlist/
 ## https://www.archlinux.org/mirrorlist/?country=RU&protocol=http&protocol=https&ip_version=4
-##
+
 
 ## Russia
 Server = https://mirror.yandex.ru/archlinux/\$repo/os/\$arch
@@ -638,6 +639,9 @@ Server = https://mirror.truenetwork.ru/archlinux/\$repo/os/\$arch
 #Server = http://archlinux.zepto.cloud/$repo/os/\$arch
 
 EOF
+}
+
+_arch_update_mirrorlist
 
 echo -e "${BLUE}:: ${NC}Создание (backup) резервного списка зеркал mirrorlist - (mirrorlist.backup)"
 cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
