@@ -123,8 +123,8 @@ _exit_msg() {
 ${AUTHOR} ${RED}under ${LICENSE} ${GREEN}>>>${NC}"""
 }
 
-### Warning (Предупреждение)
-_warning_banner() {
+# Information (Информация)
+_arch_fast_install_banner_2() {
     echo -e "${YELLOW}
   ***************************** ИНФОРМАЦИЯ! ***************************** 
 ${NC} 
