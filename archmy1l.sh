@@ -1,23 +1,5 @@
 #!/bin/bash
 
-apptitle="Arch Linux Fast Install v1.6 LegasyBIOS - Version: 2020.07.16.00.40.38 (GPLv3)"
-baseurl=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/url%20links%20abbreviated/git%20url
-cpl=0
-skipfont="0"
-fspkgs=""
-iso_label="ARCH_$(date +%Y%m)"
-iso_version=$(date +%Y.%m.%d)
-gpg_key=
-verbose=""
-EDITOR=nano
-#EDITOR=nano visudo  # Выполните команду с правами суперпользователя
-
-ARCHMY1_LANG="russian"  # Installer default language (Язык установки по умолчанию)
-
-script_path=$(readlink -f ${0%/*})
-
-umask 0022 # Определение окончательных прав доступа - Для суперпользователя (root) umask по умолчанию равна 0022
-
 # Смотрите пометки (справочки) и доп.иформацию в самом скрипте!
 ###########################################################
 #######  <<< Скрипт для установки Arch Linux >>>    #######
@@ -45,9 +27,28 @@ umask 0022 # Определение окончательных прав дост
 # https://wiki.archlinux.org/index.php/Installation_guide #
 ###########################################################
 
+apptitle="Arch Linux Fast Install v1.6 LegasyBIOS - Version: 2020.07.16.00.40.38 (GPLv3)"
+baseurl=https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/url%20links%20abbreviated/git%20url
+cpl=0
+skipfont="0"
+fspkgs=""
+iso_label="ARCH_$(date +%Y%m)"
+iso_version=$(date +%Y.%m.%d)
+gpg_key=
+verbose=""
+EDITOR=nano
+#EDITOR=nano visudo  # Выполните команду с правами суперпользователя
+
+ARCHMY1_LANG="russian"  # Installer default language (Язык установки по умолчанию)
+
+script_path=$(readlink -f ${0%/*})
+
+umask 0022 # Определение окончательных прав доступа - Для суперпользователя (root) umask по умолчанию равна 0022
+
 set -e # Эта команда остановит выполнение сценария после сбоя команды и будет отправлен код ошибки
 # set -euxo pipefail
 
+#################################
 ### Help and usage (--help or -h) (Справка)
 _help() {
     echo -e "${BLUE}
@@ -60,95 +61,6 @@ ${GREY}<https://wiki.archlinux.org/index.php/Installation_guide>${NC}"
 ### Shell color codes (Цветовые коды оболочки)
 RED="\e[1;31m"; GREEN="\e[1;32m"; YELLOW="\e[1;33m"; GREY="\e[3;93m"
 BLUE="\e[1;34m"; CYAN="\e[1;36m"; BOLD="\e[1;37m"; MAGENTA="\e[1;35m"; NC="\e[0m"
-
-### Automatic error detection (Автоматическое обнаружение ошибок)
-_set() {
-    set [--abefhkmnptuvxBCHP] [-o option] [arg ...]
-}
-
-_set() {
-    set -e "\n${RED}Error: ${YELLOW}${*}${NC}"
-    _note "${MSG_ERROR}"
-    sleep 1; $$
-}
-  
-### Display install steps (Отображение шагов установки)
-_info() {
-    echo -e "${YELLOW}\n==> ${CYAN}${1}...${NC}"; sleep 1
-}
-
-### Download show progress bar only (Скачать показывать только индикатор выполнения)
-_wget() {
-    wget "${1}" --quiet --show-progress
-}
-
-### Execute action in chrooted environment (Выполнение действия в хромированной среде)
-_chroot() {
-    arch-chroot /mnt <<EOF "${1}"
-EOF
-}
-
-### Display error, cleanup and kill (Ошибка отображения, очистка и убийство)
-_error() {
-    echo -e "\n${RED}Error: ${YELLOW}${*}${NC}"
-    _note "${MSG_ERROR}"
-    sleep 1; _cleanup; _exit_msg; kill -9 $$
-}
-
-### Cleanup on keyboard interrupt (Очистка при прерывании работы клавиатуры)
-_trap() {
-trap '_error ${MSG_KEYBOARD}' 1 2 3 6
-}
-# trap "set -$-" RETURN; set +o nounset
-# Или
-# trap "set -${-//[is]}" RETURN; set +o nounset
-#..., устраняя недействительные флаги и действительно решая эту проблему!
-
-### Reboot with 10s timeout (Перезагрузка с таймаутом 10 секунд)
-_reboot() {
-    for (( SECOND=10; SECOND>=1; SECOND-- )); do
-        echo -ne "\r\033[K${GREEN}${MSG_REBOOT} ${SECOND}s...${NC}"
-        sleep 1
-    done
-    reboot; exit 0
-}
-
-### Say goodbye (Распрощаться)
-_exit_msg() {
-    echo -e "\n${GREEN}<<< ${BLUE}${APPNAME} ${VERSION} ${BOLD}by \
-${AUTHOR} ${RED}under ${LICENSE} ${GREEN}>>>${NC}"""
-}
-
-### Display error, cleanup and kill (Ошибка отображения, очистка и убийство)
-_error() {
-    echo -e "\n${RED}Error: ${YELLOW}${*}${NC}"
-    _note "${MSG_ERROR}"
-    sleep 1; _cleanup; _exit_msg; kill -9 $$
-}
-
-### Cleanup on keyboard interrupt (Очистка при прерывании работы клавиатуры)
-_trap() {
-trap '_error ${MSG_KEYBOARD}' 1 2 3 6
-}
-#trap "set -$-" RETURN; set +o nounset
-# Или
-#trap "set -${-//[is]}" RETURN; set +o nounset
-#..., устраняя недействительные флаги и действительно решая эту проблему!
-
-### Reboot with 10s timeout (Перезагрузка с таймаутом 10 секунд)
-_reboot() {
-    for (( SECOND=10; SECOND>=1; SECOND-- )); do
-        echo -ne "\r\033[K${GREEN}${MSG_REBOOT} ${SECOND}s...${NC}"
-        sleep 1
-    done
-    reboot; exit 0
-}
-
-### Say goodbye (Распрощаться)
-_exit_msg() {
-    echo -e "\n${GREEN}<<< ${BLUE}${APPNAME} ${VERSION} ${BOLD}by \
-${AUTHOR} ${RED}under ${LICENSE} ${GREEN}>>>${NC}"""
-}
 
 #########   Baner  ####################
 #_arch_fast_install_banner
@@ -181,7 +93,7 @@ ${NC}
 Автор не несёт ответственности за любое нанесение вреда при использовании скрипта. 
 Вы используйте его на свой страх и риск, или изменяйте под свои личные нужды."
 }
-
+######################################
 echo ""
 echo -e "${GREEN}:: ${NC}Installation Commands :=) "
 
@@ -1038,7 +950,7 @@ if [[ $int == 1 ]]; then
   echo ""   
 # pacman -S curl --noconfirm --noprogressbar --quiet  # Утилита и библиотека для поиска URL
 # arch-chroot /mnt sh -c "$(curl -fsSL https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh)"
-  arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"
+  arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l.sh)"  # sh вызывает программу sh как интерпретатор и флаг -c означает выполнение следующей команды, интерпретируемой этой программой (выполнить команду специально с этой оболочкой вместо bash)
   echo " ############################################### "
   echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
   echo " ############################################### "
