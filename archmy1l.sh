@@ -45,8 +45,8 @@ script_path=$(readlink -f ${0%/*})
 
 umask 0022 # Определение окончательных прав доступа - Для суперпользователя (root) umask по умолчанию равна 0022
 
-set -e # Эта команда остановит выполнение сценария после сбоя команды и будет отправлен код ошибки
-# set -euxo pipefail
+# set -e # Эта команда остановит выполнение сценария после сбоя команды и будет отправлен код ошибки
+set -euxo pipefail
 
 #################################
 ### Help and usage (--help or -h) (Справка)
@@ -94,6 +94,7 @@ ${NC}
 Вы используйте его на свой страх и риск, или изменяйте под свои личные нужды."
 }
 ######################################
+
 echo ""
 echo -e "${GREEN}:: ${NC}Installation Commands :=) "
 
@@ -947,7 +948,6 @@ if [[ $int == 1 ]]; then
   echo 'Установка продолжится в ARCH-LINUX chroot' 
   echo ""   
 # pacman -S curl --noconfirm --noprogressbar --quiet  # Утилита и библиотека для поиска URL
-# arch-chroot /mnt sh -c "$(curl -fsSL https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh)"
   arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"  # sh вызывает программу sh как интерпретатор и флаг -c означает выполнение следующей команды, интерпретируемой этой программой (выполнить команду специально с этой оболочкой вместо bash)
   echo " ############################################### "
   echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
