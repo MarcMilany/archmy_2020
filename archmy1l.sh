@@ -14,6 +14,7 @@ EDITOR=nano
 ARCHMY1_LANG="russian"  # Installer default language (Язык установки по умолчанию)
 script_path=$(readlink -f ${0%/*})
 #ischroot=0
+
 umask 0022 # Определение окончательных прав доступа - Для суперпользователя (root) umask по умолчанию равна 0022
 
 # Смотрите пометки (справочки) и доп.иформацию в самом скрипте!
