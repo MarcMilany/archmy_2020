@@ -226,7 +226,7 @@ elif [[ $i_key == 0 ]]; then
   pacman -Sy --noconfirm  # обновить списки пакетов из репозиториев
 fi
 sleep 1
-###
+######################
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Dmidecode. Получаем информацию о железе"
