@@ -734,7 +734,7 @@ elif [[ $i_kde  == 1 ]]; then
   echo ""
   echo " Действия по настройке автовхода без DM (Display manager) выполнены "
 fi
- pacman -R konqueror --noconfirm  # Файловый менеджер и веб-браузер KDE
+### pacman -R konqueror --noconfirm  # Файловый менеджер и веб-браузер KDE # (-R --remove) - Удалить пакет(ы) из системы, но пакет konqueror - ужу отсутствует в системе!
  clear
 elif [[ $x_de == 2 ]]; then
   echo ""    
