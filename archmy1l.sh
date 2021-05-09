@@ -45,8 +45,8 @@ script_path=$(readlink -f ${0%/*})
 
 umask 0022 # Определение окончательных прав доступа - Для суперпользователя (root) umask по умолчанию равна 0022
 
-# set -e # Эта команда остановит выполнение сценария после сбоя команды и будет отправлен код ошибки
-set -euxo pipefail
+set -e # Эта команда остановит выполнение сценария после сбоя команды и будет отправлен код ошибки
+# set -euxo pipefail
 
 #################################
 ### Help and usage (--help or -h) (Справка)
@@ -592,11 +592,10 @@ echo ""
 echo -e "${BLUE}:: ${NC}Посмотреть содержмое каталога /mnt."
 ls /mnt  # Посмотреть содержимое той или иной папки
 
-_arch_update_mirrorlist() {
 echo ""
 echo -e "${BLUE}:: ${NC}Изменяем серверов-зеркал для загрузки. Ставим зеркало для России от Яндекс"
 > /etc/pacman.d/mirrorlist
-cat <<EOF >>/etc/pacman.d/mirrorlist
+cat <<\EOF >>/etc/pacman.d/mirrorlist
 
 ##
 ## Arch Linux repository mirrorlist
@@ -639,9 +638,6 @@ Server = https://mirror.truenetwork.ru/archlinux/\$repo/os/\$arch
 #Server = http://archlinux.zepto.cloud/$repo/os/\$arch
 
 EOF
-}
-
-_arch_update_mirrorlist
 
 echo -e "${BLUE}:: ${NC}Создание (backup) резервного списка зеркал mirrorlist - (mirrorlist.backup)"
 cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
