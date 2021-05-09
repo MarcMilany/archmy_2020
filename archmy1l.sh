@@ -565,53 +565,89 @@ sleep 02
 echo ""
 echo -e "${BLUE}:: ${NC}Посмотреть содержмое каталога /mnt."
 ls /mnt  # Посмотреть содержимое той или иной папки
-############################
+######## Mirrorlist ##########
+clear
 echo ""
-echo -e "${BLUE}:: ${NC}Изменяем серверов-зеркал для загрузки. Ставим зеркало для России от Яндекс"
-> /etc/pacman.d/mirrorlist
-cat <<EOF >>/etc/pacman.d/mirrorlist
+echo -e "${GREEN}==> ${NC}Сменить зеркала для увеличения скорости загрузки пакетов?" 
+echo -e "${BLUE}:: ${NC}Загрузка свежего списка зеркал со страницы Mirror Status, и обновление файла mirrorlist."
+echo -e "${MAGENTA}=> ${BOLD}Если Вы перед запуском скрипта просмотрели его, то может возникнуть резонный вопрос зачем менять список зеркал и обновлять файл mirrorlist, это связано с тем что, начиная с релиза Arch Linux 2020.07.01-x86_64.iso в установочный образ был добавлен reflector. Тем самым во время установки основной системы происходит запуск скрипта - reflector, и обновляется ранее прописанный список зеркал в mirrorlist. ${NC}"
+echo -e "${CYAN}:: ${NC}Вам будет представлено несколько вариантов смены зеркал для увеличения скорости загрузки пакетов."
+echo " Огласите весь список, пожалуйста! :) "
+echo " 1 - Команда отфильтрует зеркала для Russia по протоколам (https, http), отсортирует их по скорости загрузки и обновит файл mirrorlist "
+echo " 2 - Команда подробно выведет список 50 наиболее недавно обновленных HTTP-зеркал, отсортирует их по скорости загрузки и обновит файл mirrorlist "
+echo " 3 - То же, что и в предыдущем примере, но будут взяты только зеркала, расположенные в Казахстане (Kazakhstan) "
+echo " 4 - Команда отфильтрует зеркала для Russia, Belarus, Ukraine, Poland - по протоколам (https, http), отсортирует их по скорости загрузки и обновит файл mirrorlist "
+echo " Будьте внимательны! Не переживайте, перед обновлением зеркал будет сделана копия (backup) предыдущего файла mirrorlist, и в последствии будет сделана копия (backup) нового файла mirrorlist. Эти копии (backup) Вы сможете найти в установленной системе в /etc/pacman.d/mirrorlist - (новый список), и в /etc/pacman.d/mirrorlist.backup (старый список). В данной опции выбор всегда остаётся за вами. "
+echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
+echo " Если Вы находитесь в России рекомендую выбрать вариант "1" "
+echo "" 
+while  
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "      
+    1 - Russia (https, http),     2 - 50 HTTP-зеркал,
 
-##
-## Arch Linux repository mirrorlist
-## Generated on 2021-05-06
-## HTTP IPv4 HTTPS
-## https://www.archlinux.org/mirrorlist/
-## https://www.archlinux.org/mirrorlist/?country=RU&protocol=http&protocol=https&ip_version=4
+    3 - Kazakhstan (http),       4 - Russia, Belarus, Ukraine, Poland (https, http), 
+
+    0 - Пропустить обновление зеркал: " zerkala  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+    echo ''
+    [[ "$zerkala" =~ [^12340] ]]
+do
+    :
+done 
+if [[ $zerkala == 1 ]]; then
+  echo "" 
+  echo " Загрузка свежего списка зеркал со страницы Mirror Status "
+  pacman -Sy --noconfirm --noprogressbar --quiet reflector  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman  - пока присутствует в pkglist.x86_64
+  pacman -S --noconfirm --needed --noprogressbar --quiet reflector
+  echo ""
+  reflector --verbose --country 'Russia' -l 9 -p https -p http -n 9 --save /etc/pacman.d/mirrorlist --sort rate
+  echo "" 
+  echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
+  cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist    
+elif [[ $zerkala == 2 ]]; then
+  echo ""    
+  echo " Загрузка свежего списка зеркал со страницы Mirror Status "
+  pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman
+  reflector --verbose -l 50 -p http --sort rate --save /etc/pacman.d/mirrorlist
+  reflector --verbose -l 15 --sort rate --save /etc/pacman.d/mirrorlist
+  echo "" 
+  echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
+  cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
+elif [[ $zerkala == 3 ]]; then
+  echo ""     
+  echo " Загрузка свежего списка зеркал со страницы Mirror Status "
+  pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman 
+# reflector --verbose --country Kazakhstan -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist 
+  reflector --verbose --country 'Kazakhstan' -l 5 -p https -p http -n 5 --save /etc/pacman.d/mirrorlist --sort rate
+  echo "" 
+  echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
+  cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
+elif [[ $zerkala == 4 ]]; then
+  echo ""    
+  echo " Загрузка свежего списка зеркал со страницы Mirror Status "
+  pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman
+  reflector -c "Russia" -c "Belarus" -c "Ukraine" -c "Poland" -f 20 -l 20 -p https -p http -n 20 --save /etc/pacman.d/mirrorlist --sort rate
+  echo "" 
+  echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
+  cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
+elif [[ $zerkala == 0 ]]; then
+  echo "" 
+  echo  " Смена зеркал пропущена "   
+fi
+###
+clear
+echo ""
+echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал /mnt/etc/pacman.d/mirrorlist"
+echo ""
+cat /mnt/etc/pacman.d/mirrorlist  # cat читает данные из файла или стандартного ввода и выводит их на экран
+echo ""
+echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
+pacman -Sy --noconfirm  # обновить списки пакетов из репозиториев
+sleep 01
 
 
-## Russia
-Server = https://mirror.yandex.ru/archlinux/\$repo/os/\$arch
-Server = https://mirror.surf/archlinux/\$repo/os/\$arch
-Server = https://mirror.rol.ru/archlinux/\$repo/os/\$arch
-Server = https://mirror.nw-sys.ru/archlinux/$repo/os/\$arch
-Server = https://mirror.truenetwork.ru/archlinux/\$repo/os/\$arch
-#Server = http://mirror.yandex.ru/archlinux/\$repo/os/\$arch
-#Server = http://mirror.surf/archlinux/\$repo/os/\$arch
-#Server = http://mirror.rol.ru/archlinux/\$repo/os/\$arch
-#Server = http://mirror.nw-sys.ru/archlinux/$repo/os/\$arch
-#Server = http://mirror.truenetwork.ru/archlinux/\$repo/os/\$arch
-#Server = http://mirrors.powernet.com.ru/archlinux/$repo/os/$arch
-#Server = http://archlinux.zepto.cloud/\$repo/os/\$arch
 
-##
-## Arch Linux repository mirrorlist
-## Generated on 2021-05-06
-## HTTP IPv6 HTTPS
-## https://www.archlinux.org/mirrorlist/
-## https://www.archlinux.org/mirrorlist/?country=RU&ip_version=6
-##
 
-## Russia
-#Server = http://mirror.yandex.ru/archlinux/$repo/os/\$arch
-#Server = https://mirror.yandex.ru/archlinux/$repo/os/\$arch
-#Server = http://mirror.nw-sys.ru/archlinux/$repo/os/\$arch
-#Server = https://mirror.nw-sys.ru/archlinux/$repo/os/\$arch
-#Server = http://mirror.surf/archlinux/$repo/os/\$arch
-#Server = https://mirror.surf/archlinux/$repo/os/\$arch
-#Server = http://mirrors.powernet.com.ru/archlinux/$repo/os/\$arch
-#Server = http://archlinux.zepto.cloud/$repo/os/\$arch
-
-EOF
 ###
 echo -e "${BLUE}:: ${NC}Создание (backup) резервного списка зеркал mirrorlist - (mirrorlist.backup)"
 cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
@@ -804,101 +840,6 @@ echo -e "${BLUE}:: ${NC}Взглянем на UUID идентификатор(ы
 echo ""
 blkid
 # blkid /dev/sd*  # Для просмотра UUID (или Universal Unique Identifier) - это универсальный уникальный идентификатор определенного устройства компьютера
-sleep 01
-#####################
-clear
-echo ""
-echo -e "${GREEN}==> ${NC}Сменить зеркала для увеличения скорости загрузки пакетов?" 
-echo -e "${BLUE}:: ${NC}Загрузка свежего списка зеркал со страницы Mirror Status, и обновление файла mirrorlist."
-echo -e "${MAGENTA}=> ${BOLD}Если Вы перед запуском скрипта просмотрели его, то может возникнуть резонный вопрос зачем вновь менять список зеркал и обновлять файл mirrorlist, ведь перед установкой основной системы (base, base-devel, kernel) эта операция уже была выполнена. Это связано с тем что, начиная с релиза Arch Linux 2020.07.01-x86_64.iso в установочный образ был добавлен reflector. Тем самым во время установки основной системы происходит запуск скрипта - reflector, и обновляется ранее прописанный список зеркал в mirrorlist. ${NC}"
-echo -e "${CYAN}:: ${NC}Вам будет представлено несколько вариантов смены зеркал для увеличения скорости загрузки пакетов."
-echo " Огласите весь список, пожалуйста! :) "
-echo " 1 - Команда отфильтрует зеркала для Russia по протоколам (https, http), отсортирует их по скорости загрузки и обновит файл mirrorlist "
-echo " 2 - Команда подробно выведет список 50 наиболее недавно обновленных HTTP-зеркал, отсортирует их по скорости загрузки и обновит файл mirrorlist "
-echo " 3 - То же, что и в предыдущем примере, но будут взяты только зеркала, расположенные в Казахстане (Kazakhstan) "
-echo " 4 - Команда отфильтрует зеркала для Russia, Belarus, Ukraine, Poland - по протоколам (https, http), отсортирует их по скорости загрузки и обновит файл mirrorlist "
-echo " Будьте внимательны! Не переживайте, перед обновлением зеркал будет сделана копия (backup) предыдущего файла mirrorlist, и в последствии будет сделана копия (backup) нового файла mirrorlist. Эти копии (backup) Вы сможете найти в установленной системе в /etc/pacman.d/mirrorlist - (новый список), и в /etc/pacman.d/mirrorlist.backup (старый список). В данной опции выбор всегда остаётся за вами. "
-echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
-echo " Если Вы находитесь в России рекомендую выбрать вариант "1" "
-echo "" 
-while  
-echo " Действия ввода, выполняется сразу после нажатия клавиши "
-    read -n1 -p "      
-    1 - Russia (https, http),     2 - 50 HTTP-зеркал,
-
-    3 - Kazakhstan (http),       4 - Russia, Belarus, Ukraine, Poland (https, http), 
-
-    0 - Пропустить обновление зеркал: " zerkala  # sends right after the keypress; # отправляет сразу после нажатия клавиши
-    echo ''
-    [[ "$zerkala" =~ [^12340] ]]
-do
-    :
-done 
-if [[ $zerkala == 1 ]]; then
-  echo "" 
-  echo " Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist "
-  rm /mnt/etc/pacman.d/mirrorlist 
-  echo " Загрузка свежего списка зеркал со страницы Mirror Status "
-  pacman -Sy --noconfirm --noprogressbar --quiet reflector  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman  - пока присутствует в pkglist.x86_64
-  pacman -S --noconfirm --needed --noprogressbar --quiet reflector
-  echo ""
-  reflector --verbose --country 'Russia' -l 9 -p https -p http -n 9 --save /etc/pacman.d/mirrorlist --sort rate
-  echo "" 
-  echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
-  cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
-  echo " Копируем резервного списка зеркал (mirrorlist.backup) в /mnt "
-  cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup   
-elif [[ $zerkala == 2 ]]; then
-  echo "" 
-  echo " Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist "
-  rm /mnt/etc/pacman.d/mirrorlist    
-  echo " Загрузка свежего списка зеркал со страницы Mirror Status "
-  pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman
-  reflector --verbose -l 50 -p http --sort rate --save /etc/pacman.d/mirrorlist
-  reflector --verbose -l 15 --sort rate --save /etc/pacman.d/mirrorlist
-  echo "" 
-  echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
-  cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
-  echo " Копируем резервного списка зеркал (mirrorlist.backup) в /mnt "
-  cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup
-elif [[ $zerkala == 3 ]]; then
-  echo "" 
-  echo " Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist "
-  rm /mnt/etc/pacman.d/mirrorlist    
-  echo " Загрузка свежего списка зеркал со страницы Mirror Status "
-  pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman 
-# reflector --verbose --country Kazakhstan -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist 
-  reflector --verbose --country 'Kazakhstan' -l 5 -p https -p http -n 5 --save /etc/pacman.d/mirrorlist --sort rate
-  echo "" 
-  echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
-  cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
-  echo " Копируем резервного списка зеркал (mirrorlist.backup) в /mnt "
-  cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup 
-elif [[ $zerkala == 4 ]]; then
-  echo ""
-  echo " Удалим старый файл mirrorlist из /mnt/etc/pacman.d/mirrorlist "
-  rm /mnt/etc/pacman.d/mirrorlist     
-  echo " Загрузка свежего списка зеркал со страницы Mirror Status "
-  pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman
-  reflector -c "Russia" -c "Belarus" -c "Ukraine" -c "Poland" -f 20 -l 20 -p https -p http -n 20 --save /etc/pacman.d/mirrorlist --sort rate
-  echo "" 
-  echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
-  cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
-  echo " Копируем резервного списка зеркал (mirrorlist.backup) в /mnt "
-  cp /etc/pacman.d/mirrorlist.backup /mnt/etc/pacman.d/mirrorlist.backup
-elif [[ $zerkala == 0 ]]; then
-  echo "" 
-  echo  " Смена зеркал пропущена "   
-fi
-###
-clear
-echo ""
-echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал /mnt/etc/pacman.d/mirrorlist"
-echo ""
-cat /mnt/etc/pacman.d/mirrorlist  # cat читает данные из файла или стандартного ввода и выводит их на экран
-echo ""
-echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
-pacman -Sy --noconfirm  # обновить списки пакетов из репозиториев
 sleep 01
 ##################
 clear
