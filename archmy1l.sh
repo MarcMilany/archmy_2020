@@ -76,7 +76,7 @@ VERSION="v1.6 LegasyBIOS Update"
 BRANCH="master"
 AUTHOR="ordanax_and_poruncov"
 LICENSE="GNU General Public License 3.0"
-
+###
 ### Description (Описание)
 _arch_fast_install_banner() {
     echo -e "${BLUE}
