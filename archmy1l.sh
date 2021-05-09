@@ -601,35 +601,35 @@ if [[ $zerkala == 1 ]]; then
   pacman -S --noconfirm --needed --noprogressbar --quiet reflector
   echo ""
   reflector --verbose --country 'Russia' -l 9 -p https -p http -n 9 --save /etc/pacman.d/mirrorlist --sort rate
-  echo "" 
-  echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
-  cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist    
+#  echo "" 
+#  echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
+#  cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist    
 elif [[ $zerkala == 2 ]]; then
   echo ""    
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
   pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman
   reflector --verbose -l 50 -p http --sort rate --save /etc/pacman.d/mirrorlist
   reflector --verbose -l 15 --sort rate --save /etc/pacman.d/mirrorlist
-  echo "" 
-  echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
-  cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
+#  echo "" 
+#  echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
+#  cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
 elif [[ $zerkala == 3 ]]; then
   echo ""     
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
   pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman 
 # reflector --verbose --country Kazakhstan -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist 
   reflector --verbose --country 'Kazakhstan' -l 5 -p https -p http -n 5 --save /etc/pacman.d/mirrorlist --sort rate
-  echo "" 
-  echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
-  cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
+#  echo "" 
+#  echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
+#  cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
 elif [[ $zerkala == 4 ]]; then
   echo ""    
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
   pacman -S reflector --noconfirm  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman
   reflector -c "Russia" -c "Belarus" -c "Ukraine" -c "Poland" -f 20 -l 20 -p https -p http -n 20 --save /etc/pacman.d/mirrorlist --sort rate
-  echo "" 
-  echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
-  cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
+#  echo "" 
+#  echo " Копируем созданный список зеркал (mirrorlist) в /mnt "
+#  cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist 
 elif [[ $zerkala == 0 ]]; then
   echo "" 
   echo  " Смена зеркал пропущена "   
