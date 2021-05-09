@@ -35,7 +35,6 @@ iso_version=$(date +%Y.%m.%d)
 gpg_key=
 verbose=""
 EDITOR=nano
-#EDITOR=nano visudo  # Выполните команду с правами суперпользователя
 ###
 #_arch_fast_install_banner
 set > old_vars.log
