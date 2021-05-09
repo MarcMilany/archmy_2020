@@ -36,7 +36,7 @@ gpg_key=
 verbose=""
 EDITOR=nano
 #EDITOR=nano visudo  # Выполните команду с правами суперпользователя
-#########   Baner  ####################
+###
 #_arch_fast_install_banner
 set > old_vars.log
 APPNAME="arch_fast_install"
@@ -50,7 +50,7 @@ script_path=$(readlink -f ${0%/*})
 ###
 umask 0022 # Определение окончательных прав доступа - Для суперпользователя (root) umask по умолчанию равна 0022
 set -e # Эта команда остановит выполнение сценария после сбоя команды и будет отправлен код ошибки
-# set -euxo pipefail
+# set -euxo pipefail  # прекращает выполнение скрипта, даже если одна из частей пайпа завершилась ошибкой
 ###
 ### Help and usage (--help or -h) (Справка)
 _help() {
@@ -76,6 +76,7 @@ _set() {
     sleep 1; $$
 }
 ###
+####### Baner ###############
 ### Description (Описание)
 _arch_fast_install_banner() {
     echo -e "${BLUE}
