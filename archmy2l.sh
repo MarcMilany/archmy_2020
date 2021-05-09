@@ -740,7 +740,7 @@ elif [[ $x_de == 2 ]]; then
   echo ""    
   echo " Установка Xfce + Goodies for Xfce "     
   pacman -S xfce4 xfce4-goodies --noconfirm  # Xfce воплощает традиционную философию UNIX
-# mv /usr/share/xsessions/xfce.desktop ~/
+### mv /usr/share/xsessions/xfce.desktop ~/
   clear
   echo ""
   echo " DE (среда рабочего стола) Xfce успешно установлено "  
