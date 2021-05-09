@@ -1573,6 +1573,7 @@ echo " В AUR - есть практически всё, что можно уст
 echo -e "${CYAN}=> ${BOLD}В сценарии скрипта присутствуют следующие варианты: ${NC}"
 echo " 1 - Установка 'AUR'-'yay' с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/yay.git), собирается и устанавливается, то выбирайте вариант - "1" "
 echo " 2 - Установка 'AUR'-'pikaur' с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/pikaur.git), собирается и устанавливается, то выбирайте вариант - "2" "
+echo " 3 - Установка 'AUR'-'yay-bin' (версия в разработке) с помощью git clone, PKGBUILD, makepkg - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/yay-bin.git), собирается и устанавливается, то выбирайте вариант - "3" "
 echo -e "${YELLOW}==> ${BOLD}Важно! Подчеркну (обратить внимание)! Pikaur - идёт как зависимость для Octopi. ${NC}"
 echo " Будьте внимательны! В этом действии выбор остаётся за вами. "
 echo -e "${YELLOW}==> ${NC}Установка производится в порядке перечисления" 
@@ -1580,11 +1581,11 @@ echo ""
 while  
 echo " Действия ввода, выполняется сразу после нажатия клавиши "
     read -n1 -p "      
-    1 - AUR - yay (git clone),     2 - AUR - pikaur (git clone),     
+    1 - AUR - yay (git clone),     2 - AUR - pikaur (git clone),     3 - AUR - yay-bin (git clone),     
 
     0 - Пропустить установку AUR Helper: " in_aur_help  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$in_aur_help" =~ [^120] ]]
+    [[ "$in_aur_help" =~ [^1230] ]]
 do
     :
 done 
@@ -1620,7 +1621,52 @@ elif [[ $in_aur_help == 2 ]]; then
   clear
   echo ""
   echo " Установка AUR Helper (pikaur) завершена "
+elif [[ $in_aur_help == 3 ]]; then
+  pacman -Syu  # Обновим вашу систему (базу данных пакетов)    
+  echo ""
+  echo " Установка AUR Helper - (yay-bin) "
+  cd /home/$username
+  git clone https://aur.archlinux.org/yay-bin.git
+  chown -R $username:users /home/$username/yay-bin   #-R, --recursive - рекурсивная обработка всех подкаталогов;
+  chown -R $username:users /home/$username/yay-bin/PKGBUILD  #-R, --recursive - рекурсивная обработка всех подкаталогов;
+  cd /home/$username/yay-bin  
+  sudo -u $username  makepkg -si --noconfirm  
+  rm -Rf /home/$username/yay-bin
+  clear
+  echo ""
+  echo " Установка AUR Helper (yay-bin) завершена "
 fi
+###
+
+elif [[ $in_aur_help == 1 ]]; then
+echo ""     
+sudo pacman -Syu
+#wget git.io/yay-install.sh && sh yay-install.sh --noconfirm
+#echo " Установка базовых программ и пакетов wget, curl, git "
+#sudo pacman -S --noconfirm --needed wget curl git
+echo " Установка AUR Helper (yay-bin) "
+git clone https://aur.archlinux.org/yay-bin.git 
+cd yay-bin
+# makepkg -si
+#makepkg -si --noconfirm   #-не спрашивать каких-либо подтверждений
+makepkg -si --skipinteg
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+rm -rf yay-bin    # удаляем директорию сборки
+# rm -Rf yay-bin
+clear
+echo ""
+echo " Установка AUR Helper (yay-bin) завершена "
+
+
+
+
+
+
+
+
+
+
 ###
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим всю систему включая AUR пакеты" 
