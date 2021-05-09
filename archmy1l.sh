@@ -863,6 +863,8 @@ if [[ $int == 1 ]]; then
 # pacman -S curl --noconfirm --noprogressbar --quiet  # Утилита и библиотека для поиска URL
   arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"  # sh вызывает программу sh как интерпретатор и флаг -c означает выполнение следующей команды, интерпретируемой этой программой (выполнить команду специально с этой оболочкой вместо bash)
 ###  curl -s "http://get.sdkman.io" | bash
+### \ curl -sSL https://get.rvm.io | bash --debug
+### curl -sSL https://get.rvm.io | bash -s stable --rails  # Проблема устранена командой
   echo " ############################################### "
   echo -e "${BLUE}       ARCH LINUX FAST INSTALL ${RED}1.6 Update${NC}"
   echo " ############################################### "
