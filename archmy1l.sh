@@ -792,7 +792,7 @@ elif [[ $x_fstab == 4 ]]; then
   genfstab -t PARTUUID -p /mnt > /mnt/etc/fstab
   echo " Проверьте полученный /mnt/etc/fstab файл и отредактируйте его в случае ошибок. "
 fi 
-
+###
 echo ""
 echo -e "${BLUE}:: ${NC}Просмотреть содержимое файла fstab"
 cat /mnt/etc/fstab  # cat читает данные из файла или стандартного ввода и выводит их на экран
@@ -977,7 +977,7 @@ elif [[ $int == 3 ]]; then
   umount -a
   reboot   
 fi
-######################################
+########################
 
 
 
