@@ -1637,37 +1637,6 @@ elif [[ $in_aur_help == 3 ]]; then
   echo " Установка AUR Helper (yay-bin) завершена "
 fi
 ###
-
-elif [[ $in_aur_help == 1 ]]; then
-echo ""     
-sudo pacman -Syu
-#wget git.io/yay-install.sh && sh yay-install.sh --noconfirm
-#echo " Установка базовых программ и пакетов wget, curl, git "
-#sudo pacman -S --noconfirm --needed wget curl git
-echo " Установка AUR Helper (yay-bin) "
-git clone https://aur.archlinux.org/yay-bin.git 
-cd yay-bin
-# makepkg -si
-#makepkg -si --noconfirm   #-не спрашивать каких-либо подтверждений
-makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
-rm -rf yay-bin    # удаляем директорию сборки
-# rm -Rf yay-bin
-clear
-echo ""
-echo " Установка AUR Helper (yay-bin) завершена "
-
-
-
-
-
-
-
-
-
-
-###
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим всю систему включая AUR пакеты" 
 echo -e "${YELLOW}==> Примечание: ${NC}Выберите вариант обновления баз данных пакетов, и системы, в зависимости от установленного вами AUR Helper (yay; pikaur), или пропустите обновления - (если AUR НЕ установлен)."
