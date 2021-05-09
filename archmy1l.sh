@@ -59,17 +59,17 @@ Installation guide - Arch Wiki
 ${BOLD}For more information, see the wiki: \
 ${GREY}<https://wiki.archlinux.org/index.php/Installation_guide>${NC}"
 }
-
+###
 ### SHARED VARIABLES AND FUNCTIONS (ОБЩИЕ ПЕРЕМЕННЫЕ И ФУНКЦИИ)
 ### Shell color codes (Цветовые коды оболочки)
 RED="\e[1;31m"; GREEN="\e[1;32m"; YELLOW="\e[1;33m"; GREY="\e[3;93m"
 BLUE="\e[1;34m"; CYAN="\e[1;36m"; BOLD="\e[1;37m"; MAGENTA="\e[1;35m"; NC="\e[0m"
-
+###
 ### Automatic error detection (Автоматическое обнаружение ошибок)
 _set() {
     set [--abefhkmnptuvxBCHP] [-o option] [arg ...]
 }
-
+###
 _set() {
     set -e "\n${RED}Error: ${YELLOW}${*}${NC}"
     _note "${MSG_ERROR}"
