@@ -98,14 +98,14 @@ ${NC}
 Автор не несёт ответственности за любое нанесение вреда при использовании скрипта. 
 Вы используйте его на свой страх и риск, или изменяйте под свои личные нужды."
 }
-###
+################
 echo ""
 echo -e "${GREEN}:: ${NC}Installation Commands :=) "
 echo -e "${CYAN}=> ${NC}Acceptable limit for the list of arguments..."
 getconf ARG_MAX  # Допустимый лимит (предел) списка аргументов...'
 echo -e "${BLUE}:: ${NC}The determination of the final access rights"
 umask  # Определение окончательных прав доступа - Для суперпользователя (root) umask по умолчанию равна 0022    
-####
+################
 echo ""
 echo -e "${BLUE}:: ${NC}Install the Terminus font"  # Установим шрифт Terminus
 pacman -Sy terminus-font --noconfirm  # Моноширинный растровый шрифт (для X11 и консоли)
@@ -132,7 +132,7 @@ export LANG=ru_RU.UTF-8
 #export LANG=en_US.UTF-8
 echo -e "${BLUE}:: ${NC}Проверяем, что все заявленные локали были созданы:"
 locale -a  # Смотрим какте локали были созданы
-###
+#####################
 echo ""
 echo -e "${GREEN}=> ${NC}Убедитесь, что сетевой интерфейс указан и включен" 
 echo " Показать все ip адреса и их интерфейсы "
@@ -141,7 +141,7 @@ echo ""
 echo -e "${GREEN}=> ${NC}Для проверки интернета можно пропинговать какой-либо сервис" 
 ping -c2 archlinux.org  # Утилита ping - это очень простой инструмент для диагностики сети
 echo -e "${CYAN}==> ${NC}Если пинг идёт едем дальше ... :)"
-###
+######################
 ### Display banner (Дисплей баннер)
 _arch_fast_install_banner
 sleep 01
