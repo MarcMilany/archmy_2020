@@ -337,7 +337,7 @@ fdisk -l  # Посмотрим список доступных (созданны
 lsblk -f  # Команда lsblk выводит список всех блочных устройств
 #lsblk -lo  # Команда lsblk выводит список всех блочных устройств
 sleep 03
-
+###
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Форматирование разделов диска"
@@ -451,12 +451,12 @@ done
    fi
 fi
 sleep 02
-
+###
+##### Windows partitions #####
 clear
 echo -e "${CYAN}
   <<< Добавление (монтирование) разделов Windows (ntfs/fat32) >>>
 ${NC}"
-##### Windows partitions #####
 echo -e "${GREEN}==> ${NC}Добавим разделы для Windows (ntfs/fat32)?"
 echo -e "${MAGENTA}=> ${BOLD}Если таковые были созданы во время разбиения вашего диска(ов) на разделы cfdisk! ${NC}"
 while
@@ -545,26 +545,22 @@ elif [[ $diskE == 0 ]]; then
   echo " Действие пропущено "
 fi 
 fi
-####################################
-
+#############################
 echo ""
 echo -e "${BLUE}:: ${NC}Просмотреть подключённые диски с выводом информации о размере и свободном пространстве"
 df -h  # Команда df выводит в табличном виде список всех файловых систем и информацию о доступном и занятом дисковом пространстве
-
 echo ""
 echo -e "${BLUE}:: ${NC}Просмотреть все идентификаторы наших разделов"
 echo ""
 blkid  # Для просмотра UUID (или Universal Unique Identifier) - это универсальный уникальный идентификатор определенного устройства компьютера
-
 echo ""
 echo -e "${BLUE}:: ${NC}Просмотреть информацию об использовании памяти в системе"
 free -h  # Достаточно ли свободной памяти для установки и запуска новых приложений
 sleep 02
-
 echo ""
 echo -e "${BLUE}:: ${NC}Посмотреть содержмое каталога /mnt."
 ls /mnt  # Посмотреть содержимое той или иной папки
-
+############################
 echo ""
 echo -e "${BLUE}:: ${NC}Изменяем серверов-зеркал для загрузки. Ставим зеркало для России от Яндекс"
 > /etc/pacman.d/mirrorlist
@@ -611,16 +607,14 @@ Server = https://mirror.truenetwork.ru/archlinux/\$repo/os/\$arch
 #Server = http://archlinux.zepto.cloud/$repo/os/\$arch
 
 EOF
-
+###
 echo -e "${BLUE}:: ${NC}Создание (backup) резервного списка зеркал mirrorlist - (mirrorlist.backup)"
 cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-
 echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал для загрузки в mirrorlist"
 cat /etc/pacman.d/mirrorlist  # cat читает данные из файла или стандартного ввода и выводит их на экран
-
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
-pacman -Sy  # обновить списки пакетов из репозиториев
-
+pacman -Sy --noconfirm  # обновить списки пакетов из репозиториев
+##########################
 clear
 echo ""  
 echo -e "${GREEN}==> ${NC}Установка основных пакетов (base, base-devel) базовой системы"
@@ -680,7 +674,7 @@ elif [[ $t_pacstrap == 4 ]]; then
   echo ""
   echo " Установка выбранной вами, группы (base) выполнена "
 fi 
-
+###
 echo ""
 echo -e "${GREEN}==> ${NC}Какое ядро (Kernel) Вы бы предпочли установить вместе с системой Arch Linux?"
 echo -e "${BLUE}:: ${NC}Kernel (optional), Firmware"
@@ -738,7 +732,7 @@ elif [[ $x_pacstrap == 4 ]]; then
   echo ""
   echo " Ядро (linux-zen) операционной системы установленно " 
 fi
-
+###
 echo ""
 echo -e "${GREEN}==> ${NC}Настройка системы, генерируем fstab" 
 echo -e "${MAGENTA}=> ${BOLD}Файл /etc/fstab используется для настройки параметров монтирования различных блочных устройств, разделов на диске и удаленных файловых систем. ${NC}"
@@ -806,7 +800,7 @@ echo ""
 blkid
 # blkid /dev/sd*  # Для просмотра UUID (или Universal Unique Identifier) - это универсальный уникальный идентификатор определенного устройства компьютера
 sleep 01
-
+###
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Сменить зеркала для увеличения скорости загрузки пакетов?" 
@@ -891,18 +885,17 @@ elif [[ $zerkala == 0 ]]; then
   echo "" 
   echo  " Смена зеркал пропущена "   
 fi
-
+###
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал /mnt/etc/pacman.d/mirrorlist"
 echo ""
 cat /mnt/etc/pacman.d/mirrorlist  # cat читает данные из файла или стандартного ввода и выводит их на экран
-
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
 pacman -Sy --noconfirm  # обновить списки пакетов из репозиториев
 sleep 01
-
+##################
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Меняем корень и переходим в нашу недавно скачанную систему (chroot)" 
