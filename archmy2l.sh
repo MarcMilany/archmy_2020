@@ -268,8 +268,7 @@ echo " Проверка пропущена "
 elif [[ $x_ucode == 1 ]]; then
 echo ""
 echo " Выполним проверку корректности загрузки установленных микрокодов "
-sudo dmesg | grep microcode
-#dmesg | grep microcode
+dmesg | grep microcode
 fi
 sleep 04
 ###
