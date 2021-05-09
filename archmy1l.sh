@@ -595,7 +595,7 @@ ls /mnt  # Посмотреть содержимое той или иной па
 echo ""
 echo -e "${BLUE}:: ${NC}Изменяем серверов-зеркал для загрузки. Ставим зеркало для России от Яндекс"
 > /etc/pacman.d/mirrorlist
-cat <<\EOF >>/etc/pacman.d/mirrorlist
+cat <<EOF >>/etc/pacman.d/mirrorlist
 
 ##
 ## Arch Linux repository mirrorlist
