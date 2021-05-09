@@ -644,17 +644,6 @@ echo ""
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
 pacman -Sy --noconfirm  # обновить списки пакетов из репозиториев
 sleep 01
-
-
-
-
-###
-echo -e "${BLUE}:: ${NC}Создание (backup) резервного списка зеркал mirrorlist - (mirrorlist.backup)"
-cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал для загрузки в mirrorlist"
-cat /etc/pacman.d/mirrorlist  # cat читает данные из файла или стандартного ввода и выводит их на экран
-echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
-pacman -Sy --noconfirm  # обновить списки пакетов из репозиториев
 ##########################
 clear
 echo ""  
