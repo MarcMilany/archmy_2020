@@ -36,6 +36,15 @@ gpg_key=
 verbose=""
 EDITOR=nano
 #EDITOR=nano visudo  # Выполните команду с правами суперпользователя
+#########   Baner  ####################
+#_arch_fast_install_banner
+set > old_vars.log
+APPNAME="arch_fast_install"
+VERSION="v1.6 LegasyBIOS Update"
+BRANCH="master"
+AUTHOR="ordanax_and_poruncov"
+LICENSE="GNU General Public License 3.0"
+###
 ARCHMY1_LANG="russian"  # Installer default language (Язык установки по умолчанию)
 script_path=$(readlink -f ${0%/*})
 ###
@@ -66,16 +75,6 @@ _set() {
     _note "${MSG_ERROR}"
     sleep 1; $$
 }
-###
-#########   Baner  ####################
-#_arch_fast_install_banner
-set > old_vars.log
-
-APPNAME="arch_fast_install"
-VERSION="v1.6 LegasyBIOS Update"
-BRANCH="master"
-AUTHOR="ordanax_and_poruncov"
-LICENSE="GNU General Public License 3.0"
 ###
 ### Description (Описание)
 _arch_fast_install_banner() {
