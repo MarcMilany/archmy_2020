@@ -76,15 +76,16 @@ Cостоит из 4 частей + ?.
    ```bash 
    curl -L git.io/archmy1> archmy1 
    И запустить скрипт: 
-   sh archmy1
+   chmod +x archmy1
+   ./archmy1
    Или эта команда:
-   curl -L git.io/archmy1> archmy1 && sh archmy1
-   или
-   curl -OL git.io/archmy1 && sh archmy1
-   Ещё команда запуска скрипта:
    curl -OL https://git.io/archmy1
    chmod +x archmy1
    ./archmy1
+   Ещё команда запуска скрипта:
+   curl -L git.io/archmy1> archmy1 && sh archmy1
+   или
+   curl -OL git.io/archmy1 && sh archmy1
    ```
    Запустится установка минимальной системы.
    2-я часть ставится автоматически и это базовая установка ArchLinux без программ. 
