@@ -2079,14 +2079,14 @@ sudo pacman -S x264 --noconfirm  # Кодировщик видео H264 / AVC с
 sudo pacman -S xvidcore --noconfirm  # XviD - видеокодек MPEG-4 с открытым исходным кодом
 ### Устанавливаем кодеки  
 sudo pacman -S gstreamer gstreamer-vaapi gst-libav gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly --noconfirm   # https://gstreamer.freedesktop.org/
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
+sudo pacman -S gstreamer --noconfirm  # Фреймворк мультимедийного графа - ядро
+sudo pacman -S gstreamer-vaapi --noconfirm  # Фреймворк мультимедийного графа - плагин vaapi
+sudo pacman -S gst-libav --noconfirm  # Фреймворк мультимедийного графа - плагин для libav
+sudo pacman -S gst-plugins-bad --noconfirm  # Фреймворк мультимедийного графа - плохие плагины
+sudo pacman -S gst-plugins-base --noconfirm  # Фреймворк мультимедийного графа - базовые плагины
+sudo pacman -S gst-plugins-base-libs --noconfirm  # Фреймворк мультимедийного графа - основа
+sudo pacman -S gst-plugins-good --noconfirm  # 
+sudo pacman -S gst-plugins-ugly --noconfirm  # 
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
