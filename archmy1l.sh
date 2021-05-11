@@ -47,7 +47,7 @@ LICENSE="GNU General Public License 3.0"
 ARCHMY1_LANG="russian"  # Installer default language (Язык установки по умолчанию)
 ### Start of the script
 script_path=$(readlink -f ${0%/*})  # эта опция канонизируется путем рекурсивного следования каждой символической ссылке в каждом компоненте данного имени; все, кроме последнего компонента должны существовать
-SCRIPT_PATH=$(realpath $0)
+# SCRIPT_PATH=$(realpath $0)
 # ...
 # echo $SCRIPT_PATH
 ###
