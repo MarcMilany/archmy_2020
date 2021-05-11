@@ -821,9 +821,6 @@ elif [[ $x_de == 2 ]]; then
   echo " Установка Xfce + Goodies for Xfce "     
   pacman -S xfce4 xfce4-goodies --noconfirm  #   # Нетребовательное к ресурсам окружение рабочего стола для UNIX-подобных операционных систем; Проект Xfce Goodies Project включает дополнительное программное обеспечение и изображения, которые связаны с рабочим столом Xfce , но не являются частью официального выпуска.
 ### mv /usr/share/xsessions/xfce.desktop ~/
-  echo ""    
-  echo " Установим Регулятор громкости пакет (pavucontrol) "
-  pacman -S pavucontrol --noconfirm  # Регулятор громкости PulseAudio
   clear
   echo ""
   echo " DE (среда рабочего стола) Xfce успешно установлено "  
