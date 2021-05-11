@@ -2053,15 +2053,23 @@ elif [[ $i_multimedia == 1 ]]; then
   echo ""   
   echo " Установка мультимедиа кодеков и утилит (пакетов) "
 sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore libdvdcss libdvdread libdvdnav dvd+rw-tools dvdauthor dvgrab cdrdao gpac --noconfirm 
-sudo pacman -S a52dec --noconfirm  #
-sudo pacman -S faac --noconfirm  #
-sudo pacman -S faad2 --noconfirm  #
-sudo pacman -S flac --noconfirm  #
-sudo pacman -S jasper --noconfirm  #
-sudo pacman -S lame --noconfirm  #
-sudo pacman -S libdca --noconfirm  #
-sudo pacman -S libdv --noconfirm  #
-sudo pacman -S libmad --noconfirm  #
+sudo pacman -S a52dec --noconfirm  # Бесплатная библиотека для декодирования потоков ATSC A / 52
+sudo pacman -S cdrdao --noconfirm  # Записывает аудио / данные CD-R в режиме disk-at-once (DAO)
+sudo pacman -S dvdauthor --noconfirm  # Инструменты для создания DVD
+sudo pacman -S dvd+rw-tools --noconfirm  # Инструменты записи dvd
+sudo pacman -S dvgrab --noconfirm  # Сохраняет аудио и видео данные из цифрового источника IEEE (FireWire)
+sudo pacman -S faac --noconfirm  # Бесплатная программа Advanced Audio Coder
+sudo pacman -S faad2 --noconfirm  # Аудиодекодер ISO AAC
+sudo pacman -S flac --noconfirm  # Бесплатный аудиокодек без потерь
+sudo pacman -S gpac --noconfirm  # Мультимедийный фреймворк на основе стандарта MPEG-4 Systems (https://github.com/gpac/gpac)
+sudo pacman -S jasper --noconfirm  # Программная реализация кодека, указанного в появляющемся стандарте JPEG-2000 Part-1
+sudo pacman -S lame --noconfirm  # Высококачественный кодировщик MPEG Audio Layer III (MP3)
+sudo pacman -S libdca --noconfirm  # 
+sudo pacman -S libdv --noconfirm  # 
+sudo pacman -S libdvdcss --noconfirm  # 
+sudo pacman -S libdvdnav --noconfirm  # 
+sudo pacman -S libdvdread --noconfirm  # 
+sudo pacman -S libmad --noconfirm  # 
 sudo pacman -S libmpeg2 --noconfirm  #
 sudo pacman -S libtheora --noconfirm  #
 sudo pacman -S libvorbis --noconfirm  #
@@ -2069,16 +2077,7 @@ sudo pacman -S libxv --noconfirm  #
 sudo pacman -S wavpack --noconfirm  #
 sudo pacman -S x264 --noconfirm  #
 sudo pacman -S xvidcore --noconfirm  #
-sudo pacman -S libdvdcss --noconfirm  #
-sudo pacman -S libdvdread --noconfirm  #
-sudo pacman -S libdvdnav --noconfirm  #
-sudo pacman -S dvd+rw-tools --noconfirm  #
-sudo pacman -S dvdauthor --noconfirm  #
-sudo pacman -S dvgrab --noconfirm  #
-sudo pacman -S cdrdao --noconfirm  #
-
-sudo pacman -S gpac --noconfirm  # Мультимедийный фреймворк на основе стандарта MPEG-4 Systems (https://github.com/gpac/gpac)
-# Устанавливаем кодеки  
+### Устанавливаем кодеки  
 sudo pacman -S gstreamer gstreamer-vaapi gst-libav gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly --noconfirm   # https://gstreamer.freedesktop.org/
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
