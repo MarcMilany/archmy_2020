@@ -2173,7 +2173,7 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_vlc == 1 ]]; then
   echo ""  
   echo " Установка многоплатформенного проигрывателя VLC "
-sudo pacman -S vlc --noconfirm
+sudo pacman -S vlc --noconfirm  # Многоплатформенный проигрыватель MPEG, VCD / DVD и DivX
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
