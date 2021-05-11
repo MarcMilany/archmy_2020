@@ -13,3 +13,4 @@ Description = Updating pacman-mirrorlist with reflector and removing pacnew...
 When = PostTransaction
 Depends = reflector
 Exec = /usr/bin/bash -c "reflector --country 'Russia' --latest 9 -p https -p http -n 9 --sort rate --save /etc/pacman.d/mirrorlist && rm -f /etc/pacman.d/mirrorlist.pacnew || true"
+# Exec = /usr/bin/reflector -c ru,by,ua,pl -p https,http --sort rate -a 12 -l 10 --save /etc/pacman.d/mirrorlist
