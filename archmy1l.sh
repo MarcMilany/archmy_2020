@@ -45,7 +45,11 @@ AUTHOR="ordanax_and_poruncov"
 LICENSE="GNU General Public License 3.0"
 ###
 ARCHMY1_LANG="russian"  # Installer default language (Язык установки по умолчанию)
+### Start of the script
 script_path=$(readlink -f ${0%/*})  # эта опция канонизируется путем рекурсивного следования каждой символической ссылке в каждом компоненте данного имени; все, кроме последнего компонента должны существовать
+SCRIPT_PATH=$(realpath $0)
+# ...
+# echo $SCRIPT_PATH
 ###
 umask 0022 # Определение окончательных прав доступа - Для суперпользователя (root) umask по умолчанию равна 0022
 set -e # Эта команда остановит выполнение сценария после сбоя команды и будет отправлен код ошибки
