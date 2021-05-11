@@ -2125,7 +2125,7 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_audacious == 1 ]]; then
   echo ""  
   echo " Установка аудиоплеер Audacious "
-sudo pacman -S audacious audacious-plugins --noconfirm
+sudo pacman -S audacious audacious-plugins --noconfirm  # Легкий, продвинутый аудиоплеер, ориентированный на качество звука; Плагины для Audacious
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
@@ -2149,7 +2149,7 @@ echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_smplayer == 1 ]]; then
   echo ""  
   echo " Установка медиаплеер Smplayer "
-sudo pacman -S smplayer smplayer-skins smplayer-themes smtube --noconfirm
+sudo pacman -S smplayer smplayer-skins smplayer-themes smtube --noconfirm  # Медиаплеер со встроенными кодеками, который может воспроизводить практически все видео и аудио форматы; Скины для SMPlayer; Темы для SMPlayer; Приложение, позволяющее просматривать, искать и воспроизводить видео на YouTube.
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
