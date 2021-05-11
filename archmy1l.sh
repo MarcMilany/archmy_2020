@@ -79,7 +79,7 @@ _set() {
     sleep 1; $$
 }
 ###
-####### Baner ###############
+####### Baner ##############
 ### Description (Описание)
 _arch_fast_install_banner() {
     echo -e "${BLUE}
