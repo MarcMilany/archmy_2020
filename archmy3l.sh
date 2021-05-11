@@ -2074,8 +2074,8 @@ sudo pacman -S libmpeg2 --noconfirm  # Библиотека для декоди�
 sudo pacman -S libtheora --noconfirm  # Открытый видеокодек, разработанный Xiph.org
 sudo pacman -S libvorbis --noconfirm  # Эталонная реализация аудиоформата Ogg Vorbis
 sudo pacman -S libxv --noconfirm  # Библиотека расширений видео X11
-sudo pacman -S wavpack --noconfirm  # 
-sudo pacman -S x264 --noconfirm  # 
+sudo pacman -S wavpack --noconfirm  # Формат сжатия звука с режимами сжатия без потерь, с потерями и гибридным сжатием
+sudo pacman -S x264 --noconfirm  # Кодировщик видео H264 / AVC с открытым исходным кодом
 sudo pacman -S xvidcore --noconfirm  # 
 ### Устанавливаем кодеки  
 sudo pacman -S gstreamer gstreamer-vaapi gst-libav gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly --noconfirm   # https://gstreamer.freedesktop.org/
