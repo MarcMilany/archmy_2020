@@ -2052,7 +2052,7 @@ echo " Установка мультимедиа кодеков и утилит 
 elif [[ $i_multimedia == 1 ]]; then
   echo ""   
   echo " Установка мультимедиа кодеков и утилит (пакетов) "
-sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore libdvdcss libdvdread libdvdnav dvd+rw-tools dvdauthor dvgrab cdrdao gpac --noconfirm 
+# sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore libdvdcss libdvdread libdvdnav dvd+rw-tools dvdauthor dvgrab cdrdao gpac --noconfirm 
 sudo pacman -S a52dec --noconfirm  # Бесплатная библиотека для декодирования потоков ATSC A / 52
 sudo pacman -S cdrdao --noconfirm  # Записывает аудио / данные CD-R в режиме disk-at-once (DAO)
 sudo pacman -S dvdauthor --noconfirm  # Инструменты для создания DVD
@@ -2078,41 +2078,15 @@ sudo pacman -S wavpack --noconfirm  # Формат сжатия звука с р
 sudo pacman -S x264 --noconfirm  # Кодировщик видео H264 / AVC с открытым исходным кодом
 sudo pacman -S xvidcore --noconfirm  # XviD - видеокодек MPEG-4 с открытым исходным кодом
 ### Устанавливаем кодеки  
-sudo pacman -S gstreamer gstreamer-vaapi gst-libav gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly --noconfirm   # https://gstreamer.freedesktop.org/
+# sudo pacman -S gstreamer gstreamer-vaapi gst-libav gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly --noconfirm   # https://gstreamer.freedesktop.org/
 sudo pacman -S gstreamer --noconfirm  # Фреймворк мультимедийного графа - ядро
 sudo pacman -S gstreamer-vaapi --noconfirm  # Фреймворк мультимедийного графа - плагин vaapi
 sudo pacman -S gst-libav --noconfirm  # Фреймворк мультимедийного графа - плагин для libav
 sudo pacman -S gst-plugins-bad --noconfirm  # Фреймворк мультимедийного графа - плохие плагины
 sudo pacman -S gst-plugins-base --noconfirm  # Фреймворк мультимедийного графа - базовые плагины
 sudo pacman -S gst-plugins-base-libs --noconfirm  # Фреймворк мультимедийного графа - основа
-sudo pacman -S gst-plugins-good --noconfirm  # 
-sudo pacman -S gst-plugins-ugly --noconfirm  # 
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-sudo pacman -S  --noconfirm  #
-
-
-
+sudo pacman -S gst-plugins-good --noconfirm  # Фреймворк мультимедийного графа - хорошие плагины
+sudo pacman -S gst-plugins-ugly --noconfirm  # Фреймворк мультимедийного графа - уродливые плагины
 clear
 echo ""   
 echo " Установка мультимедиа кодеков и утилит (пакетов) выполнена "
