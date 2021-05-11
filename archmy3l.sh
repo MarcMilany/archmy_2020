@@ -2064,19 +2064,19 @@ sudo pacman -S flac --noconfirm  # Бесплатный аудиокодек б�
 sudo pacman -S gpac --noconfirm  # Мультимедийный фреймворк на основе стандарта MPEG-4 Systems (https://github.com/gpac/gpac)
 sudo pacman -S jasper --noconfirm  # Программная реализация кодека, указанного в появляющемся стандарте JPEG-2000 Part-1
 sudo pacman -S lame --noconfirm  # Высококачественный кодировщик MPEG Audio Layer III (MP3)
-sudo pacman -S libdca --noconfirm  # 
-sudo pacman -S libdv --noconfirm  # 
-sudo pacman -S libdvdcss --noconfirm  # 
-sudo pacman -S libdvdnav --noconfirm  # 
-sudo pacman -S libdvdread --noconfirm  # 
-sudo pacman -S libmad --noconfirm  # 
-sudo pacman -S libmpeg2 --noconfirm  #
-sudo pacman -S libtheora --noconfirm  #
-sudo pacman -S libvorbis --noconfirm  #
-sudo pacman -S libxv --noconfirm  #
-sudo pacman -S wavpack --noconfirm  #
-sudo pacman -S x264 --noconfirm  #
-sudo pacman -S xvidcore --noconfirm  #
+sudo pacman -S libdca --noconfirm  # Бесплатная библиотека для декодирования потоков DTS Coherent Acoustics
+sudo pacman -S libdv --noconfirm  # Кодек Quasar DV (libdv) - программный кодек для DV-видео
+sudo pacman -S libdvdcss --noconfirm  # Переносимая библиотека абстракций для дешифрования DVD
+sudo pacman -S libdvdnav --noconfirm  # Библиотека для плагина xine-dvdnav
+sudo pacman -S libdvdread --noconfirm  # Обеспечивает простую основу для чтения DVD-видеодисков
+sudo pacman -S libmad --noconfirm  # Высококачественный аудиодекодер MPEG
+sudo pacman -S libmpeg2 --noconfirm  # Библиотека для декодирования видеопотоков MPEG-1 и MPEG-2
+sudo pacman -S libtheora --noconfirm  # Открытый видеокодек, разработанный Xiph.org
+sudo pacman -S libvorbis --noconfirm  # Эталонная реализация аудиоформата Ogg Vorbis
+sudo pacman -S libxv --noconfirm  # Библиотека расширений видео X11
+sudo pacman -S wavpack --noconfirm  # 
+sudo pacman -S x264 --noconfirm  # 
+sudo pacman -S xvidcore --noconfirm  # 
 ### Устанавливаем кодеки  
 sudo pacman -S gstreamer gstreamer-vaapi gst-libav gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly --noconfirm   # https://gstreamer.freedesktop.org/
 sudo pacman -S  --noconfirm  #
