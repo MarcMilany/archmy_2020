@@ -2076,7 +2076,7 @@ sudo pacman -S libvorbis --noconfirm  # Эталонная реализация 
 sudo pacman -S libxv --noconfirm  # Библиотека расширений видео X11
 sudo pacman -S wavpack --noconfirm  # Формат сжатия звука с режимами сжатия без потерь, с потерями и гибридным сжатием
 sudo pacman -S x264 --noconfirm  # Кодировщик видео H264 / AVC с открытым исходным кодом
-sudo pacman -S xvidcore --noconfirm  # 
+sudo pacman -S xvidcore --noconfirm  # XviD - видеокодек MPEG-4 с открытым исходным кодом
 ### Устанавливаем кодеки  
 sudo pacman -S gstreamer gstreamer-vaapi gst-libav gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly --noconfirm   # https://gstreamer.freedesktop.org/
 sudo pacman -S  --noconfirm  #
