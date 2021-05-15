@@ -2052,7 +2052,7 @@ echo " Установка мультимедиа кодеков и утилит 
 elif [[ $i_multimedia == 1 ]]; then
   echo ""   
   echo " Установка мультимедиа кодеков и утилит (пакетов) "
-### Устанавливаем кодеки
+### Устанавливаем утилиты и кодеки
 # sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore libdvdcss libdvdread libdvdnav dvd+rw-tools dvdauthor dvgrab cdrdao gpac --noconfirm 
 sudo pacman -S a52dec --noconfirm  # Бесплатная библиотека для декодирования потоков ATSC A / 52
 sudo pacman -S cdrdao --noconfirm  # Записывает аудио / данные CD-R в режиме disk-at-once (DAO)
@@ -2078,7 +2078,7 @@ sudo pacman -S libxv --noconfirm  # Библиотека расширений в
 sudo pacman -S wavpack --noconfirm  # Формат сжатия звука с режимами сжатия без потерь, с потерями и гибридным сжатием
 sudo pacman -S x264 --noconfirm  # Кодировщик видео H264 / AVC с открытым исходным кодом
 sudo pacman -S xvidcore --noconfirm  # XviD - видеокодек MPEG-4 с открытым исходным кодом
-### Устанавливаем Фреймворк  
+### Устанавливаем Фреймворк (кодеки) 
 # sudo pacman -S gstreamer gstreamer-vaapi gst-libav gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly --noconfirm   # https://gstreamer.freedesktop.org/
 sudo pacman -S gstreamer --noconfirm  # Фреймворк мультимедийного графа - ядро
 sudo pacman -S gstreamer-vaapi --noconfirm  # Фреймворк мультимедийного графа - плагин vaapi
