@@ -1773,7 +1773,7 @@ echo -e "${GREEN}==> ${NC}Установка дополнительных баз
 #echo -e "${BLUE}:: ${NC}Установка дополнительных базовых программ (пакетов)" 
 #echo 'Установка дополнительных базовых программ (пакетов)'
 # Installing additional basic programs (packages)
-echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (accountsservice, acpi, acpid, android-tools, android-udev, arch-install-scripts, aspell-en, aspell-ru, autofs, b43-fwcutter, bash-completion, beep, bind, btrfs-progs, busybox, c-ares, ccache, cpio, cpupower, crda, davfs2, desktop-file-utils, dhclient, dmraid, dnsmasq, dosfstools, efibootmgr, efitools, ethtool, f2fs-tools, flex, fortune-mod, fsarchiver, fuse3, glances, gnome-nettool, gnu-netcat, gpm, gptfdisk, gtop, gvfs, gvfs-gphoto2, gvfs-nfs, gvfs-smb, haveged, hddtemp, hidapi, hwinfo, hydra, hyphen-en, id3lib, iftop, inetutils, isomd5sum, jfsutils, lib32-curl, lib32-flex, libfm-gtk2, lksctp-tools, logrotate, lsof, lsb-release, lvm2, man-db, man-pages, mc, memtest86+, mlocate, mtpfs, ncdu, nfs-utils, nss-mdns, pacman-contrib, patchutils, pciutils, php, poppler-data, powertop, pv, pwgen, python-isomd5sum, python-pip, qt5-translations, reiserfsprogs, ruby, s-nail, sane, scrot, sg3_utils, sdparm, sof-firmware, solid, sox, smartmontools, speedtest-cli, squashfs-tools, syslinux, systemd-ui, termite, termite-terminfo, translate-shell, udiskie, usb_modeswitch, wimlib, xfsprogs, xsel, xterm, xorg-twm, xorg-xkill, yelp, youtube-dl)."
+echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (accountsservice, acpi, acpid, android-tools, android-udev, arch-install-scripts, aspell-en, aspell-ru, autofs, b43-fwcutter, bash-completion, beep, bind, btrfs-progs, busybox, c-ares, ccache, cpio, cpupower, crda, davfs2, desktop-file-utils, dhclient, dmraid, dnsmasq, dosfstools, efibootmgr, efitools, ethtool, f2fs-tools, flex, fortune-mod, fsarchiver, fuse3, glances, gnome-nettool, gnu-netcat, gpm, gptfdisk, gtop, gvfs, gvfs-gphoto2, gvfs-nfs, gvfs-smb, haveged, hddtemp, hidapi, hwdetect, hwinfo, hydra, hyphen-en, id3lib, iftop, inetutils, isomd5sum, jfsutils, lib32-curl, lib32-flex, libfm-gtk2, lksctp-tools, logrotate, lsof, lsb-release, lvm2, man-db, man-pages, mc, memtest86+, mlocate, mtpfs, ncdu, nfs-utils, nss-mdns, pacman-contrib, patchutils, pciutils, php, poppler-data, powertop, pv, pwgen, python-isomd5sum, python-pip, qt5-translations, reiserfsprogs, ruby, s-nail, sane, scrot, sg3_utils, sdparm, sof-firmware, solid, sox, smartmontools, speedtest-cli, squashfs-tools, syslinux, systemd-ui, termite, termite-terminfo, translate-shell, udiskie, usb_modeswitch, wimlib, xfsprogs, xsel, xterm, xorg-twm, xorg-xkill, yelp, youtube-dl)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -1800,6 +1800,7 @@ elif [[ $in_soft == 1 ]]; then
   echo " Установка дополнительных базовых программ (пакетов) "
 # sudo pacman -S  --noconfirm  # light-locker lsb-release python python2 - присутствует  
 # reflector git curl  - пока присутствует в pkglist.x86_64 
+sudo pacman -S --noconfirm --needed pacman-contrib  # Предоставленные скрипты и инструменты для систем pacman
 sudo pacman -S accountsservice --noconfirm  # Интерфейс D-Bus для запроса учетных записей пользователей и управления ими
 sudo pacman -S acpi --noconfirm  # Клиент для показаний батареи, мощности и температуры
 sudo pacman -S acpid --noconfirm  # Демон для доставки событий управления питанием ACPI с поддержкой netlink
@@ -1852,6 +1853,7 @@ sudo pacman -S gvfs-smb --noconfirm  # Реализация виртуально
 sudo pacman -S haveged --noconfirm  # Демон сбора энтропии с использованием таймингов процессора
 sudo pacman -S hddtemp --noconfirm  # Показывает температуру вашего жесткого диска, читая информацию SMART
 sudo pacman -S hidapi --noconfirm  # Простая библиотека для связи с устройствами USB и Bluetooth HID
+sudo pacman -S hwdetect --noconfirm  # Скрипт (консольная утилита) просмотр модулей ядра для устройств, обнаружения оборудования с загрузочными модулями и поддержкой mkinitcpio.conf / rc.conf
 sudo pacman -S hwinfo --noconfirm  # Инструмент обнаружения оборудования от openSUSE
 sudo pacman -S hydra --noconfirm  # Очень быстрый взломщик входа в сеть, который поддерживает множество различных сервисов
 sudo pacman -S hyphen-en --noconfirm  # Правила расстановки переносов в английском
