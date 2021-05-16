@@ -452,7 +452,7 @@ echo -e "${GREEN}==> ${NC}Установка редактора шрифтов �
 #echo -e "${BLUE}:: ${NC}Установка редактора шрифтов и дополнительных шрифтов из AUR (через - yay)"
 #echo 'Установка дополнительных шрифтов из AUR'
 # The installation of additional fonts from the AUR (through - yay)
-echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (font-manager, ttf-ms-fonts, ttf-clear-sans, ttf-monaco, montserrat-font-ttf, ttf-paratype, ttf-comfortaa, ttf-cheapskate, ttf-symbola, ttf-nerd-fonts-hack-complete-git, ttf-font-logos, ttf-font-icons)." 
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (font-manager, ttf-ms-fonts, ttf-clear-sans, ttf-monaco, montserrat-font-ttf, ttf-paratype, ttf-comfortaa, ttf-cheapskate, ttf-symbola, ttf-nerd-fonts-hack-complete-git, ttf-font-logos, ttf-tahoma, ttf-font-icons)." 
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты шрифтов!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -487,6 +487,7 @@ yay -S ttf-comfortaa --noconfirm  # Закругленный геометрич�
 ### yay -S ttf-cheapskate --noconfirm  # Шрифты TTF от Дастина Норландера
 yay -S ttf-symbola --noconfirm  # Шрифт для символьных блоков стандарта Unicode (TTF)
 yay -S ttf-nerd-fonts-hack-complete-git --noconfirm  # Шрифт, разработанный для исходного кода. Исправлены иконки Nerd Fonts
+yay -S ttf-tahoma --noconfirm  # Шрифты Tahoma и Tahoma Bold из проекта Wine (https://www.winehq.org/)
 yay -S ttf-font-logos --noconfirm  # Значок шрифта с логотипами популярных дистрибутивов Linux
 yay -S ttf-font-icons --noconfirm  # Неперекрывающееся сочетание иконических шрифтов Ionicons и Awesome 
 # yay -S ttf-wps-fonts --noconfirm  # Если установлен WPS - Символьные шрифты требуются wps-office
