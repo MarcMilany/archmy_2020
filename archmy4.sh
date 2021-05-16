@@ -616,7 +616,7 @@ echo 'Установка Java JDK средство разработки и ср�
 sudo pacman -S jdk8-openjdk jre8-openjdk jre8-openjdk-headless --noconfirm
 sudo pacman -S jdk8-openjdk --noconfirm  # Комплект разработчика OpenJDK Java 8
 sudo pacman -S jre8-openjdk --noconfirm  # Полная среда выполнения OpenJDK Java 8
-sudo pacman -S jre8-openjdk-headless --noconfirm  # 
+sudo pacman -S jre8-openjdk-headless --noconfirm  # OpenJDK Java 8 автономная среда выполнения
 sudo pacman -S  --noconfirm  # OpenJDK Java 8 автономная среда выполнения
 sudo pacman -S npm --noconfirm   # Менеджер пакетов для javascript
 sudo pacman -S  --noconfirm  # 
@@ -798,6 +798,7 @@ sudo pacman -S vpnc --noconfirm  # Клиент VPN для концентрат�
 sudo pacman -S networkmanager-openconnect --noconfirm  # Плагин NetworkManager VPN для OpenConnect
 sudo pacman -S networkmanager-pptp --noconfirm  # Плагин NetworkManager VPN для PPTP
 sudo pacman -S networkmanager-vpnc --noconfirm  # Плагин NetworkManager VPN для VPNC
+sudo pacman -S mitmproxy --noconfirm  # HTTP-прокси с поддержкой SSL (https://mitmproxy.org/)
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
 sudo pacman -S  --noconfirm  #
