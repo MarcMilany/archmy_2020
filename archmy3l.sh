@@ -1773,7 +1773,7 @@ echo -e "${GREEN}==> ${NC}Установка дополнительных баз
 #echo -e "${BLUE}:: ${NC}Установка дополнительных базовых программ (пакетов)" 
 #echo 'Установка дополнительных базовых программ (пакетов)'
 # Installing additional basic programs (packages)
-echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (accountsservice, acpi, acpid, android-tools, android-udev, arch-install-scripts, aspell-en, aspell-ru, autofs, b43-fwcutter, bash-completion, beep, bind, btrfs-progs, busybox, c-ares, ccache, cpio, cpupower, crda, davfs2, desktop-file-utils, dhclient, dnsmasq, dosfstools, efibootmgr, efitools, ethtool, f2fs-tools, flex, fortune-mod, fsarchiver, fuse3, glances, gnome-nettool, gnu-netcat, gpm, gptfdisk, gtop, gvfs, gvfs-gphoto2, gvfs-nfs, gvfs-smb, haveged, hddtemp, hidapi, hwinfo, hydra, hyphen-en, id3lib, iftop, inetutils, isomd5sum, jfsutils, lib32-curl, lib32-flex, libfm-gtk2, lksctp-tools, logrotate, lsof, lsb-release, man-db, man-pages, mc, memtest86+, mlocate, mtpfs, ncdu, nfs-utils, nss-mdns, pacman-contrib, patchutils, pciutils, php, poppler-data, powertop, pv, pwgen, python-isomd5sum, python-pip, qt5-translations, reiserfsprogs, ruby, s-nail, sane, scrot, sg3_utils, sdparm, sof-firmware, solid, sox, smartmontools, speedtest-cli, squashfs-tools, syslinux, systemd-ui, termite, termite-terminfo, translate-shell, udiskie, usb_modeswitch, wimlib, xsel, xterm, xorg-twm, xorg-xkill, yelp, youtube-dl)."
+echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (accountsservice, acpi, acpid, android-tools, android-udev, arch-install-scripts, aspell-en, aspell-ru, autofs, b43-fwcutter, bash-completion, beep, bind, btrfs-progs, busybox, c-ares, ccache, cpio, cpupower, crda, davfs2, desktop-file-utils, dhclient, dmraid, dnsmasq, dosfstools, efibootmgr, efitools, ethtool, f2fs-tools, flex, fortune-mod, fsarchiver, fuse3, glances, gnome-nettool, gnu-netcat, gpm, gptfdisk, gtop, gvfs, gvfs-gphoto2, gvfs-nfs, gvfs-smb, haveged, hddtemp, hidapi, hwinfo, hydra, hyphen-en, id3lib, iftop, inetutils, isomd5sum, jfsutils, lib32-curl, lib32-flex, libfm-gtk2, lksctp-tools, logrotate, lsof, lsb-release, lvm2, man-db, man-pages, mc, memtest86+, mlocate, mtpfs, ncdu, nfs-utils, nss-mdns, pacman-contrib, patchutils, pciutils, php, poppler-data, powertop, pv, pwgen, python-isomd5sum, python-pip, qt5-translations, reiserfsprogs, ruby, s-nail, sane, scrot, sg3_utils, sdparm, sof-firmware, solid, sox, smartmontools, speedtest-cli, squashfs-tools, syslinux, systemd-ui, termite, termite-terminfo, translate-shell, udiskie, usb_modeswitch, wimlib, xfsprogs, xsel, xterm, xorg-twm, xorg-xkill, yelp, youtube-dl)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -1798,7 +1798,7 @@ echo " Установка дополнительных базовых прогр
 elif [[ $in_soft == 1 ]]; then
   echo ""  
   echo " Установка дополнительных базовых программ (пакетов) "
-# sudo pacman -S accountsservice acpi acpid android-tools android-udev arch-install-scripts aspell-en aspell-ru autofs b43-fwcutter bash-completion beep bind btrfs-progs busybox c-ares ccache cpio cpupower crda davfs2 desktop-file-utils dhclient dnsmasq dosfstools efibootmgr efitools ethtool f2fs-tools flex fortune-mod fsarchiver fuse3 glances gnome-nettool gnu-netcat gpm gptfdisk gtop gvfs gvfs-gphoto2 gvfs-nfs gvfs-smb haveged hddtemp hidapi hwinfo hydra hyphen-en id3lib iftop inetutils isomd5sum jfsutils lib32-curl lib32-flex libfm-gtk2 lksctp-tools logrotate lsof man-db man-pages mc memtest86+ mlocate mtpfs ncdu nfs-utils nss-mdns patchutils pciutils php poppler-data powertop pv pwgen python-isomd5sum python-pip qt5-translations reiserfsprogs ruby s-nail sane scrot sg3_utils sdparm sof-firmware solid sox smartmontools speedtest-cli squashfs-tools syslinux systemd-ui termite termite-terminfo translate-shell udiskie usb_modeswitch wimlib xsel xterm xorg-twm xorg-xkill yelp youtube-dl --noconfirm  # light-locker lsb-release python python2 - присутствует  
+# sudo pacman -S  --noconfirm  # light-locker lsb-release python python2 - присутствует  
 # reflector git curl  - пока присутствует в pkglist.x86_64 
 sudo pacman -S accountsservice --noconfirm  # Интерфейс D-Bus для запроса учетных записей пользователей и управления ими
 sudo pacman -S acpi --noconfirm  # Клиент для показаний батареи, мощности и температуры
@@ -1823,6 +1823,7 @@ sudo pacman -S crda --noconfirm  # Агент центрального регу�
 sudo pacman -S davfs2 --noconfirm  # Драйвер файловой системы, позволяющий монтировать папку WebDAV
 sudo pacman -S desktop-file-utils --noconfirm  # Утилиты командной строки для работы с записями рабочего стола
 sudo pacman -S dhclient --noconfirm  # Автономный DHCP-клиент из пакета dhcp
+sudo pacman -S dmraid --noconfirm  # Интерфейс RAID устройства сопоставления устройств
 sudo pacman -S dnsmasq --noconfirm  # Легкий, простой в настройке сервер пересылки DNS и DHCP-сервер
 sudo pacman -S dosfstools --noconfirm  # Утилиты файловой системы DOS
 sudo pacman -S efibootmgr --noconfirm  # Приложение пользовательского пространства Linux для изменения диспетчера загрузки EFI
@@ -1867,6 +1868,7 @@ sudo pacman -S lksctp-tools --noconfirm  # Реализация протокол
 sudo pacman -S logrotate --noconfirm  # Автоматическая ротация системных журналов
 sudo pacman -S lsb-release --noconfirm  # Программа запроса версии LSB   # присутствует
 sudo pacman -S lsof --noconfirm  # Перечисляет открытые файлы для запуска процессов Unix
+sudo pacman -S lvm2 --noconfirm  #  Утилиты Logical Volume Manager 2 (https://sourceware.org/lvm2/)
 sudo pacman -S man-db --noconfirm  # Утилита для чтения страниц руководства
 sudo pacman -S man-pages --noconfirm  # Страницы руководства Linux
 sudo pacman -S mc --noconfirm  # Файловый менеджер, эмулирующий Norton Commander
@@ -1890,7 +1892,7 @@ sudo pacman -S pwgen --noconfirm  # Генератор паролей для с�
 sudo pacman -S python-isomd5sum --noconfirm  # Привязки Python3 для isomd5sum
 sudo pacman -S python-pip --noconfirm  # Рекомендуемый PyPA инструмент для установки пакетов Python
 sudo pacman -S qt5-translations --noconfirm  # кросс-платформенное приложение и UI-фреймворк (переводы)
-sudo pacman -S reiserfsprogs --noconfirm  # Утилиты Reiserfs
+sudo pacman -S reiserfsprogs --noconfirm  # Утилиты Reiserfs (Инструменты для поддержки файловой системы ReiserFS)
 sudo pacman -S ruby --noconfirm  # Объектно-ориентированный язык для быстрого и простого программирования
 sudo pacman -S s-nail --noconfirm  # Среда для отправки и получения почты
 sudo pacman -S sane --noconfirm  # Доступ к сканеру теперь простой
@@ -1911,6 +1913,7 @@ sudo pacman -S translate-shell --noconfirm  # Интерфейс командн�
 sudo pacman -S udiskie --noconfirm  # Автоматическое монтирование съемных дисков с использованием udisks
 sudo pacman -S usb_modeswitch --noconfirm  # Активация переключаемых USB-устройств в Linux
 sudo pacman -S wimlib --noconfirm  # Библиотека и программа для извлечения, создания и изменения файлов WIM
+sudo pacman -S xfsprogs --noconfirm  # Утилиты файловой системы XFS
 sudo pacman -S xsel --noconfirm  # XSel - это программа командной строки для получения и установки содержимого выделения X
 sudo pacman -S xterm --noconfirm  # Эмулятор терминала X
 # sudo pacman -S xorg-xclock --noconfirm  # X часы
