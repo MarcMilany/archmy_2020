@@ -3296,7 +3296,7 @@ echo -e "${GREEN}==> ${BOLD}Установить дополнительные с
 #echo -e "${BLUE}:: ${NC}Установить дополнительные сетевые утилиты, драйверы?"
 #echo 'Установить дополнительные сетевые утилиты, драйверы
 # Install additional network utilities, drivers
-echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (broadcom-wl-dkms, ebtables, ipset, iwd, linux-atm, ndisc6, networkmanager-l2tp, pptpclient, rp-pppoe, wvdial, xl2tpd)."
+echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (broadcom-wl-dkms, ebtables, ipset, iwd, linux-atm, ndisc6, networkmanager-l2tp, pptpclient, rp-pppoe, wvdial, xl2tpd, traceroute, wavemon, dsniff)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -3332,10 +3332,12 @@ sudo pacman -S pptpclient --noconfirm  # Клиент для проприета�
 sudo pacman -S rp-pppoe --noconfirm  # Протокол точка-точка Roaring Penguin через клиент Ethernet
 sudo pacman -S wvdial --noconfirm  # Программа номеронабирателя для подключения к Интернету
 # sudo pacman -S  --noconfirm  # 
+sudo pacman -S traceroute --noconfirm  # Отслеживает маршрут пакетов по IP-сети (http://traceroute.sourceforge.net/)
+sudo pacman -S wavemon --noconfirm  # Приложение для мониторинга беспроводных сетевых устройств на базе ncurses (https://github.com/uoaerg/wavemon)
+sudo pacman -S dsniff --noconfirm  # Сборник инструментов для сетевого аудита и тестирования на проникновение (https://www.monkey.org/~dugsong/dsniff/)
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
-
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установим TLP - Для увеличения продолжительности времени работы от батареи"
