@@ -856,7 +856,7 @@ if [[ $int == 1 ]]; then
   echo " Первый этап установки Arch'a закончен " 
   echo 'Установка продолжится в ARCH-LINUX chroot' 
   echo ""   
-# pacman -S curl --noconfirm --noprogressbar --quiet  # Утилита и библиотека для поиска URL
+# pacman -S --noconfirm --needed --noprogressbar --quiet curl # Утилита и библиотека для поиска URL
   arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"  # sh вызывает программу sh как интерпретатор и флаг -c означает выполнение следующей команды, интерпретируемой этой программой (выполнить команду специально с этой оболочкой вместо bash)
 ###  curl -s "http://get.sdkman.io" | bash
 ### \ curl -sSL https://get.rvm.io | bash --debug
@@ -889,7 +889,7 @@ elif [[ $int == 2 ]]; then
   reboot 
 elif [[ $int == 3 ]]; then
   echo ""
-# pacman -S curl --noconfirm --noprogressbar  # Утилита и библиотека для поиска URL
+# pacman -S --noconfirm --needed --noprogressbar --quiet curl # Утилита и библиотека для поиска URL
   curl -LO https://raw.githubusercontent.com/MarcMilany/archmy_2020/master/archmy2l.sh
   mv archmy2l.sh /mnt
   chmod +x /mnt/archmy2l.sh
