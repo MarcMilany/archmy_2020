@@ -1774,7 +1774,7 @@ echo -e "${GREEN}==> ${NC}Установка дополнительных баз
 #echo -e "${BLUE}:: ${NC}Установка дополнительных базовых программ (пакетов)" 
 #echo 'Установка дополнительных базовых программ (пакетов)'
 # Installing additional basic programs (packages)
-echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (accountsservice, acpi, acpid, android-tools, android-udev, arch-install-scripts, aspell-en, aspell-ru, autofs, b43-fwcutter, bash-completion, beep, bind, btrfs-progs, busybox, c-ares, ccache, cpio, cpupower, crda, davfs2, desktop-file-utils, dhclient, dmraid, dnsmasq, dosfstools, efibootmgr, efitools, ethtool, f2fs-tools, flex, fortune-mod, fsarchiver, fuse3, glances, gnome-nettool, gnu-netcat, gpm, gptfdisk, gtop, gvfs, gvfs-gphoto2, gvfs-nfs, gvfs-smb, haveged, hddtemp, hdparm, hidapi, hwdetect, hwinfo, hydra, hyphen-en, id3lib, iftop, inetutils, isomd5sum, jfsutils, lib32-curl, lib32-flex, libfm-gtk2, lksctp-tools, logrotate, lsof, lsb-release, lvm2, man-db, man-pages, mc, memtest86+, mlocate, mtpfs, ncdu, nfs-utils, nss-mdns, pacman-contrib, patchutils, pciutils, php, poppler-data, powertop, pv, pwgen, python-isomd5sum, python-pip, qt5-translations, reiserfsprogs, ruby, s-nail, sane, scrot, sg3_utils, sdparm, sof-firmware, solid, sox, smartmontools, speedtest-cli, squashfs-tools, syslinux, systemd-ui, termite, termite-terminfo, translate-shell, udiskie, usb_modeswitch, wimlib, xfsprogs, xsel, xterm, xorg-twm, xorg-xkill, yelp, youtube-dl)."
+echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (accountsservice, acpi, acpid, android-tools, android-udev, arch-install-scripts, aspell-en, aspell-ru, autofs, b43-fwcutter, bash-completion, beep, bind, btrfs-progs, busybox, c-ares, ccache, cpio, cpupower, crda, davfs2, desktop-file-utils, dhclient, dmraid, dmidecode, dnsmasq, dosfstools, efibootmgr, efitools, ethtool, f2fs-tools, flex, fortune-mod, fsarchiver, fwupd, fuse3, glances, gnome-nettool, gnu-netcat, gpm, gptfdisk, gtop, gvfs, gvfs-gphoto2, gvfs-nfs, gvfs-smb, haveged, hddtemp, hdparm, hidapi, hwdetect, hwinfo, hydra, hyphen-en, id3lib, iftop, inetutils, isomd5sum, jfsutils, lib32-curl, lib32-flex, libfm-gtk2, lksctp-tools, logrotate, lsof, lsb-release, lvm2, man-db, man-pages, mc, memtest86+, mlocate, mtpfs, ncdu, nfs-utils, nmon, nss-mdns, pacman-contrib, patchutils, pciutils, php, poppler-data, powertop, pv, pwgen, python-isomd5sum, python-pip, qt5-translations, reiserfsprogs, ruby, s-nail, sane, scrot, sg3_utils, sdparm, sof-firmware, solid, sox, smartmontools, speedtest-cli, squashfs-tools, syslinux, systemd-ui, termite, termite-terminfo, translate-shell, udiskie, udisks2, usbutils, usb_modeswitch, wimlib, xfsprogs, xsel, xterm, xorg-twm, xorg-xkill, yelp, youtube-dl)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -1826,6 +1826,7 @@ sudo pacman -S davfs2 --noconfirm  # Драйвер файловой систе�
 sudo pacman -S desktop-file-utils --noconfirm  # Утилиты командной строки для работы с записями рабочего стола
 sudo pacman -S dhclient --noconfirm  # Автономный DHCP-клиент из пакета dhcp
 sudo pacman -S dmraid --noconfirm  # Интерфейс RAID устройства сопоставления устройств
+sudo pacman -S dmidecode --noconfirm  # Утилиты, относящиеся к таблице интерфейса управления рабочим столом (https://www.nongnu.org/dmidecode)
 sudo pacman -S dnsmasq --noconfirm  # Легкий, простой в настройке сервер пересылки DNS и DHCP-сервер
 sudo pacman -S dosfstools --noconfirm  # Утилиты файловой системы DOS
 sudo pacman -S efibootmgr --noconfirm  # Приложение пользовательского пространства Linux для изменения диспетчера загрузки EFI
@@ -1836,6 +1837,7 @@ sudo pacman -S flex --noconfirm  # Инструмент для создания 
 sudo pacman -S fortune-mod --noconfirm  # Программа Fortune Cookie от BSD games
 sudo pacman -S fsarchiver --noconfirm  # Безопасный и гибкий инструмент для резервного копирования и развертывания файловой системы
 sudo pacman -S fuse3 --noconfirm  # Библиотека, позволяющая реализовать файловую систему в программе пользовательского пространства
+sudo pacman -S fwupd --noconfirm  # Простой демон, позволяющий программному обеспечению сеанса обновлять прошивку (https://github.com/fwupd/fwupd)
 sudo pacman -S glances --noconfirm  # Инструмент мониторинга на основе CLI на основе curses
 sudo pacman -S gnome-nettool --noconfirm  # Графический интерфейс для различных сетевых инструментов
 sudo pacman -S gnu-netcat --noconfirm  # GNU переписывает netcat, приложение для создания сетевых трубопроводов
@@ -1851,7 +1853,7 @@ sudo pacman -S gvfs --noconfirm  # Реализация виртуальной �
 sudo pacman -S gvfs-gphoto2 --noconfirm  # Реализация виртуальной файловой системы для GIO (бэкэнд gphoto2; камера PTP, медиаплеер MTP)
 sudo pacman -S gvfs-nfs --noconfirm  # Реализация виртуальной файловой системы для GIO (серверная часть NFS)
 sudo pacman -S gvfs-smb --noconfirm  # Реализация виртуальной файловой системы для GIO (серверная часть SMB / CIFS; клиент Windows)
-sudo pacman -S haveged --noconfirm  # Демон сбора энтропии с использованием таймингов процессора
+sudo pacman -S haveged --noconfirm  #  Демон сбора энтропии с использованием таймингов процессора (https://github.com/jirka-h/haveged)(запустить haveged -n 0 | pv > /dev/null)
 sudo pacman -S hddtemp --noconfirm  # Показывает температуру вашего жесткого диска, читая информацию SMART
 sudo pacman -S hdparm --noconfirm  # Утилита оболочки для управления параметрами диска / драйвера Linux IDE (получить / установить параметры диска ATA / SATA под Linux)
 sudo pacman -S hidapi --noconfirm  # Простая библиотека для связи с устройствами USB и Bluetooth HID
@@ -1871,7 +1873,7 @@ sudo pacman -S libfm-gtk2 --noconfirm  # Библиотека GTK + 2 для у�
 sudo pacman -S lksctp-tools --noconfirm  # Реализация протокола SCTP (http://lksctp.sourceforge.net/)
 sudo pacman -S logrotate --noconfirm  # Автоматическая ротация системных журналов
 sudo pacman -S lsb-release --noconfirm  # Программа запроса версии LSB   # присутствует
-sudo pacman -S lsof --noconfirm  # Перечисляет открытые файлы для запуска процессов Unix
+sudo pacman -S lsof --noconfirm  #  Перечисляет открытые файлы для запуска процессов Unix (https://github.com/lsof-org/lsof)(cat > /tmp/LOG &  ; lsof -p 18083)
 sudo pacman -S lvm2 --noconfirm  #  Утилиты Logical Volume Manager 2 (https://sourceware.org/lvm2/)
 sudo pacman -S man-db --noconfirm  # Утилита для чтения страниц руководства
 sudo pacman -S man-pages --noconfirm  # Страницы руководства Linux
@@ -1881,6 +1883,7 @@ sudo pacman -S mlocate --noconfirm  # Слияние реализации locate
 sudo pacman -S mtpfs --noconfirm  # Файловая система FUSE, поддерживающая чтение и запись с любого устройства MTP
 sudo pacman -S ncdu --noconfirm  # Анализатор использования диска с интерфейсом ncurses
 sudo pacman -S nfs-utils --noconfirm  # Программы поддержки для сетевых файловых систем
+sudo pacman -S nmon --noconfirm  # Инструмент мониторинга производительности AIX и Linux (http://nmon.sourceforge.net/pmwiki.php)
 sudo pacman -S nss-mdns --noconfirm  # Плагин glibc, обеспечивающий разрешение имени хоста через mDNS
 ### sudo pacman -S openbsd-netcat --noconfirm  #  Швейцарский армейский нож TCP / IP. Вариант OpenBSD (Важно конфликтует с gnu-netcat - GNU переписывает netcat, приложение для создания сетевых трубопроводов)
 #sudo pacman -S pacman-contrib --noconfirm  # Предоставленные скрипты и инструменты для систем pacman  # присутствует
@@ -1915,6 +1918,8 @@ sudo pacman -S termite --noconfirm  #  Простой терминал на ба
 sudo pacman -S termite-terminfo --noconfirm  # Terminfo для Termite, простого терминала на базе VTE
 sudo pacman -S translate-shell --noconfirm  # Интерфейс командной строки и интерактивная оболочка для Google Translate
 sudo pacman -S udiskie --noconfirm  # Автоматическое монтирование съемных дисков с использованием udisks
+sudo pacman -S udisks2 --noconfirm  # Служба управления дисками, версия 2 (https://www.freedesktop.org/wiki/Software/udisks/) 
+sudo pacman -S usbutils --noconfirm  # Набор USB-инструментов для запроса подключенных USB-устройств
 sudo pacman -S usb_modeswitch --noconfirm  # Активация переключаемых USB-устройств в Linux
 sudo pacman -S wimlib --noconfirm  # Библиотека и программа для извлечения, создания и изменения файлов WIM
 sudo pacman -S xfsprogs --noconfirm  # Утилиты файловой системы XFS
