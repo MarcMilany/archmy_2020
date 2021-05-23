@@ -4974,6 +4974,9 @@ echo ""
 echo " Настройка раскладки клавиатуры в X.Org "
 echo " localectl [--no-convert] set-x11-keymap раскладка [модель [вариант [опции]]] " 
 sudo localectl --no-convert set-x11-keymap us,ru pc105 "" grp:alt_shift_toggle
+# localectl --no-convert set-x11-keymap us,ru pc105 "" grp:alt_shift_toggle
+echo " Чтобы изменения вступили в силу, перезагрузите Xorg командой: "
+sudo systemctl restart display-manager
 ########################
 clear
 echo -e "${CYAN}
