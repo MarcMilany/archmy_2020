@@ -4971,8 +4971,9 @@ echo " Создание backup файла grub выполнено "
 fi
 #######################
 echo ""
-echo " Настройка раскладки клавиатуры в X.Org " 
-localectl --no-convert set-x11-keymap us,ru pc105 "" grp:alt_shift_toggle
+echo " Настройка раскладки клавиатуры в X.Org "
+echo " localectl [--no-convert] set-x11-keymap раскладка [модель [вариант [опции]]] " 
+sudo localectl --no-convert set-x11-keymap us,ru pc105 "" grp:alt_shift_toggle
 ########################
 clear
 echo -e "${CYAN}
