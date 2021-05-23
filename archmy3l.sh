@@ -1774,7 +1774,7 @@ echo -e "${GREEN}==> ${NC}Установка дополнительных баз
 #echo -e "${BLUE}:: ${NC}Установка дополнительных базовых программ (пакетов)" 
 #echo 'Установка дополнительных базовых программ (пакетов)'
 # Installing additional basic programs (packages)
-echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (accountsservice, acpi, acpid, android-tools, android-udev, arch-install-scripts, aspell-en, aspell-ru, autofs, b43-fwcutter, bash-completion, beep, bind, btrfs-progs, busybox, c-ares, ccache, cpio, cpupower, crda, davfs2, desktop-file-utils, dhclient, dmraid, dmidecode, dnsmasq, dosfstools, efibootmgr, efitools, ethtool, f2fs-tools, flex, fortune-mod, fsarchiver, fwupd, fuse3, glances, gnome-nettool, gnu-netcat, gpm, gptfdisk, gtop, gvfs, gvfs-gphoto2, gvfs-nfs, gvfs-smb, haveged, hddtemp, hdparm, hidapi, hwdetect, hwinfo, hydra, hyphen-en, id3lib, iftop, inetutils, isomd5sum, jfsutils, lib32-curl, lib32-flex, libfm-gtk2, lksctp-tools, logrotate, lsof, lsb-release, lvm2, man-db, man-pages, mc, memtest86+, mlocate, mtpfs, ncdu, nfs-utils, nmon, nss-mdns, pacman-contrib, patchutils, pciutils, php, poppler-data, powertop, pv, pwgen, python-isomd5sum, python-pip, qt5-translations, reiserfsprogs, ruby, s-nail, sane, scrot, sg3_utils, sdparm, sof-firmware, solid, sox, smartmontools, speedtest-cli, squashfs-tools, syslinux, systemd-ui, termite, termite-terminfo, translate-shell, udiskie, udisks2, usbutils, usb_modeswitch, wimlib, xfsprogs, xsel, xterm, xorg-twm, xorg-xkill, yelp, youtube-dl)."
+echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (accountsservice, acpi, acpid, android-tools, android-udev, arch-install-scripts, aspell-en, aspell-ru, autofs, b43-fwcutter, bash-completion, beep, bind, btrfs-progs, busybox, c-ares, ccache, cpio, cpupower, crda, davfs2, desktop-file-utils, dhclient, dmraid, dmidecode, dnsmasq, dosfstools, efibootmgr, efitools, ethtool, f2fs-tools, flex, fortune-mod, fsarchiver, fwupd, fuse3, glances, gnome-nettool, gnu-netcat, gpm, gptfdisk, gtop, gvfs, gvfs-gphoto2, gvfs-nfs, gvfs-smb, haveged, hddtemp, hdparm, hidapi, hwdetect, hwinfo, hydra, hyphen-en, id3lib, iftop, inetutils, isomd5sum, jfsutils, lib32-curl, lib32-flex, libfm-gtk2, lksctp-tools, logrotate, lsof, lsb-release, lvm2, man-db, man-pages, mc, memtest86+, mlocate, mtpfs, ncdu, nfs-utils, nmon, nss-mdns, pacman-contrib, patchutils, pciutils, pcurses, php, poppler-data, powertop, pv, pwgen, python-isomd5sum, python-pip, qt5-translations, reiserfsprogs, ruby, s-nail, sane, scrot, sg3_utils, sdparm, sof-firmware, solid, sox, smartmontools, speedtest-cli, squashfs-tools, syslinux, systemd-ui, termite, termite-terminfo, translate-shell, udiskie, udisks2, usbutils, usb_modeswitch, wimlib, xfsprogs, xsel, xterm, xorg-twm, xorg-xkill, yelp, youtube-dl)."
 echo -e "${CYAN}:: ${NC}Вы МОЖЕТЕ в скрипте закомментировать НЕнужные вам пакеты!"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
@@ -1889,6 +1889,7 @@ sudo pacman -S nss-mdns --noconfirm  # Плагин glibc, обеспечива�
 #sudo pacman -S pacman-contrib --noconfirm  # Предоставленные скрипты и инструменты для систем pacman  # присутствует
 sudo pacman -S patchutils --noconfirm  # Небольшая коллекция программ, работающих с файлами патчей
 sudo pacman -S pciutils --noconfirm  # Библиотека и инструменты доступа к пространству конфигурации шины PCI
+sudo pacman -S --noconfirm --needed pcurses  # Инструмент управления пакетами curses с использованием libalpm (https://github.com/schuay/pcurses)
 sudo pacman -S php --noconfirm  # Язык сценариев общего назначения, особенно подходящий для веб-разработки
 sudo pacman -S poppler-data --noconfirm  # Кодирование данных для библиотеки рендеринга PDF Poppler
 sudo pacman -S powertop --noconfirm  # Инструмент для диагностики проблем с энергопотреблением и управлением питанием
@@ -4347,6 +4348,7 @@ xdg-mime default thunar.desktop inode/directory
 # Чтобы открыть каталог и выбрать подкаталог / файл в наутилусе:
 ### nautilus --select path/to/file/or/directory
 echo " Расширяем контекстное меню Thunar (Добавляем дополнительные пункты для создания файлов) "
+echo " Создание шаблонов файлов в ~/Templaytes (чтобы в контекстном меню отображался пункт New Document) "
 XDG_TEMPLATES_DIR=$(xdg-user-dir TEMPLATES)
 cd "$XDG_TEMPLATES_DIR"
 touch 'New Text File.txt' && touch 'New Word File.doc' && touch 'New Excel Spreadsheet.xls'
@@ -4354,9 +4356,11 @@ touch 'New HTML File.html' && touch 'New XML File.xml' && touch 'New PHP Source 
 touch 'New File Block Diagram.odg' && touch 'New Casscading Style Sheet.css' && touch 'New Java Source File.java'
 touch 'New ODB DataBase.odb' && touch 'New ODT File.odt' && touch 'New Table ODS.ods' && touch 'New File Excel.et'
 touch 'New File DPS Presentation.dps' && touch 'New File ODP Presentation.odp' && touch 'New File PowerPoint Presentation.ppt' 
+touch 'New File README.md' && touch 'New Pyfile.py'
 pwd    # покажет в какой директории мы находимся
 cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 fi
+# touch ~/Templates/{Empty\ Document,Text\ Document.txt,README.md,pyfile.py}
 # ---------------------------------
 # Затем, выставить в настройках Thunar галочку, предписывающую показывать миниатюры, если это возможно!
 # Почистить cache:
@@ -4965,7 +4969,11 @@ elif [[ $x_grub == 1 ]]; then
 sudo cp -vf /etc/default/grub /etc/default/grub.backup
 echo " Создание backup файла grub выполнено "
 fi
-
+#######################
+echo ""
+echo " Настройка раскладки клавиатуры в X.Org " 
+localectl --no-convert set-x11-keymap us,ru pc105 "" grp:alt_shift_toggle
+########################
 clear
 echo -e "${CYAN}
   <<< Очистка кэша pacman, и Удаление всех пакетов-сирот (неиспользуемых зависимостей) >>> 
