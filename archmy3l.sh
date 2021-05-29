@@ -811,6 +811,9 @@ echo -e "${BLUE}:: ${NC}Обновляем grub.cfg (Сгенерируем grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg   # создаём конфигурационный файл     
 fi
 
+### Воссоздайте рамдиск:
+# update-initramfs -u
+
 clear
 echo -e "${MAGENTA}
   <<< Создание полного набора пользовательских каталогов по умолчанию, в пределах "HOME" каталога. >>> ${NC}"
