@@ -107,7 +107,10 @@ echo -e "${GREEN}:: ${NC}Installation Commands :=) "
 echo -e "${CYAN}=> ${NC}Acceptable limit for the list of arguments..."
 getconf ARG_MAX  # Допустимый лимит (предел) списка аргументов...'
 echo -e "${BLUE}:: ${NC}The determination of the final access rights"
-umask  # Определение окончательных прав доступа - Для суперпользователя (root) umask по умолчанию равна 0022    
+umask  # Определение окончательных прав доступа - Для суперпользователя (root) umask по умолчанию равна 0022 
+echo -e "${BLUE}:: ${NC}Current full date"   
+echo "$(date -u "+%F %H:%M")" 
+## %F - полная дата, то же что и %Y-%m-%d; %H - hour (00..23); %M - minute (00..59)    
 ################
 echo -e "${BLUE}:: ${NC}Update the package databases" 
 ## Обновим базы данных пакетов
@@ -144,7 +147,8 @@ locale -a  # Смотрим какте локали были созданы
 #####################
 echo ""
 echo -e "${GREEN}=> ${NC}Для проверки интернета можно пропинговать какой-либо сервис" 
-ping -c2 archlinux.org  # Утилита ping - это очень простой инструмент для диагностики сети
+ping google.com -W 2 -c 1
+#ping -c 2 archlinux.org  # Утилита ping - это очень простой инструмент для диагностики сети
 echo -e "${CYAN}==> ${NC}Если пинг идёт едем дальше ... :)"
 echo ""
 echo -e "${GREEN}=> ${NC}Убедитесь, что сетевой интерфейс указан и включен" 
