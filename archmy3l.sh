@@ -181,25 +181,25 @@ do
     :
 done 
 if [[ $upd_sys == 0 ]]; then 
-echo ""   
-echo " Установка обновлений пропущена "
+  echo ""   
+  echo " Установка обновлений пропущена "
 elif [[ $upd_sys == 1 ]]; then
   echo ""    
   echo " Установка обновлений (базы данных пакетов) "
   sudo pacman -Syyu --noconfirm  # Обновление баз плюс обновление пакетов (--noconfirm - не спрашивать каких-либо подтверждений)
 # sudo pacman -Syyu  # Обновим вашу систему (базу данных пакетов)
-echo ""
-echo " Обновление и установка выполнено "
+  echo ""
+  echo " Обновление и установка выполнено "
 elif [[ $upd_sys == 2 ]]; then
   echo ""    
   echo " Обновим базы данных пакетов... "
 ###  sudo pacman -Sy
   sudo pacman -Syy  # обновление баз пакмэна (pacman)  
-echo ""
-echo " Обновление базы данных выполнено "
+  echo ""
+  echo " Обновление базы данных выполнено "
 fi
 sleep 01
-
+###########
 clear
 echo ""
 echo -e "${YELLOW}=> ${NC}Загрузим архив (ветку мастер MarcMilany/archmy_2020)?"
