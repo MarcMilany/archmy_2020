@@ -3164,16 +3164,16 @@ do
     :
 done 
 if [[ $i_openshot == 0 ]]; then 
-echo ""   
-echo " Установка утилит (пакетов) пропущена "
+  echo ""   
+  echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_openshot == 1 ]]; then
   echo ""  
   echo " Установка OpenShot (нелинейный видеоредактор) "
-sudo pacman -S openshot --noconfirm  # Бесплатный видеоредактор
-echo ""   
-echo " Установка утилит (пакетов) выполнена "
+  sudo pacman -S openshot --noconfirm  # Бесплатный видеоредактор
+  echo ""   
+  echo " Установка утилит (пакетов) выполнена "
 fi
-
+################
 clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить Galculator (калькулятор)(на основе GTK+)(версия GTK2)(версия GTK3)?" 
@@ -3197,22 +3197,22 @@ do
     :
 done 
 if [[ $i_galculator == 0 ]]; then 
-echo ""   
-echo " Установка утилит (пакетов) пропущена "
+  echo ""   
+  echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_galculator == 1 ]]; then
   echo ""  
   echo " Установка Galculator-GTK2 (калькулятор) (на основе GTK+)(версия GTK2) " 
-sudo pacman -S galculator-gtk2 --noconfirm  # Научный калькулятор на основе GTK + (версия GTK2)
-echo ""   
-echo " Установка утилит (пакетов) выполнена "
+  sudo pacman -S galculator-gtk2 --noconfirm  # Научный калькулятор на основе GTK + (версия GTK2)
+  echo ""   
+  echo " Установка утилит (пакетов) выполнена "
 elif [[ $i_galculator == 2 ]]; then
   echo ""  
   echo " Установка Galculator (калькулятор) (на основе GTK+)(версия GTK3) " 
-sudo pacman -S galculator --noconfirm  # Научный калькулятор на основе GTK + (версия GTK3) (Обратные конфликты: galculator-gtk2)
-echo ""   
-echo " Установка утилит (пакетов) выполнена "
+  sudo pacman -S galculator --noconfirm  # Научный калькулятор на основе GTK + (версия GTK3) (Обратные конфликты: galculator-gtk2)
+  echo ""   
+  echo " Установка утилит (пакетов) выполнена "
 fi
-
+#################
 clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить GNOME Calculator (калькулятор)?" 
@@ -3229,16 +3229,16 @@ do
     :
 done 
 if [[ $i_calculator == 0 ]]; then 
-echo ""   
-echo " Установка утилит (пакетов) пропущена "
+  echo ""   
+  echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_calculator == 1 ]]; then
   echo ""  
   echo " Установка GNOME Calculator (калькулятор) "
-sudo pacman -S gnome-calculator --noconfirm  # Научный калькулятор GNOME
-echo ""   
-echo " Установка утилит (пакетов) выполнена "
+  sudo pacman -S gnome-calculator --noconfirm  # Научный калькулятор GNOME
+  echo ""   
+  echo " Установка утилит (пакетов) выполнена "
 fi
-
+###############
 clear
 echo ""
 echo -e "${GREEN}==> ${BOLD}Установить рекомендованные программы (пакеты)? ${NC}"
@@ -3263,8 +3263,8 @@ do
     :
 done 
 if [[ $i_collection == 0 ]]; then 
-echo ""   
-echo " Установка утилит (пакетов) пропущена "
+  echo ""   
+  echo " Установка утилит (пакетов) пропущена "
 elif [[ $i_collection == 1 ]]; then
   echo ""   
   echo " Установка рекомендованных утилит (пакетов) "
@@ -3379,18 +3379,18 @@ do
     :
 done 
 if [[ $prog_battery == 0 ]]; then 
-echo ""   
-echo " Установка (пакетов) для управления питанием пропущена "
+  echo ""   
+  echo " Установка (пакетов) для управления питанием пропущена "
 elif [[ $prog_battery == 1 ]]; then
   echo ""  
   echo " Установка (пакетов) для управления питанием "
-sudo pacman -S tlp tlp-rdw --noconfirm 
-#sudo pacman -S tp_smapi acpi_call --noconfirm  # Для ThinkPad (ноутбуков), или Интел платформ Sandy Bridge
-#sudo pacman -S acpi_call-dkms --noconfirm  # если ядра не из официальных репозиториев
-#sudo pacman -S acpi_call --noconfirm  # Модуль ядра Linux, который позволяет вызывать методы ACPI через / proc / acpi / call
-#systemctl enable acpid
-echo ""
-echo " Установка утилит (пакетов) завершена " 
+  sudo pacman -S tlp tlp-rdw --noconfirm 
+# sudo pacman -S tp_smapi acpi_call --noconfirm  # Для ThinkPad (ноутбуков), или Интел платформ Sandy Bridge
+# sudo pacman -S acpi_call-dkms --noconfirm  # если ядра не из официальных репозиториев
+# sudo pacman -S acpi_call --noconfirm  # Модуль ядра Linux, который позволяет вызывать методы ACPI через / proc / acpi / call
+# systemctl enable acpid
+  echo ""
+  echo " Установка утилит (пакетов) завершена " 
 fi
 # --------------------------------
 # Управление питанием с помощью tlp (настройка производительности)
@@ -3404,7 +3404,7 @@ fi
 # Хотите использовать acpi_call через графический интерфейс? 
 # https://github.com/marcoDallas/acpi_call_GUI_systemd
 # ===============================
-
+################
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Утилиты для форматирования флэш-накопителя с файловой системой exFAT в Linux"
