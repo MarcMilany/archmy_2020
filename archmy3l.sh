@@ -3269,39 +3269,36 @@ elif [[ $i_collection == 1 ]]; then
   echo ""   
   echo " Установка рекомендованных утилит (пакетов) "
 # sudo pacman -S gnome-system-monitor gnome-disk-utility gnome-multi-writer gpart frei0r-plugins clonezilla crypto++ psensor copyq rsync grsync numlockx modem-manager-gui rofi gsmartcontrol ranger testdisk lsof dmidecode qemu qemu-arch-extra virt-manager edk2-ovmf w3m --noconfirm
-sudo pacman -S edk2-ovmf --noconfirm  # Прошивки для виртуальных машин (x86_64, i686)  
-sudo pacman -S gnome-system-monitor --noconfirm  # Просмотр текущих процессов и мониторинг состояния системы
-sudo pacman -S gnome-disk-utility --noconfirm  # Утилита управления дисками для GNOME
-sudo pacman -S gnome-multi-writer --noconfirm  # Записать файл ISO на несколько USB-устройств одновременно
-sudo pacman -S gpart --noconfirm  # Инструмент для спасения / угадывания таблицы разделов
-sudo pacman -S frei0r-plugins --noconfirm  # Минималистичный плагин API для видеоэффектов
-sudo pacman -S fuseiso --noconfirm  # Модуль FUSE для монтирования образов файловой системы ISO
-sudo pacman -S clonezilla --noconfirm  # Раздел ncurses и программа для создания образов / клонирования дисков
-sudo pacman -S crypto++ --noconfirm  # Бесплатная библиотека классов C ++ криптографических схем
-sudo pacman -S psensor --noconfirm  # Графический аппаратный монитор температуры для Linux
-sudo pacman -S copyq --noconfirm  # Менеджер буфера обмена с возможностью поиска и редактирования истории
-sudo pacman -S rsync --noconfirm  # Быстрый и универсальный инструмент для копирования удаленных и локальных файлов
-sudo pacman -S grsync --noconfirm  # GTK + GUI для rsync для синхронизации папок, файлов и создания резервных копий
-sudo pacman -S numlockx --noconfirm  # Включает клавишу numlock в X11
-sudo pacman -S modem-manager-gui --noconfirm  # Интерфейс для демона ModemManager, способного управлять определенными функциями модема
-sudo pacman -S pacmanlogviewer --noconfirm  # Проверьте файлы журнала pacman
-sudo pacman -S rofi --noconfirm  # Переключатель окон, средство запуска приложений и замена dmenu
-sudo pacman -S gsmartcontrol --noconfirm  # Графический пользовательский интерфейс для инструмента проверки состояния жесткого диска smartctl
-sudo pacman -S ranger --noconfirm  # Простой файловый менеджер в стиле vim
-sudo pacman -S testdisk --noconfirm  # Проверяет и восстанавливает разделы + PhotoRec, инструмент восстановления на основе сигнатур
-sudo pacman -S dmidecode --noconfirm  # Утилиты, относящиеся к таблице интерфейса управления рабочим столом
-sudo pacman -S qemu --noconfirm  # Универсальный компьютерный эмулятор и виртуализатор с открытым исходным кодом
-sudo pacman -S qemu-arch-extra --noconfirm  # QEMU для зарубежных архитектур
-sudo pacman -S virt-manager --noconfirm  # Настольный пользовательский интерфейс для управления виртуальными машинами
-sudo pacman -S w3m --noconfirm  # Текстовый веб-браузер, а также пейджер
-
-
-
+  sudo pacman -S edk2-ovmf --noconfirm  # Прошивки для виртуальных машин (x86_64, i686)  
+  sudo pacman -S gnome-system-monitor --noconfirm  # Просмотр текущих процессов и мониторинг состояния системы
+  sudo pacman -S gnome-disk-utility --noconfirm  # Утилита управления дисками для GNOME
+  sudo pacman -S gnome-multi-writer --noconfirm  # Записать файл ISO на несколько USB-устройств одновременно
+  sudo pacman -S gpart --noconfirm  # Инструмент для спасения / угадывания таблицы разделов
+  sudo pacman -S frei0r-plugins --noconfirm  # Минималистичный плагин API для видеоэффектов
+  sudo pacman -S fuseiso --noconfirm  # Модуль FUSE для монтирования образов файловой системы ISO
+  sudo pacman -S clonezilla --noconfirm  # Раздел ncurses и программа для создания образов / клонирования дисков
+  sudo pacman -S crypto++ --noconfirm  # Бесплатная библиотека классов C ++ криптографических схем
+  sudo pacman -S psensor --noconfirm  # Графический аппаратный монитор температуры для Linux
+  sudo pacman -S copyq --noconfirm  # Менеджер буфера обмена с возможностью поиска и редактирования истории
+  sudo pacman -S rsync --noconfirm  # Быстрый и универсальный инструмент для копирования удаленных и локальных файлов
+  sudo pacman -S grsync --noconfirm  # GTK + GUI для rsync для синхронизации папок, файлов и создания резервных копий
+  sudo pacman -S numlockx --noconfirm  # Включает клавишу numlock в X11
+  sudo pacman -S modem-manager-gui --noconfirm  # Интерфейс для демона ModemManager, способного управлять определенными функциями модема
+  sudo pacman -S pacmanlogviewer --noconfirm  # Проверьте файлы журнала pacman
+  sudo pacman -S rofi --noconfirm  # Переключатель окон, средство запуска приложений и замена dmenu
+  sudo pacman -S gsmartcontrol --noconfirm  # Графический пользовательский интерфейс для инструмента проверки состояния жесткого диска smartctl
+  sudo pacman -S ranger --noconfirm  # Простой файловый менеджер в стиле vim
+  sudo pacman -S testdisk --noconfirm  # Проверяет и восстанавливает разделы + PhotoRec, инструмент восстановления на основе сигнатур
+  sudo pacman -S dmidecode --noconfirm  # Утилиты, относящиеся к таблице интерфейса управления рабочим столом
+  sudo pacman -S qemu --noconfirm  # Универсальный компьютерный эмулятор и виртуализатор с открытым исходным кодом
+  sudo pacman -S qemu-arch-extra --noconfirm  # QEMU для зарубежных архитектур
+  sudo pacman -S virt-manager --noconfirm  # Настольный пользовательский интерфейс для управления виртуальными машинами
+  sudo pacman -S w3m --noconfirm  # Текстовый веб-браузер, а также пейджер
 # sudo pacman -S  --noconfirm  #
-echo ""   
-echo " Установка утилит (пакетов) выполнена "
+  echo ""   
+  echo " Установка утилит (пакетов) выполнена "
 fi
-
+#############
 clear
 echo ""
 echo -e "${GREEN}==> ${BOLD}Установить дополнительные сетевые утилиты, драйверы? ${NC}"
@@ -3332,24 +3329,25 @@ elif [[ $net_utilities == 1 ]]; then
   echo ""   
   echo " Установка рекомендованных утилит (пакетов) "
 # sudo pacman -S broadcom-wl-dkms ebtables ipset iwd linux-atm ndisc6 networkmanager-l2tp pptpclient rp-pppoe wvdial xl2tpd --noconfirm
-sudo pacman -S broadcom-wl-dkms --noconfirm  # Драйвер беспроводной сети Broadcom 802.11 Linux STA
-sudo pacman -S ebtables --noconfirm  # Утилиты фильтрации Ethernet-моста 
-sudo pacman -S ipset --noconfirm  # Инструмент администрирования наборов IP
-sudo pacman -S iwd --noconfirm  # Демон беспроводной сети Интернет
-sudo pacman -S linux-atm --noconfirm  # Драйверы и инструменты для поддержки сети банкоматов под Linux
-sudo pacman -S ndisc6 --noconfirm  # Сборник сетевых утилит IPv6 (https://www.remlab.net/ndisc6/)
-sudo pacman -S xl2tpd --noconfirm  # Реализация L2TP с открытым исходным кодом, поддерживаемая Xelerance Corporation
-sudo pacman -S networkmanager-l2tp --noconfirm  # Поддержка L2TP для NetworkManager
-sudo pacman -S pptpclient --noconfirm  # Клиент для проприетарного протокола туннелирования точка-точка от Microsoft, PPTP
-sudo pacman -S rp-pppoe --noconfirm  # Протокол точка-точка Roaring Penguin через клиент Ethernet
-sudo pacman -S wvdial --noconfirm  # Программа номеронабирателя для подключения к Интернету
+  sudo pacman -S broadcom-wl-dkms --noconfirm  # Драйвер беспроводной сети Broadcom 802.11 Linux STA
+  sudo pacman -S ebtables --noconfirm  # Утилиты фильтрации Ethernet-моста 
+  sudo pacman -S ipset --noconfirm  # Инструмент администрирования наборов IP
+  sudo pacman -S iwd --noconfirm  # Демон беспроводной сети Интернет
+  sudo pacman -S linux-atm --noconfirm  # Драйверы и инструменты для поддержки сети банкоматов под Linux
+  sudo pacman -S ndisc6 --noconfirm  # Сборник сетевых утилит IPv6 (https://www.remlab.net/ndisc6/)
+  sudo pacman -S --noconfirm --needed --noprogressbar --quiet xl2tpd  # Реализация L2TP с открытым исходным кодом, поддерживаемая Xelerance Corporation
+  sudo pacman -S --noconfirm --needed --noprogressbar --quiet networkmanager-l2tp # Поддержка L2TP для NetworkManager
+  sudo pacman -S --noconfirm --needed --noprogressbar --quiet pptpclient # Клиент для проприетарного протокола туннелирования точка-точка от Microsoft, PPTP
+  sudo pacman -S --noconfirm --needed --noprogressbar --quiet rp-pppoe  # Протокол точка-точка Roaring Penguin через клиент Ethernet
+  sudo pacman -S wvdial --noconfirm  # Программа номеронабирателя для подключения к Интернету
 # sudo pacman -S  --noconfirm  # 
-sudo pacman -S traceroute --noconfirm  # Отслеживает маршрут пакетов по IP-сети (http://traceroute.sourceforge.net/)
-sudo pacman -S wavemon --noconfirm  # Приложение для мониторинга беспроводных сетевых устройств на базе ncurses (https://github.com/uoaerg/wavemon)
-sudo pacman -S dsniff --noconfirm  # Сборник инструментов для сетевого аудита и тестирования на проникновение (https://www.monkey.org/~dugsong/dsniff/)
-echo ""   
-echo " Установка утилит (пакетов) выполнена "
+  sudo pacman -S traceroute --noconfirm  # Отслеживает маршрут пакетов по IP-сети (http://traceroute.sourceforge.net/)
+  sudo pacman -S wavemon --noconfirm  # Приложение для мониторинга беспроводных сетевых устройств на базе ncurses (https://github.com/uoaerg/wavemon)
+  sudo pacman -S dsniff --noconfirm  # Сборник инструментов для сетевого аудита и тестирования на проникновение (https://www.monkey.org/~dugsong/dsniff/)
+  echo ""   
+  echo " Установка утилит (пакетов) выполнена "
 fi
+###########
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установим TLP - Для увеличения продолжительности времени работы от батареи"
