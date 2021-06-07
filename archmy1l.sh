@@ -222,9 +222,11 @@ if [[ $i_key == 1 ]]; then
   echo " Далее идёт поиск ключей... "
   pacman-key --populate archlinux  # поиск ключей
 # pacman-key --populate
+  pacman -S  archlinux-keyring  # для hkps://hkps.pool.sks-keyservers.net
   echo ""
   echo " Обновление ключей... "  
-  pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
+# pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
+  pacman-key --refresh-keys --keyserver hkp://pool.sks-keyservers.net  # hkps://hkps.pool.sks-keyservers.net
   echo ""
   echo " Обновим базы данных пакетов... "
 ### pacman -Sy  # обновить списки пакетов из репозиториев
