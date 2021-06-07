@@ -838,7 +838,7 @@ elif [[ $i_kde  == 1 ]]; then
 fi
 ## Раскомментируйте, если установлен пакет (kde-applications)
 ### pacman -R konqueror --noconfirm  # Файловый менеджер и веб-браузер KDE # (-R --remove) - Удалить пакет(ы) из системы, но пакет konqueror - ужу отсутствует в системе! 
- clear
+clear
 elif [[ $x_de == 2 ]]; then
   echo ""    
   echo " Установка Xfce + Goodies for Xfce "     
