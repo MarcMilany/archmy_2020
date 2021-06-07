@@ -1378,8 +1378,7 @@ echo -e "${MAGENTA}
   <<< Установка сетевого экрана (брандмауэр UFW) и антивируса (ClamAV) для Archlinux >>> ${NC}"
 # Installing firewall (UFW firewall) and antivirus (ClamAV) for Archlinux
 echo -e "${CYAN}:: ${NC}Если Вы "Дока", то настройте под свои нужды утилиту 'Iptables'(firewall)"
-echo -e "${YELLOW}==> Примечание: ${NC}Вы можете установить предложенный софт (пакеты), или пропустите установку."
- 
+echo -e "${YELLOW}==> Примечание: ${NC}Вы можете установить предложенный софт (пакеты), или пропустите установку." 
 echo ""
 echo -e "${GREEN}==> ${NC}Установить UFW (Несложный Брандмауэр) (ufw, gufw) (GUI)(GTK)?"
 #echo -e "${BLUE}:: ${NC}Установить UFW (Несложный Брандмауэр) (ufw, gufw) (GUI)(GTK)?"
@@ -1445,6 +1444,7 @@ elif [[ $i_antivirus == 1 ]]; then
 sudo pacman -S clamav clamtk --noconfirm  # Антивирусный инструментарий для Unix; Простой в использовании, легкий сканер вирусов по запросу для систем Linux
 echo " Установка Clam AntiVirus завершена "
 fi
+sleep 02
 # --------------------------------------------------
 # Uncomplicated Firewall
 # https://wiki.archlinux.org/index.php/Uncomplicated_Firewall
@@ -1459,8 +1459,7 @@ fi
 # Руководство (домашняя страница):
 # https://www.clamav.net/
 # ----------------------------------------------------------
-
-sleep 02
+#################
 clear
 echo -e "${MAGENTA}
   <<< Установка первоначально необходимого софта (пакетов) для Archlinux >>> ${NC}"
