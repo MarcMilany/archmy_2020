@@ -717,17 +717,17 @@ echo " Действия ввода, выполняется сразу после
 do
     :
 done
- if [[ $x_ucode == 0 ]]; then
-echo ""
-echo " Проверка пропущена " 
+if [[ $x_ucode == 0 ]]; then
+  echo ""
+  echo " Проверка пропущена " 
 elif [[ $x_ucode == 1 ]]; then
-echo ""
-echo " Выполним проверку корректности загрузки установленных микрокодов "
-sudo dmesg | grep microcode
-#dmesg | grep microcode
+  echo ""
+  echo " Выполним проверку корректности загрузки установленных микрокодов "
+  sudo dmesg | grep microcode
+# dmesg | grep microcode
 fi
 sleep 04
-
+###
 #clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установить Микрокод для процессора INTEL_CPU, AMD_CPU?"
@@ -758,47 +758,52 @@ do
     :
 done
 if [[ $prog_cpu == 0 ]]; then
-echo ""
-echo " Установка микрокода процессоров пропущена "
+  echo ""
+  echo " Установка микрокода процессоров пропущена "
 elif [[ $prog_cpu == 1 ]]; then
   echo ""
   echo " Устанавливаем uCode для процессоров - AMD "
-sudo pacman -S amd-ucode --noconfirm  # Образ обновления микрокода для процессоров AMD
-echo " Установлены обновления стабильности и безопасности для микрокода процессора - AMD "
-echo " После завершения установки пакета программного обеспечения нужно перезагрузить компьютер "
-echo ""
-echo -e "${BLUE}:: ${NC}Обновляем grub.cfg (Сгенерируем grub.cfg)"
-sudo grub-mkconfig -o /boot/grub/grub.cfg   # создаём конфигурационный файл     
+  sudo pacman -S amd-ucode --noconfirm  # Образ обновления микрокода для процессоров AMD
+  echo " Установлены обновления стабильности и безопасности для микрокода процессора - AMD "
+  echo " После завершения установки пакета программного обеспечения нужно перезагрузить компьютер "
+  echo ""
+  echo -e "${BLUE}:: ${NC}Обновляем grub.cfg (Сгенерируем grub.cfg)"
+  sudo grub-mkconfig -o /boot/grub/grub.cfg   # создаём конфигурационный файл 
+  echo ""
+  echo -e "${BLUE}:: ${NC}Воссоздайте загрузочный RAM диск (initramfs)"
+  sudo update-initramfs -u     
 elif [[ $prog_cpu == 2 ]]; then
   echo ""  
   echo " Устанавливаем uCode для процессоров - INTEL "
-sudo pacman -S intel-ucode --noconfirm  # Образ обновления микрокода для процессоров INTEL
-sudo pacman -S iucode-tool --noconfirm  # Инструмент для управления пакетами микрокода Intel® IA-32 / X86-64
-echo " Установлены обновления стабильности и безопасности для микрокода процессора - INTEL "
-echo " После завершения установки пакета программного обеспечения нужно перезагрузить компьютер " 
-echo ""
-echo -e "${BLUE}:: ${NC}Обновляем grub.cfg (Сгенерируем grub.cfg)"
-sudo grub-mkconfig -o /boot/grub/grub.cfg   # создаём конфигурационный файл    
+  sudo pacman -S intel-ucode --noconfirm  # Образ обновления микрокода для процессоров INTEL
+  sudo pacman -S iucode-tool --noconfirm  # Инструмент для управления пакетами микрокода Intel® IA-32 / X86-64
+  echo " Установлены обновления стабильности и безопасности для микрокода процессора - INTEL "
+  echo " После завершения установки пакета программного обеспечения нужно перезагрузить компьютер " 
+  echo ""
+  echo -e "${BLUE}:: ${NC}Обновляем grub.cfg (Сгенерируем grub.cfg)"
+  sudo grub-mkconfig -o /boot/grub/grub.cfg   # создаём конфигурационный файл
+  echo ""
+  echo -e "${BLUE}:: ${NC}Воссоздайте загрузочный RAM диск (initramfs)"
+  sudo update-initramfs -u      
 elif [[ $prog_cpu == 3 ]]; then
   echo ""  
   echo " Устанавливаем uCode для процессоров - AMD и INTEL "
-sudo pacman -S amd-ucode intel-ucode --noconfirm  # Образ обновления микрокода для процессоров AMD и INTEL
-sudo pacman -S iucode-tool --noconfirm  # Инструмент для управления пакетами микрокода Intel® IA-32 / X86-64
-echo " Установлены обновления стабильности и безопасности для микрокода процессоров - AMD и INTEL "
-echo " После завершения установки пакета программного обеспечения нужно перезагрузить компьютер "
-echo ""
-echo -e "${BLUE}:: ${NC}Обновляем grub.cfg (Сгенерируем grub.cfg)"
-sudo grub-mkconfig -o /boot/grub/grub.cfg   # создаём конфигурационный файл     
+  sudo pacman -S amd-ucode intel-ucode --noconfirm  # Образ обновления микрокода для процессоров AMD и INTEL
+  sudo pacman -S iucode-tool --noconfirm  # Инструмент для управления пакетами микрокода Intel® IA-32 / X86-64
+  echo " Установлены обновления стабильности и безопасности для микрокода процессоров - AMD и INTEL "
+  echo " После завершения установки пакета программного обеспечения нужно перезагрузить компьютер "
+  echo ""
+  echo -e "${BLUE}:: ${NC}Обновляем grub.cfg (Сгенерируем grub.cfg)"
+  sudo grub-mkconfig -o /boot/grub/grub.cfg   # создаём конфигурационный файл
+  echo ""
+  echo -e "${BLUE}:: ${NC}Воссоздайте загрузочный RAM диск (initramfs)"
+  sudo update-initramfs -u      
 fi
-
-### Воссоздайте рамдиск:
-# update-initramfs -u
-
+#############
 clear
 echo -e "${MAGENTA}
   <<< Создание полного набора пользовательских каталогов по умолчанию, в пределах "HOME" каталога. >>> ${NC}"
 echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете создать, если пропустили это действие в предыдущем скрипте (при установке основной системы), или пропустить создание (установку)." 
-
 echo ""
 echo -e "${GREEN}==> ${NC}Создаём папки в директории пользователя (Downloads, Music, Pictures, Videos, Documents)."
 echo -e "${CYAN}:: ${NC}По умолчанию в системе Arch Linux в каталоге "HOME" НЕ создаются папки (Загрузки, Шаблоны, Общедоступные, Документы, Музыка, Изображения, Видео), кроме папки Рабочий стол (Desktop)."
@@ -823,17 +828,17 @@ do
     :
 done
 if [[ $i_catalog == 0 ]]; then
-echo ""  
-echo " Создание каталогов пропущено "
+  echo ""  
+  echo " Создание каталогов пропущено "
 elif [[ $i_catalog == 1 ]]; then
-echo ""  
-echo " Создание пользовательских каталогов по умолчанию "    
-sudo pacman -S xdg-user-dirs --noconfirm
-xdg-user-dirs-update 
-echo "" 
-echo " Создание каталогов успешно выполнено "
+  echo ""  
+  echo " Создание пользовательских каталогов по умолчанию "    
+  sudo pacman -S xdg-user-dirs --noconfirm
+  xdg-user-dirs-update 
+  echo "" 
+  echo " Создание каталогов успешно выполнено "
 fi
-
+##############
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Создадим папку (downloads), и перейдём в созданную папку " 
@@ -855,24 +860,23 @@ do
     :
 done
 if [[ $i_folder == 0 ]]; then
-echo ""  
-echo " Создание папки (downloads) пропущено "
+  echo ""  
+  echo " Создание папки (downloads) пропущено "
 elif [[ $i_folder == 1 ]]; then
-echo ""
-echo " Создаём и переходим в созданную папку (downloads) "
-mkdir ~/downloads  # создание папки (downloads)
-cd ~/downloads  # перейдём в созданную папку
-echo " Посмотрим в какой директории мы находимся "
-pwd  # покажет в какой директории мы находимся
+  echo ""
+  echo " Создаём и переходим в созданную папку (downloads) "
+  mkdir ~/downloads  # создание папки (downloads)
+  cd ~/downloads  # перейдём в созданную папку
+  echo " Посмотрим в какой директории мы находимся "
+  pwd  # покажет в какой директории мы находимся
 fi
-
+###############
 clear
 echo -e "${MAGENTA}
   <<< Установка AUR (Arch User Repository) >>> ${NC}"
 # Installing an Aur (Arch User Repository).
 echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете установить "AUR Helper", если пропустили это действие в предыдущем скрипте (при установке основной системы), или пропустить установку." 
 echo -e "${YELLOW}==> Внимание! ${NC}Во время установки "AUR", Вас попросят ввести (Пароль пользователя)."
-
 echo ""
 echo -e "${GREEN}==> ${NC}Установка AUR Helper (yay) или (pikaur)"
 #echo -e "${BLUE}:: ${NC}Установка AUR Helper (yay) или (pikaur)" 
@@ -908,61 +912,61 @@ do
     :
 done 
 if [[ $in_aur_help == 0 ]]; then
-clear    
-echo " Установка AUR Helper (yay) пропущена "
+  clear    
+  echo " Установка AUR Helper (yay) пропущена "
 elif [[ $in_aur_help == 1 ]]; then
-echo ""     
-sudo pacman -Syu
+  echo ""     
+  sudo pacman -Syu
 #wget git.io/yay-install.sh && sh yay-install.sh --noconfirm
 #echo " Установка базовых программ и пакетов wget, curl, git "
 #sudo pacman -S --noconfirm --needed wget curl git
-echo " Установка AUR Helper (yay-bin) "
-git clone https://aur.archlinux.org/yay-bin.git 
-cd yay-bin
+  echo " Установка AUR Helper (yay-bin) "
+  git clone https://aur.archlinux.org/yay-bin.git 
+  cd yay-bin
 # makepkg -si
 #makepkg -si --noconfirm   #-не спрашивать каких-либо подтверждений
-makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
-rm -rf yay-bin    # удаляем директорию сборки
+  makepkg -si --skipinteg
+  pwd    # покажет в какой директории мы находимся
+  cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+  rm -rf yay-bin    # удаляем директорию сборки
 # rm -Rf yay-bin
-clear
-echo ""
-echo " Установка AUR Helper (yay-bin) завершена "
+  clear
+  echo ""
+  echo " Установка AUR Helper (yay-bin) завершена "
 elif [[ $in_aur_help == 2 ]]; then
-echo ""    
-sudo pacman -Syu
+  echo ""    
+  sudo pacman -Syu
 #echo " Установка базовых программ и пакетов wget, curl, git "
 #sudo pacman -S --noconfirm --needed wget curl git
-echo " Установка AUR Helper (yay) "
-git clone https://aur.archlinux.org/yay.git
-cd yay 
-makepkg -si --noconfirm
-pwd 
+  echo " Установка AUR Helper (yay) "
+  git clone https://aur.archlinux.org/yay.git
+  cd yay 
+  makepkg -si --noconfirm
+  pwd 
 # makepkg -si
 #makepkg -si --skipinteg 
-cd ..
-rm -Rf yay
-clear
-echo ""
-echo " Установка AUR Helper (yay) завершена "
+  cd ..
+  rm -Rf yay
+  clear
+  echo ""
+  echo " Установка AUR Helper (yay) завершена "
 elif [[ $in_aur_help == 3 ]]; then
-echo ""    
-sudo pacman -Syu
+  echo ""    
+  sudo pacman -Syu
 #echo " Установка базовых программ и пакетов wget, curl, git "
 #sudo pacman -S --noconfirm --needed wget curl git
-echo " Установка AUR Helper (pikaur) "
-git clone https://aur.archlinux.org/pikaur.git 
-cd pikaur   
-makepkg -si --noconfirm
-pwd 
+  echo " Установка AUR Helper (pikaur) "
+  git clone https://aur.archlinux.org/pikaur.git 
+  cd pikaur   
+  makepkg -si --noconfirm
+  pwd 
 # makepkg -si
 #makepkg -si --skipinteg  
-cd ..
-rm -Rf pikaur
-clear
-echo ""
-echo " Установка AUR Helper (pikaur) завершена "
+  cd ..
+  rm -Rf pikaur
+  clear
+  echo ""
+  echo " Установка AUR Helper (pikaur) завершена "
 fi
 #--------------------------------------------------------------
 # AUR (Arch User Repository) - репозиторий, в который пользователи загружают скрипты для установки программного обеспечения. Там есть практически всё, что можно установить на Linux. В том числе и программы, которые для других дистробутивов пришлось бы собирать из исходников.
@@ -975,7 +979,7 @@ fi
 # https://github.com/Jguer/yay
 # Если в системе не установлены необходимые зависимости, makepkg предупредит вас об этом и отменит сборку. Если задать флаг -s/--syncdeps, то makepkg самостоятельно установит недостающие зависимости и соберёт пакет.
 # $ makepkg --syncdeps
-# --------------------------------------------------------------
+# --------------------------------------------
 #
 # https://aur.archlinux.org/packages/yay-bin/
 # Йогурт (yogurt). Обертка Pacman и помощник AUR, написанные на языке go. (версия в разработке)
@@ -1007,8 +1011,8 @@ fi
 # Последнее обновление: 2020-08-18 17:28
 #
 #### <<< Делайте выводы сами! >>> #######
-# =============================================================
-
+# ==========================================
+###
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим всю систему включая AUR пакеты" 
 #echo 'Обновим всю систему включая AUR пакеты'
@@ -1032,28 +1036,27 @@ do
     :
 done 
 if [[ $upd_aur == 0 ]]; then
-echo ""    
-echo " Обновление баз данных пакетов, и системы пропущено "
+  echo ""    
+  echo " Обновление баз данных пакетов, и системы пропущено "
 elif [[ $upd_aur == 1 ]]; then
-echo ""    
-echo " Обновление баз данных пакетов, и системы через - AUR (Yay) "
-yay -Syy
-yay -Syu
+  echo ""    
+  echo " Обновление баз данных пакетов, и системы через - AUR (Yay) "
+  yay -Syy
+  yay -Syu
 elif [[ $upd_aur == 2 ]]; then
-echo ""    
-echo " Обновление баз данных пакетов, и системы через - AUR (Pikaur) "
-pikaur -Syy
-pikaur -Syu
+  echo ""    
+  echo " Обновление баз данных пакетов, и системы через - AUR (Pikaur) "
+  pikaur -Syy
+  pikaur -Syu
 fi
 sleep 02
-
+###
 ######## Pacman gui ###############
 clear
 echo -e "${MAGENTA}
   <<< Установка графического менеджера пакетов для Archlinux (Pacman gui) >>> ${NC}"
 # Installing the graphical package Manager for Archlinux (Pacman gui).
 echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете установить "Pacman gui", если пропустили это действие в предыдущем скрипте (при установке основной системы), или пропустите установку." 
-
 echo ""
 echo -e "${GREEN}==> ${NC}Установка Pacman gui (pamac-aur), или Pacman gui (octopi) (AUR)(GTK)(QT)" 
 #echo -e "${BLUE}:: ${NC}Установка Pacman gui (pamac-aur), или Pacman gui (octopi) (AUR)(GTK)(QT)" 
@@ -1235,12 +1238,11 @@ clear
 echo ""
 echo " Графический менеджер Octopi успешно установлен! "
 fi 
-
+###
 ######### Gksu ###############
 echo -e "${RED}
  ==> Внимание! ${BOLD}Если Вы установили Графический менеджер пакетов (octopi), то СОВЕТУЮ пропустить установку Gksu. Так как в сценарии установки Pacman gui (octopi), уже прописана установка пакетов (gksu) и (libgksu). ${NC}"
 echo -e "${YELLOW}==> Примечание: ${NC}Сейчас Вы можете установить "Gksu", или пропустите установку."
-
 echo ""
 echo -e "${GREEN}==> ${NC}Установить Gksu - Графический интерфейс для su"
 #echo -e "${BLUE}:: ${NC}Установить Gksu - Графический интерфейс для su" 
@@ -1268,51 +1270,51 @@ do
     :
 done 
 if [[ $prog_set == 0 ]]; then
-#clear
-echo ""
-echo " Установка графического интерфейса для su (gksu) пропущена "
+# clear
+  echo ""
+  echo " Установка графического интерфейса для su (gksu) пропущена "
 elif [[ $prog_set == 1 ]]; then
   echo ""   
   echo " Установка gconf - зависимость для libgksu "    
-git clone https://aur.archlinux.org/gconf.git  # Устаревшая система базы данных конфигурации
-cd gconf
+  git clone https://aur.archlinux.org/gconf.git  # Устаревшая система базы данных конфигурации
+  cd gconf
 #makepkg -fsri
 # makepkg -si
-makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+  makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+  pwd    # покажет в какой директории мы находимся
+  cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf gconf 
-rm -Rf gconf
+  rm -Rf gconf
 ############ libgksu ##########
-echo ""   
-echo " Установка libgksu - библиотека авторизации gksu "
-git clone https://aur.archlinux.org/libgksu.git
-cd libgksu
+  echo ""   
+  echo " Установка libgksu - библиотека авторизации gksu "
+  git clone https://aur.archlinux.org/libgksu.git
+  cd libgksu
 #makepkg -fsri
 # makepkg -si
-makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+  makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+  pwd    # покажет в какой директории мы находимся
+  cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf libgksu 
-rm -Rf libgksu
+  rm -Rf libgksu
 ############ gksu ##########
-echo ""
-echo " Установка gksu - Графический интерфейс для su "
-git clone https://aur.archlinux.org/gksu.git
-cd gksu
+  echo ""
+  echo " Установка gksu - Графический интерфейс для su "
+  git clone https://aur.archlinux.org/gksu.git
+  cd gksu
 #makepkg -fsri
 # makepkg -si
-makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+  makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+  pwd    # покажет в какой директории мы находимся
+  cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf gksu  
-rm -Rf gksu
-#clear
-echo ""
-echo " Графический интерфейс для su (gksu) успешно установлен! "
+  rm -Rf gksu
+# clear
+  echo ""
+  echo " Графический интерфейс для su (gksu) успешно установлен! "
 fi
 # ----------------------------------------------------
 # Права суперпользователя Linux
@@ -1321,7 +1323,7 @@ fi
 # https://aur.archlinux.org/packages/libgksu/
 # https://aur.archlinux.org/packages/gksu/
 # ==================================================
-
+##############
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установить Downgrading packages"
@@ -1350,27 +1352,27 @@ do
     :
 done 
 if [[ $downgrade_set == 0 ]]; then
-#clear
-echo ""
-echo " Bash-скрипт для понижения версии одного или нескольких пакетов (downgrade) пропущена "
+# clear
+  echo ""
+  echo " Bash-скрипт для понижения версии одного или нескольких пакетов (downgrade) пропущена "
 elif [[ $downgrade_set == 1 ]]; then
   echo ""   
   echo " Установка downgrade - Bash-скрипт для понижения версии пакетов"    
-git clone https://aur.archlinux.org/downgrade.git  # Bash-скрипт для понижения версии пакетов
-cd downgrade
+  git clone https://aur.archlinux.org/downgrade.git  # Bash-скрипт для понижения версии пакетов
+  cd downgrade
 #makepkg -fsri
 # makepkg -si
-makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+  makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
 # makepkg -si --skipinteg
-pwd    # покажет в какой директории мы находимся
-cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+  pwd    # покажет в какой директории мы находимся
+  cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
 # rm -rf downgrade
-rm -Rf downgrade
-#clear
-echo ""
-echo " Bash-скрипт (downgrade) успешно установлен! "
+  rm -Rf downgrade
+# clear
+  echo ""
+  echo " Bash-скрипт (downgrade) успешно установлен! "
 fi
-
+####################
 clear
 echo -e "${MAGENTA}
   <<< Установка сетевого экрана (брандмауэр UFW) и антивируса (ClamAV) для Archlinux >>> ${NC}"
