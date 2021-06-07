@@ -222,7 +222,7 @@ if [[ $i_key == 1 ]]; then
   echo " Далее идёт поиск ключей... "
   pacman-key --populate archlinux  # поиск ключей
 # pacman-key --populate
-  echo " Репозиторий для пакета связки ключей Arch Linux (Брелок для ключей Arch Linux PGP) "
+  echo " Брелок для ключей Arch Linux PGP (Репозиторий для пакета связки ключей Arch Linux) "
   pacman -Sy --noconfirm --needed --noprogressbar --quiet archlinux-keyring  # Брелок для ключей Arch Linux PGP https://git.archlinux.org/archlinux-keyring.git/ (для hkps://hkps.pool.sks-keyservers.net)
   echo ""
   echo " Обновление ключей... "  
