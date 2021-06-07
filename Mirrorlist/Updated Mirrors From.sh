@@ -97,6 +97,22 @@ echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
 pacman -Sy --noconfirm  # обновить списки пакетов из репозиториев
 sleep 1
 ################
+## Добавляемем зеркала для Russia
+            echo добавим в начало зеркала Russia 
+            cat /etc/pacman.d/mirrorlist > /mnt/mirrorlist.t
+            echo '#Russia' > /etc/pacman.d/mirrorlist
+            echo "Server = https://mirror.rol.ru/archlinux/\$repo/os/\$arch" >> /etc/pacman.d/mirrorlist
+            echo "Server = https://mirror.yandex.ru/archlinux/\$repo/os/\$arch"  >> /etc/pacman.d/mirrorlist
+            echo "Server = http://mirror.rol.ru/archlinux/\$repo/os/\$arch"  >> /etc/pacman.d/mirrorlist
+            echo "Server = http://mirror.truenetwork.ru/archlinux/\$repo/os/\$arch"  >> /etc/pacman.d/mirrorlist
+            echo "Server = http://mirror.yandex.ru/archlinux/\$repo/os/\$arch"  >> /etc/pacman.d/mirrorlist 
+            echo "Server = http://archlinux.zepto.cloud/\$repo/os/\$arch"  >> /etc/pacman.d/mirrorlist
+            echo  >> /etc/pacman.d/mirrorlist
+            cat /mnt/mirrorlist.t >> /etc/pacman.d/mirrorlist
+            cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
+            
+            echo  Активируем новые репы
+            #pacman-key --init
+            #pacman-key --populate archlinux
 
-
-
+#########################
