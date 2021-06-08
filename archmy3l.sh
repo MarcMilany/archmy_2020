@@ -62,36 +62,40 @@ ${BLUE}===> ******************************************************* ${NC}"
 _warning_banner
 ###
 sleep 15
-echo ""
+#echo ""
 #echo -e "${MAGENTA}==> ${BOLD}Если у Вас беспроводное соединение, запустите nmtui и подключитесь к сети. ${NC}"
 #echo 'Если у Вас беспроводное соединение, запустите nmtui и подключитесь к сети.'
 # If you have a wireless connection, launch nmtui and connect to the network.
-###########
+##################
+clear
 echo -e "${GREEN}
   <<< Начинается установка первоначально необходимого софта (пакетов) и запуск необходимых служб для системы Arch Linux >>>
 ${NC}"
 # Installation of utilities (packages) for the Arch Linux system begins
-
 echo -e "${BLUE}:: ${NC}Установка и настройка начата в $(date +%T)" 
 #echo "Установка и настройка начата в $(date +%T)"
 # Installation and configuration started in $(date +%T)
-
+###
 echo ""
 echo -e "${GREEN}=> ${NC}Для проверки интернета можно пропинговать какой-либо сервис"
 #echo 'Для проверки интернета можно пропинговать какой-либо сервис'
 # To check the Internet, you can ping a service
-ping -c2 archlinux.org
-
+ping -c 2 archlinux.org  # Утилита ping - это очень простой инструмент для диагностики сети
+# ping google.com -W 2 -c 1
+## ping -l 3 ya.ru
+###
 echo -e "${CYAN}==> ${NC}Если пинг идёт едем дальше ... :)"
 #echo 'Если пинг идёт едем дальше ... :)'
 # If the ping goes we go further ... :)
-
+sleep 1
+###
 echo ""
 echo -e "${MAGENTA}==> ${NC}Давайте проверим наш часовой пояс ... :)"
 #echo 'Давайте проверим наш часовой пояс ... :)'
 # Let's check our time zone ... :)
 timedatectl | grep "Time zone"
-
+sleep 1
+###
 echo ""
 echo -e "${BLUE}:: ${NC}Если NetworkManager запущен смотрим состояние интерфейсов" 
 #echo "Если NetworkManager запущен смотрим состояние интерфейсов"
@@ -100,38 +104,43 @@ echo -e "${BLUE}:: ${NC}Если NetworkManager запущен смотрим с
 # sudo systemctl start NetworkManager
 # Если NetworkManager запущен смотрим состояние интерфейсов (с помощью - nmcli):  
 nmcli general status
-
+sleep 1
+###
 echo ""
 echo -e "${BLUE}:: ${NC}Посмотреть имя хоста"
 # View host name
 nmcli general hostname 
-
+sleep 1
+###
 echo ""
 echo -e "${BLUE}:: ${NC}Получаем состояние интерфейсов"
 # Getting the state of interfaces
 nmcli device status
-
+sleep 1
+###
 echo ""
 echo -e "${BLUE}:: ${NC}Смотрим список доступных подключений"
 # See the list of available connections
 nmcli connection show
-
+sleep 1
+###
 echo ""
 echo -e "${BLUE}:: ${NC}Смотрим состояние wifi подключения"
 # Looking at the status of the wifi connection
 nmcli radio wifi
-# -------------------------------------------
-# Посмотреть список доступных сетей wifi:
+sleep 1
+## ---------------------------------------
+## Посмотреть список доступных сетей wifi:
 # nmcli device wifi list
-# Теперь включаем:
+## Теперь включаем:
 # nmcli radio wifi on
-# Или отключаем:
+## Или отключаем:
 # nmcli radio wifi off
-# Команда для подключения к новой сети wifi выглядит не намного сложнее. Например, давайте подключимся к сети TP-Link с паролем 12345678:
-# nmcli device wifi connect "TP-Link" password 12345678 name "TP-Link Wifi"
-# Если всё прошло хорошо, то вы получите уже привычное сообщение про создание подключения с именем TP-Link Wifi и это имя в дальнейшем можно использовать для редактирования этого подключения и управления им, как описано выше.
-# ------------------------------------------------
-
+## Команда для подключения к новой сети wifi выглядит не намного сложнее. Например, давайте подключимся к сети TP-Link с паролем 12345678:
+## nmcli device wifi connect "TP-Link" password 12345678 name "TP-Link Wifi"
+## Если всё прошло хорошо, то вы получите уже привычное сообщение про создание подключения с именем TP-Link Wifi и это имя в дальнейшем можно использовать для редактирования этого подключения и управления им, как описано выше.
+## ---------------------------------------
+###
 echo ""
 echo -e "${BLUE}:: ${NC}Посмотрим данные о нашем соединение с помощью IPinfo..." 
 #echo " Посмотрим данные о нашем соединение с помощью IPinfo..."
@@ -140,7 +149,7 @@ echo -e "${CYAN}=> ${NC}С помощью IPinfo вы можете точно о
 echo " Надежный источник данных IP-адресов (https://ipinfo.io/) "
 wget http://ipinfo.io/ip -qO -
 sleep 03
-
+###
 echo ""
 echo -e "${BLUE}:: ${NC}Узнаем версию и данные о релизе Arch'a ... :) " 
 #echo "Узнаем версию и данные о релизе Arch'a ... :)"
@@ -148,7 +157,7 @@ echo -e "${BLUE}:: ${NC}Узнаем версию и данные о релиз�
 cat /proc/version
 cat /etc/lsb-release.old
 sleep 02
-
+####################
 clear
 echo -e "${CYAN}
   <<< Установка обновлений для системы Arch Linux >>> ${NC}"
@@ -194,13 +203,13 @@ elif [[ $upd_sys == 1 ]]; then
 elif [[ $upd_sys == 2 ]]; then
   echo ""    
   echo " Обновим базы данных пакетов... "
-###  sudo pacman -Sy
+# sudo pacman -Sy --noconfirm  # обновить списки пакетов из репозиториев
   sudo pacman -Syy  # обновление баз пакмэна (pacman)  
   echo ""
   echo " Обновление базы данных выполнено "
 fi
-sleep 01
-###########
+sleep 1
+################
 clear
 echo ""
 echo -e "${YELLOW}=> ${NC}Загрузим архив (ветку мастер MarcMilany/archmy_2020)?"
@@ -242,9 +251,7 @@ fi
 #########
 ############ Mirrorlist ###################
 ### Если ли вам нужен этот пункт в скрипте, то раскомментируйте 
-
-# Замена исходного mirrorlist (зеркал для загрузки) на мой список серверов-зеркал
-
+## Замена исходного mirrorlist (зеркал для загрузки) на мой список серверов-зеркал
 # echo -e "${BLUE}:: ${NC}Замена исходного mirrorlist (зеркал для загрузки)"
 #echo 'Замена исходного mirrorlist (зеркал для загрузки)'
 #Ставим зеркало от Яндекс
@@ -256,8 +263,7 @@ fi
 #mv -f ~/mirrorlist /etc/pacman.d/mirrorlist
 #echo "Обновление баз данных пакетов..."
 #sudo pacman -Sy
-# =============================================
-
+## ===================================
 clear
 echo -e "${MAGENTA}
   <<< Смена, обновление зеркал для увеличения скорости загрузки утилит (пакетов). >>> ${NC}"
@@ -295,74 +301,74 @@ elif [[ $up_zerkala == 1 ]]; then
   echo -e "${BLUE}:: ${NC}Создание резервной копии файла /etc/pacman.d/mirrorlist"
 #echo 'Создадим резервную копию файла /etc/pacman.d/mirrorlist'
 # Creating a backup copy of the file /etc/pacman.d/mirrorlist
-#sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-#sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+# sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+# sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
   sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.old 
-# Сохраняем старый список зеркал в качестве резервной копии:
-#sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.old
-# Переименовываем новый список:
-#mv /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist
-#mv -f ~/mirrorlist /etc/pacman.d/mirrorlist
-# =============================
+## Сохраняем старый список зеркал в качестве резервной копии:
+# sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.old
+## Переименовываем новый список:
+# mv /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist
+# mv -f ~/mirrorlist /etc/pacman.d/mirrorlist
+## =============================
   echo ""
   echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал для загрузки в mirrorlist"
 #echo 'Посмотреть список серверов-зеркал для загрузки в mirrorlist'
 # View the list of mirror servers to upload to mirrorlist
   cat /etc/pacman.d/mirrorlist
-  sleep 01
-# -----------------------------
+  sleep 02
+# ----------------------------
 # Pacman Mirrorlist Generator
 # https://www.archlinux.org/mirrorlist/
 # Эта страница генерирует самый последний список зеркал, возможный для Arch Linux. Используемые здесь данные поступают непосредственно из внутренней базы данных зеркал разработчиков, используемой для отслеживания доступности и уровня зеркалирования. 
 # Есть два основных варианта: получить список зеркал с каждым доступным зеркалом или получить список зеркал, адаптированный к вашей географии.
-# ======================================================
-echo ""
-echo -e "${BLUE}:: ${NC}Загрузка свежего списка зеркал со страницы Mirror Status, и обновляем mirrorlist"
+## ==============================
+  echo ""
+  echo -e "${BLUE}:: ${NC}Загрузка свежего списка зеркал со страницы Mirror Status, и обновляем mirrorlist"
 #echo 'Загрузка свежего списка зеркал со страницы Mirror Status, и обновляем mirrorlist'
 # Loading a fresh list of mirrors from the Mirror Status page, and updating the mirrorlist
 # Чтобы увидеть список всех доступных опций, наберите:
 #reflector --help
 # Команда отфильтрует пять зеркал, отсортирует их по скорости и обновит файл mirrorlist:
-sudo pacman -Sy --noconfirm --noprogressbar --quiet reflector
-sudo reflector --verbose --country 'Russia' -l 9 -p https -p http -n 9 --save /etc/pacman.d/mirrorlist.pacnew --sort rate  
+  sudo pacman -Sy --noconfirm --noprogressbar --quiet reflector
+  sudo reflector --verbose --country 'Russia' -l 9 -p https -p http -n 9 --save /etc/pacman.d/mirrorlist.pacnew --sort rate  
 #reflector --verbose --country 'Russia' -l 5 -p https -p http -n 5 --sort rate --save /etc/pacman.d/mirrorlist
-echo -e "${CYAN}:: ${NC}Уведомление о загрузке и обновлении свежего списка зеркал"
+  echo -e "${CYAN}:: ${NC}Уведомление о загрузке и обновлении свежего списка зеркал"
 # Собственные уведомления (notify):
 notify-send "mirrorlist обновлен" -i gtk-info
-
+###
 #echo 'Выбор серверов-зеркал для загрузки.'
 #echo 'The choice of mirrors to download.'
 #pacman -Sy --noconfirm --noprogressbar --quiet reflector
 #reflector -c "Russia" -c "Belarus" -c "Ukraine" -c "Poland" -f 5 -l 5 -p https -p http -n 5 --save /etc/pacman.d/mirrorlist --sort rate
 #reflector --verbose --country Kazakhstan --country Russia --sort rate --save /etc/pacman.d/mirrorlist
-
+###
 #Команда отфильтрует 12 зеркал russia, отсортирует по скорости и обновит файл mirrorlist
 #sudo reflector -c "Russia" -f 12 -l 12 --verbose --save /etc/pacman.d/mirrorlist
-#---------------------------------------------------
+## ----------------------------------------
 # Reflector — скрипт, который автоматизирует процесс настройки зеркал, включающий в себя загрузку свежего списка зеркал со страницы Mirror Status.
 # https://www.linuxsecrets.com/archlinux-wiki/wiki.archlinux.org/index.php/Reflector_(%D0%A0%D1%2583%D1%2581%D1%2581%D0%BA%D0%B8%D0%B9).html
 # Эта страница сообщает о состоянии всех известных, общедоступных и активных зеркал Arch Linux:
 # https://www.archlinux.org/mirrors/status/
-# ==================================================
-echo ""
-echo -e "${BLUE}:: ${NC}Создание резервной копии нового файла /etc/pacman.d/mirrorlist"
+## ======================================
+  echo ""
+  echo -e "${BLUE}:: ${NC}Создание резервной копии нового файла /etc/pacman.d/mirrorlist"
 #echo 'Создадим резервную копию файла /etc/pacman.d/mirrorlist'
 # Creating a backup copy of the file /etc/pacman.d/mirrorlist
 #sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 #sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.pacnew
+  sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.pacnew
 # Сохраняем старый список зеркал в качестве резервной копии:
 #sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.old
 # Переименовываем новый список:
 #mv /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist
 #mv -f ~/mirrorlist /etc/pacman.d/mirrorlist
-# ====================================================
-echo ""
-echo -e "${BLUE}:: ${NC}Удалим старый файл /etc/pacman.d/mirrorlist"
+## ====================================================
+  echo ""
+  echo -e "${BLUE}:: ${NC}Удалим старый файл /etc/pacman.d/mirrorlist"
 #echo 'Удалим старый файл /etc/pacman.d/mirrorlist'
 # Delete the old file /etc/pacman.d/mirrorlist
 #rm -rf /etc/pacman.d/mirrorlist
-sudo rm -rf /etc/pacman.d/mirrorlist
+  sudo rm -rf /etc/pacman.d/mirrorlist
 # Удаления старой резервной копии (если она есть, если нет, то пропустите этот шаг):
 #rm /etc/pacman.d/mirrorlist.old
 # Удалим mirrorlist из /mnt/etc/pacman.d/mirrorlist
@@ -373,48 +379,48 @@ sudo rm -rf /etc/pacman.d/mirrorlist
 # Delete files /etc/pacman.d/mirrorlist
 #rm -rf /etc/pacman.d/mirrorlist
 # =========================================================
-echo ""
-echo -e "${BLUE}:: ${NC}Переименуем новый список серверов-зеркал mirrorlist.pacnew в mirrorlist"
+  echo ""
+  echo -e "${BLUE}:: ${NC}Переименуем новый список серверов-зеркал mirrorlist.pacnew в mirrorlist"
 #echo 'Переименуем новый список серверов-зеркал mirrorlist.pacnew в mirrorlist'
 # Rename the new list of mirror servers mirrorlist. pacnew to mirrorlist
 #mv /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist
 # Переименовываем новый список:
 #sudo mv /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist
-sudo mv /etc/pacman.d/mirrorlist.backup /etc/pacman.d/mirrorlist
-# ========================================================
-echo ""
-echo -e "${BLUE}:: ${NC}Создание резервной копии файла /etc/pacman.d/mirrorlist"
+  sudo mv /etc/pacman.d/mirrorlist.backup /etc/pacman.d/mirrorlist
+## ====================================
+  echo ""
+  echo -e "${BLUE}:: ${NC}Создание резервной копии файла /etc/pacman.d/mirrorlist"
 #echo 'Создадим резервную копию файла /etc/pacman.d/mirrorlist'
 # Creating a backup copy of the file /etc/pacman.d/mirrorlist
 #sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 #sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+  sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 # Сохраняем старый список зеркал в качестве резервной копии:
 #sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.old
 # Переименовываем новый список:
 #mv /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist
 #mv -f ~/mirrorlist /etc/pacman.d/mirrorlist
-# ======================================================== 
-echo ""
-echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал для загрузки в mirrorlist"
+## =======================================
+  echo ""
+  echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал для загрузки в mirrorlist"
 #echo 'Посмотреть список серверов-зеркал для загрузки в mirrorlist'
 # View the list of mirror servers to upload to mirrorlist
-echo ""
-cat /etc/pacman.d/mirrorlist
-sleep 02
-# ============================================
-echo ""
-echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
+  echo ""
+  cat /etc/pacman.d/mirrorlist
+  sleep 02
+## =======================================
+  echo ""
+  echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
 #echo 'Обновим базы данных пакетов'
 # Updating the package databases
 #sudo pacman-key --init
 #sudo pacman-key --refresh-keys
-sudo pacman -Sy  
-#----------------------------------------------------
+  sudo pacman -Sy  
+##---------------------------------
 # Знакомьтесь, pacman - лучший пакетный менеджер в мире линукса!
 #pacman -Syy   - обновление баз пакмэна(как apt-get update в дэбианоподбных)
 #pacman -Syyu  - обновление баз плюс обновление пакетов
-#---------------------------------------------------
+##-----------------------------------
 elif [[ $up_zerkala == 2 ]]; then
   echo ""
   echo -e "${BLUE}:: ${NC}Создание резервной копии файла /etc/pacman.d/mirrorlist"
@@ -456,22 +462,22 @@ elif [[ $up_zerkala == 2 ]]; then
   echo -e "${CYAN}:: ${NC}Уведомление о загрузке и обновлении свежего списка зеркал"
 # Собственные уведомления (notify):
   notify-send "mirrorlist обновлен" -i gtk-info
-
+###
 #echo 'Выбор серверов-зеркал для загрузки.'
 #echo 'The choice of mirrors to download.'
 #pacman -Sy --noconfirm --noprogressbar --quiet reflector
 #reflector -c "Russia" -c "Belarus" -c "Ukraine" -c "Poland" -f 5 -l 5 -p https -p http -n 5 --save /etc/pacman.d/mirrorlist --sort rate
 #reflector --verbose --country Kazakhstan --country Russia --sort rate --save /etc/pacman.d/mirrorlist
-
+###
 #Команда отфильтрует 12 зеркал russia, отсортирует по скорости и обновит файл mirrorlist
 #sudo reflector -c "Russia" -f 12 -l 12 --verbose --save /etc/pacman.d/mirrorlist
-
-#-------------------------------------------------
+###
+## ----------------------------------
 # Reflector — скрипт, который автоматизирует процесс настройки зеркал, включающий в себя загрузку свежего списка зеркал со страницы Mirror Status.
 # https://www.linuxsecrets.com/archlinux-wiki/wiki.archlinux.org/index.php/Reflector_(%D0%A0%D1%2583%D1%2581%D1%2581%D0%BA%D0%B8%D0%B9).html
 # Эта страница сообщает о состоянии всех известных, общедоступных и активных зеркал Arch Linux:
 # https://www.archlinux.org/mirrors/status/
-# ==============================================
+## ==================================
   echo ""
   echo -e "${BLUE}:: ${NC}Создание резервной копии нового файла /etc/pacman.d/mirrorlist"
 #echo 'Создадим резервную копию файла /etc/pacman.d/mirrorlist'
@@ -489,8 +495,8 @@ elif [[ $up_zerkala == 2 ]]; then
   echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал для загрузки в mirrorlist"
 #echo 'Посмотреть список серверов-зеркал для загрузки в mirrorlist'
 # View the list of mirror servers to upload to mirrorlist
-cat /etc/pacman.d/mirrorlist
-sleep 02
+  cat /etc/pacman.d/mirrorlist
+  sleep 02
 # ==============================================
   echo ""
   echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
@@ -498,14 +504,14 @@ sleep 02
 # Updating the package databases
 #sudo pacman-key --init
 #sudo pacman-key --refresh-keys
-  sudo pacman -Sy  
+  sudo pacman -Sy --noconfirm  # обновить списки пакетов из репозиториев  
 #-----------------------------------------------
-# Знакомьтесь, pacman - лучший пакетный менеджер в мире линукса!
+## Знакомьтесь, pacman - лучший пакетный менеджер в мире линукса!
 #pacman -Syy   - обновление баз пакмэна(как apt-get update в дэбианоподбных)
 #pacman -Syyu  - обновление баз плюс обновление пакетов
-#---------------------------------- 
+##---------------------------------- 
 fi
-# ---------------------------------
+## ---------------------------------
 ### Если возникли проблемы с обновлением, или установкой пакетов 
 ### Если ли вам нужен этот пункт в скрипте, то раскомментируйте ниже в меню все тройные решётки (###)
 ############
@@ -528,7 +534,10 @@ do
 done
  if [[ $x_key == 0 ]]; then
   echo ""
-  echo " Обновление ключей пропущено " 
+  echo " Обновление ключей пропущено "
+  echo ""
+  echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
+  sudo pacman -Sy --noconfirm  # обновить списки пакетов из репозиториев 
 elif [[ $x_key == 1 ]]; then
   clear
   echo ""
@@ -548,12 +557,22 @@ elif [[ $x_key == 1 ]]; then
   sudo pacman-key --init  # генерация мастер-ключа (брелка) pacman
   echo " Далее идёт поиск ключей... "
   sudo pacman-key --populate archlinux  # поиск ключей
+# sudo pacman-key --populate
+  echo " Брелок для ключей Arch Linux PGP (Репозиторий для пакета связки ключей Arch Linux) "
+  sudo pacman -Sy --noconfirm --needed --noprogressbar --quiet archlinux-keyring  # Брелок для ключей Arch Linux PGP https://git.archlinux.org/archlinux-keyring.git/ (для hkps://hkps.pool.sks-keyservers.net)
   echo ""
   echo " Обновление ключей... "  
   sudo pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
+# sudo pacman-key --refresh-keys --keyserver hkp://pool.sks-keyservers.net  # hkps://hkps.pool.sks-keyservers.net
+## Предлагается сделать следующие изменения в конфиге gnupg:
+## keyserver hkps://hkps.pool.sks-keyservers.net
+## keyserver-options ca-cert-file=/path/to/CA/sks-keyservers.netCA.pem
+## где sks-keyservers.netCA.pem – есть сертификат, загружаемый с wwwhttps://sks-keyservers.net/sks-keyservers.netCA.pem
+# sudo pacman-key --refresh-keys --keyserver hkps://hkps.pool.sks-keyservers.net
+# sudo keyserver-options ca-cert-file=/path/to/CA/sks-keyservers.netCA.pem
   echo ""
   echo "Обновим базы данных пакетов..."
-###  sudo pacman -Sy
+###  sudo pacman -Sy  # обновить списки пакетов из репозиториев
   sudo pacman -Syy  # обновление баз пакмэна (pacman) 
 # sudo pacman -Syyu  # Обновим вашу систему (базу данных пакетов)
 # sudo pacman -Syyu  --noconfirm  
@@ -592,7 +611,7 @@ elif [[ $i_seahorse == 1 ]]; then
  fi
 fi
 sleep 1
-# ------------------------------
+## ------------------------------
 # Или:
 #sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys && sudo pacman -Sy
 # Если возникли проблемы с обновлением, или установкой пакетов выполните данные рекомендации.
@@ -600,7 +619,7 @@ sleep 1
 # Если ошибка с содержанием hkps.pool.sks-keyservers.net, не может достучаться до сервера ключей выполните команды ниже. Указываем другой сервер ключей.
 # sudo pacman-key --init && sudo pacman-key --populate
 # sudo pacman-key --refresh-keys --keyserver keys.gnupg.net && sudo pacman -Syy
-# --------------------------------
+## --------------------------------
 # Вопросы относительно передачи ключей по hkps
 # При установке gnupg в линукс в дефолтном конфиге указан следующий сервер:
 # keyserver hkp://keys.gnupg.net
@@ -617,7 +636,7 @@ sleep 1
 # OpenPGP
 # https://www.openpgp.org/about/
 # https://tools.ietf.org/html/rfc4880
-# ----------------------------
+## ----------------------------
 # Ошибки про archlinux-keyring
 # Если вы получаете ошибки, связанные с ключами (например, ключ A634567E8t6574 не может быть найден удаленно) при попытке обновить вашу систему, вы должны выполнить следующие четыре команды от имени пользователя root:
 # rm -R /etc/pacman.d/gnupg/
@@ -625,12 +644,11 @@ sleep 1
 # gpg –refresh-keys
 # pacman-key –init && pacman-key –populate archlinux
 # pacman-key –refresh-keys
-# ==================================
+## =============================
 ##############
 clear
 echo -e "${MAGENTA}
   <<< Синхронизации времени (Время от времени часы на компьютере могут сбиваться по различным причинам). >>> ${NC}"
-
 echo ""
 echo -e "${GREEN}==> ${NC}Если у Вас Сбиваются настройки времени (или параллельно установлена Windows...)"
 #echo 'Если у Вас Сбиваются настройки времени (или параллельно установлена Windows...)
