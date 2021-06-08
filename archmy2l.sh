@@ -1882,7 +1882,7 @@ elif [[ $i_hosts == 1 ]]; then
   echo " Загрузка и обновление файла /etc/hosts "
   wget -qO- https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts | sudo tee --append /etc/hosts
   echo "" 
-  echo " Создание каталогов успешно выполнено "
+  echo " Создание файла /etc/hosts успешно выполнено "
 fi
 sleep 1
 ###################
