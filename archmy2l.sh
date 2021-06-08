@@ -263,6 +263,7 @@ echo 'LC_TIME="ru_RU.UTF-8"' >> /etc/locale.conf
 echo -e "${BLUE}:: ${NC}Вписываем KEYMAP=ru FONT=cyr-sun16 FONT=ter-v16n FONT=ter-v16b"
 echo 'KEYMAP=ru' >> /etc/vconsole.conf
 echo '#LOCALE=ru_RU.UTF-8' >> /etc/vconsole.conf
+## Шрифт с поддержкой кирилицы
 echo 'FONT=cyr-sun16' >> /etc/vconsole.conf
 echo '#FONT=ter-v16n' >> /etc/vconsole.conf
 echo '#FONT=ter-v16b' >> /etc/vconsole.conf
@@ -277,6 +278,13 @@ echo '#USECOLOR=yes' >> /etc/vconsole.conf
 echo 'COMPRESSION="lz4"' >> /etc/mkinitcpio.conf 
 #echo 'COMPRESSION="xz"' >> /etc/mkinitcpio.conf
 echo "vboxdrv" > /etc/modules-load.d/virtualbox.conf
+###
+## Список всех доступных русских раскладок клавиатуры
+# ls /usr/share/kbd/keymaps/i386/qwerty/ru*
+## Русская раскладка с переключением по Alt+Shift
+#echo 'KEYMAP="ruwin_alt_sh-UTF-8"' > /etc/vconsole.conf
+## аналогично вызову
+# localectl set-keymap ruwin_alt_sh-UTF-8
 #######################
 clear
 echo ""
