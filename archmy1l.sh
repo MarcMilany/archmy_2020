@@ -112,6 +112,18 @@ echo -e "${BLUE}:: ${NC}Current full date"
 echo "$(date -u "+%F %H:%M")" 
 ## %F - полная дата, то же что и %Y-%m-%d; %H - hour (00..23); %M - minute (00..59)    
 ################
+echo ""
+echo -e "${GREEN}=> ${NC}To check the Internet, you can ping a service"
+# ping google.com -W 2 -c 1
+ping -c 2 archlinux.org  # Утилита ping - это очень простой инструмент для диагностики сети
+echo -e "${CYAN}==> ${NC}If the ping goes we go further ... :)"  # Если пинг идёт едем дальше ... :)
+echo ""
+echo -e "${GREEN}=> ${NC}Make sure that your network interface is specified and enabled" 
+echo " Show all ip addresses and their interfaces "  
+## Показать все ip адреса и их интерфейсы
+ip a  # Смотрим какие у нас есть интернет-интерфейсы
+sleep 1
+#####################
 echo -e "${BLUE}:: ${NC}Update the package databases" 
 ## Обновим базы данных пакетов
 pacman -Sy --print-format "%r"  # Указывает похожий на printf формат для контроля вывода операции --print; «% r» для репозитория  
@@ -144,16 +156,7 @@ export LANG=ru_RU.UTF-8
 #export LANG=en_US.UTF-8
 echo -e "${BLUE}:: ${NC}Проверяем, что все заявленные локали были созданы:"
 locale -a  # Смотрим какте локали были созданы
-#####################
-echo ""
-echo -e "${GREEN}=> ${NC}Для проверки интернета можно пропинговать какой-либо сервис" 
-ping google.com -W 2 -c 1
-#ping -c 2 archlinux.org  # Утилита ping - это очень простой инструмент для диагностики сети
-echo -e "${CYAN}==> ${NC}Если пинг идёт едем дальше ... :)"
-echo ""
-echo -e "${GREEN}=> ${NC}Убедитесь, что сетевой интерфейс указан и включен" 
-echo " Показать все ip адреса и их интерфейсы "
-ip a  # Смотрим какие у нас есть интернет-интерфейсы
+sleep 1
 ######################
 ### Display banner (Дисплей баннер)
 _arch_fast_install_banner
