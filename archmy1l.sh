@@ -659,6 +659,7 @@ echo ""
 echo -e "${BLUE}:: ${NC}Посмотреть список серверов-зеркал /mnt/etc/pacman.d/mirrorlist"
 echo ""
 cat /etc/pacman.d/mirrorlist  # cat читает данные из файла или стандартного ввода и выводит их на экран
+sleep 1
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов" 
 pacman -Sy --noconfirm  # обновить списки пакетов из репозиториев
