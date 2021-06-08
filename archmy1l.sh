@@ -599,6 +599,7 @@ sleep 02
 echo ""
 echo -e "${BLUE}:: ${NC}Посмотреть содержмое каталога /mnt."
 ls /mnt  # Посмотреть содержимое той или иной папки
+sleep 1
 ######## Mirrorlist ##########
 clear
 echo ""
