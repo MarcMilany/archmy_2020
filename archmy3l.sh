@@ -1860,7 +1860,7 @@ sudo pacman -S haveged --noconfirm  #  Демон сбора энтропии с
 sudo pacman -S hddtemp --noconfirm  # Показывает температуру вашего жесткого диска, читая информацию SMART
 sudo pacman -S hdparm --noconfirm  # Утилита оболочки для управления параметрами диска / драйвера Linux IDE (получить / установить параметры диска ATA / SATA под Linux)
 sudo pacman -S hidapi --noconfirm  # Простая библиотека для связи с устройствами USB и Bluetooth HID
-sudo pacman -S hwdetect --noconfirm  # Скрипт (консольная утилита) просмотр модулей ядра для устройств, обнаружения оборудования с загрузочными модулями и поддержкой mkinitcpio.conf / rc.conf
+sudo pacman -S --noconfirm --needed hwdetect # Скрипт (консольная утилита) просмотр модулей ядра для устройств, обнаружения оборудования с загрузочными модулями и поддержкой mkinitcpio.conf / rc.conf
 sudo pacman -S hwinfo --noconfirm  # Инструмент обнаружения оборудования от openSUSE
 sudo pacman -S hydra --noconfirm  # Очень быстрый взломщик входа в сеть, который поддерживает множество различных сервисов
 sudo pacman -S hyphen-en --noconfirm  # Правила расстановки переносов в английском
