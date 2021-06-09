@@ -117,6 +117,7 @@ echo -e "${GREEN}=> ${NC}To check the Internet, you can ping a service"
 # ping google.com -W 2 -c 1
 ping -c 2 archlinux.org  # Утилита ping - это очень простой инструмент для диагностики сети
 echo -e "${CYAN}==> ${NC}If the ping goes we go further ... :)"  # Если пинг идёт едем дальше ... :)
+###
 echo ""
 echo -e "${GREEN}=> ${NC}Make sure that your network interface is specified and enabled" 
 echo " Show all ip addresses and their interfaces "  
