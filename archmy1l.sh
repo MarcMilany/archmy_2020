@@ -124,6 +124,7 @@ echo " Show all ip addresses and their interfaces "
 ip a  # Смотрим какие у нас есть интернет-интерфейсы
 sleep 1
 #####################
+echo ""
 echo -e "${BLUE}:: ${NC}Update the package databases" 
 ## Обновим базы данных пакетов
 pacman -Sy --print-format "%r"  # Указывает похожий на printf формат для контроля вывода операции --print; «% r» для репозитория  
@@ -157,6 +158,7 @@ export LANG=ru_RU.UTF-8
 echo -e "${BLUE}:: ${NC}Проверяем, что все заявленные локали были созданы:"
 locale -a  # Смотрим какте локали были созданы
 sleep 1
+clear
 ######################
 ### Display banner (Дисплей баннер)
 _arch_fast_install_banner
