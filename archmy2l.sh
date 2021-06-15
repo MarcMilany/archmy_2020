@@ -867,7 +867,7 @@ elif [[ $x_de == 1 ]]; then
   echo " Установка KDE(Plasma) " 
   pacman -S plasma plasma-meta plasma-pa plasma-desktop kde-system-meta kde-utilities-meta kio-extras kwalletmanager latte-dock konsole --noconfirm  # Мета-пакет для установки KDE Plasma; Апплет Plasma для управления громкостью звука с помощью PulseAudio; Рабочий стол KDE Plasma; Мета-пакет для системных приложений KDE; Мета-пакет для служебных приложений KDE; Дополнительные компоненты для увеличения функциональности KIO; Инструмент управления кошельком; Док на основе Plasma Frameworks; Эмулятор терминала KDE.
 # pacman -S kde-applications --noconfirm  # Мета-пакет для приложений KDE
-# pacman -S kde-applications-meta --noconfirm  # Мета-пакет для приложений KDE
+## pacman -S kde-applications-meta --noconfirm  # Мета-пакет для приложений KDE
   clear 
   echo ""
   echo " DE (Plasma KDE) успешно установлено " 
@@ -1351,6 +1351,8 @@ elif [[ $i_dm == 4 ]]; then
   echo ""
   echo " Менеджера входа SDDM установлен и подключен в автозагрузку " 
 fi
+### После завершения установки проверьте текущий менеджер дисплеев, выполнив следующую команду.
+## file /etc/systemd/system/display-manager. service
 ######################
 echo ""
 echo -e "${GREEN}==> ${NC}Установить сетевые утилиты Networkmanager?"
