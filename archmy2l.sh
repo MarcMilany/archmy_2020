@@ -812,8 +812,10 @@ if [[ $vm_setting == 0 ]]; then
 # echo ""
   echo " Установка Xorg (иксов) пропущена (используется VDS, или VPS) "  
 elif [[ $vm_setting == 1 ]]; then
-  gui_install="xorg-server xorg-drivers xorg-xinit"  #(или на vmware) # --confirm   всегда спрашивать подтверждение
-# gui_install="xorg-server xorg-drivers --noconfirm"     # xorg-xinit 
+  gui_install="xorg-server xorg-drivers xorg-xinit"  #(или на vmware) # --confirm   всегда спрашивать подтверждение;  X-сервер Xorg (https://xorg.freedesktop.org); Группа драйверов; Программа инициализации X.Org (https://xorg.freedesktop.org)
+# gui_install="xorg-drivers --noconfirm"  #  Group Details - https://archlinux.org/groups/x86_64/xorg-drivers/
+# gui_install="xf86-input-libinput --noconfirm"  #  Универсальный драйвер ввода для сервера X.Org на основе libinput (http://xorg.freedesktop.org/)
+# gui_install="xf86-input-synaptics --noconfirm"  #  Драйвер Synaptics для сенсорных панелей ноутбуков (http://xorg.freedesktop.org/) 
 elif [[ $vm_setting == 2 ]]; then
   gui_install="xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils"  #(или на vmware) # --confirm   всегда 
 # gui_install="xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils --noconfirm" 
