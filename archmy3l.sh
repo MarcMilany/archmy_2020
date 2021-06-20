@@ -605,6 +605,7 @@ if [[ $i_seahorse == 0 ]]; then
 elif [[ $i_seahorse == 1 ]]; then
   echo ""    
   echo " Установка приложение Seahorse для управления ключами PGP "
+  sudo pacman -S --noconfirm --needed gnome-keyring  # Хранит пароли и ключи шифрования (https://wiki.gnome.org/Projects/GnomeKeyring 
   sudo pacman -S seahorse --noconfirm  # Приложение GNOME для управления ключами PGP (управления паролями и ключами шифрования)
   echo ""
   echo " Установка Приложение GNOME для управления ключами PGP "
