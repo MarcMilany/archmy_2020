@@ -234,6 +234,7 @@ if [[ $i_key == 1 ]]; then
   echo " Обновление ключей... "  
   pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
   pacman-key --refresh-keys --keyserver hkp://pool.sks-keyservers.net  # hkps://hkps.pool.sks-keyservers.net
+  pacman-key --refresh-keys --keyserver hkps://hkps.pool.sks-keyservers.net  # hkps://hkps.pool.sks-keyservers.net 
 ## Предлагается сделать следующие изменения в конфиге gnupg:
 ## keyserver hkps://hkps.pool.sks-keyservers.net
 ## keyserver-options ca-cert-file=/path/to/CA/sks-keyservers.netCA.pem
