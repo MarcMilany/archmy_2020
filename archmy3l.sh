@@ -1535,7 +1535,7 @@ echo -e "${GREEN}==> ${NC}Ставим пакеты Поддержки звук�
 #echo -e "${BLUE}:: ${NC}Ставим пакеты Поддержки звука (alsa, pulseaudio...)?" 
 #echo 'Ставим пакеты Поддержки звука (alsa, pulseaudio...)?'
 # Installing sound support packages (alsa, pulseaudio...)?
-echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (alsa-utils, alsa-plugins, alsa-firmware, alsa-lib, alsa-utils, pulseaudio, pulseaudio-alsa, pavucontrol, pulseaudio-zeroconf, pulseaudio-bluetooth и xfce4-pulseaudio-plugin)."
+echo -e "${MAGENTA}=> ${NC}Список программ (пакетов) для установки: - (alsa-utils, alsa-plugins, alsa-firmware, alsa-lib, alsa-utils, pulseaudio, pulseaudio-alsa, pavucontrol, pulseaudio-zeroconf, pulseaudio-bluetooth, xfce4-pulseaudio-plugin и paprefs)"
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -1570,7 +1570,7 @@ sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol pulseaudio-bluetooth pulse
 #sudo pacman -S pulseaudio-alsa --noconfirm  # Конфигурация ALSA для PulseAudio 
 #sudo pacman -S pavucontrol --noconfirm  # Регулятор громкости PulseAudio
 #sudo pacman -S pulseaudio-bluetooth --noconfirm  # Поддержка Bluetooth для PulseAudio
-#sudo pacman -S pulseaudio-equalizer-ladspa --noconfirm  # 15-полосный эквалайзер для PulseAudio
+#sudo pacman -S pulseaudio-equalizer-ladspa --noconfirm  # 15-полосный эквалайзер для PulseAudio (https://github.com/pulseaudio-equalizer-ladspa/equalizer)
 ### sudo pacman -S pulseaudio-equalizer --noconfirm  # Графический эквалайзер для PulseAudio
 sudo pacman -S pulseaudio-zeroconf --noconfirm  # Поддержка Zeroconf для PulseAudio
 #sudo pacman -S pulseaudio-lirc --noconfirm  # Поддержка IR (lirc) для PulseAudio
@@ -1578,11 +1578,12 @@ sudo pacman -S pulseaudio-zeroconf --noconfirm  # Поддержка Zeroconf д
 #sudo pacman -S pasystray --noconfirm  # Системный трей PulseAudio (замена # padevchooser)  
 sudo pacman -S xfce4-pulseaudio-plugin --noconfirm  # Плагин Pulseaudio для панели Xfce4 
 #sudo pacman -Sy pavucontrol pulseaudio-bluetooth alsa-utils pulseaudio-equalizer-ladspa --noconfirm
+sudo pacman -S paprefs --noconfirm  # Диалог конфигурации для PulseAudio (PulseAudio Preferences - https://freedesktop.org/software/pulseaudio/paprefs/)
 clear
 echo ""   
 echo " Установка пакетов Поддержки звука выполнена "
 fi
-# -----------------------------------------------
+# ----------------------------------------
 # Pulseaudio zeroconf звук по сети:
 # У меня есть сервер, к которому подключены колонки 5.1, и есть ноутбук, с которого нужно передавать звук на 5.1.
 # На обоих тачках стоит гента. Поставил pulseaudio и там и там.
@@ -2049,13 +2050,13 @@ clear
 echo -e "${MAGENTA}
   <<< Установка Мультимедиа аудиоплееров, видео-проигрывателей, утилит и кодеков в Archlinux >>> ${NC}"
 # Installing Multimedia audio players, video players, utilities, and codecs in Archlinux
-
 echo ""
-echo -e "${GREEN}==> ${NC}Установка мультимедиа кодеков (multimedia codecs), и утилит"
+echo -e "${GREEN}==> ${NC}Установка мультимедиа кодеков - GStreamer (multimedia codecs), и утилит"
 #echo -e "${BLUE}:: ${NC}Установка мультимедиа кодеков (multimedia codecs), и утилит" 
 #echo 'Установка Мультимедиа кодеков (multimedia codecs), и утилит'
 # Installing Multimedia codecs and utilities
 echo -e "${MAGENTA}=> ${NC}Список утилит (пакетов) для установки: - (a52dec, faac, faad2, flac, jasper, lame, libdca, libdv, libmad, libmpeg2, libtheora, libvorbis, libxv, wavpack, x264, xvidcore, gst-plugins-base, gst-plugins-base-libs, gst-plugins-good, gst-plugins-bad, gst-plugins-ugly, libdvdcss, libdvdread, libdvdnav, dvd+rw-tools, dvdauthor, dvgrab, cdrdao, gst-libav, gst-libav, gpac)."
+echo -e "${MAGENTA}=> ${NC}Список GStreamer утилит (пакетов) для установки: - (gstreamer, gstreamer-docs, gstreamer-vaapi, gst-libav, gst-plugins-bad, gst-plugins-base, gst-plugins-base-libs, gst-plugins-good, gst-plugins-ugly, gstreamermm, gstreamermm-docs, xine-lib)."
 echo " Будьте внимательны! Процесс установки, был прописан полностью автоматическим. " 
 # Be careful! The installation process was fully automatic
 echo " Если Вы сомневаетесь в своих действиях, ещё раз обдумайте... "
@@ -2073,53 +2074,61 @@ do
     :
 done 
 if [[ $i_multimedia == 0 ]]; then 
-clear
-echo ""   
-echo " Установка мультимедиа кодеков и утилит (пакетов) пропущена "
+  clear
+  echo ""   
+  echo " Установка мультимедиа кодеков и утилит (пакетов) пропущена "
 elif [[ $i_multimedia == 1 ]]; then
   echo ""   
   echo " Установка мультимедиа кодеков и утилит (пакетов) "
 ### Устанавливаем утилиты и кодеки
 # sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore libdvdcss libdvdread libdvdnav dvd+rw-tools dvdauthor dvgrab cdrdao gpac --noconfirm 
-sudo pacman -S a52dec --noconfirm  # Бесплатная библиотека для декодирования потоков ATSC A / 52
-sudo pacman -S cdrdao --noconfirm  # Записывает аудио / данные CD-R в режиме disk-at-once (DAO)
-sudo pacman -S dvdauthor --noconfirm  # Инструменты для создания DVD
-sudo pacman -S dvd+rw-tools --noconfirm  # Инструменты записи dvd
-sudo pacman -S dvgrab --noconfirm  # Сохраняет аудио и видео данные из цифрового источника IEEE (FireWire)
-sudo pacman -S faac --noconfirm  # Бесплатная программа Advanced Audio Coder
-sudo pacman -S faad2 --noconfirm  # Аудиодекодер ISO AAC
-sudo pacman -S flac --noconfirm  # Бесплатный аудиокодек без потерь
-sudo pacman -S gpac --noconfirm  # Мультимедийный фреймворк на основе стандарта MPEG-4 Systems (https://github.com/gpac/gpac)
-sudo pacman -S jasper --noconfirm  # Программная реализация кодека, указанного в появляющемся стандарте JPEG-2000 Part-1
-sudo pacman -S lame --noconfirm  # Высококачественный кодировщик MPEG Audio Layer III (MP3)
-sudo pacman -S libdca --noconfirm  # Бесплатная библиотека для декодирования потоков DTS Coherent Acoustics
-sudo pacman -S libdv --noconfirm  # Кодек Quasar DV (libdv) - программный кодек для DV-видео
-sudo pacman -S libdvdcss --noconfirm  # Переносимая библиотека абстракций для дешифрования DVD
-sudo pacman -S libdvdnav --noconfirm  # Библиотека для плагина xine-dvdnav
-sudo pacman -S libdvdread --noconfirm  # Обеспечивает простую основу для чтения DVD-видеодисков
-sudo pacman -S libmad --noconfirm  # Высококачественный аудиодекодер MPEG
-sudo pacman -S libmpeg2 --noconfirm  # Библиотека для декодирования видеопотоков MPEG-1 и MPEG-2
-sudo pacman -S libtheora --noconfirm  # Открытый видеокодек, разработанный Xiph.org
-sudo pacman -S libvorbis --noconfirm  # Эталонная реализация аудиоформата Ogg Vorbis
-sudo pacman -S libxv --noconfirm  # Библиотека расширений видео X11
-sudo pacman -S wavpack --noconfirm  # Формат сжатия звука с режимами сжатия без потерь, с потерями и гибридным сжатием
-sudo pacman -S x264 --noconfirm  # Кодировщик видео H264 / AVC с открытым исходным кодом
-sudo pacman -S xvidcore --noconfirm  # XviD - видеокодек MPEG-4 с открытым исходным кодом
-### Устанавливаем Фреймворк (кодеки) 
-# sudo pacman -S gstreamer gstreamer-vaapi gst-libav gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly --noconfirm   # https://gstreamer.freedesktop.org/
-sudo pacman -S gstreamer --noconfirm  # Фреймворк мультимедийного графа - ядро
-sudo pacman -S gstreamer-vaapi --noconfirm  # Фреймворк мультимедийного графа - плагин vaapi
-sudo pacman -S gst-libav --noconfirm  # Фреймворк мультимедийного графа - плагин для libav
-sudo pacman -S gst-plugins-bad --noconfirm  # Фреймворк мультимедийного графа - плохие плагины
-sudo pacman -S gst-plugins-base --noconfirm  # Фреймворк мультимедийного графа - базовые плагины
-sudo pacman -S gst-plugins-base-libs --noconfirm  # Фреймворк мультимедийного графа - основа
-sudo pacman -S gst-plugins-good --noconfirm  # Фреймворк мультимедийного графа - хорошие плагины
-sudo pacman -S gst-plugins-ugly --noconfirm  # Фреймворк мультимедийного графа - уродливые плагины
-clear
-echo ""   
-echo " Установка мультимедиа кодеков и утилит (пакетов) выполнена "
+  sudo pacman -S a52dec --noconfirm  # Бесплатная библиотека для декодирования потоков ATSC A / 52
+  sudo pacman -S cdrdao --noconfirm  # Записывает аудио / данные CD-R в режиме disk-at-once (DAO)
+  sudo pacman -S dvdauthor --noconfirm  # Инструменты для создания DVD
+  sudo pacman -S dvd+rw-tools --noconfirm  # Инструменты записи dvd
+  sudo pacman -S dvgrab --noconfirm  # Сохраняет аудио и видео данные из цифрового источника IEEE (FireWire)
+  sudo pacman -S faac --noconfirm  # Бесплатная программа Advanced Audio Coder
+  sudo pacman -S faad2 --noconfirm  # Аудиодекодер ISO AAC
+  sudo pacman -S flac --noconfirm  # Бесплатный аудиокодек без потерь
+  sudo pacman -S gpac --noconfirm  # Мультимедийный фреймворк на основе стандарта MPEG-4 Systems (https://github.com/gpac/gpac)
+  sudo pacman -S jasper --noconfirm  # Программная реализация кодека, указанного в появляющемся стандарте JPEG-2000 Part-1
+  sudo pacman -S lame --noconfirm  # Высококачественный кодировщик MPEG Audio Layer III (MP3)
+  sudo pacman -S libdca --noconfirm  # Бесплатная библиотека для декодирования потоков DTS Coherent Acoustics
+  sudo pacman -S libdv --noconfirm  # Кодек Quasar DV (libdv) - программный кодек для DV-видео
+  sudo pacman -S libdvdcss --noconfirm  # Переносимая библиотека абстракций для дешифрования DVD
+  sudo pacman -S libdvdnav --noconfirm  # Библиотека для плагина xine-dvdnav
+  sudo pacman -S libdvdread --noconfirm  # Обеспечивает простую основу для чтения DVD-видеодисков
+  sudo pacman -S libmad --noconfirm  # Высококачественный аудиодекодер MPEG
+  sudo pacman -S libmpeg2 --noconfirm  # Библиотека для декодирования видеопотоков MPEG-1 и MPEG-2
+  sudo pacman -S libtheora --noconfirm  # Открытый видеокодек, разработанный Xiph.org
+  sudo pacman -S libvorbis --noconfirm  # Эталонная реализация аудиоформата Ogg Vorbis
+  sudo pacman -S libxv --noconfirm  # Библиотека расширений видео X11
+  sudo pacman -S wavpack --noconfirm  # Формат сжатия звука с режимами сжатия без потерь, с потерями и гибридным сжатием
+  sudo pacman -S x264 --noconfirm  # Кодировщик видео H264 / AVC с открытым исходным кодом
+  sudo pacman -S xvidcore --noconfirm  # XviD - видеокодек MPEG-4 с открытым исходным кодом
+  echo ""   
+  echo " Устанавливаем GStreamer - Фреймворк (кодеки) " 
+# sudo pacman -S gstreamer gstreamer-docs gstreamer-vaapi gst-libav gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly gstreamermm gstreamermm-docs xine-lib --noconfirm  # https://gstreamer.freedesktop.org/
+  sudo pacman -S gstreamer --noconfirm  # Фреймворк мультимедийного графа - ядро (https://gstreamer.freedesktop.org/)
+  sudo pacman -S gstreamer-docs --noconfirm  # Фреймворк мультимедийных графов - документация (https://gstreamer.freedesktop.org/)
+  sudo pacman -S gstreamer-vaapi --noconfirm  # Фреймворк мультимедийного графа - плагин vaapi
+  sudo pacman -S gst-libav --noconfirm  # Фреймворк мультимедийного графа - плагин для libav
+  sudo pacman -S gst-plugins-bad --noconfirm  # Фреймворк мультимедийного графа - плохие плагины
+  sudo pacman -S gst-plugins-base --noconfirm  # Фреймворк мультимедийного графа - базовые плагины
+  sudo pacman -S gst-plugins-base-libs --noconfirm  # Фреймворк мультимедийного графа - основа
+  sudo pacman -S gst-plugins-good --noconfirm  # Фреймворк мультимедийного графа - хорошие плагины
+  sudo pacman -S gst-plugins-ugly --noconfirm  # Фреймворк мультимедийного графа - уродливые плагины
+  sudo pacman -S gstreamermm --noconfirm  # Интерфейс C ++ для GStreamer (https://github.com/GNOME/gstreamermm; https://gstreamer.freedesktop.org/bindings/cplusplus.html)
+  sudo pacman -S gstreamermm-docs --noconfirm  # Интерфейс C ++ для GStreamer (документация) (https://gstreamer.freedesktop.org/bindings/cplusplus.html)
+  echo ""   
+  echo " Устанавливаем Xine - это свободный мультимедиа движок "
+  sudo pacman -S xine-lib --noconfirm  # Движок воспроизведения мультимедиа (https://www.xine-project.org)
+## Xine - универсальный медиа-плеер написанный как разделяемая библиотека (xine-lib), которая поддерживает многочисленные фронтенды (xine-ui). Xine также может использовать библиотеки из других проектов, включая двоичные кодеки Windows. 
+  echo ""   
+  echo " Установка мультимедиа кодеков и утилит (пакетов) выполнена "
 fi
-
+#############
+clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установка Мультимедиа аудиоплеера и видео-проигрывателей"
 #echo -e "${BLUE}:: ${NC}Установка Мультимедиа плееров и утилит (пакетов)" 
@@ -2181,7 +2190,7 @@ sudo pacman -S smplayer smplayer-skins smplayer-themes smtube --noconfirm  # М�
 echo ""   
 echo " Установка утилит (пакетов) выполнена "
 fi
-
+###
 clear
 echo "" 
 echo -e "${BLUE}:: ${NC}Установить многоплатформенный проигрыватель VLC ?" 
