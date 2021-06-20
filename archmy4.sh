@@ -191,6 +191,18 @@ echo 'Создадим папку (downloads), и переходим в созд
 mkdir ~/downloads
 cd ~/downloads
 
+
+acestream-launcher  # Acestream Launcher позволяет открывать ссылки Acestream с помощью медиаплеера по вашему выбору.
+https://aur.archlinux.org/packages/acestream-launcher/
+https://aur.archlinux.org/acestream-launcher.git
+https://github.com/jonian/acestream-launcher
+
+acestream-engine  # Движок ACE Stream
+https://aur.archlinux.org/packages/acestream-engine/
+https://aur.archlinux.org/acestream-engine.git 
+http://acestream.org
+
+
 echo 'Установка Мультимедиа утилит AUR'
 # 
 echo -e "${BLUE}
