@@ -300,6 +300,10 @@ echo ""
 ### https://archlinux.org/packages/community/any/zsh-history-substring-search/
 ### https://github.com/zsh-users/zsh-history-substring-search
 ###
+### zsh-theme-powerlevel10k  # Powerlevel10k - это тема для Zsh. Он подчеркивает скорость, гибкость и готовность к работе. (https://github.com/romkatv/powerlevel10k)
+### https://archlinux.org/packages/community/x86_64/zsh-theme-powerlevel10k/
+### https://github.com/romkatv/powerlevel10k
+###
 ###  Установка Oh My Zsh (если он в настоящее время не используется)
 ###
 ### oh-my-zsh-git  AUR  # Фреймворк, управляемый сообществом, для управления вашей конфигурацией zsh. 
@@ -352,6 +356,11 @@ echo ""
 ### https://aur.archlinux.org/zsh-fast-syntax-highlighting-git.git
 ### https://github.com/zdharma/fast-syntax-highlighting
 ###
+### nerd-fonts-noto-sans-mono  # Стандартные варианты Noto Sans Mono с исправлениями Nerd Fonts.
+### https://aur.archlinux.org/packages/nerd-fonts-noto-sans-mono/
+### https://aur.archlinux.org/nerd-fonts-noto-sans-mono.git 
+### https://github.com/ryanoasis/nerd-fonts
+###
 ### pacaur  AUR  # Помощник AUR, минимизирующий взаимодействие с пользователем 
 ### https://aur.archlinux.org/packages/pacaur/
 ### https://aur.archlinux.org/pacaur.git  
@@ -397,11 +406,13 @@ echo " Пользовательская оболочка ИЗМЕНЕНА (ср�
 
 
 echo " Установка ZSH (shell) оболочки "
-pacman -S zsh zsh-syntax-highlighting zsh-autosuggestions grml-zsh-config --noconfirm
-pacman -S zsh-completions zsh-history-substring-search  --noconfirm  
+pacman -S zsh zsh-syntax-highlighting zsh-autosuggestions grml-zsh-config --noconfirm  # Очень продвинутый и программируемый интерпретатор команд (оболочка) для UNIX; Рыбная оболочка как подсветка синтаксиса для Zsh; Рыбоподобные самовнушения для zsh (история команд); Настройка zsh в grml 
+pacman -S zsh-completions zsh-history-substring-search  --noconfirm  # Дополнительные определения завершения для Zsh; ZSH порт поиска рыбной истории (стрелка вверх) 
+pacman -S zsh-theme-powerlevel10k  --noconfirm  # Powerlevel10k - это тема для Zsh. Он подчеркивает скорость, гибкость и готовность к работе. (https://github.com/romkatv/powerlevel10k) 
 echo 'source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh' >> /etc/zsh/zshrc
 echo 'source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> /etc/zsh/zshrc
 echo 'prompt adam2' >> /etc/zsh/zshrc
+#echo 'prompt fire' >> /etc/zsh/zshrc
 clear
 echo ""
 echo -e "${BLUE}:: ${NC}Сменим командную оболочку пользователя с Bash на ZSH ?"
