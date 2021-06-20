@@ -922,7 +922,20 @@ elif [[ $x_de == 2 ]]; then
   echo ""    
   echo " Установка Xfce + Goodies for Xfce "     
   pacman -S xfce4 xfce4-goodies --noconfirm  #   # Нетребовательное к ресурсам окружение рабочего стола для UNIX-подобных операционных систем; Проект Xfce Goodies Project включает дополнительное программное обеспечение и изображения, которые связаны с рабочим столом Xfce , но не являются частью официального выпуска.
-### mv /usr/share/xsessions/xfce.desktop ~/
+## mv /usr/share/xsessions/xfce.desktop ~/
+### Если ли надо раскомментируйте нужные вам значения ####
+# echo ""  
+# echo " Установка пакетов поддержки Sound support (alsa, pulseaudio...) "
+# pacman -S alsa-utils alsa-plugins alsa-firmware alsa-lib --noconfirm  # Расширенная звуковая архитектура Linux - Утилиты; Дополнительные плагины ALSA; Бинарные файлы прошивки для программ загрузки в alsa-tools и загрузчик прошивок hotplug; Альтернативная реализация поддержки звука Linux
+# pacman -S pulseaudio --noconfirm  # Функциональный звуковой сервер общего назначения
+# pacman -S pulseaudio-alsa --noconfirm  # Конфигурация ALSA для PulseAudio 
+# pacman -S pavucontrol --noconfirm  # Регулятор громкости PulseAudio
+# pacman -S pulseaudio-bluetooth --noconfirm  # Поддержка Bluetooth для PulseAudio
+# pacman -S pulseaudio-equalizer-ladspa --noconfirm  # 15-полосный эквалайзер для PulseAudio
+# pacman -S xfce4-pulseaudio-plugin --noconfirm  # Плагин Pulseaudio для панели Xfce4 
+# pacman -S paprefs --noconfirm  # Диалог конфигурации для PulseAudio (PulseAudio Preferences - https://freedesktop.org/software/pulseaudio/paprefs/)
+# echo ""   
+# echo " Установка пакетов Поддержки звука выполнена "
   clear
   echo ""
   echo " DE (среда рабочего стола) Xfce успешно установлено "  
