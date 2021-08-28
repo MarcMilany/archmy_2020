@@ -229,13 +229,13 @@ if [[ $i_key == 1 ]]; then
   echo " Далее идёт поиск ключей... "
   pacman-key --populate archlinux  # поиск ключей
 # pacman-key --populate
-  echo " Брелок для ключей Arch Linux PGP (Репозиторий для пакета связки ключей Arch Linux) "
-  pacman -Sy --noconfirm --needed --noprogressbar --quiet archlinux-keyring  # Брелок для ключей Arch Linux PGP https://git.archlinux.org/archlinux-keyring.git/ (для hkps://hkps.pool.sks-keyservers.net)
+# echo " Брелок для ключей Arch Linux PGP (Репозиторий для пакета связки ключей Arch Linux) "
+# pacman -Sy --noconfirm --needed --noprogressbar --quiet archlinux-keyring  # Брелок для ключей Arch Linux PGP https://git.archlinux.org/archlinux-keyring.git/ (для hkps://hkps.pool.sks-keyservers.net)
   echo ""
   echo " Обновление ключей... "  
   pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
-  pacman-key --refresh-keys --keyserver hkp://pool.sks-keyservers.net  # hkps://hkps.pool.sks-keyservers.net
-  pacman-key --refresh-keys --keyserver hkps://hkps.pool.sks-keyservers.net  # hkps://hkps.pool.sks-keyservers.net 
+# pacman-key --refresh-keys --keyserver hkp://pool.sks-keyservers.net  # hkps://hkps.pool.sks-keyservers.net
+# pacman-key --refresh-keys --keyserver hkps://hkps.pool.sks-keyservers.net  # hkps://hkps.pool.sks-keyservers.net 
 ## Предлагается сделать следующие изменения в конфиге gnupg:
 ## keyserver hkps://hkps.pool.sks-keyservers.net
 ## keyserver-options ca-cert-file=/path/to/CA/sks-keyservers.netCA.pem
