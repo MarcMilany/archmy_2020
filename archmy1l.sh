@@ -134,7 +134,8 @@ sleep 1
 ################
 echo ""
 echo -e "${BLUE}:: ${NC}Install the Terminus font"  # Установим шрифт Terminus
-pacman -Sy terminus-font --noconfirm  # Моноширинный растровый шрифт (для X11 и консоли)
+pacman -S terminus-font --noconfirm  # Моноширинный растровый шрифт (для X11 и консоли)
+# pacman -Sy terminus-font --noconfirm  # Моноширинный растровый шрифт (для X11 и консоли)
 # pacman -Syy terminus-font  # Моноширинный растровый шрифт (для X11 и консоли)
 # man vconsole.conf
 echo ""
