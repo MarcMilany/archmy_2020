@@ -706,6 +706,7 @@ if [[ $t_pacstrap == 1 ]]; then
   echo ""
   echo " Установка выбранного вами, групп "
   pacstrap /mnt base base-devel nano dhcpcd netctl which inetutils  #wget vim
+# pacstrap -i /mnt base base-devel nano dhcpcd netctl which inetutils --noconfirm  
   clear
   echo ""
   echo " Установка выбранного вами, групп (base + base-devel + packages) выполнена "
