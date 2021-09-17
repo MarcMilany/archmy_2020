@@ -815,8 +815,7 @@ elif [[ $prog_cpu == 3 ]]; then
   echo -e "${BLUE}:: ${NC}Обновляем grub.cfg (Сгенерируем grub.cfg)"
   sudo grub-mkconfig -o /boot/grub/grub.cfg   # создаём конфигурационный файл
   echo ""
-  echo -e "${BLUE}:: ${NC}Воссоздайте загрузочный RAM диск (initramfs)"
-  sudo update-initramfs -u      
+  echo -e "${BLUE}:: ${NC}Воссоздайте загрузочный RAM диск (initramfs)"    
 fi
 #############
 clear
