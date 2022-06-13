@@ -629,12 +629,13 @@ do
 done
 if [[ $i_groups  == 1 ]]; then
   useradd -m -g users -G audio,games,lp,disk,network,optical,power,scanner,storage,video,rfkill,sys,wheel -s /bin/bash $username
+  usermod -a -G audio,games,lp,disk,network,optical,power,scanner,storage,video,rfkill,sys,wheel $username
+  userdbctl groups-of-user $username
   clear
   echo ""
   echo " Пользователь успешно добавлен в группы и права пользователя "
 elif [[ $i_groups  == 2 ]]; then
-#  useradd -m -g users -G adm,audio,games,lp,disk,network,optical,power,scanner,storage,video,rfkill,sys,wheel -s /bin/bash $username
-  useradd -m -g users -G adm,audio,games,lp,disk,network,optical,power,scanner,storage,video,rfkill,sys,sudo,wheel -s /bin/bash $username
+  useradd -m -g users -G adm,audio,games,lp,disk,network,optical,power,realtime,scanner,storage,video,rfkill,sys,wheel -s /bin/bash $username
   clear
   echo ""
   echo " Пользователь успешно добавлен в группы и права пользователя "
@@ -692,7 +693,6 @@ echo -e "${BLUE}:: ${NC}Устанавливаем (пакет) SUDO."
 echo -e "${CYAN}=> ${NC}Пакет sudo позволяет системному администратору предоставить определенным пользователям (или группам пользователей) возможность запускать некоторые (или все) команды в роли пользователя root или в роли другого пользователя, указываемого в командах или в аргументах."
 pacman -S --noconfirm --needed sudo  # возможность запускать некоторые команды от имени пользователя root
 # pacman -S sudo --noconfirm  # - пока присутствует в pkglist.x86_64
-usermod -a -G sudo $username
 ###
 clear
 echo ""
