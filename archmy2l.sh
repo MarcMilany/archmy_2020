@@ -726,9 +726,12 @@ if [[ $i_sudo  == 0 ]]; then
   echo ""
   echo " Добавление настройки sudo пропущено "
 elif [[ $i_sudo  == 1 ]]; then
-  sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
+# sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
+  sed -i -e "s/^#.%wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/" /etc/sudoers
   sed -i 's/# %sudo ALL=(ALL) ALL/%sudo ALL=(ALL) ALL/' /etc/sudoers
-#  sed -i 's/# $username ALL=(ALL) ALL/$username ALL=(ALL) ALL/' /etc/sudoers
+# sed -i -e "s/^#.%sudo ALL=(ALL) ALL/%sudo ALL=(ALL) ALL/" /etc/sudoers
+#  sed -i 's/# %$username ALL=(ALL) ALL/%$username ALL=(ALL) ALL/' /etc/sudoers
+  sed -i '/^%sudo ALL/ $username ALL=(ALL) ALL' /etc/sudoers
   clear
   echo ""
   echo " Sudo с запросом пароля выполнено "
