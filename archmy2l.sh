@@ -726,17 +726,19 @@ if [[ $i_sudo  == 0 ]]; then
   echo ""
   echo " Добавление настройки sudo пропущено "
 elif [[ $i_sudo  == 1 ]]; then
-  sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
-##  sed -i -e "s/^#.%wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/" /etc/sudoers
-  sed -i 's/# %sudo ALL=(ALL) ALL/%sudo ALL=(ALL) ALL/' /etc/sudoers
-# sed -i -e "s/^#.%sudo ALL=(ALL) ALL/%sudo ALL=(ALL) ALL/" /etc/sudoers
-#  sed -i 's/# %$username ALL=(ALL) ALL/%$username ALL=(ALL) ALL/' /etc/sudoers
-  sed -i '/^%sudo ALL/ alex ALL=(ALL) ALL' /etc/sudoers
+#  sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
+#  sed -i '/%wheel ALL=(ALL) ALL/s/^/#/g' /etc/sudoers  # Comment the line matching that string
+  sed -i '/%wheel ALL=(ALL) ALL/s/^#//g' /etc/sudoers  # Uncomment the line matching that string
+# echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
+#  sed -i 's/# %sudo ALL=(ALL) ALL/%sudo ALL=(ALL) ALL/' /etc/sudoers
   clear
   echo ""
   echo " Sudo с запросом пароля выполнено "
 elif [[ $i_sudo  == 2 ]]; then
-  sed -i 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+#  sed -i 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+#  sed -i '/%wheel ALL=(ALL) NOPASSWD: ALL/s/^/#/g' /etc/sudoers  # Comment the line matching that string
+  sed -i '/%wheel ALL=(ALL) NOPASSWD: ALL/s/^#//g' /etc/sudoers  # Uncomment the line matching that string
+# echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
   clear
   echo ""
   echo " Sudo nopassword (БЕЗ запроса пароля) добавлено  "
