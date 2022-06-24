@@ -665,10 +665,9 @@ if [[ $i_sudo  == 0 ]]; then
   echo " Добавление настройки sudo пропущено "
 elif [[ $i_sudo  == 1 ]]; then
 #  sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
-   sed -i 's/^# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 #  sed -i '/%wheel ALL=(ALL) ALL/s/^/#/g' /etc/sudoers  # Comment the line matching that string
 #  sed -i '/%wheel ALL=(ALL) ALL/s/^#//g' /etc/sudoers  # Uncomment the line matching that string
-#   sed -i 's/^#\s*\(%wheel\s*ALL=(ALL)\s*ALL\)/\1/' /etc/sudoers
+   sed -i 's/^#\s*\(%wheel\s*ALL=(ALL)\s*ALL\)/\1/' /etc/sudoers
 #  echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 #  sed -i 's/# %sudo ALL=(ALL) ALL/%sudo ALL=(ALL) ALL/' /etc/sudoers
   clear
