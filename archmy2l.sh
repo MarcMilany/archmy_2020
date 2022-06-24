@@ -635,7 +635,7 @@ if [[ $i_groups  == 1 ]]; then
   echo ""
   echo " Пользователь успешно добавлен в группы и права пользователя "
 elif [[ $i_groups  == 2 ]]; then
-  useradd -m -g users -G adm,audio,games,lp,disk,network,optical,power,realtime,scanner,storage,video,rfkill,sys,wheel -s /bin/bash $username
+  useradd -m -g users -G adm,audio,games,lp,disk,network,optical,power,scanner,storage,video,rfkill,sys,wheel -s /bin/bash $username
   clear
   echo ""
   echo " Пользователь успешно добавлен в группы и права пользователя "
