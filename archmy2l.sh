@@ -675,6 +675,7 @@ elif [[ $i_sudo  == 1 ]]; then
 #  sed -i '/%wheel ALL=(ALL) ALL/s/^#//' /etc/sudoers  # Uncomment to allow members of group wheel to execute any command
 # sed -i '/%wheel ALL=(ALL) ALL/s/^/#/g' /etc/sudoers  # Comment the line matching that string
 # sed -i '/%wheel ALL=(ALL) ALL/s/^#//g' /etc/sudoers  # Uncomment the line matching that string
+  sed -i '' 's/#[[:blank:]]*\(%wheel[[:blank:]]*ALL=(ALL)[[:blank:]]*ALL.*\)/\1/g' /etc/sudoers
 # sed -i 's/# %sudo ALL=(ALL) ALL/%sudo ALL=(ALL) ALL/' /etc/sudoers
 # Эта конфигурация особенно полезна для тех, кто использует терминальные мультиплексоры, такие как screen, tmux или rat poison, а также для тех, кто использует sudo из scripts / cronjobs:
 # This config is especially helpful for those using terminal multiplexers like screen, tmux, or ratpoison, and those using sudo from scripts/cronjobs:
@@ -697,6 +698,7 @@ elif [[ $i_sudo  == 2 ]]; then
   echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 #  sed -i 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
 #  sed -i '/%wheel ALL=(ALL) NOPASSWD: ALL/s/^#//' /etc/sudoers
+#  sed -i '/NOPASSWD/!s/# %wheel/%wheel/g' ​​/etc/sudoers
 # sed -i '/%wheel ALL=(ALL) NOPASSWD: ALL/s/^/#/g' /etc/sudoers  # Comment the line matching that string
 # sed -i '/%wheel ALL=(ALL) NOPASSWD: ALL/s/^#//g' /etc/sudoers  # Uncomment the line matching that string
 # sed -i 's/^#\s*\(%wheel\s*ALL=(ALL)\s*NOPASSWD:\s*ALL\)/\1/' /etc/sudoers
