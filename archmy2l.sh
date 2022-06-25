@@ -665,19 +665,21 @@ if [[ $i_sudo  == 0 ]]; then
   echo " Добавление настройки sudo пропущено "
 elif [[ $i_sudo  == 1 ]]; then
 #  sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
+   sed -i '/%wheel ALL=(ALL) ALL/s/^#//' /etc/sudoers
 # sed -i '/%wheel ALL=(ALL) ALL/s/^/#/g' /etc/sudoers  # Comment the line matching that string
 # sed -i '/%wheel ALL=(ALL) ALL/s/^#//g' /etc/sudoers  # Uncomment the line matching that string
-   echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
+#   echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 #  sed -i 's/# %sudo ALL=(ALL) ALL/%sudo ALL=(ALL) ALL/' /etc/sudoers
   clear
   echo ""
   echo " Sudo с запросом пароля выполнено "
 elif [[ $i_sudo  == 2 ]]; then
 #  sed -i 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+   sed -i '/%wheel ALL=(ALL) NOPASSWD: ALL/s/^#//' /etc/sudoers
 # sed -i '/%wheel ALL=(ALL) NOPASSWD: ALL/s/^/#/g' /etc/sudoers  # Comment the line matching that string
 # sed -i '/%wheel ALL=(ALL) NOPASSWD: ALL/s/^#//g' /etc/sudoers  # Uncomment the line matching that string
 # sed -i 's/^#\s*\(%wheel\s*ALL=(ALL)\s*NOPASSWD:\s*ALL\)/\1/' /etc/sudoers
-  echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+#  echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
   clear
   echo ""
   echo " Sudo nopassword (БЕЗ запроса пароля) добавлено  "
@@ -1804,7 +1806,8 @@ elif [[ $graphic_aur == 1 ]]; then
   chown -R $username:users /home/$username/pamac-aur
   chown -R $username:users /home/$username/pamac-aur/PKGBUILD
   cd /home/$username/pamac-aur
-  sudo -u $username  makepkg -si --noconfirm
+#  sudo -u $username  makepkg -si --noconfirm
+   sudo -u $username  makepkg -fsri --noconfirm
 # makepkg --noconfirm --needed -sic
   rm -Rf /home/$username/pamac-aur
   clear
