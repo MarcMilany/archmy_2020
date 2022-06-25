@@ -893,9 +893,9 @@ if [[ $int == 1 ]]; then
   echo 'Установка продолжится в ARCH-LINUX chroot'
   echo ""
 # pacman -S --noconfirm --needed --noprogressbar --quiet curl # Утилита и библиотека для поиска URL
-#  arch-chroot /mnt /bin/bash sh -c "$(curl -fsSL git.io/archmy2l)"
-  arch-chroot /mnt "sh -c \"$(curl -fsSL git.io/archmy2l)\""
-# arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"  # sh вызывает программу sh как интерпретатор и флаг -c означает выполнение следующей команды, интерпретируемой этой программой (выполнить команду специально с этой оболочкой вместо bash)
+#  arch-chroot /mnt /bin/bash sh -c "$(curl -fsSL git.io/archmy2l)"  # Проверить команду ...
+#  arch-chroot /mnt "sh -c \"$(curl -fsSL git.io/archmy2l)\""  # Проверить команду ...
+  arch-chroot /mnt sh -c "$(curl -fsSL git.io/archmy2l)"  # sh вызывает программу sh как интерпретатор и флаг -c означает выполнение следующей команды, интерпретируемой этой программой (выполнить команду специально с этой оболочкой вместо bash)
 ###  curl -s "http://get.sdkman.io" | bash
 ### \ curl -sSL https://get.rvm.io | bash --debug
 ### curl -sSL https://get.rvm.io | bash -s stable --rails  # Проблема устранена командой
