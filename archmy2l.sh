@@ -740,7 +740,10 @@ if [[ $i_multilib  == 0 ]]; then
   echo ""
   echo " Добавление Multilib репозитория пропущено "
 elif [[ $i_multilib  == 1 ]]; then
+  echo ""
+  echo " Резервное копирование исходного файла /etc/pacman.conf "
   cp /etc/pacman.conf /etc/pacman.conf.bkp
+# cp -v /etc/pacman.conf /etc/pacman.conf.bkp  # -v или --verbose -Выводить информацию о каждом файле, который обрабатывает команда cp.
   sed -i 's/#Color/Color/' /etc/pacman.conf
 # sed -i '/#Color/ s/^#//' /etc/pacman.conf
   sed -i '/^Co/ aILoveCandy' /etc/pacman.conf
