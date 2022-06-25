@@ -685,7 +685,6 @@ elif [[ $i_sudo  == 1 ]]; then
       echo 'Defaults passprompt="[sudo] password for %u: "'
       echo 'Defaults lecture=never'
     } >>/etc/sudoers
-
   clear
   echo ""
   echo " Sudo с запросом пароля выполнено "
