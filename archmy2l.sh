@@ -642,7 +642,7 @@ echo " 2 - Пользователям (членам) группы wheel дост
 echo -e "${RED}==> ${BOLD}Выбрав '2' (раскомментировав) данную опцию, особых требований к безопасности нет, но может есть какие-то очень негативные моменты в этом?... ${NC}"
 echo " 3-(0) - Добавление настроек sudo пропущено "
 echo " Далее все настройки в файле /etc/sudoers пользователь произведёт сам(а) "
-echo " Например: под строкой root ALL=(ALL) ALL  - пропишет -  $username ALL=(ALL) ALL "
+echo " Например: под строкой root ALL=(ALL:ALL) ALL  - пропишет -  $username ALL=(ALL) ALL "
 echo -e "${YELLOW}==> ${NC}Вы можете пропустить этот шаг, если не уверены в правильности выбора"
 echo " Будьте внимательны! В любой ситуации выбор всегда остаётся за вами."
 echo -e "${CYAN}:: ${NC}На данном этапе порекомендую вариант "1" (sudo С запросом пароля) "
@@ -667,7 +667,7 @@ elif [[ $i_sudo  == 1 ]]; then
   cp -v /etc/sudoers /etc/sudoers.original
   chmod 0440 /etc/sudoers  # 0440 даст владельцу (root) и группе права на чтение
 # chmod 0700 /etc/sudoers  # 0700 даст владельцу (root) права на чтение, запись и выполнение
-  sed -i "'/^ro/ $username ALL=(ALL:ALL) ALL'" /etc/sudoers
+  sed -i "'/^ro/ $username ALL=(ALL) ALL'" /etc/sudoers
   echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 #  sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 #  sed -i '/%wheel ALL=(ALL) ALL/s/^#//' /etc/sudoers  # Uncomment to allow members of group wheel to execute any command
