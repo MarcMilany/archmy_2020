@@ -697,7 +697,10 @@ echo " Права доступа к файлам Sudoers "
     echo 'Defaults passprompt="[sudo] password for %u: "'
     echo 'Defaults lecture=never'
   } >>/etc/sudoers
-  echo -e "%wheel ALL=(ALL) ALL\nDefaults rootpw" > /etc/sudoers.d/99_wheel
+### Второй способ:
+#   echo -e "${RED}Adding "${username}" to sudoers.${NC}\n"
+#   echo -e "%wheel ALL=(ALL) ALL\nDefaults rootpw" > /etc/sudoers.d/99_wheel
+#   echo -e "${RED}"${username}" is now part of the group ${WHITE}%wheel.${NC}\n"
   clear
   echo ""
   echo " Sudo с запросом пароля выполнено "
@@ -737,10 +740,13 @@ if [[ $i_multilib  == 0 ]]; then
   echo ""
   echo " Добавление Multilib репозитория пропущено "
 elif [[ $i_multilib  == 1 ]]; then
+  cp /etc/pacman.conf /etc/pacman.conf.bkp
   sed -i 's/#Color/Color/' /etc/pacman.conf
 # sed -i '/#Color/ s/^#//' /etc/pacman.conf
   sed -i '/^Co/ aILoveCandy' /etc/pacman.conf
   sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
+## Add AUR repository in the end of /etc/pacman.conf
+  echo -e '\n[archlinuxfr]\nSigLevel = Never\nServer = http://repo.archlinux.fr/$arch' >> /etc/pacman.conf
   echo ""
   echo " Multilib репозиторий добавлен (раскомментирован) "
 fi
