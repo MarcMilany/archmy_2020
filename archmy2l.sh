@@ -669,6 +669,7 @@ elif [[ $i_sudo  == 1 ]]; then
 # chmod 0700 /etc/sudoers  # 0700 даст владельцу (root) права на чтение, запись и выполнение
   sed -i "'/^ro/ $username ALL=(ALL) ALL'" /etc/sudoers
   echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
+  echo -e "%wheel ALL=(ALL) ALL\nDefaults rootpw" > /etc/sudoers.d/99_wheel
 #  sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 #  sed -i '/%wheel ALL=(ALL) ALL/s/^#//' /etc/sudoers  # Uncomment to allow members of group wheel to execute any command
 # sed -i '/%wheel ALL=(ALL) ALL/s/^/#/g' /etc/sudoers  # Comment the line matching that string
