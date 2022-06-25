@@ -639,9 +639,15 @@ if [[ $zerkala == 1 ]]; then
   echo " Проверим присутствует ли пакет (reflector) "
   pacman -Sy --noconfirm --noprogressbar --quiet reflector  # Модуль и скрипт Python 3 для получения и фильтрации последнего списка зеркал Pacman  - пока присутствует в pkglist.x86_64
   pacman -S --noconfirm --needed --noprogressbar --quiet reflector
+# Создайте резервную копию и замените текущий файл зеркального списка
+  echo ""
+  echo " Резервное копирование исходного списка зеркальных отображений..."
+  mv -i /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.orig
   echo ""
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
   reflector --verbose --country 'Russia' -l 9 -p https -p http -n 9 --save /etc/pacman.d/mirrorlist --sort rate
+# Разрешить глобальный доступ на чтение (требуется для выполнения некорневого yaourt)
+  chmod +r /etc/pacman.d/mirrorlist
 elif [[ $zerkala == 2 ]]; then
   echo ""
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
