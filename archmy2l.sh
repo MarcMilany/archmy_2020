@@ -669,7 +669,6 @@ elif [[ $i_sudo  == 1 ]]; then
 #  sed -i '/%wheel ALL=(ALL) ALL/s/^#//' /etc/sudoers
 # sed -i '/%wheel ALL=(ALL) ALL/s/^/#/g' /etc/sudoers  # Comment the line matching that string
 # sed -i '/%wheel ALL=(ALL) ALL/s/^#//g' /etc/sudoers  # Uncomment the line matching that string
-
 #  sed -i 's/# %sudo ALL=(ALL) ALL/%sudo ALL=(ALL) ALL/' /etc/sudoers
   clear
   echo ""
