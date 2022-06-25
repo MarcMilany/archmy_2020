@@ -665,12 +665,27 @@ if [[ $i_sudo  == 0 ]]; then
   echo " Добавление настройки sudo пропущено "
 elif [[ $i_sudo  == 1 ]]; then
   cp -v /etc/sudoers /etc/sudoers.orig
-  echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
+#  echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 #  sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
-#  sed -i '/%wheel ALL=(ALL) ALL/s/^#//' /etc/sudoers  # Uncomment to allow members of group wheel to execute any command
+  sed -i '/%wheel ALL=(ALL) ALL/s/^#//' /etc/sudoers  # Uncomment to allow members of group wheel to execute any command
 # sed -i '/%wheel ALL=(ALL) ALL/s/^/#/g' /etc/sudoers  # Comment the line matching that string
 # sed -i '/%wheel ALL=(ALL) ALL/s/^#//g' /etc/sudoers  # Uncomment the line matching that string
 # sed -i 's/# %sudo ALL=(ALL) ALL/%sudo ALL=(ALL) ALL/' /etc/sudoers
+# Эта конфигурация особенно полезна для тех, кто использует терминальные мультиплексоры, такие как screen, tmux или rat poison, а также для тех, кто использует sudo из scripts / cronjobs:
+# This config is especially helpful for those using terminal multiplexers like screen, tmux, or ratpoison, and those using sudo from scripts/cronjobs:
+    {
+      echo ""
+      echo 'Defaults !requiretty, !tty_tickets, !umask'
+      echo 'Defaults visiblepw, path_info, insults, lecture=always'
+      echo 'Defaults loglinelen=0, logfile =/var/log/sudo.log, log_year, log_host, syslog=auth'
+      echo 'Defaults passwd_tries=3, passwd_timeout=1'
+      echo 'Defaults env_reset, always_set_home, set_home, set_logname'
+      echo 'Defaults !env_editor, editor="/usr/bin/vim:/usr/bin/vi:/usr/bin/nano"'
+      echo 'Defaults timestamp_timeout=15'
+      echo 'Defaults passprompt="[sudo] password for %u: "'
+      echo 'Defaults lecture=never'
+    } >>/etc/sudoers
+
   clear
   echo ""
   echo " Sudo с запросом пароля выполнено "
