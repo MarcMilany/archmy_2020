@@ -664,7 +664,7 @@ if [[ $i_sudo  == 0 ]]; then
   echo ""
   echo " Добавление настройки sudo пропущено "
 elif [[ $i_sudo  == 1 ]]; then
-  cp -v /etc/sudoers /etc/sudoers.orig
+  cp -v /etc/sudoers /etc/sudoers.original
 #  echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 #  sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
   sed -i '/%wheel ALL=(ALL) ALL/s/^#//' /etc/sudoers  # Uncomment to allow members of group wheel to execute any command
