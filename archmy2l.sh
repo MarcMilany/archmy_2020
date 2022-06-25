@@ -664,7 +664,7 @@ if [[ $i_sudo  == 0 ]]; then
   echo ""
   echo " Добавление настройки sudo пропущено "
 elif [[ $i_sudo  == 1 ]]; then
-  cp -v /etc/sudoers /etc/sudoers.original
+  cp -v /etc/sudoers /etc/sudoers.orig
   chmod 0440 /etc/sudoers  # 0440 даст владельцу (root) и группе права на чтение
 # chmod 0700 /etc/sudoers  # 0700 даст владельцу (root) права на чтение, запись и выполнение
 # chmod +w /etc/sudoers    # Если запись в файл не разрешена, то надо выставить дополнительное право
