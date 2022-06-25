@@ -1806,8 +1806,8 @@ elif [[ $graphic_aur == 1 ]]; then
   chown -R $username:users /home/$username/pamac-aur
   chown -R $username:users /home/$username/pamac-aur/PKGBUILD
   cd /home/$username/pamac-aur
-#  sudo -u $username  makepkg -si --noconfirm
-  sudo -u $username  makepkg -fsri --noconfirm
+  sudo -u $username  makepkg -si --noconfirm
+#  sudo -u $username  makepkg -fsri --noconfirm
 # makepkg --noconfirm --needed -sic
   rm -Rf /home/$username/pamac-aur
   clear
