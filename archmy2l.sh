@@ -667,7 +667,7 @@ elif [[ $i_sudo  == 1 ]]; then
   cp -v /etc/sudoers /etc/sudoers.original
   chmod 0440 /etc/sudoers  # 0440 даст владельцу (root) и группе права на чтение
 # chmod 0700 /etc/sudoers  # 0700 даст владельцу (root) права на чтение, запись и выполнение
-  chmod +w /etc/sudoers  # Если запись в файл не разрешена, то надо выставить дополнительное право
+# chmod +w /etc/sudoers    # Если запись в файл не разрешена, то надо выставить дополнительное право
   sed -i "'/^ro/ $username ALL=(ALL) ALL'" /etc/sudoers
 #  echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
   echo -e "%wheel ALL=(ALL) ALL\nDefaults rootpw" > /etc/sudoers.d/99_wheel
@@ -675,8 +675,8 @@ elif [[ $i_sudo  == 1 ]]; then
 #  sed -i '/%wheel ALL=(ALL) ALL/s/^#//' /etc/sudoers  # Uncomment to allow members of group wheel to execute any command
 # sed -i '/%wheel ALL=(ALL) ALL/s/^/#/g' /etc/sudoers  # Comment the line matching that string
 # sed -i '/%wheel ALL=(ALL) ALL/s/^#//g' /etc/sudoers  # Uncomment the line matching that string
-  sed -i '' 's/#[[:blank:]]*\(%wheel[[:blank:]]*ALL=(ALL)[[:blank:]]*ALL.*\)/\1/g' /etc/sudoers
-# sed -i '' 's/#\(.*%wheel.*ALL=(ALL).*ALL.*\)/%wheel ALL=(ALL) ALL/' /etc/sudoers
+#  sed -i '' 's/#[[:blank:]]*\(%wheel[[:blank:]]*ALL=(ALL)[[:blank:]]*ALL.*\)/\1/g' /etc/sudoers
+  sed -i '' 's/#\(.*%wheel.*ALL=(ALL).*ALL.*\)/%wheel ALL=(ALL) ALL/' /etc/sudoers
 # sed -i 's/# %sudo ALL=(ALL) ALL/%sudo ALL=(ALL) ALL/' /etc/sudoers
 # sed -i '' 's/#\(.*%sudo.*ALL=(ALL).*ALL.*\)/%sudo ALL=(ALL) ALL/' /etc/sudoers
 # Эта конфигурация особенно полезна для тех, кто использует терминальные мультиплексоры, такие как screen, tmux или rat poison, а также для тех, кто использует sudo из scripts / cronjobs:
