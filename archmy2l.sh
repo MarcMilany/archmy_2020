@@ -674,6 +674,7 @@ elif [[ $i_sudo  == 1 ]]; then
   } >>/etc/sudoers
 #  echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 #  sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
+#  sed -i '/%wheel ALL=(ALL) ALL/s/^#//' /etc/sudoers  # Раскомментируйте, чтобы разрешить членам группы wheel выполнять любую команду
 # sed -i 's/# %sudo ALL=(ALL) ALL/%sudo ALL=(ALL) ALL/' /etc/sudoers
 #####
 # Эта конфигурация особенно полезна для тех, кто использует терминальные мультиплексоры, такие как screen, tmux или rat poison, а также для тех, кто использует sudo из scripts / cronjobs:
