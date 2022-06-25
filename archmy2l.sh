@@ -701,6 +701,11 @@ echo " Права доступа к файлам Sudoers "
   clear
   echo ""
   echo " Sudo с запросом пароля выполнено "
+  ###
+  echo ""
+  echo -e "${BLUE}:: ${NC}Просмотреть содержимое файла Sudoers"
+  cat /etc/sudoers  # cat читает данные из файла или стандартного ввода и выводит их на экран
+  sleep 02
 elif [[ $i_sudo  == 2 ]]; then
   echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 # sed -i 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
