@@ -664,11 +664,11 @@ if [[ $i_sudo  == 0 ]]; then
   echo ""
   echo " Добавление настройки sudo пропущено "
 elif [[ $i_sudo  == 1 ]]; then
-  cp -v /etc/sudoers /etc/sudoers.orig
+  cp -v /etc/sudoers /etc/sudoers.orig  # -v или --verbose -Выводить информацию о каждом файле, который обрабатывает команда cp.
   chmod 0440 /etc/sudoers  # 0440 даст владельцу (root) и группе права на чтение
 # chmod 0700 /etc/sudoers  # 0700 даст владельцу (root) права на чтение, запись и выполнение
 # chmod +w /etc/sudoers    # Если запись в файл не разрешена, то надо выставить дополнительное право
-  sed -i "'/^ro/ $username ALL=(ALL) ALL'" /etc/sudoers
+#  sed -i "'/^ro/ $username ALL=(ALL) ALL'" /etc/sudoers
 #  echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
   echo -e "%wheel ALL=(ALL) ALL\nDefaults rootpw" > /etc/sudoers.d/99_wheel
 #  sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
