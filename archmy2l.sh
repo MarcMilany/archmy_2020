@@ -664,10 +664,14 @@ if [[ $i_sudo  == 0 ]]; then
   echo ""
   echo " Добавление настройки sudo пропущено "
 elif [[ $i_sudo  == 1 ]]; then
+
   cp -v /etc/sudoers /etc/sudoers.original  # -v или --verbose -Выводить информацию о каждом файле, который обрабатывает команда cp.
+
+# chown -c root:root /etc/sudoers  # Команда chown используется для изменения владельца и группы владельцев файла
+# chmod -c 0440 /etc/sudoers
   chmod 0440 /etc/sudoers  # 0440 даст владельцу (root) и группе права на чтение
 # chmod 0700 /etc/sudoers  # 0700 даст владельцу (root) права на чтение, запись и выполнение
-  chmod +w /etc/sudoers    # Если запись в файл не разрешена, то надо выставить дополнительное право
+# chmod +w /etc/sudoers    # Если запись в файл не разрешена, то надо выставить дополнительное право
   {
     echo ""
     echo '%wheel ALL=(ALL) ALL'
@@ -691,9 +695,11 @@ elif [[ $i_sudo  == 1 ]]; then
     echo 'Defaults passprompt="[sudo] password for %u: "'
     echo 'Defaults lecture=never'
   } >>/etc/sudoers
+  echo -e "%wheel ALL=(ALL) ALL\nDefaults rootpw" > /etc/sudoers.d/99_wheel
   clear
   echo ""
   echo " Sudo с запросом пароля выполнено "
+#cat /etc/sudoers
 elif [[ $i_sudo  == 2 ]]; then
   echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 # sed -i 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
@@ -1558,6 +1564,9 @@ nameserver 213.234.192.7
 
 EOF
 ####################
+
+
+
 clear
 echo -e "${MAGENTA}
   <<< Создание полного набора пользовательских каталогов по умолчанию, в пределах "HOME" каталога >>> ${NC}"
