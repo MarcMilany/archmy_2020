@@ -701,7 +701,6 @@ echo " Права доступа к файлам Sudoers "
   clear
   echo ""
   echo " Sudo с запросом пароля выполнено "
-#cat /etc/sudoers
 elif [[ $i_sudo  == 2 ]]; then
   echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 # sed -i 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
