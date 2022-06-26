@@ -792,7 +792,7 @@ echo " Резервное копирование исходного файла /
 cp /etc/nanorc /etc/nanorc.backup
 # cp -v /etc/nanorc /etc/nanorc.backup  # -v или --verbose -Выводить информацию о каждом файле, который обрабатывает команда cp.
 echo " Активируем цветовой режим, предустановленный в файлах "
-cat /usr/share/nano/*.nanorc
+# cat /usr/share/nano/*.nanorc
   {
     echo ""
     echo 'include "/usr/share/nano/*.nanorc"'
