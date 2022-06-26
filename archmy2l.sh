@@ -757,10 +757,6 @@ elif [[ $i_multilib  == 1 ]]; then
   cp /etc/pacman.conf /etc/pacman.conf.backup  # Всегда, сначала сделайте резервную копию вашего pacman.config файла
 # cp -v /etc/pacman.conf /etc/pacman.conf.bkp  # -v или --verbose -Выводить информацию о каждом файле, который обрабатывает команда cp.
   echo " Раскрашивание вывода pacman и pacman easter egg (меняет индикатор выполнения на Pac-Man) "
-### Параллельная загрузка pacman (ParallelDownloads = ...)
-### Указывает количество одновременных потоков загрузки. Значение должно быть положительным целым числом. Если этот параметр конфигурации не установлен, то используется только один поток загрузки (т.е. загрузки происходят последовательно).
-# ParallelDownloads = 5
-  sed -i 's/#ParallelDownloads/ParallelDownloads/g' /etc/pacman.conf
 ### Color - Автоматически включать цвета только тогда, когда вывод pacman на tty.
   sed -i 's/#Color/Color/' /etc/pacman.conf  # Чтобы раскрасить вывод pacman, раскомментируем в /etc/pacman.conf строчку Color
 # sed -i '/#Color/ s/^#//' /etc/pacman.conf
@@ -773,6 +769,10 @@ elif [[ $i_multilib  == 1 ]]; then
 ## sed -i 's/#Color/Color/g' /etc/pacman.conf  # pacman colors
 ### VerbosePkgLists - Отображает имя, версию и размер целевых пакетов в виде таблицы для операций обновления, синхронизации и удаления.
   sed -i 's/#VerbosePkgLists/VerbosePkgLists\n/g' /etc/pacman.conf
+### Параллельная загрузка pacman (ParallelDownloads = ...)
+### Указывает количество одновременных потоков загрузки. Значение должно быть положительным целым числом. Если этот параметр конфигурации не установлен, то используется только один поток загрузки (т.е. загрузки происходят последовательно).
+# ParallelDownloads = 5
+  sed -i 's/#ParallelDownloads/ParallelDownloads/g' /etc/pacman.conf
 ### MultiLib (Include= /path/to/config/file) - Этот файл может включать репозитории или общие параметры конфигурации.
   sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
   echo ""
