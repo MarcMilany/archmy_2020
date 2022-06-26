@@ -724,6 +724,11 @@ echo " Права доступа к файлам Sudoers "
 elif [[ $i_sudo  == 2 ]]; then
   echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 # sed -i 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+###
+### Второй способ:  --(Но в этом случае запроса пароля USER - НЕ Будет)!!!
+#   echo -e "${RED}Добавление "${username}" в sudoers.${NC}\n"
+#   echo -e "%wheel ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/g_wheel
+#   echo -e "${RED}"${username}" теперь является частью группы ${WHITE}%wheel.${NC}\n"
   clear
   echo ""
   echo " Sudo nopassword (БЕЗ запроса пароля) добавлено  "
