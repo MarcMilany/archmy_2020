@@ -708,7 +708,7 @@ echo " Права доступа к файлам Sudoers "
     echo '# Cmnd_Alias SU = /bin/su'
     echo '# dreamer ALL = (ALL) NOPASSWD: ALL,!SU,SHELLS,!SSH'
   } >>/etc/sudoers
-
+###
 ### Второй способ:  --(Но в этом случае при запросе пароля USER - вводим пароль ROOT)!!!
 #   echo -e "${RED}Adding "${username}" to sudoers.${NC}\n"
 #   echo -e "%wheel ALL=(ALL) ALL\nDefaults rootpw" > /etc/sudoers.d/99_wheel
