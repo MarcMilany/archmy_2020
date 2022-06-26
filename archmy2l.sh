@@ -710,9 +710,9 @@ echo " Права доступа к файлам Sudoers "
   } >>/etc/sudoers
 ###
 ### Второй способ:  --(Но в этом случае при запросе пароля USER - вводим пароль ROOT)!!!
-#   echo -e "${RED}Adding "${username}" to sudoers.${NC}\n"
+#   echo -e "${RED}Добавление "${username}" в sudoers.${NC}\n"
 #   echo -e "%wheel ALL=(ALL) ALL\nDefaults rootpw" > /etc/sudoers.d/99_wheel
-#   echo -e "${RED}"${username}" is now part of the group ${WHITE}%wheel.${NC}\n"
+#   echo -e "${RED}"${username}" теперь является частью группы ${WHITE}%wheel.${NC}\n"
   clear
   echo ""
   echo " Sudo с запросом пароля выполнено "
