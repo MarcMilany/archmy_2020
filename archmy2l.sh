@@ -757,23 +757,32 @@ elif [[ $i_multilib  == 1 ]]; then
   cp /etc/pacman.conf /etc/pacman.conf.backup  # Всегда, сначала сделайте резервную копию вашего pacman.config файла
 # cp -v /etc/pacman.conf /etc/pacman.conf.bkp  # -v или --verbose -Выводить информацию о каждом файле, который обрабатывает команда cp.
   echo " Раскрашивание вывода pacman и pacman easter egg (меняет индикатор выполнения на Pac-Man) "
-# Color
+### Параллельная загрузка pacman (ParallelDownloads = ...)
+### Указывает количество одновременных потоков загрузки. Значение должно быть положительным целым числом. Если этот параметр конфигурации не установлен, то используется только один поток загрузки (т.е. загрузки происходят последовательно).
+# ParallelDownloads = 5
+  sed -i 's/#ParallelDownloads/ParallelDownloads/g' /etc/pacman.conf
+### Color - Автоматически включать цвета только тогда, когда вывод pacman на tty.
   sed -i 's/#Color/Color/' /etc/pacman.conf  # Чтобы раскрасить вывод pacman, раскомментируем в /etc/pacman.conf строчку Color
 # sed -i '/#Color/ s/^#//' /etc/pacman.conf
-# ILoveCandy
+### ILoveCandy - Потому что Pac-Man любит конфеты.
   sed -i '/^Co/ aILoveCandy' /etc/pacman.conf  # pacman easter egg (меняет индикатор выполнения на Pac-Man)
 # sed -i 's/VerbosePkgLists/VerbosePkgLists\nILoveCandy/g' /etc/pacman.conf
 ### Второй способ:  --(Но)!!!
 ## sed -i 's/VerbosePkgLists/VerbosePkgLists\nILoveCandy/g' /etc/pacman.conf
 ## sudo sed -i '/^\#VerbosePkgLists/aILoveCandy' /etc/pacman.conf  # pacman progress indicator
 ## sed -i 's/#Color/Color/g' /etc/pacman.conf  # pacman colors
-# MultiLib (Include)
+### VerbosePkgLists - Отображает имя, версию и размер целевых пакетов в виде таблицы для операций обновления, синхронизации и удаления.
+  sed -i 's/#VerbosePkgLists/VerbosePkgLists\n/g' /etc/pacman.conf
+
+
+### MultiLib (Include)
   sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
   echo ""
   echo " Multilib репозиторий добавлен (раскомментирован) "
 echo -e "${RED}:: Включение репозитория AUR в: ${WHITE}/etc/pacman.conf${NC}\n"
   echo -e '\n[archlinuxfr]\nSigLevel = Never\nServer = http://repo.archlinux.fr/$arch' >> /etc/pacman.conf
 echo -e "${WHITE} Добавлен репозиторий AUR.${NC}\n"
+
 fi
 ###
 echo -e "${CYAN}:: ${BOLD}Включим подсветку синтаксиса в Nano (/etc/nanorc для общесистемных настроек). ${NC}"
@@ -781,9 +790,10 @@ echo " Резервное копирование исходного файла /
 cp /etc/nanorc /etc/nanorc.backup
 echo " Активируем цветовой режим, предустановленный в файлах "
 cat /usr/share/nano/*.nanorc
-
-
-
+  {
+    echo ""
+    echo 'include "/usr/share/nano/*.nanorc"'
+  } >>/etc/nanorc
 ###
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
