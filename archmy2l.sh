@@ -1899,6 +1899,19 @@ if [[ $graphic_aur == 0 ]]; then
 elif [[ $graphic_aur == 1 ]]; then
   echo ""
   echo " Установка Графического менеджера Pacman gui (pamac-aur) "
+##### libpamac-aur ######
+  cd /home/$username
+  git clone https://aur.archlinux.org/libpamac-aur.git
+  chown -R $username:users /home/$username/libpamac-aur
+  chown -R $username:users /home/$username/libpamac-aur/PKGBUILD
+  cd /home/$username/libpamac-aur
+  sudo -u $username  makepkg -si --noconfirm
+#  sudo -u $username  makepkg -fsri --noconfirm
+# makepkg --noconfirm --needed -sic
+  rm -Rf /home/$username/libpamac-aur
+##### appstream-glib ######
+##### archlinux-appstream-data ######
+##### libhandy ######
 ##### pamac-aur ######
   cd /home/$username
   git clone https://aur.archlinux.org/pamac-aur.git
