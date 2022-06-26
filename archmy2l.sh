@@ -782,7 +782,7 @@ elif [[ $i_multilib  == 1 ]]; then
   sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
   echo ""
   echo " Multilib репозиторий добавлен (раскомментирован) "
-### Репозиторий ArchLinuxFR — это репозиторий, поддерживаемый людьми, которые используют ArchLinuxFR (все они на французском языке). Большинство людей, которых я видел, добавляют его для yaourt, установщика AUR. https://github.com/archlinuxfr
+### Репозиторий ArchLinuxFR — это репозиторий, поддерживаемый людьми, которые используют ArchLinuxFR (все они на французском языке). Большинство людей, которых я видел, добавляют его для yaourt, установщика AUR. https://github.com/archlinuxfr ; https://afur.archlinux.fr/
 echo -e "${RED}:: Включение репозитория ${BOLD}[archlinuxfr] AUR в: /etc/pacman.conf${NC}\n"
   echo -e '\n[archlinuxfr]\nSigLevel = Never\nServer = http://repo.archlinux.fr/$arch' >> /etc/pacman.conf
 ### Второй способ:
