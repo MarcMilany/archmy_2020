@@ -1899,6 +1899,12 @@ if [[ $graphic_aur == 0 ]]; then
 elif [[ $graphic_aur == 1 ]]; then
   echo ""
   echo " Установка Графического менеджера Pacman gui (pamac-aur) "
+##### appstream-glib ######
+  pacman -S appstream-glib --noconfirm  # Объекты и методы для чтения и записи метаданных AppStream
+##### archlinux-appstream-data ######
+  pacman -S archlinux-appstream-data --noconfirm  # База данных приложений Arch Linux для центров программного обеспечения на основе AppStream
+##### libhandy ######
+  pacman -S libhandy --noconfirm  # Библиотека, полная виджетов GTK+ для мобильных телефонов
 ##### libpamac-aur ######
   cd /home/$username
   git clone https://aur.archlinux.org/libpamac-aur.git
@@ -1909,9 +1915,6 @@ elif [[ $graphic_aur == 1 ]]; then
 #  sudo -u $username  makepkg -fsri --noconfirm
 # makepkg --noconfirm --needed -sic
   rm -Rf /home/$username/libpamac-aur
-##### appstream-glib ######
-##### archlinux-appstream-data ######
-##### libhandy ######
 ##### pamac-aur ######
   cd /home/$username
   git clone https://aur.archlinux.org/pamac-aur.git
