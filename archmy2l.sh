@@ -756,10 +756,13 @@ elif [[ $i_multilib  == 1 ]]; then
   echo " Резервное копирование исходного файла /etc/pacman.conf "
   cp /etc/pacman.conf /etc/pacman.conf.backup  # Всегда, сначала сделайте резервную копию вашего pacman.config файла
 # cp -v /etc/pacman.conf /etc/pacman.conf.bkp  # -v или --verbose -Выводить информацию о каждом файле, который обрабатывает команда cp.
-  echo " Резервное копирование исходного файла /etc/pacman.conf "
+  echo " Раскрашивание вывода pacman и pacman easter egg (меняет индикатор выполнения на Pac-Man) "
+# Color
   sed -i 's/#Color/Color/' /etc/pacman.conf  # Чтобы раскрасить вывод pacman, раскомментируем в /etc/pacman.conf строчку Color
 # sed -i '/#Color/ s/^#//' /etc/pacman.conf
-  sed -i '/^Co/ aILoveCandy' /etc/pacman.conf  #
+# ILoveCandy
+  sed -i '/^Co/ aILoveCandy' /etc/pacman.conf  # pacman easter egg (меняет индикатор выполнения на Pac-Man)
+# sed -i 's/VerbosePkgLists/VerbosePkgLists\nILoveCandy/g' /etc/pacman.conf
   sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 ### Второй способ:  --(Но)!!!
 ## sed -i 's/VerbosePkgLists/VerbosePkgLists\nILoveCandy/g' /etc/pacman.conf
@@ -768,15 +771,8 @@ elif [[ $i_multilib  == 1 ]]; then
   echo ""
   echo " Multilib репозиторий добавлен (раскомментирован) "
 echo -e "${RED}:: Включение репозитория AUR в: ${WHITE}/etc/pacman.conf${NC}\n"
-  echo -e '\n[archlinuxfr]\nSigLevel = Never\nServer = http://repo.archlinux.fr/$arch' >> /etc/pacman.conf  # # Add AUR repository in the end of /etc/pacman.conf
-### Второй способ:  --(Но)!!!
-cat <<EOF >> /etc/pacman.conf
-
-[archlinuxfr]
-SigLevel = Never
-Server = http://repo.archlinux.fr/\$arch
-EOF
-echo -e "${WHITE}Добавлен репозиторий AUR.${NC}\n"
+  echo -e '\n[archlinuxfr]\nSigLevel = Never\nServer = http://repo.archlinux.fr/$arch' >> /etc/pacman.conf
+echo -e "${WHITE} Добавлен репозиторий AUR.${NC}\n"
 fi
 ###
 
