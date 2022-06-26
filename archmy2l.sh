@@ -782,9 +782,23 @@ elif [[ $i_multilib  == 1 ]]; then
   sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
   echo ""
   echo " Multilib репозиторий добавлен (раскомментирован) "
-echo -e "${RED}:: Включение репозитория AUR в: ${WHITE}/etc/pacman.conf${NC}\n"
+echo -e "${RED}:: Включение репозитория AUR ${BOLD}в: /etc/pacman.conf${NC}\n"
   echo -e '\n[archlinuxfr]\nSigLevel = Never\nServer = http://repo.archlinux.fr/$arch' >> /etc/pacman.conf
-echo -e "${WHITE} Добавлен репозиторий AUR.${NC}\n"
+### Второй способ:
+  {
+    echo ""
+    echo '# [archlinuxfr]'
+    echo '# SigLevel = Never'
+    echo '# Server = http://repo.archlinux.fr/$arch'
+  } >>/etc/pacman.conf
+### Или так:
+# echo <<EOF
+# [archlinuxfr]
+# SigLevel = Never
+# Server = http://repo.archlinux.fr/$arch
+# EOF >> /etc/pacman.conf
+# EOF
+echo -e "${BOLD} Добавлен репозиторий AUR.${NC}\n"
 fi
 ###
 echo -e "${CYAN}:: ${BOLD}Включим подсветку синтаксиса в Nano (/etc/nanorc для общесистемных настроек). ${NC}"
