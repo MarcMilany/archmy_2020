@@ -786,12 +786,12 @@ elif [[ $i_multilib  == 1 ]]; then
 echo -e "${RED}:: Включение репозитория ${BOLD}[archlinuxfr] AUR в: /etc/pacman.conf${NC}\n"
   echo -e '\n[archlinuxfr]\nSigLevel = Never\nServer = http://repo.archlinux.fr/$arch' >> /etc/pacman.conf
 ### Второй способ:
-  {
-    echo ""
-    echo '# [archlinuxfr]'
-    echo '# SigLevel = Never'
-    echo '# Server = http://repo.archlinux.fr/$arch'
-  } >>/etc/pacman.conf
+#  {
+#    echo ""
+#    echo '# [archlinuxfr]'
+#    echo '# SigLevel = Never'
+#    echo '# Server = http://repo.archlinux.fr/$arch'
+#  } >>/etc/pacman.conf
 ### Или так:
 # echo <<EOF
 # [archlinuxfr]
