@@ -697,6 +697,18 @@ echo " Права доступа к файлам Sudoers "
     echo 'Defaults passprompt="[sudo] password for %u: "'
     echo 'Defaults lecture=never'
   } >>/etc/sudoers
+### <<<  sudo и %wheel ALL=(ALL) NOPASSWD: ALL   >>> ####
+### Кстати, рекомендую добавить запрет выполнения нескольких команд -
+### чтобы не было возможности стать рутом через $sudo su (многи об этой фиче забывают)!
+    {
+    echo ""
+    echo '## Groups of commands.  Often used to group related commands together.'
+    echo '# Cmnd_Alias SHELLS = /bin/sh,/bin/csh,/usr/local/bin/tcsh'
+    echo '# Cmnd_Alias SSH = /usr/bin/ssh'
+    echo '# Cmnd_Alias SU = /bin/su'
+    echo '# dreamer ALL = (ALL) NOPASSWD: ALL,!SU,SHELLS,!SSH'
+  } >>/etc/sudoers
+
 ### Второй способ:  --(Но в этом случае при запросе пароля USER - вводим пароль ROOT)!!!
 #   echo -e "${RED}Adding "${username}" to sudoers.${NC}\n"
 #   echo -e "%wheel ALL=(ALL) ALL\nDefaults rootpw" > /etc/sudoers.d/99_wheel
