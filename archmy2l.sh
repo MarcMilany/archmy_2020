@@ -700,7 +700,7 @@ echo " Права доступа к файлам Sudoers "
 ### <<<  sudo и %wheel ALL=(ALL) NOPASSWD: ALL   >>> ####
 ### Кстати, рекомендую добавить запрет выполнения нескольких команд -
 ### чтобы не было возможности стать рутом через $sudo su (многи об этой фиче забывают)!
-    {
+  {
     echo ""
     echo '## Groups of commands.  Often used to group related commands together.'
     echo '# Cmnd_Alias SHELLS = /bin/sh,/bin/csh,/usr/local/bin/tcsh'
@@ -763,11 +763,12 @@ elif [[ $i_multilib  == 1 ]]; then
 # ILoveCandy
   sed -i '/^Co/ aILoveCandy' /etc/pacman.conf  # pacman easter egg (меняет индикатор выполнения на Pac-Man)
 # sed -i 's/VerbosePkgLists/VerbosePkgLists\nILoveCandy/g' /etc/pacman.conf
-  sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 ### Второй способ:  --(Но)!!!
 ## sed -i 's/VerbosePkgLists/VerbosePkgLists\nILoveCandy/g' /etc/pacman.conf
 ## sudo sed -i '/^\#VerbosePkgLists/aILoveCandy' /etc/pacman.conf  # pacman progress indicator
 ## sed -i 's/#Color/Color/g' /etc/pacman.conf  # pacman colors
+# MultiLib (Include)
+  sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
   echo ""
   echo " Multilib репозиторий добавлен (раскомментирован) "
 echo -e "${RED}:: Включение репозитория AUR в: ${WHITE}/etc/pacman.conf${NC}\n"
@@ -775,7 +776,11 @@ echo -e "${RED}:: Включение репозитория AUR в: ${WHITE}/etc
 echo -e "${WHITE} Добавлен репозиторий AUR.${NC}\n"
 fi
 ###
-
+echo -e "${CYAN}:: ${BOLD}Включим подсветку синтаксиса в Nano (/etc/nanorc для общесистемных настроек). ${NC}"
+echo " Резервное копирование исходного файла /etc/nanorc "
+cp /etc/nanorc /etc/nanorc.backup
+echo " Активируем цветовой режим, предустановленный в файлах "
+cat /usr/share/nano/*.nanorc
 
 
 
