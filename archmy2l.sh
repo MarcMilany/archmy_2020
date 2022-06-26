@@ -754,11 +754,11 @@ if [[ $i_multilib  == 0 ]]; then
 elif [[ $i_multilib  == 1 ]]; then
   echo ""
   echo " Резервное копирование исходного файла /etc/pacman.conf "
-  cp /etc/pacman.conf /etc/pacman.conf.bkp
+  cp /etc/pacman.conf /etc/pacman.conf.backup  # Всегда, сначала сделайте резервную копию вашего pacman.config файла
 # cp -v /etc/pacman.conf /etc/pacman.conf.bkp  # -v или --verbose -Выводить информацию о каждом файле, который обрабатывает команда cp.
-  sed -i 's/#Color/Color/' /etc/pacman.conf
+  sed -i 's/#Color/Color/' /etc/pacman.conf  # Чтобы раскрасить вывод pacman, раскомментируем в /etc/pacman.conf строчку Color
 # sed -i '/#Color/ s/^#//' /etc/pacman.conf
-  sed -i '/^Co/ aILoveCandy' /etc/pacman.conf
+  sed -i '/^Co/ aILoveCandy' /etc/pacman.conf  #
   sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 ## Add AUR repository in the end of /etc/pacman.conf
   echo -e '\n[archlinuxfr]\nSigLevel = Never\nServer = http://repo.archlinux.fr/$arch' >> /etc/pacman.conf
