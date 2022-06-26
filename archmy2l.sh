@@ -773,16 +773,13 @@ elif [[ $i_multilib  == 1 ]]; then
 ## sed -i 's/#Color/Color/g' /etc/pacman.conf  # pacman colors
 ### VerbosePkgLists - Отображает имя, версию и размер целевых пакетов в виде таблицы для операций обновления, синхронизации и удаления.
   sed -i 's/#VerbosePkgLists/VerbosePkgLists\n/g' /etc/pacman.conf
-
-
-### MultiLib (Include)
+### MultiLib (Include= /path/to/config/file) - Этот файл может включать репозитории или общие параметры конфигурации.
   sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
   echo ""
   echo " Multilib репозиторий добавлен (раскомментирован) "
 echo -e "${RED}:: Включение репозитория AUR в: ${WHITE}/etc/pacman.conf${NC}\n"
   echo -e '\n[archlinuxfr]\nSigLevel = Never\nServer = http://repo.archlinux.fr/$arch' >> /etc/pacman.conf
 echo -e "${WHITE} Добавлен репозиторий AUR.${NC}\n"
-
 fi
 ###
 echo -e "${CYAN}:: ${BOLD}Включим подсветку синтаксиса в Nano (/etc/nanorc для общесистемных настроек). ${NC}"
