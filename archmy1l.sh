@@ -225,15 +225,16 @@ if [[ $i_key == 1 ]]; then
   clear
   echo ""
   echo " Создаётся генерация мастер-ключа (брелка) pacman "  # gpg –refresh-keys
-  pacman-key --init  # генерация мастер-ключа (брелка) pacman
+  pacman-key --init  # генерация мастер-ключа (брелка) pacman - (Инициализация)
   echo " Далее идёт поиск ключей... "
-  pacman-key --populate archlinux  # поиск ключей
+  pacman-key --populate archlinux  # поиск ключей - (Получить ключи)
 # pacman-key --populate
 # echo " Брелок для ключей Arch Linux PGP (Репозиторий для пакета связки ключей Arch Linux) "
 # pacman -Sy --noconfirm --needed --noprogressbar --quiet archlinux-keyring  # Брелок для ключей Arch Linux PGP https://git.archlinux.org/archlinux-keyring.git/ (для hkps://hkps.pool.sks-keyservers.net)
   echo ""
   echo " Обновление ключей... "
-  pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
+  pacman-key --refresh-keys   # Проверить новые и установленные
+#  pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
 # pacman-key --refresh-keys --keyserver hkp://pool.sks-keyservers.net  # hkps://hkps.pool.sks-keyservers.net
 # pacman-key --refresh-keys --keyserver hkps://hkps.pool.sks-keyservers.net  # hkps://hkps.pool.sks-keyservers.net
 ## Предлагается сделать следующие изменения в конфиге gnupg:
