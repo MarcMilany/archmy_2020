@@ -1800,7 +1800,7 @@ elif [[ $in_aur_help == 2 ]]; then
   echo ""
   echo " Установка AUR Helper - (pikaur) "
   cd /home/$username
-  git clone https://aur.archlinux.org/pikaur.git
+  git clone https://aur.archlinux.org/pikaur.git  # https://aur.archlinux.org/packages/pikaur
   chown -R $username:users /home/$username/pikaur   #-R, --recursive - рекурсивная обработка всех подкаталогов;
   chown -R $username:users /home/$username/pikaur/PKGBUILD  #-R, --recursive - рекурсивная обработка всех подкаталогов;
   cd /home/$username/pikaur
@@ -1858,7 +1858,7 @@ elif [[ $in_aur_update == 2 ]]; then
   echo ""
   echo " Обновление баз данных пакетов, и системы через - AUR (Pikaur) "
   pikaur -Syy
-  pikaur -Syu
+  pikaur -Syu  # (sysupgrade)
 fi
 ###
 sleep 1
