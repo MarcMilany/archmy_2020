@@ -1805,6 +1805,7 @@ elif [[ $in_aur_help == 2 ]]; then
   chown -R $username:users /home/$username/pikaur/PKGBUILD  #-R, --recursive - рекурсивная обработка всех подкаталогов;
   cd /home/$username/pikaur
   sudo -u $username  makepkg -si --noconfirm
+# sudo -u $username  makepkg -fsri --noconfirm
   rm -Rf /home/$username/pikaur
   clear
   echo ""
