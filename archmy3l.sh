@@ -934,7 +934,7 @@ if [[ $in_aur_help == 0 ]]; then
   echo " Установка AUR Helper (yay) пропущена "
 elif [[ $in_aur_help == 1 ]]; then
   echo ""
-  sudo pacman -Syu
+  sudo pacman -Syu  # Обновим вашу систему (базу данных пакетов)
 #wget git.io/yay-install.sh && sh yay-install.sh --noconfirm
 #echo " Установка базовых программ и пакетов wget, curl, git "
 #sudo pacman -S --noconfirm --needed wget curl git
@@ -953,9 +953,11 @@ elif [[ $in_aur_help == 1 ]]; then
   echo " Установка AUR Helper (yay-bin) завершена "
 elif [[ $in_aur_help == 2 ]]; then
   echo ""
-  sudo pacman -Syu
+  sudo pacman -Syu  # Обновим вашу систему (базу данных пакетов)
 #echo " Установка базовых программ и пакетов wget, curl, git "
 #sudo pacman -S --noconfirm --needed wget curl git
+  sudo pacman -D --asdeps go  # зависимость 'go' - (Основные инструменты компилятора для языка программирования Go)
+# Чтобы протестировать любой данный пакет после его установки, сделайте следующее: pacman -D –asdeps  - Это сообщит pacman, что пакет был установлен как зависимость, следовательно, он будет указан как потерянный (что вы можете увидеть с помощью «pacman -Qtd»). Если вы затем решите, что хотите сохранить пакет, вы можете использовать флаг –asexplicit как есть ...
   echo " Установка AUR Helper (yay) "
   git clone https://aur.archlinux.org/yay.git
   cd yay
@@ -970,7 +972,7 @@ elif [[ $in_aur_help == 2 ]]; then
   echo " Установка AUR Helper (yay) завершена "
 elif [[ $in_aur_help == 3 ]]; then
   echo ""
-  sudo pacman -Syu
+  sudo pacman -Syu  # Обновим вашу систему (базу данных пакетов)
 #echo " Установка базовых программ и пакетов wget, curl, git "
 #sudo pacman -S --noconfirm --needed wget curl git
   echo " Установка AUR Helper (pikaur) "
@@ -979,6 +981,7 @@ elif [[ $in_aur_help == 3 ]]; then
   makepkg -si --noconfirm
   pwd
 # makepkg -si
+# makepkg -fsri --noconfirm
 #makepkg -si --skipinteg
   cd ..
   rm -Rf pikaur
@@ -1112,6 +1115,21 @@ echo " Установка Графического менеджера пакет
 elif [[ $graphic_aur == 1 ]]; then
   echo ""
   echo " Установка Графического менеджера Pacman gui (pamac-aur) "
+##### appstream-glib ######
+sudo pacman -S appstream-glib --noconfirm  # Объекты и методы для чтения и записи метаданных AppStream
+##### archlinux-appstream-data ######
+sudo pacman -S archlinux-appstream-data --noconfirm  # База данных приложений Arch Linux для центров программного обеспечения на основе AppStream
+##### libhandy ######
+sudo pacman -S libhandy --noconfirm  # Библиотека, полная виджетов GTK+ для мобильных телефонов
+##### libpamac-aur ######
+git clone https://aur.archlinux.org/libpamac-aur.git
+cd libpamac-aur
+makepkg -si --noconfirm   #--не спрашивать каких-либо подтверждений
+#  makepkg -fsri --noconfirm
+# makepkg --noconfirm --needed -sic
+pwd    # покажет в какой директории мы находимся
+cd ..   # поднимаемся на уровень выше (выходим из папки сборки)
+rm -Rf libpamac-aur
 ##### pamac-aur ######
 git clone https://aur.archlinux.org/pamac-aur.git
 cd pamac-aur
@@ -1814,7 +1832,7 @@ sudo pacman -S android-udev --noconfirm  # Правила Udev для подкл
 sudo pacman -S arch-install-scripts --noconfirm  # Сценарии для помощи в установке Arch Linux
 sudo pacman -S aspell-en --noconfirm  # Английский словарь для aspell
 sudo pacman -S aspell-ru --noconfirm  # Русский словарь для aspell
-# sudo pacman -S autofs --noconfirm  # Средство автомонтирования на основе ядра для Linux ; Раньше присутствовал в community ...
+# ###sudo pacman -S autofs --noconfirm  # Средство автомонтирования на основе ядра для Linux ; Раньше присутствовал в community ...
 sudo pacman -S b43-fwcutter --noconfirm  # Экстрактор прошивки для модуля ядра b43 (драйвер)
 sudo pacman -S bash-completion --noconfirm  # Программируемое завершение для оболочки bash
 sudo pacman -S beep --noconfirm  # Продвинутая программа звукового сигнала динамика ПК
@@ -1826,7 +1844,7 @@ sudo pacman -S ccache --noconfirm  # Кэш компилятора, которы
 sudo pacman -S cpio --noconfirm  # Инструмент для копирования файлов в или из архива cpio или tar
 sudo pacman -S cpupower --noconfirm  # Инструмент ядра Linux для проверки и настройки функций вашего процессора, связанных с энергосбережением
 sudo pacman -S crda --noconfirm  # Агент центрального регулирующего домена для беспроводных сетей
-# sudo pacman -S davfs2 --noconfirm  # Драйвер файловой системы, позволяющий монтировать папку WebDAV ; Раньше присутствовал в community ...
+# ###sudo pacman -S davfs2 --noconfirm  # Драйвер файловой системы, позволяющий монтировать папку WebDAV ; Раньше присутствовал в community ...
 sudo pacman -S desktop-file-utils --noconfirm  # Утилиты командной строки для работы с записями рабочего стола
 sudo pacman -S dhclient --noconfirm  # Автономный DHCP-клиент из пакета dhcp
 sudo pacman -S dmraid --noconfirm  # Интерфейс RAID устройства сопоставления устройств
@@ -1894,7 +1912,7 @@ sudo pacman -S nss-mdns --noconfirm  # Плагин glibc, обеспечива�
 #sudo pacman -S pacman-contrib --noconfirm  # Предоставленные скрипты и инструменты для систем pacman  # присутствует
 sudo pacman -S patchutils --noconfirm  # Небольшая коллекция программ, работающих с файлами патчей
 sudo pacman -S pciutils --noconfirm  # Библиотека и инструменты доступа к пространству конфигурации шины PCI
-# sudo pacman -S --noconfirm --needed pcurses  # Инструмент управления пакетами curses с использованием libalpm (https://github.com/schuay/pcurses) ; Раньше присутствовал в community ...
+# ###sudo pacman -S --noconfirm --needed pcurses  # Инструмент управления пакетами curses с использованием libalpm (https://github.com/schuay/pcurses) ; Раньше присутствовал в community ...
 sudo pacman -S php --noconfirm  # Язык сценариев общего назначения, особенно подходящий для веб-разработки
 sudo pacman -S --noconfirm --needed polkit  # Набор инструментов для разработки приложений для управления общесистемными привилегиями
 sudo pacman -S poppler-data --noconfirm  # Кодирование данных для библиотеки рендеринга PDF Poppler
@@ -1921,8 +1939,8 @@ sudo pacman -S speedtest-cli --noconfirm  # Интерфейс командно�
 sudo pacman -S squashfs-tools --noconfirm  # Инструменты для squashfs, файловой системы Linux с высокой степенью сжатия, доступной только для чтения
 sudo pacman -S syslinux --noconfirm  # Коллекция загрузчиков, которые загружаются с файловых систем FAT, ext2 / 3/4 и btrfs, с компакт-дисков и через PXE
 sudo pacman -S systemd-ui --noconfirm  # Графический интерфейс для systemd
-# sudo pacman -S termite --noconfirm  #  Простой терминал на базе VTE ; Раньше присутствовал в community ...
-# sudo pacman -S termite-terminfo --noconfirm  # Terminfo для Termite, простого терминала на базе VTE ; Раньше присутствовал в community ...
+# ###sudo pacman -S termite --noconfirm  #  Простой терминал на базе VTE ; Раньше присутствовал в community ...
+# ##sudo pacman -S termite-terminfo --noconfirm  # Terminfo для Termite, простого терминала на базе VTE ; Раньше присутствовал в community ...
 sudo pacman -S translate-shell --noconfirm  # Интерфейс командной строки и интерактивная оболочка для Google Translate
 sudo pacman -S udiskie --noconfirm  # Автоматическое монтирование съемных дисков с использованием udisks
 sudo pacman -S udisks2 --noconfirm  # Служба управления дисками, версия 2 (https://www.freedesktop.org/wiki/Software/udisks/)
@@ -1951,13 +1969,16 @@ sudo pacman -S youtube-dl --noconfirm  # Программа командной �
 #sudo pacman -S shared-mime-info --noconfirm  # Общая информация MIME на Freedesktop.org
 #sudo pacman -S raw-thumbnailer --noconfirm  # Легкий и быстрый инструмент для создания необработанных изображений raw, который необходим для отображения миниатюр raw.
 #sudo pacman -S perl-file-mimeinfo --noconfirm  # Определить тип файла, включая mimeopen и mimetype
+echo ""
+echo -e "${MAGENTA}:: ${NC}Установка дополнительных базовых программ (пакетов) - которые раньше присутствовали в (community), но были перенесены в репозиторий AUR .... "
 ########### autofs #############
 # sudo pacman -S autofs --noconfirm  # Средство автомонтирования на основе ядра для Linux
   echo ""
-  sudo pacman -Syy
+  sudo pacman -Syy  # обновление баз пакмэна (pacman)
 # sudo pacman -Syu
 #echo " Установка базовых программ и пакетов wget, curl, git "
 #sudo pacman -S --noconfirm --needed wget curl git
+  echo ""
   echo " Установка Средства автомонтирования на основе ядра для Linux (autofs) "
   git clone https://aur.archlinux.org/autofs.git
   cd autofs
@@ -1971,6 +1992,8 @@ sudo pacman -S youtube-dl --noconfirm  # Программа командной �
   echo " Установка пакета (autofs) завершена "
 ########## davfs2 ############
 # sudo pacman -S davfs2 --noconfirm  # Драйвер файловой системы, позволяющий монтировать папку WebDAV
+  echo ""
+  sudo pacman -Syy  # обновление баз пакмэна (pacman)
   echo ""
   echo " Установка Драйвера файловой системы (davfs2) "
   git clone https://aur.archlinux.org/davfs2.git
@@ -1986,6 +2009,8 @@ sudo pacman -S youtube-dl --noconfirm  # Программа командной �
 ####### termite #######
 # sudo pacman -S termite --noconfirm  #  Простой терминал на базе VTE
 # sudo pacman -S termite-terminfo --noconfirm  # Terminfo для Termite, простого терминала на базе VTE
+  echo ""
+  sudo pacman -Syy  # обновление баз пакмэна (pacman)
   echo ""
   echo " Установка терминал на базе VTE (termite) "
   git clone https://aur.archlinux.org/termite.git
@@ -2009,7 +2034,7 @@ echo ""
 echo " Добавляем службу gpm в автозагрузку "
 sudo systemctl enable gpm
 fi
-
+#####
 clear
 echo ""
 echo -e "${GREEN}==> ${NC}Установка Интерактивного просмотрщика процессов (системы) Htop"
