@@ -1921,8 +1921,8 @@ sudo pacman -S speedtest-cli --noconfirm  # Интерфейс командно�
 sudo pacman -S squashfs-tools --noconfirm  # Инструменты для squashfs, файловой системы Linux с высокой степенью сжатия, доступной только для чтения
 sudo pacman -S syslinux --noconfirm  # Коллекция загрузчиков, которые загружаются с файловых систем FAT, ext2 / 3/4 и btrfs, с компакт-дисков и через PXE
 sudo pacman -S systemd-ui --noconfirm  # Графический интерфейс для systemd
-sudo pacman -S termite --noconfirm  #  Простой терминал на базе VTE
-sudo pacman -S termite-terminfo --noconfirm  # Terminfo для Termite, простого терминала на базе VTE
+# sudo pacman -S termite --noconfirm  #  Простой терминал на базе VTE ; Раньше присутствовал в community ...
+# sudo pacman -S termite-terminfo --noconfirm  # Terminfo для Termite, простого терминала на базе VTE ; Раньше присутствовал в community ...
 sudo pacman -S translate-shell --noconfirm  # Интерфейс командной строки и интерактивная оболочка для Google Translate
 sudo pacman -S udiskie --noconfirm  # Автоматическое монтирование съемных дисков с использованием udisks
 sudo pacman -S udisks2 --noconfirm  # Служба управления дисками, версия 2 (https://www.freedesktop.org/wiki/Software/udisks/)
@@ -1983,6 +1983,21 @@ sudo pacman -S youtube-dl --noconfirm  # Программа командной �
   rm -Rf davfs2
   echo ""
   echo " Установка пакета (davfs2) завершена "
+####### termite #######
+# sudo pacman -S termite --noconfirm  #  Простой терминал на базе VTE
+# sudo pacman -S termite-terminfo --noconfirm  # Terminfo для Termite, простого терминала на базе VTE
+  echo ""
+  echo " Установка терминал на базе VTE (termite) "
+  git clone https://aur.archlinux.org/termite.git
+  cd termite
+  makepkg -si --noconfirm
+  pwd
+# makepkg -si
+#makepkg -si --skipinteg
+  cd ..
+  rm -Rf termite
+  echo ""
+  echo " Установка пакета (termite) завершена "
 ########
 clear
 echo ""
