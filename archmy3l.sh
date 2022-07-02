@@ -562,6 +562,7 @@ elif [[ $x_key == 1 ]]; then
   sudo pacman -Sy --noconfirm --needed --noprogressbar --quiet archlinux-keyring  # Брелок для ключей Arch Linux PGP https://git.archlinux.org/archlinux-keyring.git/ (для hkps://hkps.pool.sks-keyservers.net)
   echo ""
   echo " Обновление ключей... "
+# sudo pacman-key –refresh-keys
   sudo pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
 # sudo pacman-key --refresh-keys --keyserver hkp://pool.sks-keyservers.net  # hkps://hkps.pool.sks-keyservers.net
 ## Предлагается сделать следующие изменения в конфиге gnupg:
