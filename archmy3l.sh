@@ -541,6 +541,8 @@ done
 elif [[ $x_key == 1 ]]; then
   clear
   echo ""
+  echo " Обновим списки пакетов из репозиториев и установим Брелок Arch Linux PGP - пакет (archlinux-keyring) "
+  sudo pacman -Syy archlinux-keyring --noconfirm  # Брелок Arch Linux PGP ; https://archlinux.org/packages/core/any/archlinux-keyring/
   echo " Выполним резервное копирование каталога (/etc/pacman.d/gnupg), на всякий случай "
 # Файлы конфигурации по умолчанию: ~/.gnupg/gpg.conf и ~/.gnupg/dirmngr.conf.
   sudo cp -R /etc/pacman.d/gnupg /etc/pacman.d/gnupg_back
@@ -562,8 +564,8 @@ elif [[ $x_key == 1 ]]; then
   sudo pacman -Sy --noconfirm --needed --noprogressbar --quiet archlinux-keyring  # Брелок для ключей Arch Linux PGP https://git.archlinux.org/archlinux-keyring.git/ (для hkps://hkps.pool.sks-keyservers.net)
   echo ""
   echo " Обновление ключей... "
-# sudo pacman-key –refresh-keys
-  sudo pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
+  sudo pacman-key –refresh-keys
+#  sudo pacman-key --refresh-keys --keyserver keys.gnupg.net  # http://pool.sks-keyservers.net/
 # sudo pacman-key --refresh-keys --keyserver hkp://pool.sks-keyservers.net  # hkps://hkps.pool.sks-keyservers.net
 ## Предлагается сделать следующие изменения в конфиге gnupg:
 ## keyserver hkps://hkps.pool.sks-keyservers.net
