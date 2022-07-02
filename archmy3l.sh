@@ -1954,7 +1954,8 @@ sudo pacman -S youtube-dl --noconfirm  # Программа командной �
 ########### autofs #############
 # sudo pacman -S autofs --noconfirm  # Средство автомонтирования на основе ядра для Linux
   echo ""
-  sudo pacman -Syu
+  sudo pacman -Syy
+# sudo pacman -Syu
 #echo " Установка базовых программ и пакетов wget, curl, git "
 #sudo pacman -S --noconfirm --needed wget curl git
   echo " Установка Средства автомонтирования на основе ядра для Linux (autofs) "
