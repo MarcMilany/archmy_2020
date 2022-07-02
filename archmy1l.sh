@@ -224,6 +224,9 @@ done
 if [[ $i_key == 1 ]]; then
   clear
   echo ""
+  echo " Обновим списки пакетов из репозиториев и установим Брелок Arch Linux PGP - пакет (archlinux-keyring) "
+  pacman -Syy archlinux-keyring --noconfirm  # Брелок Arch Linux PGP ; https://archlinux.org/packages/core/any/archlinux-keyring/
+  echo ""
   echo " Создаётся генерация мастер-ключа (брелка) pacman "  # gpg –refresh-keys
   pacman-key --init  # генерация мастер-ключа (брелка) pacman - (Инициализация)
   echo " Далее идёт поиск ключей... "
