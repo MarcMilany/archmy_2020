@@ -2073,6 +2073,86 @@ sleep 1
 ###################
 clear
 echo ""
+echo -e "${BLUE}:: ${NC}Установим дополнения (плюшки) для Pacman - пакет (pacman-contrib)?"
+echo " Этот репозиторий содержит скрипты, предоставленные pacman (различных дополнений и приятных мелочей для более комфортной работы сполна) "
+echo -e "${YELLOW}=> Примечание: ${BOLD}Раньше это было частью pacman.git, но было перемещено, чтобы упростить обслуживание pacman. Также, вместе с пакетом (pacman-contrib) будет установлен пакет (pcurses) - инструмент управления пакетами curses с использованием libalpm. ${NC}"
+echo " Скрипты, доступные в этом репозитории: checkupdates, paccache, pacdiff, paclist, paclog-pkglist, pacscripts, pacsearch, rankmirrors, updpkgsums;... "
+echo " checkupdates - распечатать список ожидающих обновлений, не касаясь баз данных синхронизации системы (для безопасности при скользящих выпусках). "
+echo " paccache - гибкая утилита очистки кэша пакетов, которая позволяет лучше контролировать, какие пакеты удаляются. "
+echo " pacdiff - простая программа обновления pacnew / pacsave для / etc /. "
+echo " paclist - список всех пакетов, установленных из данного репозитория. Полезно, например, для просмотра того, какие пакеты вы могли установить из тестового репозитория. "
+echo " paclog-pkglist - выводит список установленных пакетов на основе журнала pacman. "
+echo " pacscripts - пытается распечатать сценарии {pre, post} _ {install, remove, upgrade} для данного пакета. "
+echo " pacscripts - пытается распечатать сценарии {pre, post} _ {install, remove, upgrade} для данного пакета. "
+echo " pacsearch - цветной поиск, объединяющий вывод -Ss и -Qs. Установленные пакеты легко идентифицировать с помощью [installed] значка, и также перечислены только локальные пакеты. "
+echo " rankmirrors - ранжирует зеркала pacman по скорости подключения и скорости открытия. "
+echo " updpkgsums - выполняет обновление контрольных сумм в PKGBUILD на месте. "
+echo -e "${YELLOW}==> ${NC}Будьте внимательны! Если Вы сомневаетесь в своих действиях, просто пропустите этот пункт."
+echo ""
+while
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "
+    1 - Да установить пакет (pacman-contrib),    0 - Нет пропустить установку: " i_contrib  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+echo ''
+   [[ "$i_contrib" =~ [^10] ]]
+do
+    :
+done
+if [[ $i_contrib == 0 ]]; then
+  echo ""
+  echo " Установка пакетов пропущена "
+elif [[ $i_contrib == 1 ]]; then
+  echo ""
+  echo " Установка пакетов (pacman-contrib), (pcurses) "
+  pacman -S --noconfirm --needed pacman-contrib  # Предоставленные скрипты и инструменты для систем pacman (https://github.com/kyrias/pacman-contrib)
+### pacman -S --noconfirm --needed pcurses  # Инструмент управления пакетами curses с использованием libalpm ; pcurses позволяет просматривать пакеты и управлять ими во внешнем интерфейсе curses, написанном на C++ ; https://github.com/schuay/pcurses ; Раньше присутствовал в community ...
+##### pcurses ######
+  cd /home/$username
+  git clone https://aur.archlinux.org/pcurses.git
+  chown -R $username:users /home/$username/pcurses
+  chown -R $username:users /home/$username/pcurses/PKGBUILD
+  cd /home/$username/pcurses
+  sudo -u $username  makepkg -si --noconfirm
+#  sudo -u $username  makepkg -fsri --noconfirm
+# makepkg --noconfirm --needed -sic
+  rm -Rf /home/$username/pcurses
+  echo ""
+  echo " Установка программ (пакетов) выполнена "
+fi
+sleep 1
+#################
+clear
+echo ""
+echo -e "${BLUE}:: ${NC}Установим Hwdetect - пакет (hwdetect) - Информация о железе?"
+echo " Hwdetect - это скрипт (консольная утилита с огромным количеством опций) обнаружения оборудования, который в основном используется для загрузки или вывода списка модулей ядра (для использования в mkinitcpio.conf), и заканчивая возможностью автоматического изменения rc.conf и mkinitcpio.conf ; (https://wiki.archlinux.org/title/Hwdetect) "
+echo -e "${YELLOW}=> Примечание: ${BOLD}Это отличается от многих других инструментов, которые запрашивают только оборудование и показывают необработанную информацию, оставляя пользователю задачу связать эту информацию с необходимыми драйверами. ${NC}"
+echo " Сценарий использует информацию, экспортируемую подсистемой sysfs (https://en.wikipedia.org/wiki/Sysfs), используемой ядром Linux. "
+echo -e "${YELLOW}==> ${NC}Будьте внимательны! Если Вы сомневаетесь в своих действиях, просто пропустите этот пункт."
+echo ""
+while
+echo " Действия ввода, выполняется сразу после нажатия клавиши "
+    read -n1 -p "
+    1 - Да установить пакет (hwdetect),    0 - Нет пропустить установку: " i_hwdetect  # sends right after the keypress; # отправляет сразу после нажатия клавиши
+echo ''
+   [[ "$i_hwdetect" =~ [^10] ]]
+do
+    :
+done
+if [[ $i_hwdetect == 0 ]]; then
+  echo ""
+  echo " Установка пакетов пропущена "
+elif [[ $i_hwdetect == 1 ]]; then
+  echo ""
+  echo " Установка пакета (hwdetect) "
+  pacman -S --noconfirm --needed hwdetect  # Скрипт (консольная утилита) просмотр модулей ядра для устройств, обнаружения оборудования с загрузочными модулями и поддержкой mkinitcpio.conf / rc.conf
+# pacman -S hwdetect --noconfirm  # Скрипт (консольная утилита) просмотр модулей ядра для устройств, обнаружения оборудования с загрузочными модулями и поддержкой mkinitcpio.conf / rc.conf
+  echo ""
+  echo " Установка дополнительных базовых программ (пакетов) выполнена "
+fi
+sleep 1
+###################
+clear
+echo ""
 echo -e "${GREEN}=> ${BOLD}Вы хотите просмотреть и отредактировать файл /etc/fstab (отвечающий за монтирование разделов при запуске системы)? ${NC}"
 echo " Данные действия помогут исключить возможные ошибки при первом запуске системы! "
 echo " 1 - Просмотреть и отредактировать файл /etc/fstab "
