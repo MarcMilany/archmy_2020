@@ -2294,6 +2294,7 @@ elif [[ $rm_cache == 1 ]]; then
 fi
 #######################
 clear
+echo ""
 cat <<EOF
 ++++===========+=?OD8+====+==++++++?+???
 ++++=======D888DODDD8D8++=+++++++++?????
@@ -2323,7 +2324,7 @@ D8DDNDD8DDNDD~~~,,,,=??II$DDDNNNNNNNNNNN
 EOF
 
 #ASCII art
-sleep .3
+sleep 5
 #######################
 clear
 echo -e "${GREEN}
