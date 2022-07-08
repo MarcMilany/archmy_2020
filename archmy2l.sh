@@ -974,7 +974,8 @@ clear
 elif [[ $x_de == 2 ]]; then
   echo ""
   echo " Установка Xfce + Goodies for Xfce "
-  pacman -S xfce4 xfce4-goodies --noconfirm  #   # Нетребовательное к ресурсам окружение рабочего стола для UNIX-подобных операционных систем; Проект Xfce Goodies Project включает дополнительное программное обеспечение и изображения, которые связаны с рабочим столом Xfce , но не являются частью официального выпуска.
+  pacman -S xfce4 xfce4-goodies --noconfirm  # Нетребовательное к ресурсам окружение рабочего стола для UNIX-подобных операционных систем; Проект Xfce Goodies Project включает дополнительное программное обеспечение и изображения, которые связаны с рабочим столом Xfce , но не являются частью официального выпуска.
+  pacman -S xfce4-notifyd --noconfirm  # Демон уведомлений для рабочего стола Xfce ; https://archlinux.org/packages/extra/x86_64/xfce4-notifyd/
 ## mv /usr/share/xsessions/xfce.desktop ~/
 ### Если ли надо раскомментируйте нужные вам значения ####
 # echo ""
