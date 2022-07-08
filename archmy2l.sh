@@ -976,6 +976,7 @@ elif [[ $x_de == 2 ]]; then
   echo " Установка Xfce + Goodies for Xfce "
   pacman -S xfce4 xfce4-goodies --noconfirm  # Нетребовательное к ресурсам окружение рабочего стола для UNIX-подобных операционных систем; Проект Xfce Goodies Project включает дополнительное программное обеспечение и изображения, которые связаны с рабочим столом Xfce , но не являются частью официального выпуска.
   pacman -S xfce4-notifyd --noconfirm  # Демон уведомлений для рабочего стола Xfce ; https://archlinux.org/packages/extra/x86_64/xfce4-notifyd/
+# pacman -S xdg-user-dirs --noconfirm  # Управляйте пользовательскими каталогами, такими как ~ / Desktop и ~ / Music
 ## mv /usr/share/xsessions/xfce.desktop ~/
 ### Если ли надо раскомментируйте нужные вам значения ####
 # echo ""
@@ -1640,6 +1641,54 @@ nameserver 85.21.192.5
 nameserver 213.234.192.7
 
 EOF
+###
+echo -e "${BLUE}:: ${NC}Автоматизация обновления зеркал /etc/pacman.d/mirrorlist (запуск Reflector при загрузке), pacman-mirrorlist не обновляется регулярно, вызов рефлектора только потому, что какое-то зеркало в какой-то части земного шара было добавлено или удалено, не имеет значения. Вместо этого используйте автоматизацию на основе таймера. Если вы вообще не хотите mirrorlist.pacnew устанавливаться, используйте NoExtractвpacman.conf."
+echo " Reflector поставляется с файлом reflector.service. Служба запустит рефлектор с параметрами, указанными в /etc/xdg/reflector/reflector.conf. Параметры по умолчанию в этом файле должны служить хорошей отправной точкой и примером. "
+echo " Чтобы обновить список зеркал досрочно, запустите reflector.service . "
+echo " Примечание: reflector.service зависит от службы ожидания сети, которая будет настроена через network-online.target ."
+cat > /usr/lib/systemd/system/reflector.service << EOF
+[Unit]
+Description=Pacman mirrorlist update
+Requires=network.target
+After=network.target
+[Service]
+Type=oneshot
+### ExecStart=/usr/bin/reflector --protocol https --latest 30 --number 20 --sort rate --save /etc/pacman.d/mirrorlist
+### ExecStart=/usr/bin/reflector -c ru,by,ua,pl -p https,http --sort rate -a 12 -l 10 --save /etc/pacman.d/mirrorlist
+ExecStart=/usr/bin/reflector --verbose --country 'Russia' -l 9 -p https -p http -n 9 --save /etc/pacman.d/mirrorlist
+[Install]
+RequiredBy=network.target
+
+EOF
+###
+echo -e "${BLUE}:: ${NC}Reflector предоставляет таймер systemd ( reflector.timer), который еженедельно запускает службу #systemd reflector.service . Расписание можно изменить, отредактировав reflector.timer ."
+echo " Сначала отредактируйте файл конфигурации, как описано в разделе #systemd service ."
+echo " После обновления файла конфигурации запустите и включите reflector.timer ."
+cat > /usr/lib/systemd/system/reflector.timer << EOF
+[Unit]
+Description=Run reflector weekly
+[Timer]
+OnCalendar=weekly
+AccuracySec=12h
+Persistent=true
+[Install]
+WantedBy=timers.target
+
+EOF
+###
+echo ""
+echo -e "${BLUE}:: ${NC}Подключаем reflector.service в автозагрузку"
+systemctl enable reflector.service
+echo " reflector.service успешно добавлен в автозагрузку "
+echo ""
+echo -e "${BLUE}:: ${NC}Запускаем reflector.service "
+systemctl start reflector.service
+echo " reflector.service успешно запущен "
+###
+echo ""
+echo -e "${BLUE}:: ${NC}Подключаем reflector.timer в автозагрузку"
+systemctl enable reflector.timer
+echo " reflector.timer успешно добавлен в автозагрузку "
 ####################
 clear
 echo -e "${MAGENTA}
