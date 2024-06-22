@@ -818,7 +818,7 @@ echo -e "${BLUE}:: ${NC}Обновим базы данных пакетов"
 pacman -Sy   #--noconfirm --noprogressbar --quiet (обновить списки пакетов из репозиториев)
 #pacman -Syy --noconfirm --noprogressbar --quiet (обновление баз пакмэна - pacman)
 ### Если у вас включен archlinuxfr и вы хотите увидеть, какие пакеты он содержит, вы можете запустить эту команду:
-pacman -Sl archlinuxfr
+#pacman -Sl archlinuxfr
 sleep 1
 #####################
 clear
