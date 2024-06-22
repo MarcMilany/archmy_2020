@@ -799,7 +799,7 @@ elif [[ $i_multilib  == 1 ]]; then
 # Server = http://repo.archlinux.fr/$arch
 # EOF >> /etc/pacman.conf
 # EOF
-echo -e "${BOLD} Добавлен репозиторий [archlinuxfr] AUR.${NC}\n"
+#echo -e "${BOLD} Добавлен репозиторий [archlinuxfr] AUR.${NC}\n"
 fi
 ###
 echo -e "${CYAN}:: ${BOLD}Включим подсветку синтаксиса в Nano (/etc/nanorc для общесистемных настроек). ${NC}"
