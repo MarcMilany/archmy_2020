@@ -1959,8 +1959,9 @@ sudo pacman -S xterm --noconfirm  # Эмулятор терминала X
 sudo pacman -S xorg-twm --noconfirm  # Вкладка Window Manager для системы X Window
 sudo pacman -S xorg-xkill --noconfirm  # Убить клиента его X-ресурсом
 sudo pacman -S yelp --noconfirm  # Получите помощь с GNOME
-sudo pacman -S youtube-dl --noconfirm  # Программа командной строки для загрузки видео с YouTube.com и еще нескольких сайтов
-# sudo pacman -S  --noconfirm  #
+# sudo pacman -S youtube-dl --noconfirm  # Программа командной строки для загрузки видео с YouTube.com и еще нескольких сайтов
+## https://github.com/ytdl-org/youtube-dl, https://aur.archlinux.org/packages/youtube-dl
+# sudo pacman -S yt-dlp --noconfirm  # Форк youtube-dl с дополнительными функциями и исправлениями. https://archlinux.org/packages/extra/any/yt-dlp/
 # sudo pacman -S  --noconfirm  #
 ### Исправим отображение миниатюр в файловом менеджере ###
 # sudo pacman -S tumbler ffmpegthumbnailer poppler-glib libgsf libopenraw shared-mime-info raw-thumbnailer perl-file-mimeinfo --noconfirm
