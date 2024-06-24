@@ -166,35 +166,6 @@ clear
 _arch_fast_install_banner
 sleep 1
 ###
-######################
-echo ""
-echo -e "${GREEN}:: ${NC}Проверьте, находится ли он в среде live или chroot "
-## Check if in live or chroot environment
-## Проверьте, находится ли он в среде live или chroot
-if [[ -z ${1-} ]]; then
-
-	## Check boot mode
-	## Проверьте режим загрузки
-
-	if [[ -d /sys/firmware/efi ]]; then
-		echo "UEFI mode detected!"
-		IsUEFI="yes"
-	else
-		echo "BIOS mode detected!"
-		IsUEFI="no"
-	fi
-echo ""
-echo -e "${GREEN}:: ${NC}Обнаружение центрального процессора "	
-	## CPU detection
-	## Обнаружение центрального процессора
-	if grep Intel /proc/cpuinfo; then
-		IntelCPU="yes"
-	else
-		IntelCPU="no"
-	fi
-sleep 3
-clear
-###
 echo ""
 echo -e "${GREEN}==> ${NC}Вы готовы приступить к установке Arch Linux? "  # (Installing ArchLinux)
 while
