@@ -41,7 +41,7 @@ if [[ -z ${1-} ]]; then
 		exit
 	fi
 
-	echo -e "\nВы выбрали ${диск}, хотите ли вы продолжить (Y/n)?"
+	echo -e "\nВы выбрали ${disk}, хотите ли вы продолжить (Y/n)?"
 	## You selected ${disk}, do you want to continue (Y/n)?
 	read ans
 
