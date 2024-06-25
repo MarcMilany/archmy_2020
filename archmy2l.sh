@@ -77,8 +77,8 @@ echo ""
 #timedatectl set-ntp true
 #echo -e "${BLUE}:: ${NC}Посмотрим статус службы NTP (NTP service)"
 #timedatectl status
-echo -e "${BLUE}:: ${NC}Посмотрим текущее состояние аппаратных и программных часов"
-timedatectl
+#echo -e "${BLUE}:: ${NC}Посмотрим текущее состояние аппаратных и программных часов"
+#timedatectl
 ###
 echo ""
 echo -e "${BLUE}:: ${NC}Обновим вашу систему (базу данных пакетов)"
