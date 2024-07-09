@@ -1,0 +1,27 @@
+### Warning (Предупреждение)
+
+# ====================== ♥ Предупреждение ====================== 
+
+Цель сценария (скрипта) - это установка необходимого софта (пакетов) и запуск необходимых служб. 
+Смысл в том, что все изменения вы делаете предварительно в самом скрипте и получаете возможность быстрой установки утилит (пакетов), которые Вы решили установить (при условии, что Вы его изменили под себя, в противном случае скрипт установит софт (пакеты) прописанный изначально.
+В процессе работы сценария (скрипта) Вам будут задаваться вопросы на установку той, или иной утилиты (пакета) - будьте внимательными! Устанавливаемый софт (пакеты), шрифты - скачивается и устанавливается из 'Официальных репозиториев Arch Linux'. Так же присутствует софт (пакеты), шрифты - устанавливаемый из пользовательского репозитория 'AUR'-'yay', собираются и устанавливаются. Если Вы сомневаетесь в своих действиях, скриптом можно пользоваться как шпаргалкой, открыв его в текстовом редакторе, копируя команды по установке необходимых пакетов, и запуска необходимых служб. В любой ситуации выбор всегда за вами. Вы либо гуляете под дождем, либо просто под ним мокнете.${RED}
+
+# ====================== ВНИМАНИЕ! ====================== 
+Автор не несет ответственности за любое нанесение вреда при использовании скрипта. 
+Вы используйте его на свой страх и риск, или изменяйте под свои личные нужды. 
+В данный момент сценарий (скрипта) находится в процессе доработки по прописанию устанавливаемого софта (пакетов), и небольшой корректировке (Воен. Внесение поправок в наводку орудий по результатам наблюдений с наблюдательных пунктов).
+
+------------------------------------------------------------------
+
+### Warning (Warning)
+
+# ====================== ♥ Warning ======================
+
+The purpose of the script is to install the necessary software (packages) and launch the necessary services.
+The point is that you make all the changes beforehand in the script itself and get the opportunity to quickly install the utilities (packages) that You have decided to install (provided That you have changed it for yourself, otherwise the script will install the software (packages) prescribed initially.
+While the script is running) You will be asked questions about installing a particular utility (package) - be careful! Installed software (packages), fonts - downloaded and installed from the 'Official arch Linux repositories'. There is also software (packages), fonts - installed from the user repository 'AUR'-'yay', are collected and installed. If you doubt your actions, you can use the script as a cheat sheet by opening it in a text editor, copying commands to install the necessary packages, and launch the necessary services. In any situation, the choice is always yours. You either walk in the rain, or just get wet under it.${RED}
+
+# ====================== ATTENTION! ======================
+The author is not responsible for any harm caused by using the script.
+You use it at your own risk, or change it to suit your personal needs.
+At the moment, the script (script) is in the process of being finalized by prescribing the installed software (packages), and a small adjustment (Military. Amendments to the guidance of guns based on the results of observations from observation posts).

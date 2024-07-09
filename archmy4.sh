@@ -219,7 +219,9 @@ echo ""
 echo " Установка утилит (пакетов) выполнена "
 fi
 
-
+ananicy — управление приоритетом процессов,
+nohang — не даст выжрать память, пока ни разу не отработал,
+preload, prelink — кешеры
 
 acestream-launcher  # Acestream Launcher позволяет открывать ссылки Acestream с помощью медиаплеера по вашему выбору.
 https://aur.archlinux.org/packages/acestream-launcher/
@@ -1039,6 +1041,11 @@ perl-электронная таблица-parseexcel AUR
 perl-text-csv-xs AUR
 perl-unicode-map AUR
 
+
+profile-sync-daemon  # Символические ссылки и синхронизация каталогов профилей браузера с оперативной памятью ; https://github.com/graysky2/profile-sync-daemon ; https://archlinux.org/packages/extra/any/profile-sync-daemon/
+Profile-sync-daemon (psd) — это крошечный псевдодемон, предназначенный для управления профилем вашего браузера в tmpfs и периодической синхронизации его с вашим физическим диском (HDD/SSD).
+
+
 yay -S  --noconfirm
 yay -S  --noconfirm  # 
 yay -S  --noconfirm  # 
@@ -1102,6 +1109,26 @@ virtualbox-ext-vnc 6.1.12-4
 virtualbox-guest-iso 6.1.12-1
 virtualbox-guest-utils 6.1.12-4
 virtualbox-host-modules-arch 6.1.12-14
+
+
+# Install VirtualBox Guest Modules if in a VBox VM
+if [ "$GUESTVM" = "y" -o "$GUESTVM" = "Y" ]; then
+    pacman -S --noconfirm --needed virtualbox-guest-modules virtualbox-guest-utils
+
+    VBOX_CONF="/etc/modules-load.d/virtualbox.conf"
+
+    echo "vboxguest" > "$VBOX_CONF"
+    echo "vboxsf" >> "$VBOX_CONF"
+    echo "vboxvideo" >> "$VBOX_CONF"
+fi
+
+# Install VirtualBox
+if [ "$VBOX" = "Y" -o "$VBOX" = "y" ]; then
+    VBOX_CONF="/etc/modules-load.d/virtualbox.conf"
+
+    if [ "$LINUXCK" = "y" -o "$LINUXCK" = "Y" ]; then
+        pacman -S --noconfirm --needed dkms virtualbox-host-dkms virtualbox-guest-dkms 
+    fi
 
 ##############################
 echo 'Установка Oracle VM VirtualBox AUR'

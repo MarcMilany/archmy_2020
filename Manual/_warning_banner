@@ -1,0 +1,27 @@
+### Warning (Предупреждение)
+
+# ====================== ♥ Предупреждение ====================== 
+
+Цель сценария (скрипта) - это установка первоначально необходимого софта (пакетов) и запуск необходимых служб. 
+Смысл в том, что все изменения вы делаете предварительно в самом скрипте и получаете возможность быстрой установки утилит (пакетов), которые Вы решили установить (при условии, что Вы его изменили под себя, в противном случае скрипт установит софт (пакеты) прописанный изначально.
+В процессе работы сценария (скрипта) Вам будут задаваться вопросы на установку той, или иной утилиты (пакета) - будьте внимательными! Не переживайте в скрипте только две утилиты (пакета) устанавливаются из 'AUR'. Это 'Pacman gui' или 'Octopi', в зависимости от вашего выбора. Сам же 'AUR'-'yay' с помощью скрипта созданного (autor): Alex Creio https://cvc.hashbase.io/ - скачивается с сайта 'Arch Linux' (https://aur.archlinux.org/packages/yay-git/), собирается и устанавливается. Остальной софт (пакеты) скачивается и устанавливается из 'Официальных репозиториев Arch Linux'. Если Вы сомневаетесь в своих действиях, скриптом можно пользоваться как шпаргалкой, открыв его в текстовом редакторе, копируя команды по установке необходимых пакетов, и запуска необходимых служб. В любой ситуации выбор всегда за вами. Вы либо гуляете под дождем, либо просто под ним мокнете.
+
+# ====================== ВНИМАНИЕ! ====================== 
+Автор не несет ответственности за любое нанесение вреда при использовании скрипта. 
+Вы используйте его на свой страх и риск, или изменяйте под свои личные нужды. 
+В данный момент сценарий (скрипта) находится в процессе доработки по прописанию устанавливаемого софта (пакетов), и небольшой корректировке (Воен. Внесение поправок в наводку орудий по результатам наблюдений с наблюдательных пунктов)."
+
+---------------------------------------------------------------------------------------
+
+### Warning (Warning)
+
+# ====================== ♥ Warning ======================
+
+The purpose of the script is to install the initially necessary software (packages) and launch the necessary services.
+The point is that you make all the changes beforehand in the script itself and get the opportunity to quickly install the utilities (packages) that You have decided to install (provided That you have changed it for yourself, otherwise the script will install the software (packages) prescribed initially.
+While the script is running) You will be asked questions about installing a particular utility (package) - be careful! Don't worry, only two utilities (packages) are installed from 'AUR'in the script. This is 'Pacman gui' or 'Octopi', depending on your choice. Itself 'AUR'-'yay' using a script created by (autor): Alex Creio https://cvc.hashbase.io/ - downloaded from the 'Arch Linux' website (https://aur.archlinux.org/packages/yay-git/), is collected and installed. The rest of the software (packages) is downloaded and installed from the 'Official Arch Linux repositories'. If you doubt your actions, you can use the script as a cheat sheet by opening it in a text editor, copying commands to install the necessary packages, and launch the necessary services. In any situation, the choice is always yours. You either walk in the rain, or just get wet under it.
+
+# ====================== ATTENTION! ======================
+The author is not responsible for any harm caused by using the script.
+You use it at your own risk, or change it to suit your personal needs.
+At the moment, the script (script) is in the process of being finalized by prescribing the installed software (packages), and a small adjustment (Military. Amendments to the guidance of guns based on the results of observations from observation posts)."

@@ -1,0 +1,31 @@
+History of changes (История изменений)
+
+### 15.05.2020 ArchLinux Fast Install v1.6 LegasyBIOS
+- Скрипт изменен (читать справку README_SOFT.md)
+
+### 22.09.2019 ArchLinux Fast Install v1.6
+- Удален SDDM
+
+### 8.04.2019 ArchLinux Fast Install v1.5
+- Добавлен выбор DE OpenBox
+
+### 28.03.2019 ArchLinux Fast Install v1.4
+- Добавлена устатановка conky
+
+### 27.03.2019 ArchLinux Fast Install v1.3
+- Добавлен выбор DE - Xfce и KDE
+- Добавлен выбор DM - SDDM и LXDM
+- Добавлен выбор загрузки системы без паузы в Grub
+
+### 23.03.2019 ArchLinux Fast Install v1.2
+- Добавлен выбор установки рекомендуемых программ
+
+### 21.03.2019 ArchLinux Fast Install v1.1
+- Исправлен баг с установкой тем
+- Заменена тема курсора
+- Скорректирован конфигурационный файл XFCE
+
+### 18.03.2019 ArchLinux Fast Install v1.0
+- Теперь можно вводить собственное имя хоста и юзера
+- Исправлен 3-й файл с установкой тем
+- aurman заменен на yay
