@@ -1493,7 +1493,7 @@ if [[ $i_network  == 1 ]]; then
   pacman -S --noconfirm --needed --noprogressbar --quiet iwd  # Демон беспроводной сети Интернет ; https://git.kernel.org/cgit/network/wireless/iwd.git/ ; https://archlinux.org/packages/extra/x86_64/iwd/ 
   pacman -S --noconfirm --needed crda  # Агент центрального регулирующего домена для беспроводных сетей ; https://wireless.wiki.kernel.org/en/developers/regulatory/wireless-regdb ; https://archlinux.org/packages/core/any/wireless-regdb/
 # pacman -S --noconfirm --needed wireless-regdb  # Центральная база данных регулирующих доменов ; https://wireless.wiki.kernel.org/en/developers/regulatory/wireless-regdb ; https://archlinux.org/packages/core/any/wireless-regdb/
-  pacman -S --noconfirm --needed ndisk6  # Сборник сетевых утилит IPv6 (https://www.remlab.net/ndisc6/) ; https://archlinux.org/packages/extra/x86_64/ndisc6/
+  pacman -S --noconfirm --needed ndisc6  # Сборник сетевых утилит IPv6 (https://www.remlab.net/ndisc6/) ; https://archlinux.org/packages/extra/x86_64/ndisc6/
   pacman -S --noconfirm --needed gnu-netcat  # GNU переписывает netcat, приложение для создания сетевых трубопроводов (приложения сетевого конвейера) ; сетевая утилита, которая считывает и записывает данные через сетевые соединения, используя протокол TCP/IP ; http://netcat.sourceforge.net/ ; https://archlinux.org/packages/extra/x86_64/gnu-netcat/
   pacman -S --noconfirm --needed hydra  # Очень быстрый взломщик входа в сеть, который поддерживает множество различных сервисов ; Введите `./hydra -h`, чтобы увидеть все доступные параметры командной строки ; https://github.com/vanhauser-thc/thc-hydra ; https://archlinux.org/packages/extra/x86_64/hydra/
   echo ""
