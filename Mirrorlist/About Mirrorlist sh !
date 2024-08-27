@@ -1,0 +1,41 @@
+Открутил'а на виртуалке - впечатляет. Кстати, я тоже давно думал'а о сценарии mirrorlist. Помогает, когда обновляешь из других стран. У меня это так выглядит, когда надо или комментирую или раскомментирую строки скрипта:
+____________________________________________________________________________________________
+#!/bin/bash
+
+##команда отфильтрует 12 зеркал russia, отсортирует по скорости и обновит файл mirrorlist##
+sudo reflector -c "Russia" -f 12 -l 12 --verbose --save /etc/pacman.d/mirrorlist
+
+##команда отфильтрует 12 зеркал, отсортирует по скорости и обновит файл mirrorlist##
+#sudo reflector --verbose -l 12 --sort rate --save /etc/pacman.d/mirrorlist
+
+##команда подробно выведет список 200 наиболее недавно обновленных http-зеркал, отсортирует по скорости и обновит mirrorlist##
+#sudo reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
+
+##команда подробно выведет список 200 наиболее недавно обновленных usa http-зеркал, отсортирует по скорости и обновит mirrorlist##
+#reflector --verbose --country 'United States' -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
+
+notify-send "mirrorlist обновлен" -i gtk-info
+______________________________________________________________________________________________
+Буду Ваши наработки использовать для установки.
+
+************************************************************
+Unscrewed ' and on the virtual machine-impressive. By the way, I've been thinking about it for a long time'and about the mirrorlist script. It helps when you update from other countries. This is how it looks for me when I need to either comment or uncomment the script lines:
+____________________________________________________________________________________________
+#!/bin/bash
+
+##the command will filter 12 mirrors in russia, sort by speed, and update the mirrorlist file##
+sudo reflector -c "Russia" -f 12 -l 12 --verbose --save /etc/pacman.d/mirrorlist
+
+##the command will filter 12 mirrors, sort by speed, and update the mirrorlist file##
+#sudo reflector --verbose -l 12 --sort rate --save /etc/pacman.d/mirrorlist
+
+##the command will display a detailed list of the 200 most recently updated http mirrors, sort by speed, and update the mirrorlist##
+#sudo reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
+
+##the command will display a detailed list of the 200 most recently updated usa http mirrors, sort by speed, and update the mirrorlist##
+#reflector --verbose --country 'United States' - l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
+
+notify-send "mirrorlist updated" -i gtk-info
+______________________________________________________________________________________________
+I will use Your experience for installation.
+************************************************************
