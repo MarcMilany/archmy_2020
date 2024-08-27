@@ -72,6 +72,8 @@ Cостоит из 4 частей + ?.
    pacman -Sy archlinux-keyring wget
    wget git.io/archmy1l && sh archmy1l
    Или эта команда:
+pacman -Sy archlinux-keyring
+pacman -S wget
    wget git.io/archmy1l
    И запустить скрипт: 
    sh archmy1l   
