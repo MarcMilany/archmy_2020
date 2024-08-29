@@ -87,10 +87,10 @@ pacman -S wget
 Команда для запуска скрипта:
 
    ```bash 
-   curl -L git.io/archmy1> archmy1 
+   curl -L git.io/archmy1l> archmy1l 
    И запустить скрипт: 
    chmod +x archmy1l
-   ./archmy1
+   ./archmy1l
    Или эта команда:
    curl -OL https://git.io/archmy1l
    chmod +x archmy1l
