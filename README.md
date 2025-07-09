@@ -198,7 +198,7 @@ sudo dd bs=4M if=archlinux-2024.09.01-x86_64.iso of=/dev/sdX status=progress && 
    wget git.io/archmy3l && sh archmy3l
    ```
 
-# История изменений: ⏪ 📊 
+# История изменений: 🌅 
 
 ### 14.06.2025 ArchLinux Fast Install v2.5 LegasyBIOS
 - Скрипт Полность изменен (читать справку README_SOFT.md)*(пока не написана!)
