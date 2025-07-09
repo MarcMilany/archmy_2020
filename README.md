@@ -126,6 +126,7 @@ sudo dd bs=4M if=archlinux-2024.09.01-x86_64.iso of=/dev/sdX status=progress && 
 - Ventoy - https://ventoy.net/en/
 - Universal USB Installer - https://pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/
 - YUMI - Multiboot Bootable USB Software - https://pendrivelinux.com/yumi-multiboot-usb-creator/
+  
 *Примечание: Программы поддерживают большинство дистрибутивов операционных систем Windows и Linux, Но тут дела вкуса!
 
 *Примечание: Если USB-накопитель не загружается должным образом с использованием режима ISO-образа по умолчанию, вместо него следует использовать режим DD-образа. Чтобы включить этот режим, выберите GPT в раскрывающемся меню Схема раздела. После нажатия ПУСК вы получите диалоговое окно выбора режима, выберите режим DD-образа .
