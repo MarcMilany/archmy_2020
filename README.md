@@ -142,7 +142,7 @@ sudo dd bs=4M if=archlinux-2024.09.01-x86_64.iso of=/dev/sdX status=progress && 
 # Загрузка скрипта(ов) (Будьте внимательны!) 🌐 
 - 2) Команды для скачивания и запуска скрипта изменились, в связи с тем, что в установочный образ Arch Linux 2024.09.01-x86_64.iso , не входит пакет 'wget' и 'curl', в отличае от предыдущих релизов Arch Linux .iso (см.,PKGLIST_X86_64.txt - находится в установочном .iso образе).
 
-Для проверки интернета можно пропинговать какой-либо сервис: ping -c2 github.com 
+📡 Для проверки интернета можно пропинговать какой-либо сервис: ping -c2 github.com 
 - Скачать и запустить скрипт можно командой:
    ```bash 
    pacman -Sy archlinux-keyring wget
@@ -198,7 +198,7 @@ sudo dd bs=4M if=archlinux-2024.09.01-x86_64.iso of=/dev/sdX status=progress && 
    wget git.io/archmy3l && sh archmy3l
    ```
 
-# История изменений: 🐧 📒 ✨ 🔮
+# История изменений: 📒 🐧 
 
 ### 14.06.2025 ArchLinux Fast Install v2.5 LegasyBIOS
 - Скрипт Полность изменен (читать справку README_SOFT.md)*(пока не написана!)
