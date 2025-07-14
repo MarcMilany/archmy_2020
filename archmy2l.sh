@@ -2430,7 +2430,7 @@ echo " Действия ввода, выполняется сразу после
 
     0 - Пропустить установку: " graphic_aur  # sends right after the keypress; # отправляет сразу после нажатия клавиши
     echo ''
-    [[ "$graphic_aur" =~ [^1230] ]]
+    [[ "$graphic_aur" =~ [^12340] ]]
 do
     :
 done
