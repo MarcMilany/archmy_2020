@@ -1,4 +1,4 @@
-# 🐧 ArchLinux Fast Install v2.5 LegasyBIOS Update 🐧
+# 🐧 ArchLinux Fast Install v2.5 LegasyBIOS Update
 
 ★★☆☆☆
 
