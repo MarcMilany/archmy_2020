@@ -718,7 +718,7 @@ if [[ $zerkala == 1 ]]; then
   echo " Резервное копирование исходного списка зеркальных отображений..."
   mv -i /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.orig
   echo " Загрузка свежего списка зеркал со страницы Mirror Status "
-  reflector --verbose --country 'Russia' -l 10 -p https -p http -n 10--save /etc/pacman.d/mirrorlist --sort rate
+  reflector --verbose --country 'Russia' -l 10 -p https -p http -n 10 --save /etc/pacman.d/mirrorlist --sort rate
 ### reflector --country <your country code e.g. gb> --ipv4 --protocol "http,https" --sort score --save /etc/pacman.d/mirrorlist
 #  reflector --country 'Russia' --ipv4 --protocol "http,https" --sort score --save /etc/pacman.d/mirrorlist
   echo " Разрешить глобальный доступ на чтение (требуется для выполнения некорневого yaourt) "
