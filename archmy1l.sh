@@ -714,8 +714,8 @@ pacman -S --noconfirm --needed xfsprogs arch-install-scripts  # Установи
 sleep 03
  echo ""
  echo " Форматирование и монтирование выполнено "
-      fi
-   fi
+#fi
+  fi
 fi
 ########## Boot  ########
 ### Install Arch Linux on Legacy BIOS with MBR - https://www.youtube.com/watch?v=smdZdPLHjWc
@@ -877,6 +877,7 @@ do
     :
 done
 if [[ $homes == 0 ]]; then
+  echo ""
   echo " Добавление Home раздела пропущено. "
 elif [[ $homes == 1 ]]; then
   echo " Добавление HOME (домашнего) раздела "
@@ -1050,8 +1051,7 @@ elif [[ $homeF == 0 ]]; then
      mount /dev/$homeV /mnt/home  # Смонтируем home (домашний) раздел в /mnt
  echo ""
  echo " Монтирование выполнено "
-      fi
-   fi
+fi
 fi
 sleep 02
 ##### Windows partitions #####
@@ -1536,99 +1536,3 @@ elif [[ $int == 3 ]]; then
   reboot
 fi
 #########################
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
