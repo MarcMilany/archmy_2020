@@ -861,8 +861,7 @@ read -p " Укажите ROOT раздел (sda/sdb 1.2.3.4 (sda5 наприме
 ### arch-install-scripts - Скрипты для помощи в установке Arch Linux ; https://archlinux.org/packages/extra/any/arch-install-scripts/ ; https://gitlab.archlinux.org/archlinux/arch-install-scripts ; 2024-10-30 21:58 UTC
 # pacman -S --noconfirm --needed lvm2  # (необязательно) - для e2scrub ; Утилиты Logical Volume Manager 2
 ### lvm2 - Утилиты Logical Volume Manager 2 ; https://archlinux.org/packages/core/x86_64/lvm2/ ; https://sourceware.org/lvm2/ ; Конфликты:  lvm, mkinitcpio<38-1 ; 2025-09-11 08:28 UTC
-mkfs.btrfs -F -O ^64bit -L "root" /dev/$root  # «-F» в команде mkfs — это опция, которая позволяет указать тип файловой системы (FSType), которую нужно создать. -O ^64bit — отключает 64-битные функции файловой системы по умолчанию (https://translated.turbopages.org/proxy_u/en-ru.ru.68053a99-68cc97f7-92ee40a2-74722d776562/https/unix.stackexchange.com/questions/388432/what-does-this-mkfs-ext4-operand-mean).
-#mkfs.btrfs -f /dev/$root -L root  # или - mkfs.btrfs -f /dev/$root - без -L|--label <строка>
+mkfs.btrfs -f /dev/$root -L root  # или - mkfs.btrfs -f /dev/$root - без -L|--label <строка>
 # mkfs.btrfs -f -L root /dev/$root  # /dev/sda<цифра>
 ### mkfs.btrfs ; mkfs.btrfs [опции] <устройство> [<устройство>…] ; https://btrfs.readthedocs.io/en/latest/mkfs.btrfs.html
 ### -f|--force ; Принудительно перезаписывать блочные устройства при обнаружении существующей файловой системы. По умолчанию mkfs.btrfs использует libblkid для проверки наличия известных файловых систем на устройствах. В качестве альтернативы, для очистки устройств можно использовать утилиту wipefs .
