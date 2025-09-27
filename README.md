@@ -205,7 +205,7 @@ sudo dd bs=4M if=archlinux-2024.09.01-x86_64.iso of=/dev/sdX status=progress && 
 - И новыми разработками и запросами ..... 
 - В скрипт добавлены файловые системы: Ext4 (Fourth Extended Filesystem),
 Btrfs (B-tree File System), XFS , F2FS (Flash-Friendly File System), JFS (Journaled File System)!
-- Добавлена установка Budgie Desktop (Budgie DE), вынесена в сенарии скрипта отдельно, 
+- Добавлена установка Budgie Desktop (Budgie DE), вынесена в сценарии скрипта отдельно, 
 после установки основных предложенных DE (может кто захочет установить).
 - Добавлены новые функции по установки Arch'a , как для LegasyBIOS , так и UEFI или EFI .
 - Пока установка Arch'a UEFI (проверено - работает) находиться в стадии тестирования, 
