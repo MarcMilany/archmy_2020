@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+#Categories=Utility;
+Name[ru]=My traceroute
+GenericName[ru]=Мониторинг сети, ping до yandex DNS
+Comment[ru]=Мощный и удобный инструмент для мониторинга сети в режиме реального времени
+Name=Mtr
+GenericName=Mtr
+Comment=Mtr
+Exec=alacritty --hold -e mtr 77.88.8.8
+Icon=mtr
+Terminal=false

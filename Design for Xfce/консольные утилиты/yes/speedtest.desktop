@@ -1,0 +1,15 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+#Categories=Utility;
+Comment[ru]=Автоматический выбор сервера
+Comment=speedtest ookla
+Exec=alacritty --hold -e speedtest
+GenericName[ru]=Автоматический выбор сервера
+GenericName=speedtest ookla
+Icon=speedtest
+Name[ru]=Измерение скорости speedtest ookla
+Name=Speedtest 
+StartupNotify=true
+Type=Application
+Terminal=false

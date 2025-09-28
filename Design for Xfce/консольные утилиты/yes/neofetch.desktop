@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+#Categories=Utility;
+Name[ru]=Neofetch, краткая информация о системе
+GenericName[ru]=Краткая информация о системе
+Comment[ru]=Краткая информация о системе
+Name=Neofetch
+GenericName=Neofetch
+Comment=Neofetch
+Exec=alacritty --hold -e neofetch
+Icon=utilities-terminal
+Terminal=false

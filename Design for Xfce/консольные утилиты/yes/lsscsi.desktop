@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+#Categories=Utility;
+Name[ru]=Lsscsi, информация о дисках
+GenericName[ru]=Информация о дисках
+Comment[ru]=lsscsi -s
+Name=Lsscsi
+GenericName=Lsscsi
+Comment=lsscsi -s
+Exec=alacritty --hold -e lsscsi -s
+Icon=utilities-terminal
+Terminal=false

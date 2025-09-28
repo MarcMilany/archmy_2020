@@ -1,0 +1,16 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=Clonezilla live
+Type=Application
+Exec=sudo clonezilla
+TryExec=
+Icon=/usr/share/drbl/image/ocslogo.png
+X-GNOME-DocPath=
+Terminal=true
+Name[ru]=Clonezilla live
+GenericName[ru]=Клонирование разделов
+Comment[ru]=Клонирование разделов
+GenericName=Clonezilla live
+Comment=
+Categories=Utility;

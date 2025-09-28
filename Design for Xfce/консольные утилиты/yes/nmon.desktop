@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+#Categories=Utility;
+Name[ru]=Nmon, анализ и мониторинг системы
+GenericName[ru]=Анализ и мониторинг системы
+Comment[ru]=ЦПУ, объем памяти, информация о сети, информация о дисках, информация о файловой системе, NFS, и многое другое
+Name=Nmon
+GenericName=Nmon
+Comment=Nmon
+Exec=alacritty --hold -e nmon
+Icon=utilities-terminal
+Terminal=false

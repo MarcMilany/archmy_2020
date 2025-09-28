@@ -1,0 +1,22 @@
+[Desktop Entry]
+#Categories=Utility;
+Comment[ru_RU]=Информация о nvme SSD
+Comment=Информация о nvme SSD
+Encoding=UTF-8
+Exec=alacritty --hold -e sudo smartctl -x /dev/sdb
+GenericName[ru_RU]=nvme SSD
+GenericName=nvme SSD
+Icon=drive-harddisk
+MimeType=
+Name[ru_RU]=Информация о nvme SSD
+Name=Информация о nvme SSD
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+Version=1.0
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

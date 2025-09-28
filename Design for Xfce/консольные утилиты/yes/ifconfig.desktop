@@ -1,0 +1,15 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Type=Application
+#Categories=Utility;
+Name[ru]=Ifconfig, сетевые интерфейсы
+GenericName[ru]=Информация о сетевых интерфейсах
+Comment[ru]=Информация о сетевых интерфейсах
+Name=Ifconfig
+GenericName=Ifconfig
+Comment=Ifconfig
+Exec=alacritty --hold -e ifconfig
+Icon=utilities-terminal
+Terminal=false

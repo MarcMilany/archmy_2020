@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=Testdisk
+Type=Application
+Exec=sudo testdisk
+Icon=testdisk-logo
+Terminal=true
+Name[ru]=Testdisk
+GenericName[ru]=Testdisk
+Comment[ru]=Программа для восстановления данных
+GenericName[ru]=Программа для восстановления данных
+Comment=
+Categories=Utility;

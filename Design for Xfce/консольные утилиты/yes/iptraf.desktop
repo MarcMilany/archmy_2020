@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+#Categories=Utility;
+Name[ru]=Iptraf, мониторинг сети
+GenericName[ru]=Мониторинг сети
+Comment[ru]=Мощный и удобный инструмент для мониторинга сети в режиме реального времени
+Name=Iptraf
+GenericName=Iptraf
+Comment=Iptraf
+Exec=alacritty --hold -e sudo iptraf-ng
+Icon=utilities-terminal
+Terminal=false

@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+#Categories=Utility;
+Name[ru]=Duf, информация о дисках
+GenericName[ru]=Duf, информация о дисках и разделах
+Comment[ru]=Duf, информация о дисках и разделах
+Name=Duf
+GenericName=Duf
+Comment=Duf, information about disks and partitions
+Exec=alacritty --hold -e duf
+Icon=utilities-terminal
+Terminal=false

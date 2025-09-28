@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+#Categories=Utility;
+Name[ru]=Inxi, информация о системе
+GenericName[ru]=inxi -F, информация о системе
+Comment[ru]=команда inxi -F
+Name=Inxi
+GenericName=inxi -F
+Comment=inxi -F
+Exec=alacritty --hold -e inxi -F
+Icon=utilities-terminal
+Terminal=false
