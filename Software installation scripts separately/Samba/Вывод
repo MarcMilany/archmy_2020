@@ -1,0 +1,65 @@
+
+
+[Alex@Terminator ~]$ sh '/home/Alex/Загрузки/myscript' 
+Welcome!
+ => Введите название группы для samba groupname: sambauser
+ Название группы которую вы добавили для сервера 'SAMBA' (группа должна существовать). 
+sambauser:x:949:
+ Группа успешно добавлена в /etc/group! 
+
+Для добавления учетных записей пользователя Linux и SAMBA введите Имя Пользователя и Название его рабочей группы (группа должна существовать).
+ => Введите имя добавляемого пользователя для samba username: smbuser
+ => Введите название группы groupname, в которую добавить пользователя username: sambauser
+Добавление учетной записи пользователя smbuser в группу sambauser...
+useradd: пользователь «smbuser» уже существует
+Добавление учетной записи пользователя smbuser SAMBA...
+Can't load /etc/samba/smb.conf - run testparm to debug it
+Включение учетной записи SAMBA smbuser...
+Can't load /etc/samba/smb.conf - run testparm to debug it
+ Вывести список пользователей добавленных в Samba: с помощью команды (pdbedit)
+Can't load /etc/samba/smb.conf - run testparm to debug it
+---------------
+Unix username:        root
+NT username:          
+Account Flags:        [U          ]
+User SID:             S-1-5-21-2223055371-3137995098-3285520458-1002
+Primary Group SID:    S-1-5-21-2223055371-3137995098-3285520458-513
+Full Name:            
+Home Directory:       \\TERMINATOR\root
+HomeDir Drive:        
+Logon Script:         
+Profile Path:         \\TERMINATOR\root\profile
+Domain:               TERMINATOR
+Account desc:         
+Workstations:         
+Munged dial:          
+Logon time:           0
+Logoff time:          Ср, 06 фев 2036 18:06:39 MSK
+Kickoff time:         Ср, 06 фев 2036 18:06:39 MSK
+Password last set:    Вс, 21 июл 2024 23:21:22 MSK
+Password can change:  Вс, 21 июл 2024 23:21:22 MSK
+Password must change: never
+Last bad password   : 0
+Bad password count  : 0
+Logon hours         : FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+chrony:x:950:950:Network Time Protocol:/var/lib/chrony:/usr/bin/nologin
+
+
+
+
+
+
+
+
+
+# chmod +x myscript
+# sudo myscript
+
+# sudo groupdel sambauser
+# sudo getent group | grep sambauser ?
+# sudo cat /etc/group
+
+# sudo cat /etc/passwd
+# sudo passwd -l smbuser
+# sudo userdel -f smbuser
+## sudo userdel -r smbuser
