@@ -1,0 +1,46 @@
+Какой AUR helper выбрать?
+03.02.2019
+
+Какой AUR helper выбрать? Если вы посмотрите таблицу https://vk.cc/88yr8q из нее можно увидеть что yaourt и aurman помечен, как более не поддерживаемые. Большинство пользователей склоняются к yay. Чтобы установить yay вы можете вопрользоваться скриптом ниже. Достаточно вбить всего 1 троку. Синтаксис точно такй-же как и в pacmam.
+
+Чтобы установить программу пишем 
+yay -S nazvanie_paketa
+
+Для поиска по AUR можно не писать -Ss 
+yay nazvanie_paketa
+
+Чтобы обновить всю систему включая AUR пакеты 
+yay -Syu
+
+Результаты опроса
+
+Простой способ установить yay
+wget git.io/yay-install.sh && sh yay-install.sh
+
+
+Забери пост себе на стену, чтобы легко найти! Или поделись с друзьями!
+
+*************************************************************
+Which AUR helper should I choose?
+03.02.2019
+
+Which AUR helper should I choose? If you look at the table https://vk.cc/88yr8q from it, you can see that yaourt and arman are marked as no longer supported. Most users are inclined to yay. To install yay, you can use the script below. Just enter 1 line. The syntax is exactly the same as in pacman.
+
+To install the program write
+I-With the package_name
+
+To search for AUR, you don't need to write-Ss
+her package_name
+
+To update the entire system including AUR packages
+you -Say
+
+The results of the survey
+
+Easy way to install yay
+wget git.io/yay-install.sh && sh yay-install.sh
+
+
+Take the post to your wall so that you can easily find it! Or share it with your friends!
+
+*************************************************************
