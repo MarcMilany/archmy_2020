@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<submenu></submenu>
+	<unique-id>1754919203894457-1</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description>Example for a custom action</description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>folder</icon>
+	<name>Thunar Root</name>
+	<submenu>Открыть папку с привилегиями root</submenu>
+	<unique-id>1754920631599486-1</unique-id>
+	<command>pkexec thunar %f</command>
+	<description>Thunar Root</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>system-search</icon>
+	<name>Search</name>
+	<submenu></submenu>
+	<unique-id>1754937865306334-1</unique-id>
+	<command>catfish %f</command>
+	<description>Find files and folders</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>org.xfce.mousepad</icon>
+	<name>Edit as Root</name>
+	<submenu></submenu>
+	<unique-id>1754937946482335-2</unique-id>
+	<command>pkexec mousepad %f</command>
+	<description>Edit as root</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<other-files/>
+	<text-files/>
+</action>
+</actions>
