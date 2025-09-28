@@ -1,0 +1,60 @@
+Давайте предположим  что система  установлена на подтоме /dev/sdaX  (имеет субволумы /@ , @home и пр.)
+
+Смонтировать /dev/sdaX в /mnt.
+
+ sudo mount /dev/sdaX /mnt
+ 
+Если вы запустите ls /mnt, вы увидите @ и @home и другие подтомы.
+
+Создайте новый @swap подтом.
+
+ sudo btrfs sub create /mnt/@swap
+
+Размонтируйте /dev/sdaX из /mnt
+
+ sudo umount /mnt
+
+Создадим /swap директорию, куда мы планируем монтировать @swap подтом.
+
+ sudo mkdir /swap
+
+Смонтируйте @swap подтом в /swap.
+
+ sudo mount -o subvol=@swap /dev/sda1 /swap
+
+Создайте файл подкачки.
+
+ sudo touch /swap/swapfile
+ 
+Установите права доступа 600 к файлу.
+
+ sudo chmod 600 /swap/swapfile
+
+Отключите COW для этого файла.
+
+ sudo chattr +C /swap/swapfile
+
+В качестве примера установите размер файла подкачки на 4G.
+
+ sudo dd if=/dev/zero of=/swap/swapfile bs=1M count=4096
+
+Отформатируйте файл подкачки
+
+sudo mkswap /swap/swapfile
+
+Включите файл подкачки.
+
+sudo swapon /swap/swapfile
+
+Теперь новый своп должен работать.
+
+Также нужно обновиться /etc/fstab, чтобы монтировать все это при загрузке. 
+
+sudo nano /etc/fstab
+
+Добавьте туда две строчки:
+
+UUID=XXXXXXXXXXXXXXX /swap btrfs subvol=@swap 0 0
+/swap/swapfile none swap sw 0 0
+
+Это UUID один из ваших /dev/sdaX
