@@ -1,0 +1,101 @@
+WARNING: Clamd was NOT notified: Can't connect to clamd through /run/clamav/clamd.ctl: No such file or directory
+
+ClamAV: файл clamd.ctl не создается в Ubuntu
+
+У меня версия Ubuntu 16.04.6, и я пытаюсь установить и запустить clamdscanна нем для проверки на наличие антивирусов.
+Я воспользовался инструкциями по установке, приведенными на их веб-сайте . Т.е.
+
+sudo apt-get install clamav
+sudo apt-get install clamav-daemon
+
+Две команды выше работают нормально. Но когда я пытаюсь загрузить определения (что, как я предполагаю, обязательно после выполнения предыдущей команды), выполнив команду
+
+sudo freshclam
+
+
+sudo freshclam                                                                    ✔
+ClamAV update process started at Sat Aug  9 22:30:51 2025
+WARNING: DNS Update Info disabled. Falling back to HTTP mode.
+Trying to retrieve CVD header from https://clamav-mirror.ru//daily.cld
+Time:    0.2s, ETA:    0.0s [========================>]       153B/153B
+WARNING: remote_cvdhead: file not found: https://clamav-mirror.ru//daily.cld
+Trying to retrieve CVD header from https://clamav-mirror.ru//daily.cvd
+Time:    0.2s, ETA:    0.0s [========================>]       512B/512B
+OK
+daily.cvd database is up-to-date (version: 27727, sigs: 2076422, f-level: 90, builder: raynman)
+Trying to retrieve CVD header from https://clamav-mirror.ru//main.cld
+Time:    0.2s, ETA:    0.0s [========================>]       153B/153B
+WARNING: remote_cvdhead: file not found: https://clamav-mirror.ru//main.cld
+Trying to retrieve CVD header from https://clamav-mirror.ru//main.cvd
+Time:    0.2s, ETA:    0.0s [========================>]       512B/512B
+OK
+main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
+Trying to retrieve CVD header from https://clamav-mirror.ru//bytecode.cld
+Time:    0.2s, ETA:    0.0s [========================>]       153B/153B
+WARNING: remote_cvdhead: file not found: https://clamav-mirror.ru//bytecode.cld
+Trying to retrieve CVD header from https://clamav-mirror.ru//bytecode.cvd
+Time:    0.2s, ETA:    0.0s [========================>]       512B/512B
+OK
+bytecode.cvd database is up-to-date (version: 336, sigs: 83, f-level: 90, builder: nrandolp)
+
+
+Я столкнулся с этой проблемой на своей Ubuntu 20.04 LTS , машине
+
+Вот что я сделал:
+
+    бегать sudo systemctl stop clamav-daemon.service
+    затем беги sudo rm /var/log/clamav/freshclam.log (иногда его блокируют)
+    запустить службу sudo systemctl start clamav-daemon.service
+
+чтобы убедиться, что все в порядке, запустите sudo systemctl status clamav-daemon.serviceи вывод должен выглядеть примерно так:
+
+➜  ~ sudo systemctl status clamav-daemon.service
+● clamav-daemon.service - Clam AntiVirus userspace daemon
+     Loaded: loaded (/lib/systemd/system/clamav-daemon.service; enabled; vendor preset: enabled)
+    Drop-In: /etc/systemd/system/clamav-daemon.service.d
+             └─extend.conf
+     Active: active (running) since Sun 2020-05-03 05:03:51 EEST; 4s ago
+       Docs: man:clamd(8)
+             man:clamd.conf(5)
+
+
+
+ClamAV: clamd.ctl file is not getting created on ubuntu
+
+I faced this issue on my Ubuntu 20.04 LTS machine, What I did was:
+
+
+https://askubuntu.com/questions/1170774/clamav-clamd-ctl-file-is-not-getting-created-on-ubuntu
+
+Добавьте sock-файл для ClamAV:
+
+sudo touch /var/lib/clamav/clamd.sock
+sudo chown clamav:clamav /var/lib/clamav/clamd.sock
+
+Затем отредактируйте /etc/clamav/clamd.conf- раскомментируйте эту строку:
+
+LocalSocket /var/lib/clamav/clamd.sock
+
+Сохраните файл и перезапустите clamav-daemon.service
+
+Еще одна ошибка:
+
+sudo freshclam
+
+Добавьте sock-файл для ClamAV:
+
+sudo touch /run/clamav/clamd.sock
+sudo chown clamav:clamav /run/clamav/clamd.sock
+
+sudo systemctl restart clamav-daemon.service
+sudo freshclam
+
+
+
+ClamAV update process started at Thu Sep 26 11:47:12 2019
+main.cvd is up to date (version: 58, sigs: 4566249, f-level: 60, builder: sigmgr)
+daily.cld is up to date (version: 25583, sigs: 1778105, f-level: 63, builder: raynman)
+bytecode.cld is up to date (version: 331, sigs: 94, f-level: 63, builder:
+
+sudo ls /var/run/clamav                                                           ✔
+clamd.ctl  clamd.pid  clamd.sock

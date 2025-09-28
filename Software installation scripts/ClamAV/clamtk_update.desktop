@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=ClamTk Update
+GenericName=Virus Scanner Update 
+GenericName[ru]=Проверка обновлений антивирусных баз
+Comment[ru]=Проверка обновлений антивирусных баз
+TryExec=sudo freshclam
+Exec=sudo freshclam -vvv
+Icon=clamtk
+Type=Application
+Terminal=false
+Categories=GTK;GNOME;Utility;
+StartupNotify=true
+Keywords=antivirus;virus;malware;scan;scanner;

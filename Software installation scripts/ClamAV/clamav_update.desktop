@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=ClamAV Update
+GenericName=Virus Scanner Update 
+GenericName[ru]=Проверка обновлений антивирусных баз
+Comment[ru]=Проверка обновлений антивирусных баз для ClamAV в России
+TryExec=sudo freshclam
+Exec=alacritty --hold -e sudo freshclam -vvv
+Icon=clamtk
+Type=Application
+Terminal=false
+Categories=GTK;GNOME;Utility;
+StartupNotify=true
+Keywords=antivirus;virus;malware;scan;scanner;
