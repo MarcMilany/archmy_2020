@@ -1,0 +1,7 @@
+    Evaluate arithmetic expression.
+    
+    The EXPRESSION is evaluated according to the rules for arithmetic
+    evaluation.  Equivalent to `let "EXPRESSION"'.
+    
+    Exit Status:
+    Returns 1 if EXPRESSION evaluates to 0; returns 0 otherwise.

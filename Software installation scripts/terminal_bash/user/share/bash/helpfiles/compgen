@@ -1,0 +1,8 @@
+    Display possible completions depending on the options.
+    
+    Intended to be used from within a shell function generating possible
+    completions.  If the optional WORD argument is supplied, matches against
+    WORD are generated.
+    
+    Exit Status:
+    Returns success unless an invalid option is supplied or an error occurs.

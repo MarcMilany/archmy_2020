@@ -1,0 +1,6 @@
+    Null command.
+    
+    No effect; the command does nothing.
+    
+    Exit Status:
+    Always succeeds.

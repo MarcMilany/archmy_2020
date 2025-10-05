@@ -1,0 +1,4 @@
+    Evaluate conditional expression.
+    
+    This is a synonym for the "test" builtin, but the last argument must
+    be a literal `]', to match the opening `['.

@@ -1,0 +1,9 @@
+    Create a coprocess named NAME.
+    
+    Execute COMMAND asynchronously, with the standard output and standard
+    input of the command connected via a pipe to file descriptors assigned
+    to indices 0 and 1 of an array variable NAME in the executing shell.
+    The default NAME is "COPROC".
+    
+    Exit Status:
+    The coproc command returns an exit status of 0.

@@ -1,0 +1,13 @@
+    Remove jobs from current shell.
+    
+    Removes each JOBSPEC argument from the table of active jobs.  Without
+    any JOBSPECs, the shell uses its notion of the current job.
+    
+    Options:
+      -a	remove all jobs if JOBSPEC is not supplied
+      -h	mark each JOBSPEC so that SIGHUP is not sent to the job if the
+    		shell receives a SIGHUP
+      -r	remove only running jobs
+    
+    Exit Status:
+    Returns success unless an invalid option or JOBSPEC is given.

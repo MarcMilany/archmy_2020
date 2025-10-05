@@ -1,0 +1,20 @@
+    Display status of jobs.
+    
+    Lists the active jobs.  JOBSPEC restricts output to that job.
+    Without options, the status of all active jobs is displayed.
+    
+    Options:
+      -l	lists process IDs in addition to the normal information
+      -n	lists only processes that have changed status since the last
+    		notification
+      -p	lists process IDs only
+      -r	restrict output to running jobs
+      -s	restrict output to stopped jobs
+    
+    If -x is supplied, COMMAND is run after all job specifications that
+    appear in ARGS have been replaced with the process ID of that job's
+    process group leader.
+    
+    Exit Status:
+    Returns success unless an invalid option is given or an error occurs.
+    If -x is used, returns the exit status of COMMAND.

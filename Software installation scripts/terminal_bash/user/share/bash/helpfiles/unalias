@@ -1,0 +1,6 @@
+    Remove each NAME from the list of defined aliases.
+    
+    Options:
+      -a	remove all alias definitions
+    
+    Return success unless a NAME is not an existing alias.

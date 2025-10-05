@@ -1,0 +1,7 @@
+    Display process times.
+    
+    Prints the accumulated user and system times for the shell and all of its
+    child processes.
+    
+    Exit Status:
+    Always succeeds.

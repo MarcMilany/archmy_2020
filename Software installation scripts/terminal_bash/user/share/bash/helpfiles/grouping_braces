@@ -1,0 +1,7 @@
+    Group commands as a unit.
+    
+    Run a set of commands in a group.  This is one way to redirect an
+    entire set of commands.
+    
+    Exit Status:
+    Returns the status of the last command executed.

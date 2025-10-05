@@ -1,0 +1,8 @@
+    Move jobs to the background.
+    
+    Place the jobs identified by each JOB_SPEC in the background, as if they
+    had been started with `&'.  If JOB_SPEC is not present, the shell's notion
+    of the current job is used.
+    
+    Exit Status:
+    Returns success unless job control is not enabled or an error occurs.

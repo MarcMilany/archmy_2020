@@ -1,0 +1,9 @@
+    Define shell function.
+    
+    Create a shell function named NAME.  When invoked as a simple command,
+    NAME runs COMMANDs in the calling shell's context.  When NAME is invoked,
+    the arguments are passed to the function as $1...$n, and the function's
+    name is in $FUNCNAME.
+    
+    Exit Status:
+    Returns success unless NAME is readonly.

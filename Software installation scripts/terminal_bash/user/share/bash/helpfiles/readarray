@@ -1,0 +1,3 @@
+    Read lines from a file into an array variable.
+    
+    A synonym for `mapfile'.

@@ -1,0 +1,4 @@
+    Return an unsuccessful result.
+    
+    Exit Status:
+    Always fails.
