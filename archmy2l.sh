@@ -1449,7 +1449,7 @@ sleep 01
 elif [[ $x_de == 1 ]]; then
  echo ""
  echo " Установка утилиты (пакета) KDE Plasma "
-pacman -S plasma plasma-meta plasma-pa plasma-desktop kde-system-meta kde-utilities-meta kio-extras konsole  kwalletmanager kio-admin --noconfirm  # Мета-пакет для установки KDE Plasma; Апплет Plasma для управления громкостью звука с помощью PulseAudio; Рабочий стол KDE Plasma; Мета-пакет для системных приложений KDE; Мета-пакет для служебных приложений KDE; Дополнительные компоненты для увеличения функциональности KIO; Инструмент управления кошельком; Эмулятор терминала KDE.
+# pacman -S plasma plasma-meta plasma-pa plasma-desktop kde-system-meta kde-utilities-meta kio-extras konsole  kwalletmanager kio-admin --noconfirm  # Мета-пакет для установки KDE Plasma; Апплет Plasma для управления громкостью звука с помощью PulseAudio; Рабочий стол KDE Plasma; Мета-пакет для системных приложений KDE; Мета-пакет для служебных приложений KDE; Дополнительные компоненты для увеличения функциональности KIO; Инструмент управления кошельком; Эмулятор терминала KDE.
 # pacman -S --noconfirm --needed tellico  # Менеджер коллекций для KDE ; https://tellico-project.org/ ; https://archlinux.org/packages/extra/x86_64/tellico/
 # yay -S latte-dock --noconfirm --needed  #  Док на основе Plasma Frameworks ; https://aur.archlinux.org/latte-dock.git (read-only, click to copy) ; https://aur.archlinux.org/latte-dock-git.git (read-only, click to copy) ; https://invent.kde.org/plasma/latte-dock
 ### Minimal KDE:
@@ -1460,6 +1460,35 @@ pacman -S plasma plasma-meta plasma-pa plasma-desktop kde-system-meta kde-utilit
 # pacman -S gwenview --noconfirm  # Быстрый и простой в использовании просмотрщик изображений (https://apps.kde.org/gwenview/)
 # pacman -S plasma-framework --noconfirm  # Библиотека Plasma и компоненты времени выполнения на основе KF5 и Qt5
 ## pacman -S kde-applications-meta --noconfirm  # Мета-пакет для приложений KDE
+### Установка KDE Plasma (облегченная версия)
+pacman -S plasma  # Устанавливает среду рабочего стола KDE Plasma
+pacman -S konsole  # Эмулятор терминала KDE
+pacman -S dolphin  # Файловый менеджер KDE
+pacman -S plasma-wayland-protocols  # Протоколы, специфичные для плазмы, в Wayland
+pacman -S kio-admin  # Управляйте файлами от имени администратора, используя протокол admin://KIO.
+pacman -S gwenview  # Быстрый и простой в использовании просмотрщик изображений
+pacman -S spectacle  # Утилита для создания скриншотов KDE
+pacman -S kmenuedit  # Редактор меню KDE
+pacman -S kate # Расширенный текстовый редактор
+pacman -S kweather  # Приложение погоды для Plasma Mobile
+pacman -S ksystemlog  # Инструмент просмотра системных журналов (System log viewer)
+pacman -S partitionmanager  # Утилита KDE, позволяющая управлять дисками, разделами и файловыми системами
+pacman -S filelight  # Просмотр информации об использовании дискового пространства
+pacman -S kcalc  # Калькулятор с поддержкой тригонометрических, логических и статистических вычислений
+pacman -S kfind  # Найти файлы/папки
+pacman -S kshutdown  # Отключение утилиты
+pacman -S sweeper  # Очиститель системы
+pacman -S okular  # Просмотрщик документов
+pacman -S kcolorchooser  # Выбор цвета
+pacman -S kolourpaint  # Программа для рисования (Paint)
+pacman -S kgeotag  # Программа геотегирования фотографий
+pacman -S kompare  # Инструмент для сравнения файлов в графическом виде
+pacman -S akregator  # Программа для чтения RSS-лент от KDE
+pacman -S aria2  # Загрузите утилиту, поддерживающую HTTP(S), FTP, BitTorrent и Metalink
+pacman -S kget  # Менеджер загрузок
+pacman -S libtorrent  # Библиотека BitTorrent с упором на высокую производительность
+pacman -S libtorrent-rasterbar  # Эффективная и полнофункциональная реализация библиотеки C++ BitTorrent
+pacman -S qbittorrent  # Клиент сети БитТоррент (Обмен файлами по сети БитТоррент)
 clear
 echo ""
 echo " DE (Plasma KDE) успешно установлено "
