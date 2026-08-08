@@ -1404,9 +1404,9 @@ sleep 01
 echo ""
 echo "  → Установка драйверов AMD..."
 pacman -S --noconfirm --needed mesa mesa-utils mesa-demos lib32-mesa lib32-mesa-utils libgl lib32-libgl vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader vulkan-tools vulkan-mesa-layers lib32-vulkan-mesa-layers vkd3d lib32-vkd3d libva lib32-libva libva-utils libva-mesa-driver lib32-libva-mesa-driver libvdpau lib32-libvdpau vdpauinfo xf86-video-amdgpu opencl-headers ocl-icd lib32-ocl-icd corectrl amf-headers openimagedenoise openvkl  # nvtop
-echo ""
-echo "  → Установка драйверов Intel..."
-pacman -S --noconfirm --needed mesa mesa-utils mesa-demos lib32-mesa lib32-mesa-utils libva lib32-libva libva-utils libva-mesa-driver lib32-libva-mesa-driver vulkan-extra-tools vulkan-headers vulkan-extra-layers vulkan-intel lib32-vulkan-intel vulkan-mesa-layers lib32-vulkan-mesa-layers vulkan-icd-loader lib32-vulkan-icd-loader intel-media-driver intel-compute-runtime intel-gmmlib opencl-headers intel-opencl-clang intel-graphics-compiler libmfx vkd3d lib32-vkd3d intel-gpu-tools vpl-gpu-rt lib32-libgl libgl openimagedenoise openvkl libva-intel-driver lib32-libva-intel-driver
+#echo ""
+#echo "  → Установка драйверов Intel..."
+#pacman -S --noconfirm --needed mesa mesa-utils mesa-demos lib32-mesa lib32-mesa-utils libva lib32-libva libva-utils libva-mesa-driver lib32-libva-mesa-driver vulkan-extra-tools vulkan-headers vulkan-extra-layers vulkan-intel lib32-vulkan-intel vulkan-mesa-layers lib32-vulkan-mesa-layers vulkan-icd-loader lib32-vulkan-icd-loader intel-media-driver intel-compute-runtime intel-gmmlib opencl-headers intel-opencl-clang intel-graphics-compiler libmfx vkd3d lib32-vkd3d intel-gpu-tools vpl-gpu-rt lib32-libgl libgl openimagedenoise openvkl libva-intel-driver lib32-libva-intel-driver
 ##############
 
 clear
